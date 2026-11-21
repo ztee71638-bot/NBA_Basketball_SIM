@@ -17,6 +17,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "teams.json"
+ARENAS_PATH = ROOT / "data" / "arenas.json"
 
 
 def parse_date(value: str) -> datetime:
@@ -61,7 +62,9 @@ def predict(home_rows, away_rows, league_average, league_sd):
     return home_mean, away_mean, p_home
 
 
-def predict_advanced(home_rows, away_rows, league_pace, league_off_rating, league_def_rating):
+def predict_advanced(home_rows, away_rows, league_pace, league_off_rating, league_def_rating,
+                     home_rest_days: float = 1.0, away_rest_days: float = 1.0,
+                     home_travel_miles: float = 0.0, away_travel_miles: float = 0.0):
     """Experimental efficiency/pace projection using only pregame team history."""
     h_off = weighted_stats(home_rows, "offensive_rating")
     h_def = weighted_stats(home_rows, "defensive_rating")
@@ -81,6 +84,14 @@ def predict_advanced(home_rows, away_rows, league_pace, league_off_rating, leagu
     pace = (shrink(h_pace[0], h_pace[2], league_pace) + shrink(a_pace[0], a_pace[2], league_pace)) / 2
     home_mean = ((home_off + away_def) / 2) * pace / 100 + 1.8
     away_mean = ((away_off + home_def) / 2) * pace / 100
+    # Small, capped schedule effects are experimental and must beat the
+    # no-adjustment baseline before any production promotion.
+    def schedule_adjustment(rest_days, travel_miles):
+        rest_bonus = max(-0.8, min(0.8, (float(rest_days)-1.0)*0.2))
+        travel_penalty = max(0.0, min(1.2, float(travel_miles or 0.0)*0.00035))
+        return rest_bonus-travel_penalty
+    home_mean += schedule_adjustment(home_rest_days, home_travel_miles)
+    away_mean += schedule_adjustment(away_rest_days, away_travel_miles)
     home_score_sd = weighted_stats(home_rows, "points_for")
     away_score_sd = weighted_stats(away_rows, "points_for")
     home_sd = home_score_sd[1] if home_score_sd else 12.0
@@ -91,8 +102,38 @@ def predict_advanced(home_rows, away_rows, league_pace, league_off_rating, leagu
     return home_mean, away_mean, p_home, pace
 
 
-def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
+def current_rest_days(rows, cutoff):
+    prior = [row for row in rows if parse_date(row["date"]) < cutoff]
+    if not prior:
+        return 1.0
+    gap = (cutoff.date() - parse_date(prior[-1]["date"]).date()).days
+    return float(max(0, gap - 1))
+
+
+def current_travel_miles(rows, team_abbreviation, opponent_abbreviation, home_away, cutoff, arenas):
+    prior = [row for row in rows if parse_date(row["date"]) < cutoff]
+    if not prior:
+        return 0.0
+    aliases = {"GS":"GSW","NY":"NYK","NO":"NOP","SA":"SAS","WSH":"WAS"}
+    team = aliases.get(team_abbreviation, team_abbreviation)
+    opponent = aliases.get(opponent_abbreviation, opponent_abbreviation)
+    previous = prior[-1]
+    previous_opponent = aliases.get(previous.get("opponent"), previous.get("opponent"))
+    origin_code = team if previous.get("home_away") == "home" else previous_opponent
+    destination_code = team if home_away == "home" else opponent
+    origin, destination = arenas.get(origin_code), arenas.get(destination_code)
+    if not origin or not destination:
+        return 0.0
+    lat1, lon1 = math.radians(origin["latitude"]), math.radians(origin["longitude"])
+    lat2, lon2 = math.radians(destination["latitude"]), math.radians(destination["longitude"])
+    dlat, dlon = lat2-lat1, lon2-lon1
+    value = math.sin(dlat/2)**2 + math.cos(lat1)*math.cos(lat2)*math.sin(dlon/2)**2
+    return 3958.7613 * 2 * math.asin(math.sqrt(value))
+
+
+def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None):
     by_team = {}
+    arenas = (arenas_payload or {}).get("teams", {})
     all_rows = []
     for team in payload.get("teams", []):
         seasons = team.get("seasons", {})
@@ -178,6 +219,10 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
                     [r for r in h_rows if all(r.get(k) is not None for k in ("pace_estimate", "offensive_rating", "defensive_rating"))],
                     [r for r in a_rows if all(r.get(k) is not None for k in ("pace_estimate", "offensive_rating", "defensive_rating"))],
                     league_pace, league_off, league_def,
+                    home_rest_days=current_rest_days(h_rows, cutoff),
+                    away_rest_days=current_rest_days(a_rows, cutoff),
+                    home_travel_miles=current_travel_miles(h_rows, home["team"], away["team"], "home", cutoff, arenas),
+                    away_travel_miles=current_travel_miles(a_rows, away["team"], home["team"], "away", cutoff, arenas),
                 )
                 if advanced_prediction:
                     adv_h, adv_a, adv_prob, _ = advanced_prediction
@@ -215,7 +260,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
             for lower, upper in [(i/10, (i+1)/10) for i in range(10)]
             if any(lower <= p < upper for p in advanced_probabilities)
         ), 4) if advanced_outcomes else None,
-        "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. Advanced metrics are experimental and only reported when source coverage is adequate.",
+        "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
     }
 
 
@@ -224,9 +269,11 @@ def main():
     parser.add_argument("--data", type=Path, default=DATA_PATH)
     parser.add_argument("--min-prior-games", type=int, default=5)
     parser.add_argument("--output", type=Path, default=None, help="Optional path for a JSON metrics snapshot")
+    parser.add_argument("--arenas", type=Path, default=ARENAS_PATH)
     args = parser.parse_args()
     payload = json.loads(args.data.read_text(encoding="utf-8"))
-    result = run_backtest(payload, args.min_prior_games)
+    arenas = json.loads(args.arenas.read_text(encoding="utf-8")) if args.arenas.exists() else {}
+    result = run_backtest(payload, args.min_prior_games, arenas)
     result["generated_at"] = datetime.now(timezone.utc).isoformat()
     rendered = json.dumps(result, indent=2) + "\n"
     print(rendered)
