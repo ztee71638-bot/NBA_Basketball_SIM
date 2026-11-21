@@ -78,8 +78,12 @@ def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
     names = list(payload.get("names") or [])
     labels = list(payload.get("labels") or [])
     events = payload.get("events") or []
+    if isinstance(events, dict):
+        events = list(events.values())
     rows = []
     for event in events:
+        if not isinstance(event, dict):
+            continue
         values = list(event.get("stats") or [])
         stat_names = names
         if len(stat_names) == len(values) + 3:
