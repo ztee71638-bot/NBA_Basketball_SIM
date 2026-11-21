@@ -31,3 +31,21 @@ def test_payload_has_source_credit_and_season_counts():
     assert payload["record_count"] == 400
     assert payload["counts_by_season"] == {"2025-26": 300, "2026-27": 100}
     assert payload["license"] == "CC BY 4.0"
+
+
+
+def test_player_impact_snapshot_is_immutable_per_utc_day(tmp_path):
+    from refresh_player_impact import write_immutable_snapshot
+    payload = {
+        "last_updated": "2026-11-21T23:30:00+00:00",
+        "record_count": 400,
+        "players": [{"player_id": "1", "net": 3.2}],
+    }
+    path = write_immutable_snapshot(payload, tmp_path)
+    original = path.read_text(encoding="utf-8")
+    assert path.name == "player-impact-20261121.json"
+
+    changed = {**payload, "record_count": 999}
+    second_path = write_immutable_snapshot(changed, tmp_path)
+    assert second_path == path
+    assert path.read_text(encoding="utf-8") == original

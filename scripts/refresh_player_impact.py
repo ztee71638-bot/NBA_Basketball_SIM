@@ -14,6 +14,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data" / "player_impact.json"
+SNAPSHOT_DIR = ROOT / "data" / "snapshots" / "player-impact"
 SOURCE_URL = "https://raw.githubusercontent.com/lumahoops/NBA/main/hapm/v1/hapm_season_boards.csv"
 SEASONS = ("2025-26", "2026-27")
 VERSION = "3/3"
@@ -82,6 +83,19 @@ def build_payload(content: str, updated_at: str | None = None) -> dict:
     }
 
 
+def write_immutable_snapshot(payload: dict, snapshot_dir: Path = SNAPSHOT_DIR) -> Path:
+    """Archive one immutable, UTC-date-stamped point-in-time impact snapshot."""
+    updated = datetime.fromisoformat(str(payload["last_updated"]).replace("Z", "+00:00"))
+    stamp = updated.astimezone(timezone.utc).strftime("%Y%m%d")
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    path = snapshot_dir / f"player-impact-{stamp}.json"
+    if path.exists():
+        print(f"Immutable player-impact snapshot already exists: {path.name}")
+        return path
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return path
+
+
 def fetch_source() -> str:
     request = Request(SOURCE_URL, headers={"User-Agent": "NBA-Simulator/1.0"})
     with urlopen(request, timeout=60) as response:
@@ -94,7 +108,8 @@ def main() -> None:
     payload = build_payload(fetch_source())
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Saved {payload['record_count']} HAPM records: {payload['counts_by_season']}")
+    snapshot = write_immutable_snapshot(payload)
+    print(f"Saved {payload['record_count']} HAPM records: {payload['counts_by_season']}; archived {snapshot.name}")
 
 
 if __name__ == "__main__":
