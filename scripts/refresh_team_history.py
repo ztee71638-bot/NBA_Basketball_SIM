@@ -168,7 +168,7 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
                     "game_id": str(event.get("id") or ""),
                     "date": event.get("date"),
                     "team": own_abbr,
-                    "opponent": other_team.get("abbreviation"),
+                    "opponent": ID_TO_TEAM.get(str(other_team.get("id")), other_team.get("abbreviation")),
                     "opponent_name": other_team.get("displayName"),
                     "home_away": own.get("homeAway"),
                     "points_for": pf,
