@@ -11,6 +11,10 @@ The scoreboard feed has been exercised successfully by the initial scheduled dat
 
 ESPN endpoints are public but undocumented and unofficial. They can change, omit older seasons, or throttle requests. The collector uses timeouts, a request delay, retries, and a minimum-record guard; failed player requests are recorded as empty season logs rather than fabricated values.
 
+## Team history
+
+The team-history collector uses ESPN's public team schedule endpoint (`/teams/{team_id}/schedule?season={year}`) to derive completed-game points for/against, win percentage and last-10 form. These are team box-score aggregates, not pace or possession metrics. It is a free baseline for seeding game score assumptions, not a substitute for a full efficiency model.
+
 ## NBA Stats / nba_api — secondary candidate
 
 The open-source `nba_api` client wraps the NBA.com Stats endpoints and exposes player game logs, team/player statistics, box scores and play-by-play. It requires no API key, but the underlying NBA endpoints are not a documented public service and can return 403s or become unavailable. It should be evaluated as a fallback, not assumed to be reliable. Reference: https://github.com/swar/nba_api
