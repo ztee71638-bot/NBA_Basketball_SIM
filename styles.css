@@ -240,3 +240,51 @@ footer{color:#83aaaa}
  .run-simulation-btn{width:100%;min-height:48px}
  .matchup-time{font-size:.82rem;margin-top:9px}
 }
+
+
+/* Split-view simulation result concept — green vs purple team panels */
+.simulation-modal{background:rgba(0,8,13,.88);backdrop-filter:blur(12px)}
+.split-result-card{
+ width:min(100%,760px);padding:26px 26px 22px;overflow:hidden;
+ background:linear-gradient(145deg,#071d20 0%,#061518 55%,#09171d 100%);
+ border:1px solid #1bcfc4;
+ box-shadow:0 24px 90px rgba(0,0,0,.68),0 0 42px rgba(32,224,208,.16),inset 0 0 34px rgba(32,224,208,.045);
+}
+.split-result-card:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(26,226,207,.07),transparent 42%,rgba(169,75,255,.07));}
+.split-result-heading{position:relative;text-align:left;padding:0 34px 13px;border-bottom:1px solid rgba(46,204,196,.25)}
+.split-result-heading h2{margin:0;font-size:clamp(1.2rem,3vw,1.65rem);font-weight:900;letter-spacing:.09em;text-shadow:0 0 18px rgba(32,224,208,.22)}
+.split-result-heading .eyebrow{margin-bottom:3px}
+.split-result-card .simulation-modal-close{z-index:2;color:#64f5eb;font-size:2rem}
+.split-result-card .simulation-winner{position:relative;margin:12px 0 4px;color:#b8fff7;font-size:.95rem}
+.split-result-teams{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 46px minmax(0,1fr);gap:10px;align-items:stretch;margin:12px 0 15px}
+.split-result-team{min-width:0;padding:17px 12px 15px;border:1px solid;border-radius:15px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:230px}
+.split-result-home{background:linear-gradient(155deg,rgba(5,100,66,.48),rgba(4,34,30,.86));border-color:#16c88c;box-shadow:inset 0 0 24px rgba(27,225,151,.08),0 0 18px rgba(27,225,151,.07)}
+.split-result-away{background:linear-gradient(155deg,rgba(87,32,133,.5),rgba(30,15,49,.88));border-color:#a84dff;box-shadow:inset 0 0 24px rgba(177,76,255,.08),0 0 18px rgba(177,76,255,.07)}
+.split-result-identity{display:flex;justify-content:center;align-items:center;min-height:86px}
+.split-result-identity .team-brand{display:flex;flex-direction:column;gap:5px;text-align:center}
+.split-result-identity .team-logo,.split-result-identity .team-logo-fallback{width:76px;height:76px}
+.split-result-identity .team-brand-name{display:none}
+.split-result-team-name{font-size:1rem;font-weight:850;line-height:1.2;min-height:2.4em;display:flex;align-items:center;justify-content:center;overflow-wrap:anywhere}
+.split-result-wins{margin-top:8px;font-size:.76rem;font-weight:800;letter-spacing:.07em;color:#b8d5d2}
+.split-result-probability{font-size:clamp(1.65rem,4vw,2.25rem);font-weight:950;line-height:1.1;margin-top:3px;font-variant-numeric:tabular-nums}
+.split-result-home .split-result-probability{color:#52f2b0;text-shadow:0 0 18px rgba(82,242,176,.24)}
+.split-result-away .split-result-probability{color:#d28aff;text-shadow:0 0 18px rgba(210,138,255,.24)}
+.split-result-versus{align-self:center;color:#42f5e9;font-size:1.15rem;font-weight:950;font-style:italic;text-shadow:0 0 16px rgba(32,224,208,.7)}
+.split-result-score-label{position:relative;color:#8dece5;font-size:.72rem;font-weight:850;letter-spacing:.16em;margin:5px 0 4px}
+.split-result-card .simulation-score{position:relative;margin:0 auto 10px;max-width:440px;padding:13px 12px;background:linear-gradient(90deg,rgba(7,66,58,.75),rgba(6,29,34,.95),rgba(55,23,75,.75));border:1px solid #238b87;border-radius:10px;font-size:clamp(1.1rem,3vw,1.55rem);font-weight:900}
+.split-result-card .fine-print{position:relative;font-size:.75rem;margin:10px auto;max-width:520px}
+.split-result-close{position:relative;min-width:190px;text-transform:uppercase;letter-spacing:.08em}
+.split-result-ties{grid-column:1/-1;margin:0;color:#9dbfbe;font-size:.75rem}
+@media(max-width:540px){
+ .split-result-card{padding:22px 12px 16px}
+ .split-result-heading{padding-left:4px}
+ .split-result-teams{grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr);gap:5px}
+ .split-result-team{padding:12px 6px;min-height:205px}
+ .split-result-identity{min-height:68px}
+ .split-result-identity .team-logo,.split-result-identity .team-logo-fallback{width:58px;height:58px}
+ .split-result-team-name{font-size:.82rem}
+ .split-result-wins{font-size:.65rem;letter-spacing:.02em}
+ .split-result-probability{font-size:1.55rem}
+ .split-result-versus{font-size:.85rem}
+ .split-result-card .simulation-modal-close{right:5px;top:4px}
+}
