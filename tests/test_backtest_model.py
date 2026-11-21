@@ -39,6 +39,23 @@ def test_advanced_efficiency_prediction_uses_pace_and_efficiency_history():
     assert 0 < home_probability < 1
     assert 0 < pace < 120
 
+
+def test_backtest_travel_and_rest_use_only_pre_game_schedule():
+    from datetime import datetime, timezone
+    cutoff = datetime.fromisoformat("2026-11-20T00:00:00+00:00")
+    rows = [
+        {"date": "2026-11-17T00:00:00+00:00", "home_away": "home", "opponent": "BOS"},
+        {"date": "2026-11-19T00:00:00+00:00", "home_away": "away", "opponent": "ATL"},
+    ]
+    arenas = {
+        "ATL": {"latitude": 33.7573, "longitude": -84.3963},
+        "BOS": {"latitude": 42.3662, "longitude": -71.0621},
+    }
+    assert module.current_rest_days(rows, cutoff) == 0
+    miles = module.current_travel_miles(rows, "ATL", "BOS", "away", cutoff, arenas)
+    assert miles > 900
+
+
 def test_backtest_uses_only_prior_games_and_reports_metrics():
     team_a, team_b = [], []
     for index in range(30):
