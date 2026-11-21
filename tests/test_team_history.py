@@ -70,11 +70,6 @@ def test_parse_team_schedule_accepts_numeric_completed_scores_without_status():
 
 
 
-def test_date_ranges_cover_partial_weeks():
-    from datetime import date
-    assert list(module._date_ranges(date(2026, 10, 15), date(2026, 10, 30), 7)) == [
-        "20261015-20261021", "20261022-20261028", "20261029-20261030"
-    ]
 
 
 def test_team_id_canonicalization_handles_espn_short_abbreviations():
@@ -89,3 +84,10 @@ def test_team_id_canonicalization_handles_espn_short_abbreviations():
     rows = module.parse_team_schedule(payload, "18")
     assert rows[0]["team"] == "NYK"
     assert rows[0]["opponent"] == "NOP"
+
+
+def test_date_values_includes_both_endpoints():
+    from datetime import date
+    assert [d.isoformat() for d in module._date_values(date(2026, 10, 1), date(2026, 10, 3))] == [
+        "2026-10-01", "2026-10-02", "2026-10-03"
+    ]
