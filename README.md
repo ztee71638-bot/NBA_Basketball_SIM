@@ -17,7 +17,7 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 - Boxscore enrichment estimates possessions, pace, offensive rating and defensive rating from field-goal attempts, offensive rebounds, turnovers and free-throw attempts when ESPN exposes complete team statistics.
 - Rest days, back-to-back flags, recent schedule density, road-trip streaks and straight-line arena travel estimates are collected as experimental context.
 - Immutable daily snapshots preserve game-level model inputs (including pace, efficiency, rest and travel) for reproducible backtests.
-- A chronological walk-forward backtest (`python scripts/backtest_model.py`) that reports score MAE, winner accuracy and Brier score against a simple last-10 baseline, using only games before each test game. Daily metrics are published to the simulator so experimental changes can be compared against the baseline.
+- A chronological walk-forward backtest (`python scripts/backtest_model.py`) that reports score MAE, winner accuracy, Brier score and calibration error against a simple last-10 baseline, using only games before each test game. Daily metrics are published to the simulator so experimental changes can be compared against the baseline.
 - Two-season player game logs retain minutes, shooting attempts, turnovers, offensive rebounds and plus/minus when available; player baselines blend recent per-minute production with minutes trends.
 - ESPN-confirmed starting lineups are checked near tipoff and displayed only when five starters per team are explicitly flagged; no guessed starters or unvalidated player-impact penalties are used.
 - Separate nightly player-history refresh and frequent game/market/lineup refresh workflows.
