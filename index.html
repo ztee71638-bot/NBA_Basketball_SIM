@@ -12,10 +12,13 @@
     <div><p class="eyebrow">NBA ANALYTICS LAB</p><h1>Basketball Simulator</h1><p class="muted">Live match discovery · Monte Carlo projections · Market research</p></div>
     <div class="status" id="data-status">Loading data…</div>
   </header>
+  <nav class="view-tabs" aria-label="Main views"><button class="view-tab active" data-view="simulator-view" aria-selected="true">Simulator</button><button class="view-tab" data-view="injuries-view" aria-selected="false">Injury report</button></nav>
   <main>
+    <div id="simulator-view" class="view-panel">
     <section class="panel">
       <div class="section-head"><div><p class="eyebrow">SCHEDULE</p><h2>NBA games</h2></div><button id="reload">Refresh view</button></div>
-      <div id="games" class="game-list"><p class="muted">Loading games…</p></div>
+      <div class="day-controls"><button id="day-prev" aria-label="Previous day">‹</button><span id="day-label" class="muted">Loading schedule…</span><button id="day-next" aria-label="Next day">›</button></div>
+      <div id="games" class="day-strip"><p class="muted">Loading games…</p></div>
     </section>
     <section class="panel">
       <p class="eyebrow">GAME SIMULATOR</p><h2 id="selected-title">Select a matchup</h2>
@@ -24,7 +27,7 @@
         <label>Home projected points<input id="home-mean" type="number" min="50" max="180" value="112"></label>
         <label>Away projected points<input id="away-mean" type="number" min="50" max="180" value="109"></label>
         <label>Score standard deviation<input id="score-sd" type="number" min="3" max="30" step="0.5" value="12"></label>
-        <label>Simulation trials<input id="trials" type="number" min="1000" max="100000" step="1000" value="10000"></label>
+        <label>Simulation trials<input id="trials" type="number" value="100000" readonly aria-readonly="true"></label>
       </div>
       <p id="projection-status" class="muted">Team history has not been loaded.</p>
       <div id="game-market-info" class="results muted">Select a matchup to look for matching Polymarket markets.</div>
@@ -52,14 +55,17 @@
       <div id="player-detail" class="results muted">Select a player to view their historical game log.</div>
     </section>
     <section class="panel">
-      <p class="eyebrow">PLAYER AVAILABILITY</p><h2>NBA injury report</h2>
-      <div id="injuries" class="game-list"><p class="muted">Loading injury report…</p></div>
-      <p class="fine-print">ESPN-reported injury information is a secondary source, not a substitute for official team or league status reports.</p>
-    </section>
-    <section class="panel">
       <div class="section-head"><div><p class="eyebrow">READ-ONLY DISCOVERY</p><h2>Polymarket NBA markets</h2></div></div>
       <div id="markets" class="market-list"><p class="muted">Loading markets…</p></div>
       <p class="fine-print">Markets are discovered from public endpoints. Market matching and model-vs-price edge calculations are not enabled until event/player identity matching is validated.</p>
+    </section>
+    </div>
+    <section id="injuries-view" class="view-panel" hidden>
+      <section class="panel"><p class="eyebrow">PLAYER AVAILABILITY</p><h2>NBA injury report</h2>
+        <p class="muted">Current player availability reported by ESPN.</p>
+        <div id="injuries" class="game-list"><p class="muted">Loading injury report…</p></div>
+        <p class="fine-print">ESPN-reported injury information is a secondary source, not a substitute for official team or league status reports.</p>
+      </section>
     </section>
   </main>
   <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections.</footer>
