@@ -473,7 +473,8 @@ function marketPriceSummary(market) {
   }).filter(Boolean).join(" · ");
 }
 
-let marketDays = [];\nlet marketUpdatedAt = null;
+let marketDays = [];
+let marketUpdatedAt = null;
 let activeMarketDay = 0;
 
 function marketDateKey(market) {
@@ -542,7 +543,7 @@ function renderMarkets() {
     });
     const dayDate=day==="date-unavailable"?"Date unavailable":new Date(day+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
     const cards=[...matchups.entries()].map(([event,markets])=>{
-      const names=event.split(/\s+vs\\.?\s+/i);
+      const names=event.split(/\s+vs\.?\s+/i);
       const teamA=names.length>1?marketTeamAbbreviation(names[0]):"";
       const teamB=names.length>1?marketTeamAbbreviation(names[1]):"";
       const playerProps=markets.filter(m=>m.market_type==="player_prop");
