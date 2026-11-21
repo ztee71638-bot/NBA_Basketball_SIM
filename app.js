@@ -167,15 +167,14 @@ function runGameSimulation() {
   const homeWinRate=hw/trials*100, awayWinRate=aw/trials*100;
   const homeWins=hw>=aw;
   const winner=homeWins?homeName:awayName;
-  const confidence=Math.max(homeWinRate,awayWinRate);
   const projectedHome=Math.round(avgHome), projectedAway=Math.round(avgAway);
   const winnerScore=homeWins?projectedHome:projectedAway;
   const loserScore=homeWins?projectedAway:projectedHome;
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Home win</small><b>${fmt(homeWinRate)}</b></div><div class="metric"><small>Away win</small><b>${fmt(awayWinRate)}</b></div><div class="metric"><small>Avg. home score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>Avg. away score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. Independent normal score assumptions; starting means may use recent team scoring and points-allowed averages, but lineups, injuries, pace and score correlation are not yet modeled. Not a calibrated betting recommendation.</p>`;
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. Independent normal score assumptions; starting means may use recent team scoring and points-allowed averages, but lineups, injuries, pace and score correlation are not yet modeled. Not a calibrated betting recommendation.</p>`;
   $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
-  $("simulation-confidence").textContent="Confidence rate: "+confidence.toFixed(1)+"% ("+trials.toLocaleString()+" simulations)";
+  $("simulation-confidence").textContent=homeName+" won "+hw.toLocaleString()+" of "+trials.toLocaleString()+" simulated games. "+awayName+" won "+aw.toLocaleString()+" of "+trials.toLocaleString()+"."+(ties?" Tied: "+ties.toLocaleString()+".":"");
   $("simulation-modal").hidden=false;
   $("simulation-modal-close").focus();
 }
