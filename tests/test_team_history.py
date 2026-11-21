@@ -100,6 +100,16 @@ def test_travel_distance_uses_arena_coordinates_and_road_trip_streak():
     assert rows[2]["road_trip_games"] == 2
     assert rows[3]["road_trip_games"] == 0
 
+
+def test_arena_coordinate_file_covers_all_30_current_teams():
+    import json
+    from pathlib import Path
+    arena_path = Path(module.__file__).parents[1] / "data" / "arenas.json"
+    payload = json.loads(arena_path.read_text(encoding="utf-8"))
+    assert len(payload["teams"]) == 30
+    assert all(-90 <= row["latitude"] <= 90 and -180 <= row["longitude"] <= 180
+               for row in payload["teams"].values())
+
 def test_team_map_has_30_teams():
     assert len(module.TEAM_IDS) == 30
 
