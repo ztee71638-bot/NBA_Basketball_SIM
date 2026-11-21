@@ -325,29 +325,80 @@ def merge_cached_boxscore_metrics(existing_teams: list[dict[str, Any]],
     return merged
 
 
+def select_balanced_boxscore_backfill(missing_by_season: dict[str, list[str]], coverage_by_season: dict[str, float], max_games: int) -> list[str]:
+    """Round-robin across seasons, starting with the lowest advanced-stat coverage."""
+    if max_games <= 0:
+        return []
+    seasons = sorted(
+        (season for season, game_ids in missing_by_season.items() if game_ids),
+        key=lambda season: (coverage_by_season.get(season, 0.0), int(season)),
+    )
+    queues = {season: list(missing_by_season[season]) for season in seasons}
+    selected: list[str] = []
+    while len(selected) < max_games:
+        progressed = False
+        for season in seasons:
+            if queues[season] and len(selected) < max_games:
+                selected.append(queues[season].pop(0))
+                progressed = True
+        if not progressed:
+            break
+    return selected
+
+
 def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enrich: set[str] | None = None,
                                      max_games: int = 600) -> None:
     """Progressively enrich missing ESPN boxscores while retaining prior verified metrics."""
     games: dict[str, list[dict[str, Any]]] = {}
     dates: dict[str, str] = {}
+    seasons_by_game: dict[str, str] = {}
     for team in teams:
         for season, season_data in team.get("seasons", {}).items():
-            if seasons_to_enrich is not None and str(season) not in seasons_to_enrich:
+            season = str(season)
+            if seasons_to_enrich is not None and season not in seasons_to_enrich:
                 continue
             for row in season_data.get("games", []):
                 if row.get("game_id"):
                     game_id = str(row["game_id"])
                     games.setdefault(game_id, []).append(row)
                     dates[game_id] = max(dates.get(game_id, ""), str(row.get("date") or ""))
-    missing = [
-        game_id for game_id, rows in games.items()
-        if len(rows) == 2 and not all(
+                    seasons_by_game.setdefault(game_id, season)
+
+    missing_by_season: dict[str, list[str]] = {}
+    total_by_season: dict[str, int] = {}
+    complete_by_season: dict[str, int] = {}
+    for game_id, rows in games.items():
+        if len(rows) != 2:
+            continue
+        season = seasons_by_game.get(game_id, "0")
+        total_by_season[season] = total_by_season.get(season, 0) + 1
+        complete = all(
             all(row.get(field) is not None for field in BOX_SCORE_METRIC_FIELDS)
             for row in rows
         )
-    ]
-    selected = sorted(missing, key=lambda game_id: dates.get(game_id, ""), reverse=True)[:max_games]
-    print(f"Enriching {len(selected)} missing game boxscores across selected seasons (limit {max_games}).", flush=True)
+        if complete:
+            complete_by_season[season] = complete_by_season.get(season, 0) + 1
+        else:
+            missing_by_season.setdefault(season, []).append(game_id)
+
+    coverage_by_season = {
+        season: 100.0 * complete_by_season.get(season, 0) / total
+        for season, total in total_by_season.items() if total
+    }
+    for season, game_ids in missing_by_season.items():
+        game_ids.sort(key=lambda game_id: dates.get(game_id, ""), reverse=True)
+    selected = select_balanced_boxscore_backfill(
+        missing_by_season, coverage_by_season, max_games
+    )
+    selected_by_season: dict[str, int] = {}
+    for game_id in selected:
+        season = seasons_by_game.get(game_id, "unknown")
+        selected_by_season[season] = selected_by_season.get(season, 0) + 1
+    print(
+        f"Enriching {len(selected)} missing game boxscores across selected seasons "
+        f"(limit {max_games}); batch by season: {dict(sorted(selected_by_season.items()))}.",
+        flush=True,
+    )
     enriched = 0
     for game_id in selected:
         rows = games[game_id]
