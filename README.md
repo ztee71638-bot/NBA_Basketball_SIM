@@ -10,13 +10,13 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 - Selected game and player panels show likely matching Polymarket markets and available outcome prices.
 - Live ESPN injury report snapshot with player/team/status details.
 - Browser-based 10,000-trial Monte Carlo game calculator.
-- Player-prop probability calculator with manual assumptions or a recent-game historical baseline when player logs are available.
+- Player-prop probability calculator with manual assumptions or recent-game baselines; matched Polymarket player props can prefill the stat and line for simulation.
 - Searchable player roster and historical game-log interface.
 - Current-season team game history and recent form (points for/against, wins, last-10 averages) built from ESPN daily scoreboards to seed game projections.
 - Separate nightly player-history refresh and frequent game/market refresh workflows.
 - Automated tests for feed parsing, market filtering, and player-log normalization.
 
-**Important model limitation:** the game and prop calculators are currently assumption-driven calculators, not validated predictive models. Historical player logs and recent team form are descriptive baselines only. Player projections, minutes/role, injury impact, confirmed lineups, opponent adjustments, correlation, backtesting and calibration must be implemented and validated before the app labels any selection as a model-backed edge. Players listed as Out, Doubtful, Questionable or Day-To-Day are blocked by the prop calculator with a PASS warning when ESPN injury data is available. Missing, stale or uncertain inputs must result in PASS.
+**Important model limitation:** the game and prop calculators are currently assumption-driven calculators, not validated predictive models. Historical player logs and recent team form are descriptive baselines only. Player projections, minutes/role, injury impact, confirmed lineups, opponent adjustments, correlation, backtesting and calibration must be implemented and validated before the app labels any selection as a model-backed edge. Players listed as Out, Doubtful, Questionable or Day-To-Day are blocked with a PASS warning when ESPN injury data is available; the prop calculator also passes on fewer than five stat observations or unstable/limited minutes roles. Polymarket comparisons are raw historical-baseline differences, not validated edges. Missing, stale or uncertain inputs must result in PASS.
 
 ## Run locally
 ```bash
