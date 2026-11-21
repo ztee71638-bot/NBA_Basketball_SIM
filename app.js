@@ -218,6 +218,7 @@ async function loadArenas() {
   }
 }
 function prefillGameProjections(game) {
+  game.defaultProjection = null;
   if(!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000){
     $("projection-status").textContent="PASS — team history is missing or older than 48 hours. Refresh the data before using an automatic team projection.";
     return;
@@ -230,6 +231,11 @@ function prefillGameProjections(game) {
     const awayBaseline=(avg(awayRecent,"points_for")+avg(homeRecent,"points_against"))/2-1.5;
     $("home-mean").value=homeBaseline.toFixed(1);
     $("away-mean").value=awayBaseline.toFixed(1);
+    game.defaultProjection = {
+      homeMean: homeBaseline,
+      awayMean: awayBaseline,
+      scoreSd: (projection.homeSd + projection.awaySd) / 2
+    };
     const homeInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.home?.abbreviation));
     const awayInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.away?.abbreviation));
     const injuryNames=items=>items.slice(0,4).map(item=>item.name+" ("+(item.status||"status unknown")+")").join(", ");
@@ -367,17 +373,27 @@ function runGameSimulation() {
   const homeName=selectedGame.home?.name||"Home team";
   const awayName=selectedGame.away?.name||"Away team";
   const rawHomeProbability=hw/(hw+aw||trials);
-  const calibratedHomeProbability=winnerCalibration
+  const defaults=selectedGame.defaultProjection;
+  const calibrationEligible=!!winnerCalibration&&!!defaults
+    &&Math.abs(hm-defaults.homeMean)<0.05
+    &&Math.abs(am-defaults.awayMean)<0.05
+    &&Math.abs(sd-defaults.scoreSd)<0.05;
+  const calibratedHomeProbability=calibrationEligible
     ? applyWinnerCalibration(rawHomeProbability,winnerCalibration)
     : rawHomeProbability;
   const homeWinRate=calibratedHomeProbability*100, awayWinRate=(1-calibratedHomeProbability)*100;
   const homeWins=calibratedHomeProbability>=0.5;
-  const chanceLabel=winnerCalibration?"CALIBRATED CHANCE":"SIMULATED CHANCE";
+  const chanceLabel=calibrationEligible?"CALIBRATED CHANCE":"SIMULATED CHANCE";
   const winner=homeWins?homeName:awayName;
   const projectedHome=Math.round(avgHome), projectedAway=Math.round(avgAway);
   const winnerScore=homeWins?projectedHome:projectedAway;
   const loserScore=homeWins?projectedAway:projectedHome;
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.</p>`;
+  const calibrationNote=calibrationEligible
+    ? " Walk-forward calibration is applied because the default model inputs are unchanged."
+    : winnerCalibration
+      ? " Calibration is not applied to manually changed assumptions; displayed win chance is the raw simulation."
+      : "";
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`;
   $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;

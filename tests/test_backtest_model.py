@@ -135,3 +135,34 @@ def test_backtest_excludes_non_nba_exhibition_games_from_team_baselines():
     result=module.run_backtest(payload)
     assert result["games_tested"] == 1
     assert result["excluded_non_nba_opponent_rows"] == 1
+
+
+def test_browser_baseline_probability_uses_recent_team_profiles_and_shared_shock():
+    rows_a = [
+        {"date": f"2026-10-{day:02d}T00:00:00+00:00", "season": "2027",
+         "points_for": 110 + day % 3, "points_against": 104 + day % 2}
+        for day in range(1, 13)
+    ]
+    rows_b = [
+        {"date": f"2026-10-{day:02d}T00:00:00+00:00", "season": "2027",
+         "points_for": 106 + day % 2, "points_against": 112 + day % 3}
+        for day in range(1, 13)
+    ]
+    league = [
+        {"date": row["date"], "points_for": value}
+        for row in rows_a + rows_b
+        for value in [row["points_for"]]
+    ]
+    probability = module.browser_baseline_probability(rows_a, rows_b, league)
+    assert probability is not None
+    assert 0.5 < probability < 1.0
+
+
+def test_browser_team_profile_rows_excludes_future_and_keeps_only_prior_season_tail():
+    rows = []
+    for season in ("2025", "2026", "2027"):
+        for day in range(1, 13):
+            rows.append({"season": season, "date": f"{int(season)-1}-10-{day:02d}T00:00:00+00:00"})
+    profile = module.browser_team_profile_rows(rows[:-2])
+    assert len(profile) == 20
+    assert {row["season"] for row in profile} == {"2026", "2027"}
