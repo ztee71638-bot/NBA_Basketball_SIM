@@ -193,14 +193,18 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
             return
         question = market.get("question") or market.get("title")
         group_title = market.get("groupItemTitle") or market.get("group_item_title")
-        if group_title and group_title != event_title:
-            market_type = "player_prop"
-        elif str(question or "").lower().startswith("spread:"):
-            market_type = "spread"
-        elif "o/u" in str(question or "").lower() or "over/under" in str(question or "").lower():
-            market_type = "total"
-        elif str(question or "").lower() == str(event_title).lower():
+        question_lower = str(question or "").lower()
+        group_lower = str(group_title or "").lower()
+        if question_lower == str(event_title).lower():
             market_type = "moneyline"
+        elif question_lower.startswith("spread:"):
+            market_type = "spread"
+        elif group_title and ":" in str(group_title) and any(
+            stat in group_lower for stat in ("points", "rebounds", "assists", "threes", "steals", "blocks")
+        ):
+            market_type = "player_prop"
+        elif "o/u" in question_lower or "over/under" in question_lower:
+            market_type = "total"
         else:
             market_type = "other"
         results[market_id] = {
