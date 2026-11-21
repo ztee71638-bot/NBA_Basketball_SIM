@@ -197,7 +197,7 @@ function renderPlayerMarkets(player) {
   if (!root || !player) return;
   const playerName = String(player.name || "").toLowerCase();
   const matches = marketData.filter(market =>
-    String(market.question || "").toLowerCase().includes(playerName)
+    [market.question, market.market_group, market.slug].join(" ").toLowerCase().includes(playerName)
   ).slice(0,10);
   if (!matches.length) {
     root.innerHTML = '<p class="muted">No matching Polymarket player-prop markets found in the current NBA game-market snapshot.</p>';
