@@ -25,7 +25,7 @@ def test_predict_returns_finite_matchup_estimates():
 
 
 def test_expected_calibration_error_is_zero_for_perfect_calibration():
-    probabilities = [0.1, 0.1, 0.9, 0.9]
+    probabilities = [0.0, 0.0, 1.0, 1.0]
     outcomes = [0.0, 0.0, 1.0, 1.0]
     assert module.expected_calibration_error(probabilities, outcomes) == 0.0
 
