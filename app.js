@@ -331,15 +331,33 @@ function renderInjuries() {
     root.innerHTML = '<p class="muted">No injury records are currently listed by ESPN.</p>';
     return;
   }
-  root.innerHTML = injuryData.slice(0,100).map(item => {
-    const status = item.status || "Status not specified";
-    const detail = [item.type, item.side].filter(Boolean).join(" · ");
-    const comment = item.short_comment || item.long_comment || "";
-    const returnDate = item.return_date ? " · Expected return: " + escapeHtml(item.return_date) : "";
-    return '<div class="game"><div><strong>' + escapeHtml(item.name) + ' · ' + escapeHtml(item.team) +
-      '</strong><small>' + escapeHtml(status) + (detail ? " · " + escapeHtml(detail) : "") +
-      returnDate + (comment ? '<br>' + escapeHtml(comment) : "") + '</small></div></div>';
-  }).join("");
+  // Only teams with current injury records are included.
+  const byTeam = new Map();
+  injuryData.forEach(item => {
+    const team = String(item.team || "Team not specified").trim();
+    if (!byTeam.has(team)) byTeam.set(team, []);
+    byTeam.get(team).push(item);
+  });
+  const teams = [...byTeam.entries()].sort((a,b) => a[0].localeCompare(b[0]));
+  root.innerHTML = '<div class="injury-overview"><strong>' + teams.length +
+    ' teams</strong><span>' + injuryData.length + ' player' +
+    (injuryData.length === 1 ? '' : 's') + ' listed</span></div>' +
+    teams.map(([team, players]) => {
+      const rows = players.map(item => {
+        const status = item.status || "Status not specified";
+        const detail = [item.type, item.side].filter(Boolean).join(" · ");
+        const comment = item.short_comment || item.long_comment || "";
+        const returnDate = item.return_date ? " · Return: " + escapeHtml(item.return_date) : "";
+        return '<div class="injury-player"><div class="injury-player-main"><strong>' +
+          escapeHtml(item.name || "Player not specified") + '</strong><span class="injury-status">' +
+          escapeHtml(status) + '</span></div>' +
+          (detail || returnDate ? '<small>' + escapeHtml(detail) + escapeHtml(returnDate) + '</small>' : '') +
+          (comment ? '<p>' + escapeHtml(comment) + '</p>' : '') + '</div>';
+      }).join("");
+      return '<details class="injury-team"><summary><span>' + escapeHtml(team) +
+        '</span><span class="injury-team-count">' + players.length + '</span></summary>' +
+        '<div class="injury-team-players">' + rows + '</div></details>';
+    }).join("");
 }
 
 async function loadInjuries() {
