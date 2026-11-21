@@ -2,6 +2,7 @@ const $ = (id) => document.getElementById(id);
 let games = [];
 let players = [];
 let teamData = [];
+let injuryData = [];
 let selectedGame = null;
 let selectedPlayer = null;
 let selectedPlayerLogs = [];
@@ -132,6 +133,34 @@ function showPlayer(playerId) {
   const rows = sortedLogs.slice(0,15).map(g => '<tr><td>' + escapeHtml(g.date ? new Date(g.date).toLocaleDateString() : "—") + '</td><td>' + escapeHtml(g.opponent || "—") + '</td><td>' + escapeHtml(g.result || "—") + '</td><td>' + (g.minutes ?? "—") + '</td><td>' + (g.points ?? "—") + '</td><td>' + (g.rebounds ?? "—") + '</td><td>' + (g.assists ?? "—") + '</td></tr>').join("");
   $("player-detail").innerHTML = '<h3>' + escapeHtml(p.name) + ' · ' + escapeHtml(p.team) + ' · Season ' + escapeHtml(season) + '</h3><div class="result-grid"><div class="metric"><small>Last 10 PTS avg</small><b>' + avg("points") + '</b></div><div class="metric"><small>Last 10 REB avg</small><b>' + avg("rebounds") + '</b></div><div class="metric"><small>Last 10 AST avg</small><b>' + avg("assists") + '</b></div></div><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Opponent</th><th>Result</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="fine-print">Last 10 averages use available numeric game logs only. Historical logs are descriptive, not projections.</p>';
 }
+function renderInjuries() {
+  const root = $("injuries");
+  if (!injuryData.length) {
+    root.innerHTML = '<p class="muted">No injury records are currently listed by ESPN.</p>';
+    return;
+  }
+  root.innerHTML = injuryData.slice(0,100).map(item => {
+    const status = item.status || "Status not specified";
+    const detail = [item.type, item.side].filter(Boolean).join(" · ");
+    const comment = item.short_comment || item.long_comment || "";
+    const returnDate = item.return_date ? " · Expected return: " + escapeHtml(item.return_date) : "";
+    return '<div class="game"><div><strong>' + escapeHtml(item.name) + ' · ' + escapeHtml(item.team) +
+      '</strong><small>' + escapeHtml(status) + (detail ? " · " + escapeHtml(detail) : "") +
+      returnDate + (comment ? '<br>' + escapeHtml(comment) : "") + '</small></div></div>';
+  }).join("");
+}
+
+async function loadInjuries() {
+  try {
+    const data = await loadJson("data/injuries.json");
+    injuryData = data.injuries || [];
+    renderInjuries();
+    if (data.last_updated) $("data-status").textContent += " · Injuries updated " + new Date(data.last_updated).toLocaleString();
+  } catch (e) {
+    $("injuries").textContent = "Injury report unavailable: " + e.message;
+  }
+}
+
 async function loadTeams() {
   try {
     const data = await loadJson("data/teams.json");
@@ -156,6 +185,7 @@ async function loadAll(){
   try{const data=await loadJson("data/games.json");games=data.games||[];$("data-status").textContent="ESPN updated "+(data.last_updated?new Date(data.last_updated).toLocaleString():"time unavailable");showGames();}catch(e){$("data-status").textContent="Game feed unavailable";$("games").textContent=e.message;}
   await loadPlayers();
   await loadTeams();
+  await loadInjuries();
   await loadMarkets();
 }
 $("simulate").addEventListener("click",runGameSimulation);
