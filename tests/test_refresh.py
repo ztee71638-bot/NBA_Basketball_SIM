@@ -123,3 +123,4 @@ def test_polymarket_discovery_flattens_nba_event_markets(monkeypatch):
     assert rows[0]["event_id"] == "event-1"
     assert rows[0]["question"].endswith("220.5")
     assert calls[0][1]["series_id"] == module.NBA_SERIES_ID
+    assert calls[0][1]["tag_id"] == "100639"
