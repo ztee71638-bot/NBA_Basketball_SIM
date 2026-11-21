@@ -151,16 +151,15 @@ def test_build_roster_index_keeps_team_identity_without_heavy_game_logs():
     assert "seasons" not in result[0]
 
 
-def test_player_log_tasks_only_cover_rostered_seasons():
+def test_player_log_tasks_cover_all_configured_seasons_when_roster_history_is_incomplete():
     players = {
-        "active-1": {"roster_seasons": ["2027", "2025"]},
+        "active-1": {"roster_seasons": ["2027"]},
         "historical-2": {"roster_seasons": ["2024"]},
         "legacy-3": {},
     }
     tasks = module.build_player_season_tasks(players, [2027, 2026, 2025, 2024, 2023])
     assert tasks == [
-        ("active-1", 2027), ("active-1", 2025),
-        ("historical-2", 2024),
-        ("legacy-3", 2027), ("legacy-3", 2026), ("legacy-3", 2025),
-        ("legacy-3", 2024), ("legacy-3", 2023),
+        (athlete_id, season)
+        for athlete_id in ("active-1", "historical-2", "legacy-3")
+        for season in [2027, 2026, 2025, 2024, 2023]
     ]
