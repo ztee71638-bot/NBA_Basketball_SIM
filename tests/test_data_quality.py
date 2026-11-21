@@ -54,3 +54,22 @@ def test_audit_flags_stale_team_history():
         payload, None, datetime(2026, 11, 25, 0, tzinfo=timezone.utc)
     )
     assert any("over 48-hour" in item for item in result["warnings"])
+
+
+def test_audit_does_not_treat_opponent_pair_as_duplicate_team_game_id():
+    result = module.audit_payloads(
+        fixture(), None, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    assert result["team_history"]["seasons"]["2027"]["unique_game_ids"] == 1
+    assert result["team_history"]["seasons"]["2027"]["duplicate_team_game_ids"] == 0
+    assert not any("duplicate team-game IDs" in item for item in result["errors"])
+
+
+def test_current_season_partial_schedule_is_not_flagged_as_incomplete_finished_season():
+    payload = fixture()
+    for team in payload["teams"]:
+        team["seasons"] = {"2026": team["seasons"]["2027"]}
+    result = module.audit_payloads(
+        payload, None, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    assert not any("average history is below 60 games/team" in item for item in result["warnings"])
