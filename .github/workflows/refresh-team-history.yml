@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "scripts/refresh_team_history.py"
+      - "tests/test_team_history.py"
       - ".github/workflows/refresh-team-history.yml"
   pull_request:
     branches: [main]
