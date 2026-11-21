@@ -66,9 +66,14 @@ def parse_team_schedule(payload: dict[str, Any], team_id: str) -> list[dict[str,
             continue
         competition = competitions[0]
         status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
-        if not status.get("completed", False) and status.get("state") != "post":
-            continue
         competitors = competition.get("competitors") or []
+        # ESPN schedule payloads are inconsistent about where status lives.
+        # A completed box score has numeric scores for both competitors, so use
+        # that as the final guard rather than silently dropping every game.
+        if not status.get("completed", False) and status.get("state") != "post":
+            score_values = [_score(c.get("score")) for c in competitors]
+            if len(score_values) < 2 or any(value is None for value in score_values):
+                continue
         own = next((c for c in competitors if str((c.get("team") or {}).get("id")) == str(team_id)), None)
         other = next((c for c in competitors if c is not own), None)
         if not own or not other:
