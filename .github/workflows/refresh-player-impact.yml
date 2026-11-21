@@ -1,0 +1,47 @@
+name: Refresh NBA player impact ratings
+
+on:
+  schedule:
+    - cron: "35 10 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/refresh_player_impact.py"
+      - "tests/test_player_impact.py"
+      - ".github/workflows/refresh-player-impact.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-player-impact-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh-player-impact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: |
+          python -m pip install pytest
+          pytest -q tests/test_player_impact.py
+      - name: Refresh LUMA impact ratings
+        run: python scripts/refresh_player_impact.py
+      - name: Commit player impact snapshot
+        run: |
+          if [[ -n "$(git status --porcelain data/player_impact.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/player_impact.json
+            git commit -m "chore: refresh NBA player impact ratings"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No player impact data changes."
+          fi
