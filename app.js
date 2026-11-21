@@ -4,6 +4,7 @@ let players = [];
 let teamData = [];
 let injuryData = [];
 let marketData = [];
+let selectedPropMarket = null;
 let selectedGame = null;
 let selectedPlayer = null;
 let selectedPlayerLogs = [];
@@ -119,7 +120,18 @@ function calcProp(){
   }
   if(![mean,sd,line].every(Number.isFinite)||sd<=0){$("prop-results").textContent="Enter valid values and a positive standard deviation.";return;}
   const over=(1-erf((line-mean)/(sd*Math.sqrt(2))))/2;
-  $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate from your inputs only. No player history, minutes, matchup, injury or market adjustment is included.</p>`;
+  let marketComparison = "";
+  if(selectedPropMarket){
+    const prices=parseMarketArray(selectedPropMarket.outcome_prices);
+    const outcomes=parseMarketArray(selectedPropMarket.outcomes);
+    let marketOver=Number(prices[0]);
+    const firstOutcome=String(outcomes[0]||"").toLowerCase();
+    if(firstOutcome.includes("under")||firstOutcome==="no") marketOver=1-marketOver;
+    if(Number.isFinite(marketOver)){
+      marketComparison='<p class="fine-print">Polymarket implied Over: '+fmt(marketOver*100)+'. Historical baseline difference: '+(over*100-marketOver*100).toFixed(1)+' percentage points. This is an uncalibrated comparison, not a validated betting edge.</p>';
+    }
+  }
+  $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate from recent history or manual assumptions. Minutes, role, matchup and game-script adjustments are not included.</p>`+marketComparison;
 }
 function parseMarketArray(value) {
   if (Array.isArray(value)) return value;
@@ -207,16 +219,44 @@ function renderPlayerMarkets(player) {
     '<div class="market"><div><strong>' + escapeHtml(market.question) +
     '</strong><small>' + escapeHtml(market.market_type || "player prop") + " · " + escapeHtml(marketPriceSummary(market) || "Prices unavailable") +
     ' · 24h volume: ' + escapeHtml(market.volume_24h ?? "n/a") + '</small></div>' +
+    '<button data-simulate-prop="' + escapeHtml(market.id) + '">Simulate prop</button>' +
     (market.url ? '<a target="_blank" rel="noopener" href="' + escapeHtml(market.url) + '">Open market</a>' : '') +
     '</div>'
   ).join("");
+  root.querySelectorAll("[data-simulate-prop]").forEach(button =>
+    button.addEventListener("click", () => simulatePlayerMarket(button.dataset.simulateProp))
+  );
 }
+
+function simulatePlayerMarket(marketId) {
+  const market = marketData.find(item => String(item.id) === String(marketId));
+  if (!market || !selectedPlayer) return;
+  const description = String(market.market_group || market.question || "").toLowerCase();
+  const statMap = [
+    ["points", "points"], ["rebounds", "rebounds"], ["assists", "assists"],
+    ["steals", "steals"], ["blocks", "blocks"]
+  ];
+  const match = statMap.find(([label]) => description.includes(label));
+  const lineMatch = description.match(/(?:o\/u|over|under)\s*([0-9]+(?:\.[0-9]+)?)/i) ||
+    description.match(/([0-9]+(?:\.[0-9]+)?)\s*$/);
+  if (!match || !lineMatch) {
+    $("prop-results").textContent = "This Polymarket market could not be mapped to a supported player stat and line yet.";
+    return;
+  }
+  selectedPropMarket = market;
+  $("prop-stat").value = match[1];
+  $("prop-line").value = lineMatch[1];
+  applyPlayerHistoricalBaseline();
+  calcProp();
+}
+
 
 function showPlayer(playerId) {
   const p = players.find(item => String(item.id) === String(playerId));
   if (!p) return;
   selectedPlayer = p;
   selectedPlayerLogs = [];
+  selectedPropMarket = null;
   const seasons = Object.entries(p.seasons || {}).sort((a,b) => Number(b[0])-Number(a[0]));
   const chosen = seasons.find(([,logs]) => logs && logs.length) || seasons[0];
   if (!chosen || !chosen[1]?.length) {
@@ -298,7 +338,8 @@ async function loadAll(){
 }
 $("simulate").addEventListener("click",runGameSimulation);
 $("prop-calc").addEventListener("click",calcProp);
-$("prop-stat").addEventListener("change",applyPlayerHistoricalBaseline);
+$("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlayerHistoricalBaseline();});
+$("prop-line").addEventListener("input",()=>{selectedPropMarket=null;});
 $("reload").addEventListener("click",loadAll);
 $("player-search").addEventListener("input",renderPlayerSearch);
 loadAll();
