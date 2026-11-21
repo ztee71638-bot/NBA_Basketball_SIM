@@ -54,3 +54,11 @@ def test_fetch_games_parses_espn_competitors(monkeypatch):
     assert games[0]["home"]["abbreviation"] == "MIA"
     assert games[0]["away"]["abbreviation"] == "BOS"
     assert len(calls) == 3
+
+def test_nba_market_filter_ignores_unrelated_description_text():
+    market = {
+        "question": "Will the Riemann Hypothesis be solved?",
+        "slug": "riemann-hypothesis-before-next-millennium",
+        "description": "A long description with unrelated league references.",
+    }
+    assert not module.is_nba_market(market)
