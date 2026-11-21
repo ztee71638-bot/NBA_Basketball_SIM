@@ -5,6 +5,7 @@
 The first implementation uses:
 - Scoreboard: `site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard`
 - Team rosters: `site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/roster`
+- League injury report: `site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries`
 - Player game logs: `site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{athlete_id}/gamelog?season={year}`
 
 The scoreboard feed has been exercised successfully by the initial scheduled data refresh. The player roster and game-log collector has parser tests, but full historical coverage still needs to be confirmed by a real scheduled run after the branch is merged.
@@ -13,7 +14,11 @@ ESPN endpoints are public but undocumented and unofficial. They can change, omit
 
 ## Team history
 
-The team-history collector uses ESPN's public team schedule endpoint (`/teams/{team_id}/schedule?season={year}`) to derive completed-game points for/against, win percentage and last-10 form. These are team box-score aggregates, not pace or possession metrics. It is a free baseline for seeding game score assumptions, not a substitute for a full efficiency model.
+The team-history collector uses ESPN's public daily scoreboard feed to collect completed regular-season games for the active season, then groups the results by ESPN team ID. The team schedule endpoint returned empty/inconsistent results during validation, so the daily scoreboard is the verified source path. Current-season game history includes points for/against, wins and last-10 form; prior-season slots remain empty until a reliable historical endpoint is validated. These are team box-score aggregates, not pace or possession metrics. They are a free baseline for seeding game score assumptions, not a substitute for a full efficiency model.
+
+## Injuries
+
+The collector flattens ESPN's league-wide injury report into player-level records, including athlete ID (resolved from profile links when needed), team, status, injury type, date, expected return date and comments. ESPN's report is secondary reporting and can contain stale or incomplete entries; it must not replace official team/league status reports. The prop interface blocks calculations for players ESPN lists as Out, Doubtful, Questionable or Day-To-Day when a matching player ID is available.
 
 ## NBA Stats / nba_api — secondary candidate
 
