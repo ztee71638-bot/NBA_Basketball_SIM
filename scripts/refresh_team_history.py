@@ -1,4 +1,7 @@
-"""Build team season and recent-form data from ESPN public team schedules."""
+"""Build team season and recent-form data from ESPN public team schedules.
+
+Scheduled daily on the default branch; supports manual workflow dispatch.
+"""
 from __future__ import annotations
 
 import json
