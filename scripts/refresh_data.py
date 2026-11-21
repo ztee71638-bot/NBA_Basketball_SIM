@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 ESPN_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 GAMMA_URL = "https://gamma-api.polymarket.com/markets"
+INJURIES_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries"
 TIMEOUT = 25
 NBA_TEAMS = {
     "hawks", "celtics", "nets", "hornets", "bulls", "cavaliers", "mavericks",
@@ -67,6 +68,35 @@ def fetch_games(today: datetime | None = None) -> list[dict[str, Any]]:
                 "source": "ESPN",
             })
     return games
+
+
+
+def fetch_injuries() -> list[dict[str, Any]]:
+    payload = get_json(INJURIES_URL)
+    grouped = payload.get("injuries") or []
+    rows = []
+    for team_group in grouped:
+        team = team_group.get("team") or {}
+        for injury in team_group.get("injuries") or []:
+            athlete = injury.get("athlete") or {}
+            details = injury.get("details") or {}
+            injury_type = injury.get("type") or {}
+            rows.append({
+                "athlete_id": str(athlete.get("id") or ""),
+                "name": athlete.get("displayName") or athlete.get("fullName"),
+                "team": team.get("abbreviation"),
+                "team_name": team.get("displayName"),
+                "position": (athlete.get("position") or {}).get("abbreviation"),
+                "status": injury.get("status"),
+                "type": injury_type.get("name") or details.get("type"),
+                "side": details.get("side"),
+                "date": injury.get("date"),
+                "return_date": details.get("returnDate"),
+                "short_comment": injury.get("shortComment"),
+                "long_comment": injury.get("longComment"),
+                "source": "ESPN",
+            })
+    return rows
 
 
 def _market_text(market: dict[str, Any]) -> str:
@@ -127,9 +157,11 @@ def main() -> None:
     DATA.mkdir(parents=True, exist_ok=True)
     games = fetch_games()
     markets = fetch_polymarket_markets()
+    injuries = fetch_injuries()
     write_snapshot("games.json", "ESPN public scoreboard", "games", games)
     write_snapshot("polymarket.json", "Polymarket public Gamma API", "markets", markets)
-    print(f"Saved {len(games)} NBA games and {len(markets)} likely NBA markets.")
+    write_snapshot("injuries.json", "ESPN public injury report", "injuries", injuries)
+    print(f"Saved {len(games)} NBA games, {len(markets)} likely NBA markets and {len(injuries)} injury records.")
 
 
 if __name__ == "__main__":
