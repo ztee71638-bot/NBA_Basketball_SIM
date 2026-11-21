@@ -120,18 +120,69 @@ function teamSummary(abbr) {
   const season = seasons.find(([,value]) => (value.summary?.games || 0) >= 5);
   return season ? {year:season[0], ...season[1].summary} : null;
 }
+function teamSeasonGames(abbreviation) {
+  const team = teamData.find(item => canonicalTeam(item.abbreviation) === canonicalTeam(abbreviation));
+  if (!team) return {rows:[],year:null};
+  const seasons = Object.entries(team.seasons || {}).sort((a,b) => Number(b[0])-Number(a[0]));
+  const chosen = seasons.find(([,value]) => (value.games || []).length >= 5);
+  return chosen ? {rows:[...chosen[1].games].filter(g => Number.isFinite(g.points_for) && Number.isFinite(g.points_against)).sort((a,b)=>new Date(a.date)-new Date(b.date)),year:chosen[0]} : {rows:[],year:null};
+}
+function weightedMetric(rows, key, halfLife=8) {
+  const values = rows.map((row,index) => ({value:Number(row[key]), age:rows.length-1-index}))
+    .filter(item => Number.isFinite(item.value));
+  if (!values.length) return null;
+  let totalWeight=0, weighted=0;
+  values.forEach(item=>{const w=Math.pow(0.5,item.age/halfLife);totalWeight+=w;weighted+=item.value*w;});
+  const mean=weighted/totalWeight;
+  let variance=0;
+  values.forEach(item=>{const w=Math.pow(0.5,item.age/halfLife);variance+=w*Math.pow(item.value-mean,2);});
+  return {mean,sd:Math.sqrt(variance/totalWeight),count:values.length};
+}
+function leagueScoringBaseline() {
+  const rows=teamData.flatMap(team=>{
+    const seasons=Object.entries(team.seasons||{}).sort((a,b)=>Number(b[0])-Number(a[0]));
+    const chosen=seasons.find(([,v])=>(v.games||[]).length>=5);
+    return chosen?(chosen[1].games||[]):[];
+  }).filter(g=>Number.isFinite(g.points_for)&&Number.isFinite(g.points_against));
+  const scoring=rows.map(g=>g.points_for);
+  const average=scoring.length?scoring.reduce((a,b)=>a+b,0)/scoring.length:114;
+  const variance=scoring.length?scoring.reduce((sum,v)=>sum+Math.pow(v-average,2),0)/scoring.length:144;
+  return {average,sd:Math.sqrt(variance),count:scoring.length};
+}
+function teamModelProfile(abbreviation, league) {
+  const season=teamSeasonGames(abbreviation), rows=season.rows;
+  if(rows.length<5)return null;
+  const offense=weightedMetric(rows,"points_for");
+  const defense=weightedMetric(rows,"points_against");
+  if(!offense||!defense)return null;
+  const reliability=rows.length/(rows.length+8);
+  const adjustedOffense=league.average+(offense.mean-league.average)*reliability;
+  const adjustedDefense=league.average+(defense.mean-league.average)*reliability;
+  const varianceReliability=rows.length/(rows.length+10);
+  const sd=Math.sqrt(varianceReliability*Math.pow(offense.sd,2)+(1-varianceReliability)*Math.pow(league.sd||12,2));
+  return {rows,offense:adjustedOffense,defense:adjustedDefense,sd,count:rows.length,year:season.year};
+}
+function estimateMatchup(game) {
+  const league=leagueScoringBaseline();
+  const home=teamModelProfile(game.home?.abbreviation,league);
+  const away=teamModelProfile(game.away?.abbreviation,league);
+  if(!home||!away)return null;
+  const homeMean=league.average+(home.offense-league.average)*0.55+(away.defense-league.average)*0.45+1.8;
+  const awayMean=league.average+(away.offense-league.average)*0.55+(home.defense-league.average)*0.45;
+  return {homeMean,awayMean,homeSd:home.sd,awaySd:away.sd,home,away,league};
+}
 function prefillGameProjections(game) {
-  const home = teamSummary(game.home?.abbreviation);
-  const away = teamSummary(game.away?.abbreviation);
-  const fields = [home?.last10_avg_points_for, home?.last10_avg_points_against, away?.last10_avg_points_for, away?.last10_avg_points_against];
-  if (fields.every(v => Number.isFinite(v))) {
-    const homeMean = (home.last10_avg_points_for + away.last10_avg_points_against) / 2 + 1.5;
-    const awayMean = (away.last10_avg_points_for + home.last10_avg_points_against) / 2 - 1.5;
-    $("home-mean").value = homeMean.toFixed(1);
-    $("away-mean").value = awayMean.toFixed(1);
-    $("projection-status").textContent = "Starting estimates use last-10 scoring and points-allowed averages (" + home.year + "/" + away.year + "). They still omit confirmed lineups, injuries, pace and matchup adjustments.";
-  } else {
-    $("projection-status").textContent = "Team history is unavailable or too limited for this matchup. The score inputs remain manual assumptions.";
+  const projection=estimateMatchup(game);
+  if(projection){
+    $("home-mean").value=projection.homeMean.toFixed(1);
+    $("away-mean").value=projection.awayMean.toFixed(1);
+    const homeInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.home?.abbreviation));
+    const awayInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.away?.abbreviation));
+    const injuryNote=(homeInjuries.length||awayInjuries.length)?" Injury report flags: "+homeInjuries.length+" home / "+awayInjuries.length+" away; no unsupported numeric injury penalty is applied.":"";
+    $("projection-status").textContent="Opponent-informed, recency-weighted estimates from "+projection.home.count+" home-team and "+projection.away.count+" away-team games ("+projection.home.year+"/"+projection.away.year+"); rates are shrunk toward league average. Home-court adjustment: +1.8 points total. Lineups, player minutes, pace and official availability are not modeled."+injuryNote;
+    $("score-sd").value=((projection.homeSd+projection.awaySd)/2).toFixed(1);
+  }else{
+    $("projection-status").textContent="Insufficient team history (at least 5 games per team required). Enter manual assumptions; no model-backed projection is available.";
   }
 }
 function teamMarketTokens(team) {
@@ -181,8 +232,19 @@ function runGameSimulation() {
   const hm=Number($("home-mean").value), am=Number($("away-mean").value), sd=Number($("score-sd").value);
   const trials=100000;
   if (![hm,am,sd].every(Number.isFinite) || sd<=0) { $("game-results").textContent="Enter valid projections and a positive standard deviation."; return; }
+  const projection=estimateMatchup(selectedGame);
+  const homeSd=projection?Math.sqrt(0.7*Math.pow(projection.homeSd,2)+0.3*sd*sd):sd;
+  const awaySd=projection?Math.sqrt(0.7*Math.pow(projection.awaySd,2)+0.3*sd*sd):sd;
+  const commonShare=0.35;
+  const residualShare=Math.sqrt(1-commonShare*commonShare);
   let hw=0,aw=0,homeTotal=0,awayTotal=0,ties=0,totals=[];
-  for(let i=0;i<trials;i++){let h=Math.max(50,Math.round(normalSample(hm,sd))),a=Math.max(50,Math.round(normalSample(am,sd)));if(h>a)hw++;else if(a>h)aw++;else ties++;homeTotal+=h;awayTotal+=a;totals.push(h+a);}
+  for(let i=0;i<trials;i++){
+    const shared=normalSample(0,1);
+    const h=Math.max(50,Math.round(hm+shared*homeSd*commonShare+normalSample(0,homeSd*residualShare)));
+    const a=Math.max(50,Math.round(am+shared*awaySd*commonShare+normalSample(0,awaySd*residualShare)));
+    if(h>a)hw++;else if(a>h)aw++;else ties++;
+    homeTotal+=h;awayTotal+=a;totals.push(h+a);
+  }
   totals.sort((a,b)=>a-b);
   const avgHome=homeTotal/trials, avgAway=awayTotal/trials;
   const homeName=selectedGame.home?.name||"Home team";
@@ -193,7 +255,7 @@ function runGameSimulation() {
   const projectedHome=Math.round(avgHome), projectedAway=Math.round(avgAway);
   const winnerScore=homeWins?projectedHome:projectedAway;
   const loserScore=homeWins?projectedAway:projectedHome;
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. Independent normal score assumptions; starting means may use recent team scoring and points-allowed averages, but lineups, injuries, pace and score correlation are not yet modeled. Not a calibrated betting recommendation.</p>`;
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using opponent-informed team scoring estimates, recency weighting, sample-size shrinkage, team-specific scoring variance and a modest shared pace shock. Player availability, minutes, advanced pace/efficiency and lineup effects remain unmodeled; this is not a calibrated betting recommendation.</p>`;
   $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
