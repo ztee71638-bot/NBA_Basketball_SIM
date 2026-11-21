@@ -299,7 +299,22 @@ def fetch_team_database() -> list[dict[str, Any]]:
     }
     for team in teams:
         for season in sorted(SEASONS):
-            rows = grouped_by_season[season].get(team["abbreviation"], [])
+            rows = sorted(grouped_by_season[season].get(team["abbreviation"], []), key=lambda row: row.get("date") or "")
+            for index, row in enumerate(rows):
+                current_date = datetime.fromisoformat(str(row["date"]).replace("Z", "+00:00")).date()
+                previous_dates = [
+                    datetime.fromisoformat(str(previous["date"]).replace("Z", "+00:00")).date()
+                    for previous in rows[:index]
+                ]
+                if previous_dates:
+                    gap = (current_date - previous_dates[-1]).days
+                    row["rest_days"] = max(0, gap - 1)
+                    row["back_to_back"] = gap <= 1
+                else:
+                    row["rest_days"] = None
+                    row["back_to_back"] = None
+                row["games_last_3_days"] = sum(1 for day in previous_dates if 0 < (current_date-day).days <= 3)
+                row["games_last_5_days"] = sum(1 for day in previous_dates if 0 < (current_date-day).days <= 5)
             team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
     enrich_team_games_with_boxscores(teams)
     for team in teams:
