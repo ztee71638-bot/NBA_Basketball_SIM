@@ -3,6 +3,7 @@ let games = [];
 let players = [];
 let teamData = [];
 let teamUpdatedAt = null;
+let arenaData = {};
 let playerUpdatedAt = null;
 let injuryData = [];
 let injuryUpdatedAt = null;
@@ -181,6 +182,28 @@ function estimateMatchup(game) {
   const awayMean=league.average+(away.offense-league.average)*0.55+(home.defense-league.average)*0.45;
   return {homeMean,awayMean,homeSd:home.sd,awaySd:away.sd,home,away,league};
 }
+function estimateTravelMiles(rows, teamAbbreviation, opponentAbbreviation, isHome, gameDate) {
+  const prior=rows.filter(row=>new Date(row.date)<new Date(gameDate)).slice(-1)[0];
+  if(!prior)return null;
+  const previousVenue=prior.home_away==="home"?canonicalTeam(teamAbbreviation):canonicalTeam(prior.opponent);
+  const currentVenue=isHome?canonicalTeam(teamAbbreviation):canonicalTeam(opponentAbbreviation);
+  const origin=arenaData[previousVenue],destination=arenaData[currentVenue];
+  if(!origin||!destination)return null;
+  const radians=value=>value*Math.PI/180;
+  const lat1=radians(origin.latitude),lat2=radians(destination.latitude);
+  const dlat=lat2-lat1,dlon=radians(destination.longitude-origin.longitude);
+  const a=Math.sin(dlat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dlon/2)**2;
+  return 3958.7613*2*Math.asin(Math.sqrt(a));
+}
+async function loadArenas() {
+  try {
+    const data=await loadJson("data/arenas.json");
+    arenaData=data.teams||{};
+    if(selectedGame)renderGameLineups(selectedGame);
+  } catch(e) {
+    arenaData={};
+  }
+}
 function prefillGameProjections(game) {
   if(!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000){
     $("projection-status").textContent="PASS — team history is missing or older than 48 hours. Refresh the data before using an automatic team projection.";
@@ -200,7 +223,10 @@ function prefillGameProjections(game) {
     const restBefore=(rows)=>{const prior=rows.filter(row=>new Date(row.date)<new Date(game.date)).slice(-1)[0];return prior?Math.max(0,Math.floor((new Date(game.date)-new Date(prior.date))/86400000)-1):null;};
     const homeRest=restBefore(projection.home.rows),awayRest=restBefore(projection.away.rows);
     const restNote=homeRest!==null&&awayRest!==null?" Scheduled rest: home "+homeRest+" days / away "+awayRest+" days.":"";
-    $("projection-status").textContent="Default score estimates use the historical last-10 scoring/allowance baseline. Team-specific scoring variance uses "+projection.home.count+" home-team and "+projection.away.count+" away-team games across "+projection.home.year+"/"+projection.away.year+". Experimental opponent-adjusted and pace/efficiency models remain off until they beat the baseline in holdout testing. Confirmed lineups are shown separately when available; travel and player on/off impact are not used as score adjustments."+restNote+injuryNote;
+    const homeTravel=estimateTravelMiles(projection.home.rows,game.home?.abbreviation,game.away?.abbreviation,true,game.date);
+    const awayTravel=estimateTravelMiles(projection.away.rows,game.away?.abbreviation,game.home?.abbreviation,false,game.date);
+    const travelNote=homeTravel!==null&&awayTravel!==null?" Estimated arena-to-arena travel since prior game: home "+Math.round(homeTravel)+" mi / away "+Math.round(awayTravel)+" mi (straight-line).":"";
+    $("projection-status").textContent="Default score estimates use the historical last-10 scoring/allowance baseline. Team-specific scoring variance uses "+projection.home.count+" home-team and "+projection.away.count+" away-team games across "+projection.home.year+"/"+projection.away.year+". Experimental opponent-adjusted and pace/efficiency models remain off until they beat the baseline in holdout testing. Confirmed lineups are shown separately when available; rest, travel and player on/off effects are context only and are not yet score adjustments."+restNote+travelNote+injuryNote;
     $("score-sd").value=((projection.homeSd+projection.awaySd)/2).toFixed(1);
   }else{
     $("projection-status").textContent="Insufficient team history (at least 5 games per team required). Enter manual assumptions; no model-backed projection is available.";
@@ -710,6 +736,7 @@ async function loadAll(){
   try{const data=await loadJson("data/games.json");games=data.games||[];$("data-status").textContent="ESPN updated "+(data.last_updated?new Date(data.last_updated).toLocaleString():"time unavailable");showGames();}catch(e){$("data-status").textContent="Game feed unavailable";$("games").textContent=e.message;}
   await loadPlayers();
   await loadTeams();
+  await loadArenas();
   await loadModelMetrics();
   await loadInjuries();
   await loadLineups();
