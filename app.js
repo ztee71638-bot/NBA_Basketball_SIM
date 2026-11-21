@@ -222,23 +222,23 @@ function renderPlayerSearch() {
     const injury = injuryData.find(item => String(item.athlete_id) === String(p.id));
     const availability = injury ? " · Injury: " + (injury.status || "listed") : "";
     const gameCount = Object.values(p.seasons || {}).reduce((sum, logs) => sum + (Array.isArray(logs) ? logs.length : 0), 0);
-    return '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + ' · ' + gameCount + ' game logs' + escapeHtml(availability) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">Select for stat calculator</button></div>';
+    return '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + ' · ' + gameCount + ' game logs' + escapeHtml(availability) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">Select player</button></div>';
   }).join("");
   root.querySelectorAll("[data-player-id]").forEach(b => b.addEventListener("click", () => {
     showPlayer(b.dataset.playerId);
-    const calculator = $("prop-selected-player")?.closest(".panel");
-    if (calculator) calculator.scrollIntoView({ behavior: "smooth", block: "start" });
+    const projection = $("prop-stat-controls");
+    if (projection) projection.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }));
 }
 function renderSelectedPlayerForProp() {
   const root = $("prop-selected-player");
   if (!root) return;
   if (!selectedPlayer) {
-    root.textContent = "No player selected. Search below and choose View history to connect a player.";
+    root.textContent = "No player selected. Search above and select a player to load their recent game history.";
     return;
   }
   root.innerHTML = "<strong>" + escapeHtml(selectedPlayer.name) + "</strong> · " + escapeHtml(selectedPlayer.team || "Team unavailable") +
-    " · " + selectedPlayerLogs.length + " recent game logs loaded. Change the stat below to refresh its historical baseline.";
+    " · " + selectedPlayerLogs.length + " recent game logs loaded. Choose a stat and line below to calculate this player’s projection.";
 }
 
 function applyPlayerHistoricalBaseline() {
