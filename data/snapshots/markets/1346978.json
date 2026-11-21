@@ -56,7 +56,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895738\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Raptors\\\"]\",\"question\":\"Bucks vs. Raptors\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T22:10:35.940450+00:00",
+      "markets": [
+        {
+          "market_id": "6895738",
+          "market_type": "moneyline",
+          "question": "Bucks vs. Raptors",
+          "slug": "nba-mil-tor-2026-11-23",
+          "outcomes": "[\"Bucks\", \"Raptors\"]",
+          "outcome_prices": "[\"0.26\", \"0.74\"]",
+          "volume_24h": 1427.7140359999999,
+          "liquidity": "19765.3937",
+          "end_date": "2026-11-24T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-mil-tor-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895738\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.26\\\", \\\"0.74\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Raptors\\\"]\",\"question\":\"Bucks vs. Raptors\"}]"
     }
   ],
-  "last_updated": "2026-11-21T21:21:45.660653+00:00"
+  "last_updated": "2026-11-21T22:10:35.940450+00:00"
 }
