@@ -147,8 +147,8 @@ def is_nba_market(market: dict[str, Any]) -> bool:
 
 
 def fetch_polymarket_markets() -> list[dict[str, Any]]:
-    # Events are the primary discovery path because they include all markets
-    # attached to an NBA game, including moneyline, spread, total and props.
+    # First discover active NBA game events, then supplement their nested
+    # markets with the flat NBA-tag market feed so player props are not missed.
     events_payload = get_json(GAMMA_EVENTS_URL, {
         "series_id": NBA_SERIES_ID,
         "tag_id": "100639",
@@ -165,53 +165,100 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
     else:
         events = []
 
+    active_events = {}
+    for event in events:
+        if isinstance(event, dict) and event.get("id") is not None:
+            active_events[str(event["id"])] = event
+    results: dict[str, dict[str, Any]] = {}
     now = datetime.now(timezone.utc)
-    results = []
+
+    def add_market(market: dict[str, Any], event: dict[str, Any]) -> None:
+        event_title = event.get("title") or event.get("name") or ""
+        combined = dict(market)
+        combined["title"] = event_title
+        if not is_nba_market(combined):
+            return
+        end_value = market.get("endDate") or market.get("end_date") or event.get("endDate") or event.get("end_date")
+        if end_value:
+            try:
+                end_time = datetime.fromisoformat(str(end_value).replace("Z", "+00:00"))
+                if end_time.tzinfo is None:
+                    end_time = end_time.replace(tzinfo=timezone.utc)
+                if end_time < now:
+                    return
+            except ValueError:
+                pass
+        market_id = str(market.get("id") or market.get("slug") or market.get("question") or "")
+        if not market_id:
+            return
+        results[market_id] = {
+            "id": str(market.get("id") or ""),
+            "event_id": str(event.get("id") or ""),
+            "event_title": event_title,
+            "question": market.get("question") or market.get("title"),
+            "slug": market.get("slug"),
+            "active": market.get("active", event.get("active")),
+            "closed": market.get("closed", event.get("closed")),
+            "outcomes": market.get("outcomes"),
+            "outcome_prices": market.get("outcomePrices") or market.get("outcome_prices"),
+            "volume": market.get("volume") or market.get("volumeNum"),
+            "volume_24h": market.get("volume24hr") or market.get("volume_24h"),
+            "liquidity": market.get("liquidity") or market.get("liquidityNum"),
+            "end_date": end_value,
+            "market_group": market.get("groupItemTitle") or market.get("group_item_title"),
+            "url": ("https://polymarket.com/event/" + str(event.get("slug"))) if event.get("slug") else (
+                "https://polymarket.com/event/" + str(market.get("slug")) if market.get("slug") else None
+            ),
+            "source": "Polymarket Gamma NBA series",
+        }
+
     for event in events:
         if not isinstance(event, dict):
             continue
-        event_title = event.get("title") or event.get("name") or ""
-        event_end = event.get("endDate") or event.get("end_date")
         for market in event.get("markets") or []:
+            if isinstance(market, dict):
+                add_market(market, event)
+
+    # Player props are sometimes exposed on the flat markets endpoint rather
+    # than in the event's nested markets array. Keep only markets attached to
+    # the currently active NBA game events found above.
+    for offset in range(0, 5000, 500):
+        page_payload = get_json(GAMMA_URL, {
+            "tag_id": "745",
+            "active": "true",
+            "closed": "false",
+            "limit": 500,
+            "offset": offset,
+        })
+        if isinstance(page_payload, dict):
+            page = page_payload.get("markets") or []
+        elif isinstance(page_payload, list):
+            page = page_payload
+        else:
+            page = []
+        for market in page:
             if not isinstance(market, dict):
                 continue
-            combined = dict(market)
-            combined["event_title"] = event_title
-            combined["event_slug"] = event.get("slug")
-            combined["event_id"] = str(event.get("id") or "")
-            if not is_nba_market({**combined, "title": event_title}):
-                continue
-            end_value = market.get("endDate") or market.get("end_date") or event_end
-            if end_value:
-                try:
-                    end_time = datetime.fromisoformat(str(end_value).replace("Z", "+00:00"))
-                    if end_time.tzinfo is None:
-                        end_time = end_time.replace(tzinfo=timezone.utc)
-                    if end_time < now:
+            associations = market.get("events") or []
+            if isinstance(associations, dict):
+                associations = [associations]
+            event_id = str(market.get("event_id") or market.get("eventId") or "")
+            matched_event = active_events.get(event_id)
+            if not matched_event:
+                for association in associations:
+                    if not isinstance(association, dict):
                         continue
-                except ValueError:
-                    pass
-            results.append({
-                "id": str(market.get("id") or ""),
-                "event_id": str(event.get("id") or ""),
-                "event_title": event_title,
-                "question": market.get("question") or market.get("title"),
-                "slug": market.get("slug"),
-                "active": market.get("active", event.get("active")),
-                "closed": market.get("closed", event.get("closed")),
-                "outcomes": market.get("outcomes"),
-                "outcome_prices": market.get("outcomePrices") or market.get("outcome_prices"),
-                "volume": market.get("volume"),
-                "volume_24h": market.get("volume24hr") or market.get("volume_24h"),
-                "liquidity": market.get("liquidity"),
-                "end_date": end_value,
-                "url": ("https://polymarket.com/event/" + str(event.get("slug"))) if event.get("slug") else (
-                    "https://polymarket.com/event/" + str(market.get("slug")) if market.get("slug") else None
-                ),
-                "source": "Polymarket Gamma NBA series",
-            })
-    results.sort(key=lambda item: float(item.get("volume_24h") or 0), reverse=True)
-    return results[:1200]
+                    candidate = active_events.get(str(association.get("id") or ""))
+                    if candidate:
+                        matched_event = candidate
+                        break
+            if matched_event:
+                add_market(market, matched_event)
+        if len(page) < 500:
+            break
+
+    ordered = sorted(results.values(), key=lambda item: float(item.get("volume_24h") or 0), reverse=True)
+    return ordered[:1200]
 
 
 def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, Any]]) -> None:
