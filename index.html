@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NBA game and player prop Monte Carlo research simulator">
   <title>NBA Basketball Simulator</title>
-  <link rel="stylesheet" href="styles.css?v=20261121-player-prop-select">
+  <link rel="stylesheet" href="styles.css?v=20261121-player-search-integrated">
 </head>
 <body>
   <header class="hero">
@@ -41,26 +41,32 @@
     </section>
     </div>
     <section id="players-view" class="view-panel" hidden>
-    <section class="panel">
-      <p class="eyebrow">PLAYER PROP TOOL</p><h2>Individual stat probability</h2>
-      <p class="muted">Choose a player in the search section below. Their recent game logs will automatically populate the selected stat baseline here.</p>
-      <div id="prop-selected-player" class="muted">No player selected. Search below and tap Select for stat calculator.</div>
-      <div class="inputs">
-        <label>Projected stat average<input id="prop-mean" type="number" min="0" max="80" step="0.1" value="24.5"></label>
-        <label>Standard deviation<input id="prop-sd" type="number" min="0.1" max="30" step="0.1" value="6"></label>
-        <label>Stat to project<select id="prop-stat"><option value="points">Points</option><option value="rebounds">Rebounds</option><option value="assists">Assists</option><option value="steals">Steals</option><option value="blocks">Blocks</option></select></label>
-        <label>Market line<input id="prop-line" type="number" min="0" max="80" step="0.5" value="25.5"></label>
-      </div>
-      <button id="prop-calc">Calculate probability</button>
-      <p id="prop-source-status" class="muted">Select a player below to load a historical baseline, or enter assumptions manually.</p>
-      <div id="prop-results" class="results muted">Enter a player-stat projection to calculate over/under probabilities.</div>
-    </section>
-    <section class="panel">
-      <p class="eyebrow">HISTORICAL PLAYER DATABASE</p><h2>Search NBA players</h2>
-      <div class="inputs"><label>Search NBA players<input id="player-search" type="search" placeholder="Type a player name or team"></label></div>
-      <div id="player-search-results" class="game-list"></div>
-      <div id="player-detail" class="results muted" hidden></div>
-    </section>
+      <section class="panel player-workspace">
+        <p class="eyebrow">PLAYER DATABASE & PROP TOOL</p>
+        <h2>Search NBA players</h2>
+        <p class="muted">Search by player name or team, then select a player to load recent game logs and build a stat projection.</p>
+        <div class="inputs">
+          <label>Search NBA players<input id="player-search" type="search" placeholder="Type a player name or team"></label>
+        </div>
+        <div id="player-search-results" class="game-list"></div>
+        <div id="player-detail" class="results muted" hidden></div>
+        <div class="player-projection">
+          <p class="eyebrow">INDIVIDUAL STAT PROJECTION</p>
+          <h3>Player stat calculator</h3>
+          <div id="prop-selected-player" class="muted">No player selected. Search above and select a player to load their recent game history.</div>
+          <div id="prop-stat-controls">
+            <div class="inputs">
+              <label>Stat to project<select id="prop-stat"><option value="points">Points</option><option value="rebounds">Rebounds</option><option value="assists">Assists</option><option value="steals">Steals</option><option value="blocks">Blocks</option></select></label>
+              <label>Market line<input id="prop-line" type="number" min="0" max="80" step="0.5" value="25.5"></label>
+              <label>Historical average<input id="prop-mean" type="number" min="0" max="80" step="0.1" value="24.5"></label>
+              <label>Standard deviation<input id="prop-sd" type="number" min="0.1" max="30" step="0.1" value="6"></label>
+            </div>
+            <button id="prop-calc" class="primary">Calculate probability</button>
+            <p id="prop-source-status" class="muted">Select a player to load a recent historical baseline. You can also enter assumptions manually.</p>
+            <div id="prop-results" class="results muted">Choose a player, stat and line to calculate over/under probabilities.</div>
+          </div>
+        </div>
+      </section>
     </section>
     <section id="markets-view" class="view-panel" hidden>
     <section class="panel">
@@ -78,6 +84,6 @@
     </section>
   </main>
   <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections.</footer>
-  <script src="app.js?v=20261121-player-prop-link"></script>
+  <script src="app.js?v=20261121-player-search-integrated"></script>
 </body>
 </html>
