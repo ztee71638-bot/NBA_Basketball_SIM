@@ -500,6 +500,10 @@ footer{color:#83aaaa}
 /* Double the corner basketball while preserving responsive header spacing. */
 .hero-side{min-width:440px}
 .hero-ball{width:440px;height:440px}
+@media(max-width:900px) and (min-width:701px){
+  .hero-side{min-width:0}
+  .hero-ball{width:224px;height:224px}
+}
 @media(max-width:700px){
   .hero-side{min-width:0}
   .hero-ball{width:224px;height:224px}
