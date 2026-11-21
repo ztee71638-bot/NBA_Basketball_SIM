@@ -351,7 +351,19 @@ function calcProp(){
     }
   }
   if(![mean,sd,line].every(Number.isFinite)||sd<=0){$("prop-results").textContent="Enter valid values and a positive standard deviation.";return;}
-  const over=(1-erf((line-mean)/(sd*Math.sqrt(2))))/2;
+  const normalOver=(1-erf((line-mean)/(sd*Math.sqrt(2))))/2;
+  let over=normalOver;
+  let empiricalNote="";
+  if(selectedPlayer){
+    const nonPush=selectedPlayerLogs.map(game=>game[$("prop-stat").value]).filter(value=>Number.isFinite(value)&&value!==line);
+    const hits=nonPush.filter(value=>value>line).length;
+    if(nonPush.length){
+      const empiricalOver=(hits+1)/(nonPush.length+2);
+      const empiricalWeight=nonPush.length/(nonPush.length+12);
+      over=normalOver*(1-empiricalWeight)+empiricalOver*empiricalWeight;
+      empiricalNote='<p class="fine-print">Recent sample: '+hits+'/'+nonPush.length+' non-push games went Over ('+(empiricalOver*100).toFixed(1)+'% smoothed empirical rate). Blended with the minutes-adjusted normal estimate at '+Math.round(empiricalWeight*100)+'% empirical weight. This is not fully calibrated.</p>';
+    }
+  }
   let marketComparison = "";
   if(selectedPropMarket){
     const prices=parseMarketArray(selectedPropMarket.outcome_prices);
@@ -363,7 +375,7 @@ function calcProp(){
       marketComparison='<p class="fine-print">Polymarket implied Over: '+fmt(marketOver*100)+'. Historical baseline difference: '+(over*100-marketOver*100).toFixed(1)+' percentage points. This is an uncalibrated comparison, not a validated betting edge.</p>';
     }
   }
-  $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate. When player logs and a fresh injury feed are available, the historical mean is adjusted using recent per-minute production and minutes trends; this is not a confirmed lineup or official minutes projection.</p>`+marketComparison;
+  $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate. When player logs and a fresh injury feed are available, the historical mean is adjusted using recent per-minute production and minutes trends; this is not a confirmed lineup or official minutes projection.</p>`+empiricalNote+marketComparison;
 }
 function parseMarketArray(value) {
   if (Array.isArray(value)) return value;
