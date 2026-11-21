@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 ESPN_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 GAMMA_URL = "https://gamma-api.polymarket.com/markets"
+GAMMA_EVENTS_URL = "https://gamma-api.polymarket.com/events"
+NBA_SERIES_ID = "10345"
 INJURIES_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries"
 TIMEOUT = 25
 NBA_TEAMS = {
@@ -145,31 +147,68 @@ def is_nba_market(market: dict[str, Any]) -> bool:
 
 
 def fetch_polymarket_markets() -> list[dict[str, Any]]:
-    payload = get_json(GAMMA_URL, {
-        "active": "true", "closed": "false", "limit": 500,
-        "order": "volume24hr", "ascending": "false",
+    # Events are the primary discovery path because they include all markets
+    # attached to an NBA game, including moneyline, spread, total and props.
+    events_payload = get_json(GAMMA_EVENTS_URL, {
+        "series_id": NBA_SERIES_ID,
+        "active": "true",
+        "closed": "false",
+        "limit": 500,
+        "order": "volume24hr",
+        "ascending": "false",
     })
-    if not isinstance(payload, list):
-        raise ValueError("Unexpected Polymarket response: expected a list of markets")
+    if isinstance(events_payload, dict):
+        events = events_payload.get("events") or []
+    elif isinstance(events_payload, list):
+        events = events_payload
+    else:
+        events = []
+
+    now = datetime.now(timezone.utc)
     results = []
-    for market in payload:
-        if not isinstance(market, dict) or not is_nba_market(market):
+    for event in events:
+        if not isinstance(event, dict):
             continue
-        results.append({
-            "id": str(market.get("id") or ""),
-            "question": market.get("question") or market.get("title"),
-            "slug": market.get("slug"),
-            "active": market.get("active"),
-            "closed": market.get("closed"),
-            "outcomes": market.get("outcomes"),
-            "outcome_prices": market.get("outcomePrices"),
-            "volume": market.get("volume"),
-            "volume_24h": market.get("volume24hr"),
-            "liquidity": market.get("liquidity"),
-            "end_date": market.get("endDate"),
-            "url": ("https://polymarket.com/event/" + str(market.get("slug"))) if market.get("slug") else None,
-            "source": "Polymarket Gamma",
-        })
+        event_title = event.get("title") or event.get("name") or ""
+        event_end = event.get("endDate") or event.get("end_date")
+        for market in event.get("markets") or []:
+            if not isinstance(market, dict):
+                continue
+            combined = dict(market)
+            combined["event_title"] = event_title
+            combined["event_slug"] = event.get("slug")
+            combined["event_id"] = str(event.get("id") or "")
+            if not is_nba_market({**combined, "title": event_title}):
+                continue
+            end_value = market.get("endDate") or market.get("end_date") or event_end
+            if end_value:
+                try:
+                    end_time = datetime.fromisoformat(str(end_value).replace("Z", "+00:00"))
+                    if end_time.tzinfo is None:
+                        end_time = end_time.replace(tzinfo=timezone.utc)
+                    if end_time < now - timedelta(hours=4):
+                        continue
+                except ValueError:
+                    pass
+            results.append({
+                "id": str(market.get("id") or ""),
+                "event_id": str(event.get("id") or ""),
+                "event_title": event_title,
+                "question": market.get("question") or market.get("title"),
+                "slug": market.get("slug"),
+                "active": market.get("active", event.get("active")),
+                "closed": market.get("closed", event.get("closed")),
+                "outcomes": market.get("outcomes"),
+                "outcome_prices": market.get("outcomePrices") or market.get("outcome_prices"),
+                "volume": market.get("volume"),
+                "volume_24h": market.get("volume24hr") or market.get("volume_24h"),
+                "liquidity": market.get("liquidity"),
+                "end_date": end_value,
+                "url": ("https://polymarket.com/event/" + str(event.get("slug"))) if event.get("slug") else (
+                    "https://polymarket.com/event/" + str(market.get("slug")) if market.get("slug") else None
+                ),
+                "source": "Polymarket Gamma NBA series",
+            })
     return results
 
 
