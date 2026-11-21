@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T07:54:52.647112+00:00",
+  "last_updated": "2026-11-21T08:23:46.954785+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -132,7 +132,7 @@
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
       "date": "2026-11-21T02:25Z",
-      "return_date": "2026-11-20",
+      "return_date": "2026-11-23",
       "short_comment": "Traore (hamstring) won't return to Friday's game against Orlando, Meghan Triplett of YES Network reports. He finished with four points (2-6 FG, 0-2 3Pt) and two assists over 18 minutes.",
       "long_comment": "After a drive to the rim in the fourth quarter, Traore was observed holding the back of his right hamstring in obvious discomfort. He limped to the locker room and was subsequently ruled out for the remainder of the contest. Mikel Brown and Egor Demin are in line for more minutes the rest of the way.",
       "source": "ESPN"
@@ -723,6 +723,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "2991070",
+      "name": "Jerami Grant",
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-21T08:08Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Grant (calf) is out for Saturday's game against the Timberwolves.",
+      "long_comment": "Grant went down early in Thursday's win over the Warriors, and he's now dealing with a strained left calf that could cost him multiple contests. With Cameron Boozer (ankle) also sidelined, Taylor Hendricks and Olivier-Maxence Prosper are both worthy of streaming consideration in fantasy leagues.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4781746",
       "name": "Javon Small",
       "team": "MEM",
@@ -765,21 +780,6 @@
       "return_date": "2026-11-21",
       "short_comment": "Jerome (hip) is probable for Saturday's game in Minnesota.",
       "long_comment": "Jerome is set to return from a three-game layoff Saturday, which will likely shift Cam Spencer back to the second unit. Jerome has gotten off to a hot start this season, averaging 25.4 points, 5.3 assists and 2.5 triples per contest on 48.5 percent shooting from the field and 90.2 percent at the line.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2991070",
-      "name": "Jerami Grant",
-      "team": "MEM",
-      "team_name": "Memphis Grizzlies",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-20T02:08Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Grant won't return to Thursday's game against the Warriors due to a left calf injury. He'll finish with three points (1-2 FG, 1-1 3Pt) across five minutes.",
-      "long_comment": "Grant limped to the locker room in the second quarter and was ruled out for the remainder of the contest shortly thereafter. If he's forced to miss additional time, Kris Murray and Olivier-Maxence Prosper would be candidates for increased minutes. Grant's next chance to play will come Saturday at Minnesota.",
       "source": "ESPN"
     },
     {
