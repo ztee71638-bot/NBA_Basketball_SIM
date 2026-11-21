@@ -36,3 +36,20 @@ def test_summarize_games_uses_recent_ten():
 
 def test_team_map_has_30_teams():
     assert len(module.TEAM_IDS) == 30
+
+
+def test_parse_team_schedule_reads_competition_level_status():
+    payload = {"events": [{
+        "id": "g2",
+        "date": "2026-11-21T00:00Z",
+        "competitions": [{
+            "status": {"type": {"completed": True, "state": "post"}},
+            "competitors": [
+                {"homeAway": "home", "team": {"id": "1", "abbreviation": "ATL"}, "score": "112"},
+                {"homeAway": "away", "team": {"id": "2", "abbreviation": "BOS"}, "score": "105"},
+            ],
+        }],
+    }]}
+    rows = module.parse_team_schedule(payload, "1")
+    assert len(rows) == 1
+    assert rows[0]["points_for"] == 112
