@@ -161,3 +161,21 @@ def test_audit_reports_advanced_boxscore_coverage_and_requires_both_teams():
     assert season["advanced_team_game_rows"] == 1
     assert season["advanced_games_with_both_teams"] == 0
     assert season["advanced_coverage_pct"] == 50.0
+
+
+def test_audit_warns_when_advanced_boxscore_coverage_is_low_for_a_season():
+    payload = fixture()
+    for team in payload["teams"]:
+        team["seasons"]["2026"] = {"games": [{
+            "game_id": "older-game", "date": "2025-11-20T00:00:00+00:00",
+            "opponent": "BBB" if team["abbreviation"] == "AAA" else "AAA",
+            "points_for": 110 if team["abbreviation"] == "AAA" else 100,
+            "points_against": 100 if team["abbreviation"] == "AAA" else 110,
+        }]}
+    result = module.audit_payloads(
+        payload, None, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    assert any(
+        "Season 2026: advanced box-score coverage is only 0.0%" in item
+        for item in result["warnings"]
+    )
