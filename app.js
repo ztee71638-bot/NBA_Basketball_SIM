@@ -599,16 +599,16 @@ function renderMarkets() {
       const teamColumn=(abbr)=>{
         const props=teamProps[abbr]||[];
         const color=TEAM_COLORS[abbr]?.[0]||"#385170";
-        return '<section class="market-team-column"><h4 class="market-team-heading" style="--team-primary:'+color+'">'+escapeHtml(teamDisplayName(abbr))+'<small>'+props.length+' player props</small></h4>'+
-          (props.length?'<div class="market-prop-list">'+props.map(marketPropMarkup).join("")+'</div>':'<p class="market-empty">No player props matched to this roster.</p>')+'</section>';
+        return '<details class="market-team-column"><summary class="market-team-heading" style="--team-primary:'+color+'">'+escapeHtml(teamDisplayName(abbr))+'<small>'+props.length+' player props</small></summary>'+
+          (props.length?'<div class="market-prop-list">'+props.map(marketPropMarkup).join("")+'</div>':'<p class="market-empty">No player props matched to this roster.</p>')+'</details>';
       };
-      return '<section class="market-matchup"><div class="market-matchup-heading"><strong>'+escapeHtml(event)+'</strong><span class="market-day-count">'+markets.length+' markets · '+playerProps.length+' player props</span></div>'+
+      return '<details class="market-matchup"><summary class="market-matchup-heading"><strong>'+escapeHtml(event)+'</strong><span class="market-day-count">'+markets.length+' markets · '+playerProps.length+' player props</span></summary><div class="market-matchup-content">'+
         (gameLines.length?'<details class="market-game-lines"><summary>Game markets · '+gameLines.length+' (moneyline, spreads & totals)</summary><div class="market-prop-list">'+gameLines.map(marketPropMarkup).join("")+'</div></details>':'')+
         (Object.keys(teamProps).length?'<div class="market-team-grid">'+Object.keys(teamProps).map(teamColumn).join("")+'</div>':'')+
         (unassigned.length?'<details class="market-unassigned"><summary>Needs roster match · '+unassigned.length+' props</summary><div class="market-prop-list">'+unassigned.map(marketPropMarkup).join("")+'</div></details>':'')+
-        '</section>';
+        '</div></details>';
     }).join("");
-    return '<section class="market-day-page" data-market-day="'+escapeHtml(day)+'"><div class="market-day-heading"><h3>'+escapeHtml(dayDate)+'</h3><span class="market-day-count">'+dayRows.length+' active markets</span></div>'+cards+'</section>';
+    return '<section class="market-day-page" data-market-day="'+escapeHtml(day)+'"><details class="market-day-section"><summary class="market-day-heading"><h3>'+escapeHtml(dayDate)+'</h3><span class="market-day-count">'+dayRows.length+' active markets</span></summary><div class="market-day-content">'+cards+'</div></details></section>';
   }).join("");
   root.innerHTML=pages;
   if(!root.dataset.scrollBound){
