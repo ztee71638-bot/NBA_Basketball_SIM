@@ -141,7 +141,7 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
         start, end = date(season - 1, 10, 1), date(season, 6, 30)
     grouped: dict[str, list[dict[str, Any]]] = {abbr: [] for abbr in TEAM_IDS}
     for date_range in _month_ranges(start, end):
-        payload = get_json(SCOREBOARD_URL, {"dates": date_range, "limit": 1000})
+        payload = get_json(SCOREBOARD_URL, {"dates": date_range, "seasontype": 2, "limit": 1000})
         for event in payload.get("events") or []:
             competitions = event.get("competitions") or []
             if not competitions:
@@ -189,7 +189,7 @@ def fetch_team_database() -> list[dict[str, Any]]:
         record = {"id": str(team_id), "abbreviation": abbreviation, "seasons": {}, "source": "ESPN"}
         for season in SEASONS:
             try:
-                payload = get_json(URL.format(team_id=team_id), {"season": season})
+                payload = get_json(URL.format(team_id=team_id), {"season": season, "seasontype": 2})
                 games = parse_team_schedule(payload, str(team_id))
                 record["seasons"][str(season)] = {"games": games, "summary": summarize_games(games)}
             except requests.RequestException as exc:
