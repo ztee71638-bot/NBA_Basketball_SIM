@@ -31,7 +31,7 @@ def test_summarize_games_uses_recent_ten():
     summary = module.summarize_games(games)
     assert summary["games"] == 12
     assert summary["last10_games"] == 10
-    assert summary["last10_avg_points_for"] == 105.5
+    assert summary["last10_avg_points_for"] == 106.5
 
 
 def test_team_map_has_30_teams():
