@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NBA game and player prop Monte Carlo research simulator">
+  <title>NBA Basketball Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div><p class="eyebrow">NBA ANALYTICS LAB</p><h1>Basketball Simulator</h1><p class="muted">Live match discovery · Monte Carlo projections · Market research</p></div>
+    <div class="status" id="data-status">Loading data…</div>
+  </header>
+  <main>
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">SCHEDULE</p><h2>NBA games</h2></div><button id="reload">Refresh view</button></div>
+      <div id="games" class="game-list"><p class="muted">Loading games…</p></div>
+    </section>
+    <section class="panel">
+      <p class="eyebrow">GAME SIMULATOR</p><h2 id="selected-title">Select a matchup</h2>
+      <p class="muted">Until historical team ratings are validated, projections below are editable assumptions—not official model outputs.</p>
+      <div class="inputs">
+        <label>Home projected points<input id="home-mean" type="number" min="50" max="180" value="112"></label>
+        <label>Away projected points<input id="away-mean" type="number" min="50" max="180" value="109"></label>
+        <label>Score standard deviation<input id="score-sd" type="number" min="3" max="30" step="0.5" value="12"></label>
+        <label>Simulation trials<input id="trials" type="number" min="1000" max="100000" step="1000" value="10000"></label>
+      </div>
+      <button class="primary" id="simulate">Run simulation</button>
+      <div id="game-results" class="results muted">Choose a game and run the simulation.</div>
+    </section>
+    <section class="panel">
+      <p class="eyebrow">PLAYER PROP TOOL</p><h2>Individual stat probability</h2>
+      <p class="muted">Enter a projection and uncertainty estimate. This calculator does not yet infer player projections from historical logs.</p>
+      <div class="inputs">
+        <label>Projected stat average<input id="prop-mean" type="number" min="0" max="80" step="0.1" value="24.5"></label>
+        <label>Standard deviation<input id="prop-sd" type="number" min="0.1" max="30" step="0.1" value="6"></label>
+        <label>Market line<input id="prop-line" type="number" min="0" max="80" step="0.5" value="25.5"></label>
+      </div>
+      <button id="prop-calc">Calculate probability</button>
+      <div id="prop-results" class="results muted">Enter a player-stat projection to calculate over/under probabilities.</div>
+    </section>
+    <section class="panel">
+      <div class="section-head"><div><p class="eyebrow">READ-ONLY DISCOVERY</p><h2>Polymarket NBA markets</h2></div></div>
+      <div id="markets" class="market-list"><p class="muted">Loading markets…</p></div>
+      <p class="fine-print">Markets are discovered from public endpoints. Market matching and model-vs-price edge calculations are not enabled until event/player identity matching is validated.</p>
+    </section>
+  </main>
+  <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
