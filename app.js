@@ -494,5 +494,6 @@ $("prop-calc").addEventListener("click",calcProp);
 $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlayerHistoricalBaseline();});
 $("prop-line").addEventListener("input",()=>{selectedPropMarket=null;});
 $("reload").addEventListener("click",loadAll);
+$("refresh-markets").addEventListener("click",loadMarkets);
 $("player-search").addEventListener("input",renderPlayerSearch);
 loadAll();
