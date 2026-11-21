@@ -113,8 +113,9 @@ function calcProp(){
       return;
     }
     const stat=$("prop-stat").value;
-    if(!selectedPlayerLogs.some(game=>Number.isFinite(game[stat]))){
-      $("prop-results").textContent="PASS — no usable recent "+stat+" history is available for "+selectedPlayer.name+".";
+    const statSample=selectedPlayerLogs.map(game=>game[stat]).filter(Number.isFinite);
+    if(statSample.length<5){
+      $("prop-results").textContent="PASS — only "+statSample.length+" usable recent "+stat+" results are available for "+selectedPlayer.name+"; at least 5 are required.";
       return;
     }
   }
