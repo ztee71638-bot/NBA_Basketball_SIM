@@ -123,6 +123,7 @@ function calcProp(){
 }
 function parseMarketArray(value) {
   if (Array.isArray(value)) return value;
+  if (value && typeof value === "object") return Object.values(value);
   if (typeof value === "string") {
     try {
       const parsed = JSON.parse(value);
