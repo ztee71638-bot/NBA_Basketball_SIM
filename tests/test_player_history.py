@@ -133,3 +133,19 @@ def test_player_database_fetches_all_seasons_with_bounded_parallel_workers(monke
     assert players[0]["teams_by_season"] == {str(season): ["ATL"] for season in module.SEASONS}
     assert len([call for call in calls if "/roster" in call[0]]) == 30 * len(module.SEASONS)
     assert len([call for call in calls if "/gamelog" in call[0]]) == 5
+
+
+def test_build_roster_index_keeps_team_identity_without_heavy_game_logs():
+    players = [{
+        "id": "42", "name": "Test Player", "team": "BOS", "position": "G",
+        "status": "Active", "roster_seasons": ["2027", "2026"],
+        "teams_by_season": {"2027": ["BOS"], "2026": ["NYK"]},
+        "seasons": {"2027": [{"points": 20}]},
+    }]
+    result = module.build_roster_index(players)
+    assert result == [{
+        "id": "42", "name": "Test Player", "team": "BOS", "position": "G",
+        "status": "Active", "roster_seasons": ["2027", "2026"],
+        "teams_by_season": {"2027": ["BOS"], "2026": ["NYK"]},
+    }]
+    assert "seasons" not in result[0]

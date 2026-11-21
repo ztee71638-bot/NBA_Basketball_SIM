@@ -1,6 +1,9 @@
 const $ = (id) => document.getElementById(id);
 let games = [];
 let players = [];
+let marketRoster = [];
+let marketRosterLoaded = false;
+let marketRosterLoading = null;
 let playerImpactData = [];
 let winnerCalibration = null;
 let playerImpactLoaded = false;
@@ -502,7 +505,7 @@ function marketTeamAbbreviation(name) {
 }
 function marketPlayerTeam(market) {
   const text = normalizeMarketText([market.question, market.market_group, market.slug].join(" "));
-  const match = players.find(player => {
+  const match = marketRoster.find(player => {
     const name = normalizeMarketText(player.name);
     return name.length > 3 && (" " + text + " ").includes(" " + name + " ");
   });
@@ -610,6 +613,25 @@ async function loadMarkets(){
   }
 }
 
+async function loadMarketRoster() {
+  try {
+    const data = await loadJson("data/player_roster.json");
+    marketRoster = Array.isArray(data.players) ? data.players : [];
+    marketRosterLoaded = true;
+    if (marketsLoaded) renderMarkets();
+  } catch (e) {
+    marketRoster = [];
+    marketRosterLoaded = false;
+    const root = $("market-snapshot-status");
+    if (root) root.textContent = "Lightweight roster index unavailable; player props without verified team mapping will remain unassigned.";
+  }
+}
+async function ensureMarketRosterLoaded() {
+  if (marketRosterLoaded) return;
+  if (marketRosterLoading) { await marketRosterLoading; return; }
+  marketRosterLoading = loadMarketRoster();
+  try { await marketRosterLoading; } finally { marketRosterLoading = null; }
+}
 async function ensureMarketsLoaded() {
   if(marketsLoaded)return;
   if(marketsLoading){await marketsLoading;return;}
@@ -982,7 +1004,7 @@ document.querySelectorAll("[data-view]").forEach(button=>button.addEventListener
   document.querySelectorAll("[data-view]").forEach(tab=>{const active=tab===button;tab.classList.toggle("active",active);tab.setAttribute("aria-selected",String(active));});
   document.querySelectorAll(".view-panel").forEach(panel=>panel.hidden=panel.id!==button.dataset.view);
   if(button.dataset.view==="players-view") ensurePlayersLoaded();
-  if(button.dataset.view==="markets-view") { ensureMarketsLoaded(); ensurePlayersLoaded().then(()=>{if(marketsLoaded)renderMarkets();}); }
+  if(button.dataset.view==="markets-view") { ensureMarketsLoaded(); ensureMarketRosterLoaded(); }
 }));
 $("prop-calc").addEventListener("click",calcProp);
 $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlayerHistoricalBaseline();});
