@@ -38,6 +38,73 @@ def weighted_stats(rows: list[dict[str, Any]], key: str, half_life: float = 8.0)
     return avg, math.sqrt(variance), len(values)
 
 
+def weighted_profile_metric(rows: list[dict[str, Any]], key: str, half_life: float = 8.0):
+    """Mirror the browser's recency-weighted mean, SD and effective sample size."""
+    values = [float(row[key]) for row in rows if isinstance(row.get(key), (int, float))]
+    if not values:
+        return None
+    weights = [0.5 ** (age / half_life) for age in range(len(values)-1, -1, -1)]
+    total_weight = sum(weights)
+    squared_weight = sum(weight * weight for weight in weights)
+    avg = sum(value * weight for value, weight in zip(values, weights)) / total_weight
+    variance = sum(weight * (value-avg) ** 2 for value, weight in zip(values, weights)) / total_weight
+    effective_count = total_weight * total_weight / squared_weight if squared_weight else 0.0
+    return avg, math.sqrt(variance), effective_count
+
+
+def browser_team_profile_rows(prior_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Match teamSeasonGames(): latest populated season plus the prior season's last ten."""
+    populated = sorted({str(row.get("season")) for row in prior_rows if row.get("season")})
+    if not populated:
+        return []
+    latest = populated[-1]
+    current = [row for row in prior_rows if str(row.get("season")) == latest]
+    earlier = [season for season in populated if int(season) < int(latest)]
+    previous = []
+    if earlier:
+        previous_season = earlier[-1]
+        previous = [row for row in prior_rows if str(row.get("season")) == previous_season][-10:]
+    return sorted(previous + current, key=lambda row: parse_date(row["date"]))
+
+
+def browser_baseline_probability(home_rows, away_rows, league_rows):
+    """Estimate the default UI's last-10 baseline win probability before calibration."""
+    if not home_rows or not away_rows:
+        return None
+    home_recent, away_recent = home_rows[-10:], away_rows[-10:]
+    avg = lambda rows, key: mean(float(row[key]) for row in rows)
+    home_mean = (avg(home_recent, "points_for") + avg(away_recent, "points_against")) / 2 + 1.5
+    away_mean = (avg(away_recent, "points_for") + avg(home_recent, "points_against")) / 2 - 1.5
+
+    league = weighted_profile_metric(sorted(league_rows, key=lambda row: parse_date(row["date"])), "points_for")
+    if not league:
+        return None
+    league_sd = league[1]
+
+    def team_sd(prior_rows):
+        profile_rows = browser_team_profile_rows(prior_rows)
+        offense = weighted_profile_metric(profile_rows, "points_for")
+        if not offense:
+            return max(8.0, league_sd)
+        variance_reliability = offense[2] / (offense[2] + 10)
+        return math.sqrt(
+            variance_reliability * offense[1] ** 2
+            + (1 - variance_reliability) * league_sd ** 2
+        )
+
+    home_team_sd, away_team_sd = team_sd(home_rows), team_sd(away_rows)
+    input_sd = (home_team_sd + away_team_sd) / 2
+    sim_home_sd = math.sqrt(0.7 * home_team_sd ** 2 + 0.3 * input_sd ** 2)
+    sim_away_sd = math.sqrt(0.7 * away_team_sd ** 2 + 0.3 * input_sd ** 2)
+    # Match the simulator's shared environment shock (0.35 coefficient).
+    combined_sd = math.sqrt(max(
+        1.0,
+        sim_home_sd ** 2 + sim_away_sd ** 2
+        - 2 * 0.1225 * sim_home_sd * sim_away_sd,
+    ))
+    return 0.5 * (1 + math.erf((home_mean - away_mean) / (math.sqrt(2) * combined_sd)))
+
+
 def predict(home_rows, away_rows, league_average, league_sd):
     home_off = weighted_stats(home_rows, "points_for")
     home_def = weighted_stats(home_rows, "points_against")
@@ -274,15 +341,6 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         pred_h, pred_a, p_home = prediction
         actual_h, actual_a = home["points_for"], away["points_for"]
         home_win = actual_h > actual_a
-        # Strictly walk-forward calibration: fit only on predictions whose
-        # game outcomes were already observed before this test game.
-        if len(model_probabilities) >= 100:
-            prior_calibration = fit_probability_calibrator(model_probabilities, model_outcomes)
-            calibrated_p_home = apply_probability_calibration(p_home, prior_calibration)
-        else:
-            calibrated_p_home = p_home
-        calibrated_probabilities.append(calibrated_p_home)
-        calibrated_briers.append((calibrated_p_home - float(home_win)) ** 2)
         errors_home.append(abs(pred_h - actual_h))
         errors_away.append(abs(pred_a - actual_a))
         briers.append((p_home - float(home_win)) ** 2)
@@ -304,10 +362,25 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         base_away_sd = weighted_stats(a10, "points_for")
         base_combined_sd = math.sqrt((base_home_sd[1] if base_home_sd else 12.0)**2 +
                                      (base_away_sd[1] if base_away_sd else 12.0)**2)
-        base_probability = 0.5 * (1 + math.erf((base_h-base_a)/(math.sqrt(2)*max(8.0,base_combined_sd))))
+        # This is the default UI model: last-10 means plus the same
+        # recency-weighted team variance and shared scoring shock as the simulator.
+        base_probability = browser_baseline_probability(h_rows, a_rows, league_rows)
+        if base_probability is None:
+            base_probability = 0.5 * (1 + math.erf((base_h-base_a)/(math.sqrt(2)*max(8.0,base_combined_sd))))
         baseline_probabilities.append(base_probability)
         baseline_outcomes.append(float(home_win))
         baseline_briers.append((base_probability-float(home_win))**2)
+
+        # Fit only on prior, already-observed default-UI baseline predictions.
+        if len(baseline_probabilities) > 100:
+            prior_calibration = fit_probability_calibrator(
+                baseline_probabilities[:-1], baseline_outcomes[:-1]
+            )
+            calibrated_p_home = apply_probability_calibration(base_probability, prior_calibration)
+        else:
+            calibrated_p_home = base_probability
+        calibrated_probabilities.append(calibrated_p_home)
+        calibrated_briers.append((calibrated_p_home - float(home_win)) ** 2)
 
         # Experimental pace/efficiency model is evaluated only when the test
         # game and all required pregame history contain verified boxscore data.
@@ -364,21 +437,22 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "calibrated_calibration_error": expected_calibration_error(calibrated_probabilities, model_outcomes),
         "calibration_validation_games": len(calibrated_probabilities),
         "calibration": {
-            **fit_probability_calibrator(model_probabilities, model_outcomes),
+            **fit_probability_calibrator(baseline_probabilities, baseline_outcomes),
+            "training_model": "last10_baseline_simulation_probability",
             "validation_brier_score": round(mean(calibrated_briers), 4),
-            "validation_calibration_error": expected_calibration_error(calibrated_probabilities, model_outcomes),
-            "raw_brier_score": round(mean(briers), 4),
-            "raw_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
-            "baseline_brier_score": round(mean(baseline_briers), 4),
-            "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
+            "validation_calibration_error": expected_calibration_error(calibrated_probabilities, baseline_outcomes),
+            "raw_brier_score": round(mean(baseline_briers), 4),
+            "raw_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
+            "opponent_adjusted_model_brier_score": round(mean(briers), 4),
+            "opponent_adjusted_model_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
             "live_enabled": bool(
                 len(calibrated_probabilities) >= 500
+                and mean(calibrated_briers) < mean(baseline_briers)
+                and expected_calibration_error(calibrated_probabilities, baseline_outcomes)
+                    < expected_calibration_error(baseline_probabilities, baseline_outcomes)
                 and mean(calibrated_briers) < mean(briers)
-                and expected_calibration_error(calibrated_probabilities, model_outcomes)
+                and expected_calibration_error(calibrated_probabilities, baseline_outcomes)
                     < expected_calibration_error(model_probabilities, model_outcomes)
-                and mean(calibrated_briers) <= mean(baseline_briers)
-                and expected_calibration_error(calibrated_probabilities, model_outcomes)
-                    <= expected_calibration_error(baseline_probabilities, baseline_outcomes)
             ),
         },
         "baseline_brier_score": round(mean(baseline_briers), 4),
