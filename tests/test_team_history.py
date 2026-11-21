@@ -82,6 +82,24 @@ def test_daily_team_snapshot_is_immutable_and_contains_model_inputs(tmp_path, mo
     payload = json.loads(first)
     assert payload["teams"][0]["seasons"]["2027"]["games"][0]["pace_estimate"] == 98.5
 
+
+def test_travel_distance_uses_arena_coordinates_and_road_trip_streak():
+    atl = {"latitude": 33.7573, "longitude": -84.3963}
+    bos = {"latitude": 42.3662, "longitude": -71.0621}
+    distance = module.haversine_miles(atl, bos)
+    assert 900 < distance < 1000
+    rows = [
+        {"home_away": "home", "opponent": "BOS"},
+        {"home_away": "away", "opponent": "ATL"},
+        {"home_away": "away", "opponent": "NYK"},
+        {"home_away": "home", "opponent": "MIA"},
+    ]
+    module.enrich_schedule_travel("ATL", rows, {"ATL": atl, "BOS": bos, "NYK": bos})
+    assert rows[1]["travel_miles"] == round(distance, 1)
+    assert rows[1]["road_trip_games"] == 1
+    assert rows[2]["road_trip_games"] == 2
+    assert rows[3]["road_trip_games"] == 0
+
 def test_team_map_has_30_teams():
     assert len(module.TEAM_IDS) == 30
 
