@@ -163,7 +163,7 @@ def main() -> None:
         except (json.JSONDecodeError, OSError):
             players = None
     result = audit_payloads(teams, players)
-    rendered = json.dumps(result, indent=2) + "\\n"
+    rendered = json.dumps(result, indent=2)
     print(rendered)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
