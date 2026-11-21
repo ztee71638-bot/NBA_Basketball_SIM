@@ -61,20 +61,47 @@ def predict(home_rows, away_rows, league_average, league_sd):
     return home_mean, away_mean, p_home
 
 
+def predict_advanced(home_rows, away_rows, league_pace, league_off_rating, league_def_rating):
+    """Experimental efficiency/pace projection using only pregame team history."""
+    h_off = weighted_stats(home_rows, "offensive_rating")
+    h_def = weighted_stats(home_rows, "defensive_rating")
+    a_off = weighted_stats(away_rows, "offensive_rating")
+    a_def = weighted_stats(away_rows, "defensive_rating")
+    h_pace = weighted_stats(home_rows, "pace_estimate")
+    a_pace = weighted_stats(away_rows, "pace_estimate")
+    if not all((h_off, h_def, a_off, a_def, h_pace, a_pace)):
+        return None
+    def shrink(value, count, baseline):
+        reliability = count / (count + 10)
+        return baseline + (value - baseline) * reliability
+    home_off = shrink(h_off[0], h_off[2], league_off_rating)
+    home_def = shrink(h_def[0], h_def[2], league_def_rating)
+    away_off = shrink(a_off[0], a_off[2], league_off_rating)
+    away_def = shrink(a_def[0], a_def[2], league_def_rating)
+    pace = (shrink(h_pace[0], h_pace[2], league_pace) + shrink(a_pace[0], a_pace[2], league_pace)) / 2
+    home_mean = ((home_off + away_def) / 2) * pace / 100 + 1.8
+    away_mean = ((away_off + home_def) / 2) * pace / 100
+    combined_sd = 17.0
+    p_home = 0.5 * (1 + math.erf((home_mean - away_mean) / (math.sqrt(2) * combined_sd)))
+    return home_mean, away_mean, p_home, pace
+
+
 def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
     by_team = {}
     all_rows = []
     for team in payload.get("teams", []):
         seasons = team.get("seasons", {})
-        season = next((v for _, v in sorted(seasons.items(), key=lambda x: int(x[0]), reverse=True)
-                       if len(v.get("games", [])) >= min_prior_games), None)
         rows = []
-        if season:
-            rows = [dict(row, team=team["abbreviation"]) for row in season.get("games", [])
-                    if row.get("date") and row.get("game_id")
-                    and isinstance(row.get("points_for"), (int, float))
-                    and isinstance(row.get("points_against"), (int, float))]
-            rows.sort(key=lambda row: parse_date(row["date"]))
+        for _, season in sorted(seasons.items(), key=lambda x: int(x[0])):
+            rows.extend(
+                dict(row, team=team["abbreviation"], season=str(_))
+                for row in season.get("games", [])
+                if row.get("date") and row.get("game_id")
+                and isinstance(row.get("points_for"), (int, float))
+                and isinstance(row.get("points_against"), (int, float))
+                and row.get("points_for", 0) > 0 and row.get("points_against", 0) > 0
+            )
+        rows.sort(key=lambda row: parse_date(row["date"]))
         by_team[team["abbreviation"]] = rows
         all_rows.extend(rows)
 
@@ -84,6 +111,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
     ordered = sorted(games.values(), key=lambda rows: parse_date(rows[0]["date"]))
     errors_home, errors_away, briers, correct = [], [], [], []
     baseline_errors_home, baseline_errors_away, baseline_correct = [], [], []
+    advanced_errors, advanced_correct, advanced_briers = [], [], []
     used = 0
     for matchup in ordered:
         if len(matchup) != 2:
@@ -127,6 +155,29 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
         baseline_errors_home.append(abs(base_h - actual_h))
         baseline_errors_away.append(abs(base_a - actual_a))
         baseline_correct.append((base_h > base_a) == home_win)
+
+        # Experimental pace/efficiency model is evaluated only when the test
+        # game and all required pregame history contain verified boxscore data.
+        if all(home.get(key) is not None and away.get(key) is not None
+               for key in ("pace_estimate", "offensive_rating", "defensive_rating")):
+            advanced_rows = [row for row in league_rows if all(
+                row.get(key) is not None
+                for key in ("pace_estimate", "offensive_rating", "defensive_rating")
+            )]
+            if len(advanced_rows) >= 60:
+                league_pace = mean(row["pace_estimate"] for row in advanced_rows)
+                league_off = mean(row["offensive_rating"] for row in advanced_rows)
+                league_def = mean(row["defensive_rating"] for row in advanced_rows)
+                advanced_prediction = predict_advanced(
+                    [r for r in h_rows if all(r.get(k) is not None for k in ("pace_estimate", "offensive_rating", "defensive_rating"))],
+                    [r for r in a_rows if all(r.get(k) is not None for k in ("pace_estimate", "offensive_rating", "defensive_rating"))],
+                    league_pace, league_off, league_def,
+                )
+                if advanced_prediction:
+                    adv_h, adv_a, adv_prob, _ = advanced_prediction
+                    advanced_errors.extend((abs(adv_h-actual_h),abs(adv_a-actual_a)))
+                    advanced_correct.append((adv_h>adv_a)==home_win)
+                    advanced_briers.append((adv_prob-float(home_win))**2)
         used += 1
 
     if not used:
@@ -138,7 +189,11 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
         "model_winner_accuracy": round(mean(correct), 4),
         "baseline_winner_accuracy": round(mean(baseline_correct), 4),
         "model_brier_score": round(mean(briers), 4),
-        "note": "Chronological same-season walk-forward results; not a guarantee of future performance. Review sample size and compare across multiple seasons before trusting calibration.",
+        "advanced_games_tested": len(advanced_correct),
+        "advanced_score_mae": round(mean(advanced_errors), 3) if advanced_errors else None,
+        "advanced_winner_accuracy": round(mean(advanced_correct), 4) if advanced_correct else None,
+        "advanced_brier_score": round(mean(advanced_briers), 4) if advanced_briers else None,
+        "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. Advanced metrics are experimental and only reported when source coverage is adequate.",
     }
 
 
