@@ -34,7 +34,7 @@ function showGames() {
       items.map(({game,index}) => {
         const away=game.away?.name||"Away team",home=game.home?.name||"Home team";
         const score=game.completed||game.status==="STATUS_IN_PROGRESS"?' · '+(game.away?.score??"–")+'–'+(game.home?.score??"–"):"";
-        return '<div class="game"><div><strong>'+escapeHtml(away)+' @ '+escapeHtml(home)+'</strong><small>'+escapeHtml(new Date(game.date).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"}))+' · '+escapeHtml(game.status_detail||game.status||"Scheduled")+escapeHtml(score)+'</small></div><button data-game="'+index+'">Run Simulation</button></div>';
+        return '<article class="game matchup-card"><div class="matchup-main"><div class="matchup-teams">'+teamLogoMarkup(game.away,"away")+'<span class="matchup-at">@</span>'+teamLogoMarkup(game.home,"home")+'</div><small class="matchup-time">'+escapeHtml(new Date(game.date).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"}))+' · '+escapeHtml(game.status_detail||game.status||"Scheduled")+escapeHtml(score)+'</small></div><button class="run-simulation-btn" data-game="'+index+'"><span class="play-icon">▶</span>Run Simulation</button></article>';
       }).join("")+'</section>';
   }).join("");
   root.querySelectorAll("[data-game]").forEach(button=>button.addEventListener("click",()=>{
@@ -62,6 +62,16 @@ function canonicalTeam(abbr) {
 }
 const TEAM_NAMES = {ATL:'Atlanta Hawks',BOS:'Boston Celtics',BKN:'Brooklyn Nets',CHA:'Charlotte Hornets',CHI:'Chicago Bulls',CLE:'Cleveland Cavaliers',DAL:'Dallas Mavericks',DEN:'Denver Nuggets',DET:'Detroit Pistons',GSW:'Golden State Warriors',HOU:'Houston Rockets',IND:'Indiana Pacers',LAC:'LA Clippers',LAL:'Los Angeles Lakers',MEM:'Memphis Grizzlies',MIA:'Miami Heat',MIL:'Milwaukee Bucks',MIN:'Minnesota Timberwolves',NOP:'New Orleans Pelicans',NYK:'New York Knicks',OKC:'Oklahoma City Thunder',ORL:'Orlando Magic',PHI:'Philadelphia 76ers',PHX:'Phoenix Suns',POR:'Portland Trail Blazers',SAC:'Sacramento Kings',SAS:'San Antonio Spurs',TOR:'Toronto Raptors',UTA:'Utah Jazz',WAS:'Washington Wizards'};
 function teamDisplayName(abbr) { return TEAM_NAMES[canonicalTeam(abbr)] || String(abbr || 'NBA Team'); }
+function teamLogoUrl(team) {
+  const abbr = canonicalTeam(team?.abbreviation || team?.abbr || "");
+  return abbr ? "https://a.espncdn.com/i/teamlogos/nba/500/"+encodeURIComponent(abbr)+".png" : "";
+}
+function teamLogoMarkup(team, side) {
+  const name = team?.name || teamDisplayName(team?.abbreviation);
+  const url = teamLogoUrl(team);
+  return '<span class="team-brand '+side+'">'+(url?'<img class="team-logo" src="'+escapeHtml(url)+'" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'">':'<span class="team-logo-fallback">'+escapeHtml((team?.abbreviation||name||"NBA").slice(0,3))+'</span>')+'<span class="team-brand-name">'+escapeHtml(name)+'</span></span>';
+}
+
 function showTeam(abbreviation) {
   const team = teamData.find(item => canonicalTeam(item.abbreviation) === canonicalTeam(abbreviation));
   const root = $("team-detail"); if (!root || !team) return;
