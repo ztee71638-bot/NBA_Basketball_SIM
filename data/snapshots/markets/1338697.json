@@ -1,0 +1,26 @@
+{
+  "event_id": "1338697",
+  "event_title": "Magic vs. Wizards",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6840921",
+          "market_type": "moneyline",
+          "question": "Magic vs. Wizards",
+          "slug": "nba-orl-was-2026-11-22",
+          "outcomes": "[\"Magic\", \"Wizards\"]",
+          "outcome_prices": "[\"0.665\", \"0.335\"]",
+          "volume_24h": 165.575758,
+          "liquidity": "28226.7004",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-orl-was-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840921\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.665\\\", \\\"0.335\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Wizards\\\"]\",\"question\":\"Magic vs. Wizards\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

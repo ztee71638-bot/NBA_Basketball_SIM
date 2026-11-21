@@ -1,0 +1,26 @@
+{
+  "event_id": "1338700",
+  "event_title": "Pacers vs. Knicks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6840924",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Knicks",
+          "slug": "nba-ind-nyk-2026-11-22",
+          "outcomes": "[\"Pacers\", \"Knicks\"]",
+          "outcome_prices": "[\"0.245\", \"0.755\"]",
+          "volume_24h": 393.864732,
+          "liquidity": "28197.205",
+          "end_date": "2026-11-23T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-nyk-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840924\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Knicks\\\"]\",\"question\":\"Pacers vs. Knicks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

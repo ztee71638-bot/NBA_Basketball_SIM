@@ -1,0 +1,26 @@
+{
+  "event_id": "1377582",
+  "event_title": "Lakers vs. Spurs",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "7008996",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Spurs",
+          "slug": "nba-lal-sas-2026-11-27",
+          "outcomes": "[\"Lakers\", \"Spurs\"]",
+          "outcome_prices": "[\"0.325\", \"0.675\"]",
+          "volume_24h": 5.589744,
+          "liquidity": "19268.1345",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008996\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.325\\\", \\\"0.675\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Lakers vs. Spurs\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

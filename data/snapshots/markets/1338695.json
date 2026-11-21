@@ -1,0 +1,26 @@
+{
+  "event_id": "1338695",
+  "event_title": "Pistons vs. Hawks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6840919",
+          "market_type": "moneyline",
+          "question": "Pistons vs. Hawks",
+          "slug": "nba-det-atl-2026-11-22",
+          "outcomes": "[\"Pistons\", \"Hawks\"]",
+          "outcome_prices": "[\"0.565\", \"0.435\"]",
+          "volume_24h": 423.511192,
+          "liquidity": "34604.4002",
+          "end_date": "2026-11-22T20:30:00Z",
+          "url": "https://polymarket.com/event/nba-det-atl-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840919\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Hawks\\\"]\",\"question\":\"Pistons vs. Hawks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

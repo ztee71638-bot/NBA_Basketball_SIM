@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T15:22:17.291026+00:00",
+  "last_updated": "2026-11-21T15:57:57.079420+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -303,6 +303,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "5106040",
+      "name": "Tobi Lawal",
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-21T15:08Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Lawal (groin) is out for Saturday's game against the Clippers.",
+      "long_comment": "Lawal will miss a second straight game with right groin tightness. The rookie forward isn't expected to have a big role in the rotation, so he likely won't have much fantasy upside anytime soon. His next chance to play will come Sunday against the Jazz on the second leg of a back-to-back set.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4278078",
       "name": "P.J. Washington",
       "team": "DAL",
@@ -345,21 +360,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
       "long_comment": "Lively hasn't seen game action since Nov. 21, 2025, and he remains without a firm timetable to return after undergoing right foot surgery last December. However, this update suggests that the big man is trending in the right direction.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5106040",
-      "name": "Tobi Lawal",
-      "team": "DAL",
-      "team_name": "Dallas Mavericks",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-19T14:51Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Lawal is out for Wednesday's game against the Warriors due to tightness in his right groin.",
-      "long_comment": "It sounds like the rookie forward is dealing with a minor issue. His next chance to suit up comes Saturday against the Clippers.",
       "source": "ESPN"
     },
     {

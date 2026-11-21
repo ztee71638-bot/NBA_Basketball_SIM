@@ -1,0 +1,26 @@
+{
+  "event_id": "1338696",
+  "event_title": "Thunder vs. Heat",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6840920",
+          "market_type": "moneyline",
+          "question": "Thunder vs. Heat",
+          "slug": "nba-okc-mia-2026-11-22",
+          "outcomes": "[\"Thunder\", \"Heat\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 6849.559621000001,
+          "liquidity": "36045.0821",
+          "end_date": "2026-11-22T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-okc-mia-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840920\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Heat\\\"]\",\"question\":\"Thunder vs. Heat\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

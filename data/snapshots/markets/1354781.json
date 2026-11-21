@@ -1,0 +1,26 @@
+{
+  "event_id": "1354781",
+  "event_title": "Pistons vs. Magic",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6925092",
+          "market_type": "moneyline",
+          "question": "Pistons vs. Magic",
+          "slug": "nba-det-orl-2026-11-24",
+          "outcomes": "[\"Pistons\", \"Magic\"]",
+          "outcome_prices": "[\"0.58\", \"0.42\"]",
+          "volume_24h": 63.983051,
+          "liquidity": "23645.5224",
+          "end_date": "2026-11-25T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-det-orl-2026-11-24"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6925092\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.58\\\", \\\"0.42\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Magic\\\"]\",\"question\":\"Pistons vs. Magic\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

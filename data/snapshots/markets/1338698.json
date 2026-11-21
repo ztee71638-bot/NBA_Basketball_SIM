@@ -1,0 +1,26 @@
+{
+  "event_id": "1338698",
+  "event_title": "Nuggets vs. Bulls",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6840922",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Bulls",
+          "slug": "nba-den-chi-2026-11-22",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.755\", \"0.245\"]",
+          "volume_24h": 467.43470700000006,
+          "liquidity": "28463.6906",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840922\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.755\\\", \\\"0.245\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Nuggets vs. Bulls\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

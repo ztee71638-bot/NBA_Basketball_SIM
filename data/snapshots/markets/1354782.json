@@ -1,0 +1,26 @@
+{
+  "event_id": "1354782",
+  "event_title": "Celtics vs. Wizards",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6925093",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Wizards",
+          "slug": "nba-bos-was-2026-11-24",
+          "outcomes": "[\"Celtics\", \"Wizards\"]",
+          "outcome_prices": "[\"0.75\", \"0.25\"]",
+          "volume_24h": 9.369862,
+          "liquidity": "24767.9779",
+          "end_date": "2026-11-25T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-was-2026-11-24"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6925093\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.75\\\", \\\"0.25\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Wizards\\\"]\",\"question\":\"Celtics vs. Wizards\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "event_id": "1346976",
+  "event_title": "Trail Blazers vs. 76ers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6895719",
+          "market_type": "moneyline",
+          "question": "Trail Blazers vs. 76ers",
+          "slug": "nba-por-phi-2026-11-23",
+          "outcomes": "[\"Trail Blazers\", \"76ers\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": 473.276489,
+          "liquidity": "27619.4212",
+          "end_date": "2026-11-24T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-por-phi-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895719\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"76ers\\\"]\",\"question\":\"Trail Blazers vs. 76ers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

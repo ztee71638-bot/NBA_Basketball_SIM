@@ -1,0 +1,26 @@
+{
+  "event_id": "1338701",
+  "event_title": "Celtics vs. Warriors",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6840925",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Warriors",
+          "slug": "nba-bos-gsw-2026-11-22",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.755\", \"0.245\"]",
+          "volume_24h": 1372.1555489999998,
+          "liquidity": "33159.7628",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840925\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.755\\\", \\\"0.245\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Celtics vs. Warriors\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

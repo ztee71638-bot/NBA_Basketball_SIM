@@ -1,0 +1,26 @@
+{
+  "event_id": "1346975",
+  "event_title": "Grizzlies vs. Hornets",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6895709",
+          "market_type": "moneyline",
+          "question": "Grizzlies vs. Hornets",
+          "slug": "nba-mem-cha-2026-11-23",
+          "outcomes": "[\"Grizzlies\", \"Hornets\"]",
+          "outcome_prices": "[\"0.595\", \"0.405\"]",
+          "volume_24h": 631.752949,
+          "liquidity": "27169.2852",
+          "end_date": "2026-11-24T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-mem-cha-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895709\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.595\\\", \\\"0.405\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Hornets\\\"]\",\"question\":\"Grizzlies vs. Hornets\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

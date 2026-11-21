@@ -1,0 +1,26 @@
+{
+  "event_id": "1346981",
+  "event_title": "Suns vs. Pelicans",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6895748",
+          "market_type": "moneyline",
+          "question": "Suns vs. Pelicans",
+          "slug": "nba-phx-nop-2026-11-23",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.645\", \"0.355\"]",
+          "volume_24h": 37,
+          "liquidity": "27514.9175",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895748\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.645\\\", \\\"0.355\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Suns vs. Pelicans\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

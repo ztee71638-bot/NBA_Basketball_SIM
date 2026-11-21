@@ -1,0 +1,26 @@
+{
+  "event_id": "1346986",
+  "event_title": "Spurs vs. Kings",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6895761",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Kings",
+          "slug": "nba-sas-sac-2026-11-23",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.91\", \"0.09\"]",
+          "volume_24h": 628.623077,
+          "liquidity": "19521.0455",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895761\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.91\\\", \\\"0.09\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spurs vs. Kings\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}

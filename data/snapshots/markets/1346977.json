@@ -1,0 +1,26 @@
+{
+  "event_id": "1346977",
+  "event_title": "Thunder vs. Pacers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T15:57:57.080643+00:00",
+      "markets": [
+        {
+          "market_id": "6895728",
+          "market_type": "moneyline",
+          "question": "Thunder vs. Pacers",
+          "slug": "nba-okc-ind-2026-11-23",
+          "outcomes": "[\"Thunder\", \"Pacers\"]",
+          "outcome_prices": "[\"0.705\", \"0.295\"]",
+          "volume_24h": 158.92677500000002,
+          "liquidity": "26264.1242",
+          "end_date": "2026-11-24T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-okc-ind-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895728\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.705\\\", \\\"0.295\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Pacers\\\"]\",\"question\":\"Thunder vs. Pacers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+}
