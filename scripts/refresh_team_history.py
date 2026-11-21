@@ -65,7 +65,7 @@ def parse_team_schedule(payload: dict[str, Any], team_id: str) -> list[dict[str,
         if not competitions:
             continue
         competition = competitions[0]
-        status = (event.get("status") or {}).get("type") or {}
+        status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
         if not status.get("completed", False) and status.get("state") != "post":
             continue
         competitors = competition.get("competitors") or []
