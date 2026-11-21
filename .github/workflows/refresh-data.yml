@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nba-shared-data-refresh-${{ github.ref }}
+  group: ${{ github.event_name == 'pull_request' && github.workflow || 'nba-shared-data-refresh' }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
