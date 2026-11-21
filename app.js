@@ -174,12 +174,16 @@ function estimateMatchup(game) {
 function prefillGameProjections(game) {
   const projection=estimateMatchup(game);
   if(projection){
-    $("home-mean").value=projection.homeMean.toFixed(1);
-    $("away-mean").value=projection.awayMean.toFixed(1);
+    const homeRecent=projection.home.rows.slice(-10), awayRecent=projection.away.rows.slice(-10);
+    const avg=(rows,key)=>rows.length?rows.reduce((sum,row)=>sum+Number(row[key]||0),0)/rows.length:null;
+    const homeBaseline=(avg(homeRecent,"points_for")+avg(awayRecent,"points_against"))/2+1.5;
+    const awayBaseline=(avg(awayRecent,"points_for")+avg(homeRecent,"points_against"))/2-1.5;
+    $("home-mean").value=homeBaseline.toFixed(1);
+    $("away-mean").value=awayBaseline.toFixed(1);
     const homeInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.home?.abbreviation));
     const awayInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.away?.abbreviation));
     const injuryNote=(homeInjuries.length||awayInjuries.length)?" Injury report flags: "+homeInjuries.length+" home / "+awayInjuries.length+" away; no unsupported numeric injury penalty is applied.":"";
-    $("projection-status").textContent="Opponent-informed, recency-weighted estimates from "+projection.home.count+" home-team and "+projection.away.count+" away-team games ("+projection.home.year+"/"+projection.away.year+"); rates are shrunk toward league average. Home-court adjustment: +1.8 points total. Lineups, player minutes, pace and official availability are not modeled."+injuryNote;
+    $("projection-status").textContent="Default score estimates use the current walk-forward baseline (last-10 scoring/allowance). Team-specific scoring variance is estimated from "+projection.home.count+" home-team and "+projection.away.count+" away-team games ("+projection.home.year+"/"+projection.away.year+"). The experimental opponent-adjusted blend remains under test because it has not beaten the baseline yet. Lineups, minutes and advanced pace are not modeled."+injuryNote;
     $("score-sd").value=((projection.homeSd+projection.awaySd)/2).toFixed(1);
   }else{
     $("projection-status").textContent="Insufficient team history (at least 5 games per team required). Enter manual assumptions; no model-backed projection is available.";
@@ -568,6 +572,26 @@ async function loadTeams() {
     teamData = [];
   }
 }
+async function loadModelMetrics() {
+  const root=$("model-validation");
+  if(!root)return;
+  try {
+    const data=await loadJson("data/model_metrics.json");
+    if(!data.games_tested){root.textContent=data.message||"Not enough historical games to evaluate the model yet.";return;}
+    const modelBetter=data.model_score_mae<data.baseline_score_mae&&data.model_winner_accuracy>data.baseline_winner_accuracy;
+    root.innerHTML='<strong>Walk-forward validation · '+Number(data.games_tested).toLocaleString()+' games</strong>'+
+      '<div class="result-grid">'+
+      '<div class="metric"><small>Experimental score MAE</small><b>'+Number(data.model_score_mae).toFixed(2)+' pts</b></div>'+
+      '<div class="metric"><small>Last-10 baseline MAE</small><b>'+Number(data.baseline_score_mae).toFixed(2)+' pts</b></div>'+
+      '<div class="metric"><small>Experimental winner accuracy</small><b>'+(Number(data.model_winner_accuracy)*100).toFixed(1)+'%</b></div>'+
+      '<div class="metric"><small>Baseline winner accuracy</small><b>'+(Number(data.baseline_winner_accuracy)*100).toFixed(1)+'%</b></div>'+
+      '<div class="metric"><small>Experimental Brier score</small><b>'+Number(data.model_brier_score).toFixed(3)+'</b></div></div>'+
+      '<p class="fine-print">'+(modelBetter?"Experimental model currently leads on both score error and winner accuracy.":"The experimental blend has not beaten the baseline on both score error and winner accuracy; default score estimates remain on the baseline.")+
+      ' Last updated: '+(data.generated_at?new Date(data.generated_at).toLocaleString():"unknown")+'. Same-season walk-forward results are preliminary, not proof of future accuracy.</p>';
+  } catch(e) {
+    root.textContent="Walk-forward validation metrics will appear after the next successful team-data refresh.";
+  }
+}
 async function loadPlayers() {
   try {
     const data = await loadJson("data/players.json");
@@ -583,6 +607,7 @@ async function loadAll(){
   try{const data=await loadJson("data/games.json");games=data.games||[];$("data-status").textContent="ESPN updated "+(data.last_updated?new Date(data.last_updated).toLocaleString():"time unavailable");showGames();}catch(e){$("data-status").textContent="Game feed unavailable";$("games").textContent=e.message;}
   await loadPlayers();
   await loadTeams();
+  await loadModelMetrics();
   await loadInjuries();
   await loadMarkets();
 }
