@@ -11,6 +11,8 @@ on:
       - "tests/**"
       - "requirements.txt"
       - ".github/workflows/refresh-data.yml"
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
@@ -28,8 +30,10 @@ jobs:
       - name: Run tests
         run: pytest -q
       - name: Refresh public data
+        if: github.event_name != 'pull_request'
         run: python scripts/refresh_data.py
       - name: Commit changed snapshots
+        if: github.event_name != 'pull_request'
         run: |
           if [[ -n "$(git status --porcelain data/)" ]]; then
             git config user.name "github-actions[bot]"
