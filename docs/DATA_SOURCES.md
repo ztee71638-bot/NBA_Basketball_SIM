@@ -8,7 +8,7 @@ The first implementation uses:
 - League injury report: `site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries`
 - Player game logs: `site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{athlete_id}/gamelog?season={year}`
 
-The scoreboard feed has been exercised successfully by the initial scheduled data refresh. The player roster and game-log collector has parser tests. The collector prioritizes the active 2026–27 roster (`season=2027`) and retrieves five seasons of game logs by default (2027 through 2023); `NBA_HISTORY_SEASONS` can override the comma-separated season-ending years. The player index is based on the current roster, so players no longer on a current NBA roster are not guaranteed to be represented.
+The scoreboard feed has been exercised successfully by the initial scheduled data refresh. The player roster and game-log collector has parser tests. The collector prioritizes the active 2026–27 roster (`season=2027`) and retrieves five seasons of game logs by default (2027 through 2023); `NBA_HISTORY_SEASONS` can override the comma-separated season-ending years. The collector queries each configured season's team rosters, preserving season-specific team membership for players who moved teams or left the league. Coverage still depends on ESPN returning historical roster and game-log data for each player-season; missing logs are retained as missing, not filled with zeros.
 
 ESPN endpoints are public but undocumented and unofficial. They can change, omit older seasons, or throttle requests. The collector uses timeouts, a request delay, retries for transient errors, a 120-minute workflow limit, and a minimum-record guard; permanent client errors are not retried, and failed player requests are recorded as empty season logs rather than fabricated values.
 
@@ -31,6 +31,10 @@ Base URL: `https://gamma-api.polymarket.com`
 The current collector queries active events in Polymarket's NBA series (`series_id=10345`) and flattens their nested markets. It supplements those with paginated active markets carrying the NBA tag (`tag_id=745`), retaining only markets associated with the active game events; this second path is needed because some player props are exposed on the flat markets endpoint rather than the event's nested list. It retains active, non-closed markets and excludes events whose scheduled end time has passed. This captures game moneylines, spreads, totals and player props. Outcome prices, 24-hour volume and liquidity are stored for display. Player/event identity matching and model-vs-price edge calculations are still separate validation steps.
 
 Gamma is used only for market/event discovery and metadata. The simulator does not connect to wallets, create orders, or trade.
+
+## Reproducible prediction ledger
+
+The team-history workflow writes `data/backtest_predictions.json` from the chronological walk-forward run. Each record stores the game date and ID, season, versioned production-baseline and experimental-model projections, the observed final score, and compact pregame-only team/league inputs. It is an audit trail of historical out-of-sample predictions, not a live odds feed. The ledger is generated from historical archives, and future features must not be added to historical records unless their historical pregame availability can be established.
 
 ## Data quality rules
 

@@ -300,7 +300,7 @@ def probability_bucket_report(probabilities, outcomes):
     return report
 
 
-def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None):
+def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None, include_predictions: bool = False):
     by_team = {}
     arenas = (arenas_payload or {}).get("teams", {})
     nba_team_codes = {team.get("abbreviation") for team in payload.get("teams", [])}
@@ -336,6 +336,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     advanced_baseline_errors, advanced_baseline_correct, advanced_probabilities, advanced_outcomes = [], [], [], []
     advanced_baseline_briers, advanced_baseline_probabilities, advanced_baseline_outcomes = [], [], []
     used = 0
+    prediction_records = []
     season_diagnostics = defaultdict(lambda: {
         "games": 0, "model_score_errors": [], "baseline_score_errors": [],
         "model_correct": [], "baseline_correct": [], "model_briers": [],
@@ -408,6 +409,46 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         season_row["model_briers"].append((p_home-float(home_win))**2)
         season_row["baseline_briers"].append((base_probability-float(home_win))**2)
 
+        if include_predictions:
+            def recent_average(rows, key):
+                sample = rows[-10:]
+                values = [float(row[key]) for row in sample if isinstance(row.get(key), (int, float))]
+                return round(mean(values), 3) if values else None
+            prediction_records.append({
+                "game_id": str(home["game_id"]),
+                "date": home["date"],
+                "season": season_key,
+                "home_team": home["team"],
+                "away_team": away["team"],
+                "model_version": "opponent-weighted-score-v1",
+                "baseline_version": "last10-ui-v1",
+                "pregame_inputs": {
+                    "league_points_average": round(league_avg, 3),
+                    "league_points_sd": round(league_sd, 3),
+                    "home_prior_games": len(h_rows),
+                    "away_prior_games": len(a_rows),
+                    "home_recent10_points_for": recent_average(h_rows, "points_for"),
+                    "home_recent10_points_against": recent_average(h_rows, "points_against"),
+                    "away_recent10_points_for": recent_average(a_rows, "points_for"),
+                    "away_recent10_points_against": recent_average(a_rows, "points_against"),
+                },
+                "production_baseline": {
+                    "home_score": round(base_h, 2),
+                    "away_score": round(base_a, 2),
+                    "home_win_probability": round(base_probability, 6),
+                },
+                "experimental_model": {
+                    "home_score": round(pred_h, 2),
+                    "away_score": round(pred_a, 2),
+                    "home_win_probability": round(p_home, 6),
+                },
+                "actual": {
+                    "home_score": actual_h,
+                    "away_score": actual_a,
+                    "home_win": bool(home_win),
+                },
+            })
+
         # Fit only on prior, already-observed default-UI baseline predictions.
         if len(baseline_probabilities) > 100:
             prior_calibration = fit_probability_calibrator(
@@ -456,7 +497,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
 
     if not used:
         return {"games_tested": 0, "message": "Not enough prior games for a walk-forward evaluation yet."}
-    return {
+    result = {
         "games_tested": used,
         "excluded_non_nba_opponent_rows": sum(
             1 for team in payload.get("teams", [])
@@ -524,6 +565,9 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "advanced_baseline_calibration_error": expected_calibration_error(advanced_baseline_probabilities, advanced_baseline_outcomes),
         "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
     }
+    if include_predictions:
+        result["predictions"] = prediction_records
+    return result
 
 
 def main():
@@ -531,17 +575,29 @@ def main():
     parser.add_argument("--data", type=Path, default=DATA_PATH)
     parser.add_argument("--min-prior-games", type=int, default=5)
     parser.add_argument("--output", type=Path, default=None, help="Optional path for a JSON metrics snapshot")
+    parser.add_argument("--predictions-output", type=Path, default=None, help="Optional path for a compact pregame prediction ledger")
     parser.add_argument("--arenas", type=Path, default=ARENAS_PATH)
     args = parser.parse_args()
     payload = json.loads(args.data.read_text(encoding="utf-8"))
     arenas = json.loads(args.arenas.read_text(encoding="utf-8")) if args.arenas.exists() else {}
-    result = run_backtest(payload, args.min_prior_games, arenas)
-    result["generated_at"] = datetime.now(timezone.utc).isoformat()
+    result = run_backtest(payload, args.min_prior_games, arenas, include_predictions=bool(args.predictions_output))
+    predictions = result.pop("predictions", [])
+    generated_at = datetime.now(timezone.utc).isoformat()
+    result["generated_at"] = generated_at
     rendered = json.dumps(result, indent=2) + "\n"
     print(rendered)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(rendered, encoding="utf-8")
+    if args.predictions_output:
+        args.predictions_output.parent.mkdir(parents=True, exist_ok=True)
+        ledger = {
+            "generated_at": generated_at,
+            "prediction_count": len(predictions),
+            "method": "chronological walk-forward; pregame inputs only",
+            "predictions": predictions,
+        }
+        args.predictions_output.write_text(json.dumps(ledger, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

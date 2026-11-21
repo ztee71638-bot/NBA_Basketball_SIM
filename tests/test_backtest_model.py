@@ -91,6 +91,13 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
     assert "model_brier_score" in result
     assert result["by_season"]["2027"]["games"] == 1
     assert sum(bucket["games"] for bucket in result["production_baseline_confidence_buckets"]) == 1
+    ledger_result = module.run_backtest(payload, include_predictions=True)
+    assert len(ledger_result["predictions"]) == 1
+    record = ledger_result["predictions"][0]
+    assert record["game_id"] == "target"
+    assert record["model_version"] == "opponent-weighted-score-v1"
+    assert record["pregame_inputs"]["home_prior_games"] == 30
+    assert record["actual"]["home_score"] == 114
 
 
 
