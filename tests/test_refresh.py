@@ -81,3 +81,22 @@ def test_fetch_injuries_flattens_team_groups(monkeypatch):
     assert rows[0]["team"] == "BOS"
     assert rows[0]["status"] == "Out"
     assert rows[0]["return_date"] == "2026-11-25"
+
+
+def test_fetch_injuries_supports_flat_rows_and_player_ids_in_links(monkeypatch):
+    payload = {"injuries": [{
+        "athlete": {
+            "displayName": "Player Two",
+            "team": {"abbreviation": "ATL", "displayName": "Atlanta Hawks"},
+            "position": {"abbreviation": "F"},
+            "links": [{"href": "https://www.espn.com/nba/player/_/id/987654/player-two"}],
+        },
+        "status": "Day-To-Day", "type": {"name": "ankle"},
+        "details": {"side": "Left"}, "date": "2026-11-21T00:00Z",
+    }]}
+    monkeypatch.setattr(module, "get_json", lambda url, params=None: payload)
+    rows = module.fetch_injuries()
+    assert len(rows) == 1
+    assert rows[0]["athlete_id"] == "987654"
+    assert rows[0]["team"] == "ATL"
+    assert rows[0]["status"] == "Day-To-Day"
