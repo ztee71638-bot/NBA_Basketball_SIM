@@ -187,7 +187,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
                     end_time = datetime.fromisoformat(str(end_value).replace("Z", "+00:00"))
                     if end_time.tzinfo is None:
                         end_time = end_time.replace(tzinfo=timezone.utc)
-                    if end_time < now - timedelta(hours=4):
+                    if end_time < now:
                         continue
                 except ValueError:
                     pass
