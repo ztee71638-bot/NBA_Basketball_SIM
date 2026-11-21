@@ -48,6 +48,11 @@ def get_json(url: str, params: dict[str, Any] | None = None) -> Any:
             return response.json()
         except requests.RequestException as exc:
             last_error = exc
+            status_code = getattr(getattr(exc, "response", None), "status_code", None)
+            # Permanent client errors (for example a missing athlete season)
+            # should not incur four exponential-backoff retries.
+            if status_code and 400 <= status_code < 500 and status_code != 429:
+                raise
             if attempt == 3:
                 raise
             time.sleep(2 ** attempt)
@@ -146,6 +151,7 @@ def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def fetch_player_database() -> list[dict[str, Any]]:
     players_by_id: dict[str, dict[str, Any]] = {}
     for abbreviation, team_id in TEAM_IDS.items():
+        print(f"Fetching ESPN roster for {abbreviation}...")
         try:
             roster_payload = get_json(ROSTER_URL.format(team_id=team_id), {"season": max(SEASONS)})
         except requests.RequestException as exc:
@@ -175,6 +181,7 @@ def fetch_player_database() -> list[dict[str, Any]]:
                 except requests.RequestException as exc:
                     print(f"Game log unavailable for {player['name']} ({season}): {exc}")
                     player["seasons"][str(season)] = []
+    print(f"Collected {len(players_by_id)} unique rostered players; game-log retrieval finished.")
     return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
 
 
