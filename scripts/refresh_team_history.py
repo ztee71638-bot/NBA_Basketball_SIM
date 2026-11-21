@@ -272,6 +272,7 @@ def write_immutable_team_snapshot(teams: list[dict[str, Any]]) -> None:
         "game_id", "date", "opponent", "home_away", "points_for", "points_against",
         "pace_estimate", "possessions_estimate", "offensive_rating", "defensive_rating",
         "rest_days", "back_to_back", "games_last_3_days", "games_last_5_days",
+        "travel_miles", "road_trip_games",
     )
     snapshot = {
         "snapshot_date": stamp,
@@ -293,6 +294,38 @@ def write_immutable_team_snapshot(teams: list[dict[str, Any]]) -> None:
     }
     path.write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
 
+
+def _canonical_team(abbreviation: str | None) -> str | None:
+    aliases = {"GS": "GSW", "NY": "NYK", "NO": "NOP", "SA": "SAS", "WSH": "WAS"}
+    return aliases.get(str(abbreviation or ""), str(abbreviation or "")) or None
+
+
+def haversine_miles(a: dict[str, Any], b: dict[str, Any]) -> float:
+    import math
+    lat1, lon1 = math.radians(float(a["latitude"])), math.radians(float(a["longitude"]))
+    lat2, lon2 = math.radians(float(b["latitude"])), math.radians(float(b["longitude"]))
+    dlat, dlon = lat2-lat1, lon2-lon1
+    value = math.sin(dlat/2)**2 + math.cos(lat1)*math.cos(lat2)*math.sin(dlon/2)**2
+    return 3958.7613 * 2 * math.asin(math.sqrt(value))
+
+
+def enrich_schedule_travel(team_abbreviation: str, rows: list[dict[str, Any]], arenas: dict[str, Any]) -> None:
+    own_code = _canonical_team(team_abbreviation)
+    for index, row in enumerate(rows):
+        row["travel_miles"] = None
+        row["road_trip_games"] = 0
+        if row.get("home_away") == "away":
+            row["road_trip_games"] = (rows[index-1].get("road_trip_games", 0) + 1) if index and rows[index-1].get("home_away") == "away" else 1
+        if not index:
+            continue
+        previous = rows[index-1]
+        previous_venue = own_code if previous.get("home_away") == "home" else _canonical_team(previous.get("opponent"))
+        current_venue = own_code if row.get("home_away") == "home" else _canonical_team(row.get("opponent"))
+        origin, destination = arenas.get(previous_venue), arenas.get(current_venue)
+        if origin and destination:
+            row["travel_miles"] = round(haversine_miles(origin, destination), 1)
+
+
 def fetch_team_database() -> list[dict[str, Any]]:
     teams = [
         {"id": str(team_id), "abbreviation": abbreviation, "seasons": {}, "source": "ESPN"}
@@ -303,6 +336,9 @@ def fetch_team_database() -> list[dict[str, Any]]:
         season: fetch_season_from_scoreboard(season)
         for season in sorted(SEASONS)
     }
+    arena_file = DATA / "arenas.json"
+    arena_payload = json.loads(arena_file.read_text(encoding="utf-8")) if arena_file.exists() else {}
+    arenas = arena_payload.get("teams", {})
     for team in teams:
         for season in sorted(SEASONS):
             rows = sorted(grouped_by_season[season].get(team["abbreviation"], []), key=lambda row: row.get("date") or "")
@@ -321,6 +357,7 @@ def fetch_team_database() -> list[dict[str, Any]]:
                     row["back_to_back"] = None
                 row["games_last_3_days"] = sum(1 for day in previous_dates if 0 < (current_date-day).days <= 3)
                 row["games_last_5_days"] = sum(1 for day in previous_dates if 0 < (current_date-day).days <= 5)
+            enrich_schedule_travel(team["abbreviation"], rows, arenas)
             team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
     enrich_team_games_with_boxscores(teams)
     for team in teams:
