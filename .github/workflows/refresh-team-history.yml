@@ -46,8 +46,12 @@ jobs:
         if: github.event_name != 'pull_request'
         run: python scripts/refresh_team_history.py
       - name: Import supplemental NBA Stats datasets
-        if: github.event_name != 'pull_request'
-        run: python scripts/import_supplemental_nba_stats.py
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python scripts/import_supplemental_nba_stats.py --output-dir "$RUNNER_TEMP/boxscorelab"
+          else
+            python scripts/import_supplemental_nba_stats.py
+          fi
       - name: Run chronological model backtest
         if: github.event_name != 'pull_request'
         run: python scripts/backtest_model.py --output data/model_metrics.json --predictions-output data/backtest_predictions.json
