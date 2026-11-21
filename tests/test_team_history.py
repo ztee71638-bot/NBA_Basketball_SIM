@@ -244,3 +244,73 @@ def test_reconcile_does_not_overwrite_existing_opponent_record():
     }
     assert module.reconcile_missing_opponent_records(grouped) == 0
     assert len(grouped["LAL"]) == 1
+
+
+
+def test_merge_cached_boxscore_metrics_preserves_verified_history():
+    cached = [{
+        "abbreviation": "BOS",
+        "seasons": {"2026": {"games": [{
+            "game_id": "cached-game", "possessions_estimate": 98.5,
+            "pace_estimate": 99.2, "offensive_rating": 114.0,
+            "defensive_rating": 108.0,
+            "advanced_stats_source": "ESPN boxscore",
+        }]}},
+    }]
+    refreshed = [{
+        "abbreviation": "BOS",
+        "seasons": {"2026": {"games": [
+            {"game_id": "cached-game", "points_for": 112},
+            {"game_id": "new-game", "points_for": 108},
+        ]}},
+    }]
+    restored = module.merge_cached_boxscore_metrics(cached, refreshed)
+    assert restored == 1
+    row = refreshed[0]["seasons"]["2026"]["games"][0]
+    assert row["pace_estimate"] == 99.2
+    assert row["offensive_rating"] == 114.0
+    assert "pace_estimate" not in refreshed[0]["seasons"]["2026"]["games"][1]
+
+
+def test_boxscore_enrichment_prioritizes_missing_games_and_skips_complete(monkeypatch):
+    fields = {
+        "possessions_estimate": 98.0, "pace_estimate": 99.0,
+        "offensive_rating": 112.0, "defensive_rating": 108.0,
+        "advanced_stats_source": "ESPN boxscore",
+    }
+    teams = []
+    for abbreviation, opponent in (("BOS", "LAL"), ("LAL", "BOS")):
+        games = []
+        for game_id, date in (
+            ("old-missing", "2026-10-01T00:00Z"),
+            ("complete", "2026-10-02T00:00Z"),
+            ("new-missing", "2026-10-03T00:00Z"),
+        ):
+            row = {"game_id": game_id, "date": date, "team": abbreviation,
+                   "opponent": opponent, "points_for": 110, "points_against": 105}
+            if game_id == "complete":
+                row.update(fields)
+            games.append(row)
+        teams.append({"abbreviation": abbreviation,
+                      "seasons": {"2027": {"games": games}}})
+
+    calls = []
+    def fake_get_json(url, params):
+        calls.append(params["event"])
+        def box(abbreviation):
+            return {"team": {"abbreviation": abbreviation}, "statistics": [
+                {"name": "fieldGoalsMade-fieldGoalsAttempted", "displayValue": "40-85"},
+                {"name": "freeThrowsMade-freeThrowsAttempted", "displayValue": "18-22"},
+                {"name": "offensiveRebounds", "displayValue": "10"},
+                {"name": "totalTurnovers", "displayValue": "12"},
+            ]}
+        return {"boxscore": {"teams": [box("BOS"), box("LAL")]}}
+
+    monkeypatch.setattr(module, "get_json", fake_get_json)
+    module.enrich_team_games_with_boxscores(teams, {"2027"}, max_games=1)
+    assert calls == ["new-missing"]
+    for team in teams:
+        rows = {row["game_id"]: row for row in team["seasons"]["2027"]["games"]}
+        assert rows["complete"]["pace_estimate"] == 99.0
+        assert rows["new-missing"]["pace_estimate"] is not None
+        assert "pace_estimate" not in rows["old-missing"]

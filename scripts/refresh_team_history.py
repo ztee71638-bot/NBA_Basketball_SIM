@@ -31,6 +31,10 @@ TEAM_IDS = {
     "OKC": 25, "UTA": 26, "WAS": 27, "TOR": 28, "MEM": 29, "CHA": 30,
 }
 ID_TO_TEAM = {str(team_id): abbr for abbr, team_id in TEAM_IDS.items()}
+BOX_SCORE_METRIC_FIELDS = (
+    "possessions_estimate", "pace_estimate", "offensive_rating",
+    "defensive_rating", "advanced_stats_source",
+)
 
 
 def get_json(url: str, params: dict[str, Any]) -> Any:
@@ -291,9 +295,39 @@ def _possessions(stats: dict[str, float]) -> float | None:
     return estimate if estimate > 0 else None
 
 
+def merge_cached_boxscore_metrics(existing_teams: list[dict[str, Any]],
+                                    refreshed_teams: list[dict[str, Any]]) -> int:
+    """Carry verified boxscore metrics forward when schedule history is rebuilt."""
+    cached: dict[tuple[str, str], dict[str, Any]] = {}
+    for team in existing_teams or []:
+        abbreviation = str(team.get("abbreviation") or "")
+        for season_data in (team.get("seasons") or {}).values():
+            for row in season_data.get("games") or []:
+                game_id = str(row.get("game_id") or "")
+                if not game_id:
+                    continue
+                values = {key: row[key] for key in BOX_SCORE_METRIC_FIELDS
+                          if row.get(key) is not None}
+                if values:
+                    cached[(game_id, abbreviation)] = values
+    merged = 0
+    for team in refreshed_teams:
+        abbreviation = str(team.get("abbreviation") or "")
+        for season_data in (team.get("seasons") or {}).values():
+            for row in season_data.get("games") or []:
+                values = cached.get((str(row.get("game_id") or ""), abbreviation), {})
+                copied = False
+                for key, value in values.items():
+                    if row.get(key) is None:
+                        row[key] = value
+                        copied = True
+                merged += int(copied)
+    return merged
+
+
 def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enrich: set[str] | None = None,
-                                     max_games: int = 120) -> None:
-    """Attach estimated possessions/efficiency to a bounded set of recent ESPN boxscores."""
+                                     max_games: int = 300) -> None:
+    """Progressively enrich missing ESPN boxscores while retaining prior verified metrics."""
     games: dict[str, list[dict[str, Any]]] = {}
     dates: dict[str, str] = {}
     for team in teams:
@@ -305,12 +339,22 @@ def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enr
                     game_id = str(row["game_id"])
                     games.setdefault(game_id, []).append(row)
                     dates[game_id] = max(dates.get(game_id, ""), str(row.get("date") or ""))
-    selected = sorted(games, key=lambda game_id: dates.get(game_id, ""), reverse=True)[:max_games]
-    print(f"Enriching {len(selected)} most recent game boxscores (limit {max_games}).", flush=True)
+    missing = [
+        game_id for game_id, rows in games.items()
+        if len(rows) == 2 and not all(
+            all(row.get(field) is not None for field in BOX_SCORE_METRIC_FIELDS)
+            for row in rows
+        )
+    ]
+    selected = sorted(missing, key=lambda game_id: dates.get(game_id, ""), reverse=True)[:max_games]
+    print(f"Enriching {len(selected)} missing game boxscores across selected seasons (limit {max_games}).", flush=True)
     enriched = 0
     for game_id in selected:
         rows = games[game_id]
-        if len(rows) != 2 or all(row.get("pace_estimate") for row in rows):
+        if len(rows) != 2 or all(
+            all(row.get(field) is not None for field in BOX_SCORE_METRIC_FIELDS)
+            for row in rows
+        ):
             continue
         try:
             payload = get_json(
@@ -490,9 +534,17 @@ def fetch_team_database() -> list[dict[str, Any]]:
                 row["games_last_5_days"] = sum(1 for day in previous_dates if 0 < (current_date-day).days <= 5)
             enrich_schedule_travel(team["abbreviation"], rows, arenas)
             team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
-    # Boxscore enrichment is more expensive than schedule collection. Enrich only
-    # the current season and cap it to the 120 most recent games.
-    enrich_team_games_with_boxscores(teams, {str(max(SEASONS))}, max_games=120)
+    # Preserve previously collected advanced metrics, then progressively
+    # backfill missing boxscores across all archived seasons in bounded batches.
+    existing_path = DATA / "teams.json"
+    if existing_path.exists():
+        try:
+            existing_payload = json.loads(existing_path.read_text(encoding="utf-8"))
+            restored = merge_cached_boxscore_metrics(existing_payload.get("teams", []), teams)
+            print(f"Restored {restored} team-game rows with previously verified boxscore metrics.", flush=True)
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            print(f"Could not restore cached boxscore metrics: {exc}", flush=True)
+    enrich_team_games_with_boxscores(teams, {str(value) for value in SEASONS}, max_games=300)
     for team in teams:
         for season_data in team["seasons"].values():
             season_data["summary"] = summarize_games(season_data.get("games", []))
