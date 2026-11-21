@@ -1018,7 +1018,7 @@ $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlaye
 $("prop-line").addEventListener("input",()=>{selectedPropMarket=null;});
 $("reload").addEventListener("click",loadAll);
 $("refresh-markets").addEventListener("click",loadMarkets);
-renderMarketNavigation();const page=$("markets").children[activeMarketDay];if(page)page.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});});
+
 
 $("player-search").addEventListener("input",renderPlayerSearch);
 loadAll();
