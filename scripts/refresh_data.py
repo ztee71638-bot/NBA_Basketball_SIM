@@ -415,6 +415,93 @@ def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, An
     target.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def archive_market_snapshots(
+    markets: list[dict[str, Any]],
+    now: datetime | None = None,
+    max_snapshots: int = 500,
+) -> int:
+    """Append price/line changes for active NBA game markets by Polymarket event."""
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for market in markets:
+        if market.get("market_type") not in {"moneyline", "spread", "total"}:
+            continue
+        if not _truthy(market.get("active")) or _truthy(market.get("closed")):
+            continue
+        end_value = market.get("end_date")
+        if end_value:
+            try:
+                end_time = datetime.fromisoformat(str(end_value).replace("Z", "+00:00"))
+                if end_time.tzinfo is None:
+                    end_time = end_time.replace(tzinfo=timezone.utc)
+                if end_time <= now:
+                    continue
+            except ValueError:
+                continue
+        event_id = str(market.get("event_id") or "")
+        market_id = str(market.get("id") or "")
+        if not event_id or not market_id:
+            continue
+        grouped.setdefault(event_id, []).append({
+            "market_id": market_id,
+            "market_type": market.get("market_type"),
+            "question": market.get("question"),
+            "slug": market.get("slug"),
+            "outcomes": market.get("outcomes"),
+            "outcome_prices": market.get("outcome_prices"),
+            "volume_24h": market.get("volume_24h"),
+            "liquidity": market.get("liquidity"),
+            "end_date": end_value,
+            "url": market.get("url"),
+        })
+
+    root = DATA / "snapshots" / "markets"
+    archived = 0
+    for event_id, rows in grouped.items():
+        rows.sort(key=lambda row: (str(row.get("market_type")), str(row.get("market_id"))))
+        event_title = next((market.get("event_title") for market in markets
+                            if str(market.get("event_id") or "") == event_id), None)
+        signature_data = [{
+            "market_id": row["market_id"],
+            "market_type": row["market_type"],
+            "question": row["question"],
+            "outcomes": row["outcomes"],
+            "outcome_prices": row["outcome_prices"],
+        } for row in rows]
+        signature = json.dumps(signature_data, sort_keys=True, separators=(",", ":"))
+        safe_event_id = re.sub(r"[^A-Za-z0-9_-]", "", event_id)
+        if not safe_event_id:
+            continue
+        target = root / f"{safe_event_id}.json"
+        if target.exists():
+            payload = json.loads(target.read_text(encoding="utf-8"))
+        else:
+            payload = {
+                "event_id": event_id,
+                "event_title": event_title,
+                "source": "Polymarket public Gamma API",
+                "snapshots": [],
+            }
+        snapshots = payload.setdefault("snapshots", [])
+        if snapshots and snapshots[-1].get("signature") == signature:
+            continue
+        snapshots.append({
+            "captured_at": now.isoformat(),
+            "markets": rows,
+            "signature": signature,
+        })
+        if len(snapshots) > max_snapshots:
+            del snapshots[:-max_snapshots]
+        payload["last_updated"] = now.isoformat()
+        root.mkdir(parents=True, exist_ok=True)
+        temporary = target.with_suffix(".tmp")
+        temporary.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        temporary.replace(target)
+        archived += 1
+    return archived
+
 def archive_pregame_availability(
     games: list[dict[str, Any]],
     injuries: list[dict[str, Any]],
@@ -504,12 +591,15 @@ def main() -> None:
     write_snapshot("polymarket.json", "Polymarket public Gamma API", "markets", markets)
     write_snapshot("injuries.json", "ESPN public injury report", "injuries", injuries)
     write_snapshot("lineups.json", "ESPN game summaries", "games", lineups)
-    availability_snapshots = archive_pregame_availability(games, injuries, lineups)
+    snapshot_time = datetime.now(timezone.utc)
+    market_snapshots = archive_market_snapshots(markets, snapshot_time)
+    availability_snapshots = archive_pregame_availability(games, injuries, lineups, snapshot_time)
     confirmed = sum(1 for item in lineups if item.get("status") == "confirmed")
     print(
         f"Saved {len(games)} NBA games, {len(markets)} likely NBA markets, "
-        f"{len(injuries)} injury records, {confirmed} confirmed starting lineups "
-        f"and {availability_snapshots} changed pregame availability snapshots."
+        f"{len(injuries)} injury records, {confirmed} confirmed starting lineups, "
+        f"{market_snapshots} changed market-price snapshots and "
+        f"{availability_snapshots} changed pregame availability snapshots."
     )
 
 

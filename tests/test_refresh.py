@@ -264,3 +264,54 @@ def test_archive_pregame_availability_records_only_changes_for_nearby_games(tmp_
     assert len(final_payload["snapshots"]) == 2
     assert final_payload["snapshots"][-1]["injuries"][0]["status"] == "Out"
     assert final_payload["snapshots"][-1]["lineup"]["status"] == "confirmed"
+
+
+
+def test_archive_market_snapshots_records_price_changes_and_ignores_noise(tmp_path, monkeypatch):
+    now = datetime(2026, 11, 21, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(module, "DATA", tmp_path)
+    markets = [
+        {
+            "id": "moneyline-1", "event_id": "event-1", "event_title": "Celtics vs Heat",
+            "market_type": "moneyline", "question": "Celtics vs Heat",
+            "active": True, "closed": False, "outcomes": ["Celtics", "Heat"],
+            "outcome_prices": ["0.60", "0.40"], "volume_24h": 1000,
+            "liquidity": 500, "end_date": "2026-11-21T18:00:00Z",
+        },
+        {
+            "id": "total-1", "event_id": "event-1", "event_title": "Celtics vs Heat",
+            "market_type": "total", "question": "O/U 220.5",
+            "active": True, "closed": False, "outcomes": ["Over", "Under"],
+            "outcome_prices": ["0.51", "0.49"], "volume_24h": 500,
+            "liquidity": 300, "end_date": "2026-11-21T18:00:00Z",
+        },
+        {
+            "id": "prop-1", "event_id": "event-1", "event_title": "Celtics vs Heat",
+            "market_type": "player_prop", "question": "Player points O/U",
+            "active": True, "closed": False, "outcomes": ["Over", "Under"],
+            "outcome_prices": ["0.55", "0.45"], "end_date": "2026-11-21T18:00:00Z",
+        },
+        {
+            "id": "expired-1", "event_id": "event-2", "event_title": "Expired game",
+            "market_type": "moneyline", "question": "Expired game",
+            "active": True, "closed": False, "outcomes": ["A", "B"],
+            "outcome_prices": ["0.50", "0.50"], "end_date": "2026-11-21T11:00:00Z",
+        },
+    ]
+
+    assert module.archive_market_snapshots(markets, now) == 1
+    target = tmp_path / "snapshots" / "markets" / "event-1.json"
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    assert len(payload["snapshots"]) == 1
+    assert {row["market_type"] for row in payload["snapshots"][0]["markets"]} == {"moneyline", "total"}
+
+    # Volume/liquidity updates alone do not create noisy duplicate snapshots.
+    volume_only = [dict(row, volume_24h=99999, liquidity=99999) for row in markets]
+    assert module.archive_market_snapshots(volume_only, now) == 0
+
+    changed = [dict(row) for row in markets]
+    changed[0]["outcome_prices"] = ["0.64", "0.36"]
+    assert module.archive_market_snapshots(changed, now) == 1
+    final_payload = json.loads(target.read_text(encoding="utf-8"))
+    assert len(final_payload["snapshots"]) == 2
+    assert final_payload["snapshots"][-1]["markets"][0]["outcome_prices"] == ["0.64", "0.36"]

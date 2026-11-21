@@ -54,9 +54,19 @@ jobs:
           if [ -f data/data_quality.json ]; then python -m json.tool data/data_quality.json >/dev/null; fi
           if [ -f data/lineups.json ]; then python -m json.tool data/lineups.json >/dev/null; fi
           node --check app.js
+      - name: Stage only production assets and app data
+        run: |
+          mkdir -p site/data
+          cp index.html app.js styles.css site/
+          for file in arenas.json games.json injuries.json lineups.json polymarket.json player_roster.json player_impact.json teams.json model_metrics.json data_quality.json players.json; do
+            if [ -f "data/$file" ]; then
+              cp "data/$file" site/data/
+            fi
+          done
+          touch site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: site
   deploy:
     if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     environment:
