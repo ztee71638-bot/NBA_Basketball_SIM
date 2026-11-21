@@ -1,6 +1,9 @@
 const $ = (id) => document.getElementById(id);
 let games = [];
 let players = [];
+let playerImpactData = [];
+let playerImpactLoaded = false;
+let playerImpactLoading = null;
 let playersLoaded = false;
 let playersLoading = null;
 let teamData = [];
@@ -596,6 +599,41 @@ function simulatePlayerMarket(marketId) {
 }
 
 
+function normalizeImpactName(value) {
+  return String(value || "").normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+function impactSeasonFromEspn(season) {
+  return String(season) === "2027" ? "2026-27" : String(season) === "2026" ? "2025-26" : null;
+}
+function findPlayerImpact(player, espnSeason) {
+  const season = impactSeasonFromEspn(espnSeason);
+  if (!season || !playerImpactData.length) return null;
+  const name = normalizeImpactName(player.name);
+  const team = canonicalTeam(player.team);
+  let matches = playerImpactData.filter(row => row.season === season && normalizeImpactName(row.name) === name && canonicalTeam(row.team) === team);
+  if (!matches.length) matches = playerImpactData.filter(row => row.season === season && normalizeImpactName(row.name) === name);
+  if (!matches.length && season === "2026-27") {
+    matches = playerImpactData.filter(row => row.season === "2025-26" && normalizeImpactName(row.name) === name && canonicalTeam(row.team) === team);
+    if (!matches.length) matches = playerImpactData.filter(row => row.season === "2025-26" && normalizeImpactName(row.name) === name);
+  }
+  return matches.length === 1 ? matches[0] : matches.find(row => canonicalTeam(row.team) === team) || null;
+}
+async function loadPlayerImpact() {
+  if (playerImpactLoaded) return;
+  if (playerImpactLoading) return playerImpactLoading;
+  playerImpactLoading = (async () => {
+    try {
+      const data = await loadJson("data/player_impact.json");
+      playerImpactData = data.players || [];
+      playerImpactLoaded = true;
+      if (data.last_updated) $("data-status").textContent += " · HAPM updated " + new Date(data.last_updated).toLocaleDateString();
+    } catch (e) {
+      playerImpactData = [];
+      console.warn("Player impact data unavailable:", e.message);
+    }
+  })();
+  try { await playerImpactLoading; } finally { playerImpactLoading = null; }
+}
 function showPlayer(playerId) {
   const p = players.find(item => String(item.id) === String(playerId));
   if (!p) return;
@@ -612,6 +650,10 @@ function showPlayer(playerId) {
     return;
   }
   const season = chosen[0], logs = chosen[1];
+  const impact = findPlayerImpact(p, season);
+  const impactHtml = impact
+    ? '<div class="metric"><small>HAPM impact · pts/100</small><b>' + (impact.net > 0 ? '+' : '') + Number(impact.net).toFixed(1) + '</b></div><div class="metric"><small>HAPM offense</small><b>' + (impact.offense > 0 ? '+' : '') + Number(impact.offense).toFixed(1) + '</b></div><div class="metric"><small>HAPM defense</small><b>' + (impact.defense > 0 ? '+' : '') + Number(impact.defense).toFixed(1) + '</b></div><div class="metric"><small>HAPM possessions</small><b>' + Number(impact.possessions).toLocaleString() + '</b></div>'
+    : '<div class="metric"><small>HAPM impact</small><b>Not rated</b></div>';
   const sortedLogs = [...logs].sort((a,b) => new Date(b.date || 0) - new Date(a.date || 0));
   const recent = sortedLogs.slice(0,10);
   selectedPlayer = p;
@@ -626,7 +668,7 @@ function showPlayer(playerId) {
     ? (impactRows.reduce((sum,g)=>sum+g.plus_minus,0)/impactRows.reduce((sum,g)=>sum+g.minutes,0)*36).toFixed(1)
     : "n/a";
   const rows = sortedLogs.slice(0,15).map(g => '<tr><td>' + escapeHtml(g.date ? new Date(g.date).toLocaleDateString() : "—") + '</td><td>' + escapeHtml(g.opponent || "—") + '</td><td>' + escapeHtml(g.result || "—") + '</td><td>' + (g.minutes ?? "—") + '</td><td>' + (g.points ?? "—") + '</td><td>' + (g.rebounds ?? "—") + '</td><td>' + (g.assists ?? "—") + '</td></tr>').join("");
-  $("player-detail").innerHTML = '<h3>' + escapeHtml(p.name) + ' · ' + escapeHtml(p.team) + ' · Season ' + escapeHtml(season) + '</h3><div class="result-grid"><div class="metric"><small>Last 10 PTS avg</small><b>' + avg("points") + '</b></div><div class="metric"><small>Last 10 REB avg</small><b>' + avg("rebounds") + '</b></div><div class="metric"><small>Last 10 AST avg</small><b>' + avg("assists") + '</b></div><div class="metric"><small>Last 10 MIN avg</small><b>' + avg("minutes") + '</b></div><div class="metric"><small>Unadjusted +/- per 36</small><b>' + plusMinus36 + '</b></div></div><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Opponent</th><th>Result</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="fine-print">Last 10 averages use available numeric game logs only. Historical logs are descriptive, not projections. Plus/minus per 36 is an unadjusted on-court signal, not causal player value or an on/off estimate; it is not used as a team score adjustment.</p><div id="player-market-matches"></div>';
+  $("player-detail").innerHTML = '<h3>' + escapeHtml(p.name) + ' · ' + escapeHtml(p.team) + ' · Season ' + escapeHtml(season) + '</h3><div class="result-grid"><div class="metric"><small>Last 10 PTS avg</small><b>' + avg("points") + '</b></div><div class="metric"><small>Last 10 REB avg</small><b>' + avg("rebounds") + '</b></div><div class="metric"><small>Last 10 AST avg</small><b>' + avg("assists") + '</b></div><div class="metric"><small>Last 10 MIN avg</small><b>' + avg("minutes") + '</b></div><div class="metric"><small>Unadjusted +/- per 36</small><b>' + plusMinus36 + '</b></div></div><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Opponent</th><th>Result</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="fine-print">Last 10 averages use available numeric game logs only. Historical logs are descriptive, not projections. Plus/minus per 36 is an unadjusted on-court signal. HAPM is a separate held-out adjusted plus-minus rating (3/3 blend, points per 100 possessions, 250+ possession minimum) from LUMA Basketball Research. HAPM is shown as context only and is not yet used to adjust game scores pending simulator backtesting.</p><div id="player-market-matches"></div>';
   renderPlayerMarkets(p);
 }
 function renderInjuries() {
@@ -743,6 +785,7 @@ async function loadPlayers() {
   try {
     const data = await loadJson("data/players.json");
     players = data.players || [];
+    await loadPlayerImpact();
     playerUpdatedAt = data.last_updated ? new Date(data.last_updated) : null;
     playersLoaded = true;
     renderPlayerSearch();
