@@ -150,12 +150,13 @@ function weightedMetric(rows, key, halfLife=8) {
   const values = rows.map((row,index) => ({value:Number(row[key]), age:rows.length-1-index}))
     .filter(item => Number.isFinite(item.value));
   if (!values.length) return null;
-  let totalWeight=0, weighted=0;
-  values.forEach(item=>{const w=Math.pow(0.5,item.age/halfLife);totalWeight+=w;weighted+=item.value*w;});
+  let totalWeight=0, squaredWeight=0, weighted=0;
+  values.forEach(item=>{const w=Math.pow(0.5,item.age/halfLife);totalWeight+=w;squaredWeight+=w*w;weighted+=item.value*w;});
   const mean=weighted/totalWeight;
   let variance=0;
   values.forEach(item=>{const w=Math.pow(0.5,item.age/halfLife);variance+=w*Math.pow(item.value-mean,2);});
-  return {mean,sd:Math.sqrt(variance/totalWeight),count:values.length};
+  const effectiveCount=squaredWeight>0?totalWeight*totalWeight/squaredWeight:0;
+  return {mean,sd:Math.sqrt(variance/totalWeight),count:values.length,effectiveCount};
 }
 function leagueScoringBaseline() {
   const rows=teamData.flatMap(team=>Object.values(team.seasons||{}).flatMap(v=>v.games||[]))
@@ -170,10 +171,11 @@ function teamModelProfile(abbreviation, league) {
   const offense=weightedMetric(rows,"points_for");
   const defense=weightedMetric(rows,"points_against");
   if(!offense||!defense)return null;
-  const reliability=rows.length/(rows.length+8);
+  const reliability=offense.effectiveCount/(offense.effectiveCount+8);
+  const defenseReliability=defense.effectiveCount/(defense.effectiveCount+8);
   const adjustedOffense=league.average+(offense.mean-league.average)*reliability;
-  const adjustedDefense=league.average+(defense.mean-league.average)*reliability;
-  const varianceReliability=rows.length/(rows.length+10);
+  const adjustedDefense=league.average+(defense.mean-league.average)*defenseReliability;
+  const varianceReliability=offense.effectiveCount/(offense.effectiveCount+10);
   const sd=Math.sqrt(varianceReliability*Math.pow(offense.sd,2)+(1-varianceReliability)*Math.pow(league.sd||12,2));
   return {rows,offense:adjustedOffense,defense:adjustedDefense,sd,count:rows.length,year:season.year};
 }
