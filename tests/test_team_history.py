@@ -66,3 +66,10 @@ def test_parse_team_schedule_accepts_numeric_completed_scores_without_status():
     rows = module.parse_team_schedule(payload, "13")
     assert len(rows) == 1
     assert rows[0]["points_for"] == 108
+
+
+def test_month_ranges_cover_partial_months():
+    from datetime import date
+    assert list(module._month_ranges(date(2026, 10, 15), date(2026, 11, 3))) == [
+        "20261015-20261031", "20261101-20261103"
+    ]
