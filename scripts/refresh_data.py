@@ -222,6 +222,9 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
     # Player props are sometimes exposed on the flat markets endpoint rather
     # than in the event's nested markets array. Keep only markets attached to
     # the currently active NBA game events found above.
+    flat_seen = 0
+    flat_matched = 0
+    flat_slug_matched = 0
     for offset in range(0, 5000, 500):
         page_payload = get_json(GAMMA_URL, {
             "tag_id": "745",
@@ -236,6 +239,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
             page = page_payload
         else:
             page = []
+        flat_seen += len(page)
         for market in page:
             if not isinstance(market, dict):
                 continue
@@ -249,14 +253,27 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
                     if not isinstance(association, dict):
                         continue
                     candidate = active_events.get(str(association.get("id") or ""))
+                    if not candidate and association.get("slug"):
+                        candidate = next((item for item in active_events.values() if item.get("slug") == association.get("slug")), None)
                     if candidate:
                         matched_event = candidate
                         break
+            if not matched_event:
+                market_slug = str(market.get("slug") or "")
+                matched_event = next(
+                    (item for item in active_events.values()
+                     if item.get("slug") and market_slug.startswith(str(item["slug"]) + "-")),
+                    None,
+                )
+                if matched_event:
+                    flat_slug_matched += 1
             if matched_event:
+                flat_matched += 1
                 add_market(market, matched_event)
         if len(page) < 500:
             break
 
+    print(f"Polymarket NBA discovery: {len(events)} active game events, {flat_seen} flat NBA markets scanned, {flat_matched} linked to active games ({flat_slug_matched} by event-slug prefix), {len(results)} unique markets.")
     ordered = sorted(results.values(), key=lambda item: float(item.get("volume_24h") or 0), reverse=True)
     return ordered[:1200]
 
