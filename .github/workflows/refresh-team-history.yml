@@ -22,7 +22,7 @@ permissions:
 
 concurrency:
   group: nba-shared-data-refresh-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   refresh-team-history:
