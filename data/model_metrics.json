@@ -1,4 +1,6 @@
 {
+  "model_version": "opponent-weighted-score-v1",
+  "production_baseline_version": "last10-ui-v1",
   "games_tested": 5763,
   "excluded_non_nba_opponent_rows": 22,
   "model_score_mae": 9.491,
@@ -91,6 +93,41 @@
       "brier_score": 0.0082
     }
   ],
+  "recent_windows": {
+    "100": {
+      "games": 100,
+      "model_score_mae": 9.72,
+      "baseline_score_mae": 9.685,
+      "model_winner_accuracy": 0.65,
+      "baseline_winner_accuracy": 0.68,
+      "model_brier_score": 0.2196,
+      "baseline_brier_score": 0.2196,
+      "model_calibration_error": 0.0919,
+      "baseline_calibration_error": 0.0825
+    },
+    "250": {
+      "games": 250,
+      "model_score_mae": 9.826,
+      "baseline_score_mae": 9.902,
+      "model_winner_accuracy": 0.616,
+      "baseline_winner_accuracy": 0.596,
+      "model_brier_score": 0.2265,
+      "baseline_brier_score": 0.2333,
+      "model_calibration_error": 0.0478,
+      "baseline_calibration_error": 0.0543
+    },
+    "500": {
+      "games": 500,
+      "model_score_mae": 10.037,
+      "baseline_score_mae": 10.005,
+      "model_winner_accuracy": 0.658,
+      "baseline_winner_accuracy": 0.636,
+      "model_brier_score": 0.2243,
+      "baseline_brier_score": 0.2272,
+      "model_calibration_error": 0.0781,
+      "baseline_calibration_error": 0.0433
+    }
+  },
   "by_season": {
     "2023": {
       "games": 1302,
@@ -149,5 +186,5 @@
   "advanced_calibration_error": 0.1707,
   "advanced_baseline_calibration_error": 0.1297,
   "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
-  "generated_at": "2026-11-21T14:50:33.292092+00:00"
+  "generated_at": "2026-11-21T15:21:46.137686+00:00"
 }
