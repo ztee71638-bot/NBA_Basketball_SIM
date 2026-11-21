@@ -176,33 +176,73 @@ def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
 
 def fetch_player_database() -> list[dict[str, Any]]:
     players_by_id: dict[str, dict[str, Any]] = {}
-    for abbreviation, team_id in TEAM_IDS.items():
-        print(f"Fetching ESPN roster for {abbreviation}...", flush=True)
-        try:
-            roster_payload = get_json(ROSTER_URL.format(team_id=team_id), {"season": max(SEASONS)})
-        except requests.RequestException as exc:
-            print(f"Roster unavailable for {abbreviation}: {exc}", flush=True)
-            continue
-        for athlete in flatten_roster(roster_payload):
-            athlete_id = str(athlete.get("id") or "")
-            if not athlete_id:
+    latest_season = max(SEASONS)
+
+    # Build a true multi-season roster index. The previous collector only
+    # queried the latest roster, which excluded players who left the league
+    # or changed teams before the current season.
+    for season in SEASONS:
+        for abbreviation, team_id in TEAM_IDS.items():
+            print(f"Fetching ESPN roster for {abbreviation} ({season})...", flush=True)
+            try:
+                roster_payload = get_json(
+                    ROSTER_URL.format(team_id=team_id), {"season": season}
+                )
+            except requests.RequestException as exc:
+                print(f"Roster unavailable for {abbreviation}/{season}: {exc}", flush=True)
                 continue
-            status = athlete.get("status") or {}
-            if status.get("type") and status.get("type") not in ("active", "day-to-day", "injured"):
-                continue
-            players_by_id.setdefault(athlete_id, {
-                "id": athlete_id,
-                "name": athlete.get("displayName") or athlete.get("fullName"),
-                "team": abbreviation,
-                "position": (athlete.get("position") or {}).get("abbreviation"),
-                "jersey": athlete.get("jersey"),
-                "status": status.get("name") or "Rostered",
-                "seasons": {},
-                "source": "ESPN",
-            })
+
+            for athlete in flatten_roster(roster_payload):
+                athlete_id = str(athlete.get("id") or "")
+                if not athlete_id:
+                    continue
+                status = athlete.get("status") or {}
+                if not isinstance(status, dict):
+                    status = {}
+
+                # Apply availability filtering only to the latest roster.
+                # Historical roster membership is valid even when a player
+                # is now retired, waived, inactive, or no longer on an NBA team.
+                if season == latest_season and status.get("type") and status.get("type") not in (
+                    "active", "day-to-day", "injured"
+                ):
+                    continue
+
+                player = players_by_id.setdefault(athlete_id, {
+                    "id": athlete_id,
+                    "name": athlete.get("displayName") or athlete.get("fullName"),
+                    "team": abbreviation,
+                    "position": (athlete.get("position") or {}).get("abbreviation"),
+                    "jersey": athlete.get("jersey"),
+                    "status": status.get("name") or "Historical rostered",
+                    "seasons": {},
+                    "roster_seasons": [],
+                    "teams_by_season": {},
+                    "source": "ESPN",
+                })
+                season_key = str(season)
+                if season_key not in player["roster_seasons"]:
+                    player["roster_seasons"].append(season_key)
+                teams = player["teams_by_season"].setdefault(season_key, [])
+                if abbreviation not in teams:
+                    teams.append(abbreviation)
+
+                # SEASONS is newest-first by default. Preserve the most
+                # recent known team/identity as the primary display identity.
+                if season == latest_season or not player.get("_latest_roster_season"):
+                    player["team"] = abbreviation
+                    player["name"] = athlete.get("displayName") or athlete.get("fullName") or player["name"]
+                    player["position"] = (athlete.get("position") or {}).get("abbreviation") or player["position"]
+                    player["jersey"] = athlete.get("jersey") or player["jersey"]
+                    if season == latest_season:
+                        player["status"] = status.get("name") or "Rostered"
+                    player["_latest_roster_season"] = season
+                elif season > player["_latest_roster_season"]:
+                    player["_latest_roster_season"] = season
+                    player["team"] = abbreviation
 
     if not players_by_id:
-        raise RuntimeError("ESPN returned no rostered players; refusing to write an empty archive.")
+        raise RuntimeError("ESPN returned no historical rostered players; refusing to write an empty archive.")
 
     tasks = [
         (athlete_id, season)
@@ -248,6 +288,8 @@ def fetch_player_database() -> list[dict[str, Any]]:
 
     # Ensure every player has an explicit entry for every requested season.
     for player in players_by_id.values():
+        player.pop("_latest_roster_season", None)
+        player["roster_seasons"].sort(key=int, reverse=True)
         for season in SEASONS:
             player["seasons"].setdefault(str(season), [])
     total_logs = sum(
@@ -261,8 +303,8 @@ def fetch_player_database() -> list[dict[str, Any]]:
             "refusing to overwrite the existing archive."
         )
     print(
-        f"Collected {len(players_by_id)} players and {total_logs} game-log rows; "
-        f"{failures}/{len(tasks)} player-season requests unavailable.",
+        f"Collected {len(players_by_id)} players from {len(SEASONS)} historical roster seasons "
+        f"and {total_logs} game-log rows; {failures}/{len(tasks)} player-season requests unavailable.",
         flush=True,
     )
     return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
