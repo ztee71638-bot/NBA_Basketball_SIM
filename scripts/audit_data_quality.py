@@ -89,10 +89,20 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         if total and total / max(1, active_teams) < 60 and int(season) < now.year:
             warnings.append(f"Season {season}: average history is below 60 games/team.")
     mismatched = 0
+    non_nba_or_unresolved_opponent_games = 0
+    nba_team_codes = set(abbreviations)
     mismatch_breakdown = Counter()
     mismatch_examples: list[dict[str, Any]] = []
     for key, rows in sorted(paired_games.items()):
         reasons = []
+        if len(rows) == 1 and (
+            not rows[0].get("opponent") or rows[0].get("opponent") not in nba_team_codes
+        ):
+            # The historical schedule includes preseason/exhibition games
+            # against international/select teams, plus occasional missing
+            # opponent labels. These are not missing NBA-vs-NBA counterparts.
+            non_nba_or_unresolved_opponent_games += 1
+            continue
         if len(rows) != 2:
             reasons.append("missing_opponent_record" if len(rows) == 1 else "unexpected_record_count")
         else:
@@ -156,6 +166,7 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             "team_count": len(teams),
             "seasons": season_summary,
             "unpaired_or_mismatched_games": mismatched,
+            "non_nba_or_unresolved_opponent_games": non_nba_or_unresolved_opponent_games,
             "mismatch_breakdown": dict(sorted(mismatch_breakdown.items())),
             "mismatch_examples": mismatch_examples,
         },
