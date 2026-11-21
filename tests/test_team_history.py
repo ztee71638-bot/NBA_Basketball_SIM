@@ -320,3 +320,27 @@ def test_boxscore_enrichment_prioritizes_missing_games_and_skips_complete(monkey
 def test_progressive_boxscore_backfill_default_batch_is_six_hundred():
     import inspect
     assert inspect.signature(module.enrich_team_games_with_boxscores).parameters["max_games"].default == 600
+
+def test_boxscore_backfill_round_robins_across_seasons_and_prioritizes_low_coverage():
+    selected = module.select_balanced_boxscore_backfill(
+        {"2023": [f"23-{i}" for i in range(5)],
+         "2024": [f"24-{i}" for i in range(5)],
+         "2025": [f"25-{i}" for i in range(5)]},
+        {"2023": 0.0, "2024": 20.0, "2025": 50.0},
+        6,
+    )
+    assert selected == ["23-0", "24-0", "25-0", "23-1", "24-1", "25-1"]
+
+
+def test_boxscore_backfill_reallocates_batch_when_a_season_is_exhausted():
+    selected = module.select_balanced_boxscore_backfill(
+        {"2023": ["old-1"], "2024": ["mid-1", "mid-2", "mid-3"],
+         "2025": ["new-1", "new-2"]},
+        {"2023": 0.0, "2024": 10.0, "2025": 50.0},
+        5,
+    )
+    assert selected == ["old-1", "mid-1", "new-1", "mid-2", "new-2"]
+
+
+def test_boxscore_backfill_zero_limit_selects_nothing():
+    assert module.select_balanced_boxscore_backfill({"2023": ["g1"]}, {"2023": 0.0}, 0) == []
