@@ -614,20 +614,30 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "model_log_loss": binary_log_loss(model_probabilities, model_outcomes),
         "model_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
         "calibrated_brier_score": round(mean(calibrated_briers), 4),
+        "calibrated_log_loss": binary_log_loss(calibrated_probabilities, baseline_outcomes),
         "calibrated_calibration_error": expected_calibration_error(calibrated_probabilities, model_outcomes),
         "calibration_validation_games": len(calibrated_probabilities),
         "calibration": {
             **fit_probability_calibrator(baseline_probabilities, baseline_outcomes),
             "training_model": "last10_baseline_simulation_probability",
+            "validation_method": "prequential_walk_forward",
+            "validation_games": len(calibrated_probabilities),
             "validation_brier_score": round(mean(calibrated_briers), 4),
+            "validation_log_loss": binary_log_loss(calibrated_probabilities, baseline_outcomes),
             "validation_calibration_error": expected_calibration_error(calibrated_probabilities, baseline_outcomes),
             "raw_brier_score": round(mean(baseline_briers), 4),
+            "raw_log_loss": binary_log_loss(baseline_probabilities, baseline_outcomes),
             "raw_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
             "opponent_adjusted_model_brier_score": round(mean(briers), 4),
+            "opponent_adjusted_model_log_loss": binary_log_loss(model_probabilities, model_outcomes),
             "opponent_adjusted_model_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
             "live_enabled": bool(
                 len(calibrated_probabilities) >= 500
                 and mean(calibrated_briers) < mean(baseline_briers)
+                and binary_log_loss(calibrated_probabilities, baseline_outcomes)
+                    < binary_log_loss(baseline_probabilities, baseline_outcomes)
+                and binary_log_loss(calibrated_probabilities, baseline_outcomes)
+                    < binary_log_loss(model_probabilities, model_outcomes)
                 and expected_calibration_error(calibrated_probabilities, baseline_outcomes)
                     < expected_calibration_error(baseline_probabilities, baseline_outcomes)
                 and mean(calibrated_briers) < mean(briers)
