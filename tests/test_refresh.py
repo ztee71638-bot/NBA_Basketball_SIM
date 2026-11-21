@@ -62,3 +62,22 @@ def test_nba_market_filter_ignores_unrelated_description_text():
         "description": "A long description with unrelated league references.",
     }
     assert not module.is_nba_market(market)
+
+
+def test_fetch_injuries_flattens_team_groups(monkeypatch):
+    payload = {"injuries": [{
+        "team": {"abbreviation": "BOS", "displayName": "Boston Celtics"},
+        "injuries": [{
+            "athlete": {"id": "123", "displayName": "Player One", "position": {"abbreviation": "G"}},
+            "status": "Out", "type": {"name": "ankle"}, "date": "2026-11-20T00:00Z",
+            "details": {"side": "Left", "returnDate": "2026-11-25"},
+            "shortComment": "Will miss next game",
+        }],
+    }]}
+    monkeypatch.setattr(module, "get_json", lambda url, params=None: payload)
+    rows = module.fetch_injuries()
+    assert len(rows) == 1
+    assert rows[0]["athlete_id"] == "123"
+    assert rows[0]["team"] == "BOS"
+    assert rows[0]["status"] == "Out"
+    assert rows[0]["return_date"] == "2026-11-25"
