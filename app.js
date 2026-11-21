@@ -1,6 +1,7 @@
 const $ = (id) => document.getElementById(id);
 let games = [];
 let players = [];
+let teamData = [];
 let selectedGame = null;
 const fmt = (n) => Number(n).toFixed(1) + "%";
 async function loadJson(path) {
@@ -18,10 +19,37 @@ function showGames() {
   }).join("");
   root.querySelectorAll("[data-game]").forEach(b=>b.addEventListener("click",()=>selectGame(games[Number(b.dataset.game)])));
 }
+function canonicalTeam(abbr) {
+  const aliases = {GS:"GSW",NY:"NYK",NO:"NOP",SA:"SAS",WSH:"WAS",UTAH:"UTA"};
+  return aliases[abbr] || abbr;
+}
+function teamSummary(abbr) {
+  const key = canonicalTeam(abbr);
+  const team = teamData.find(t => t.abbreviation === key);
+  if (!team) return null;
+  const seasons = Object.entries(team.seasons || {}).sort((a,b)=>Number(b[0])-Number(a[0]));
+  const season = seasons.find(([,value]) => (value.summary?.games || 0) >= 5);
+  return season ? {year:season[0], ...season[1].summary} : null;
+}
+function prefillGameProjections(game) {
+  const home = teamSummary(game.home?.abbreviation);
+  const away = teamSummary(game.away?.abbreviation);
+  const fields = [home?.last10_avg_points_for, home?.last10_avg_points_against, away?.last10_avg_points_for, away?.last10_avg_points_against];
+  if (fields.every(v => Number.isFinite(v))) {
+    const homeMean = (home.last10_avg_points_for + away.last10_avg_points_against) / 2 + 1.5;
+    const awayMean = (away.last10_avg_points_for + home.last10_avg_points_against) / 2 - 1.5;
+    $("home-mean").value = homeMean.toFixed(1);
+    $("away-mean").value = awayMean.toFixed(1);
+    $("projection-status").textContent = "Starting estimates use last-10 scoring and points-allowed averages (" + home.year + "/" + away.year + "). They still omit confirmed lineups, injuries, pace and matchup adjustments.";
+  } else {
+    $("projection-status").textContent = "Team history is unavailable or too limited for this matchup. The score inputs remain manual assumptions.";
+  }
+}
 function selectGame(game) {
   selectedGame = game;
   $("selected-title").textContent = game.name || game.short_name || "Selected matchup";
-  $("game-results").textContent = "Matchup selected. Set assumptions and run the simulation.";
+  $("game-results").textContent = "Matchup selected. Review the starting estimates and run the simulation.";
+  prefillGameProjections(game);
 }
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
@@ -35,7 +63,7 @@ function runGameSimulation() {
   let hw=0,aw=0,homeTotal=0,awayTotal=0,totals=[];
   for(let i=0;i<trials;i++){let h=Math.max(50,Math.round(normalSample(hm,sd))),a=Math.max(50,Math.round(normalSample(am,sd)));if(h>a)hw++;else if(a>h)aw++;homeTotal+=h;awayTotal+=a;totals.push(h+a);}
   totals.sort((a,b)=>a-b);
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Home win</small><b>${fmt(hw/trials*100)}</b></div><div class="metric"><small>Away win</small><b>${fmt(aw/trials*100)}</b></div><div class="metric"><small>Avg. home score</small><b>${(homeTotal/trials).toFixed(1)}</b></div><div class="metric"><small>Avg. away score</small><b>${(awayTotal/trials).toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. Independent normal score assumptions; no team/player data adjustment yet. Treat as a calculator, not a betting recommendation.</p>`;
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Home win</small><b>${fmt(hw/trials*100)}</b></div><div class="metric"><small>Away win</small><b>${fmt(aw/trials*100)}</b></div><div class="metric"><small>Avg. home score</small><b>${(homeTotal/trials).toFixed(1)}</b></div><div class="metric"><small>Avg. away score</small><b>${(awayTotal/trials).toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. Independent normal score assumptions; starting means may use recent team scoring and points-allowed averages, but lineups, injuries, pace and score correlation are not yet modeled. Not a calibrated betting recommendation.</p>`;
 }
 function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return sign*y;}
 function calcProp(){
@@ -76,6 +104,15 @@ function showPlayer(playerId) {
   const rows = sortedLogs.slice(0,15).map(g => '<tr><td>' + escapeHtml(g.date ? new Date(g.date).toLocaleDateString() : "—") + '</td><td>' + escapeHtml(g.opponent || "—") + '</td><td>' + escapeHtml(g.result || "—") + '</td><td>' + (g.minutes ?? "—") + '</td><td>' + (g.points ?? "—") + '</td><td>' + (g.rebounds ?? "—") + '</td><td>' + (g.assists ?? "—") + '</td></tr>').join("");
   $("player-detail").innerHTML = '<h3>' + escapeHtml(p.name) + ' · ' + escapeHtml(p.team) + ' · Season ' + escapeHtml(season) + '</h3><div class="result-grid"><div class="metric"><small>Last 10 PTS avg</small><b>' + avg("points") + '</b></div><div class="metric"><small>Last 10 REB avg</small><b>' + avg("rebounds") + '</b></div><div class="metric"><small>Last 10 AST avg</small><b>' + avg("assists") + '</b></div></div><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Opponent</th><th>Result</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="fine-print">Last 10 averages use available numeric game logs only. Historical logs are descriptive, not projections.</p>';
 }
+async function loadTeams() {
+  try {
+    const data = await loadJson("data/teams.json");
+    teamData = data.teams || [];
+    if (data.last_updated) $("data-status").textContent += " · Teams updated " + new Date(data.last_updated).toLocaleString();
+  } catch (e) {
+    teamData = [];
+  }
+}
 async function loadPlayers() {
   try {
     const data = await loadJson("data/players.json");
@@ -90,6 +127,7 @@ async function loadPlayers() {
 async function loadAll(){
   try{const data=await loadJson("data/games.json");games=data.games||[];$("data-status").textContent="ESPN updated "+(data.last_updated?new Date(data.last_updated).toLocaleString():"time unavailable");showGames();}catch(e){$("data-status").textContent="Game feed unavailable";$("games").textContent=e.message;}
   await loadPlayers();
+  await loadTeams();
   await loadMarkets();
 }
 $("simulate").addEventListener("click",runGameSimulation);
