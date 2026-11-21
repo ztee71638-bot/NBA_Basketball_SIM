@@ -90,7 +90,7 @@ def test_travel_distance_uses_arena_coordinates_and_road_trip_streak():
     assert 900 < distance < 1000
     rows = [
         {"home_away": "home", "opponent": "BOS"},
-        {"home_away": "away", "opponent": "ATL"},
+        {"home_away": "away", "opponent": "BOS"},
         {"home_away": "away", "opponent": "NYK"},
         {"home_away": "home", "opponent": "MIA"},
     ]
