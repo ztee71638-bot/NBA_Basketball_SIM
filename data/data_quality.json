@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T13:51:00.520691+00:00",
+  "generated_at": "2026-11-21T13:54:23.022932+00:00",
   "status": "warning",
   "team_history": {
     "last_updated": "2026-11-21T10:53:25.104354+00:00",
-    "age_hours": 2.96,
+    "age_hours": 3.02,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -68,12 +68,12 @@
       2024,
       2023
     ],
-    "last_updated": "2026-11-21T13:50:59.598207+00:00",
+    "last_updated": "2026-11-21T13:54:22.905846+00:00",
     "age_hours": 0.0,
-    "players_without_any_logs": 8
+    "players_without_any_logs": 26
   },
   "warnings": [
-    "8 player records have no game logs in any stored season."
+    "26 player records have no game logs in any stored season."
   ],
   "errors": [],
   "note": "This is a coverage and integrity audit, not a measure of predictive accuracy."
