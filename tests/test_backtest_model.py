@@ -22,6 +22,23 @@ def test_predict_returns_finite_matchup_estimates():
     assert 0 < result[2] < 1
 
 
+
+def test_advanced_efficiency_prediction_uses_pace_and_efficiency_history():
+    home = [{
+        "points_for": 118, "offensive_rating": 118.0, "defensive_rating": 110.0,
+        "pace_estimate": 100.0
+    } for _ in range(12)]
+    away = [{
+        "points_for": 108, "offensive_rating": 108.0, "defensive_rating": 116.0,
+        "pace_estimate": 98.0
+    } for _ in range(12)]
+    result = module.predict_advanced(home, away, 99.0, 113.0, 113.0)
+    assert result is not None
+    home_points, away_points, home_probability, pace = result
+    assert home_points > away_points
+    assert 0 < home_probability < 1
+    assert 0 < pace < 120
+
 def test_backtest_uses_only_prior_games_and_reports_metrics():
     team_a, team_b = [], []
     for index in range(30):
