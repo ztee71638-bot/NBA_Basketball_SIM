@@ -223,7 +223,8 @@ function prefillGameProjections(game) {
     $("away-mean").value=awayBaseline.toFixed(1);
     const homeInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.home?.abbreviation));
     const awayInjuries=injuryData.filter(item=>canonicalTeam(item.team)===canonicalTeam(game.away?.abbreviation));
-    const injuryNote=(homeInjuries.length||awayInjuries.length)?" Injury report flags: "+homeInjuries.length+" home / "+awayInjuries.length+" away; no unsupported numeric injury penalty is applied.":"";
+    const injuryNames=items=>items.slice(0,4).map(item=>item.name+" ("+(item.status||"status unknown")+")").join(", ");
+    const injuryNote=(homeInjuries.length||awayInjuries.length)?" Injury report: home "+(injuryNames(homeInjuries)||"none listed")+"; away "+(injuryNames(awayInjuries)||"none listed")+". No unsupported numeric injury penalty is applied.":"";
     const restBefore=(rows)=>{const prior=rows.filter(row=>new Date(row.date)<new Date(game.date)).slice(-1)[0];return prior?Math.max(0,Math.floor((new Date(game.date)-new Date(prior.date))/86400000)-1):null;};
     const homeRest=restBefore(projection.home.rows),awayRest=restBefore(projection.away.rows);
     const restNote=homeRest!==null&&awayRest!==null?" Scheduled rest: home "+homeRest+" days / away "+awayRest+" days.":"";
