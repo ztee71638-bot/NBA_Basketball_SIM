@@ -45,7 +45,7 @@ def test_backtest_travel_and_rest_use_only_pre_game_schedule():
     cutoff = datetime.fromisoformat("2026-11-20T00:00:00+00:00")
     rows = [
         {"date": "2026-11-17T00:00:00+00:00", "home_away": "home", "opponent": "BOS"},
-        {"date": "2026-11-19T00:00:00+00:00", "home_away": "away", "opponent": "ATL"},
+        {"date": "2026-11-19T00:00:00+00:00", "home_away": "away", "opponent": "BOS"},
     ]
     arenas = {
         "ATL": {"latitude": 33.7573, "longitude": -84.3963},
