@@ -174,7 +174,7 @@ function runGameSimulation() {
   $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
-  $("simulation-confidence").textContent=homeName+" won "+hw.toLocaleString()+" of "+trials.toLocaleString()+" simulated games. "+awayName+" won "+aw.toLocaleString()+" of "+trials.toLocaleString()+"."+(ties?" Tied: "+ties.toLocaleString()+".":"");
+  $("simulation-confidence").innerHTML=`<div class="simulation-probability-list"><div class="simulation-probability-row"><span class="simulation-probability-team">${escapeHtml(homeName)}<br><small>${hw.toLocaleString()} wins</small></span><span class="simulation-probability-value">${homeWinRate.toFixed(1)}%<small>Win probability</small></span></div><div class="simulation-probability-row"><span class="simulation-probability-team">${escapeHtml(awayName)}<br><small>${aw.toLocaleString()} wins</small></span><span class="simulation-probability-value">${awayWinRate.toFixed(1)}%<small>Win probability</small></span></div>${ties?`<p class="fine-print">Tied games: ${ties.toLocaleString()}</p>`:""}</div>`;
   $("simulation-modal").hidden=false;
   $("simulation-modal-close").focus();
 }
