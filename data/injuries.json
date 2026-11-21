@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-11-21T05:42:11.363990+00:00",
+  "last_updated": "2026-11-21T05:42:57.509445+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
-      "athlete_id": "",
+      "athlete_id": "5149077",
       "name": "Kingston Flemings",
-      "team": null,
-      "team_name": null,
+      "team": "ATL",
+      "team_name": "Atlanta Hawks",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -18,10 +18,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3146557",
       "name": "Jock Landale",
-      "team": null,
-      "team_name": null,
+      "team": "ATL",
+      "team_name": "Atlanta Hawks",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -33,10 +33,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4873201",
       "name": "Asa Newell",
-      "team": null,
-      "team_name": null,
+      "team": "ATL",
+      "team_name": "Atlanta Hawks",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -48,10 +48,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "2490149",
       "name": "CJ McCollum",
-      "team": null,
-      "team_name": null,
+      "team": "ATL",
+      "team_name": "Atlanta Hawks",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -63,10 +63,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4712863",
       "name": "Mouhamed Gueye",
-      "team": null,
-      "team_name": null,
+      "team": "ATL",
+      "team_name": "Atlanta Hawks",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -78,10 +78,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5105571",
       "name": "Henri Veesaar",
-      "team": null,
-      "team_name": null,
+      "team": "ATL",
+      "team_name": "Atlanta Hawks",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -93,10 +93,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4065648",
       "name": "Jayson Tatum",
-      "team": null,
-      "team_name": null,
+      "team": "BOS",
+      "team_name": "Boston Celtics",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -108,10 +108,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3078576",
       "name": "Derrick White",
-      "team": null,
-      "team_name": null,
+      "team": "BOS",
+      "team_name": "Boston Celtics",
       "position": "G",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -123,10 +123,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5279130",
       "name": "Nolan Traore",
-      "team": null,
-      "team_name": null,
+      "team": "BKN",
+      "team_name": "Brooklyn Nets",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -138,10 +138,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4702670",
       "name": "Grant Nelson",
-      "team": null,
-      "team_name": null,
+      "team": "BKN",
+      "team_name": "Brooklyn Nets",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -153,10 +153,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4066218",
       "name": "Grant Williams",
-      "team": null,
-      "team_name": null,
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -168,10 +168,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3135045",
       "name": "Grayson Allen",
-      "team": null,
-      "team_name": null,
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -183,10 +183,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5061575",
       "name": "Kon Knueppel",
-      "team": null,
-      "team_name": null,
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -198,10 +198,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3032979",
       "name": "Dennis Schroder",
-      "team": null,
-      "team_name": null,
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -213,10 +213,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4397189",
       "name": "Jalen Smith",
-      "team": null,
-      "team_name": null,
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -228,10 +228,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5105555",
       "name": "Tobe Awaka",
-      "team": null,
-      "team_name": null,
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -243,10 +243,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5095151",
       "name": "Caleb Wilson",
-      "team": null,
-      "team_name": null,
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -258,10 +258,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4683747",
       "name": "Jaylon Tyson",
-      "team": null,
-      "team_name": null,
+      "team": "CLE",
+      "team_name": "Cleveland Cavaliers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -273,10 +273,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5106268",
       "name": "Nae'Qwan Tomlin",
-      "team": null,
-      "team_name": null,
+      "team": "CLE",
+      "team_name": "Cleveland Cavaliers",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -288,10 +288,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432158",
       "name": "Evan Mobley",
-      "team": null,
-      "team_name": null,
+      "team": "CLE",
+      "team_name": "Cleveland Cavaliers",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -303,10 +303,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4278078",
       "name": "P.J. Washington",
-      "team": null,
-      "team_name": null,
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -318,10 +318,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4896372",
       "name": "Walter Clayton Jr.",
-      "team": null,
-      "team_name": null,
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
       "position": "G",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -333,10 +333,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4683688",
       "name": "Dereck Lively II",
-      "team": null,
-      "team_name": null,
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -348,10 +348,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5106040",
       "name": "Tobi Lawal",
-      "team": null,
-      "team_name": null,
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -363,10 +363,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5279129",
       "name": "Sergio de Larrea",
-      "team": null,
-      "team_name": null,
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -378,10 +378,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5148538",
       "name": "Tarik Biberovic",
-      "team": null,
-      "team_name": null,
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -393,10 +393,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432181",
       "name": "Julian Strawther",
-      "team": null,
-      "team_name": null,
+      "team": "DEN",
+      "team_name": "Denver Nuggets",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -408,10 +408,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4683771",
       "name": "Ronald Holland II",
-      "team": null,
-      "team_name": null,
+      "team": "DET",
+      "team_name": "Detroit Pistons",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -423,10 +423,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "2990962",
       "name": "Taurean Prince",
-      "team": null,
-      "team_name": null,
+      "team": "DET",
+      "team_name": "Detroit Pistons",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -438,10 +438,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5258459",
       "name": "Ebuka Okorie",
-      "team": null,
-      "team_name": null,
+      "team": "DET",
+      "team_name": "Detroit Pistons",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -453,10 +453,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5037878",
       "name": "Ugonna Onyenso",
-      "team": null,
-      "team_name": null,
+      "team": "DET",
+      "team_name": "Detroit Pistons",
       "position": "C",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -468,10 +468,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3157465",
       "name": "Duncan Robinson",
-      "team": null,
-      "team_name": null,
+      "team": "DET",
+      "team_name": "Detroit Pistons",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -483,10 +483,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4433621",
       "name": "Jalen Duren",
-      "team": null,
-      "team_name": null,
+      "team": "DET",
+      "team_name": "Detroit Pistons",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -498,10 +498,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "6589",
       "name": "Draymond Green",
-      "team": null,
-      "team_name": null,
+      "team": "GS",
+      "team_name": "Golden State Warriors",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -513,10 +513,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4397040",
       "name": "Brandon Williams",
-      "team": null,
-      "team_name": null,
+      "team": "GS",
+      "team_name": "Golden State Warriors",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -528,10 +528,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3975",
       "name": "Stephen Curry",
-      "team": null,
-      "team_name": null,
+      "team": "GS",
+      "team_name": "Golden State Warriors",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -543,10 +543,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3102531",
       "name": "Kristaps Porzingis",
-      "team": null,
-      "team_name": null,
+      "team": "GS",
+      "team_name": "Golden State Warriors",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -558,10 +558,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432171",
       "name": "Moses Moody",
-      "team": null,
-      "team_name": null,
+      "team": "GS",
+      "team_name": "Golden State Warriors",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -573,10 +573,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "6430",
       "name": "Jimmy Butler III",
-      "team": null,
-      "team_name": null,
+      "team": "GS",
+      "team_name": "Golden State Warriors",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -588,10 +588,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3102529",
       "name": "Clint Capela",
-      "team": null,
-      "team_name": null,
+      "team": "HOU",
+      "team_name": "Houston Rockets",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -603,10 +603,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "2530530",
       "name": "T.J. McConnell",
-      "team": null,
-      "team_name": null,
+      "team": "IND",
+      "team_name": "Indiana Pacers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -618,10 +618,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4396993",
       "name": "Tyrese Haliburton",
-      "team": null,
-      "team_name": null,
+      "team": "IND",
+      "team_name": "Indiana Pacers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -633,10 +633,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5157066",
       "name": "Johnny Furphy",
-      "team": null,
-      "team_name": null,
+      "team": "IND",
+      "team_name": "Indiana Pacers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -648,10 +648,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4433076",
       "name": "Ben Sheppard",
-      "team": null,
-      "team_name": null,
+      "team": "IND",
+      "team_name": "Indiana Pacers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -663,10 +663,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3913176",
       "name": "Brandon Ingram",
-      "team": null,
-      "team_name": null,
+      "team": "LAC",
+      "team_name": "LA Clippers",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -678,10 +678,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "6580",
       "name": "Bradley Beal",
-      "team": null,
-      "team_name": null,
+      "team": "LAC",
+      "team_name": "LA Clippers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -693,10 +693,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4396818",
       "name": "Jordan Miller",
-      "team": null,
-      "team_name": null,
+      "team": "LAC",
+      "team_name": "LA Clippers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -708,10 +708,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4066457",
       "name": "Austin Reaves",
-      "team": null,
-      "team_name": null,
+      "team": "LAL",
+      "team_name": "Los Angeles Lakers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -723,10 +723,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4781746",
       "name": "Javon Small",
-      "team": null,
-      "team_name": null,
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -738,10 +738,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5041935",
       "name": "Cameron Boozer",
-      "team": null,
-      "team_name": null,
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -753,10 +753,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4065733",
       "name": "Ty Jerome",
-      "team": null,
-      "team_name": null,
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -768,10 +768,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "2991070",
       "name": "Jerami Grant",
-      "team": null,
-      "team_name": null,
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -783,10 +783,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5105550",
       "name": "GG Jackson",
-      "team": null,
-      "team_name": null,
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -798,10 +798,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4431785",
       "name": "Scotty Pippen Jr.",
-      "team": null,
-      "team_name": null,
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -813,10 +813,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5105462",
       "name": "Richie Saunders",
-      "team": null,
-      "team_name": null,
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -828,10 +828,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4431772",
       "name": "Myron Gardner",
-      "team": null,
-      "team_name": null,
+      "team": "MIA",
+      "team_name": "Miami Heat",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -843,10 +843,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4997526",
       "name": "Ousmane Dieng",
-      "team": null,
-      "team_name": null,
+      "team": "MIL",
+      "team_name": "Milwaukee Bucks",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -858,10 +858,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432247",
       "name": "Jaylen Clark",
-      "team": null,
-      "team_name": null,
+      "team": "MIN",
+      "team_name": "Minnesota Timberwolves",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -873,10 +873,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4594268",
       "name": "Anthony Edwards",
-      "team": null,
-      "team_name": null,
+      "team": "MIN",
+      "team_name": "Minnesota Timberwolves",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -888,10 +888,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3934673",
       "name": "Donte DiVincenzo",
-      "team": null,
-      "team_name": null,
+      "team": "MIN",
+      "team_name": "Minnesota Timberwolves",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -903,10 +903,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4576086",
       "name": "Bryce McGowens",
-      "team": null,
-      "team_name": null,
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -918,10 +918,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4431675",
       "name": "Trendon Watford",
-      "team": null,
-      "team_name": null,
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -933,10 +933,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4683634",
       "name": "Bennedict Mathurin",
-      "team": null,
-      "team_name": null,
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -948,10 +948,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3907497",
       "name": "Dejounte Murray",
-      "team": null,
-      "team_name": null,
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -963,10 +963,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "2528426",
       "name": "Jordan Clarkson",
-      "team": null,
-      "team_name": null,
+      "team": "NY",
+      "team_name": "New York Knicks",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -978,10 +978,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3934719",
       "name": "OG Anunoby",
-      "team": null,
-      "team_name": null,
+      "team": "NY",
+      "team_name": "New York Knicks",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -993,10 +993,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "2991350",
       "name": "Alex Caruso",
-      "team": null,
-      "team_name": null,
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1008,10 +1008,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5159925",
       "name": "Nikola Topic",
-      "team": null,
-      "team_name": null,
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1023,10 +1023,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5061603",
       "name": "Thomas Sorber",
-      "team": null,
-      "team_name": null,
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1038,10 +1038,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4683692",
       "name": "Cason Wallace",
-      "team": null,
-      "team_name": null,
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1053,10 +1053,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4433255",
       "name": "Chet Holmgren",
-      "team": null,
-      "team_name": null,
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1068,10 +1068,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4593803",
       "name": "Jalen Williams",
-      "team": null,
-      "team_name": null,
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1083,10 +1083,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5107251",
       "name": "Izaiyah Nelson",
-      "team": null,
-      "team_name": null,
+      "team": "ORL",
+      "team_name": "Orlando Magic",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1098,10 +1098,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4065654",
       "name": "Jonathan Isaac",
-      "team": null,
-      "team_name": null,
+      "team": "ORL",
+      "team_name": "Orlando Magic",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1113,10 +1113,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5214637",
       "name": "Noah Penda",
-      "team": null,
-      "team_name": null,
+      "team": "ORL",
+      "team_name": "Orlando Magic",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1128,10 +1128,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432573",
       "name": "Paolo Banchero",
-      "team": null,
-      "team_name": null,
+      "team": "ORL",
+      "team_name": "Orlando Magic",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1143,10 +1143,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4870562",
       "name": "Dominick Barlow",
-      "team": null,
-      "team_name": null,
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1158,10 +1158,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3912848",
       "name": "Dean Wade",
-      "team": null,
-      "team_name": null,
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1173,10 +1173,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4431678",
       "name": "Tyrese Maxey",
-      "team": null,
-      "team_name": null,
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
       "position": "G",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -1188,10 +1188,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5105637",
       "name": "Adem Bona",
-      "team": null,
-      "team_name": null,
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1203,10 +1203,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3917376",
       "name": "Jaylen Brown",
-      "team": null,
-      "team_name": null,
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1218,10 +1218,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4871141",
       "name": "Ariel Hukporti",
-      "team": null,
-      "team_name": null,
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1233,10 +1233,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4888725",
       "name": "Ryan Dunn",
-      "team": null,
-      "team_name": null,
+      "team": "PHX",
+      "team_name": "Phoenix Suns",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1248,10 +1248,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4701232",
       "name": "Mark Williams",
-      "team": null,
-      "team_name": null,
+      "team": "PHX",
+      "team_name": "Phoenix Suns",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1263,10 +1263,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4706557",
       "name": "Chris Youngblood",
-      "team": null,
-      "team_name": null,
+      "team": "POR",
+      "team_name": "Portland Trail Blazers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1278,10 +1278,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4683021",
       "name": "Deni Avdija",
-      "team": null,
-      "team_name": null,
+      "team": "POR",
+      "team_name": "Portland Trail Blazers",
       "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
@@ -1293,10 +1293,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4578893",
       "name": "Vit Krejci",
-      "team": null,
-      "team_name": null,
+      "team": "POR",
+      "team_name": "Portland Trail Blazers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1308,10 +1308,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4279888",
       "name": "Ja Morant",
-      "team": null,
-      "team_name": null,
+      "team": "POR",
+      "team_name": "Portland Trail Blazers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1323,10 +1323,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4914336",
       "name": "Shaedon Sharpe",
-      "team": null,
-      "team_name": null,
+      "team": "POR",
+      "team_name": "Portland Trail Blazers",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1338,10 +1338,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4431679",
       "name": "Precious Achiuwa",
-      "team": null,
-      "team_name": null,
+      "team": "SAC",
+      "team_name": "Sacramento Kings",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1353,10 +1353,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4898371",
       "name": "Maxime Raynaud",
-      "team": null,
-      "team_name": null,
+      "team": "SAC",
+      "team_name": "Sacramento Kings",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1368,10 +1368,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3907387",
       "name": "Ben Simmons",
-      "team": null,
-      "team_name": null,
+      "team": "SAC",
+      "team_name": "Sacramento Kings",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1383,10 +1383,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5037871",
       "name": "Dylan Harper",
-      "team": null,
-      "team_name": null,
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1398,10 +1398,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "6440",
       "name": "Tobias Harris",
-      "team": null,
-      "team_name": null,
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1413,10 +1413,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5101845",
       "name": "Jayden Quaintance",
-      "team": null,
-      "team_name": null,
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1428,10 +1428,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "6450",
       "name": "Kawhi Leonard",
-      "team": null,
-      "team_name": null,
+      "team": "TOR",
+      "team_name": "Toronto Raptors",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1443,10 +1443,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5093267",
       "name": "Collin Murray-Boyles",
-      "team": null,
-      "team_name": null,
+      "team": "TOR",
+      "team_name": "Toronto Raptors",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1458,10 +1458,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4395625",
       "name": "RJ Barrett",
-      "team": null,
-      "team_name": null,
+      "team": "TOR",
+      "team_name": "Toronto Raptors",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1473,10 +1473,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432586",
       "name": "Nate Bittle",
-      "team": null,
-      "team_name": null,
+      "team": "TOR",
+      "team_name": "Toronto Raptors",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1488,10 +1488,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "3102530",
       "name": "Jusuf Nurkic",
-      "team": null,
-      "team_name": null,
+      "team": "UTAH",
+      "team_name": "Utah Jazz",
       "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1503,10 +1503,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4066336",
       "name": "Lauri Markkanen",
-      "team": null,
-      "team_name": null,
+      "team": "UTAH",
+      "team_name": "Utah Jazz",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1518,10 +1518,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4277961",
       "name": "Jaren Jackson Jr.",
-      "team": null,
-      "team_name": null,
+      "team": "UTAH",
+      "team_name": "Utah Jazz",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1533,10 +1533,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "5105841",
       "name": "Felix Okpara",
-      "team": null,
-      "team_name": null,
+      "team": "WSH",
+      "team_name": "Washington Wizards",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1548,10 +1548,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4997537",
       "name": "Tristan Vukcevic",
-      "team": null,
-      "team_name": null,
+      "team": "WSH",
+      "team_name": "Washington Wizards",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1563,10 +1563,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432187",
       "name": "Reece Beekman",
-      "team": null,
-      "team_name": null,
+      "team": "WSH",
+      "team_name": "Washington Wizards",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1578,10 +1578,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4432907",
       "name": "Justin Champagnie",
-      "team": null,
-      "team_name": null,
+      "team": "WSH",
+      "team_name": "Washington Wizards",
       "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
@@ -1593,10 +1593,10 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "",
+      "athlete_id": "4606840",
       "name": "Jamir Watkins",
-      "team": null,
-      "team_name": null,
+      "team": "WSH",
+      "team_name": "Washington Wizards",
       "position": "G",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
