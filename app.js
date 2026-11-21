@@ -222,9 +222,13 @@ function renderPlayerSearch() {
     const injury = injuryData.find(item => String(item.athlete_id) === String(p.id));
     const availability = injury ? " · Injury: " + (injury.status || "listed") : "";
     const gameCount = Object.values(p.seasons || {}).reduce((sum, logs) => sum + (Array.isArray(logs) ? logs.length : 0), 0);
-    return '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + ' · ' + gameCount + ' game logs' + escapeHtml(availability) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">View history</button></div>';
+    return '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + ' · ' + gameCount + ' game logs' + escapeHtml(availability) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">Select for stat calculator</button></div>';
   }).join("");
-  root.querySelectorAll("[data-player-id]").forEach(b => b.addEventListener("click", () => showPlayer(b.dataset.playerId)));
+  root.querySelectorAll("[data-player-id]").forEach(b => b.addEventListener("click", () => {
+    showPlayer(b.dataset.playerId);
+    const calculator = $("prop-selected-player")?.closest(".panel");
+    if (calculator) calculator.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
 }
 function renderSelectedPlayerForProp() {
   const root = $("prop-selected-player");
