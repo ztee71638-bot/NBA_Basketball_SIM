@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T15:57:57.080565+00:00",
+  "last_updated": "2026-11-21T16:48:48.399711+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -7,6 +7,16 @@
       "date": "2026-11-21T18:00Z",
       "home_team": "PHI",
       "away_team": "MIL",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910024",
+      "date": "2026-11-22T00:30Z",
+      "home_team": "NY",
+      "away_team": "POR",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",

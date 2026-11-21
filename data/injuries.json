@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T15:57:57.079420+00:00",
+  "last_updated": "2026-11-21T16:48:48.398459+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -963,6 +963,36 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3934719",
+      "name": "OG Anunoby",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-21T16:09Z",
+      "return_date": "2026-11-21",
+      "short_comment": "Anunoby (calf) has been downgraded to doubtful for Saturday's game against the Trail Bllazers.",
+      "long_comment": "Anunoby is trending in the wrong direction, and the doubtful tag makes it likely he'll sit out this game. The veteran forward hasn't missed a game this season and has averaged 16.3 points, 5.1 rebounds, 1.6 assists, 1.3 steals, and 1.1 blocks per game in November. If Anunoby is ruled out Saturday, look for Landry Shamet to potentially step into a bigger role.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3136195",
+      "name": "Karl-Anthony Towns",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-21T16:05Z",
+      "return_date": "2026-11-21",
+      "short_comment": "Towns is questionable for Saturday's game against the Trail Blazers due to an illness.",
+      "long_comment": "Towns is in danger of missing a game for the first time this season, and a decision on his availability will be made closer to the 7:30 p.m. ET tipoff. Towns is riding an impressive streak of posting a double-double in each game so far in 2026-27, and if he's unable to play, Andre Drummond would be in line to start at center.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2528426",
       "name": "Jordan Clarkson",
       "team": "NY",
@@ -975,21 +1005,6 @@
       "return_date": "2026-11-22",
       "short_comment": "Clarkson (foot) won't play in Saturday's game against Portland.",
       "long_comment": "Clarkson is battling a case of plantar fasciitis in his right foot, so he will miss a second consecutive contest. Without Clarkson on the floor, Landry Shamet is in line for more playing time.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3934719",
-      "name": "OG Anunoby",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-20T22:10Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Anunoby (calf) is questionable for Saturday's game against Portland.",
-      "long_comment": "Anunoby is trying to avoid missing his first contest of the season. if the veteran forward is unable to suit up, Landry Shamet stands out as the most likely choice to enter the Knicks's starting lineup Saturday.",
       "source": "ESPN"
     },
     {
@@ -1143,6 +1158,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4431678",
+      "name": "Tyrese Maxey",
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-21T16:25Z",
+      "return_date": "2026-11-21",
+      "short_comment": "Maxey (foot) will be a true game-time decision for Saturday's game against the Bucks, head coach Nick Nurse told Ky Carlin of USA Today.",
+      "long_comment": "According to Nurse, Maxey will go through his usual pregame warm-ups to see if he can play. If he suits up, he could have a minutes restriction, as Nurse also said Maxey \"isn't there yet.\" If Maxey doesn't play, Anfernee Simons would remain in the backcourt alongside VJ Edgecombe.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4870562",
       "name": "Dominick Barlow",
       "team": "PHI",
@@ -1170,21 +1200,6 @@
       "return_date": "2026-11-23",
       "short_comment": "Wade (hamstring) won't play Saturday against the Bucks.",
       "long_comment": "Wade was able to get through a full practice Friday, but the 76ers' medical staff still isn't quite ready to clear him for game-time action. His next chance to play will come Monday against the Trail Blazers. Kentavious Caldwell-Pope and Jabari Walker will continue to help pick up the slack while Wade is sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4431678",
-      "name": "Tyrese Maxey",
-      "team": "PHI",
-      "team_name": "Philadelphia 76ers",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-20T22:07Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Maxey (foot) is questionable for Saturday's game against the Bucks.",
-      "long_comment": "Maxey sat out Wednesday's 121-116 win over the Magic, but he was a full participant at Friday's practice, so he's trending in the right direction. If Maxey is cleared to return, Anfernee Simons would likely head back to the second unit and VJ Edgecombe's usage rate would dip.",
       "source": "ESPN"
     },
     {
