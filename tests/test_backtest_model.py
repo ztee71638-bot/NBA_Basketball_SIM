@@ -224,3 +224,44 @@ def test_binary_log_loss_penalizes_confident_misses_and_handles_extremes():
     assert module.binary_log_loss([0.9, 0.1], [1.0, 0.0]) < module.binary_log_loss([0.9, 0.1], [0.0, 1.0])
     assert module.binary_log_loss([1.0, 0.0], [1.0, 0.0]) == 0.0
     assert module.binary_log_loss([], []) is None
+
+
+
+def test_prequential_calibrator_refits_periodically_on_prior_games_only(monkeypatch):
+    from datetime import datetime, timedelta, timezone
+
+    home_rows, away_rows = [], []
+    start = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    for index in range(160):
+        game_date = (start + timedelta(days=index)).isoformat()
+        game_id = f"calibration-{index}"
+        home_rows.append({
+            "game_id": game_id, "date": game_date, "opponent": "BBB",
+            "home_away": "home", "points_for": 112 + index % 4,
+            "points_against": 105 + index % 3,
+        })
+        away_rows.append({
+            "game_id": game_id, "date": game_date, "opponent": "AAA",
+            "home_away": "away", "points_for": 105 + index % 3,
+            "points_against": 112 + index % 4,
+        })
+    payload = {"teams": [
+        {"abbreviation": "AAA", "seasons": {"2027": {"games": home_rows}}},
+        {"abbreviation": "BBB", "seasons": {"2027": {"games": away_rows}}},
+    ]}
+
+    calls = []
+    original_fit = module.fit_probability_calibrator
+    def tracked_fit(probabilities, outcomes, *args, **kwargs):
+        calls.append(len(probabilities))
+        return original_fit(probabilities, outcomes, *args, **kwargs)
+
+    monkeypatch.setattr(module, "fit_probability_calibrator", tracked_fit)
+    result = module.run_backtest(payload)
+    # 30 games are needed to build the league prior; the next 130 are tested.
+    # Prequential fits use 100 and then 125 prior outcomes; the final saved fit
+    # uses all 130 outcomes only after walk-forward evaluation is complete.
+    assert result["games_tested"] == 130
+    assert calls == [100, 125, 130]
+    assert result["calibration"]["minimum_training_games"] == 100
+    assert result["calibration"]["refit_interval_games"] == 25
