@@ -16,3 +16,5 @@ table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.88rem}th,td
 .day-page-heading strong{color:var(--text);font-size:1rem}
 #trials{opacity:.8;cursor:not-allowed}
 @media(max-width:600px){.view-tabs{padding:0 16px}.day-page .game{flex-direction:row;align-items:center}.day-page .game button{white-space:nowrap;padding:9px 10px;font-size:.84rem}}
+
+.view-tabs{overflow-x:auto;scrollbar-width:none;white-space:nowrap}.view-tabs::-webkit-scrollbar{display:none}.view-tab{flex:0 0 auto;padding:12px 15px;font-size:.9rem}@media(max-width:480px){.view-tabs{gap:2px}.view-tab{padding:11px 10px;font-size:.82rem}}
