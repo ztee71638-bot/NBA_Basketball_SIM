@@ -141,6 +141,7 @@ function marketPriceSummary(market) {
 async function loadMarkets(){
   try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];marketData=rows;$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${m.question||"Untitled market"}</strong><small>${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+m.url+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){marketData=[];$("markets").textContent="Market feed unavailable: "+e.message;}
   if(selectedGame) renderGameMarkets(selectedGame);
+  if(selectedPlayer) renderPlayerMarkets(selectedPlayer);
 }
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -185,6 +186,26 @@ function applyPlayerHistoricalBaseline() {
     " historical baseline from " + values.length + " recent games. This is not adjusted for minutes, role, injuries, opponent or expected game script." + injuryWarning;
 }
 
+function renderPlayerMarkets(player) {
+  const root = $("player-market-matches");
+  if (!root || !player) return;
+  const playerName = String(player.name || "").toLowerCase();
+  const matches = marketData.filter(market =>
+    String(market.question || "").toLowerCase().includes(playerName)
+  ).slice(0,10);
+  if (!matches.length) {
+    root.innerHTML = '<p class="muted">No matching Polymarket player-prop markets found in the current NBA game-market snapshot.</p>';
+    return;
+  }
+  root.innerHTML = '<h4>Matching Polymarket player markets</h4>' + matches.map(market =>
+    '<div class="market"><div><strong>' + escapeHtml(market.question) +
+    '</strong><small>' + escapeHtml(marketPriceSummary(market) || "Prices unavailable") +
+    ' · 24h volume: ' + escapeHtml(market.volume_24h ?? "n/a") + '</small></div>' +
+    (market.url ? '<a target="_blank" rel="noopener" href="' + escapeHtml(market.url) + '">Open market</a>' : '') +
+    '</div>'
+  ).join("");
+}
+
 function showPlayer(playerId) {
   const p = players.find(item => String(item.id) === String(playerId));
   if (!p) return;
@@ -208,7 +229,8 @@ function showPlayer(playerId) {
     return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : "n/a";
   };
   const rows = sortedLogs.slice(0,15).map(g => '<tr><td>' + escapeHtml(g.date ? new Date(g.date).toLocaleDateString() : "—") + '</td><td>' + escapeHtml(g.opponent || "—") + '</td><td>' + escapeHtml(g.result || "—") + '</td><td>' + (g.minutes ?? "—") + '</td><td>' + (g.points ?? "—") + '</td><td>' + (g.rebounds ?? "—") + '</td><td>' + (g.assists ?? "—") + '</td></tr>').join("");
-  $("player-detail").innerHTML = '<h3>' + escapeHtml(p.name) + ' · ' + escapeHtml(p.team) + ' · Season ' + escapeHtml(season) + '</h3><div class="result-grid"><div class="metric"><small>Last 10 PTS avg</small><b>' + avg("points") + '</b></div><div class="metric"><small>Last 10 REB avg</small><b>' + avg("rebounds") + '</b></div><div class="metric"><small>Last 10 AST avg</small><b>' + avg("assists") + '</b></div></div><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Opponent</th><th>Result</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="fine-print">Last 10 averages use available numeric game logs only. Historical logs are descriptive, not projections.</p>';
+  $("player-detail").innerHTML = '<h3>' + escapeHtml(p.name) + ' · ' + escapeHtml(p.team) + ' · Season ' + escapeHtml(season) + '</h3><div class="result-grid"><div class="metric"><small>Last 10 PTS avg</small><b>' + avg("points") + '</b></div><div class="metric"><small>Last 10 REB avg</small><b>' + avg("rebounds") + '</b></div><div class="metric"><small>Last 10 AST avg</small><b>' + avg("assists") + '</b></div></div><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Opponent</th><th>Result</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="fine-print">Last 10 averages use available numeric game logs only. Historical logs are descriptive, not projections.</p><div id="player-market-matches"></div>';
+  renderPlayerMarkets(p);
 }
 function renderInjuries() {
   const root = $("injuries");
