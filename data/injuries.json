@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T15:00:42.510784+00:00",
+  "last_updated": "2026-11-21T15:02:11.486222+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -993,33 +993,33 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "2991350",
-      "name": "Alex Caruso",
-      "team": "OKC",
-      "team_name": "Oklahoma City Thunder",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-20T23:24Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Caruso (hip) is listed as out for Friday's game against the Pelicans.",
-      "long_comment": "Caruso exited Wednesday's 117-112 loss to the Hawks because of a hip issue. He will now miss his fourth game of the 2026-27 campaign, with his next opportunity to play coming Sunday in Miami. With Caruso sidelined, it could mean more minutes for Bennett Stirtz and Nique Clifford.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "5159925",
       "name": "Nikola Topic",
       "team": "OKC",
       "team_name": "Oklahoma City Thunder",
       "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-20T17:02Z",
+      "date": "2026-11-21T14:54Z",
       "return_date": "2026-11-22",
       "short_comment": "Topic (hip) is out for Friday's game against New Orleans.",
       "long_comment": "Topic suffered a hip injury during Wednesday's matchup against Atlanta, and the issue is significant enough to keep him from Friday's game. His next opportunity to return will arrive Sunday in Miami.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "2991350",
+      "name": "Alex Caruso",
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-21T14:54Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Caruso (hip) is listed as out for Friday's game against the Pelicans.",
+      "long_comment": "Caruso exited Wednesday's 117-112 loss to the Hawks because of a hip issue. He will now miss his fourth game of the 2026-27 campaign, with his next opportunity to play coming Sunday in Miami. With Caruso sidelined, it could mean more minutes for Bennett Stirtz and Nique Clifford.",
       "source": "ESPN"
     },
     {
