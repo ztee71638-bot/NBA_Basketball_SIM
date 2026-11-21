@@ -137,7 +137,7 @@ def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
                 if raw_value is None:
                     continue
                 import re
-                match = re.search(r"(\\d+(?:\\.\\d+)?)\\s*[-/]\\s*(\\d+(?:\\.\\d+)?)", str(raw_value))
+                match = re.search(r"(\d+(?:\.\d+)?)\s*[-/]\s*(\d+(?:\.\d+)?)", str(raw_value))
                 if match:
                     return float(match.group(1)), float(match.group(2))
             return None, None
