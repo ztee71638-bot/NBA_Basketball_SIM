@@ -158,11 +158,28 @@ function runGameSimulation() {
   const hm=Number($("home-mean").value), am=Number($("away-mean").value), sd=Number($("score-sd").value);
   const trials=100000;
   if (![hm,am,sd].every(Number.isFinite) || sd<=0) { $("game-results").textContent="Enter valid projections and a positive standard deviation."; return; }
-  let hw=0,aw=0,homeTotal=0,awayTotal=0,totals=[];
-  for(let i=0;i<trials;i++){let h=Math.max(50,Math.round(normalSample(hm,sd))),a=Math.max(50,Math.round(normalSample(am,sd)));if(h>a)hw++;else if(a>h)aw++;homeTotal+=h;awayTotal+=a;totals.push(h+a);}
+  let hw=0,aw=0,homeTotal=0,awayTotal=0,ties=0,totals=[];
+  for(let i=0;i<trials;i++){let h=Math.max(50,Math.round(normalSample(hm,sd))),a=Math.max(50,Math.round(normalSample(am,sd)));if(h>a)hw++;else if(a>h)aw++;else ties++;homeTotal+=h;awayTotal+=a;totals.push(h+a);}
   totals.sort((a,b)=>a-b);
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Home win</small><b>${fmt(hw/trials*100)}</b></div><div class="metric"><small>Away win</small><b>${fmt(aw/trials*100)}</b></div><div class="metric"><small>Avg. home score</small><b>${(homeTotal/trials).toFixed(1)}</b></div><div class="metric"><small>Avg. away score</small><b>${(awayTotal/trials).toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. Independent normal score assumptions; starting means may use recent team scoring and points-allowed averages, but lineups, injuries, pace and score correlation are not yet modeled. Not a calibrated betting recommendation.</p>`;
+  const avgHome=homeTotal/trials, avgAway=awayTotal/trials;
+  const homeName=selectedGame.home?.name||"Home team";
+  const awayName=selectedGame.away?.name||"Away team";
+  const homeWinRate=hw/trials*100, awayWinRate=aw/trials*100;
+  const homeWins=hw>=aw;
+  const winner=homeWins?homeName:awayName;
+  const confidence=Math.max(homeWinRate,awayWinRate);
+  const projectedHome=Math.round(avgHome), projectedAway=Math.round(avgAway);
+  const winnerScore=homeWins?projectedHome:projectedAway;
+  const loserScore=homeWins?projectedAway:projectedHome;
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Home win</small><b>${fmt(homeWinRate)}</b></div><div class="metric"><small>Away win</small><b>${fmt(awayWinRate)}</b></div><div class="metric"><small>Avg. home score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>Avg. away score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. Independent normal score assumptions; starting means may use recent team scoring and points-allowed averages, but lineups, injuries, pace and score correlation are not yet modeled. Not a calibrated betting recommendation.</p>`;
+  $("simulation-modal-title").textContent="Simulation result";
+  $("simulation-winner").textContent="Predicted winner: "+winner;
+  $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
+  $("simulation-confidence").textContent="Confidence rate: "+confidence.toFixed(1)+"% ("+trials.toLocaleString()+" simulations)";
+  $("simulation-modal").hidden=false;
+  $("simulation-modal-close").focus();
 }
+
 function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return sign*y;}
 function calcProp(){
   const mean=Number($("prop-mean").value),sd=Number($("prop-sd").value),line=Number($("prop-line").value);
@@ -497,3 +514,8 @@ $("reload").addEventListener("click",loadAll);
 $("refresh-markets").addEventListener("click",loadMarkets);
 $("player-search").addEventListener("input",renderPlayerSearch);
 loadAll();
+
+$("simulation-modal-close").addEventListener("click",()=>{$("simulation-modal").hidden=true;});
+$("simulation-modal-done").addEventListener("click",()=>{$("simulation-modal").hidden=true;});
+$("simulation-modal").addEventListener("click",event=>{if(event.target.id==="simulation-modal") $("simulation-modal").hidden=true;});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!$("simulation-modal").hidden) $("simulation-modal").hidden=true;});
