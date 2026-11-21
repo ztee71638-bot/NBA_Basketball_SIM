@@ -600,7 +600,7 @@ function simulatePlayerMarket(marketId) {
 
 
 function normalizeImpactName(value) {
-  return String(value || "").normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  return String(value || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 function impactSeasonFromEspn(season) {
   return String(season) === "2027" ? "2026-27" : String(season) === "2026" ? "2025-26" : null;
