@@ -125,6 +125,7 @@ def test_player_database_fetches_all_seasons_with_bounded_parallel_workers(monke
     monkeypatch.setattr(module, "get_json", fake_get_json)
     monkeypatch.setattr(module, "WORKERS", 2)
     monkeypatch.setattr(module, "MIN_TOTAL_GAME_LOGS", 1)
+    monkeypatch.setattr(module, "MIN_GAME_LOGS_PER_SEASON", 1)
     players = module.fetch_player_database()
     assert len(players) == 1
     assert sorted(players[0]["seasons"]) == ["2023", "2024", "2025", "2026", "2027"]
