@@ -562,7 +562,6 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "baseline_winner_accuracy": round(mean(baseline_correct), 4),
         "model_brier_score": round(mean(briers), 4),
         "model_log_loss": binary_log_loss(model_probabilities, model_outcomes),
-        "baseline_log_loss": binary_log_loss(baseline_probabilities, baseline_outcomes),
         "model_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
         "calibrated_brier_score": round(mean(calibrated_briers), 4),
         "calibrated_calibration_error": expected_calibration_error(calibrated_probabilities, model_outcomes),
