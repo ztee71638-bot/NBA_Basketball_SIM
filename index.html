@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NBA game and player prop Monte Carlo research simulator">
   <title>NBA Basketball Simulator</title>
-  <link rel="stylesheet" href="styles.css?v=20261121-team-search-polymarket-fix-2">
+  <link rel="stylesheet" href="styles.css?v=20261121-simulation-result-popup">
 </head>
 <body>
   <header class="hero">
@@ -79,7 +79,20 @@
       </section>
     </section>
   </main>
+
+  <div id="simulation-modal" class="simulation-modal" hidden role="dialog" aria-modal="true" aria-labelledby="simulation-modal-title">
+    <div class="simulation-modal-card">
+      <button type="button" id="simulation-modal-close" class="simulation-modal-close" aria-label="Close results">×</button>
+      <p class="eyebrow">100,000-TRIAL RESULT</p>
+      <h2 id="simulation-modal-title">Simulation result</h2>
+      <p id="simulation-winner" class="simulation-winner"></p>
+      <div class="simulation-score" id="simulation-score"></div>
+      <p id="simulation-confidence" class="simulation-confidence"></p>
+      <p class="fine-print">Confidence is the simulated win probability of the predicted winner, not a guarantee. Results depend on the scoring assumptions and do not yet fully model lineups, injuries, pace or score correlation.</p>
+      <button type="button" id="simulation-modal-done" class="primary">Done</button>
+    </div>
+  </div>
   <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections.</footer>
-  <script src="app.js?v=20261121-team-search-polymarket-fix"></script>
+  <script src="app.js?v=20261121-simulation-result-popup"></script>
 </body>
 </html>
