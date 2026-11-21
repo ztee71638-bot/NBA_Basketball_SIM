@@ -95,3 +95,12 @@ def test_player_totals_match_by_name_and_season_team():
     assert report["matched_rows"] == 1
     assert totals[0]["points"] == 1200.0
     assert totals[0]["ts_pct"] == 0.61
+
+
+def test_local_game_date_matches_next_day_utc_event_timestamp():
+    teams = team_fixture()
+    for team in teams["teams"]:
+        team["seasons"]["2026"]["games"][0]["date"] = "2026-01-02T02:30:00Z"
+    report = module.reconcile_team_games(teams, {"2025-26": source_fixture()})
+    assert report["matched_rows"] == 2
+    assert report["score_or_key_mismatches"] == 0
