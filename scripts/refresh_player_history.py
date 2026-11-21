@@ -345,7 +345,7 @@ def main() -> None:
     }
     roster_output = DATA / "player_roster.json"
     roster_output.write_text(
-        json.dumps(roster_payload, separators=(",", ":"), ensure_ascii=False) + "\\n",
+        json.dumps(roster_payload, separators=(",", ":"), ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     print(f"Saved lightweight market roster index: {roster_output.stat().st_size / 1024:.1f} KiB.")
