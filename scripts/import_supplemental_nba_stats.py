@@ -187,6 +187,11 @@ def main(output_dir: Path = OUTPUT) -> None:
                 f"duplicate full rows; columns={parsed['columns']}",
                 flush=True,
             )
+            print(
+                f"Sample {season} {kind} rows: "
+                f"{json.dumps(parsed['rows'][:2], ensure_ascii=False)}",
+                flush=True,
+            )
     (output_dir / "manifest.json").write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
