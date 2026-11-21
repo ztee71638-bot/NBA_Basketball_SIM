@@ -67,19 +67,19 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
         date = f"2026-10-{index + 1:02d}T00:00:00+00:00" if index < 22 else f"2026-11-{index - 21:02d}T00:00:00+00:00"
         game_id = f"prior-{index}"
         team_a.append({
-            "game_id": game_id, "date": date, "team": "AAA",
+            "game_id": game_id, "date": date, "team": "AAA", "opponent": "BBB",
             "home_away": "home", "points_for": 112 + index % 4,
             "points_against": 105 + index % 3,
         })
         team_b.append({
-            "game_id": game_id, "date": date, "team": "BBB",
+            "game_id": game_id, "date": date, "team": "BBB", "opponent": "AAA",
             "home_away": "away", "points_for": 105 + index % 3,
             "points_against": 112 + index % 4,
         })
     target_date = "2026-11-20T00:00:00+00:00"
-    team_a.append({"game_id": "target", "date": target_date, "team": "AAA",
+    team_a.append({"game_id": "target", "date": target_date, "team": "AAA", "opponent": "BBB",
                    "home_away": "home", "points_for": 114, "points_against": 108})
-    team_b.append({"game_id": "target", "date": target_date, "team": "BBB",
+    team_b.append({"game_id": "target", "date": target_date, "team": "BBB", "opponent": "AAA",
                    "home_away": "away", "points_for": 108, "points_against": 114})
     payload = {"teams": [
         {"abbreviation": "AAA", "seasons": {"2027": {"games": team_a}}},
@@ -110,3 +110,28 @@ def test_calibrator_uses_identity_until_minimum_history_is_available():
     calibration = module.fit_probability_calibrator([0.8] * 20, [1.0] * 20)
     assert calibration["enabled"] is False
     assert module.apply_probability_calibration(0.8, calibration) == 0.8
+
+
+def test_backtest_excludes_non_nba_exhibition_games_from_team_baselines():
+    team_a, team_b = [], []
+    for index in range(30):
+        date = f"2026-10-{index + 1:02d}T00:00:00+00:00" if index < 22 else f"2026-11-{index - 21:02d}T00:00:00+00:00"
+        game_id = f"prior-{index}"
+        team_a.append({"game_id":game_id,"date":date,"home_away":"home","opponent":"BBB",
+                       "points_for":112,"points_against":105})
+        team_b.append({"game_id":game_id,"date":date,"home_away":"away","opponent":"AAA",
+                       "points_for":105,"points_against":112})
+    target_date = "2026-11-20T00:00:00+00:00"
+    team_a.append({"game_id":"target","date":target_date,"home_away":"home","opponent":"BBB",
+                   "points_for":114,"points_against":108})
+    team_b.append({"game_id":"target","date":target_date,"home_away":"away","opponent":"AAA",
+                   "points_for":108,"points_against":114})
+    team_a.append({"game_id":"exhibition-only","date":"2026-10-10T00:00:00+00:00",
+                   "home_away":"home","opponent":"ADL","points_for":140,"points_against":70})
+    payload={"teams":[
+        {"abbreviation":"AAA","seasons":{"2027":{"games":team_a}}},
+        {"abbreviation":"BBB","seasons":{"2027":{"games":team_b}}},
+    ]}
+    result=module.run_backtest(payload)
+    assert result["games_tested"] == 1
+    assert result["excluded_non_nba_opponent_rows"] == 1
