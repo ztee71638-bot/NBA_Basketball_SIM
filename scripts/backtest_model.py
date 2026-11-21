@@ -215,6 +215,21 @@ def expected_calibration_error(probabilities, outcomes, bins: int = 10):
 
 
 
+
+def binary_log_loss(probabilities, outcomes):
+    """Mean Bernoulli log loss; lower is better and confident misses are penalized."""
+    if len(probabilities) != len(outcomes):
+        raise ValueError("Log-loss probabilities and outcomes must have equal lengths")
+    if not probabilities:
+        return None
+    losses = []
+    for probability, outcome in zip(probabilities, outcomes):
+        p = min(1.0 - 1e-15, max(1e-15, float(probability)))
+        y = 1.0 if float(outcome) >= 0.5 else 0.0
+        losses.append(-(y * math.log(p) + (1.0 - y) * math.log(1.0 - p)))
+    return round(mean(losses), 4)
+
+
 def _logit(probability: float) -> float:
     value = min(0.995, max(0.005, float(probability)))
     return math.log(value / (1.0 - value))
@@ -322,6 +337,8 @@ def rolling_window_report(model_score_errors, baseline_score_errors,
             "baseline_winner_accuracy": round(mean(baseline_correct[-window:]), 4),
             "model_brier_score": round(mean(model_briers[-window:]), 4),
             "baseline_brier_score": round(mean(baseline_briers[-window:]), 4),
+            "model_log_loss": binary_log_loss(model_probs, window_outcomes),
+            "baseline_log_loss": binary_log_loss(baseline_probs, window_outcomes),
             "model_calibration_error": expected_calibration_error(model_probs, window_outcomes),
             "baseline_calibration_error": expected_calibration_error(baseline_probs, window_outcomes),
         }
@@ -544,6 +561,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "model_winner_accuracy": round(mean(correct), 4),
         "baseline_winner_accuracy": round(mean(baseline_correct), 4),
         "model_brier_score": round(mean(briers), 4),
+        "model_log_loss": binary_log_loss(model_probabilities, model_outcomes),
+        "baseline_log_loss": binary_log_loss(baseline_probabilities, baseline_outcomes),
         "model_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
         "calibrated_brier_score": round(mean(calibrated_briers), 4),
         "calibrated_calibration_error": expected_calibration_error(calibrated_probabilities, model_outcomes),
@@ -568,6 +587,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
             ),
         },
         "baseline_brier_score": round(mean(baseline_briers), 4),
+        "baseline_log_loss": binary_log_loss(baseline_probabilities, baseline_outcomes),
         "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
         "production_baseline_confidence_buckets": probability_bucket_report(
             baseline_probabilities, baseline_outcomes
