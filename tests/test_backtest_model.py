@@ -67,19 +67,19 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
         date = f"2026-10-{index + 1:02d}T00:00:00+00:00" if index < 22 else f"2026-11-{index - 21:02d}T00:00:00+00:00"
         game_id = f"prior-{index}"
         team_a.append({
-            "game_id": game_id, "date": date, "team": "AAA",
+            "game_id": game_id, "date": date, "team": "AAA", "opponent": "BBB",
             "home_away": "home", "points_for": 112 + index % 4,
             "points_against": 105 + index % 3,
         })
         team_b.append({
-            "game_id": game_id, "date": date, "team": "BBB",
+            "game_id": game_id, "date": date, "team": "BBB", "opponent": "AAA",
             "home_away": "away", "points_for": 105 + index % 3,
             "points_against": 112 + index % 4,
         })
     target_date = "2026-11-20T00:00:00+00:00"
-    team_a.append({"game_id": "target", "date": target_date, "team": "AAA",
+    team_a.append({"game_id": "target", "date": target_date, "team": "AAA", "opponent": "BBB",
                    "home_away": "home", "points_for": 114, "points_against": 108})
-    team_b.append({"game_id": "target", "date": target_date, "team": "BBB",
+    team_b.append({"game_id": "target", "date": target_date, "team": "BBB", "opponent": "AAA",
                    "home_away": "away", "points_for": 108, "points_against": 114})
     payload = {"teams": [
         {"abbreviation": "AAA", "seasons": {"2027": {"games": team_a}}},
