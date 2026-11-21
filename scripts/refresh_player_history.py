@@ -243,11 +243,7 @@ def fetch_player_database() -> list[dict[str, Any]]:
     if not players_by_id:
         raise RuntimeError("ESPN returned no historical rostered players; refusing to write an empty archive.")
 
-    tasks = [
-        (athlete_id, season)
-        for athlete_id in players_by_id
-        for season in SEASONS
-    ]
+    tasks = build_player_season_tasks(players_by_id, SEASONS)
     print(
         f"Fetching {len(tasks)} player-season logs for {len(players_by_id)} players "
         f"across {SEASONS} using {WORKERS} workers.",
@@ -307,6 +303,21 @@ def fetch_player_database() -> list[dict[str, Any]]:
         flush=True,
     )
     return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
+
+def build_player_season_tasks(
+    players_by_id: dict[str, dict[str, Any]], seasons: list[int]
+) -> list[tuple[str, int]]:
+    """Fetch logs only for seasons in which the player appeared on an NBA roster."""
+    tasks: list[tuple[str, int]] = []
+    for athlete_id, player in players_by_id.items():
+        rostered = {str(season) for season in player.get("roster_seasons", [])}
+        relevant = [season for season in seasons if str(season) in rostered]
+        # Keep a conservative fallback for older/incomplete roster records.
+        if not rostered:
+            relevant = list(seasons)
+        tasks.extend((athlete_id, season) for season in relevant)
+    return tasks
+
 
 def build_roster_index(players: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Return the small roster-only dataset needed to classify live player props."""
