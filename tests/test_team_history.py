@@ -57,6 +57,31 @@ def test_parse_team_schedule_does_not_treat_zero_zero_as_final():
     }]}
     assert module.parse_team_schedule(payload, "1") == []
 
+
+def test_daily_team_snapshot_is_immutable_and_contains_model_inputs(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA", tmp_path)
+    teams = [{
+        "abbreviation": "BOS",
+        "seasons": {"2027": {
+            "summary": {"games": 1},
+            "games": [{
+                "game_id": "g1", "date": "2026-11-20T00:00Z",
+                "points_for": 110, "points_against": 105,
+                "pace_estimate": 98.5, "offensive_rating": 112.0,
+                "defensive_rating": 106.6, "rest_days": 1,
+            }],
+        }},
+    }]
+    module.write_immutable_team_snapshot(teams)
+    path = next((tmp_path / "snapshots").glob("team-metrics-*.json"))
+    first = path.read_text(encoding="utf-8")
+    teams[0]["seasons"]["2027"]["games"][0]["points_for"] = 999
+    module.write_immutable_team_snapshot(teams)
+    assert path.read_text(encoding="utf-8") == first
+    import json
+    payload = json.loads(first)
+    assert payload["teams"][0]["seasons"]["2027"]["games"][0]["pace_estimate"] == 98.5
+
 def test_team_map_has_30_teams():
     assert len(module.TEAM_IDS) == 30
 
