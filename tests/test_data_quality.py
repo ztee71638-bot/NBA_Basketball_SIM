@@ -85,3 +85,32 @@ def test_audit_reports_mismatch_reasons_and_record_examples():
     assert audit["mismatch_breakdown"] == {"score_mismatch": 1}
     assert audit["mismatch_examples"][0]["season_game"] == "2027:game-1"
     assert audit["mismatch_examples"][0]["records"][0]["team"] == "AAA"
+
+
+def test_audit_excludes_non_nba_exhibition_opponent_from_nba_pairing_warnings():
+    payload = fixture()
+    payload["teams"][0]["seasons"]["2027"]["games"].append({
+        "game_id": "exhibition-1", "date": "2026-10-10T00:00:00+00:00",
+        "opponent": "ADL", "points_for": 124, "points_against": 134,
+    })
+    payload["teams"][1]["seasons"]["2027"]["games"].append({
+        "game_id": "exhibition-2", "date": "2026-10-11T00:00:00+00:00",
+        "opponent": None, "points_for": 111, "points_against": 100,
+    })
+    result = module.audit_payloads(
+        payload, None, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    audit = result["team_history"]
+    assert audit["unpaired_or_mismatched_games"] == 0
+    assert audit["non_nba_or_unresolved_opponent_games"] == 2
+    assert not any("matching two-team record" in item for item in result["warnings"])
+
+
+def test_audit_still_flags_missing_record_against_known_nba_team():
+    payload = fixture()
+    payload["teams"][1]["seasons"]["2027"]["games"] = []
+    result = module.audit_payloads(
+        payload, None, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    assert result["team_history"]["unpaired_or_mismatched_games"] == 1
+    assert result["team_history"]["mismatch_breakdown"] == {"missing_opponent_record": 1}
