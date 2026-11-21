@@ -8,6 +8,42 @@ module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 
+
+def test_parse_confirmed_lineups_requires_five_explicit_starters_per_team():
+    game = {
+        "id": "lineup-game", "date": "2026-11-21T23:00Z",
+        "home": {"abbreviation": "MIA"}, "away": {"abbreviation": "BOS"},
+    }
+    players = []
+    for team_id, code in (("14", "MIA"), ("2", "BOS")):
+        group = {"team": {"id": team_id, "abbreviation": code}, "statistics": [{
+            "athletes": [
+                {"athlete": {"id": team_id + str(i), "displayName": code + " Starter " + str(i)},
+                 "starter": True, "active": True}
+                for i in range(5)
+            ]
+        }]}
+        players.append(group)
+    parsed = module.parse_confirmed_lineups({"boxscore": {"players": players}}, game)
+    assert parsed["status"] == "confirmed"
+    assert len(parsed["home_starters"]) == 5
+    assert len(parsed["away_starters"]) == 5
+
+
+def test_parse_confirmed_lineups_does_not_infer_missing_starters():
+    game = {"id": "lineup-game", "home": {"abbreviation": "MIA"}, "away": {"abbreviation": "BOS"}}
+    payload = {"boxscore": {"players": [{
+        "team": {"abbreviation": "MIA"},
+        "statistics": [{"athletes": [
+            {"athlete": {"id": str(i), "displayName": "Starter"}, "starter": True}
+            for i in range(4)
+        ]}],
+    }]}}
+    parsed = module.parse_confirmed_lineups(payload, game)
+    assert parsed["status"] == "not_available"
+    assert parsed["home_starters"] == []
+
+
 def test_market_text_handles_missing_fields():
     assert module._market_text({"question": "NBA: Lakers vs Celtics"}).startswith("nba")
 
