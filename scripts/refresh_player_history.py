@@ -21,6 +21,7 @@ GAMELOG_URL = "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nb
 TIMEOUT = 25
 DELAY = float(os.getenv("NBA_HISTORY_REQUEST_DELAY", "0.5"))
 WORKERS = max(1, min(6, int(os.getenv("NBA_HISTORY_WORKERS", "4"))))
+MIN_TOTAL_GAME_LOGS = 100
 SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027,2026,2025,2024,2023").split(",") if x.strip()]
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
@@ -254,7 +255,7 @@ def fetch_player_database() -> list[dict[str, Any]]:
         for player in players_by_id.values()
         for rows in player["seasons"].values()
     )
-    if total_logs < 100:
+    if total_logs < MIN_TOTAL_GAME_LOGS:
         raise RuntimeError(
             f"Only {total_logs} player game-log rows were parsed from {len(tasks)} requests; "
             "refusing to overwrite the existing archive."
