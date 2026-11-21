@@ -22,6 +22,7 @@ TIMEOUT = 25
 DELAY = float(os.getenv("NBA_HISTORY_REQUEST_DELAY", "0.5"))
 WORKERS = max(1, min(6, int(os.getenv("NBA_HISTORY_WORKERS", "4"))))
 MIN_TOTAL_GAME_LOGS = 100
+MIN_GAME_LOGS_PER_SEASON = int(os.getenv("NBA_HISTORY_MIN_LOGS_PER_SEASON", "100"))
 SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027,2026,2025,2024,2023").split(",") if x.strip()]
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
@@ -297,9 +298,26 @@ def fetch_player_database() -> list[dict[str, Any]]:
             f"Only {total_logs} player game-log rows were parsed from {len(tasks)} requests; "
             "refusing to overwrite the existing archive."
         )
+    logs_by_season = {
+        str(season): sum(
+            len(player["seasons"].get(str(season), []))
+            for player in players_by_id.values()
+        )
+        for season in SEASONS
+    }
+    undercovered = {
+        season: count for season, count in logs_by_season.items()
+        if count < MIN_GAME_LOGS_PER_SEASON
+    }
+    if undercovered:
+        raise RuntimeError(
+            "Player game-log coverage is incomplete by season "
+            f"(minimum {MIN_GAME_LOGS_PER_SEASON} rows required): {undercovered}; "
+            "refusing to overwrite the existing archive."
+        )
     print(
-        f"Collected {len(players_by_id)} players from {len(SEASONS)} historical roster seasons "
-        f"and {total_logs} game-log rows; {failures}/{len(tasks)} player-season requests unavailable.",
+        f"Collected {len(players_by_id)} players, {total_logs} game-log rows "
+        f"across seasons {logs_by_season}; {failures}/{len(tasks)} player-season requests unavailable.",
         flush=True,
     )
     return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
@@ -307,16 +325,19 @@ def fetch_player_database() -> list[dict[str, Any]]:
 def build_player_season_tasks(
     players_by_id: dict[str, dict[str, Any]], seasons: list[int]
 ) -> list[tuple[str, int]]:
-    """Fetch logs only for seasons in which the player appeared on an NBA roster."""
-    tasks: list[tuple[str, int]] = []
-    for athlete_id, player in players_by_id.items():
-        rostered = {str(season) for season in player.get("roster_seasons", [])}
-        relevant = [season for season in seasons if str(season) in rostered]
-        # Keep a conservative fallback for older/incomplete roster records.
-        if not rostered:
-            relevant = list(seasons)
-        tasks.extend((athlete_id, season) for season in relevant)
-    return tasks
+    """Query every configured season for every indexed player.
+
+    ESPN's public roster endpoint can return only the current roster even when
+    a historical season is requested. Treating that incomplete roster history
+    as authoritative silently dropped older player logs. Querying all configured
+    seasons costs more requests, but preserves real coverage and lets missing
+    seasons remain explicitly empty instead of assuming a player never played.
+    """
+    return [
+        (athlete_id, season)
+        for athlete_id in players_by_id
+        for season in seasons
+    ]
 
 
 def build_roster_index(players: list[dict[str, Any]]) -> list[dict[str, Any]]:

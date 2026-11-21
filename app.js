@@ -350,6 +350,30 @@ function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
   return mean + sd * Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
 }
+function getSimulationReadiness(game, calibrationEligible) {
+  const reasons = [];
+  const now = Date.now();
+  if (!teamUpdatedAt || !Number.isFinite(teamUpdatedAt.getTime()) || now-teamUpdatedAt.getTime()>48*60*60*1000) {
+    reasons.push("team history is missing or older than 48 hours");
+  }
+  if (!injuryUpdatedAt || !Number.isFinite(injuryUpdatedAt.getTime()) || now-injuryUpdatedAt.getTime()>12*60*60*1000) {
+    reasons.push("injury report is missing or older than 12 hours");
+  }
+  const start = new Date(game?.date).getTime();
+  const minutesToTip = (start-now)/60000;
+  if (Number.isFinite(minutesToTip) && minutesToTip>=-15 && minutesToTip<=60) {
+    const match = lineupData.find(item=>String(item.game_id)===String(game.id));
+    const fresh = lineupsUpdatedAt && Number.isFinite(lineupsUpdatedAt.getTime())
+      && now-lineupsUpdatedAt.getTime()<=30*60*1000;
+    const confirmed = match?.status==="confirmed"
+      && Array.isArray(match.home_starters) && match.home_starters.length===5
+      && Array.isArray(match.away_starters) && match.away_starters.length===5;
+    if (!fresh || !confirmed) reasons.push("five starters per team are not freshly confirmed near tipoff");
+  }
+  if (!calibrationEligible) reasons.push("validated live probability calibration is not active for these inputs");
+  reasons.push("model-to-market identity and edge validation are not enabled");
+  return reasons;
+}
 function runGameSimulation() {
   if (!selectedGame) { $("game-results").textContent="Select a matchup first."; return; }
   const hm=Number($("home-mean").value), am=Number($("away-mean").value), sd=Number($("score-sd").value);
@@ -381,6 +405,10 @@ function runGameSimulation() {
   const calibratedHomeProbability=calibrationEligible
     ? applyWinnerCalibration(rawHomeProbability,winnerCalibration)
     : rawHomeProbability;
+  const readinessReasons=getSimulationReadiness(selectedGame,calibrationEligible);
+  const readinessText="PASS — "+readinessReasons.join("; ")+".";
+  const readinessHtml='<p class="fine-print"><strong>Decision filter:</strong> '+escapeHtml(readinessText)+'</p>';
+  $("simulation-readiness").textContent=readinessText;
   const homeWinRate=calibratedHomeProbability*100, awayWinRate=(1-calibratedHomeProbability)*100;
   const homeWins=calibratedHomeProbability>=0.5;
   const chanceLabel=calibrationEligible?"CALIBRATED CHANCE":"SIMULATED CHANCE";
@@ -393,8 +421,7 @@ function runGameSimulation() {
     : winnerCalibration
       ? " Calibration is not applied to manually changed assumptions; displayed win chance is the raw simulation."
       : "";
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`;
-  $("simulation-modal-title").textContent="Simulation result";
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`+readinessHtml;  $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
   const homeLogo=teamLogoMarkup(selectedGame.home,"split-home");
@@ -962,10 +989,14 @@ async function loadModelMetrics() {
     const confidenceRows=(data.production_baseline_confidence_buckets||[]).map(row=>
       '<tr><td>'+escapeHtml(row.confidence_range)+'</td><td>'+Number(row.games).toLocaleString()+'</td><td>'+(Number(row.average_confidence)*100).toFixed(1)+'%</td><td>'+(Number(row.observed_accuracy)*100).toFixed(1)+'%</td><td>'+Number(row.brier_score).toFixed(3)+'</td></tr>'
     ).join("");
-    const diagnosticsHtml=(seasonRows||confidenceRows)
-      ? '<strong>Holdout diagnostics by season</strong><div style="overflow-x:auto"><table><thead><tr><th>Season</th><th>Games</th><th>Model MAE</th><th>Baseline MAE</th><th>Model win %</th><th>Baseline win %</th><th>Model Brier</th><th>Baseline Brier</th></tr></thead><tbody>'+seasonRows+'</tbody></table></div>'+
+    const recentRows=Object.entries(data.recent_windows||{}).sort((a,b)=>Number(a[0])-Number(b[0])).map(([window,row])=>
+      '<tr><td>Last '+escapeHtml(window)+'</td><td>'+Number(row.games).toLocaleString()+'</td><td>'+Number(row.model_score_mae).toFixed(2)+'</td><td>'+Number(row.baseline_score_mae).toFixed(2)+'</td><td>'+(Number(row.model_winner_accuracy)*100).toFixed(1)+'%</td><td>'+(Number(row.baseline_winner_accuracy)*100).toFixed(1)+'%</td><td>'+Number(row.model_brier_score).toFixed(3)+'</td><td>'+Number(row.baseline_brier_score).toFixed(3)+'</td></tr>'
+    ).join("");
+    const diagnosticsHtml=(seasonRows||confidenceRows||recentRows)
+      ? '<strong>Recent holdout windows</strong><div style="overflow-x:auto"><table><thead><tr><th>Window</th><th>Games</th><th>Model MAE</th><th>Baseline MAE</th><th>Model win %</th><th>Baseline win %</th><th>Model Brier</th><th>Baseline Brier</th></tr></thead><tbody>'+recentRows+'</tbody></table></div>'+
+        '<strong>Holdout diagnostics by season</strong><div style="overflow-x:auto"><table><thead><tr><th>Season</th><th>Games</th><th>Model MAE</th><th>Baseline MAE</th><th>Model win %</th><th>Baseline win %</th><th>Model Brier</th><th>Baseline Brier</th></tr></thead><tbody>'+seasonRows+'</tbody></table></div>'+
         '<strong>Production baseline confidence buckets</strong><div style="overflow-x:auto"><table><thead><tr><th>Confidence</th><th>Games</th><th>Avg. confidence</th><th>Observed accuracy</th><th>Brier</th></tr></thead><tbody>'+confidenceRows+'</tbody></table></div>'+
-        '<p class="fine-print">Confidence buckets use the predicted side, and show sample size beside observed accuracy. Small samples should not be treated as proof of an edge.</p>'
+        '<p class="fine-print">Confidence buckets use the predicted side, and show sample size beside observed accuracy. Small samples should not be treated as proof of an edge. Recent windows help reveal drift but do not guarantee future results.</p>'
       : "";
     root.innerHTML='<strong>Walk-forward validation · '+Number(data.games_tested).toLocaleString()+' games</strong>'+
       '<div class="result-grid">'+

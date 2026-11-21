@@ -1,4 +1,5 @@
 import importlib.util
+import pytest
 from pathlib import Path
 
 MODULE_PATH = Path(__file__).parents[1] / "scripts" / "refresh_player_history.py"
@@ -125,6 +126,7 @@ def test_player_database_fetches_all_seasons_with_bounded_parallel_workers(monke
     monkeypatch.setattr(module, "get_json", fake_get_json)
     monkeypatch.setattr(module, "WORKERS", 2)
     monkeypatch.setattr(module, "MIN_TOTAL_GAME_LOGS", 1)
+    monkeypatch.setattr(module, "MIN_GAME_LOGS_PER_SEASON", 1)
     players = module.fetch_player_database()
     assert len(players) == 1
     assert sorted(players[0]["seasons"]) == ["2023", "2024", "2025", "2026", "2027"]
@@ -133,6 +135,29 @@ def test_player_database_fetches_all_seasons_with_bounded_parallel_workers(monke
     assert players[0]["teams_by_season"] == {str(season): ["ATL"] for season in module.SEASONS}
     assert len([call for call in calls if "/roster" in call[0]]) == 30 * len(module.SEASONS)
     assert len([call for call in calls if "/gamelog" in call[0]]) == 5
+
+
+def test_player_refresh_refuses_to_replace_archive_when_a_season_is_undercovered(monkeypatch):
+    def fake_get_json(url, params=None):
+        if "/roster" in url:
+            team_id = url.rsplit("/", 2)[-2]
+            if team_id == "1":
+                return {"athletes": [{"id": "athlete-1", "displayName": "Test Player",
+                                      "position": {"abbreviation": "G"}, "status": {"type": "active"}}]}
+            return {"athletes": []}
+        if params["season"] == 2023:
+            return {"names": ["minutes", "points"], "events": {}}
+        return {
+            "names": ["minutes", "points"],
+            "events": {"game-1": {"id": "game-1", "date": "2026-11-20T00:00Z",
+                                   "stats": ["34", "24"]}},
+        }
+    monkeypatch.setattr(module, "get_json", fake_get_json)
+    monkeypatch.setattr(module, "WORKERS", 2)
+    monkeypatch.setattr(module, "MIN_TOTAL_GAME_LOGS", 1)
+    monkeypatch.setattr(module, "MIN_GAME_LOGS_PER_SEASON", 1)
+    with pytest.raises(RuntimeError, match="coverage is incomplete"):
+        module.fetch_player_database()
 
 
 def test_build_roster_index_keeps_team_identity_without_heavy_game_logs():
@@ -151,16 +176,15 @@ def test_build_roster_index_keeps_team_identity_without_heavy_game_logs():
     assert "seasons" not in result[0]
 
 
-def test_player_log_tasks_only_cover_rostered_seasons():
+def test_player_log_tasks_cover_all_configured_seasons_when_roster_history_is_incomplete():
     players = {
-        "active-1": {"roster_seasons": ["2027", "2025"]},
+        "active-1": {"roster_seasons": ["2027"]},
         "historical-2": {"roster_seasons": ["2024"]},
         "legacy-3": {},
     }
     tasks = module.build_player_season_tasks(players, [2027, 2026, 2025, 2024, 2023])
     assert tasks == [
-        ("active-1", 2027), ("active-1", 2025),
-        ("historical-2", 2024),
-        ("legacy-3", 2027), ("legacy-3", 2026), ("legacy-3", 2025),
-        ("legacy-3", 2024), ("legacy-3", 2023),
+        (athlete_id, season)
+        for athlete_id in ("active-1", "historical-2", "legacy-3")
+        for season in [2027, 2026, 2025, 2024, 2023]
     ]
