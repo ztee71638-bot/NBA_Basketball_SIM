@@ -28,7 +28,7 @@ The open-source `nba_api` client wraps the NBA.com Stats endpoints and exposes p
 
 Base URL: `https://gamma-api.polymarket.com`
 
-The current collector queries active events in Polymarket's NBA series (`series_id=10345`) and flattens each event's nested markets. It retains active, non-closed markets and excludes events whose scheduled end time has passed. This captures game moneylines, spreads, totals and any player-prop markets attached to those events. Outcome prices, 24-hour volume and liquidity are stored for display. Player/event identity matching and model-vs-price edge calculations are still separate validation steps.
+The current collector queries active events in Polymarket's NBA series (`series_id=10345`) and flattens their nested markets. It supplements those with paginated active markets carrying the NBA tag (`tag_id=745`), retaining only markets associated with the active game events; this second path is needed because some player props are exposed on the flat markets endpoint rather than the event's nested list. It retains active, non-closed markets and excludes events whose scheduled end time has passed. This captures game moneylines, spreads, totals and player props. Outcome prices, 24-hour volume and liquidity are stored for display. Player/event identity matching and model-vs-price edge calculations are still separate validation steps.
 
 Gamma is used only for market/event discovery and metadata. The simulator does not connect to wallets, create orders, or trade.
 
