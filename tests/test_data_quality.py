@@ -179,3 +179,48 @@ def test_audit_warns_when_advanced_boxscore_coverage_is_low_for_a_season():
         "Season 2026: advanced box-score coverage is only 0.0%" in item
         for item in result["warnings"]
     )
+
+
+def test_player_audit_detects_duplicate_game_logs_and_invalid_box_score_values():
+    players = {
+        "player_count": 1,
+        "last_updated": "2026-11-21T00:00:00+00:00",
+        "players": [{
+            "id": "1", "name": "Player One", "team": "AAA",
+            "seasons": {"2027": {"games": [
+                {"event_id": "g1", "date": "2026-11-20", "points": 20,
+                 "field_goals_made": 8, "field_goals_attempted": 7},
+                {"event_id": "g1", "date": "2026-11-20", "points": -2},
+            ]}},
+        }],
+    }
+    result = module.audit_payloads(
+        fixture(), players, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    summary = result["player_history"]
+    assert summary["duplicate_player_game_logs"] == 1
+    assert summary["invalid_player_stat_rows"] == 2
+    assert any("duplicate game logs" in item for item in result["errors"])
+    assert any("impossible box-score values" in item for item in result["errors"])
+
+
+def test_player_audit_detects_invalid_and_out_of_season_game_dates():
+    players = {
+        "player_count": 1,
+        "last_updated": "2026-11-21T00:00:00+00:00",
+        "players": [{
+            "id": "1", "name": "Player One", "team": "AAA",
+            "seasons": {"2027": {"games": [
+                {"event_id": "g1", "date": "not-a-date", "points": 10},
+                {"event_id": "g2", "date": "2024-11-20", "points": 10},
+            ]}},
+        }],
+    }
+    result = module.audit_payloads(
+        fixture(), players, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    summary = result["player_history"]
+    assert summary["invalid_player_game_dates"] == 1
+    assert summary["out_of_season_player_game_logs"] == 1
+    assert any("missing or invalid dates" in item for item in result["errors"])
+    assert any("outside their declared season" in item for item in result["warnings"])
