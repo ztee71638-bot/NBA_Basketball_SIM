@@ -112,6 +112,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
     errors_home, errors_away, briers, correct = [], [], [], []
     baseline_errors_home, baseline_errors_away, baseline_correct = [], [], []
     advanced_errors, advanced_correct, advanced_briers = [], [], []
+    advanced_baseline_errors, advanced_baseline_correct, advanced_probabilities, advanced_outcomes = [], [], [], []
     used = 0
     for matchup in ordered:
         if len(matchup) != 2:
@@ -178,6 +179,10 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
                     advanced_errors.extend((abs(adv_h-actual_h),abs(adv_a-actual_a)))
                     advanced_correct.append((adv_h>adv_a)==home_win)
                     advanced_briers.append((adv_prob-float(home_win))**2)
+                    advanced_baseline_errors.extend((abs(base_h-actual_h),abs(base_a-actual_a)))
+                    advanced_baseline_correct.append((base_h>base_a)==home_win)
+                    advanced_probabilities.append(adv_prob)
+                    advanced_outcomes.append(float(home_win))
         used += 1
 
     if not used:
@@ -191,8 +196,14 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
         "model_brier_score": round(mean(briers), 4),
         "advanced_games_tested": len(advanced_correct),
         "advanced_score_mae": round(mean(advanced_errors), 3) if advanced_errors else None,
+        "advanced_baseline_score_mae": round(mean(advanced_baseline_errors), 3) if advanced_baseline_errors else None,
         "advanced_winner_accuracy": round(mean(advanced_correct), 4) if advanced_correct else None,
+        "advanced_baseline_winner_accuracy": round(mean(advanced_baseline_correct), 4) if advanced_baseline_correct else None,
         "advanced_brier_score": round(mean(advanced_briers), 4) if advanced_briers else None,
+        "advanced_calibration_error": round(mean([
+            abs(mean(advanced_outcomes[max(0, i-9):i+1])-mean(advanced_probabilities[max(0, i-9):i+1]))
+            for i in range(0, len(advanced_outcomes), 10)
+        ]), 4) if advanced_outcomes else None,
         "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. Advanced metrics are experimental and only reported when source coverage is adequate.",
     }
 
