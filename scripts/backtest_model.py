@@ -131,6 +131,22 @@ def current_travel_miles(rows, team_abbreviation, opponent_abbreviation, home_aw
     return 3958.7613 * 2 * math.asin(math.sqrt(value))
 
 
+def expected_calibration_error(probabilities, outcomes, bins: int = 10):
+    if not probabilities:
+        return None
+    total = len(probabilities)
+    error = 0.0
+    for index in range(bins):
+        lower, upper = index / bins, (index + 1) / bins
+        selected = [(p, y) for p, y in zip(probabilities, outcomes)
+                    if lower <= p < upper or (index == bins-1 and p == 1.0)]
+        if selected:
+            confidence = mean(p for p, _ in selected)
+            accuracy = mean(y for _, y in selected)
+            error += len(selected) / total * abs(confidence-accuracy)
+    return round(error, 4)
+
+
 def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None):
     by_team = {}
     arenas = (arenas_payload or {}).get("teams", {})
@@ -156,9 +172,12 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         games[row["game_id"]].append(row)
     ordered = sorted(games.values(), key=lambda rows: parse_date(rows[0]["date"]))
     errors_home, errors_away, briers, correct = [], [], [], []
+    model_probabilities, model_outcomes = [], []
     baseline_errors_home, baseline_errors_away, baseline_correct = [], [], []
+    baseline_briers, baseline_probabilities, baseline_outcomes = [], [], []
     advanced_errors, advanced_correct, advanced_briers = [], [], []
     advanced_baseline_errors, advanced_baseline_correct, advanced_probabilities, advanced_outcomes = [], [], [], []
+    advanced_baseline_briers, advanced_baseline_probabilities, advanced_baseline_outcomes = [], [], []
     used = 0
     for matchup in ordered:
         if len(matchup) != 2:
@@ -190,6 +209,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         errors_home.append(abs(pred_h - actual_h))
         errors_away.append(abs(pred_a - actual_a))
         briers.append((p_home - float(home_win)) ** 2)
+        model_probabilities.append(p_home)
+        model_outcomes.append(float(home_win))
         correct.append((pred_h > pred_a) == home_win)
 
         # Previous simple last-10 scoring/allowance baseline, included only
@@ -202,6 +223,14 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         baseline_errors_home.append(abs(base_h - actual_h))
         baseline_errors_away.append(abs(base_a - actual_a))
         baseline_correct.append((base_h > base_a) == home_win)
+        base_home_sd = weighted_stats(h10, "points_for")
+        base_away_sd = weighted_stats(a10, "points_for")
+        base_combined_sd = math.sqrt((base_home_sd[1] if base_home_sd else 12.0)**2 +
+                                     (base_away_sd[1] if base_away_sd else 12.0)**2)
+        base_probability = 0.5 * (1 + math.erf((base_h-base_a)/(math.sqrt(2)*max(8.0,base_combined_sd))))
+        baseline_probabilities.append(base_probability)
+        baseline_outcomes.append(float(home_win))
+        baseline_briers.append((base_probability-float(home_win))**2)
 
         # Experimental pace/efficiency model is evaluated only when the test
         # game and all required pregame history contain verified boxscore data.
@@ -233,6 +262,9 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
                     advanced_baseline_correct.append((base_h>base_a)==home_win)
                     advanced_probabilities.append(adv_prob)
                     advanced_outcomes.append(float(home_win))
+                    advanced_baseline_probabilities.append(base_probability)
+                    advanced_baseline_outcomes.append(float(home_win))
+                    advanced_baseline_briers.append((base_probability-float(home_win))**2)
         used += 1
 
     if not used:
@@ -244,22 +276,18 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "model_winner_accuracy": round(mean(correct), 4),
         "baseline_winner_accuracy": round(mean(baseline_correct), 4),
         "model_brier_score": round(mean(briers), 4),
+        "model_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
+        "baseline_brier_score": round(mean(baseline_briers), 4),
+        "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
         "advanced_games_tested": len(advanced_correct),
         "advanced_score_mae": round(mean(advanced_errors), 3) if advanced_errors else None,
         "advanced_baseline_score_mae": round(mean(advanced_baseline_errors), 3) if advanced_baseline_errors else None,
         "advanced_winner_accuracy": round(mean(advanced_correct), 4) if advanced_correct else None,
         "advanced_baseline_winner_accuracy": round(mean(advanced_baseline_correct), 4) if advanced_baseline_correct else None,
         "advanced_brier_score": round(mean(advanced_briers), 4) if advanced_briers else None,
-        "advanced_calibration_error": round(sum(
-            len([p for p in advanced_probabilities if lower <= p < upper]) /
-            max(1, len(advanced_probabilities)) *
-            abs(
-                mean([y for p, y in zip(advanced_probabilities, advanced_outcomes) if lower <= p < upper]) -
-                mean([p for p in advanced_probabilities if lower <= p < upper])
-            )
-            for lower, upper in [(i/10, (i+1)/10) for i in range(10)]
-            if any(lower <= p < upper for p in advanced_probabilities)
-        ), 4) if advanced_outcomes else None,
+        "advanced_baseline_brier_score": round(mean(advanced_baseline_briers), 4) if advanced_baseline_briers else None,
+        "advanced_calibration_error": expected_calibration_error(advanced_probabilities, advanced_outcomes),
+        "advanced_baseline_calibration_error": expected_calibration_error(advanced_baseline_probabilities, advanced_baseline_outcomes),
         "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
     }
 
