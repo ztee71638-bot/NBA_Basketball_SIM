@@ -77,38 +77,67 @@ def _number(value: Any) -> float | None:
 def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
     names = list(payload.get("names") or [])
     labels = list(payload.get("labels") or [])
-    events = payload.get("events") or []
-    if isinstance(events, dict):
-        events = list(events.values())
+    event_meta = payload.get("events") or {}
+    stat_rows: list[dict[str, Any]] = []
+
+    # Current ESPN Web v3 shape: events is an ID->metadata dictionary,
+    # while actual per-game stats are nested under seasonTypes/categories.
+    if isinstance(event_meta, dict) and payload.get("seasonTypes"):
+        for season_type in payload.get("seasonTypes") or []:
+            for category in season_type.get("categories") or []:
+                for row in category.get("events") or []:
+                    if isinstance(row, dict):
+                        event_id = str(row.get("eventId") or row.get("id") or "")
+                        metadata = event_meta.get(event_id, {})
+                        if isinstance(metadata, dict):
+                            stat_rows.append({**metadata, **row, "id": event_id})
+    else:
+        # Compatibility with older/flat ESPN payload variants.
+        if isinstance(event_meta, dict):
+            candidates = list(event_meta.values())
+        elif isinstance(event_meta, list):
+            candidates = event_meta
+        else:
+            candidates = []
+        stat_rows.extend(item for item in candidates if isinstance(item, dict))
+
     rows = []
-    for event in events:
-        if not isinstance(event, dict):
-            continue
+    seen = set()
+    for event in stat_rows:
+        event_id = str(event.get("eventId") or event.get("id") or "")
         values = list(event.get("stats") or [])
+        if event_id and event_id in seen:
+            continue
+        if event_id:
+            seen.add(event_id)
         stat_names = names
         if len(stat_names) == len(values) + 3:
             stat_names = stat_names[3:]
         elif len(stat_names) != len(values):
             stat_names = labels[3:] if len(labels) == len(values) + 3 else labels
         raw = dict(zip(stat_names, values))
+
         def pick(*keys: str) -> float | None:
             for key in keys:
                 if key in raw:
                     return _number(raw[key])
             return None
+
         opponent = event.get("opponent") or {}
+        if not isinstance(opponent, dict):
+            opponent = {}
         rows.append({
-            "event_id": str(event.get("id") or ""),
-            "date": event.get("date"),
-            "opponent": opponent.get("displayName") or opponent.get("abbreviation"),
+            "event_id": event_id,
+            "date": event.get("date") or event.get("gameDate"),
+            "opponent": opponent.get("displayName") or opponent.get("name") or opponent.get("abbreviation"),
             "opponent_abbreviation": opponent.get("abbreviation"),
             "result": event.get("gameResult"),
-            "minutes": pick("minutes", "min"),
-            "points": pick("points", "pts"),
-            "rebounds": pick("rebounds", "reb"),
-            "assists": pick("assists", "ast"),
-            "steals": pick("steals", "stl"),
-            "blocks": pick("blocks", "blk"),
+            "minutes": pick("minutes", "min", "MIN"),
+            "points": pick("points", "pts", "PTS"),
+            "rebounds": pick("rebounds", "reb", "REB"),
+            "assists": pick("assists", "ast", "AST"),
+            "steals": pick("steals", "stl", "STL"),
+            "blocks": pick("blocks", "blk", "BLK"),
             "raw_stats": values,
         })
     return rows
