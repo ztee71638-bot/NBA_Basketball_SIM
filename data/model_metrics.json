@@ -1,22 +1,153 @@
 {
-  "games_tested": 5765,
+  "games_tested": 5763,
+  "excluded_non_nba_opponent_rows": 22,
   "model_score_mae": 9.491,
-  "baseline_score_mae": 9.51,
-  "model_winner_accuracy": 0.6454,
-  "baseline_winner_accuracy": 0.6225,
-  "model_brier_score": 0.2258,
-  "model_calibration_error": 0.0665,
-  "baseline_brier_score": 0.2271,
-  "baseline_calibration_error": 0.0209,
+  "baseline_score_mae": 9.509,
+  "model_winner_accuracy": 0.6448,
+  "baseline_winner_accuracy": 0.6219,
+  "model_brier_score": 0.2256,
+  "model_calibration_error": 0.0656,
+  "calibrated_brier_score": 0.2265,
+  "calibrated_calibration_error": 0.0166,
+  "calibration_validation_games": 5763,
+  "calibration": {
+    "intercept": -0.14056088,
+    "slope": 1.25141968,
+    "training_games": 5763,
+    "enabled": true,
+    "training_model": "last10_baseline_simulation_probability",
+    "validation_brier_score": 0.2265,
+    "validation_calibration_error": 0.0166,
+    "raw_brier_score": 0.2268,
+    "raw_calibration_error": 0.0224,
+    "opponent_adjusted_model_brier_score": 0.2256,
+    "opponent_adjusted_model_calibration_error": 0.0656,
+    "live_enabled": false
+  },
+  "baseline_brier_score": 0.2268,
+  "baseline_calibration_error": 0.0224,
+  "production_baseline_confidence_buckets": [
+    {
+      "confidence_range": "50%-55%",
+      "games": 1568,
+      "average_confidence": 0.5252,
+      "observed_accuracy": 0.4968,
+      "brier_score": 0.2506
+    },
+    {
+      "confidence_range": "55%-60%",
+      "games": 1360,
+      "average_confidence": 0.5744,
+      "observed_accuracy": 0.6044,
+      "brier_score": 0.2401
+    },
+    {
+      "confidence_range": "60%-65%",
+      "games": 1137,
+      "average_confidence": 0.6243,
+      "observed_accuracy": 0.6262,
+      "brier_score": 0.2335
+    },
+    {
+      "confidence_range": "65%-70%",
+      "games": 793,
+      "average_confidence": 0.6732,
+      "observed_accuracy": 0.7137,
+      "brier_score": 0.2062
+    },
+    {
+      "confidence_range": "70%-75%",
+      "games": 526,
+      "average_confidence": 0.7238,
+      "observed_accuracy": 0.7433,
+      "brier_score": 0.191
+    },
+    {
+      "confidence_range": "75%-80%",
+      "games": 243,
+      "average_confidence": 0.7713,
+      "observed_accuracy": 0.7984,
+      "brier_score": 0.161
+    },
+    {
+      "confidence_range": "80%-85%",
+      "games": 109,
+      "average_confidence": 0.8208,
+      "observed_accuracy": 0.8257,
+      "brier_score": 0.1443
+    },
+    {
+      "confidence_range": "85%-90%",
+      "games": 25,
+      "average_confidence": 0.8705,
+      "observed_accuracy": 0.84,
+      "brier_score": 0.1348
+    },
+    {
+      "confidence_range": "90%-100%",
+      "games": 2,
+      "average_confidence": 0.9098,
+      "observed_accuracy": 1.0,
+      "brier_score": 0.0082
+    }
+  ],
+  "by_season": {
+    "2023": {
+      "games": 1302,
+      "model_score_mae": 9.167,
+      "baseline_score_mae": 9.215,
+      "model_winner_accuracy": 0.6152,
+      "baseline_winner_accuracy": 0.5998,
+      "model_brier_score": 0.2344,
+      "baseline_brier_score": 0.2359
+    },
+    "2024": {
+      "games": 1383,
+      "model_score_mae": 9.523,
+      "baseline_score_mae": 9.474,
+      "model_winner_accuracy": 0.6385,
+      "baseline_winner_accuracy": 0.6233,
+      "model_brier_score": 0.2249,
+      "baseline_brier_score": 0.2256
+    },
+    "2025": {
+      "games": 1390,
+      "model_score_mae": 9.457,
+      "baseline_score_mae": 9.49,
+      "model_winner_accuracy": 0.6604,
+      "baseline_winner_accuracy": 0.6317,
+      "model_brier_score": 0.2218,
+      "baseline_brier_score": 0.2235
+    },
+    "2026": {
+      "games": 1387,
+      "model_score_mae": 9.718,
+      "baseline_score_mae": 9.743,
+      "model_winner_accuracy": 0.6727,
+      "baseline_winner_accuracy": 0.6402,
+      "model_brier_score": 0.2202,
+      "baseline_brier_score": 0.2193
+    },
+    "2027": {
+      "games": 301,
+      "model_score_mae": 9.872,
+      "baseline_score_mae": 9.956,
+      "model_winner_accuracy": 0.6013,
+      "baseline_winner_accuracy": 0.5814,
+      "model_brier_score": 0.234,
+      "baseline_brier_score": 0.243
+    }
+  },
+  "diagnostics_note": "Season slices and confidence buckets are descriptive holdout diagnostics. Small slices are not sufficient to establish a predictive edge.",
   "advanced_games_tested": 42,
   "advanced_score_mae": 9.021,
   "advanced_baseline_score_mae": 8.798,
   "advanced_winner_accuracy": 0.7143,
   "advanced_baseline_winner_accuracy": 0.7143,
   "advanced_brier_score": 0.224,
-  "advanced_baseline_brier_score": 0.2158,
+  "advanced_baseline_brier_score": 0.216,
   "advanced_calibration_error": 0.1707,
-  "advanced_baseline_calibration_error": 0.1155,
+  "advanced_baseline_calibration_error": 0.1297,
   "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
-  "generated_at": "2026-11-21T10:54:36.196788+00:00"
+  "generated_at": "2026-11-21T14:50:33.292092+00:00"
 }

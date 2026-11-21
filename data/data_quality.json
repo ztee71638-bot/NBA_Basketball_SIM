@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T13:54:23.022932+00:00",
+  "generated_at": "2026-11-21T14:50:33.621168+00:00",
   "status": "warning",
   "team_history": {
-    "last_updated": "2026-11-21T10:53:25.104354+00:00",
-    "age_hours": 3.02,
+    "last_updated": "2026-11-21T14:47:46.086491+00:00",
+    "age_hours": 0.05,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -27,17 +27,17 @@
       "2025": {
         "team_records": 30,
         "teams_with_games": 30,
-        "team_game_rows": 2796,
-        "unique_game_ids": 1400,
+        "team_game_rows": 2795,
+        "unique_game_ids": 1399,
         "duplicate_team_game_ids": 0,
-        "min_team_games": 86,
+        "min_team_games": 85,
         "max_team_games": 111
       },
       "2026": {
         "team_records": 30,
         "teams_with_games": 30,
-        "team_game_rows": 2788,
-        "unique_game_ids": 1397,
+        "team_game_rows": 2787,
+        "unique_game_ids": 1396,
         "duplicate_team_game_ids": 0,
         "min_team_games": 85,
         "max_team_games": 111
@@ -53,7 +53,7 @@
       }
     },
     "unpaired_or_mismatched_games": 0,
-    "non_nba_or_unresolved_opponent_games": 24,
+    "non_nba_or_unresolved_opponent_games": 22,
     "mismatch_breakdown": {},
     "mismatch_examples": []
   },
@@ -69,8 +69,146 @@
       2023
     ],
     "last_updated": "2026-11-21T13:54:22.905846+00:00",
-    "age_hours": 0.0,
-    "players_without_any_logs": 26
+    "age_hours": 0.94,
+    "players_without_any_logs": 26,
+    "players_without_logs_sample": [
+      {
+        "id": "5105571",
+        "name": "Henri Veesaar",
+        "team": "ATL"
+      },
+      {
+        "id": "4712863",
+        "name": "Mouhamed Gueye",
+        "team": "ATL"
+      },
+      {
+        "id": "4684269",
+        "name": "Kylan Boswell",
+        "team": "CHA"
+      },
+      {
+        "id": "4997530",
+        "name": "Khalifa Diop",
+        "team": "CLE"
+      },
+      {
+        "id": "5106268",
+        "name": "Nae'Qwan Tomlin",
+        "team": "CLE"
+      },
+      {
+        "id": "4683688",
+        "name": "Dereck Lively II",
+        "team": "DAL"
+      },
+      {
+        "id": "6430",
+        "name": "Jimmy Butler III",
+        "team": "GSW"
+      },
+      {
+        "id": "3102531",
+        "name": "Kristaps Porzingis",
+        "team": "GSW"
+      },
+      {
+        "id": "4432171",
+        "name": "Moses Moody",
+        "team": "GSW"
+      },
+      {
+        "id": "5157066",
+        "name": "Johnny Furphy",
+        "team": "IND"
+      },
+      {
+        "id": "6580",
+        "name": "Bradley Beal",
+        "team": "LAC"
+      },
+      {
+        "id": "3913176",
+        "name": "Brandon Ingram",
+        "team": "LAC"
+      },
+      {
+        "id": "4396818",
+        "name": "Jordan Miller",
+        "team": "LAC"
+      },
+      {
+        "id": "5105462",
+        "name": "Richie Saunders",
+        "team": "MEM"
+      },
+      {
+        "id": "3934673",
+        "name": "Donte DiVincenzo",
+        "team": "MIN"
+      },
+      {
+        "id": "5061603",
+        "name": "Thomas Sorber",
+        "team": "OKC"
+      },
+      {
+        "id": "5107251",
+        "name": "Izaiyah Nelson",
+        "team": "ORL"
+      },
+      {
+        "id": "4065654",
+        "name": "Jonathan Isaac",
+        "team": "ORL"
+      },
+      {
+        "id": "4870562",
+        "name": "Dominick Barlow",
+        "team": "PHI"
+      },
+      {
+        "id": "4701232",
+        "name": "Mark Williams",
+        "team": "PHX"
+      },
+      {
+        "id": "4914336",
+        "name": "Shaedon Sharpe",
+        "team": "POR"
+      },
+      {
+        "id": "5101845",
+        "name": "Jayden Quaintance",
+        "team": "SAS"
+      },
+      {
+        "id": "6440",
+        "name": "Tobias Harris",
+        "team": "SAS"
+      },
+      {
+        "id": "4432586",
+        "name": "Nate Bittle",
+        "team": "TOR"
+      },
+      {
+        "id": "4606840",
+        "name": "Jamir Watkins",
+        "team": "WAS"
+      },
+      {
+        "id": "4997537",
+        "name": "Tristan Vukcevic",
+        "team": "WAS"
+      }
+    ],
+    "game_logs_by_season": {
+      "2027": 6964
+    },
+    "players_with_logs_by_season": {
+      "2027": 502
+    }
   },
   "warnings": [
     "26 player records have no game logs in any stored season."

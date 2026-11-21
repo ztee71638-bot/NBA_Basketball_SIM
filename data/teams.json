@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T10:53:25.104354+00:00",
+  "last_updated": "2026-11-21T14:47:46.086491+00:00",
   "source": "ESPN public team schedules",
   "seasons": [
     2027,
@@ -19618,24 +19618,6 @@
               "road_trip_games": 0
             },
             {
-              "game_id": "401812487",
-              "date": "2025-10-05T03:00Z",
-              "team": "NOP",
-              "opponent": null,
-              "opponent_name": "Melbourne Pnx",
-              "home_away": "home",
-              "points_for": 127.0,
-              "points_against": 92.0,
-              "win": true,
-              "result": "W",
-              "rest_days": 1,
-              "back_to_back": false,
-              "games_last_3_days": 1,
-              "games_last_5_days": 1,
-              "travel_miles": 0.0,
-              "road_trip_games": 0
-            },
-            {
               "game_id": "401812717",
               "date": "2025-10-15T00:00Z",
               "team": "NOP",
@@ -19646,7 +19628,7 @@
               "points_against": 130.0,
               "win": false,
               "result": "L",
-              "rest_days": 9,
+              "rest_days": 11,
               "back_to_back": false,
               "games_last_3_days": 0,
               "games_last_5_days": 0,
@@ -21149,11 +21131,11 @@
             }
           ],
           "summary": {
-            "games": 86,
-            "wins": 28,
-            "win_pct": 0.3256,
-            "avg_points_for": 115.81,
-            "avg_points_against": 119.69,
+            "games": 85,
+            "wins": 27,
+            "win_pct": 0.3176,
+            "avg_points_for": 115.68,
+            "avg_points_against": 120.01,
             "last10_games": 10,
             "last10_wins": 1,
             "last10_win_pct": 0.1,
@@ -155254,24 +155236,6 @@
               "road_trip_games": 2
             },
             {
-              "game_id": "401717012",
-              "date": "2024-10-17T02:00Z",
-              "team": "POR",
-              "opponent": null,
-              "opponent_name": "Ulm",
-              "home_away": "home",
-              "points_for": 111.0,
-              "points_against": 100.0,
-              "win": true,
-              "result": "W",
-              "rest_days": 3,
-              "back_to_back": false,
-              "games_last_3_days": 0,
-              "games_last_5_days": 2,
-              "travel_miles": 484.0,
-              "road_trip_games": 0
-            },
-            {
               "game_id": "401717025",
               "date": "2024-10-19T02:00Z",
               "team": "POR",
@@ -155282,11 +155246,11 @@
               "points_against": 86.0,
               "win": true,
               "result": "W",
-              "rest_days": 1,
+              "rest_days": 5,
               "back_to_back": false,
-              "games_last_3_days": 1,
-              "games_last_5_days": 1,
-              "travel_miles": 0.0,
+              "games_last_3_days": 0,
+              "games_last_5_days": 0,
+              "travel_miles": 484.0,
               "road_trip_games": 0
             },
             {
@@ -156767,11 +156731,11 @@
             }
           ],
           "summary": {
-            "games": 86,
-            "wins": 39,
-            "win_pct": 0.4535,
+            "games": 85,
+            "wins": 38,
+            "win_pct": 0.4471,
             "avg_points_for": 110.84,
-            "avg_points_against": 112.9,
+            "avg_points_against": 113.05,
             "last10_games": 10,
             "last10_wins": 4,
             "last10_win_pct": 0.4,
