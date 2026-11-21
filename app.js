@@ -34,7 +34,7 @@ function showGames() {
       items.map(({game,index}) => {
         const away=game.away?.name||"Away team",home=game.home?.name||"Home team";
         const score=game.completed||game.status==="STATUS_IN_PROGRESS"?' · '+(game.away?.score??"–")+'–'+(game.home?.score??"–"):"";
-        return '<div class="game"><div><strong>'+escapeHtml(away)+' @ '+escapeHtml(home)+'</strong><small>'+escapeHtml(new Date(game.date).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"}))+' · '+escapeHtml(game.status_detail||game.status||"Scheduled")+escapeHtml(score)+'</small></div><button data-game="'+index+'">Simulate 100K</button></div>';
+        return '<div class="game"><div><strong>'+escapeHtml(away)+' @ '+escapeHtml(home)+'</strong><small>'+escapeHtml(new Date(game.date).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"}))+' · '+escapeHtml(game.status_detail||game.status||"Scheduled")+escapeHtml(score)+'</small></div><button data-game="'+index+'">Run Simulation</button></div>';
       }).join("")+'</section>';
   }).join("");
   root.querySelectorAll("[data-game]").forEach(button=>button.addEventListener("click",()=>{
