@@ -2,6 +2,8 @@
 
 A free-first NBA game and player-prop research simulator. The first foundation uses ESPN public NBA endpoints and Polymarket's public Gamma API, with a static site designed for GitHub Pages.
 
+**Live site:** https://ztee71638-bot.github.io/NBA_Basketball_SIM/
+
 ## Current foundation
 - NBA schedule/live scoreboard ingestion for a rolling three-day window.
 - Read-only discovery of active NBA game markets and nested player props from Polymarket's NBA series.
