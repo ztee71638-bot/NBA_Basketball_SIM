@@ -1,0 +1,455 @@
+{
+  "generated_at": "2026-11-21T19:44:53.590913+00:00",
+  "source": "BoxScore Lab (upstream attribution: NBA Stats)",
+  "license": "CC BY 4.0",
+  "team_games": {
+    "source_rows": 2930,
+    "matched_rows": 2930,
+    "unmatched_rows": 0,
+    "score_or_key_mismatches": 0,
+    "duplicate_source_rows": 0,
+    "advanced_rows_added": 1084,
+    "advanced_fields_filled": 5420,
+    "by_season": {
+      "2025-26": {
+        "source_rows": 2460,
+        "matched_rows": 2460,
+        "unmatched_rows": 0,
+        "score_or_key_mismatches": 0,
+        "advanced_rows_added": 904,
+        "advanced_fields_filled": 4520
+      },
+      "2026-27": {
+        "source_rows": 470,
+        "matched_rows": 470,
+        "unmatched_rows": 0,
+        "score_or_key_mismatches": 0,
+        "advanced_rows_added": 180,
+        "advanced_fields_filled": 900
+      }
+    },
+    "unmatched_samples": [],
+    "score_mismatch_samples": [],
+    "duplicate_canonical_rows": 0
+  },
+  "player_totals": {
+    "source_rows": 1055,
+    "matched_rows": 875,
+    "unmatched_rows": 180,
+    "by_season": {
+      "2025-26": {
+        "source_rows": 582,
+        "matched_rows": 424,
+        "unmatched_rows": 158
+      },
+      "2026-27": {
+        "source_rows": 473,
+        "matched_rows": 451,
+        "unmatched_rows": 22
+      }
+    },
+    "unmatched_samples": [
+      {
+        "season": "2025-26",
+        "player_name": "Luka DonÄiÄ",
+        "team": "LAL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Nikola JokiÄ",
+        "team": "DEN",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Bruce Brown",
+        "team": "DEN",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Moussa DiabatÃ©",
+        "team": "CHA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Russell Westbrook",
+        "team": "SAC",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Nikola VuÄeviÄ",
+        "team": "BOS",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Dennis SchrÃ¶der",
+        "team": "CLE",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Bobby Portis Jr.",
+        "team": "MIL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "VÃ­t KrejÄÃ­",
+        "team": "POR",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Egor DÃ«min",
+        "team": "BKN",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Nicolas Batum",
+        "team": "LAC",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Kevin Porter Jr.",
+        "team": "MIL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "John Konchar",
+        "team": "UTA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Jusuf NurkiÄ",
+        "team": "UTA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Guerschon Yabusele",
+        "team": "CHI",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Ochai Agbaji",
+        "team": "BKN",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Rob Dillingham",
+        "team": "CHI",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Kasparas JakuÄionis",
+        "team": "MIA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Karlo MatkoviÄ",
+        "team": "NOP",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Dwight Powell",
+        "team": "DAL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Cam Thomas",
+        "team": "MIL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Gabe Vincent",
+        "team": "ATL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Jonas Valanciunas",
+        "team": "DEN",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Vince Williams Jr.",
+        "team": "UTA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Nikola JoviÄ",
+        "team": "MIA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Aaron Holiday",
+        "team": "HOU",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Tyrese Martin",
+        "team": "PHI",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Kristaps PorziÅÄ£is",
+        "team": "GSW",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Lonzo Ball",
+        "team": "CLE",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Sharife Cooper",
+        "team": "WAS",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Jaden Ivey",
+        "team": "CHI",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Gary Harris",
+        "team": "MIL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Ethan Thompson",
+        "team": "IND",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Kevin Love",
+        "team": "UTA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Tidjane SalaÃ¼n",
+        "team": "CHA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Drew Eubanks",
+        "team": "SAC",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Dalen Terry",
+        "team": "PHI",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Keaton Wallace",
+        "team": "ATL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Cole Anthony",
+        "team": "MIL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "D'Angelo Russell",
+        "team": "WAS",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Taelon Peter",
+        "team": "IND",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Bez Mbeng",
+        "team": "UTA",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Amir Coffey",
+        "team": "PHX",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Jeremy Sochan",
+        "team": "NYK",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Maxi Kleber",
+        "team": "LAL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Bogdan BogdanoviÄ",
+        "team": "LAC",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Doug McDermott",
+        "team": "SAC",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Andre Jackson Jr.",
+        "team": "MIL",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Killian Hayes",
+        "team": "SAC",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2025-26",
+        "player_name": "Tyson Etienne",
+        "team": "BKN",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      }
+    ]
+  },
+  "model_input_policy": "Only exact date/team/opponent/final-score matches enrich team history. Existing canonical metrics are never overwritten. Newly filled advanced metrics use the simulator's established possession formula."
+}
