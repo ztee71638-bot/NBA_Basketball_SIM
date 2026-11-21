@@ -116,7 +116,7 @@ def test_polymarket_discovery_includes_flat_player_props(monkeypatch):
     flat_markets = [{
         "id": "prop-1", "question": "Jayson Tatum over 25.5 points",
         "slug": "jayson-tatum-points-25pt5", "active": True, "closed": False,
-        "events": [{"id": "event-1"}], "outcomes": ["Yes", "No"],
+        "events": [{"id": "event-1"}], "groupItemTitle": "Jayson Tatum: Points O/U 25.5", "outcomes": ["Yes", "No"],
         "outcomePrices": ["0.55", "0.45"], "volume24hr": 80,
     }]
     calls = []
@@ -126,5 +126,7 @@ def test_polymarket_discovery_includes_flat_player_props(monkeypatch):
     monkeypatch.setattr(module, "get_json", fake_get_json)
     rows = module.fetch_polymarket_markets()
     assert {row["id"] for row in rows} == {"market-1", "prop-1"}
-    assert next(row for row in rows if row["id"] == "prop-1")["event_id"] == "event-1"
+    prop = next(row for row in rows if row["id"] == "prop-1")
+    assert prop["event_id"] == "event-1"
+    assert prop["market_type"] == "player_prop"
     assert any(params.get("tag_id") == "745" for _, params in calls)
