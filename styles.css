@@ -495,13 +495,15 @@ footer{color:#83aaaa}
 .market-team-event .market-prop-list{display:grid;gap:8px}
 
 
-/* Give the header basketball more presence while keeping it inside the hero. */
-.hero-side{min-width:220px}
-.hero-ball{width:220px;height:220px}
+
+
+/* Double the corner basketball while preserving responsive header spacing. */
+.hero-side{min-width:440px}
+.hero-ball{width:440px;height:440px}
 @media(max-width:700px){
   .hero-side{min-width:0}
-  .hero-ball{width:112px;height:112px}
+  .hero-ball{width:224px;height:224px}
 }
 @media(max-width:430px){
-  .hero-ball{width:104px;height:104px;right:14px;top:14px}
+  .hero-ball{width:208px;height:208px;right:14px;top:14px}
 }
