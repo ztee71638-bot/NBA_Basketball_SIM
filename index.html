@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NBA game and player prop Monte Carlo research simulator">
   <title>NBA Basketball Simulator</title>
-  <link rel="stylesheet" href="styles.css?v=20261121-simulation-result-popup">
+  <link rel="stylesheet" href="styles.css?v=20261121-simulation-win-probability">
 </head>
 <body>
   <header class="hero">
@@ -88,11 +88,11 @@
       <p id="simulation-winner" class="simulation-winner"></p>
       <div class="simulation-score" id="simulation-score"></div>
       <p id="simulation-confidence" class="simulation-confidence"></p>
-      <p class="fine-print">Confidence is the simulated win probability of the predicted winner, not a guarantee. Results depend on the scoring assumptions and do not yet fully model lineups, injuries, pace or score correlation.</p>
+      <p class="fine-print">Probabilities are based on the share of the 100,000 simulated games won by each team. They are model estimates, not guarantees.</p>
       <button type="button" id="simulation-modal-done" class="primary">Done</button>
     </div>
   </div>
   <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections.</footer>
-  <script src="app.js?v=20261121-simulation-result-popup"></script>
+  <script src="app.js?v=20261121-simulation-win-probability"></script>
 </body>
 </html>
