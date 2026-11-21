@@ -211,8 +211,12 @@ function escapeHtml(value) {
 function renderPlayerSearch() {
   const root = $("player-search-results");
   const query = ($("player-search").value || "").trim().toLowerCase();
-  const matches = players.filter(p => !query || [p.name,p.team,p.position].some(v => String(v || "").toLowerCase().includes(query))).slice(0,20);
+  if (!query) {
+    root.innerHTML = "";
+    return;
+  }
   if (!players.length) { root.innerHTML = '<p class="muted">Player history has not been loaded yet.</p>'; return; }
+  const matches = players.filter(p => [p.name,p.team,p.position].some(v => String(v || "").toLowerCase().includes(query))).slice(0,20);
   if (!matches.length) { root.innerHTML = '<p class="muted">No players match that search.</p>'; return; }
   root.innerHTML = matches.map(p => {
     const injury = injuryData.find(item => String(item.athlete_id) === String(p.id));
@@ -300,6 +304,7 @@ function simulatePlayerMarket(marketId) {
 function showPlayer(playerId) {
   const p = players.find(item => String(item.id) === String(playerId));
   if (!p) return;
+  $("player-detail").hidden = false;
   selectedPlayer = p;
   selectedPlayerLogs = [];
   selectedPropMarket = null;
