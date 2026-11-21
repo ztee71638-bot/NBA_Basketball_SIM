@@ -157,7 +157,7 @@ function marketPriceSummary(market) {
 }
 
 async function loadMarkets(){
-  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];marketData=rows;$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${escapeHtml(m.question||"Untitled market")}</strong><small>${m.market_type ? escapeHtml(m.market_type.replace("_"," ")) + " · " : ""}${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){marketData=[];$("markets").textContent="Market feed unavailable: "+e.message;}
+  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];marketData=rows;$("data-status").textContent += " · Polymarket " + rows.length + " markets";$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${escapeHtml(m.question||"Untitled market")}</strong><small>${m.market_type ? escapeHtml(m.market_type.replace("_"," ")) + " · " : ""}${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){marketData=[];$("markets").textContent="Market feed unavailable: "+e.message;}
   if(selectedGame) renderGameMarkets(selectedGame);
   if(selectedPlayer) renderPlayerMarkets(selectedPlayer);
 }
@@ -305,7 +305,7 @@ async function loadInjuries() {
     renderInjuries();
     renderPlayerSearch();
     if (selectedPlayer) applyPlayerHistoricalBaseline();
-    if (data.last_updated) $("data-status").textContent += " · Injuries updated " + new Date(data.last_updated).toLocaleString();
+    if (data.last_updated) $("data-status").textContent += " · Injuries " + injuryData.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
     $("injuries").textContent = "Injury report unavailable: " + e.message;
   }
@@ -315,7 +315,7 @@ async function loadTeams() {
   try {
     const data = await loadJson("data/teams.json");
     teamData = data.teams || [];
-    if (data.last_updated) $("data-status").textContent += " · Teams updated " + new Date(data.last_updated).toLocaleString();
+    if (data.last_updated) $("data-status").textContent += " · Teams " + teamData.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
     teamData = [];
   }
@@ -325,7 +325,7 @@ async function loadPlayers() {
     const data = await loadJson("data/players.json");
     players = data.players || [];
     renderPlayerSearch();
-    if (data.last_updated) $("data-status").textContent += " · Players updated " + new Date(data.last_updated).toLocaleString();
+    if (data.last_updated) $("data-status").textContent += " · Players " + players.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
     $("player-search-results").textContent = "Player database unavailable: " + e.message;
   }
