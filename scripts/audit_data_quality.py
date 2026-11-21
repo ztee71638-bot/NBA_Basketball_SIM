@@ -165,6 +165,10 @@ def main() -> None:
     result = audit_payloads(teams, players)
     rendered = json.dumps(result, indent=2)
     print(rendered)
+    for warning in result["warnings"]:
+        print(f"::warning::{warning}")
+    for error in result["errors"]:
+        print(f"::error::{error}")
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(rendered, encoding="utf-8")
