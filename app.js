@@ -478,7 +478,7 @@ let activeMarketDay = 0;
 
 function marketDateKey(market) {
   const slug = String(market.slug || "");
-  const match = slug.match(/nba-[a-z]{3}-[a-z]{3}-(\\d{4}-\\d{2}-\\d{2})/i);
+  const match = slug.match(/nba-[a-z]{3}-[a-z]{3}-(\d{4}-\d{2}-\d{2})/i);
   if (match) return match[1];
   const end = market.end_date ? new Date(market.end_date) : null;
   return end && Number.isFinite(end.getTime()) ? end.toISOString().slice(0,10) : "date-unavailable";
@@ -542,7 +542,7 @@ function renderMarkets() {
     });
     const dayDate=day==="date-unavailable"?"Date unavailable":new Date(day+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
     const cards=[...matchups.entries()].map(([event,markets])=>{
-      const names=event.split(/\\s+vs\\.?\\s+/i);
+      const names=event.split(/\s+vs\\.?\s+/i);
       const teamA=names.length>1?marketTeamAbbreviation(names[0]):"";
       const teamB=names.length>1?marketTeamAbbreviation(names[1]):"";
       const playerProps=markets.filter(m=>m.market_type==="player_prop");
