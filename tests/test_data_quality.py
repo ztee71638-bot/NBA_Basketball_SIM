@@ -53,4 +53,4 @@ def test_audit_flags_stale_team_history():
     result = module.audit_payloads(
         payload, None, datetime(2026, 11, 25, 0, tzinfo=timezone.utc)
     )
-    assert any("older than 48-hour" in item for item in result["warnings"])
+    assert any("over 48-hour" in item for item in result["warnings"])
