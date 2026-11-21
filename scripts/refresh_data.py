@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -27,9 +28,29 @@ NBA_TEAMS = {
 
 
 def get_json(url: str, params: dict[str, Any] | None = None) -> Any:
-    response = requests.get(url, params=params, timeout=TIMEOUT, headers={"User-Agent": "NBA-Simulator/0.1"})
-    response.raise_for_status()
-    return response.json()
+    last_error = None
+    for attempt in range(4):
+        try:
+            response = requests.get(url, params=params, timeout=TIMEOUT, headers={"User-Agent": "NBA-Simulator/0.1"})
+            if response.status_code == 429 or response.status_code >= 500:
+                if attempt == 3:
+                    response.raise_for_status()
+                wait = float(response.headers.get("Retry-After", 2 ** attempt))
+                time.sleep(min(wait, 30))
+                continue
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as exc:
+            last_error = exc
+            status_code = getattr(getattr(exc, "response", None), "status_code", None)
+            if status_code and 400 <= status_code < 500 and status_code != 429:
+                raise
+            if attempt == 3:
+                raise
+            time.sleep(2 ** attempt)
+    if last_error:
+        raise last_error
+    raise RuntimeError("Unable to retrieve ESPN/Polymarket data")
 
 
 def fetch_games(today: datetime | None = None) -> list[dict[str, Any]]:
@@ -55,7 +76,7 @@ def fetch_games(today: datetime | None = None) -> list[dict[str, Any]]:
                     "score": item.get("score"),
                     "winner": item.get("winner"),
                 }
-            status = (event.get("status") or {}).get("type") or {}
+            status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
             games.append({
                 "id": str(event.get("id")),
                 "date": event.get("date"),
