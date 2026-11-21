@@ -268,6 +268,11 @@ def write_immutable_team_snapshot(teams: list[dict[str, Any]]) -> None:
     if path.exists():
         print(f"Immutable daily snapshot already exists: {path.name}")
         return
+    model_fields = (
+        "game_id", "date", "opponent", "home_away", "points_for", "points_against",
+        "pace_estimate", "possessions_estimate", "offensive_rating", "defensive_rating",
+        "rest_days", "back_to_back", "games_last_3_days", "games_last_5_days",
+    )
     snapshot = {
         "snapshot_date": stamp,
         "created_at": datetime.now(timezone.utc).isoformat(),
@@ -277,9 +282,10 @@ def write_immutable_team_snapshot(teams: list[dict[str, Any]]) -> None:
             "seasons": {
                 season: {
                     "summary": data.get("summary", {}),
-                    "games_with_advanced_metrics": sum(
-                        1 for row in data.get("games", []) if row.get("pace_estimate") is not None
-                    ),
+                    "games": [
+                        {key: row.get(key) for key in model_fields if key in row}
+                        for row in data.get("games", [])
+                    ],
                 }
                 for season, data in team.get("seasons", {}).items()
             },
