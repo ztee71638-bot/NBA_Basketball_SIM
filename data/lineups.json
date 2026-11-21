@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T17:29:05.651328+00:00",
+  "last_updated": "2026-11-21T18:10:44.545041+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -7,9 +7,71 @@
       "date": "2026-11-21T18:00Z",
       "home_team": "PHI",
       "away_team": "MIL",
-      "home_starters": [],
-      "away_starters": [],
-      "status": "not_available",
+      "home_starters": [
+        {
+          "id": "1966",
+          "name": "LeBron James",
+          "position": "F",
+          "starter": true
+        },
+        {
+          "id": "3059318",
+          "name": "Joel Embiid",
+          "position": "C",
+          "starter": true
+        },
+        {
+          "id": "2581018",
+          "name": "Kentavious Caldwell-Pope",
+          "position": "G",
+          "starter": true
+        },
+        {
+          "id": "4431678",
+          "name": "Tyrese Maxey",
+          "position": "G",
+          "starter": true
+        },
+        {
+          "id": "5124612",
+          "name": "VJ Edgecombe",
+          "position": "G",
+          "starter": true
+        }
+      ],
+      "away_starters": [
+        {
+          "id": "3134907",
+          "name": "Kyle Kuzma",
+          "position": "F",
+          "starter": true
+        },
+        {
+          "id": "4432848",
+          "name": "Jaime Jaquez Jr.",
+          "position": "F",
+          "starter": true
+        },
+        {
+          "id": "3133628",
+          "name": "Myles Turner",
+          "position": "C",
+          "starter": true
+        },
+        {
+          "id": "4395725",
+          "name": "Tyler Herro",
+          "position": "G",
+          "starter": true
+        },
+        {
+          "id": "4591725",
+          "name": "Ryan Rollins",
+          "position": "G",
+          "starter": true
+        }
+      ],
+      "status": "confirmed",
       "source": "ESPN game summary; starters explicitly flagged"
     },
     {

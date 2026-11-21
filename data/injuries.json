@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T17:29:05.650343+00:00",
+  "last_updated": "2026-11-21T18:10:44.544006+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1515,21 +1515,6 @@
       "return_date": "2026-12-14",
       "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
       "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5105841",
-      "name": "Felix Okpara",
-      "team": "WSH",
-      "team_name": "Washington Wizards",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-21T14:54Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Okpara (illness) is available for Friday's game against Toronto.",
-      "long_comment": "Okpara will shed his questionable tag due to an illness and suit up Friday. However, the two-way player isn't guaranteed to see the floor.",
       "source": "ESPN"
     },
     {

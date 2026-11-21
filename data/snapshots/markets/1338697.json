@@ -20,7 +20,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840921\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.665\\\", \\\"0.335\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Wizards\\\"]\",\"question\":\"Magic vs. Wizards\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T18:10:44.545267+00:00",
+      "markets": [
+        {
+          "market_id": "6840921",
+          "market_type": "moneyline",
+          "question": "Magic vs. Wizards",
+          "slug": "nba-orl-was-2026-11-22",
+          "outcomes": "[\"Magic\", \"Wizards\"]",
+          "outcome_prices": "[\"0.655\", \"0.345\"]",
+          "volume_24h": 168.51693500000002,
+          "liquidity": "27089.8205",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-orl-was-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840921\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.655\\\", \\\"0.345\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Wizards\\\"]\",\"question\":\"Magic vs. Wizards\"}]"
     }
   ],
-  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+  "last_updated": "2026-11-21T18:10:44.545267+00:00"
 }
