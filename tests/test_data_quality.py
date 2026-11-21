@@ -137,3 +137,27 @@ def test_player_audit_reports_per_season_log_coverage_and_missing_player_sample(
     assert summary["players_without_logs_sample"] == [
         {"id": "2", "name": "Player Two", "team": "BBB"}
     ]
+
+
+
+def test_audit_reports_advanced_boxscore_coverage_and_requires_both_teams():
+    payload = fixture()
+    for team in payload["teams"]:
+        team["seasons"]["2027"]["games"][0].update({
+            "pace_estimate": 99.5,
+            "offensive_rating": 112.0,
+            "defensive_rating": 108.0,
+        })
+    now = datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    complete = module.audit_payloads(payload, None, now)
+    season = complete["team_history"]["seasons"]["2027"]
+    assert season["advanced_team_game_rows"] == 2
+    assert season["advanced_games_with_both_teams"] == 1
+    assert season["advanced_coverage_pct"] == 100.0
+
+    del payload["teams"][1]["seasons"]["2027"]["games"][0]["pace_estimate"]
+    partial = module.audit_payloads(payload, None, now)
+    season = partial["team_history"]["seasons"]["2027"]
+    assert season["advanced_team_game_rows"] == 1
+    assert season["advanced_games_with_both_teams"] == 0
+    assert season["advanced_coverage_pct"] == 50.0

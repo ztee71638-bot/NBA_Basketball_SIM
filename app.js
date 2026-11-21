@@ -973,8 +973,12 @@ async function loadModelMetrics() {
     try {
       const quality=await loadJson("data/data_quality.json");
       const warnings=(quality.warnings||[]).slice(0,3);
+      const latestAdvancedSeason=Object.entries(quality.team_history?.seasons||{}).sort((a,b)=>Number(b[0])-Number(a[0]))[0];
+      const advancedCoverage=latestAdvancedSeason
+        ? ' · '+escapeHtml(latestAdvancedSeason[0])+' advanced boxscores: '+Number(latestAdvancedSeason[1].advanced_games_with_both_teams||0)+' complete games ('+Number(latestAdvancedSeason[1].advanced_coverage_pct||0).toFixed(1)+'% team rows)'
+        : '';
       qualityHtml='<p class="fine-print">Archive integrity audit: '+escapeHtml(String(quality.status||"unknown").toUpperCase())+
-        ' · '+Number(quality.team_history?.team_count||0)+'/30 teams · '+warnings.length+' displayed warning(s).'+
+        ' · '+Number(quality.team_history?.team_count||0)+'/30 teams · '+warnings.length+' displayed warning(s).'+advancedCoverage+
         (warnings.length?' '+warnings.map(escapeHtml).join(" "):"")+'</p>';
     } catch(e) {
       qualityHtml='<p class="fine-print">Archive integrity audit will appear after the next successful multi-season refresh.</p>';
