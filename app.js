@@ -184,7 +184,9 @@ function runGameSimulation() {
   $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
-  $("simulation-confidence").innerHTML=`<div class="simulation-probability-list"><div class="simulation-probability-row"><span class="simulation-probability-team">${escapeHtml(homeName)}<br><small>${hw.toLocaleString()} wins</small></span><span class="simulation-probability-value">${homeWinRate.toFixed(1)}%<small>Win probability</small></span></div><div class="simulation-probability-row"><span class="simulation-probability-team">${escapeHtml(awayName)}<br><small>${aw.toLocaleString()} wins</small></span><span class="simulation-probability-value">${awayWinRate.toFixed(1)}%<small>Win probability</small></span></div>${ties?`<p class="fine-print">Tied games: ${ties.toLocaleString()}</p>`:""}</div>`;
+  const homeLogo=teamLogoMarkup(selectedGame.home,"split-home");
+  const awayLogo=teamLogoMarkup(selectedGame.away,"split-away");
+  $("simulation-confidence").innerHTML=`<div class="split-result-team split-result-home"><div class="split-result-identity">${homeLogo}</div><div class="split-result-team-name">${escapeHtml(homeName)}</div><div class="split-result-wins">${hw.toLocaleString()} WINS</div><div class="split-result-probability">${homeWinRate.toFixed(1)}%</div></div><div class="split-result-versus">VS</div><div class="split-result-team split-result-away"><div class="split-result-identity">${awayLogo}</div><div class="split-result-team-name">${escapeHtml(awayName)}</div><div class="split-result-wins">${aw.toLocaleString()} WINS</div><div class="split-result-probability">${awayWinRate.toFixed(1)}%</div></div>${ties?`<p class="split-result-ties">Tied games: ${ties.toLocaleString()}</p>`:""}`;
   $("simulation-modal").hidden=false;
   $("simulation-modal-close").focus();
 }
