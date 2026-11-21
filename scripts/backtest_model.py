@@ -147,6 +147,70 @@ def expected_calibration_error(probabilities, outcomes, bins: int = 10):
     return round(error, 4)
 
 
+
+def _logit(probability: float) -> float:
+    value = min(0.995, max(0.005, float(probability)))
+    return math.log(value / (1.0 - value))
+
+
+def _sigmoid(value: float) -> float:
+    value = max(-30.0, min(30.0, float(value)))
+    return 1.0 / (1.0 + math.exp(-value))
+
+
+def fit_probability_calibrator(probabilities, outcomes, min_samples: int = 100,
+                               regularization: float = 1.0) -> dict[str, float | int | bool]:
+    """Fit a regularized logistic mapping using only already-observed predictions."""
+    if len(probabilities) != len(outcomes):
+        raise ValueError("Calibration probabilities and outcomes must have equal lengths")
+    count = len(probabilities)
+    if count < min_samples:
+        return {"intercept": 0.0, "slope": 1.0, "training_games": count, "enabled": False}
+    xs = [_logit(p) for p in probabilities]
+    ys = [1.0 if float(y) >= 0.5 else 0.0 for y in outcomes]
+    intercept, slope = 0.0, 1.0
+    for _ in range(40):
+        g0 = regularization * intercept
+        g1 = regularization * (slope - 1.0)
+        h00 = regularization
+        h01 = 0.0
+        h11 = regularization
+        for x, y in zip(xs, ys):
+            q = _sigmoid(intercept + slope * x)
+            weight = q * (1.0 - q)
+            error = q - y
+            g0 += error
+            g1 += error * x
+            h00 += weight
+            h01 += weight * x
+            h11 += weight * x * x
+        determinant = h00 * h11 - h01 * h01
+        if determinant <= 1e-12:
+            break
+        delta0 = (g0 * h11 - g1 * h01) / determinant
+        delta1 = (g1 * h00 - g0 * h01) / determinant
+        intercept -= delta0
+        slope = max(0.05, min(3.0, slope - delta1))
+        intercept = max(-2.5, min(2.5, intercept))
+        if max(abs(delta0), abs(delta1)) < 1e-8:
+            break
+    return {
+        "intercept": round(intercept, 8),
+        "slope": round(slope, 8),
+        "training_games": count,
+        "enabled": True,
+    }
+
+
+def apply_probability_calibration(probability: float, calibration: dict[str, Any]) -> float:
+    """Apply a fitted calibrator; identity is returned for unavailable fits."""
+    if not calibration or not calibration.get("enabled"):
+        return min(1.0, max(0.0, float(probability)))
+    return _sigmoid(
+        float(calibration.get("intercept", 0.0))
+        + float(calibration.get("slope", 1.0)) * _logit(probability)
+    )
+
 def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None):
     by_team = {}
     arenas = (arenas_payload or {}).get("teams", {})
@@ -173,6 +237,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     ordered = sorted(games.values(), key=lambda rows: parse_date(rows[0]["date"]))
     errors_home, errors_away, briers, correct = [], [], [], []
     model_probabilities, model_outcomes = [], []
+    calibrated_probabilities, calibrated_briers = [], []
     baseline_errors_home, baseline_errors_away, baseline_correct = [], [], []
     baseline_briers, baseline_probabilities, baseline_outcomes = [], [], []
     advanced_errors, advanced_correct, advanced_briers = [], [], []
@@ -206,6 +271,15 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         pred_h, pred_a, p_home = prediction
         actual_h, actual_a = home["points_for"], away["points_for"]
         home_win = actual_h > actual_a
+        # Strictly walk-forward calibration: fit only on predictions whose
+        # game outcomes were already observed before this test game.
+        if len(model_probabilities) >= 100:
+            prior_calibration = fit_probability_calibrator(model_probabilities, model_outcomes)
+            calibrated_p_home = apply_probability_calibration(p_home, prior_calibration)
+        else:
+            calibrated_p_home = p_home
+        calibrated_probabilities.append(calibrated_p_home)
+        calibrated_briers.append((calibrated_p_home - float(home_win)) ** 2)
         errors_home.append(abs(pred_h - actual_h))
         errors_away.append(abs(pred_a - actual_a))
         briers.append((p_home - float(home_win)) ** 2)
@@ -277,6 +351,27 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "baseline_winner_accuracy": round(mean(baseline_correct), 4),
         "model_brier_score": round(mean(briers), 4),
         "model_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
+        "calibrated_brier_score": round(mean(calibrated_briers), 4),
+        "calibrated_calibration_error": expected_calibration_error(calibrated_probabilities, model_outcomes),
+        "calibration_validation_games": len(calibrated_probabilities),
+        "calibration": {
+            **fit_probability_calibrator(model_probabilities, model_outcomes),
+            "validation_brier_score": round(mean(calibrated_briers), 4),
+            "validation_calibration_error": expected_calibration_error(calibrated_probabilities, model_outcomes),
+            "raw_brier_score": round(mean(briers), 4),
+            "raw_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
+            "baseline_brier_score": round(mean(baseline_briers), 4),
+            "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
+            "live_enabled": bool(
+                len(calibrated_probabilities) >= 500
+                and mean(calibrated_briers) < mean(briers)
+                and expected_calibration_error(calibrated_probabilities, model_outcomes)
+                    < expected_calibration_error(model_probabilities, model_outcomes)
+                and mean(calibrated_briers) <= mean(baseline_briers)
+                and expected_calibration_error(calibrated_probabilities, model_outcomes)
+                    <= expected_calibration_error(baseline_probabilities, baseline_outcomes)
+            ),
+        },
         "baseline_brier_score": round(mean(baseline_briers), 4),
         "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
         "advanced_games_tested": len(advanced_correct),

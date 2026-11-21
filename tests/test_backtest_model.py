@@ -89,3 +89,24 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
     assert result["games_tested"] == 1
     assert "model_score_mae" in result
     assert "model_brier_score" in result
+
+
+def test_logistic_probability_calibration_corrects_overconfidence():
+    probabilities = [0.8] * 100 + [0.2] * 100
+    outcomes = [1.0] * 60 + [0.0] * 40 + [1.0] * 40 + [0.0] * 60
+    calibration = module.fit_probability_calibrator(probabilities, outcomes)
+    high = module.apply_probability_calibration(0.8, calibration)
+    low = module.apply_probability_calibration(0.2, calibration)
+    raw_brier = sum((p-y)**2 for p,y in zip(probabilities,outcomes))/len(outcomes)
+    calibrated_brier = sum((module.apply_probability_calibration(p,calibration)-y)**2
+                           for p,y in zip(probabilities,outcomes))/len(outcomes)
+    assert calibration["enabled"] is True
+    assert 0.54 < high < 0.66
+    assert 0.34 < low < 0.46
+    assert calibrated_brier < raw_brier
+
+
+def test_calibrator_uses_identity_until_minimum_history_is_available():
+    calibration = module.fit_probability_calibrator([0.8] * 20, [1.0] * 20)
+    assert calibration["enabled"] is False
+    assert module.apply_probability_calibration(0.8, calibration) == 0.8

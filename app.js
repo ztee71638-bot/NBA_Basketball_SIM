@@ -2,6 +2,7 @@ const $ = (id) => document.getElementById(id);
 let games = [];
 let players = [];
 let playerImpactData = [];
+let winnerCalibration = null;
 let playerImpactLoaded = false;
 let playerImpactLoading = null;
 let playersLoaded = false;
@@ -330,6 +331,12 @@ function selectGame(game) {
   renderGameLineups(game);
   if(!marketsLoaded)ensureMarketsLoaded();
 }
+function applyWinnerCalibration(probability, calibration) {
+  const p=Math.min(0.995,Math.max(0.005,Number(probability)));
+  const logit=Math.log(p/(1-p));
+  const z=Number(calibration.intercept||0)+Number(calibration.slope||1)*logit;
+  return 1/(1+Math.exp(-Math.max(-30,Math.min(30,z))));
+}
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
   return mean + sd * Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
@@ -356,19 +363,24 @@ function runGameSimulation() {
   const avgHome=homeTotal/trials, avgAway=awayTotal/trials;
   const homeName=selectedGame.home?.name||"Home team";
   const awayName=selectedGame.away?.name||"Away team";
-  const homeWinRate=hw/trials*100, awayWinRate=aw/trials*100;
-  const homeWins=hw>=aw;
+  const rawHomeProbability=hw/(hw+aw||trials);
+  const calibratedHomeProbability=winnerCalibration
+    ? applyWinnerCalibration(rawHomeProbability,winnerCalibration)
+    : rawHomeProbability;
+  const homeWinRate=calibratedHomeProbability*100, awayWinRate=(1-calibratedHomeProbability)*100;
+  const homeWins=calibratedHomeProbability>=0.5;
+  const chanceLabel=winnerCalibration?"CALIBRATED CHANCE":"SIMULATED CHANCE";
   const winner=homeWins?homeName:awayName;
   const projectedHome=Math.round(avgHome), projectedAway=Math.round(avgAway);
   const winnerScore=homeWins?projectedHome:projectedAway;
   const loserScore=homeWins?projectedAway:projectedHome;
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. This is not a calibrated betting recommendation.</p>`;
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.</p>`;
   $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
   const homeLogo=teamLogoMarkup(selectedGame.home,"split-home");
   const awayLogo=teamLogoMarkup(selectedGame.away,"split-away");
-  $("simulation-confidence").innerHTML=`<div class="split-result-team split-result-home" style="${teamColorStyle(selectedGame.home)}"><div class="split-result-identity">${homeLogo}</div><div class="split-result-team-name">${escapeHtml(homeName)}</div><div class="split-result-wins">${hw.toLocaleString()} WINS</div><div class="split-result-probability">${homeWinRate.toFixed(1)}%</div></div><div class="split-result-versus">VS</div><div class="split-result-team split-result-away" style="${teamColorStyle(selectedGame.away)}"><div class="split-result-identity">${awayLogo}</div><div class="split-result-team-name">${escapeHtml(awayName)}</div><div class="split-result-wins">${aw.toLocaleString()} WINS</div><div class="split-result-probability">${awayWinRate.toFixed(1)}%</div></div>${ties?`<p class="split-result-ties">Tied games: ${ties.toLocaleString()}</p>`:""}`;
+  $("simulation-confidence").innerHTML=`<div class="split-result-team split-result-home" style="${teamColorStyle(selectedGame.home)}"><div class="split-result-identity">${homeLogo}</div><div class="split-result-team-name">${escapeHtml(homeName)}</div><div class="split-result-wins">${hw.toLocaleString()} SIMULATED WINS</div><div class="split-result-probability">${homeWinRate.toFixed(1)}%<small>${chanceLabel}</small></div></div><div class="split-result-versus">VS</div><div class="split-result-team split-result-away" style="${teamColorStyle(selectedGame.away)}"><div class="split-result-identity">${awayLogo}</div><div class="split-result-team-name">${escapeHtml(awayName)}</div><div class="split-result-wins">${aw.toLocaleString()} SIMULATED WINS</div><div class="split-result-probability">${awayWinRate.toFixed(1)}%<small>${chanceLabel}</small></div></div>${ties?`<p class="split-result-ties">Tied games: ${ties.toLocaleString()}</p>`:""}`;
   $("simulation-modal").hidden=false;
   $("simulation-modal-close").focus();
 }
@@ -774,6 +786,7 @@ async function loadModelMetrics() {
   if(!root)return;
   try {
     const data=await loadJson("data/model_metrics.json");
+    winnerCalibration = data.calibration?.live_enabled ? data.calibration : null;
     if(!data.games_tested){root.textContent=data.message||"Not enough historical games to evaluate the model yet.";return;}
     let qualityHtml="";
     try {
@@ -798,6 +811,7 @@ async function loadModelMetrics() {
       '<div class="metric"><small>Experimental Brier score</small><b>'+Number(data.model_brier_score).toFixed(3)+'</b></div>'+
       '<div class="metric"><small>Baseline Brier score</small><b>'+(data.baseline_brier_score==null?'n/a':Number(data.baseline_brier_score).toFixed(3))+'</b></div></div>'+
       '<p class="fine-print">Probability calibration error — experimental: '+(data.model_calibration_error==null?'n/a':Number(data.model_calibration_error).toFixed(3))+' · baseline: '+(data.baseline_calibration_error==null?'n/a':Number(data.baseline_calibration_error).toFixed(3))+'. Lower Brier and calibration error are better.</p>'+
+      '<p class="fine-print">Walk-forward probability calibration: raw Brier '+Number(data.model_brier_score).toFixed(3)+' · calibrated Brier '+(data.calibrated_brier_score==null?'n/a':Number(data.calibrated_brier_score).toFixed(3))+' · calibrated error '+(data.calibrated_calibration_error==null?'n/a':Number(data.calibrated_calibration_error).toFixed(3))+'. '+(data.calibration?.live_enabled?'Calibrated win probabilities are enabled because the sequential test beat both the raw model and baseline on Brier score and calibration error.':'Calibration remains disabled unless a sequential holdout beats both the raw model and baseline on Brier score and calibration error.')+'</p>'+
       '<p class="fine-print">'+(!modelEnough?"At least 500 chronological holdout games are required before considering promotion.":modelBetter?"Experimental model leads on all four validation measures.":"The experimental blend has not beaten the baseline on all four measures; default score estimates remain on the baseline.")+'</p>'+
       (data.advanced_games_tested?'<strong>Experimental pace / efficiency / rest / travel model · '+Number(data.advanced_games_tested).toLocaleString()+' matched holdout games</strong><div class="result-grid"><div class="metric"><small>Efficiency model MAE</small><b>'+Number(data.advanced_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Same-game baseline MAE</small><b>'+Number(data.advanced_baseline_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Efficiency winner accuracy</small><b>'+(Number(data.advanced_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Same-game baseline accuracy</small><b>'+(Number(data.advanced_baseline_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Efficiency Brier score</small><b>'+Number(data.advanced_brier_score).toFixed(3)+'</b></div></div><p class="fine-print">Calibration error: '+(data.advanced_calibration_error==null?'n/a':Number(data.advanced_calibration_error).toFixed(3))+'. '+(!advancedEnough?"At least 500 matched holdout games are required before considering promotion.":advancedBetter?"The experimental schedule-aware model leads on all four validation measures.":"The experimental schedule-aware model has not beaten the baseline on all four measures; it remains disabled in the default score projection.")+'</p>':'<p class="fine-print">Pace/efficiency model awaits enough completed boxscores with all required statistics.</p>')+
       '<p class="fine-print">Last updated: '+(data.generated_at?new Date(data.generated_at).toLocaleString():"unknown")+'. Multi-season walk-forward results are preliminary, not proof of future accuracy.</p>'+qualityHtml;
