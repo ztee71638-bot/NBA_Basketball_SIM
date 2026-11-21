@@ -78,7 +78,7 @@ def _market_text(market: dict[str, Any]) -> str:
 
 def is_nba_market(market: dict[str, Any]) -> bool:
     text = _market_text(market)
-    if re.search(r"\\b(nba|basketball)\\b", text):
+    if re.search(r"\b(nba|basketball)\b", text):
         return True
     return any(re.search(r"\b" + re.escape(team) + r"\b", text) for team in NBA_TEAMS)
 
