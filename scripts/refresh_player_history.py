@@ -22,6 +22,7 @@ TIMEOUT = 25
 DELAY = float(os.getenv("NBA_HISTORY_REQUEST_DELAY", "0.5"))
 WORKERS = max(1, min(6, int(os.getenv("NBA_HISTORY_WORKERS", "4"))))
 MIN_TOTAL_GAME_LOGS = 100
+MIN_GAME_LOGS_PER_SEASON = int(os.getenv("NBA_HISTORY_MIN_LOGS_PER_SEASON", "100"))
 SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027,2026,2025,2024,2023").split(",") if x.strip()]
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
@@ -297,9 +298,26 @@ def fetch_player_database() -> list[dict[str, Any]]:
             f"Only {total_logs} player game-log rows were parsed from {len(tasks)} requests; "
             "refusing to overwrite the existing archive."
         )
+    logs_by_season = {
+        str(season): sum(
+            len(player["seasons"].get(str(season), []))
+            for player in players_by_id.values()
+        )
+        for season in SEASONS
+    }
+    undercovered = {
+        season: count for season, count in logs_by_season.items()
+        if count < MIN_GAME_LOGS_PER_SEASON
+    }
+    if undercovered:
+        raise RuntimeError(
+            "Player game-log coverage is incomplete by season "
+            f"(minimum {MIN_GAME_LOGS_PER_SEASON} rows required): {undercovered}; "
+            "refusing to overwrite the existing archive."
+        )
     print(
-        f"Collected {len(players_by_id)} players from {len(SEASONS)} historical roster seasons "
-        f"and {total_logs} game-log rows; {failures}/{len(tasks)} player-season requests unavailable.",
+        f"Collected {len(players_by_id)} players, {total_logs} game-log rows "
+        f"across seasons {logs_by_season}; {failures}/{len(tasks)} player-season requests unavailable.",
         flush=True,
     )
     return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
