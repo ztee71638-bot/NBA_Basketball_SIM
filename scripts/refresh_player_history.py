@@ -1,4 +1,7 @@
-"""Build a free-first NBA player roster and game-log archive from ESPN public endpoints."""
+"""Build a free-first NBA player roster and game-log archive from ESPN public endpoints.
+
+Scheduled daily on the default branch; supports manual workflow dispatch.
+"""
 from __future__ import annotations
 
 import json
