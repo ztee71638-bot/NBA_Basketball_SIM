@@ -7,6 +7,7 @@ are retained separately for comparison, never substituted blindly.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import re
@@ -285,7 +286,7 @@ def reconcile_player_totals(players_payload: dict[str, Any],
     return report
 
 
-def main() -> None:
+def main(supplemental_dir: Path = SUPPLEMENTAL) -> None:
     teams_path = DATA / "teams.json"
     players_path = DATA / "players.json"
     teams_payload = json.loads(teams_path.read_text(encoding="utf-8"))
@@ -294,8 +295,8 @@ def main() -> None:
     player_rows: dict[str, list[dict[str, Any]]] = {}
     for season in SEASON_MAP:
         suffix = season.replace("-", "_")
-        team_data = json.loads((SUPPLEMENTAL / f"{suffix}_team_games.json").read_text(encoding="utf-8"))
-        player_data = json.loads((SUPPLEMENTAL / f"{suffix}_player_totals.json").read_text(encoding="utf-8"))
+        team_data = json.loads((supplemental_dir / f"{suffix}_team_games.json").read_text(encoding="utf-8"))
+        player_data = json.loads((supplemental_dir / f"{suffix}_player_totals.json").read_text(encoding="utf-8"))
         team_rows[season] = team_data["rows"]
         player_rows[season] = player_data["rows"]
 
@@ -326,4 +327,6 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--supplemental-dir", type=Path, default=SUPPLEMENTAL)
+    main(parser.parse_args().supplemental_dir)
