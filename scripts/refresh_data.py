@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -75,6 +76,13 @@ def _market_text(market: dict[str, Any]) -> str:
     ).lower().strip()
 
 
+def is_nba_market(market: dict[str, Any]) -> bool:
+    text = _market_text(market)
+    if "nba" in text or "basketball" in text:
+        return True
+    return any(re.search(r"\\b" + re.escape(team) + r"\\b", text) for team in NBA_TEAMS)
+
+
 def fetch_polymarket_markets() -> list[dict[str, Any]]:
     payload = get_json(GAMMA_URL, {
         "active": "true", "closed": "false", "limit": 500,
@@ -84,10 +92,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
         raise ValueError("Unexpected Polymarket response: expected a list of markets")
     results = []
     for market in payload:
-        if not isinstance(market, dict):
-            continue
-        text = _market_text(market)
-        if "nba" not in text and "basketball" not in text and not any(team in text for team in NBA_TEAMS):
+        if not isinstance(market, dict) or not is_nba_market(market):
             continue
         results.append({
             "id": str(market.get("id") or ""),
@@ -115,7 +120,7 @@ def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, An
         "source": source,
         key: rows,
     }
-    target.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    target.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
 
 
 def main() -> None:
