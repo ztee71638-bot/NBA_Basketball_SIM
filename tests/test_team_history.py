@@ -314,3 +314,9 @@ def test_boxscore_enrichment_prioritizes_missing_games_and_skips_complete(monkey
         assert rows["complete"]["pace_estimate"] == 99.0
         assert rows["new-missing"]["pace_estimate"] is not None
         assert "pace_estimate" not in rows["old-missing"]
+
+
+
+def test_progressive_boxscore_backfill_default_batch_is_six_hundred():
+    import inspect
+    assert inspect.signature(module.enrich_team_games_with_boxscores).parameters["max_games"].default == 600
