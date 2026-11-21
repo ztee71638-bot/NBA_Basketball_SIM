@@ -326,7 +326,7 @@ def merge_cached_boxscore_metrics(existing_teams: list[dict[str, Any]],
 
 
 def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enrich: set[str] | None = None,
-                                     max_games: int = 300) -> None:
+                                     max_games: int = 600) -> None:
     """Progressively enrich missing ESPN boxscores while retaining prior verified metrics."""
     games: dict[str, list[dict[str, Any]]] = {}
     dates: dict[str, str] = {}
@@ -544,7 +544,7 @@ def fetch_team_database() -> list[dict[str, Any]]:
             print(f"Restored {restored} team-game rows with previously verified boxscore metrics.", flush=True)
         except (OSError, json.JSONDecodeError, TypeError) as exc:
             print(f"Could not restore cached boxscore metrics: {exc}", flush=True)
-    enrich_team_games_with_boxscores(teams, {str(value) for value in SEASONS}, max_games=300)
+    enrich_team_games_with_boxscores(teams, {str(value) for value in SEASONS}, max_games=600)
     for team in teams:
         for season_data in team["seasons"].values():
             season_data["summary"] = summarize_games(season_data.get("games", []))
