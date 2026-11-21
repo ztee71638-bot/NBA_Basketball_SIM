@@ -80,6 +80,29 @@ def test_get_json_does_not_retry_permanent_client_errors(monkeypatch):
         raise AssertionError("Expected permanent 404 to raise")
     assert len(calls) == 1
 
+
+def test_fetch_confirmed_lineups_checks_only_games_near_tipoff(monkeypatch):
+    from datetime import timedelta
+    now = datetime(2026, 11, 21, 12, 0, tzinfo=timezone.utc)
+    checked = []
+    payload = {"boxscore": {"players": [
+        {"team": {"abbreviation": code}, "statistics": [{"athletes": [
+            {"athlete": {"id": code + str(i), "displayName": code + " Starter " + str(i)},
+             "starter": True, "active": True}
+            for i in range(5)
+        ]}]}
+        for code in ("BOS", "MIA")
+    ]}}
+    monkeypatch.setattr(module, "get_json", lambda url, params=None: checked.append(params["event"]) or payload)
+    games = [
+        {"id": "soon", "date": (now+timedelta(hours=2)).isoformat(), "home": {"abbreviation": "MIA"}, "away": {"abbreviation": "BOS"}},
+        {"id": "later", "date": (now+timedelta(hours=20)).isoformat(), "home": {"abbreviation": "MIA"}, "away": {"abbreviation": "BOS"}},
+    ]
+    result = module.fetch_confirmed_lineups(games, now)
+    assert checked == ["soon"]
+    assert len(result) == 1
+    assert result[0]["status"] == "confirmed"
+
 def test_market_text_handles_missing_fields():
     assert module._market_text({"question": "NBA: Lakers vs Celtics"}).startswith("nba")
 
