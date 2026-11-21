@@ -7,8 +7,6 @@ on:
   push:
     branches: [main, foundation/nba-simulator-mvp]
     paths:
-      - "scripts/**"
-      - "tests/**"
       - "requirements.txt"
       - ".github/workflows/refresh-data.yml"
   pull_request:
