@@ -23,6 +23,12 @@ def test_predict_returns_finite_matchup_estimates():
 
 
 
+
+def test_expected_calibration_error_is_zero_for_perfect_calibration():
+    probabilities = [0.1, 0.1, 0.9, 0.9]
+    outcomes = [0.0, 0.0, 1.0, 1.0]
+    assert module.expected_calibration_error(probabilities, outcomes) == 0.0
+
 def test_advanced_efficiency_prediction_uses_pace_and_efficiency_history():
     home = [{
         "points_for": 118, "offensive_rating": 118.0, "defensive_rating": 110.0,
