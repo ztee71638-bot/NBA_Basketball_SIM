@@ -7,6 +7,7 @@ third-party field mapping from silently changing production model inputs.
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import io
 import json
@@ -142,8 +143,8 @@ def parse_and_validate_csv(text: str, season: str, kind: str) -> dict[str, Any]:
     }
 
 
-def main() -> None:
-    OUTPUT.mkdir(parents=True, exist_ok=True)
+def main(output_dir: Path = OUTPUT) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
     retrieved_at = datetime.now(timezone.utc).isoformat()
     manifest: dict[str, Any] = {
         "provider": "BoxScore Lab",
@@ -165,7 +166,7 @@ def main() -> None:
                 "license": "CC BY 4.0",
                 "attribution": "BoxScore Lab (boxscorelab.com); underlying source stated as NBA Stats",
             })
-            destination = OUTPUT / f"{season.replace('-', '_')}_{kind}.json"
+            destination = output_dir / f"{season.replace('-', '_')}_{kind}.json"
             destination.write_text(
                 json.dumps(parsed, ensure_ascii=False, separators=(",", ":")) + "\n",
                 encoding="utf-8",
@@ -186,7 +187,7 @@ def main() -> None:
                 f"duplicate full rows; columns={parsed['columns']}",
                 flush=True,
             )
-    (OUTPUT / "manifest.json").write_text(
+    (output_dir / "manifest.json").write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
@@ -194,4 +195,6 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT)
+    main(parser.parse_args().output_dir)
