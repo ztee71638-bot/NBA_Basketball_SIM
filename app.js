@@ -256,6 +256,7 @@ async function loadInjuries() {
     injuryData = data.injuries || [];
     renderInjuries();
     renderPlayerSearch();
+    if (selectedPlayer) applyPlayerHistoricalBaseline();
     if (data.last_updated) $("data-status").textContent += " · Injuries updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
     $("injuries").textContent = "Injury report unavailable: " + e.message;
