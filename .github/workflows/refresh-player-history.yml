@@ -5,7 +5,7 @@ on:
     - cron: "15 9 * * *"
   workflow_dispatch:
   push:
-    branches: [foundation/nba-simulator-mvp]
+    branches: [main, foundation/nba-simulator-mvp]
     paths:
       - "scripts/refresh_player_history.py"
       - "tests/test_player_history.py"
