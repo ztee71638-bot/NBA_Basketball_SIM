@@ -73,7 +73,7 @@ function renderGameMarkets(game) {
   }
   root.innerHTML = '<strong>Matching Polymarket markets</strong>' + matches.map(market =>
     '<div class="market"><div><strong>' + escapeHtml(market.question || market.event_title) +
-    '</strong><small>' + escapeHtml(market.market_type || "market") + " · " + escapeHtml(market.market_type || "market") + " · " + escapeHtml(marketPriceSummary(market) || "Prices unavailable") +
+    '</strong><small>' + escapeHtml(market.market_type || "market") + " · " + escapeHtml(market.market_type || "player prop") + " · " + escapeHtml(marketPriceSummary(market) || "Prices unavailable") +
     ' · 24h volume: ' + escapeHtml(market.volume_24h ?? "n/a") + '</small></div>' +
     (market.url ? '<a target="_blank" rel="noopener" href="' + escapeHtml(market.url) + '">Open market</a>' : '') +
     '</div>'
