@@ -29,6 +29,7 @@ jobs:
           python -m json.tool data/games.json >/dev/null
           python -m json.tool data/polymarket.json >/dev/null
           python -m json.tool data/players.json >/dev/null
+          python -m json.tool data/player_roster.json >/dev/null
           python -m json.tool data/player_impact.json >/dev/null
           python -m json.tool data/teams.json >/dev/null
           python -m json.tool data/injuries.json >/dev/null
