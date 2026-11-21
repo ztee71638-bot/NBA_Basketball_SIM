@@ -112,6 +112,13 @@ def test_polymarket_discovery_flattens_nba_event_markets(monkeypatch):
             "outcomes": ["Over", "Under"], "outcomePrices": ["0.51", "0.49"],
             "volume24hr": 1200, "liquidity": 500,
         }],
+    }, {
+        "id": "event-old", "title": "Old Lakers vs Celtics", "slug": "nba-old-lal-bos",
+        "endDate": "2000-01-01T00:00:00Z", "active": True, "closed": False,
+        "markets": [{
+            "id": "market-old", "question": "Lakers vs Celtics old market",
+            "active": True, "closed": False, "volume24hr": 9999,
+        }],
     }]
     calls = []
     def fake_get_json(url, params=None):
