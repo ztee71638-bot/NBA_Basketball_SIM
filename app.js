@@ -1018,8 +1018,7 @@ $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlaye
 $("prop-line").addEventListener("input",()=>{selectedPropMarket=null;});
 $("reload").addEventListener("click",loadAll);
 $("refresh-markets").addEventListener("click",loadMarkets);
-$("market-day-prev").addEventListener("click",()=>{activeMarketDay=Math.max(0,activeMarketDay-1);renderMarketNavigation();const page=$("markets").children[activeMarketDay];if(page)page.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});});
-$("market-day-next").addEventListener("click",()=>{activeMarketDay=Math.min(marketDays.length-1,activeMarketDay+1);renderMarketNavigation();const page=$("markets").children[activeMarketDay];if(page)page.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});});
+renderMarketNavigation();const page=$("markets").children[activeMarketDay];if(page)page.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});});
 
 $("player-search").addEventListener("input",renderPlayerSearch);
 loadAll();
