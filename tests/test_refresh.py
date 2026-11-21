@@ -102,32 +102,29 @@ def test_fetch_injuries_supports_flat_rows_and_player_ids_in_links(monkeypatch):
     assert rows[0]["status"] == "Day-To-Day"
 
 
-def test_polymarket_discovery_flattens_nba_event_markets(monkeypatch):
-    payload = [{
+def test_polymarket_discovery_includes_flat_player_props(monkeypatch):
+    event_payload = [{
         "id": "event-1", "title": "Lakers vs Celtics", "slug": "nba-lal-bos-test",
         "endDate": "2099-01-01T00:00:00Z", "active": True, "closed": False,
         "markets": [{
-            "id": "market-1", "question": "Lakers vs Celtics: O/U 220.5",
-            "slug": "nba-lal-bos-total", "active": True, "closed": False,
-            "outcomes": ["Over", "Under"], "outcomePrices": ["0.51", "0.49"],
+            "id": "market-1", "question": "Lakers vs Celtics",
+            "slug": "nba-lal-bos-moneyline", "active": True, "closed": False,
+            "outcomes": ["Lakers", "Celtics"], "outcomePrices": ["0.51", "0.49"],
             "volume24hr": 1200, "liquidity": 500,
         }],
-    }, {
-        "id": "event-old", "title": "Old Lakers vs Celtics", "slug": "nba-old-lal-bos",
-        "endDate": "2000-01-01T00:00:00Z", "active": True, "closed": False,
-        "markets": [{
-            "id": "market-old", "question": "Lakers vs Celtics old market",
-            "active": True, "closed": False, "volume24hr": 9999,
-        }],
+    }]
+    flat_markets = [{
+        "id": "prop-1", "question": "Jayson Tatum over 25.5 points",
+        "slug": "jayson-tatum-points-25pt5", "active": True, "closed": False,
+        "events": [{"id": "event-1"}], "outcomes": ["Yes", "No"],
+        "outcomePrices": ["0.55", "0.45"], "volume24hr": 80,
     }]
     calls = []
     def fake_get_json(url, params=None):
         calls.append((url, params))
-        return payload
+        return event_payload if url == module.GAMMA_EVENTS_URL else flat_markets
     monkeypatch.setattr(module, "get_json", fake_get_json)
     rows = module.fetch_polymarket_markets()
-    assert len(rows) == 1
-    assert rows[0]["event_id"] == "event-1"
-    assert rows[0]["question"].endswith("220.5")
-    assert calls[0][1]["series_id"] == module.NBA_SERIES_ID
-    assert calls[0][1]["tag_id"] == "100639"
+    assert {row["id"] for row in rows} == {"market-1", "prop-1"}
+    assert next(row for row in rows if row["id"] == "prop-1")["event_id"] == "event-1"
+    assert any(params.get("tag_id") == "745" for _, params in calls)
