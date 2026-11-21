@@ -15,7 +15,7 @@ ROWS = [
 
 
 def test_parser_keeps_only_two_seasons_version_and_minimum_sample():
-    rows = parse_hapm_csv(HEADER + "\\n" + "\\n".join(ROWS))
+    rows = parse_hapm_csv(HEADER + "\n" + "\n".join(ROWS))
     assert len(rows) == 2
     assert {row["name"] for row in rows} == {"Player One", "Player Two"}
     assert rows[1]["young_teammates"] == "1"
@@ -23,7 +23,7 @@ def test_parser_keeps_only_two_seasons_version_and_minimum_sample():
 
 def test_payload_has_source_credit_and_season_counts():
     # The production safety gate requires a realistic number of records.
-    content = HEADER + "\\n" + "\\n".join(
+    content = HEADER + "\n" + "\n".join(
         [f"{i},Player {i},BOS,G,2025-26,3/3,500,1.0,0.5,0.5," for i in range(300)] +
         [f"{i+300},Player {i+300},LAL,G,2026-27,3/3,500,1.0,0.5,0.5," for i in range(100)]
     )
