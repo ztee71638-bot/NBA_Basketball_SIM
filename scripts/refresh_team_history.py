@@ -121,7 +121,7 @@ def summarize_games(games: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def _month_ranges(start: date, end: date):
-    cursor = date(start.year, start.month, 1)
+    cursor = start
     while cursor <= end:
         last_day = calendar.monthrange(cursor.year, cursor.month)[1]
         month_end = min(date(cursor.year, cursor.month, last_day), end)
