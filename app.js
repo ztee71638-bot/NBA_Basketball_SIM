@@ -242,11 +242,24 @@ function prefillGameProjections(game) {
     $("projection-status").textContent="Insufficient team history (at least 5 games per team required). Enter manual assumptions; no model-backed projection is available.";
   }
 }
+function normalizeMarketText(value) {
+  return String(value || "").toLowerCase().normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+/g, " ");
+}
+function containsMarketPhrase(haystack, phrase) {
+  const text = " " + normalizeMarketText(haystack) + " ";
+  const target = " " + normalizeMarketText(phrase) + " ";
+  return target.length > 2 && text.includes(target);
+}
 function teamMarketTokens(team) {
-  const name = String(team?.name || "").toLowerCase();
-  const parts = name.split(/\s+/).filter(Boolean);
-  return [name, parts.slice(-2).join(" "), parts.slice(-1).join(" "), String(team?.abbreviation || "").toLowerCase()]
-    .filter(value => value.length >= 3);
+  const name = normalizeMarketText(team?.name || "");
+  const parts = name.split(" ").filter(Boolean);
+  const nickname = parts[parts.length - 1] || "";
+  // Deliberately omit abbreviations: short codes create false positives
+  // (for example, "PHI" inside unrelated words). Match whole team names
+  // or whole nicknames only.
+  return [...new Set([name, nickname].filter(value => value.length >= 4))];
 }
 function renderGameMarkets(game) {
   const root = $("game-market-info");
@@ -257,8 +270,9 @@ function renderGameMarkets(game) {
   const awayTokens = teamMarketTokens(game.away);
   const homeTokens = teamMarketTokens(game.home);
   const matches = marketData.filter(market => {
-    const eventText = String(market.event_title || market.question || market.slug || "").toLowerCase();
-    return awayTokens.some(token => eventText.includes(token)) && homeTokens.some(token => eventText.includes(token));
+    const eventText = [market.event_title, market.question, market.slug, market.market_group].join(" ");
+    return awayTokens.some(token => containsMarketPhrase(eventText, token)) &&
+      homeTokens.some(token => containsMarketPhrase(eventText, token));
   }).slice(0,8);
   if (!matches.length) {
     root.textContent = "No matching active Polymarket event was found for this ESPN matchup.";
@@ -554,9 +568,9 @@ function applyPlayerHistoricalBaseline() {
 function renderPlayerMarkets(player) {
   const root = $("player-market-matches");
   if (!root || !player) return;
-  const playerName = String(player.name || "").toLowerCase();
+  const playerName = normalizeMarketText(player.name);
   const matches = marketData.filter(market =>
-    [market.question, market.market_group, market.slug].join(" ").toLowerCase().includes(playerName)
+    containsMarketPhrase([market.question, market.market_group, market.slug].join(" "), playerName)
   ).slice(0,10);
   if (!matches.length) {
     root.innerHTML = '<p class="muted">No matching Polymarket player-prop markets found in the current NBA game-market snapshot.</p>';

@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nba-player-history-refresh
+  group: nba-player-history-refresh-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
