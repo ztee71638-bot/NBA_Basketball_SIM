@@ -211,7 +211,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
                 "source": "Polymarket Gamma NBA series",
             })
     results.sort(key=lambda item: float(item.get("volume_24h") or 0), reverse=True)
-    return results[:1200]
+    return results[:500]
 
 
 def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, Any]]) -> None:
