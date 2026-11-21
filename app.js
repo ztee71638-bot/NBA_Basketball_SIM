@@ -4,6 +4,8 @@ let players = [];
 let teamData = [];
 let injuryData = [];
 let injuryUpdatedAt = null;
+let lineupData = [];
+let lineupsUpdatedAt = null;
 let marketData = [];
 let selectedPropMarket = null;
 let selectedGame = null;
@@ -226,12 +228,47 @@ function renderGameMarkets(game) {
   ).join("");
 }
 
+function renderGameLineups(game) {
+  const root=$("game-lineups");
+  if(!root||!game)return;
+  const match=lineupData.find(item=>String(item.game_id)===String(game.id));
+  const age=lineupsUpdatedAt?Date.now()-lineupsUpdatedAt.getTime():Infinity;
+  if(age>30*60*1000){
+    root.textContent="Starting-lineup feed is stale or unavailable. No lineup adjustment is applied.";
+    return;
+  }
+  if(!match){
+    root.textContent="Starting lineups are checked near tipoff. ESPN has not supplied a lineup snapshot for this game yet.";
+    return;
+  }
+  if(match.status!=="confirmed"){
+    root.textContent="Lineups not confirmed by ESPN yet. The simulator will not guess starters or apply player-impact adjustments.";
+    return;
+  }
+  const render=items=>items.map(player=>escapeHtml(player.name)+(player.position?" · "+escapeHtml(player.position):"")).join(", ");
+  root.innerHTML='<strong>ESPN-confirmed starters</strong><p><b>'+escapeHtml(teamDisplayName(match.away_team))+'</b>: '+render(match.away_starters)+'</p><p><b>'+escapeHtml(teamDisplayName(match.home_team))+'</b>: '+render(match.home_starters)+'</p><p class="fine-print">Confirmed starter flags only. Player impact is not converted into score adjustments until it passes out-of-sample validation.</p>';
+}
+async function loadLineups() {
+  try {
+    const data=await loadJson("data/lineups.json");
+    lineupData=data.games||[];
+    lineupsUpdatedAt=data.last_updated?new Date(data.last_updated):null;
+    if(selectedGame)renderGameLineups(selectedGame);
+    if(lineupsUpdatedAt)$("data-status").textContent+=" · Lineups checked "+lineupsUpdatedAt.toLocaleTimeString();
+  } catch(e) {
+    lineupData=[];
+    lineupsUpdatedAt=null;
+    const root=$("game-lineups");
+    if(root)root.textContent="Starting-lineup feed unavailable; no lineup adjustments will be applied.";
+  }
+}
 function selectGame(game) {
   selectedGame = game;
   $("selected-title").textContent = game.name || game.short_name || "Selected matchup";
   $("game-results").textContent = "Matchup selected. Review the starting estimates and run the simulation.";
   prefillGameProjections(game);
   renderGameMarkets(game);
+  renderGameLineups(game);
 }
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
@@ -644,6 +681,7 @@ async function loadAll(){
   await loadTeams();
   await loadModelMetrics();
   await loadInjuries();
+  await loadLineups();
   await loadMarkets();
 }
 $("simulate").addEventListener("click",runGameSimulation);
