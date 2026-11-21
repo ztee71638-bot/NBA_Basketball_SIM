@@ -9,6 +9,8 @@ on:
     paths:
       - "scripts/refresh_team_history.py"
       - "scripts/import_supplemental_nba_stats.py"
+      - "scripts/reconcile_supplemental_nba_stats.py"
+      - "tests/test_supplemental_reconcile.py"
       - "tests/test_supplemental_import.py"
       - "tests/test_team_history.py"
       - "scripts/backtest_model.py"
@@ -52,6 +54,19 @@ jobs:
           else
             python scripts/import_supplemental_nba_stats.py
           fi
+      - name: Reconcile supplemental NBA Stats records
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python scripts/reconcile_supplemental_nba_stats.py --supplemental-dir "$RUNNER_TEMP/boxscorelab"
+          else
+            python scripts/reconcile_supplemental_nba_stats.py
+          fi
+      - name: Validate reconciled data with chronological backtest
+        if: github.event_name == 'pull_request'
+        run: python scripts/backtest_model.py --output "$RUNNER_TEMP/model_metrics.json" --predictions-output "$RUNNER_TEMP/backtest_predictions.json"
+      - name: Validate reconciled data quality
+        if: github.event_name == 'pull_request'
+        run: python scripts/audit_data_quality.py --teams data/teams.json --players data/players.json --output "$RUNNER_TEMP/data_quality.json"
       - name: Run chronological model backtest
         if: github.event_name != 'pull_request'
         run: python scripts/backtest_model.py --output data/model_metrics.json --predictions-output data/backtest_predictions.json
@@ -61,10 +76,10 @@ jobs:
       - name: Commit team database
         if: github.event_name != 'pull_request'
         run: |
-          if [[ -n "$(git status --porcelain data/teams.json data/model_metrics.json data/data_quality.json data/backtest_predictions.json data/snapshots/ data/supplemental/boxscorelab/)" ]]; then
+          if [[ -n "$(git status --porcelain data/teams.json data/model_metrics.json data/data_quality.json data/backtest_predictions.json data/players.json data/snapshots/ data/supplemental/)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/teams.json data/model_metrics.json data/data_quality.json data/backtest_predictions.json data/snapshots/ data/supplemental/boxscorelab/
+            git add data/teams.json data/players.json data/model_metrics.json data/data_quality.json data/backtest_predictions.json data/snapshots/ data/supplemental/
             git commit -m "chore: refresh NBA team history"
             for attempt in 1 2 3 4 5; do
               if git pull --rebase origin main && git push; then
