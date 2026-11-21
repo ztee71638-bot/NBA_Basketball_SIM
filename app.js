@@ -71,6 +71,14 @@ function runGameSimulation() {
 function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return sign*y;}
 function calcProp(){
   const mean=Number($("prop-mean").value),sd=Number($("prop-sd").value),line=Number($("prop-line").value);
+  if(selectedPlayer){
+    const injury=injuryData.find(item=>String(item.athlete_id)===String(selectedPlayer.id));
+    const status=String(injury?.status||"").toLowerCase();
+    if(injury && ["out","doubtful","questionable","day-to-day"].some(flag=>status.includes(flag))){
+      $("prop-results").textContent="PASS — ESPN lists "+selectedPlayer.name+" as "+injury.status+". Do not use the historical baseline as an active-player projection.";
+      return;
+    }
+  }
   if(![mean,sd,line].every(Number.isFinite)||sd<=0){$("prop-results").textContent="Enter valid values and a positive standard deviation.";return;}
   const over=(1-erf((line-mean)/(sd*Math.sqrt(2))))/2;
   $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate from your inputs only. No player history, minutes, matchup, injury or market adjustment is included.</p>`;
@@ -92,7 +100,9 @@ function renderPlayerSearch() {
 }
 function applyPlayerHistoricalBaseline() {
   if (!selectedPlayer || !selectedPlayerLogs.length) {
-    $("prop-source-status").textContent = "No game-log sample is available for the selected player.";
+    $("prop-source-status").textContent = selectedPlayer
+      ? "No game-log sample is available for " + selectedPlayer.name + "."
+      : "Select a player below to load a historical baseline, or enter assumptions manually.";
     return;
   }
   const stat = $("prop-stat").value;
@@ -107,17 +117,24 @@ function applyPlayerHistoricalBaseline() {
     : 1;
   $("prop-mean").value = mean.toFixed(1);
   $("prop-sd").value = Math.max(1, Math.sqrt(variance)).toFixed(1);
+  const injury = injuryData.find(item => String(item.athlete_id) === String(selectedPlayer.id));
+  const injuryWarning = injury
+    ? " ESPN injury report: " + (injury.status || "status unspecified") + (injury.type ? " (" + injury.type + ")" : "") + "."
+    : "";
   $("prop-source-status").textContent = selectedPlayer.name + " · " + stat.toUpperCase() +
-    " historical baseline from " + values.length + " recent games. This is not adjusted for minutes, role, injuries, opponent or expected game script.";
+    " historical baseline from " + values.length + " recent games. This is not adjusted for minutes, role, injuries, opponent or expected game script." + injuryWarning;
 }
 
 function showPlayer(playerId) {
   const p = players.find(item => String(item.id) === String(playerId));
   if (!p) return;
+  selectedPlayer = p;
+  selectedPlayerLogs = [];
   const seasons = Object.entries(p.seasons || {}).sort((a,b) => Number(b[0])-Number(a[0]));
   const chosen = seasons.find(([,logs]) => logs && logs.length) || seasons[0];
   if (!chosen || !chosen[1]?.length) {
     $("player-detail").textContent = p.name + ": roster record found, but no game logs were returned for the stored seasons.";
+    applyPlayerHistoricalBaseline();
     return;
   }
   const season = chosen[0], logs = chosen[1];
