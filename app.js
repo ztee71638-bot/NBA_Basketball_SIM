@@ -1,6 +1,8 @@
 const $ = (id) => document.getElementById(id);
 let games = [];
 let players = [];
+let playersLoaded = false;
+let playersLoading = null;
 let teamData = [];
 let teamUpdatedAt = null;
 let arenaData = {};
@@ -727,16 +729,24 @@ async function loadPlayers() {
     const data = await loadJson("data/players.json");
     players = data.players || [];
     playerUpdatedAt = data.last_updated ? new Date(data.last_updated) : null;
+    playersLoaded = true;
     renderPlayerSearch();
     if (data.last_updated) $("data-status").textContent += " · Players " + players.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
+    playersLoaded = false;
     $("player-search-results").textContent = "Player database unavailable: " + e.message;
   }
+}
+async function ensurePlayersLoaded() {
+  if(playersLoaded)return;
+  if(playersLoading){await playersLoading;return;}
+  playersLoading=loadPlayers();
+  try{await playersLoading;}finally{playersLoading=null;}
 }
 
 async function loadAll(){
   try{const data=await loadJson("data/games.json");games=data.games||[];$("data-status").textContent="ESPN updated "+(data.last_updated?new Date(data.last_updated).toLocaleString():"time unavailable");showGames();}catch(e){$("data-status").textContent="Game feed unavailable";$("games").textContent=e.message;}
-  await loadPlayers();
+  if(playersLoaded) await loadPlayers();
   await loadTeams();
   await loadArenas();
   await loadModelMetrics();
@@ -750,6 +760,7 @@ $("day-next").addEventListener("click",()=>{activeScheduleDay=Math.min(scheduleD
 document.querySelectorAll("[data-view]").forEach(button=>button.addEventListener("click",()=>{
   document.querySelectorAll("[data-view]").forEach(tab=>{const active=tab===button;tab.classList.toggle("active",active);tab.setAttribute("aria-selected",String(active));});
   document.querySelectorAll(".view-panel").forEach(panel=>panel.hidden=panel.id!==button.dataset.view);
+  if(button.dataset.view==="players-view") ensurePlayersLoaded();
 }));
 $("prop-calc").addEventListener("click",calcProp);
 $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlayerHistoricalBaseline();});
