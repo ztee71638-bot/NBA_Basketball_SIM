@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -179,6 +180,21 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         missing_log_players = []
         logs_by_season: Counter[str] = Counter()
         players_with_logs_by_season: Counter[str] = Counter()
+        duplicate_player_game_logs = 0
+        invalid_player_game_dates = 0
+        out_of_season_player_game_logs = 0
+        invalid_player_stat_rows = 0
+        nonnegative_stat_fields = (
+            "minutes", "points", "rebounds", "assists", "steals", "blocks", "turnovers",
+            "offensive_rebounds", "defensive_rebounds", "field_goals_made",
+            "field_goals_attempted", "three_pointers_made", "three_pointers_attempted",
+            "free_throws_made", "free_throws_attempted",
+        )
+        made_attempted_pairs = (
+            ("field_goals_made", "field_goals_attempted"),
+            ("three_pointers_made", "three_pointers_attempted"),
+            ("free_throws_made", "free_throws_attempted"),
+        )
         for player in player_rows:
             player_seasons = player.get("seasons") or {}
             has_any_logs = False
@@ -189,6 +205,46 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
                     logs_by_season[str(season)] += len(game_rows)
                     players_with_logs_by_season[str(season)] += 1
                     has_any_logs = True
+                seen_event_ids = set()
+                for game in game_rows:
+                    event_id = str(game.get("event_id") or game.get("game_id") or "")
+                    if event_id:
+                        if event_id in seen_event_ids:
+                            duplicate_player_game_logs += 1
+                        seen_event_ids.add(event_id)
+                    raw_date = game.get("date")
+                    if not raw_date:
+                        invalid_player_game_dates += 1
+                    else:
+                        try:
+                            game_date = datetime.fromisoformat(
+                                str(raw_date).replace("Z", "+00:00")
+                            )
+                            season_number = int(season)
+                            if game_date.year not in (season_number - 1, season_number):
+                                out_of_season_player_game_logs += 1
+                        except (TypeError, ValueError):
+                            invalid_player_game_dates += 1
+                    row_invalid = False
+                    for field in nonnegative_stat_fields:
+                        value = game.get(field)
+                        if value is None:
+                            continue
+                        try:
+                            numeric = float(value)
+                            if not math.isfinite(numeric) or numeric < 0:
+                                row_invalid = True
+                        except (TypeError, ValueError):
+                            row_invalid = True
+                    for made_field, attempted_field in made_attempted_pairs:
+                        made, attempted = game.get(made_field), game.get(attempted_field)
+                        if made is not None and attempted is not None:
+                            try:
+                                if float(made) > float(attempted):
+                                    row_invalid = True
+                            except (TypeError, ValueError):
+                                row_invalid = True
+                    invalid_player_stat_rows += int(row_invalid)
             if not has_any_logs:
                 missing_log_players.append({
                     "id": str(player.get("id") or ""),
@@ -199,6 +255,18 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         player_summary["players_without_logs_sample"] = missing_log_players[:50]
         player_summary["game_logs_by_season"] = dict(sorted(logs_by_season.items()))
         player_summary["players_with_logs_by_season"] = dict(sorted(players_with_logs_by_season.items()))
+        player_summary["duplicate_player_game_logs"] = duplicate_player_game_logs
+        player_summary["invalid_player_game_dates"] = invalid_player_game_dates
+        player_summary["out_of_season_player_game_logs"] = out_of_season_player_game_logs
+        player_summary["invalid_player_stat_rows"] = invalid_player_stat_rows
+        if duplicate_player_game_logs:
+            errors.append(f"Player archive contains {duplicate_player_game_logs} duplicate game logs within player-seasons.")
+        if invalid_player_game_dates:
+            errors.append(f"Player archive contains {invalid_player_game_dates} game logs with missing or invalid dates.")
+        if out_of_season_player_game_logs:
+            warnings.append(f"Player archive contains {out_of_season_player_game_logs} game logs dated outside their declared season.")
+        if invalid_player_stat_rows:
+            errors.append(f"Player archive contains {invalid_player_stat_rows} game logs with invalid or impossible box-score values.")
         if missing_log_players:
             warnings.append(f"{len(missing_log_players)} player records have no game logs in any stored season.")
         if not logs_by_season:
