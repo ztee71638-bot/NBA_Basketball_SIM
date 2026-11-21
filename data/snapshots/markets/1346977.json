@@ -92,7 +92,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895728\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.715\\\", \\\"0.285\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Pacers\\\"]\",\"question\":\"Thunder vs. Pacers\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T21:21:45.660653+00:00",
+      "markets": [
+        {
+          "market_id": "6895728",
+          "market_type": "moneyline",
+          "question": "Thunder vs. Pacers",
+          "slug": "nba-okc-ind-2026-11-23",
+          "outcomes": "[\"Thunder\", \"Pacers\"]",
+          "outcome_prices": "[\"0.72\", \"0.28\"]",
+          "volume_24h": 226.42995,
+          "liquidity": "26697.4592",
+          "end_date": "2026-11-24T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-okc-ind-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895728\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.72\\\", \\\"0.28\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Pacers\\\"]\",\"question\":\"Thunder vs. Pacers\"}]"
     }
   ],
-  "last_updated": "2026-11-21T19:54:29.304999+00:00"
+  "last_updated": "2026-11-21T21:21:45.660653+00:00"
 }
