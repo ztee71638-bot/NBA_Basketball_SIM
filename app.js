@@ -3,6 +3,7 @@ let games = [];
 let players = [];
 let teamData = [];
 let injuryData = [];
+let marketData = [];
 let selectedGame = null;
 let selectedPlayer = null;
 let selectedPlayerLogs = [];
@@ -48,11 +49,43 @@ function prefillGameProjections(game) {
     $("projection-status").textContent = "Team history is unavailable or too limited for this matchup. The score inputs remain manual assumptions.";
   }
 }
+function teamMarketTokens(team) {
+  const name = String(team?.name || "").toLowerCase();
+  const parts = name.split(/\s+/).filter(Boolean);
+  return [name, parts.slice(-2).join(" "), parts.slice(-1).join(" "), String(team?.abbreviation || "").toLowerCase()]
+    .filter(value => value.length >= 3);
+}
+function renderGameMarkets(game) {
+  const root = $("game-market-info");
+  if (!marketData.length) {
+    root.textContent = "Polymarket markets are still loading.";
+    return;
+  }
+  const awayTokens = teamMarketTokens(game.away);
+  const homeTokens = teamMarketTokens(game.home);
+  const matches = marketData.filter(market => {
+    const eventText = String(market.event_title || market.question || market.slug || "").toLowerCase();
+    return awayTokens.some(token => eventText.includes(token)) && homeTokens.some(token => eventText.includes(token));
+  }).slice(0,8);
+  if (!matches.length) {
+    root.textContent = "No matching active Polymarket event was found for this ESPN matchup.";
+    return;
+  }
+  root.innerHTML = '<strong>Matching Polymarket markets</strong>' + matches.map(market =>
+    '<div class="market"><div><strong>' + escapeHtml(market.question || market.event_title) +
+    '</strong><small>' + escapeHtml(marketPriceSummary(market) || "Prices unavailable") +
+    ' · 24h volume: ' + escapeHtml(market.volume_24h ?? "n/a") + '</small></div>' +
+    (market.url ? '<a target="_blank" rel="noopener" href="' + escapeHtml(market.url) + '">Open market</a>' : '') +
+    '</div>'
+  ).join("");
+}
+
 function selectGame(game) {
   selectedGame = game;
   $("selected-title").textContent = game.name || game.short_name || "Selected matchup";
   $("game-results").textContent = "Matchup selected. Review the starting estimates and run the simulation.";
   prefillGameProjections(game);
+  renderGameMarkets(game);
 }
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
@@ -106,7 +139,7 @@ function marketPriceSummary(market) {
 }
 
 async function loadMarkets(){
-  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${m.question||"Untitled market"}</strong><small>${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+m.url+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){$("markets").textContent="Market feed unavailable: "+e.message;}
+  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];marketData=rows;$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${m.question||"Untitled market"}</strong><small>${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+m.url+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){$("markets").textContent="Market feed unavailable: "+e.message;}
 }
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
