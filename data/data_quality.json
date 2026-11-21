@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-11-21T09:04:50.386939+00:00",
+  "status": "warning",
+  "team_history": {
+    "last_updated": "2026-11-21T09:03:41.022655+00:00",
+    "age_hours": 0.02,
+    "team_count": 30,
+    "seasons": {
+      "2023": {
+        "team_records": 30,
+        "teams_with_games": 30,
+        "team_game_rows": 2774,
+        "unique_game_ids": 1389,
+        "duplicate_team_game_ids": 0,
+        "min_team_games": 85,
+        "max_team_games": 112
+      },
+      "2024": {
+        "team_records": 30,
+        "teams_with_games": 30,
+        "team_game_rows": 2779,
+        "unique_game_ids": 1394,
+        "duplicate_team_game_ids": 0,
+        "min_team_games": 86,
+        "max_team_games": 109
+      },
+      "2025": {
+        "team_records": 30,
+        "teams_with_games": 30,
+        "team_game_rows": 2796,
+        "unique_game_ids": 1400,
+        "duplicate_team_game_ids": 0,
+        "min_team_games": 86,
+        "max_team_games": 111
+      },
+      "2026": {
+        "team_records": 30,
+        "teams_with_games": 30,
+        "team_game_rows": 2788,
+        "unique_game_ids": 1397,
+        "duplicate_team_game_ids": 0,
+        "min_team_games": 85,
+        "max_team_games": 111
+      },
+      "2027": {
+        "team_records": 30,
+        "teams_with_games": 30,
+        "team_game_rows": 603,
+        "unique_game_ids": 302,
+        "duplicate_team_game_ids": 0,
+        "min_team_games": 17,
+        "max_team_games": 22
+      }
+    },
+    "unpaired_or_mismatched_games": 24
+  },
+  "player_history": {
+    "available": true,
+    "player_count": 528,
+    "declared_player_count": 528,
+    "seasons": [
+      2027,
+      2026
+    ],
+    "last_updated": "2026-11-21T08:07:22.768117+00:00",
+    "age_hours": 0.96,
+    "players_without_any_logs": 8
+  },
+  "warnings": [
+    "24 game IDs do not have a fully matching two-team record.",
+    "8 player records have no game logs in any stored season."
+  ],
+  "errors": [],
+  "note": "This is a coverage and integrity audit, not a measure of predictive accuracy."
+}
