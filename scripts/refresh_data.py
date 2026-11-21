@@ -73,6 +73,89 @@ def fetch_games(today: datetime | None = None) -> list[dict[str, Any]]:
 
 
 
+
+def _truthy(value: Any) -> bool:
+    return value is True or str(value).strip().lower() in ("true", "1", "yes")
+
+
+def parse_confirmed_lineups(payload: dict[str, Any], game: dict[str, Any]) -> dict[str, Any]:
+    """Extract starters only when ESPN explicitly marks five for each team."""
+    boxes = (payload.get("boxscore") or {}).get("players") or []
+    collected: dict[str, dict[str, dict[str, Any]]] = {}
+
+    def walk(node: Any, team_code: str | None = None) -> None:
+        if isinstance(node, list):
+            for child in node:
+                walk(child, team_code)
+            return
+        if not isinstance(node, dict):
+            return
+        team = node.get("team") or {}
+        code = team.get("abbreviation") if isinstance(team, dict) else None
+        if not code and isinstance(team, dict):
+            code = {"1":"ATL","2":"BOS","3":"NOP","4":"CHI","5":"CLE","6":"DAL","7":"DEN","8":"DET","9":"GSW","10":"HOU","11":"IND","12":"LAC","13":"LAL","14":"MIA","15":"MIL","16":"MIN","17":"BKN","18":"NYK","19":"ORL","20":"PHI","21":"PHX","22":"POR","23":"SAC","24":"SAS","25":"OKC","26":"UTA","27":"WAS","28":"TOR","29":"MEM","30":"CHA"}.get(str(team.get("id") or ""))
+        context = code or team_code
+        athlete = node.get("athlete")
+        if isinstance(athlete, dict) and context and ("starter" in node or "active" in node):
+            name = athlete.get("displayName") or athlete.get("fullName")
+            athlete_id = str(athlete.get("id") or "")
+            if name and _truthy(node.get("starter")) and not _truthy(node.get("didNotPlay")):
+                collected.setdefault(context, {})[athlete_id or str(name)] = {
+                    "id": athlete_id, "name": name,
+                    "position": (athlete.get("position") or {}).get("abbreviation") if isinstance(athlete.get("position"), dict) else athlete.get("position"),
+                    "starter": True,
+                }
+        for key, value in node.items():
+            if key not in ("team", "athlete"):
+                walk(value, context)
+
+    walk(boxes)
+    home_code = (game.get("home") or {}).get("abbreviation")
+    away_code = (game.get("away") or {}).get("abbreviation")
+    home = list(collected.get(home_code, {}).values()) if home_code else []
+    away = list(collected.get(away_code, {}).values()) if away_code else []
+    confirmed = len(home) == 5 and len(away) == 5
+    return {
+        "game_id": str(game.get("id") or ""),
+        "date": game.get("date"),
+        "home_team": home_code,
+        "away_team": away_code,
+        "home_starters": home if confirmed else [],
+        "away_starters": away if confirmed else [],
+        "status": "confirmed" if confirmed else "not_available",
+        "source": "ESPN game summary; starters explicitly flagged",
+    }
+
+
+def fetch_confirmed_lineups(games: list[dict[str, Any]], now: datetime | None = None) -> list[dict[str, Any]]:
+    now = now or datetime.now(timezone.utc)
+    rows = []
+    for game in games:
+        if game.get("completed") or not game.get("date") or not game.get("id"):
+            continue
+        try:
+            start = datetime.fromisoformat(str(game["date"]).replace("Z", "+00:00"))
+            if start.tzinfo is None:
+                start = start.replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        # Check close to tipoff to avoid repeatedly querying distant games.
+        if start < now - timedelta(hours=2) or start > now + timedelta(hours=8):
+            continue
+        try:
+            summary = get_json(
+                "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary",
+                {"event": str(game["id"])},
+            )
+            rows.append(parse_confirmed_lineups(summary, game))
+        except requests.RequestException as exc:
+            rows.append({
+                "game_id": str(game["id"]), "date": game.get("date"),
+                "status": "unavailable", "error": str(exc), "source": "ESPN",
+            })
+    return rows
+
+
 def fetch_injuries() -> list[dict[str, Any]]:
     payload = get_json(INJURIES_URL)
     entries = payload.get("injuries") or []
@@ -316,10 +399,13 @@ def main() -> None:
     games = fetch_games()
     markets = fetch_polymarket_markets()
     injuries = fetch_injuries()
+    lineups = fetch_confirmed_lineups(games)
     write_snapshot("games.json", "ESPN public scoreboard", "games", games)
     write_snapshot("polymarket.json", "Polymarket public Gamma API", "markets", markets)
     write_snapshot("injuries.json", "ESPN public injury report", "injuries", injuries)
-    print(f"Saved {len(games)} NBA games, {len(markets)} likely NBA markets and {len(injuries)} injury records.")
+    write_snapshot("lineups.json", "ESPN game summaries", "games", lineups)
+    confirmed = sum(1 for item in lineups if item.get("status") == "confirmed")
+    print(f"Saved {len(games)} NBA games, {len(markets)} likely NBA markets, {len(injuries)} injury records and {confirmed} confirmed starting lineups.")
 
 
 if __name__ == "__main__":
