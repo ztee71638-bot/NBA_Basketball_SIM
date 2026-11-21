@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nba-public-data-refresh-${{ github.ref }}
+  group: nba-shared-data-refresh-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
