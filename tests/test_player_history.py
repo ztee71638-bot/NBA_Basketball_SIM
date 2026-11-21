@@ -47,3 +47,15 @@ def test_number_handles_missing_and_invalid_values():
 def test_team_id_map_has_30_teams():
     assert len(module.TEAM_IDS) == 30
     assert module.TEAM_IDS["LAL"] == 13
+
+
+def test_parse_player_gamelog_supports_event_dictionary():
+    payload = {
+        "names": ["minutes", "points"],
+        "events": {"game-2": {"id": "game-2", "date": "2026-11-21T00:00Z", "stats": ["32", "24"]}},
+    }
+    rows = module.parse_player_gamelog(payload)
+    assert len(rows) == 1
+    assert rows[0]["event_id"] == "game-2"
+    assert rows[0]["minutes"] == 32
+    assert rows[0]["points"] == 24
