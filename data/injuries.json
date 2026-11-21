@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T16:48:48.398459+00:00",
+  "last_updated": "2026-11-21T17:29:05.650343+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1155,36 +1155,6 @@
       "return_date": "2026-11-29",
       "short_comment": "Banchero is expected to be sidelined for the next four-to-six weeks due to a right high-ankle sprain, Shams Charania of ESPN reports.",
       "long_comment": "Banchero left during Friday's loss against the Timberwolves due to an ankle injury, and follow-up tests have confirmed a high-ankle sprain for the fifth-year forward. With an extended absence expected, the Magic will have to rely more heavily on Franz Wagner and Desmond Bane offensively, and Tristan da Silva figures to be the top candidate to enter the Magic's starting lineup for as long as Banchero is sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4431678",
-      "name": "Tyrese Maxey",
-      "team": "PHI",
-      "team_name": "Philadelphia 76ers",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-21T16:25Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Maxey (foot) will be a true game-time decision for Saturday's game against the Bucks, head coach Nick Nurse told Ky Carlin of USA Today.",
-      "long_comment": "According to Nurse, Maxey will go through his usual pregame warm-ups to see if he can play. If he suits up, he could have a minutes restriction, as Nurse also said Maxey \"isn't there yet.\" If Maxey doesn't play, Anfernee Simons would remain in the backcourt alongside VJ Edgecombe.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4870562",
-      "name": "Dominick Barlow",
-      "team": "PHI",
-      "team_name": "Philadelphia 76ers",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Not Specified",
-      "date": "2026-11-20T22:13Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Barlow (back) is probable for Saturday's game versus the Bucks.",
-      "long_comment": "Barlow is on the precipice of making his season debut following a long recovery due to a lower-back stress reaction. With Adem Bona (back) sidelined, Barlow should immediately slot into the No. 2 center spot behind Joel Embiid on Saturday.",
       "source": "ESPN"
     },
     {

@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840922\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.76\\\", \\\"0.24\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Nuggets vs. Bulls\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T17:29:05.651414+00:00",
+      "markets": [
+        {
+          "market_id": "6840922",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Bulls",
+          "slug": "nba-den-chi-2026-11-22",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.755\", \"0.245\"]",
+          "volume_24h": 467.4347070000001,
+          "liquidity": "29402.2207",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840922\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.755\\\", \\\"0.245\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Nuggets vs. Bulls\"}]"
     }
   ],
-  "last_updated": "2026-11-21T16:48:48.399789+00:00"
+  "last_updated": "2026-11-21T17:29:05.651414+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T16:48:48.399711+00:00",
+  "last_updated": "2026-11-21T17:29:05.651328+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -17,6 +17,36 @@
       "date": "2026-11-22T00:30Z",
       "home_team": "NY",
       "away_team": "POR",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910025",
+      "date": "2026-11-22T01:00Z",
+      "home_team": "DAL",
+      "away_team": "LAC",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910026",
+      "date": "2026-11-22T01:00Z",
+      "home_team": "MIN",
+      "away_team": "MEM",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910027",
+      "date": "2026-11-22T01:00Z",
+      "home_team": "SA",
+      "away_team": "NO",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",
