@@ -27,13 +27,28 @@ TEAM_IDS = {
 
 
 def get_json(url: str, params: dict[str, Any] | None = None) -> Any:
-    response = requests.get(
-        url, params=params, timeout=TIMEOUT,
-        headers={"User-Agent": "NBA-Simulator/0.1", "Accept": "application/json"},
-    )
-    response.raise_for_status()
-    time.sleep(DELAY)
-    return response.json()
+    last_error = None
+    for attempt in range(4):
+        try:
+            response = requests.get(
+                url, params=params, timeout=TIMEOUT,
+                headers={"User-Agent": "NBA-Simulator/0.1", "Accept": "application/json"},
+            )
+            if response.status_code == 429 or response.status_code >= 500:
+                wait = float(response.headers.get("Retry-After", 2 ** attempt))
+                time.sleep(min(wait, 30))
+                continue
+            response.raise_for_status()
+            time.sleep(DELAY)
+            return response.json()
+        except requests.RequestException as exc:
+            last_error = exc
+            if attempt == 3:
+                raise
+            time.sleep(2 ** attempt)
+    if last_error:
+        raise last_error
+    raise RuntimeError("Unable to retrieve ESPN response")
 
 
 def flatten_roster(payload: dict[str, Any]) -> list[dict[str, Any]]:
@@ -127,6 +142,8 @@ def fetch_player_database() -> list[dict[str, Any]]:
 
 def main() -> None:
     players = fetch_player_database()
+    if len(players) < 100:
+        raise RuntimeError(f"Only {len(players)} player records retrieved; refusing to overwrite the existing archive.")
     DATA.mkdir(parents=True, exist_ok=True)
     payload = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
