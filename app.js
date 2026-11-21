@@ -231,12 +231,13 @@ function renderPlayerMarkets(player) {
 function simulatePlayerMarket(marketId) {
   const market = marketData.find(item => String(item.id) === String(marketId));
   if (!market || !selectedPlayer) return;
-  const description = String(market.market_group || market.question || "").toLowerCase();
+  const description = [market.market_group, market.question, market.slug].join(" ").toLowerCase();
   const statMap = [
     ["points", "points"], ["rebounds", "rebounds"], ["assists", "assists"],
     ["steals", "steals"], ["blocks", "blocks"]
   ];
-  const match = statMap.find(([label]) => description.includes(label));
+  const statMatches = statMap.filter(([label]) => description.includes(label));
+  const match = statMatches.length === 1 ? statMatches[0] : null;
   const lineMatch = description.match(/(?:o\/u|over|under)\s*([0-9]+(?:\.[0-9]+)?)/i) ||
     description.match(/([0-9]+(?:\.[0-9]+)?)\s*$/);
   if (!match || !lineMatch) {
