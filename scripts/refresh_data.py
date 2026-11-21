@@ -225,12 +225,12 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
     flat_seen = 0
     flat_matched = 0
     flat_slug_matched = 0
-    for offset in range(0, 5000, 500):
+    for offset in range(0, 5000, 100):
         page_payload = get_json(GAMMA_URL, {
             "tag_id": "745",
             "active": "true",
             "closed": "false",
-            "limit": 500,
+            "limit": 100,
             "offset": offset,
         })
         if isinstance(page_payload, dict):
@@ -240,6 +240,9 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
         else:
             page = []
         flat_seen += len(page)
+        if offset == 0 and page:
+            sample = page[0]
+            print("Polymarket flat-market sample:", {key: sample.get(key) for key in ("id", "slug", "question", "event_id", "eventId", "events", "groupItemTitle")})
         for market in page:
             if not isinstance(market, dict):
                 continue
@@ -270,7 +273,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
             if matched_event:
                 flat_matched += 1
                 add_market(market, matched_event)
-        if len(page) < 500:
+        if len(page) < 100:
             break
 
     print(f"Polymarket NBA discovery: {len(events)} active game events, {flat_seen} flat NBA markets scanned, {flat_matched} linked to active games ({flat_slug_matched} by event-slug prefix), {len(results)} unique markets.")
