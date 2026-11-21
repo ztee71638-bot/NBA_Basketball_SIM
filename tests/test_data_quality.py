@@ -224,3 +224,26 @@ def test_player_audit_detects_invalid_and_out_of_season_game_dates():
     assert summary["out_of_season_player_game_logs"] == 1
     assert any("missing or invalid dates" in item for item in result["errors"])
     assert any("outside their declared season" in item for item in result["warnings"])
+
+
+def test_audit_validates_advanced_metric_formulas_against_both_team_box_scores():
+    payload = fixture()
+    first = payload["teams"][0]["seasons"]["2027"]["games"][0]
+    second = payload["teams"][1]["seasons"]["2027"]["games"][0]
+    first.update({
+        "possessions_estimate": 100.0, "pace_estimate": 99.0,
+        "offensive_rating": 110.0, "defensive_rating": round(100 / 98 * 100, 2),
+    })
+    second.update({
+        "possessions_estimate": 98.0, "pace_estimate": 99.0,
+        "offensive_rating": round(100 / 98 * 100, 2), "defensive_rating": 110.0,
+    })
+    now = datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    valid = module.audit_payloads(payload, None, now)
+    assert valid["team_history"]["advanced_metric_integrity_errors"] == 0
+    assert not any("advanced metrics" in item for item in valid["errors"])
+
+    first["offensive_rating"] = 125.0
+    invalid = module.audit_payloads(payload, None, now)
+    assert invalid["team_history"]["advanced_metric_integrity_errors"] == 1
+    assert any("do not reconcile" in item for item in invalid["errors"])

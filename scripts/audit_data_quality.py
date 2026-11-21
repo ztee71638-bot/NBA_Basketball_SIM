@@ -73,6 +73,10 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
                 paired_games[f"{season}:{game_id}"].append({
                     "team": abbreviation, "opponent": row.get("opponent"),
                     "points_for": row.get("points_for"), "points_against": row.get("points_against"),
+                    "possessions_estimate": row.get("possessions_estimate"),
+                    "pace_estimate": row.get("pace_estimate"),
+                    "offensive_rating": row.get("offensive_rating"),
+                    "defensive_rating": row.get("defensive_rating"),
                     "has_advanced_metrics": has_advanced_metrics,
                 })
     if malformed:
@@ -118,6 +122,8 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             warnings.append(f"Season {season}: average history is below 60 games/team.")
     mismatched = 0
     non_nba_or_unresolved_opponent_games = 0
+    advanced_metric_integrity_errors = 0
+    advanced_metric_examples: list[dict[str, Any]] = []
     nba_team_codes = set(abbreviations)
     mismatch_breakdown = Counter()
     mismatch_examples: list[dict[str, Any]] = []
@@ -139,6 +145,39 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
                 reasons.append("opponent_abbreviation_mismatch")
             if a["points_for"] != b["points_against"] or a["points_against"] != b["points_for"]:
                 reasons.append("score_mismatch")
+            if a.get("has_advanced_metrics") and b.get("has_advanced_metrics"):
+                metric_reasons = []
+                for current, opponent in ((a, b), (b, a)):
+                    current_possessions = current.get("possessions_estimate")
+                    opponent_possessions = opponent.get("possessions_estimate")
+                    values = (
+                        current_possessions, opponent_possessions,
+                        current.get("pace_estimate"), current.get("offensive_rating"),
+                        current.get("defensive_rating"),
+                    )
+                    try:
+                        numeric_values = [float(value) for value in values]
+                        if not all(math.isfinite(value) and value > 0 for value in numeric_values):
+                            raise ValueError("non_positive_or_non_finite")
+                        expected_pace = (numeric_values[0] + numeric_values[1]) / 2
+                        expected_offense = float(current["points_for"]) / numeric_values[0] * 100
+                        expected_defense = float(current["points_against"]) / numeric_values[1] * 100
+                        if not math.isclose(float(current["pace_estimate"]), expected_pace, abs_tol=0.06):
+                            metric_reasons.append("pace_formula_mismatch")
+                        if not math.isclose(float(current["offensive_rating"]), expected_offense, abs_tol=0.06):
+                            metric_reasons.append("offensive_rating_formula_mismatch")
+                        if not math.isclose(float(current["defensive_rating"]), expected_defense, abs_tol=0.06):
+                            metric_reasons.append("defensive_rating_formula_mismatch")
+                    except (KeyError, TypeError, ValueError, ZeroDivisionError):
+                        metric_reasons.append("invalid_advanced_metric_value")
+                if metric_reasons:
+                    advanced_metric_integrity_errors += 1
+                    if len(advanced_metric_examples) < 50:
+                        advanced_metric_examples.append({
+                            "season_game": key,
+                            "reasons": sorted(set(metric_reasons)),
+                            "records": rows,
+                        })
         if reasons:
             mismatched += 1
             for reason in reasons:
@@ -151,6 +190,11 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
                 })
     if mismatched:
         warnings.append(f"{mismatched} game IDs do not have a fully matching two-team record.")
+    if advanced_metric_integrity_errors:
+        errors.append(
+            f"{advanced_metric_integrity_errors} paired games contain advanced metrics "
+            "that do not reconcile with their box-score inputs."
+        )
 
     team_age = age_hours(teams_payload.get("last_updated"), now)
     if team_age is None:
@@ -287,6 +331,8 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             "non_nba_or_unresolved_opponent_games": non_nba_or_unresolved_opponent_games,
             "mismatch_breakdown": dict(sorted(mismatch_breakdown.items())),
             "mismatch_examples": mismatch_examples,
+            "advanced_metric_integrity_errors": advanced_metric_integrity_errors,
+            "advanced_metric_examples": advanced_metric_examples,
         },
         "player_history": player_summary,
         "warnings": warnings,
