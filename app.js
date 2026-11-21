@@ -124,9 +124,18 @@ function teamSummary(abbr) {
 function teamSeasonGames(abbreviation) {
   const team = teamData.find(item => canonicalTeam(item.abbreviation) === canonicalTeam(abbreviation));
   if (!team) return {rows:[],year:null};
-  const seasons = Object.entries(team.seasons || {}).sort((a,b) => Number(b[0])-Number(a[0]));
-  const chosen = seasons.find(([,value]) => (value.games || []).length >= 5);
-  return chosen ? {rows:[...chosen[1].games].filter(g => Number.isFinite(g.points_for) && Number.isFinite(g.points_against)).sort((a,b)=>new Date(a.date)-new Date(b.date)),year:chosen[0]} : {rows:[],year:null};
+  const seasons = Object.entries(team.seasons || {}).sort((a,b) => Number(a[0])-Number(b[0]));
+  const populated = seasons.filter(([,value]) => (value.games || []).length >= 5);
+  if (!populated.length) return {rows:[],year:null};
+  const latest = populated[populated.length-1];
+  // Keep a short tail from the prior season as an early-season prior, while
+  // letting current-season games dominate as the season progresses.
+  const previous = populated.length>1 ? populated[populated.length-2][1].games.slice(-10) : [];
+  const current = latest[1].games || [];
+  const rows = [...previous,...current]
+    .filter(g => Number.isFinite(g.points_for) && Number.isFinite(g.points_against) && g.points_for>0 && g.points_against>0)
+    .sort((a,b)=>new Date(a.date)-new Date(b.date));
+  return {rows,year:latest[0],previousSeasonGames:previous.length};
 }
 function weightedMetric(rows, key, halfLife=8) {
   const values = rows.map((row,index) => ({value:Number(row[key]), age:rows.length-1-index}))
@@ -140,15 +149,11 @@ function weightedMetric(rows, key, halfLife=8) {
   return {mean,sd:Math.sqrt(variance/totalWeight),count:values.length};
 }
 function leagueScoringBaseline() {
-  const rows=teamData.flatMap(team=>{
-    const seasons=Object.entries(team.seasons||{}).sort((a,b)=>Number(b[0])-Number(a[0]));
-    const chosen=seasons.find(([,v])=>(v.games||[]).length>=5);
-    return chosen?(chosen[1].games||[]):[];
-  }).filter(g=>Number.isFinite(g.points_for)&&Number.isFinite(g.points_against));
-  const scoring=rows.map(g=>g.points_for);
-  const average=scoring.length?scoring.reduce((a,b)=>a+b,0)/scoring.length:114;
-  const variance=scoring.length?scoring.reduce((sum,v)=>sum+Math.pow(v-average,2),0)/scoring.length:144;
-  return {average,sd:Math.sqrt(variance),count:scoring.length};
+  const rows=teamData.flatMap(team=>Object.values(team.seasons||{}).flatMap(v=>v.games||[]))
+    .filter(g=>Number.isFinite(g.points_for)&&Number.isFinite(g.points_against)&&g.points_for>0&&g.points_against>0)
+    .sort((a,b)=>new Date(a.date)-new Date(b.date));
+  const scoring=weightedMetric(rows,"points_for",8);
+  return {average:scoring?.mean??114,sd:scoring?.sd??12,count:scoring?.count??0};
 }
 function teamModelProfile(abbreviation, league) {
   const season=teamSeasonGames(abbreviation), rows=season.rows;
@@ -615,8 +620,9 @@ async function loadModelMetrics() {
       '<div class="metric"><small>Experimental winner accuracy</small><b>'+(Number(data.model_winner_accuracy)*100).toFixed(1)+'%</b></div>'+
       '<div class="metric"><small>Baseline winner accuracy</small><b>'+(Number(data.baseline_winner_accuracy)*100).toFixed(1)+'%</b></div>'+
       '<div class="metric"><small>Experimental Brier score</small><b>'+Number(data.model_brier_score).toFixed(3)+'</b></div></div>'+
-      '<p class="fine-print">'+(modelBetter?"Experimental model currently leads on both score error and winner accuracy.":"The experimental blend has not beaten the baseline on both score error and winner accuracy; default score estimates remain on the baseline.")+
-      ' Last updated: '+(data.generated_at?new Date(data.generated_at).toLocaleString():"unknown")+'. Same-season walk-forward results are preliminary, not proof of future accuracy.</p>';
+      '<p class="fine-print">'+(modelBetter?"Experimental model currently leads on both score error and winner accuracy.":"The experimental blend has not beaten the baseline on both score error and winner accuracy; default score estimates remain on the baseline.")+'</p>'+
+      (data.advanced_games_tested?'<strong>Experimental pace / efficiency model · '+Number(data.advanced_games_tested).toLocaleString()+' matched holdout games</strong><div class="result-grid"><div class="metric"><small>Efficiency model MAE</small><b>'+Number(data.advanced_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Same-game baseline MAE</small><b>'+Number(data.advanced_baseline_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Efficiency winner accuracy</small><b>'+(Number(data.advanced_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Same-game baseline accuracy</small><b>'+(Number(data.advanced_baseline_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Efficiency Brier score</small><b>'+Number(data.advanced_brier_score).toFixed(3)+'</b></div></div><p class="fine-print">Calibration error: '+(data.advanced_calibration_error==null?'n/a':Number(data.advanced_calibration_error).toFixed(3))+'. The advanced model remains experimental until it beats the baseline on the same holdout games.</p>':'<p class="fine-print">Pace/efficiency model awaits enough completed boxscores with all required statistics.</p>')+
+      '<p class="fine-print">Last updated: '+(data.generated_at?new Date(data.generated_at).toLocaleString():"unknown")+'. Multi-season walk-forward results are preliminary, not proof of future accuracy.</p>';
   } catch(e) {
     root.textContent="Walk-forward validation metrics will appear after the next successful team-data refresh.";
   }
