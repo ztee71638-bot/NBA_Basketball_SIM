@@ -380,6 +380,13 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     advanced_errors, advanced_correct, advanced_briers = [], [], []
     advanced_baseline_errors, advanced_baseline_correct, advanced_probabilities, advanced_outcomes = [], [], [], []
     advanced_baseline_briers, advanced_baseline_probabilities, advanced_baseline_outcomes = [], [], []
+    advanced_score_errors_by_game, advanced_baseline_score_errors_by_game = [], []
+    advanced_season_diagnostics = defaultdict(lambda: {
+        "games": 0, "model_score_errors": [], "baseline_score_errors": [],
+        "model_correct": [], "baseline_correct": [], "model_briers": [],
+        "baseline_briers": [], "model_probabilities": [],
+        "baseline_probabilities": [], "outcomes": [],
+    })
     used = 0
     prediction_records = []
     model_score_errors_by_game = []
@@ -572,6 +579,19 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
                     advanced_baseline_probabilities.append(base_probability)
                     advanced_baseline_outcomes.append(float(home_win))
                     advanced_baseline_briers.append((base_probability-float(home_win))**2)
+                    advanced_score_errors_by_game.append((abs(adv_h-actual_h)+abs(adv_a-actual_a))/2)
+                    advanced_baseline_score_errors_by_game.append((abs(base_h-actual_h)+abs(base_a-actual_a))/2)
+                    advanced_season = advanced_season_diagnostics[season_key]
+                    advanced_season["games"] += 1
+                    advanced_season["model_score_errors"].extend((abs(adv_h-actual_h), abs(adv_a-actual_a)))
+                    advanced_season["baseline_score_errors"].extend((abs(base_h-actual_h), abs(base_a-actual_a)))
+                    advanced_season["model_correct"].append(float((adv_h>adv_a)==home_win))
+                    advanced_season["baseline_correct"].append(float((base_h>base_a)==home_win))
+                    advanced_season["model_briers"].append((adv_prob-float(home_win))**2)
+                    advanced_season["baseline_briers"].append((base_probability-float(home_win))**2)
+                    advanced_season["model_probabilities"].append(adv_prob)
+                    advanced_season["baseline_probabilities"].append(base_probability)
+                    advanced_season["outcomes"].append(float(home_win))
         used += 1
 
     if not used:
@@ -649,8 +669,32 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "advanced_baseline_winner_accuracy": round(mean(advanced_baseline_correct), 4) if advanced_baseline_correct else None,
         "advanced_brier_score": round(mean(advanced_briers), 4) if advanced_briers else None,
         "advanced_baseline_brier_score": round(mean(advanced_baseline_briers), 4) if advanced_baseline_briers else None,
+        "advanced_log_loss": binary_log_loss(advanced_probabilities, advanced_outcomes),
+        "advanced_baseline_log_loss": binary_log_loss(advanced_baseline_probabilities, advanced_baseline_outcomes),
         "advanced_calibration_error": expected_calibration_error(advanced_probabilities, advanced_outcomes),
         "advanced_baseline_calibration_error": expected_calibration_error(advanced_baseline_probabilities, advanced_baseline_outcomes),
+        "advanced_recent_windows": rolling_window_report(
+            advanced_score_errors_by_game, advanced_baseline_score_errors_by_game,
+            advanced_correct, advanced_baseline_correct, advanced_briers,
+            advanced_baseline_briers, advanced_probabilities,
+            advanced_baseline_probabilities, advanced_outcomes,
+        ),
+        "advanced_by_season": {
+            season: {
+                "games": values["games"],
+                "model_score_mae": round(mean(values["model_score_errors"]), 3),
+                "baseline_score_mae": round(mean(values["baseline_score_errors"]), 3),
+                "model_winner_accuracy": round(mean(values["model_correct"]), 4),
+                "baseline_winner_accuracy": round(mean(values["baseline_correct"]), 4),
+                "model_brier_score": round(mean(values["model_briers"]), 4),
+                "baseline_brier_score": round(mean(values["baseline_briers"]), 4),
+                "model_log_loss": binary_log_loss(values["model_probabilities"], values["outcomes"]),
+                "baseline_log_loss": binary_log_loss(values["baseline_probabilities"], values["outcomes"]),
+                "model_calibration_error": expected_calibration_error(values["model_probabilities"], values["outcomes"]),
+                "baseline_calibration_error": expected_calibration_error(values["baseline_probabilities"], values["outcomes"]),
+            }
+            for season, values in sorted(advanced_season_diagnostics.items())
+        },
         "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
     }
     if include_predictions:
