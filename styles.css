@@ -364,3 +364,47 @@ footer{color:#83aaaa}
  .hero-copy{padding-right:4px}
  .hero-tags{max-width:275px}
 }
+
+
+/* Mobile finishing pass: keep the live-data badge out of the headline and
+   make every primary section reachable without horizontal tab scrolling. */
+@media(max-width:430px){
+  .hero-side{
+    position:static;
+    width:100%;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .hero-side .status{
+    position:static;
+    display:block;
+    white-space:normal;
+    max-width:100%;
+    overflow-wrap:anywhere;
+    line-height:1.35;
+    margin-top:2px;
+  }
+  .hero-ball{
+    position:absolute;
+    right:18px;
+    top:20px;
+  }
+  .hero-copy{padding-right:0}
+  .view-tabs{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px;
+    overflow:visible;
+    white-space:normal;
+    padding:0 16px 8px;
+  }
+  .view-tab{
+    min-width:0;
+    width:100%;
+    white-space:normal;
+    line-height:1.25;
+    padding:11px 8px;
+    border-radius:9px;
+    font-size:.82rem;
+  }
+}
