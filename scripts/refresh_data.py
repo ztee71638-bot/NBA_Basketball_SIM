@@ -80,7 +80,7 @@ def is_nba_market(market: dict[str, Any]) -> bool:
     text = _market_text(market)
     if "nba" in text or "basketball" in text:
         return True
-    return any(re.search(r"\\b" + re.escape(team) + r"\\b", text) for team in NBA_TEAMS)
+    return any(re.search(r"\b" + re.escape(team) + r"\\b", text) for team in NBA_TEAMS)
 
 
 def fetch_polymarket_markets() -> list[dict[str, Any]]:
@@ -120,7 +120,7 @@ def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, An
         "source": source,
         key: rows,
     }
-    target.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
+    target.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def main() -> None:
