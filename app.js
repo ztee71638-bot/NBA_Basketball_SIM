@@ -218,12 +218,12 @@ async function loadArenas() {
   }
 }
 function prefillGameProjections(game) {
+  game.defaultProjection = null;
   if(!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000){
     $("projection-status").textContent="PASS — team history is missing or older than 48 hours. Refresh the data before using an automatic team projection.";
     return;
   }
   const projection=estimateMatchup(game);
-  game.defaultProjection = null;
   if(projection){
     const homeRecent=projection.home.rows.slice(-10), awayRecent=projection.away.rows.slice(-10);
     const avg=(rows,key)=>rows.length?rows.reduce((sum,row)=>sum+Number(row[key]||0),0)/rows.length:null;
