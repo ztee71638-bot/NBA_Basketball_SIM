@@ -151,6 +151,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
     # attached to an NBA game, including moneyline, spread, total and props.
     events_payload = get_json(GAMMA_EVENTS_URL, {
         "series_id": NBA_SERIES_ID,
+        "tag_id": "100639",
         "active": "true",
         "closed": "false",
         "limit": 500,
@@ -209,7 +210,8 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
                 ),
                 "source": "Polymarket Gamma NBA series",
             })
-    return results
+    results.sort(key=lambda item: float(item.get("volume_24h") or 0), reverse=True)
+    return results[:1200]
 
 
 def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, Any]]) -> None:
