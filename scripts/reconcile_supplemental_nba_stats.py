@@ -122,7 +122,7 @@ def reconcile_team_games(teams_payload: dict[str, Any],
             if len(game_rows) != 2 or {str(r.get("team") or "").upper() for r in game_rows} != set(game_key[2]):
                 season_report["unmatched_rows"] += len(game_rows)
                 continue
-            matched: list[tuple[dict[str, Any], dict[str, Any]]] = []
+            matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
             for source in game_rows:
                 team = str(source.get("team") or "").upper()
                 opponent = str(source.get("opponent") or "").upper()
@@ -144,13 +144,13 @@ def reconcile_team_games(teams_payload: dict[str, Any],
                     else:
                         season_report["unmatched_rows"] += 1
                     continue
-                matched.append((source, target))
+                matched.append((source, target, team))
             if len(matched) != 2:
                 season_report["unmatched_rows"] += len(game_rows) - len(matched)
                 continue
 
-            source_by_team = {str(source["team"]).upper(): source for source, _ in matched}
-            target_by_team = {str(target.get("team") or "").upper(): target for _, target in matched}
+            source_by_team = {team: source for source, _, team in matched}
+            target_by_team = {team: target for _, target, team in matched}
             teams = list(game_key[2])
             if set(source_by_team) != set(teams) or set(target_by_team) != set(teams):
                 season_report["unmatched_rows"] += 2
