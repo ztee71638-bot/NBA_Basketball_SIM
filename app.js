@@ -554,86 +554,54 @@ function marketPropMarkup(market) {
     '<div class="market-prop-meta"><span>'+escapeHtml((market.market_type||"market").replace("_"," "))+' · '+escapeHtml(volumeText)+'</span>'+
     (market.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(market.url)+'">Open ↗</a>':'')+'</div></article>';
 }
-function renderMarketNavigation() {
-  const label=$("market-day-label"),prev=$("market-day-prev"),next=$("market-day-next");
-  if(!label||!prev||!next)return;
-  if(!marketDays.length){label.textContent="No market dates";prev.disabled=true;next.disabled=true;return;}
-  const key=marketDays[activeMarketDay];
-  const date=key==="date-unavailable"?"Date unavailable":new Date(key+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
-  label.textContent=date+" · "+(activeMarketDay+1)+" of "+marketDays.length;
-  prev.disabled=activeMarketDay===0;next.disabled=activeMarketDay===marketDays.length-1;
-}
+let selectedMarketTeam = "";
+function renderMarketNavigation() {}
 function renderMarkets() {
   const root=$("markets");
   if(!root)return;
   const rows=marketData.filter(m=>m.active!==false&&m.closed!==true);
   if(!rows.length){root.innerHTML='<p class="muted">No active NBA markets were found in the latest public snapshot.</p>';return;}
-  marketDays=[...new Set(rows.map(marketDateKey))].sort();
-  activeMarketDay=Math.min(activeMarketDay,Math.max(0,marketDays.length-1));
-  const pages=marketDays.map(day=>{
-    const dayRows=rows.filter(m=>marketDateKey(m)===day);
-    const matchups=new Map();
-    dayRows.forEach(m=>{
-      const event=m.event_title||m.question||"Other NBA markets";
-      if(!matchups.has(event))matchups.set(event,[]);
-      matchups.get(event).push(m);
-    });
-    const dayDate=day==="date-unavailable"?"Date unavailable":new Date(day+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
-    const cards=[...matchups.entries()].map(([event,markets])=>{
-      const names=event.split(/\s+vs\.?\s+/i);
-      const teamA=names.length>1?marketTeamAbbreviation(names[0]):"";
-      const teamB=names.length>1?marketTeamAbbreviation(names[1]):"";
-      const playerProps=markets.filter(m=>m.market_type==="player_prop");
-      const gameLines=markets.filter(m=>m.market_type!=="player_prop");
-      const teamProps={};if(teamA)teamProps[teamA]=[];if(teamB)teamProps[teamB]=[];
-      const unassigned=[];
-      playerProps.forEach(m=>{
-        const team=marketPlayerTeam(m);
-        if(team){
-          // Keep the prop with the player's verified roster team, even if the
-          // market event label is stale or the player is listed on another team.
-          if(!teamProps[team])teamProps[team]=[];
-          teamProps[team].push(m);
-        }else unassigned.push(m);
-      });
-      const teamColumn=(abbr)=>{
-        const props=teamProps[abbr]||[];
-        const color=TEAM_COLORS[abbr]?.[0]||"#385170";
-        return '<details class="market-team-column"><summary class="market-team-heading" style="--team-primary:'+color+'">'+escapeHtml(teamDisplayName(abbr))+'<small>'+props.length+' player props</small></summary>'+
-          (props.length?'<div class="market-prop-list">'+props.map(marketPropMarkup).join("")+'</div>':'<p class="market-empty">No player props matched to this roster.</p>')+'</details>';
-      };
-      return '<details class="market-matchup"><summary class="market-matchup-heading"><strong>'+escapeHtml(event)+'</strong><span class="market-day-count">'+markets.length+' markets · '+playerProps.length+' player props</span></summary><div class="market-matchup-content">'+
-        (gameLines.length?'<details class="market-game-lines"><summary>Game markets · '+gameLines.length+' (moneyline, spreads & totals)</summary><div class="market-prop-list">'+gameLines.map(marketPropMarkup).join("")+'</div></details>':'')+
-        (Object.keys(teamProps).length?'<div class="market-team-grid">'+Object.keys(teamProps).map(teamColumn).join("")+'</div>':'')+
-        (unassigned.length?'<details class="market-unassigned"><summary>Needs roster match · '+unassigned.length+' props</summary><div class="market-prop-list">'+unassigned.map(marketPropMarkup).join("")+'</div></details>':'')+
-        '</div></details>';
-    }).join("");
-    return '<section class="market-day-page" data-market-day="'+escapeHtml(day)+'"><details class="market-day-section"><summary class="market-day-heading"><h3>'+escapeHtml(dayDate)+'</h3><span class="market-day-count">'+dayRows.length+' active markets</span></summary><div class="market-day-content">'+cards+'</div></details></section>';
+  const byTeam={};
+  const unmatched=[];
+  const ensureTeam=abbr=>{if(abbr&&!byTeam[abbr])byTeam[abbr]=[];};
+  rows.forEach(m=>{
+    if(m.market_type==="player_prop"){
+      const team=marketPlayerTeam(m);
+      if(team){ensureTeam(team);byTeam[team].push(m);}else unmatched.push(m);
+      return;
+    }
+    const event=m.event_title||m.question||"";
+    const names=event.split(/\s+vs\.?\s+/i);
+    const teams=names.length>1?[marketTeamAbbreviation(names[0]),marketTeamAbbreviation(names[1])].filter(Boolean):[];
+    if(teams.length)teams.forEach(team=>{ensureTeam(team);byTeam[team].push(m);});
+    else unmatched.push(m);
+  });
+  const teamOrder=Object.keys(TEAM_NAMES).filter(team=>byTeam[team]?.length).concat(Object.keys(byTeam).filter(team=>!TEAM_NAMES[team]));
+  if(unmatched.length)teamOrder.push("UNASSIGNED");
+  if(!selectedMarketTeam||!teamOrder.includes(selectedMarketTeam))selectedMarketTeam=teamOrder[0]||"UNASSIGNED";
+  const label=abbr=>abbr==="UNASSIGNED"?"Other":teamDisplayName(abbr);
+  const count=abbr=>abbr==="UNASSIGNED"?unmatched.length:(byTeam[abbr]||[]).length;
+  const tabs=teamOrder.map(abbr=>'<button type="button" class="market-team-tab'+(selectedMarketTeam===abbr?' active':'')+'" data-market-team="'+escapeHtml(abbr)+'" aria-pressed="'+(selectedMarketTeam===abbr?'true':'false')+'"><span>'+escapeHtml(label(abbr))+'</span><small>'+count(abbr)+' markets</small></button>').join("");
+  const selectedRows=selectedMarketTeam==="UNASSIGNED"?unmatched:(byTeam[selectedMarketTeam]||[]);
+  const grouped=new Map();
+  selectedRows.forEach(m=>{
+    const date=marketDateKey(m);
+    const event=m.event_title||m.question||"Other markets";
+    const key=date+"::"+event;
+    if(!grouped.has(key))grouped.set(key,{date,event,markets:[]});
+    grouped.get(key).markets.push(m);
+  });
+  const content=[...grouped.values()].sort((x,y)=>x.date.localeCompare(y.date)||x.event.localeCompare(y.event)).map(group=>{
+    const dateLabel=group.date==="date-unavailable"?"Date unavailable":new Date(group.date+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
+    return '<section class="market-team-event"><div class="market-team-event-head"><strong>'+escapeHtml(group.event)+'</strong><small>'+escapeHtml(dateLabel)+' · '+group.markets.length+' markets</small></div><div class="market-prop-list">'+group.markets.map(marketPropMarkup).join("")+'</div></section>';
   }).join("");
-  root.innerHTML=pages;
-  if(!root.dataset.scrollBound){
-    root.dataset.scrollBound="true";
-    root.addEventListener("scroll",()=>{
-      if(root._marketScrollFrame)return;
-      root._marketScrollFrame=requestAnimationFrame(()=>{
-        root._marketScrollFrame=0;
-        const bounds=root.getBoundingClientRect();
-        let nearest=0,best=Infinity;
-        [...root.children].forEach((page,index)=>{
-          const distance=Math.abs(page.getBoundingClientRect().left-bounds.left);
-          if(distance<best){best=distance;nearest=index;}
-        });
-        activeMarketDay=nearest;
-        renderMarketNavigation();
-      });
-    },{passive:true});
-  }
-  root.scrollTo({left:0,behavior:"instant"});
-  const page=root.children[activeMarketDay];
-  if(page)page.scrollIntoView({block:"nearest",inline:"start",behavior:"instant"});
-  renderMarketNavigation();
+  root.innerHTML='<nav class="market-team-tabs" aria-label="NBA teams">'+tabs+'</nav><div class="market-team-results"><div class="market-team-results-head"><h3>'+escapeHtml(label(selectedMarketTeam))+'</h3><span>'+selectedRows.length+' markets</span></div>'+(content||'<p class="muted">No markets are currently available for this team.</p>')+'</div>';
+  root.querySelectorAll('[data-market-team]').forEach(button=>button.addEventListener('click',()=>{
+    selectedMarketTeam=button.dataset.marketTeam;
+    renderMarkets();
+  }));
   const snapshot=$("market-snapshot-status");
-  if(snapshot)snapshot.textContent="Snapshot updated "+(marketUpdatedAt?marketUpdatedAt.toLocaleString():"at an unknown time")+". Showing "+rows.length+" active markets.";
+  if(snapshot)snapshot.textContent="Snapshot updated "+(marketUpdatedAt?marketUpdatedAt.toLocaleString():"at an unknown time")+". Choose a team to view its game and player markets.";
 }
 async function loadMarkets(){
   const root=$("markets");
