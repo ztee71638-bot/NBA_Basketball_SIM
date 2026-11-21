@@ -18,7 +18,7 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 - Rest days, back-to-back flags, recent schedule density, road-trip streaks and straight-line arena travel estimates are collected as experimental context.
 - Immutable daily snapshots preserve game-level model inputs (including pace, efficiency, rest and travel) for reproducible backtests.
 - A chronological walk-forward backtest (`python scripts/backtest_model.py`) that reports score MAE, winner accuracy, Brier score and calibration error against a simple last-10 baseline, using only games before each test game. Daily metrics are published to the simulator so experimental changes can be compared against the baseline.
-- Two-season player game logs retain minutes, shooting attempts, turnovers, offensive rebounds and plus/minus when available; player baselines blend recent per-minute production with minutes trends.
+- Five-season player game logs for the current ESPN roster retain minutes, shooting attempts, turnovers, offensive rebounds and plus/minus when available; player baselines blend recent per-minute production with minutes trends.
 - ESPN-confirmed starting lineups are checked near tipoff and displayed only when five starters per team are explicitly flagged; no guessed starters or unvalidated player-impact penalties are used.
 - Separate nightly player-history refresh and frequent game/market/lineup refresh workflows.
 - Automated tests for feed parsing, market filtering, player-log normalization, walk-forward evaluation, and archive integrity.
@@ -39,7 +39,7 @@ Open http://localhost:8000.
 - `Refresh NBA team history`: nightly; five seasons by default (`2023`–`2027`) using completed ESPN scoreboard results. Set `NBA_TEAM_HISTORY_SEASONS` to override the comma-separated season-ending years. Boxscore enrichment runs for the two newest seasons only.
 - The team-history workflow runs the chronological walk-forward backtest and data-quality audit after each refresh; model metrics and quality warnings are committed alongside the team archive.
 - `Refresh NBA data`: every 15 minutes; schedule, read-only market snapshot and ESPN injury report.
-- `Refresh NBA player history`: nightly; team rosters plus player game logs for seasons 2027 and 2026.
+- `Refresh NBA player history`: nightly; current team rosters plus player game logs for seasons 2027 through 2023. Historical players no longer on the current roster are not guaranteed to be included.
 - `Refresh NBA team history`: nightly; current-season game histories and recent-form summaries for all 30 teams, using ESPN daily scoreboard results.
 - Player history requests are rate-limited and retried. If fewer than 100 player records are retrieved, the job refuses to overwrite the existing archive.
 - No API secrets, Polymarket trading permissions, wallet access or paid subscription are required for the current public feeds.

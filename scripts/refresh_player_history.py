@@ -19,7 +19,7 @@ ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams
 GAMELOG_URL = "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{athlete_id}/gamelog"
 TIMEOUT = 25
 DELAY = float(os.getenv("NBA_HISTORY_REQUEST_DELAY", "0.8"))
-SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027,2026").split(",") if x.strip()]
+SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027,2026,2025,2024,2023").split(",") if x.strip()]
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
     "DEN": 7, "DET": 8, "GSW": 9, "HOU": 10, "IND": 11, "LAC": 12,

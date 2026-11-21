@@ -64,7 +64,7 @@ def test_number_handles_missing_and_invalid_values():
 
 
 def test_player_archive_collects_current_and_previous_seasons_by_default():
-    assert module.SEASONS == [2027, 2026]
+    assert module.SEASONS == [2027, 2026, 2025, 2024, 2023]
 
 
 def test_team_id_map_has_30_teams():
