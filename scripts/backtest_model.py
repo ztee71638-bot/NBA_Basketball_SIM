@@ -67,7 +67,7 @@ def browser_team_profile_rows(prior_rows: list[dict[str, Any]]) -> list[dict[str
     return sorted(previous + current, key=lambda row: parse_date(row["date"]))
 
 
-def browser_baseline_probability(home_rows, away_rows, league_rows):
+def browser_baseline_probability(home_rows, away_rows, league_rows, league_profile=None):
     """Estimate the default UI's last-10 baseline win probability before calibration."""
     if not home_rows or not away_rows:
         return None
@@ -76,7 +76,7 @@ def browser_baseline_probability(home_rows, away_rows, league_rows):
     home_mean = (avg(home_recent, "points_for") + avg(away_recent, "points_against")) / 2 + 1.5
     away_mean = (avg(away_recent, "points_for") + avg(home_recent, "points_against")) / 2 - 1.5
 
-    league = weighted_profile_metric(sorted(league_rows, key=lambda row: parse_date(row["date"])), "points_for")
+    league = league_profile or weighted_profile_metric(sorted(league_rows, key=lambda row: parse_date(row["date"])), "points_for")
     if not league:
         return None
     league_sd = league[1]
@@ -372,6 +372,10 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "model_correct": [], "baseline_correct": [], "model_briers": [],
         "baseline_briers": [],
     })
+    # Matchups are chronological and games on the same date share identical
+    # pregame league context. Build that expensive context once per date.
+    cached_cutoff = None
+    cached_context = None
     for matchup in ordered:
         if len(matchup) != 2:
             continue
@@ -387,12 +391,39 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         h_rows, a_rows = prior.get(home["team"], []), prior.get(away["team"], [])
         if len(h_rows) < min_prior_games or len(a_rows) < min_prior_games:
             continue
-        league_rows = [row for row in all_rows if parse_date(row["date"]) < cutoff]
-        league_values = [row["points_for"] for row in league_rows]
-        if len(league_values) < 60:
+        cutoff_key = cutoff.isoformat()
+        if cutoff_key != cached_cutoff:
+            league_rows = [row for row in all_rows if parse_date(row["date"]) < cutoff]
+            league_values = [row["points_for"] for row in league_rows]
+            if len(league_values) < 60:
+                cached_cutoff, cached_context = cutoff_key, None
+                continue
+            league_avg = mean(league_values)
+            league_sd = math.sqrt(mean((value - league_avg) ** 2 for value in league_values))
+            sorted_league_rows = sorted(league_rows, key=lambda row: parse_date(row["date"]))
+            league_profile = weighted_profile_metric(sorted_league_rows, "points_for")
+            advanced_rows = [row for row in league_rows if all(
+                row.get(key) is not None
+                for key in ("pace_estimate", "offensive_rating", "defensive_rating")
+            )]
+            cached_context = {
+                "league_rows": league_rows,
+                "league_avg": league_avg,
+                "league_sd": league_sd,
+                "league_profile": league_profile,
+                "advanced_rows": advanced_rows,
+                "league_pace": mean(row["pace_estimate"] for row in advanced_rows) if advanced_rows else None,
+                "league_off": mean(row["offensive_rating"] for row in advanced_rows) if advanced_rows else None,
+                "league_def": mean(row["defensive_rating"] for row in advanced_rows) if advanced_rows else None,
+            }
+            cached_cutoff = cutoff_key
+        if cached_context is None:
             continue
-        league_avg = mean(league_values)
-        league_sd = math.sqrt(mean((value - league_avg) ** 2 for value in league_values))
+        league_rows = cached_context["league_rows"]
+        league_avg = cached_context["league_avg"]
+        league_sd = cached_context["league_sd"]
+        league_profile = cached_context["league_profile"]
+        advanced_rows = cached_context["advanced_rows"]
         prediction = predict(h_rows, a_rows, league_avg, league_sd)
         if not prediction:
             continue
@@ -422,7 +453,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
                                      (base_away_sd[1] if base_away_sd else 12.0)**2)
         # This is the default UI model: last-10 means plus the same
         # recency-weighted team variance and shared scoring shock as the simulator.
-        base_probability = browser_baseline_probability(h_rows, a_rows, league_rows)
+        base_probability = browser_baseline_probability(h_rows, a_rows, league_rows, league_profile)
         if base_probability is None:
             base_probability = 0.5 * (1 + math.erf((base_h-base_a)/(math.sqrt(2)*max(8.0,base_combined_sd))))
         baseline_probabilities.append(base_probability)
@@ -496,14 +527,10 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         # game and all required pregame history contain verified boxscore data.
         if all(home.get(key) is not None and away.get(key) is not None
                for key in ("pace_estimate", "offensive_rating", "defensive_rating")):
-            advanced_rows = [row for row in league_rows if all(
-                row.get(key) is not None
-                for key in ("pace_estimate", "offensive_rating", "defensive_rating")
-            )]
             if len(advanced_rows) >= 60:
-                league_pace = mean(row["pace_estimate"] for row in advanced_rows)
-                league_off = mean(row["offensive_rating"] for row in advanced_rows)
-                league_def = mean(row["defensive_rating"] for row in advanced_rows)
+                league_pace = cached_context["league_pace"]
+                league_off = cached_context["league_off"]
+                league_def = cached_context["league_def"]
                 advanced_prediction = predict_advanced(
                     [r for r in h_rows if all(r.get(k) is not None for k in ("pace_estimate", "offensive_rating", "defensive_rating"))],
                     [r for r in a_rows if all(r.get(k) is not None for k in ("pace_estimate", "offensive_rating", "defensive_rating"))],
