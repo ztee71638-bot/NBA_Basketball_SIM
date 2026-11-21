@@ -100,6 +100,9 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
     assert result["advanced_log_loss"] is not None
     assert result["advanced_baseline_log_loss"] is not None
     assert result["advanced_by_season"]["2027"]["games"] == 1
+    assert result["calibration"]["validation_method"] == "prequential_walk_forward"
+    assert result["calibration"]["validation_games"] == 1
+    assert result["calibrated_log_loss"] is not None
     assert sum(bucket["games"] for bucket in result["production_baseline_confidence_buckets"]) == 1
     ledger_result = module.run_backtest(payload, include_predictions=True)
     assert len(ledger_result["predictions"]) == 1
