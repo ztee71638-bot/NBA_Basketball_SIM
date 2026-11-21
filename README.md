@@ -13,7 +13,7 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 - Player-prop probability calculator with manual assumptions or recent-game baselines; matched Polymarket player props can prefill the stat and line for simulation.
 - Searchable player roster and historical game-log interface.
 - Current-season team game history and recent form (points for/against, wins, last-10 averages) built from ESPN daily scoreboards to seed game projections.
-- A chronological walk-forward backtest (`python scripts/backtest_model.py`) that reports score MAE, winner accuracy and Brier score against a simple last-10 baseline, using only games before each test game.
+- A chronological walk-forward backtest (`python scripts/backtest_model.py`) that reports score MAE, winner accuracy and Brier score against a simple last-10 baseline, using only games before each test game. Daily metrics are published to the simulator so experimental changes can be compared against the baseline.
 - Separate nightly player-history refresh and frequent game/market refresh workflows.
 - Automated tests for feed parsing, market filtering, and player-log normalization.
 
