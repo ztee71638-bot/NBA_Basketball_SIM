@@ -134,11 +134,11 @@ function teamSeasonGames(abbreviation) {
   const team = teamData.find(item => canonicalTeam(item.abbreviation) === canonicalTeam(abbreviation));
   if (!team) return {rows:[],year:null};
   const seasons = Object.entries(team.seasons || {}).sort((a,b) => Number(a[0])-Number(b[0]));
-  const populated = seasons.filter(([,value]) => (value.games || []).length >= 5);
+  const populated = seasons.filter(([,value]) => (value.games || []).length > 0);
   if (!populated.length) return {rows:[],year:null};
   const latest = populated[populated.length-1];
   // Keep a short tail from the prior season as an early-season prior, while
-  // letting current-season games dominate as the season progresses.
+  // retaining even the first few games of the active season.
   const previous = populated.length>1 ? populated[populated.length-2][1].games.slice(-10) : [];
   const current = latest[1].games || [];
   const rows = [...previous,...current]
