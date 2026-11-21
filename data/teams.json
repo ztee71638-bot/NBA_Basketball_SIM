@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T16:21:46.483350+00:00",
+  "last_updated": "2026-11-21T16:47:26.039803+00:00",
   "source": "ESPN public team schedules",
   "seasons": [
     2027,
@@ -5606,7 +5606,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 754.7,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 110.48,
+              "pace_estimate": 111.3,
+              "offensive_rating": 116.76,
+              "defensive_rating": 124.87,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810318",
@@ -5624,7 +5629,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 754.7,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 105.04,
+              "pace_estimate": 102.48,
+              "offensive_rating": 119.95,
+              "defensive_rating": 102.08,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810334",
@@ -5660,7 +5670,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 340.4,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 108.36,
+              "pace_estimate": 107.9,
+              "offensive_rating": 107.97,
+              "defensive_rating": 124.72,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810359",
@@ -5678,7 +5693,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 105.24,
+              "pace_estimate": 105.8,
+              "offensive_rating": 95.02,
+              "defensive_rating": 110.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810374",
@@ -5714,7 +5734,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1210.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 97.76,
+              "pace_estimate": 96.78,
+              "offensive_rating": 112.52,
+              "defensive_rating": 90.81,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810411",
@@ -5750,7 +5775,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 345.5,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 101.92,
+              "pace_estimate": 102.06,
+              "offensive_rating": 113.81,
+              "defensive_rating": 137.96,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810440",
@@ -5768,7 +5798,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 827.1,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 103.68,
+              "pace_estimate": 104.12,
+              "offensive_rating": 97.42,
+              "defensive_rating": 111.9,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810449",
@@ -5786,7 +5821,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 2167.7,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 108.48,
+              "pace_estimate": 107.58,
+              "offensive_rating": 97.71,
+              "defensive_rating": 123.73,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401809247",
@@ -5804,7 +5844,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.56,
+              "pace_estimate": 100.78,
+              "offensive_rating": 107.25,
+              "defensive_rating": 113.13,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810478",
@@ -5822,7 +5867,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 335.9,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 108.56,
+              "pace_estimate": 109.22,
+              "offensive_rating": 114.22,
+              "defensive_rating": 111.03,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810491",
@@ -5840,7 +5890,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 335.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.04,
+              "pace_estimate": 100.5,
+              "offensive_rating": 109.96,
+              "defensive_rating": 102.02,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810514",
@@ -5858,7 +5913,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 110.48,
+              "pace_estimate": 112.24,
+              "offensive_rating": 119.48,
+              "defensive_rating": 101.75,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810528",
@@ -5876,7 +5936,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 936.1,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 97.72,
+              "pace_estimate": 97.38,
+              "offensive_rating": 119.73,
+              "defensive_rating": 109.23,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810537",
@@ -13478,7 +13543,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1880.7,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 106.36,
+              "pace_estimate": 104.3,
+              "offensive_rating": 101.54,
+              "defensive_rating": 111.5,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810314",
@@ -13514,7 +13584,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 532.0,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 102.92,
+              "pace_estimate": 97.76,
+              "offensive_rating": 116.6,
+              "defensive_rating": 114.47,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810348",
@@ -13532,7 +13607,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 365.4,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 94.36,
+              "pace_estimate": 93.92,
+              "offensive_rating": 154.73,
+              "defensive_rating": 123.02,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810358",
@@ -13550,7 +13630,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 2599.1,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.72,
+              "pace_estimate": 97.56,
+              "offensive_rating": 117.68,
+              "defensive_rating": 103.7,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810375",
@@ -13568,7 +13653,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 94.6,
+              "pace_estimate": 94.58,
+              "offensive_rating": 116.28,
+              "defensive_rating": 120.56,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810387",
@@ -13586,7 +13676,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.36,
+              "pace_estimate": 95.38,
+              "offensive_rating": 129.72,
+              "defensive_rating": 123.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810400",
@@ -13622,7 +13717,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 805.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 93.96,
+              "pace_estimate": 93.8,
+              "offensive_rating": 102.17,
+              "defensive_rating": 104.66,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810435",
@@ -13640,7 +13740,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1025.8,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 97.0,
+              "pace_estimate": 96.94,
+              "offensive_rating": 122.68,
+              "defensive_rating": 117.67,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810449",
@@ -13658,7 +13763,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 606.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 106.68,
+              "pace_estimate": 107.58,
+              "offensive_rating": 123.73,
+              "defensive_rating": 97.71,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401809250",
@@ -13676,7 +13786,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 597.5,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 96.2,
+              "pace_estimate": 96.66,
+              "offensive_rating": 107.07,
+              "defensive_rating": 107.08,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810476",
@@ -13694,7 +13809,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 611.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.0,
+              "pace_estimate": 103.06,
+              "offensive_rating": 117.82,
+              "defensive_rating": 98.93,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810492",
@@ -13712,7 +13832,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 190.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 116.04,
+              "pace_estimate": 114.0,
+              "offensive_rating": 112.03,
+              "defensive_rating": 112.54,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810502",
@@ -13730,7 +13855,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 715.3,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 100.96,
+              "pace_estimate": 98.24,
+              "offensive_rating": 109.94,
+              "defensive_rating": 119.35,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810515",
@@ -13748,7 +13878,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 850.6,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.92,
+              "pace_estimate": 101.56,
+              "offensive_rating": 97.22,
+              "defensive_rating": 95.72,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810528",
@@ -13766,7 +13901,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.04,
+              "pace_estimate": 97.38,
+              "offensive_rating": 109.23,
+              "defensive_rating": 119.73,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810544",
@@ -27435,7 +27575,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.04,
+              "pace_estimate": 98.3,
+              "offensive_rating": 104.0,
+              "defensive_rating": 114.8,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810307",
@@ -27453,7 +27598,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.16,
+              "pace_estimate": 105.08,
+              "offensive_rating": 95.14,
+              "defensive_rating": 130.77,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810321",
@@ -27489,7 +27639,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.36,
+              "pace_estimate": 101.8,
+              "offensive_rating": 118.21,
+              "defensive_rating": 112.6,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810344",
@@ -27507,7 +27662,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 98.16,
+              "pace_estimate": 99.14,
+              "offensive_rating": 100.86,
+              "defensive_rating": 111.87,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810358",
@@ -27525,7 +27685,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 850.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 97.4,
+              "pace_estimate": 97.56,
+              "offensive_rating": 103.7,
+              "defensive_rating": 117.68,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810372",
@@ -27543,7 +27708,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 611.9,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 92.96,
+              "pace_estimate": 94.74,
+              "offensive_rating": 100.04,
+              "defensive_rating": 111.89,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810384",
@@ -27579,7 +27749,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 107.28,
+              "pace_estimate": 107.14,
+              "offensive_rating": 116.52,
+              "defensive_rating": 100.0,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810420",
@@ -27597,7 +27772,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 941.3,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 97.12,
+              "pace_estimate": 97.44,
+              "offensive_rating": 116.35,
+              "defensive_rating": 121.73,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810428",
@@ -27633,7 +27813,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 715.3,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 98.8,
+              "pace_estimate": 100.14,
+              "offensive_rating": 110.32,
+              "defensive_rating": 110.37,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810458",
@@ -27651,7 +27836,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 715.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.96,
+              "pace_estimate": 95.28,
+              "offensive_rating": 127.89,
+              "defensive_rating": 108.97,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810469",
@@ -27669,7 +27859,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 88.28,
+              "pace_estimate": 88.38,
+              "offensive_rating": 156.32,
+              "defensive_rating": 124.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810486",
@@ -27687,7 +27882,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 353.2,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 107.52,
+              "pace_estimate": 106.06,
+              "offensive_rating": 111.61,
+              "defensive_rating": 109.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810502",
@@ -27705,7 +27905,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 353.2,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 95.52,
+              "pace_estimate": 98.24,
+              "offensive_rating": 119.35,
+              "defensive_rating": 109.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810516",
@@ -27723,7 +27928,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.92,
+              "pace_estimate": 99.84,
+              "offensive_rating": 118.09,
+              "defensive_rating": 129.31,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810527",
@@ -27741,7 +27951,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 166.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 97.92,
+              "pace_estimate": 96.96,
+              "offensive_rating": 112.34,
+              "defensive_rating": 117.71,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401850920",
@@ -34816,7 +35031,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 1419.3,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 100.84,
+              "pace_estimate": 98.54,
+              "offensive_rating": 99.17,
+              "defensive_rating": 121.57,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810311",
@@ -34852,7 +35072,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 1254.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.68,
+              "pace_estimate": 106.86,
+              "offensive_rating": 120.92,
+              "defensive_rating": 105.57,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810333",
@@ -34870,7 +35095,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.36,
+              "pace_estimate": 100.54,
+              "offensive_rating": 116.06,
+              "defensive_rating": 104.13,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810349",
@@ -34888,7 +35118,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.2,
+              "pace_estimate": 103.22,
+              "offensive_rating": 110.89,
+              "defensive_rating": 106.3,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810365",
@@ -34906,7 +35141,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 263.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 104.92,
+              "pace_estimate": 106.64,
+              "offensive_rating": 114.37,
+              "defensive_rating": 107.05,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810385",
@@ -34924,7 +35164,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 511.4,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 104.24,
+              "pace_estimate": 103.86,
+              "offensive_rating": 117.04,
+              "defensive_rating": 126.59,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810397",
@@ -34942,7 +35187,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 630.2,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 105.0,
+              "pace_estimate": 103.9,
+              "offensive_rating": 139.05,
+              "defensive_rating": 130.35,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810413",
@@ -34978,7 +35228,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 358.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 106.92,
+              "pace_estimate": 104.18,
+              "offensive_rating": 124.39,
+              "defensive_rating": 105.48,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810444",
@@ -34996,7 +35251,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 100.48,
+              "pace_estimate": 98.92,
+              "offensive_rating": 116.44,
+              "defensive_rating": 118.12,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401809248",
@@ -35014,7 +35274,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 358.6,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 108.4,
+              "pace_estimate": 107.1,
+              "offensive_rating": 95.94,
+              "defensive_rating": 128.54,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810475",
@@ -35032,7 +35297,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 435.7,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.56,
+              "pace_estimate": 101.74,
+              "offensive_rating": 92.56,
+              "defensive_rating": 85.36,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810493",
@@ -35050,7 +35320,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 435.7,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 98.88,
+              "pace_estimate": 99.28,
+              "offensive_rating": 124.39,
+              "defensive_rating": 118.38,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810501",
@@ -35068,7 +35343,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 895.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 99.68,
+              "pace_estimate": 100.38,
+              "offensive_rating": 119.38,
+              "defensive_rating": 103.88,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810513",
@@ -35086,7 +35366,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 895.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.88,
+              "pace_estimate": 99.74,
+              "offensive_rating": 114.14,
+              "defensive_rating": 98.39,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810526",
@@ -35104,7 +35389,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 98.72,
+              "pace_estimate": 97.82,
+              "offensive_rating": 130.67,
+              "defensive_rating": 102.15,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810548",
@@ -42491,7 +42781,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 74.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 105.8,
+              "pace_estimate": 105.16,
+              "offensive_rating": 101.13,
+              "defensive_rating": 108.11,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810312",
@@ -42509,7 +42804,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 484.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 105.56,
+              "pace_estimate": 105.62,
+              "offensive_rating": 115.57,
+              "defensive_rating": 118.28,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810328",
@@ -42527,7 +42827,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 1630.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 108.8,
+              "pace_estimate": 105.92,
+              "offensive_rating": 99.26,
+              "defensive_rating": 119.37,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810346",
@@ -42545,7 +42850,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.92,
+              "pace_estimate": 103.26,
+              "offensive_rating": 107.93,
+              "defensive_rating": 99.43,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810370",
@@ -42563,7 +42873,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1437.2,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 107.24,
+              "pace_estimate": 105.86,
+              "offensive_rating": 93.25,
+              "defensive_rating": 93.8,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810386",
@@ -42599,7 +42914,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1255.3,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 107.0,
+              "pace_estimate": 107.14,
+              "offensive_rating": 100.0,
+              "defensive_rating": 116.52,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810416",
@@ -42617,7 +42937,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 803.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.04,
+              "pace_estimate": 97.92,
+              "offensive_rating": 116.45,
+              "defensive_rating": 106.28,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810430",
@@ -42635,7 +42960,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.52,
+              "pace_estimate": 98.6,
+              "offensive_rating": 108.44,
+              "defensive_rating": 122.05,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810438",
@@ -42725,7 +43055,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.76,
+              "pace_estimate": 104.76,
+              "offensive_rating": 103.03,
+              "defensive_rating": 112.88,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810507",
@@ -42761,7 +43096,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 857.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.16,
+              "pace_estimate": 106.52,
+              "offensive_rating": 98.91,
+              "defensive_rating": 110.4,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810538",
@@ -50214,7 +50554,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 1550.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 100.2,
+              "pace_estimate": 101.24,
+              "offensive_rating": 125.75,
+              "defensive_rating": 124.17,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810305",
@@ -50232,7 +50577,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 204.2,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 102.68,
+              "pace_estimate": 103.4,
+              "offensive_rating": 119.79,
+              "defensive_rating": 141.18,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810323",
@@ -50250,7 +50600,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1235.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 96.96,
+              "pace_estimate": 98.6,
+              "offensive_rating": 109.32,
+              "defensive_rating": 102.75,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810333",
@@ -50268,7 +50623,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 189.2,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 103.72,
+              "pace_estimate": 100.54,
+              "offensive_rating": 104.13,
+              "defensive_rating": 116.06,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810351",
@@ -50286,7 +50646,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 405.4,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 99.32,
+              "pace_estimate": 97.3,
+              "offensive_rating": 115.79,
+              "defensive_rating": 133.29,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810362",
@@ -50304,7 +50669,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 83.0,
-              "road_trip_games": 6
+              "road_trip_games": 6,
+              "possessions_estimate": 105.32,
+              "pace_estimate": 105.84,
+              "offensive_rating": 118.69,
+              "defensive_rating": 116.59,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810375",
@@ -50322,7 +50692,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 273.3,
-              "road_trip_games": 7
+              "road_trip_games": 7,
+              "possessions_estimate": 94.56,
+              "pace_estimate": 94.58,
+              "offensive_rating": 120.56,
+              "defensive_rating": 116.28,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810392",
@@ -50340,7 +50715,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1766.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 95.8,
+              "pace_estimate": 96.78,
+              "offensive_rating": 90.81,
+              "defensive_rating": 112.52,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810409",
@@ -50358,7 +50738,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.64,
+              "pace_estimate": 97.22,
+              "offensive_rating": 108.39,
+              "defensive_rating": 109.7,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810422",
@@ -50394,7 +50779,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 442.7,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 96.68,
+              "pace_estimate": 98.6,
+              "offensive_rating": 122.05,
+              "defensive_rating": 108.44,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810455",
@@ -50430,7 +50820,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 86.92,
+              "pace_estimate": 89.32,
+              "offensive_rating": 100.09,
+              "defensive_rating": 119.93,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810472",
@@ -50448,7 +50843,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 95.36,
+              "pace_estimate": 97.72,
+              "offensive_rating": 112.21,
+              "defensive_rating": 114.91,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810484",
@@ -50484,7 +50884,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 635.9,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 99.12,
+              "pace_estimate": 98.0,
+              "offensive_rating": 102.91,
+              "defensive_rating": 103.22,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810506",
@@ -50520,7 +50925,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 878.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.12,
+              "pace_estimate": 96.02,
+              "offensive_rating": 111.32,
+              "defensive_rating": 113.64,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810539",
@@ -57338,7 +57748,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 589.1,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 92.32,
+              "pace_estimate": 92.04,
+              "offensive_rating": 107.24,
+              "defensive_rating": 122.06,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810315",
@@ -57356,7 +57771,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 8.1,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 102.76,
+              "pace_estimate": 104.2,
+              "offensive_rating": 124.56,
+              "defensive_rating": 100.34,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810327",
@@ -57374,7 +57794,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1980.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 108.64,
+              "pace_estimate": 110.72,
+              "offensive_rating": 103.09,
+              "defensive_rating": 104.61,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810349",
@@ -57392,7 +57817,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 91.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 107.24,
+              "pace_estimate": 103.22,
+              "offensive_rating": 106.3,
+              "defensive_rating": 110.89,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810357",
@@ -57428,7 +57858,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.52,
+              "pace_estimate": 94.74,
+              "offensive_rating": 111.89,
+              "defensive_rating": 100.04,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810399",
@@ -57446,7 +57881,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 103.0,
+              "pace_estimate": 102.42,
+              "offensive_rating": 89.32,
+              "defensive_rating": 96.23,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810434",
@@ -57464,7 +57904,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 1,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.28,
+              "pace_estimate": 101.64,
+              "offensive_rating": 107.7,
+              "defensive_rating": 101.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810450",
@@ -57482,7 +57927,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 113.36,
+              "pace_estimate": 111.62,
+              "offensive_rating": 106.74,
+              "defensive_rating": 70.99,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401809250",
@@ -57500,7 +57950,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.12,
+              "pace_estimate": 96.66,
+              "offensive_rating": 107.08,
+              "defensive_rating": 107.07,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810479",
@@ -57536,7 +57991,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 940.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.56,
+              "pace_estimate": 99.88,
+              "offensive_rating": 101.4,
+              "defensive_rating": 114.2,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810505",
@@ -57554,7 +58014,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.32,
+              "pace_estimate": 104.82,
+              "offensive_rating": 130.74,
+              "defensive_rating": 112.27,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810523",
@@ -57572,7 +58037,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1154.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 95.92,
+              "pace_estimate": 96.02,
+              "offensive_rating": 113.64,
+              "defensive_rating": 111.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810540",
@@ -71902,7 +72372,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1372.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.24,
+              "pace_estimate": 98.54,
+              "offensive_rating": 121.57,
+              "defensive_rating": 99.17,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810308",
@@ -71920,7 +72395,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 98.56,
+              "pace_estimate": 98.68,
+              "offensive_rating": 127.84,
+              "defensive_rating": 120.45,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810326",
@@ -71938,7 +72418,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1418.2,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 90.92,
+              "pace_estimate": 91.56,
+              "offensive_rating": 131.98,
+              "defensive_rating": 104.12,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810346",
@@ -71956,7 +72441,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1371.7,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 104.6,
+              "pace_estimate": 103.26,
+              "offensive_rating": 99.43,
+              "defensive_rating": 107.93,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810360",
@@ -71974,7 +72464,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 226.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.24,
+              "pace_estimate": 96.26,
+              "offensive_rating": 102.84,
+              "defensive_rating": 101.81,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810382",
@@ -71992,7 +72487,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1834.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.76,
+              "pace_estimate": 101.88,
+              "offensive_rating": 100.24,
+              "defensive_rating": 100.98,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810395",
@@ -72010,7 +72510,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 97.56,
+              "pace_estimate": 97.84,
+              "offensive_rating": 107.63,
+              "defensive_rating": 113.13,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810412",
@@ -72028,7 +72533,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 484.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 90.76,
+              "pace_estimate": 91.28,
+              "offensive_rating": 107.98,
+              "defensive_rating": 120.92,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810420",
@@ -72046,7 +72556,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1606.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.76,
+              "pace_estimate": 97.44,
+              "offensive_rating": 121.73,
+              "defensive_rating": 116.35,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810436",
@@ -72064,7 +72579,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.48,
+              "pace_estimate": 102.54,
+              "offensive_rating": 87.1,
+              "defensive_rating": 110.34,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810446",
@@ -72082,7 +72602,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.96,
+              "pace_estimate": 101.18,
+              "offensive_rating": 106.84,
+              "defensive_rating": 105.63,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810459",
@@ -72136,7 +72661,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1338.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 111.56,
+              "pace_estimate": 108.12,
+              "offensive_rating": 109.36,
+              "defensive_rating": 122.28,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810490",
@@ -72154,7 +72684,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 443.4,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 97.2,
+              "pace_estimate": 99.88,
+              "offensive_rating": 114.2,
+              "defensive_rating": 101.4,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810517",
@@ -72172,7 +72707,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1106.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.8,
+              "pace_estimate": 102.64,
+              "offensive_rating": 107.14,
+              "defensive_rating": 94.75,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810534",
@@ -79686,7 +80226,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 1025.8,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 111.04,
+              "pace_estimate": 110.64,
+              "offensive_rating": 104.47,
+              "defensive_rating": 128.81,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810308",
@@ -79704,7 +80249,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 966.5,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 98.8,
+              "pace_estimate": 98.68,
+              "offensive_rating": 120.45,
+              "defensive_rating": 127.84,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810319",
@@ -79722,7 +80272,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 865.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 108.08,
+              "pace_estimate": 110.7,
+              "offensive_rating": 101.78,
+              "defensive_rating": 98.84,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810331",
@@ -79758,7 +80313,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 821.8,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 100.24,
+              "pace_estimate": 101.1,
+              "offensive_rating": 126.7,
+              "defensive_rating": 132.4,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810365",
@@ -79776,7 +80336,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 821.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 108.36,
+              "pace_estimate": 106.64,
+              "offensive_rating": 107.05,
+              "defensive_rating": 114.37,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810383",
@@ -79794,7 +80359,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 427.9,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.24,
+              "pace_estimate": 103.4,
+              "offensive_rating": 112.6,
+              "defensive_rating": 106.1,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810398",
@@ -79812,7 +80382,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 427.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 113.68,
+              "pace_estimate": 113.22,
+              "offensive_rating": 108.2,
+              "defensive_rating": 87.8,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810414",
@@ -79830,7 +80405,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 93.64,
+              "pace_estimate": 93.8,
+              "offensive_rating": 104.66,
+              "defensive_rating": 102.17,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810426",
@@ -79848,7 +80428,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.64,
+              "pace_estimate": 99.04,
+              "offensive_rating": 104.51,
+              "defensive_rating": 113.37,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810443",
@@ -79884,7 +80469,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 240.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 109.88,
+              "pace_estimate": 111.62,
+              "offensive_rating": 70.99,
+              "defensive_rating": 106.74,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810464",
@@ -79902,7 +80492,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 443.4,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 102.16,
+              "pace_estimate": 100.0,
+              "offensive_rating": 101.8,
+              "defensive_rating": 115.49,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810476",
@@ -79920,7 +80515,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 273.3,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 105.12,
+              "pace_estimate": 103.06,
+              "offensive_rating": 98.93,
+              "defensive_rating": 117.82,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810496",
@@ -79938,7 +80538,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1492.8,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 101.8,
+              "pace_estimate": 101.0,
+              "offensive_rating": 114.93,
+              "defensive_rating": 113.77,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810514",
@@ -79956,7 +80561,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 754.7,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 114.0,
+              "pace_estimate": 112.24,
+              "offensive_rating": 101.75,
+              "defensive_rating": 119.48,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810527",
@@ -79974,7 +80584,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 426.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.0,
+              "pace_estimate": 96.96,
+              "offensive_rating": 117.71,
+              "defensive_rating": 112.34,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810553",
@@ -86851,7 +87466,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 832.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 91.64,
+              "pace_estimate": 91.66,
+              "offensive_rating": 129.86,
+              "defensive_rating": 112.35,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810300",
@@ -86869,7 +87489,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 832.6,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 91.76,
+              "pace_estimate": 92.04,
+              "offensive_rating": 122.06,
+              "defensive_rating": 107.24,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810316",
@@ -86887,7 +87512,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.08,
+              "pace_estimate": 97.12,
+              "offensive_rating": 134.94,
+              "defensive_rating": 92.63,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810330",
@@ -86923,7 +87553,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 93.48,
+              "pace_estimate": 93.92,
+              "offensive_rating": 123.02,
+              "defensive_rating": 154.73,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810363",
@@ -86977,7 +87612,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 4.8,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 94.36,
+              "pace_estimate": 96.1,
+              "offensive_rating": 128.23,
+              "defensive_rating": 107.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810399",
@@ -86995,7 +87635,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 483.3,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 101.84,
+              "pace_estimate": 102.42,
+              "offensive_rating": 96.23,
+              "defensive_rating": 89.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810418",
@@ -87013,7 +87658,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 1987.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.24,
+              "pace_estimate": 96.36,
+              "offensive_rating": 120.32,
+              "defensive_rating": 114.16,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810432",
@@ -87049,7 +87699,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 2180.1,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 102.2,
+              "pace_estimate": 103.32,
+              "offensive_rating": 118.4,
+              "defensive_rating": 112.03,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810463",
@@ -87085,7 +87740,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 596.8,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 88.48,
+              "pace_estimate": 88.38,
+              "offensive_rating": 124.32,
+              "defensive_rating": 156.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810488",
@@ -87103,7 +87763,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1748.5,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.24,
+              "pace_estimate": 100.08,
+              "offensive_rating": 111.73,
+              "defensive_rating": 104.08,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810511",
@@ -87121,7 +87786,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.76,
+              "pace_estimate": 103.38,
+              "offensive_rating": 122.62,
+              "defensive_rating": 85.58,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810525",
@@ -94351,7 +95021,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.92,
+              "pace_estimate": 102.64,
+              "offensive_rating": 119.14,
+              "defensive_rating": 100.64,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810315",
@@ -94369,7 +95044,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 105.64,
+              "pace_estimate": 104.2,
+              "offensive_rating": 100.34,
+              "defensive_rating": 124.56,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810340",
@@ -94387,7 +95067,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.64,
+              "pace_estimate": 108.88,
+              "offensive_rating": 122.32,
+              "defensive_rating": 106.97,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810356",
@@ -94405,7 +95090,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.04,
+              "pace_estimate": 101.86,
+              "offensive_rating": 118.76,
+              "defensive_rating": 111.02,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810369",
@@ -94459,7 +95149,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 1205.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 95.16,
+              "pace_estimate": 94.42,
+              "offensive_rating": 106.14,
+              "defensive_rating": 112.08,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810417",
@@ -94477,7 +95172,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 361.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 94.32,
+              "pace_estimate": 95.74,
+              "offensive_rating": 118.74,
+              "defensive_rating": 127.62,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810424",
@@ -94495,7 +95195,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 361.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.2,
+              "pace_estimate": 102.06,
+              "offensive_rating": 137.96,
+              "defensive_rating": 113.81,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810441",
@@ -94513,7 +95218,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.12,
+              "pace_estimate": 99.08,
+              "offensive_rating": 116.86,
+              "defensive_rating": 137.7,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810456",
@@ -94531,7 +95241,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 827.1,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 102.24,
+              "pace_estimate": 103.1,
+              "offensive_rating": 113.46,
+              "defensive_rating": 126.97,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810462",
@@ -94549,7 +95264,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 827.1,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 98.48,
+              "pace_estimate": 98.04,
+              "offensive_rating": 111.7,
+              "defensive_rating": 95.29,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810472",
@@ -94567,7 +95287,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 830.8,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 100.08,
+              "pace_estimate": 97.72,
+              "offensive_rating": 114.91,
+              "defensive_rating": 112.21,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810488",
@@ -94585,7 +95310,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 838.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 99.92,
+              "pace_estimate": 100.08,
+              "offensive_rating": 104.08,
+              "defensive_rating": 111.73,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810503",
@@ -94603,7 +95333,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1242.8,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 102.76,
+              "pace_estimate": 104.76,
+              "offensive_rating": 112.88,
+              "defensive_rating": 103.03,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810516",
@@ -94621,7 +95356,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 803.0,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 99.76,
+              "pace_estimate": 99.84,
+              "offensive_rating": 129.31,
+              "defensive_rating": 118.09,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810526",
@@ -94639,7 +95379,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 309.9,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 96.92,
+              "pace_estimate": 97.82,
+              "offensive_rating": 102.15,
+              "defensive_rating": 130.67,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810543",
@@ -102276,7 +103021,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 606.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 110.24,
+              "pace_estimate": 110.64,
+              "offensive_rating": 128.81,
+              "defensive_rating": 104.47,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810305",
@@ -102294,7 +103044,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.12,
+              "pace_estimate": 103.4,
+              "offensive_rating": 141.18,
+              "defensive_rating": 119.79,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810327",
@@ -102312,7 +103067,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1155.7,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 112.8,
+              "pace_estimate": 110.72,
+              "offensive_rating": 104.61,
+              "defensive_rating": 103.09,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810341",
@@ -102330,7 +103090,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1155.7,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.68,
+              "pace_estimate": 102.34,
+              "offensive_rating": 109.86,
+              "defensive_rating": 125.0,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810352",
@@ -102366,7 +103131,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 1513.1,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 112.04,
+              "pace_estimate": 110.58,
+              "offensive_rating": 83.9,
+              "defensive_rating": 111.8,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810384",
@@ -102402,7 +103172,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 166.4,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 112.76,
+              "pace_estimate": 113.22,
+              "offensive_rating": 87.8,
+              "defensive_rating": 108.2,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810408",
@@ -102420,7 +103195,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 688.4,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 105.72,
+              "pace_estimate": 105.02,
+              "offensive_rating": 105.94,
+              "defensive_rating": 118.87,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810419",
@@ -102438,7 +103218,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 1225.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.68,
+              "pace_estimate": 105.24,
+              "offensive_rating": 121.32,
+              "defensive_rating": 114.37,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810435",
@@ -102456,7 +103241,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.88,
+              "pace_estimate": 96.94,
+              "offensive_rating": 117.67,
+              "defensive_rating": 122.68,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810452",
@@ -102474,7 +103264,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.32,
+              "pace_estimate": 102.82,
+              "offensive_rating": 114.75,
+              "defensive_rating": 120.82,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810467",
@@ -102510,7 +103305,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 74.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 106.56,
+              "pace_estimate": 105.4,
+              "offensive_rating": 122.0,
+              "defensive_rating": 112.24,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810489",
@@ -102528,7 +103328,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 484.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 103.36,
+              "pace_estimate": 105.54,
+              "offensive_rating": 106.42,
+              "defensive_rating": 117.9,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810504",
@@ -102564,7 +103369,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 506.0,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 99.76,
+              "pace_estimate": 100.6,
+              "offensive_rating": 111.27,
+              "defensive_rating": 100.55,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810529",
@@ -102582,7 +103392,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1978.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 107.12,
+              "pace_estimate": 106.8,
+              "offensive_rating": 115.76,
+              "defensive_rating": 124.91,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401850920",
@@ -109536,7 +110351,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 483.2,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 97.56,
+              "pace_estimate": 98.3,
+              "offensive_rating": 114.8,
+              "defensive_rating": 104.0,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810302",
@@ -109554,7 +110374,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 589.4,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 97.68,
+              "pace_estimate": 97.74,
+              "offensive_rating": 125.92,
+              "defensive_rating": 115.54,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810324",
@@ -109590,7 +110415,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.92,
+              "pace_estimate": 99.12,
+              "offensive_rating": 124.59,
+              "defensive_rating": 120.61,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810355",
@@ -109608,7 +110438,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1770.8,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.2,
+              "pace_estimate": 99.64,
+              "offensive_rating": 113.64,
+              "defensive_rating": 99.92,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810381",
@@ -109644,7 +110479,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 345.5,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 93.68,
+              "pace_estimate": 94.42,
+              "offensive_rating": 112.08,
+              "defensive_rating": 106.14,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810409",
@@ -109662,7 +110502,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 830.8,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 94.8,
+              "pace_estimate": 97.22,
+              "offensive_rating": 109.7,
+              "defensive_rating": 108.39,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810421",
@@ -109680,7 +110525,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 912.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.36,
+              "pace_estimate": 104.32,
+              "offensive_rating": 101.57,
+              "defensive_rating": 133.29,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810437",
@@ -109716,7 +110566,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 877.9,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 99.0,
+              "pace_estimate": 100.78,
+              "offensive_rating": 113.13,
+              "defensive_rating": 107.25,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810480",
@@ -109734,7 +110589,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 669.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 95.96,
+              "pace_estimate": 96.78,
+              "offensive_rating": 106.29,
+              "defensive_rating": 125.0,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810495",
@@ -109752,7 +110612,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.88,
+              "pace_estimate": 98.0,
+              "offensive_rating": 103.22,
+              "defensive_rating": 102.91,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810507",
@@ -109788,7 +110653,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 693.8,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.88,
+              "pace_estimate": 100.74,
+              "offensive_rating": 119.75,
+              "defensive_rating": 139.56,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810536",
@@ -117230,7 +118100,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 698.5,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.32,
+              "pace_estimate": 98.28,
+              "offensive_rating": 111.09,
+              "defensive_rating": 122.71,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810307",
@@ -117248,7 +118123,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 353.2,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 104.0,
+              "pace_estimate": 105.08,
+              "offensive_rating": 130.77,
+              "defensive_rating": 95.14,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810318",
@@ -117266,7 +118146,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 589.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 99.92,
+              "pace_estimate": 102.48,
+              "offensive_rating": 102.08,
+              "defensive_rating": 119.95,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810341",
@@ -117284,7 +118169,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 606.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 100.0,
+              "pace_estimate": 102.34,
+              "offensive_rating": 125.0,
+              "defensive_rating": 109.86,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810353",
@@ -117320,7 +118210,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 932.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 109.12,
+              "pace_estimate": 110.58,
+              "offensive_rating": 111.8,
+              "defensive_rating": 83.9,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810385",
@@ -117338,7 +118233,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 103.48,
+              "pace_estimate": 103.86,
+              "offensive_rating": 126.59,
+              "defensive_rating": 117.04,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810397",
@@ -117356,7 +118256,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 630.2,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 102.8,
+              "pace_estimate": 103.9,
+              "offensive_rating": 130.35,
+              "defensive_rating": 139.05,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810407",
@@ -117392,7 +118297,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 297.9,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 104.28,
+              "pace_estimate": 104.32,
+              "offensive_rating": 133.29,
+              "defensive_rating": 101.57,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810446",
@@ -117410,7 +118320,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1006.5,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 99.4,
+              "pace_estimate": 101.18,
+              "offensive_rating": 105.63,
+              "defensive_rating": 106.84,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810453",
@@ -117464,7 +118379,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 984.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.6,
+              "pace_estimate": 106.06,
+              "offensive_rating": 109.94,
+              "defensive_rating": 111.61,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810499",
@@ -117536,7 +118456,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 863.1,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 106.88,
+              "pace_estimate": 106.52,
+              "offensive_rating": 110.4,
+              "defensive_rating": 98.91,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810541",
@@ -124412,7 +125337,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 1,
               "travel_miles": 984.9,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 100.24,
+              "pace_estimate": 98.28,
+              "offensive_rating": 122.71,
+              "defensive_rating": 111.09,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810304",
@@ -124448,7 +125378,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 92.2,
+              "pace_estimate": 91.56,
+              "offensive_rating": 104.12,
+              "defensive_rating": 131.98,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810332",
@@ -124484,7 +125419,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 203.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 95.28,
+              "pace_estimate": 97.3,
+              "offensive_rating": 133.29,
+              "defensive_rating": 115.79,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810376",
@@ -124502,7 +125442,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.68,
+              "pace_estimate": 102.3,
+              "offensive_rating": 100.31,
+              "defensive_rating": 102.04,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810390",
@@ -124520,7 +125465,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.84,
+              "pace_estimate": 96.1,
+              "offensive_rating": 107.32,
+              "defensive_rating": 128.23,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810404",
@@ -124538,7 +125488,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 954.5,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 92.04,
+              "pace_estimate": 93.48,
+              "offensive_rating": 106.48,
+              "defensive_rating": 108.51,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810416",
@@ -124556,7 +125511,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 419.8,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 98.8,
+              "pace_estimate": 97.92,
+              "offensive_rating": 106.28,
+              "defensive_rating": 116.45,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810429",
@@ -124592,7 +125552,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1169.1,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.48,
+              "pace_estimate": 100.14,
+              "offensive_rating": 110.37,
+              "defensive_rating": 110.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810458",
@@ -124610,7 +125575,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 715.3,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 93.6,
+              "pace_estimate": 95.28,
+              "offensive_rating": 108.97,
+              "defensive_rating": 127.89,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810465",
@@ -124628,7 +125598,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 715.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 91.24,
+              "pace_estimate": 92.18,
+              "offensive_rating": 128.23,
+              "defensive_rating": 135.31,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810477",
@@ -124664,7 +125639,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 4.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 111.96,
+              "pace_estimate": 114.0,
+              "offensive_rating": 112.54,
+              "defensive_rating": 112.03,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810511",
@@ -124682,7 +125662,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 2455.5,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 104.0,
+              "pace_estimate": 103.38,
+              "offensive_rating": 85.58,
+              "defensive_rating": 122.62,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810524",
@@ -124700,7 +125685,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 362.1,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 93.36,
+              "pace_estimate": 92.08,
+              "offensive_rating": 109.25,
+              "defensive_rating": 116.74,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810539",
@@ -139365,7 +140355,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.28,
+              "pace_estimate": 101.24,
+              "offensive_rating": 124.17,
+              "defensive_rating": 125.75,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810306",
@@ -139383,7 +140378,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 1049.5,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 95.88,
+              "pace_estimate": 96.32,
+              "offensive_rating": 110.55,
+              "defensive_rating": 110.58,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810319",
@@ -139401,7 +140401,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 440.3,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 113.32,
+              "pace_estimate": 110.7,
+              "offensive_rating": 98.84,
+              "defensive_rating": 101.78,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810335",
@@ -139419,7 +140424,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 166.4,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 101.24,
+              "pace_estimate": 101.8,
+              "offensive_rating": 112.6,
+              "defensive_rating": 118.21,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810350",
@@ -139437,7 +140447,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 987.1,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.96,
+              "pace_estimate": 101.1,
+              "offensive_rating": 132.4,
+              "defensive_rating": 126.7,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810366",
@@ -139473,7 +140488,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 203.3,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 101.92,
+              "pace_estimate": 102.3,
+              "offensive_rating": 102.04,
+              "defensive_rating": 100.31,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810388",
@@ -139491,7 +140511,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 938.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 103.92,
+              "pace_estimate": 100.74,
+              "offensive_rating": 87.57,
+              "defensive_rating": 105.58,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810403",
@@ -139527,7 +140552,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.12,
+              "pace_estimate": 101.68,
+              "offensive_rating": 115.55,
+              "defensive_rating": 109.64,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810457",
@@ -139545,7 +140575,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 682.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 107.04,
+              "pace_estimate": 106.02,
+              "offensive_rating": 101.83,
+              "defensive_rating": 120.0,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810482",
@@ -139563,7 +140598,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 1,
               "travel_miles": 682.6,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 94.68,
+              "pace_estimate": 94.84,
+              "offensive_rating": 102.45,
+              "defensive_rating": 130.53,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810501",
@@ -139581,7 +140621,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.08,
+              "pace_estimate": 100.38,
+              "offensive_rating": 103.88,
+              "defensive_rating": 119.38,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810513",
@@ -139599,7 +140644,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 895.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 99.6,
+              "pace_estimate": 99.74,
+              "offensive_rating": 98.39,
+              "defensive_rating": 114.14,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810529",
@@ -139617,7 +140667,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1089.2,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 106.48,
+              "pace_estimate": 106.8,
+              "offensive_rating": 124.91,
+              "defensive_rating": 115.76,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810542",
@@ -146747,7 +147802,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 690.8,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 102.24,
+              "pace_estimate": 102.62,
+              "offensive_rating": 101.72,
+              "defensive_rating": 125.24,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810313",
@@ -146765,7 +147825,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 421.4,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 117.88,
+              "pace_estimate": 116.16,
+              "offensive_rating": 117.92,
+              "defensive_rating": 118.84,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810328",
@@ -146783,7 +147848,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 419.8,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 103.04,
+              "pace_estimate": 105.92,
+              "offensive_rating": 119.37,
+              "defensive_rating": 99.26,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810342",
@@ -146819,7 +147889,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 85.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.36,
+              "pace_estimate": 105.84,
+              "offensive_rating": 116.59,
+              "defensive_rating": 118.69,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810373",
@@ -146855,7 +147930,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 860.9,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 97.56,
+              "pace_estimate": 100.74,
+              "offensive_rating": 105.58,
+              "defensive_rating": 87.57,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810405",
@@ -146873,7 +147953,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 1049.5,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 113.64,
+              "pace_estimate": 115.4,
+              "offensive_rating": 101.2,
+              "defensive_rating": 99.01,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810415",
@@ -146891,7 +147976,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 95.12,
+              "pace_estimate": 96.06,
+              "offensive_rating": 120.9,
+              "defensive_rating": 105.15,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810427",
@@ -146909,7 +147999,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 337.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.44,
+              "pace_estimate": 104.18,
+              "offensive_rating": 105.48,
+              "defensive_rating": 124.39,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810444",
@@ -146927,7 +148022,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.36,
+              "pace_estimate": 98.92,
+              "offensive_rating": 118.12,
+              "defensive_rating": 116.44,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810464",
@@ -146945,7 +148045,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.84,
+              "pace_estimate": 100.0,
+              "offensive_rating": 115.49,
+              "defensive_rating": 101.8,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810468",
@@ -146963,7 +148068,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 105.88,
+              "pace_estimate": 106.84,
+              "offensive_rating": 103.89,
+              "defensive_rating": 107.61,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810483",
@@ -146981,7 +148091,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.68,
+              "pace_estimate": 108.12,
+              "offensive_rating": 122.28,
+              "defensive_rating": 109.36,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810498",
@@ -147017,7 +148132,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 447.8,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 102.36,
+              "pace_estimate": 103.62,
+              "offensive_rating": 90.86,
+              "defensive_rating": 123.95,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810521",
@@ -147035,7 +148155,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 447.8,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.6,
+              "pace_estimate": 100.74,
+              "offensive_rating": 139.56,
+              "defensive_rating": 119.75,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810535",
@@ -154222,7 +155347,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 304.7,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 107.04,
+              "pace_estimate": 106.86,
+              "offensive_rating": 105.57,
+              "defensive_rating": 120.92,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810338",
@@ -154240,7 +155370,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1745.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.32,
+              "pace_estimate": 105.2,
+              "offensive_rating": 123.66,
+              "defensive_rating": 96.15,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810354",
@@ -154258,7 +155393,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 95.76,
+              "pace_estimate": 96.56,
+              "offensive_rating": 112.78,
+              "defensive_rating": 107.85,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810360",
@@ -154276,7 +155416,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 1014.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 95.28,
+              "pace_estimate": 96.26,
+              "offensive_rating": 101.81,
+              "defensive_rating": 102.84,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810379",
@@ -154294,7 +155439,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 484.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 103.52,
+              "pace_estimate": 102.34,
+              "offensive_rating": 113.02,
+              "defensive_rating": 96.88,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810393",
@@ -154348,7 +155498,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1978.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 105.8,
+              "pace_estimate": 105.24,
+              "offensive_rating": 114.37,
+              "defensive_rating": 121.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810434",
@@ -154366,7 +155521,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1155.7,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 103.0,
+              "pace_estimate": 101.64,
+              "offensive_rating": 101.94,
+              "defensive_rating": 107.7,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810451",
@@ -154402,7 +155562,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 4.8,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 93.12,
+              "pace_estimate": 92.18,
+              "offensive_rating": 135.31,
+              "defensive_rating": 128.23,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810468",
@@ -154420,7 +155585,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 83.0,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 107.8,
+              "pace_estimate": 106.84,
+              "offensive_rating": 107.61,
+              "defensive_rating": 103.89,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810491",
@@ -154438,7 +155608,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 663.0,
-              "road_trip_games": 6
+              "road_trip_games": 6,
+              "possessions_estimate": 100.96,
+              "pace_estimate": 100.5,
+              "offensive_rating": 102.02,
+              "defensive_rating": 109.96,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810510",
@@ -154456,7 +155631,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1588.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.44,
+              "pace_estimate": 100.6,
+              "offensive_rating": 100.55,
+              "defensive_rating": 111.27,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810524",
@@ -154474,7 +155654,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 90.8,
+              "pace_estimate": 92.08,
+              "offensive_rating": 116.74,
+              "defensive_rating": 109.25,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810540",
@@ -161173,7 +162358,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 91.68,
+              "pace_estimate": 91.66,
+              "offensive_rating": 112.35,
+              "defensive_rating": 129.86,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810299",
@@ -161191,7 +162381,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.24,
+              "pace_estimate": 104.3,
+              "offensive_rating": 111.5,
+              "defensive_rating": 101.54,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810312",
@@ -161209,7 +162404,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 105.68,
+              "pace_estimate": 105.62,
+              "offensive_rating": 118.28,
+              "defensive_rating": 115.57,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810325",
@@ -161227,7 +162427,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 1484.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 107.48,
+              "pace_estimate": 109.46,
+              "offensive_rating": 88.39,
+              "defensive_rating": 111.27,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810337",
@@ -161299,7 +162504,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 102.0,
+              "pace_estimate": 101.88,
+              "offensive_rating": 100.98,
+              "defensive_rating": 100.24,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810395",
@@ -161317,7 +162527,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 98.12,
+              "pace_estimate": 97.84,
+              "offensive_rating": 113.13,
+              "defensive_rating": 107.63,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810406",
@@ -161371,7 +162586,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 536.6,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.56,
+              "pace_estimate": 104.12,
+              "offensive_rating": 111.9,
+              "defensive_rating": 97.42,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810456",
@@ -161389,7 +162609,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 103.96,
+              "pace_estimate": 103.1,
+              "offensive_rating": 126.97,
+              "defensive_rating": 113.46,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810461",
@@ -161407,7 +162632,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 484.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.52,
+              "pace_estimate": 100.72,
+              "offensive_rating": 115.25,
+              "defensive_rating": 110.09,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810489",
@@ -161425,7 +162655,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 2,
               "travel_miles": 484.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 107.72,
+              "pace_estimate": 105.54,
+              "offensive_rating": 117.9,
+              "defensive_rating": 106.42,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810497",
@@ -161443,7 +162678,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 103.4,
+              "pace_estimate": 100.94,
+              "offensive_rating": 94.78,
+              "defensive_rating": 111.7,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810515",
@@ -161461,7 +162701,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 2531.9,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 98.2,
+              "pace_estimate": 101.56,
+              "offensive_rating": 95.72,
+              "defensive_rating": 97.22,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810519",
@@ -168333,7 +169578,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.52,
+              "pace_estimate": 105.16,
+              "offensive_rating": 108.11,
+              "defensive_rating": 101.13,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810301",
@@ -168351,7 +169601,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 361.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 100.36,
+              "pace_estimate": 102.64,
+              "offensive_rating": 100.64,
+              "defensive_rating": 119.14,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810316",
@@ -168369,7 +169624,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 8.1,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 97.16,
+              "pace_estimate": 97.12,
+              "offensive_rating": 92.63,
+              "defensive_rating": 134.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810329",
@@ -168387,7 +169647,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 365.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 92.6,
+              "pace_estimate": 97.76,
+              "offensive_rating": 114.47,
+              "defensive_rating": 116.6,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810338",
@@ -168405,7 +169670,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 634.7,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 106.08,
+              "pace_estimate": 105.2,
+              "offensive_rating": 96.15,
+              "defensive_rating": 123.66,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810355",
@@ -168423,7 +169693,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 634.7,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 98.08,
+              "pace_estimate": 99.64,
+              "offensive_rating": 99.92,
+              "defensive_rating": 113.64,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810370",
@@ -168441,7 +169716,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.48,
+              "pace_estimate": 105.86,
+              "offensive_rating": 93.8,
+              "defensive_rating": 93.25,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810394",
@@ -168477,7 +169757,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 74.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 91.8,
+              "pace_estimate": 91.28,
+              "offensive_rating": 120.92,
+              "defensive_rating": 107.98,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810417",
@@ -168495,7 +169780,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.16,
+              "pace_estimate": 95.74,
+              "offensive_rating": 127.62,
+              "defensive_rating": 118.74,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810431",
@@ -168549,7 +169839,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.92,
+              "pace_estimate": 100.72,
+              "offensive_rating": 110.09,
+              "defensive_rating": 115.25,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810474",
@@ -168567,7 +169862,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.24,
+              "pace_estimate": 105.4,
+              "offensive_rating": 112.24,
+              "defensive_rating": 122.0,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810481",
@@ -168585,7 +169885,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.68,
+              "pace_estimate": 101.34,
+              "offensive_rating": 107.2,
+              "defensive_rating": 120.79,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810493",
@@ -168603,7 +169908,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 2097.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 99.68,
+              "pace_estimate": 99.28,
+              "offensive_rating": 118.38,
+              "defensive_rating": 124.39,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810505",
@@ -168621,7 +169931,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 91.4,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 103.32,
+              "pace_estimate": 104.82,
+              "offensive_rating": 112.27,
+              "defensive_rating": 130.74,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810520",
@@ -183120,7 +184435,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 103.0,
+              "pace_estimate": 102.62,
+              "offensive_rating": 125.24,
+              "defensive_rating": 101.72,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810310",
@@ -183138,7 +184458,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 112.12,
+              "pace_estimate": 111.3,
+              "offensive_rating": 124.87,
+              "defensive_rating": 116.76,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810325",
@@ -183156,7 +184481,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 111.44,
+              "pace_estimate": 109.46,
+              "offensive_rating": 111.27,
+              "defensive_rating": 88.39,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810339",
@@ -183192,7 +184522,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 651.4,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 97.36,
+              "pace_estimate": 96.56,
+              "offensive_rating": 107.85,
+              "defensive_rating": 112.78,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810361",
@@ -183210,7 +184545,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 840.1,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 99.88,
+              "pace_estimate": 98.44,
+              "offensive_rating": 97.12,
+              "defensive_rating": 127.84,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810380",
@@ -183246,7 +184586,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 421.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 99.32,
+              "pace_estimate": 99.94,
+              "offensive_rating": 117.8,
+              "defensive_rating": 115.35,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810408",
@@ -183264,7 +184609,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 421.4,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.32,
+              "pace_estimate": 105.02,
+              "offensive_rating": 118.87,
+              "defensive_rating": 105.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810423",
@@ -183300,7 +184650,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 414.1,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 100.6,
+              "pace_estimate": 102.54,
+              "offensive_rating": 110.34,
+              "defensive_rating": 87.1,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810452",
@@ -183318,7 +184673,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 966.5,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 99.32,
+              "pace_estimate": 102.82,
+              "offensive_rating": 120.82,
+              "defensive_rating": 114.75,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401809248",
@@ -183336,7 +184696,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 1089.2,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 105.8,
+              "pace_estimate": 107.1,
+              "offensive_rating": 128.54,
+              "defensive_rating": 95.94,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810480",
@@ -183354,7 +184719,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 335.9,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 97.6,
+              "pace_estimate": 96.78,
+              "offensive_rating": 125.0,
+              "defensive_rating": 106.29,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810496",
@@ -183372,7 +184742,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 732.6,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.2,
+              "pace_estimate": 101.0,
+              "offensive_rating": 113.77,
+              "defensive_rating": 114.93,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810508",
@@ -183390,7 +184765,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 94.64,
+              "pace_estimate": 95.54,
+              "offensive_rating": 106.72,
+              "defensive_rating": 106.8,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810522",
@@ -203824,7 +205204,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 96.76,
+              "pace_estimate": 96.32,
+              "offensive_rating": 110.58,
+              "defensive_rating": 110.55,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810323",
@@ -203842,7 +205227,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.24,
+              "pace_estimate": 98.6,
+              "offensive_rating": 102.75,
+              "defensive_rating": 109.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810343",
@@ -203860,7 +205250,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 107.44,
+              "pace_estimate": 107.9,
+              "offensive_rating": 124.72,
+              "defensive_rating": 107.97,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810359",
@@ -203878,7 +205273,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 106.36,
+              "pace_estimate": 105.8,
+              "offensive_rating": 110.94,
+              "defensive_rating": 95.02,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810371",
@@ -203896,7 +205296,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 586.8,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 91.36,
+              "pace_estimate": 92.52,
+              "offensive_rating": 106.17,
+              "defensive_rating": 102.48,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810387",
@@ -203914,7 +205319,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 720.6,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 94.4,
+              "pace_estimate": 95.38,
+              "offensive_rating": 123.94,
+              "defensive_rating": 129.72,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810405",
@@ -203932,7 +205342,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 429.2,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 117.16,
+              "pace_estimate": 115.4,
+              "offensive_rating": 99.01,
+              "defensive_rating": 101.2,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810415",
@@ -203950,7 +205365,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.0,
+              "pace_estimate": 96.06,
+              "offensive_rating": 105.15,
+              "defensive_rating": 120.9,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810426",
@@ -203968,7 +205388,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 440.3,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.44,
+              "pace_estimate": 99.04,
+              "offensive_rating": 113.37,
+              "defensive_rating": 104.51,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810445",
@@ -203986,7 +205411,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 440.3,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.44,
+              "pace_estimate": 103.32,
+              "offensive_rating": 112.03,
+              "defensive_rating": 118.4,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810462",
@@ -204004,7 +205434,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 2173.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 97.6,
+              "pace_estimate": 98.04,
+              "offensive_rating": 95.29,
+              "defensive_rating": 111.7,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810473",
@@ -204040,7 +205475,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 74.0,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 101.0,
+              "pace_estimate": 101.34,
+              "offensive_rating": 120.79,
+              "defensive_rating": 107.2,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810497",
@@ -204058,7 +205498,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 484.0,
-              "road_trip_games": 4
+              "road_trip_games": 4,
+              "possessions_estimate": 98.48,
+              "pace_estimate": 100.94,
+              "offensive_rating": 111.7,
+              "defensive_rating": 94.78,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810508",
@@ -204076,7 +205521,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 1484.6,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 96.44,
+              "pace_estimate": 95.54,
+              "offensive_rating": 106.8,
+              "defensive_rating": 106.72,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810530",
@@ -211112,7 +212562,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 763.5,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 114.44,
+              "pace_estimate": 116.16,
+              "offensive_rating": 118.84,
+              "defensive_rating": 117.92,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810340",
@@ -211130,7 +212585,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 1601.4,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 113.12,
+              "pace_estimate": 108.88,
+              "offensive_rating": 106.97,
+              "defensive_rating": 122.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810356",
@@ -211148,7 +212608,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 0.0,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 102.68,
+              "pace_estimate": 101.86,
+              "offensive_rating": 111.02,
+              "defensive_rating": 118.76,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810367",
@@ -211184,7 +212649,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.16,
+              "pace_estimate": 102.34,
+              "offensive_rating": 96.88,
+              "defensive_rating": 113.02,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810391",
@@ -211202,7 +212672,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 100.56,
+              "pace_estimate": 99.94,
+              "offensive_rating": 115.35,
+              "defensive_rating": 117.8,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810404",
@@ -211220,7 +212695,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 94.92,
+              "pace_estimate": 93.48,
+              "offensive_rating": 108.51,
+              "defensive_rating": 106.48,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810433",
@@ -211238,7 +212718,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 2,
               "travel_miles": 682.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 101.24,
+              "pace_estimate": 101.68,
+              "offensive_rating": 109.64,
+              "defensive_rating": 115.55,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810457",
@@ -211256,7 +212741,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 682.6,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 105.0,
+              "pace_estimate": 106.02,
+              "offensive_rating": 120.0,
+              "defensive_rating": 101.83,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810478",
@@ -211274,7 +212764,12 @@
               "games_last_3_days": 0,
               "games_last_5_days": 1,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 109.88,
+              "pace_estimate": 109.22,
+              "offensive_rating": 111.03,
+              "defensive_rating": 114.22,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810494",
@@ -211328,7 +212823,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 484.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 104.48,
+              "pace_estimate": 102.64,
+              "offensive_rating": 94.75,
+              "defensive_rating": 107.14,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810531",
@@ -211346,7 +212846,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 484.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 91.28,
+              "pace_estimate": 95.9,
+              "offensive_rating": 106.27,
+              "defensive_rating": 111.42,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810546",
@@ -218056,7 +219561,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 1,
               "travel_miles": 463.1,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 97.8,
+              "pace_estimate": 97.74,
+              "offensive_rating": 115.54,
+              "defensive_rating": 125.92,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810317",
@@ -218092,7 +219602,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 659.6,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 100.32,
+              "pace_estimate": 99.12,
+              "offensive_rating": 120.61,
+              "defensive_rating": 124.59,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810344",
@@ -218110,7 +219625,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 81.4,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 100.12,
+              "pace_estimate": 99.14,
+              "offensive_rating": 111.87,
+              "defensive_rating": 100.86,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810361",
@@ -218128,7 +219648,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 690.8,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 97.0,
+              "pace_estimate": 98.44,
+              "offensive_rating": 127.84,
+              "defensive_rating": 97.12,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810371",
@@ -218146,7 +219671,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 938.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 93.68,
+              "pace_estimate": 92.52,
+              "offensive_rating": 102.48,
+              "defensive_rating": 106.17,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810383",
@@ -218164,7 +219694,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 105.56,
+              "pace_estimate": 103.4,
+              "offensive_rating": 106.1,
+              "defensive_rating": 112.6,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810402",
@@ -218200,7 +219735,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 589.1,
-              "road_trip_games": 2
+              "road_trip_games": 2,
+              "possessions_estimate": 95.48,
+              "pace_estimate": 96.36,
+              "offensive_rating": 114.16,
+              "defensive_rating": 120.32,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810441",
@@ -218218,7 +219758,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 8.1,
-              "road_trip_games": 3
+              "road_trip_games": 3,
+              "possessions_estimate": 98.04,
+              "pace_estimate": 99.08,
+              "offensive_rating": 137.7,
+              "defensive_rating": 116.86,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810454",
@@ -218254,7 +219799,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 2,
               "travel_miles": 944.8,
-              "road_trip_games": 5
+              "road_trip_games": 5,
+              "possessions_estimate": 91.72,
+              "pace_estimate": 89.32,
+              "offensive_rating": 119.93,
+              "defensive_rating": 100.09,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810475",
@@ -218272,7 +219822,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 1356.9,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 101.92,
+              "pace_estimate": 101.74,
+              "offensive_rating": 85.36,
+              "defensive_rating": 92.56,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810482",
@@ -218290,7 +219845,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 3,
               "travel_miles": 463.1,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 95.0,
+              "pace_estimate": 94.84,
+              "offensive_rating": 130.53,
+              "defensive_rating": 102.45,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810500",
@@ -218326,7 +219886,12 @@
               "games_last_3_days": 2,
               "games_last_5_days": 3,
               "travel_miles": 0.0,
-              "road_trip_games": 0
+              "road_trip_games": 0,
+              "possessions_estimate": 104.88,
+              "pace_estimate": 103.62,
+              "offensive_rating": 123.95,
+              "defensive_rating": 90.86,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810531",
@@ -218344,7 +219909,12 @@
               "games_last_3_days": 1,
               "games_last_5_days": 2,
               "travel_miles": 520.0,
-              "road_trip_games": 1
+              "road_trip_games": 1,
+              "possessions_estimate": 100.52,
+              "pace_estimate": 95.9,
+              "offensive_rating": 111.42,
+              "defensive_rating": 106.27,
+              "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
             },
             {
               "game_id": "401810538",

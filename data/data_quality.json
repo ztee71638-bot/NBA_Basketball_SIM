@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-21T16:22:17.748032+00:00",
+  "generated_at": "2026-11-21T16:48:13.064148+00:00",
   "status": "warning",
   "team_history": {
-    "last_updated": "2026-11-21T16:21:46.483350+00:00",
+    "last_updated": "2026-11-21T16:47:26.039803+00:00",
     "age_hours": 0.01,
     "team_count": 30,
     "seasons": {
@@ -48,9 +48,9 @@
         "team_game_rows": 2787,
         "unique_game_ids": 1396,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 768,
-        "advanced_games_with_both_teams": 384,
-        "advanced_coverage_pct": 27.6,
+        "advanced_team_game_rows": 1082,
+        "advanced_games_with_both_teams": 541,
+        "advanced_coverage_pct": 38.8,
         "min_team_games": 85,
         "max_team_games": 111
       },
@@ -84,7 +84,7 @@
       2023
     ],
     "last_updated": "2026-11-21T15:06:39.328159+00:00",
-    "age_hours": 1.26,
+    "age_hours": 1.69,
     "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
@@ -144,6 +144,10 @@
     }
   },
   "warnings": [
+    "Season 2023: advanced box-score coverage is only 0.0% of team-game rows.",
+    "Season 2024: advanced box-score coverage is only 0.0% of team-game rows.",
+    "Season 2025: advanced box-score coverage is only 0.0% of team-game rows.",
+    "Season 2026: advanced box-score coverage is only 38.8% of team-game rows.",
     "8 player records have no game logs in any stored season."
   ],
   "errors": [],
