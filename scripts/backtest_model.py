@@ -214,6 +214,8 @@ def apply_probability_calibration(probability: float, calibration: dict[str, Any
 def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None):
     by_team = {}
     arenas = (arenas_payload or {}).get("teams", {})
+    nba_team_codes = {team.get("abbreviation") for team in payload.get("teams", [])}
+    opponent_aliases = {"GS": "GSW", "NY": "NYK", "NO": "NOP", "SA": "SAS", "WSH": "WAS"}
     all_rows = []
     for team in payload.get("teams", []):
         seasons = team.get("seasons", {})
@@ -226,6 +228,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
                 and isinstance(row.get("points_for"), (int, float))
                 and isinstance(row.get("points_against"), (int, float))
                 and row.get("points_for", 0) > 0 and row.get("points_against", 0) > 0
+                and opponent_aliases.get(row.get("opponent"), row.get("opponent")) in nba_team_codes
             )
         rows.sort(key=lambda row: parse_date(row["date"]))
         by_team[team["abbreviation"]] = rows
@@ -345,6 +348,12 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         return {"games_tested": 0, "message": "Not enough prior games for a walk-forward evaluation yet."}
     return {
         "games_tested": used,
+        "excluded_non_nba_opponent_rows": sum(
+            1 for team in payload.get("teams", [])
+            for season in (team.get("seasons") or {}).values()
+            for row in (season.get("games") or [])
+            if opponent_aliases.get(row.get("opponent"), row.get("opponent")) not in nba_team_codes
+        ),
         "model_score_mae": round(mean(errors_home + errors_away), 3),
         "baseline_score_mae": round(mean(baseline_errors_home + baseline_errors_away), 3),
         "model_winner_accuracy": round(mean(correct), 4),
