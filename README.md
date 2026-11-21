@@ -4,7 +4,8 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 
 ## Current foundation
 - NBA schedule/live scoreboard ingestion for a rolling three-day window.
-- Read-only discovery of likely NBA markets from Polymarket.
+- Read-only discovery of active NBA game markets and nested player props from Polymarket's NBA series.
+- Selected game and player panels show likely matching Polymarket markets and available outcome prices.
 - Live ESPN injury report snapshot with player/team/status details.
 - Browser-based 10,000-trial Monte Carlo game calculator.
 - Player-prop probability calculator with manual assumptions or a recent-game historical baseline when player logs are available.
@@ -37,8 +38,8 @@ ESPN's public endpoints are undocumented/unofficial and may change or rate-limit
 ## Next development phases
 1. Verify full roster/game-log coverage and player identity mapping against real season records.
 2. Extend team game logs with pace, possessions, offensive/defensive ratings, rest and matchup features.
-3. Add minutes/role projections, injuries, starting lineups and status-change monitoring.
+3. Add minutes/role projections, confirmed starting lineups and automated injury/status-change monitoring.
 4. Build correlated player/game Monte Carlo models and calibrated uncertainty.
 5. Backtest against historical results with strict no-leakage and PASS thresholds.
-6. Match Polymarket game, spread, total and player-prop markets to the correct events/players; compare model probabilities to market prices.
+6. Validate Polymarket event/player identity matching and compare calibrated model probabilities with market prices.
 7. Add freshness monitoring, stale-data alerts, regression tests and production deployment verification.
