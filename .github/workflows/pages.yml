@@ -9,6 +9,7 @@ on:
       - Refresh NBA team history
       - Refresh NBA player history
       - Refresh NBA data
+      - Refresh NBA player impact ratings
     types: [completed]
     branches: [main]
   pull_request:
