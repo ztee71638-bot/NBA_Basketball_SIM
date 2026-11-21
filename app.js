@@ -962,10 +962,14 @@ async function loadModelMetrics() {
     const confidenceRows=(data.production_baseline_confidence_buckets||[]).map(row=>
       '<tr><td>'+escapeHtml(row.confidence_range)+'</td><td>'+Number(row.games).toLocaleString()+'</td><td>'+(Number(row.average_confidence)*100).toFixed(1)+'%</td><td>'+(Number(row.observed_accuracy)*100).toFixed(1)+'%</td><td>'+Number(row.brier_score).toFixed(3)+'</td></tr>'
     ).join("");
-    const diagnosticsHtml=(seasonRows||confidenceRows)
-      ? '<strong>Holdout diagnostics by season</strong><div style="overflow-x:auto"><table><thead><tr><th>Season</th><th>Games</th><th>Model MAE</th><th>Baseline MAE</th><th>Model win %</th><th>Baseline win %</th><th>Model Brier</th><th>Baseline Brier</th></tr></thead><tbody>'+seasonRows+'</tbody></table></div>'+
+    const recentRows=Object.entries(data.recent_windows||{}).sort((a,b)=>Number(a[0])-Number(b[0])).map(([window,row])=>
+      '<tr><td>Last '+escapeHtml(window)+'</td><td>'+Number(row.games).toLocaleString()+'</td><td>'+Number(row.model_score_mae).toFixed(2)+'</td><td>'+Number(row.baseline_score_mae).toFixed(2)+'</td><td>'+(Number(row.model_winner_accuracy)*100).toFixed(1)+'%</td><td>'+(Number(row.baseline_winner_accuracy)*100).toFixed(1)+'%</td><td>'+Number(row.model_brier_score).toFixed(3)+'</td><td>'+Number(row.baseline_brier_score).toFixed(3)+'</td></tr>'
+    ).join("");
+    const diagnosticsHtml=(seasonRows||confidenceRows||recentRows)
+      ? '<strong>Recent holdout windows</strong><div style="overflow-x:auto"><table><thead><tr><th>Window</th><th>Games</th><th>Model MAE</th><th>Baseline MAE</th><th>Model win %</th><th>Baseline win %</th><th>Model Brier</th><th>Baseline Brier</th></tr></thead><tbody>'+recentRows+'</tbody></table></div>'+
+        '<strong>Holdout diagnostics by season</strong><div style="overflow-x:auto"><table><thead><tr><th>Season</th><th>Games</th><th>Model MAE</th><th>Baseline MAE</th><th>Model win %</th><th>Baseline win %</th><th>Model Brier</th><th>Baseline Brier</th></tr></thead><tbody>'+seasonRows+'</tbody></table></div>'+
         '<strong>Production baseline confidence buckets</strong><div style="overflow-x:auto"><table><thead><tr><th>Confidence</th><th>Games</th><th>Avg. confidence</th><th>Observed accuracy</th><th>Brier</th></tr></thead><tbody>'+confidenceRows+'</tbody></table></div>'+
-        '<p class="fine-print">Confidence buckets use the predicted side, and show sample size beside observed accuracy. Small samples should not be treated as proof of an edge.</p>'
+        '<p class="fine-print">Confidence buckets use the predicted side, and show sample size beside observed accuracy. Small samples should not be treated as proof of an edge. Recent windows help reveal drift but do not guarantee future results.</p>'
       : "";
     root.innerHTML='<strong>Walk-forward validation · '+Number(data.games_tested).toLocaleString()+' games</strong>'+
       '<div class="result-grid">'+
