@@ -89,6 +89,22 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
     assert result["games_tested"] == 1
     assert "model_score_mae" in result
     assert "model_brier_score" in result
+    assert result["by_season"]["2027"]["games"] == 1
+    assert sum(bucket["games"] for bucket in result["production_baseline_confidence_buckets"]) == 1
+
+
+
+
+def test_confidence_buckets_report_sample_size_accuracy_and_brier():
+    report = module.probability_bucket_report(
+        [0.72, 0.68, 0.31, 0.27],
+        [1.0, 0.0, 0.0, 1.0],
+    )
+    assert sum(bucket["games"] for bucket in report) == 4
+    assert report[0]["confidence_range"] == "65%-70%"
+    assert report[0]["games"] == 2
+    assert report[0]["observed_accuracy"] == 0.5
+    assert report[0]["brier_score"] == 0.2122
 
 
 def test_logistic_probability_calibration_corrects_overconfidence():
