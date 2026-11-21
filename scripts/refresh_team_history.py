@@ -7,6 +7,7 @@ from __future__ import annotations
 import json
 import time
 import calendar
+import os
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -19,7 +20,7 @@ URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_
 SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 TIMEOUT = 25
 DELAY = 0.8
-SEASONS = [2027, 2026]
+SEASONS = sorted({int(value) for value in os.getenv("NBA_TEAM_HISTORY_SEASONS", "2027,2026,2025,2024,2023").split(",") if value.strip()}, reverse=True)
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
     "DEN": 7, "DET": 8, "GSW": 9, "HOU": 10, "IND": 11, "LAC": 12,
@@ -213,11 +214,13 @@ def _possessions(stats: dict[str, float]) -> float | None:
     return estimate if estimate > 0 else None
 
 
-def enrich_team_games_with_boxscores(teams: list[dict[str, Any]]) -> None:
+def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enrich: set[str] | None = None) -> None:
     """Attach estimated possessions and efficiency from completed ESPN boxscores."""
     games: dict[str, list[dict[str, Any]]] = {}
     for team in teams:
-        for season_data in team.get("seasons", {}).values():
+        for season, season_data in team.get("seasons", {}).items():
+            if seasons_to_enrich is not None and str(season) not in seasons_to_enrich:
+                continue
             for row in season_data.get("games", []):
                 if row.get("game_id"):
                     games.setdefault(str(row["game_id"]), []).append(row)
@@ -359,7 +362,8 @@ def fetch_team_database() -> list[dict[str, Any]]:
                 row["games_last_5_days"] = sum(1 for day in previous_dates if 0 < (current_date-day).days <= 5)
             enrich_schedule_travel(team["abbreviation"], rows, arenas)
             team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
-    enrich_team_games_with_boxscores(teams)
+    # Enrich only the two newest seasons to keep the expanded archive refresh bounded.
+    enrich_team_games_with_boxscores(teams, {str(value) for value in SEASONS[:2]})
     for team in teams:
         for season_data in team["seasons"].values():
             season_data["summary"] = summarize_games(season_data.get("games", []))
@@ -368,7 +372,7 @@ def fetch_team_database() -> list[dict[str, Any]]:
 
 def main() -> None:
     teams = fetch_team_database()
-    print("Collected current-season team logs from ESPN daily scoreboard feeds.")
+    print("Collected multi-season team logs from ESPN daily scoreboard feeds.")
     valid = sum(1 for team in teams if any(season["summary"]["games"] for season in team["seasons"].values()))
     if valid < 20:
         raise RuntimeError(f"Only {valid} teams returned usable history; refusing to overwrite the existing archive.")

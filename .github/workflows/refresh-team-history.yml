@@ -11,6 +11,8 @@ on:
       - "tests/test_team_history.py"
       - "scripts/backtest_model.py"
       - "tests/test_backtest_model.py"
+      - "scripts/audit_data_quality.py"
+      - "tests/test_data_quality.py"
       - ".github/workflows/refresh-team-history.yml"
   pull_request:
     branches: [main]
@@ -25,10 +27,11 @@ concurrency:
 jobs:
   refresh-team-history:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: Sync latest main before refresh
+        if: github.event_name != 'pull_request'
         run: git pull --rebase origin main
       - uses: actions/setup-python@v5
         with:
@@ -43,13 +46,16 @@ jobs:
       - name: Run chronological model backtest
         if: github.event_name != 'pull_request'
         run: python scripts/backtest_model.py --output data/model_metrics.json
+      - name: Audit archive coverage and integrity
+        if: github.event_name != 'pull_request'
+        run: python scripts/audit_data_quality.py --output data/data_quality.json
       - name: Commit team database
         if: github.event_name != 'pull_request'
         run: |
-          if [[ -n "$(git status --porcelain data/teams.json data/model_metrics.json data/snapshots/)" ]]; then
+          if [[ -n "$(git status --porcelain data/teams.json data/model_metrics.json data/data_quality.json data/snapshots/)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/teams.json data/model_metrics.json data/snapshots/
+            git add data/teams.json data/model_metrics.json data/data_quality.json data/snapshots/
             git commit -m "chore: refresh NBA team history"
             for attempt in 1 2 3 4 5; do
               if git pull --rebase origin main && git push; then
