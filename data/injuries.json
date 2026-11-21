@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T18:10:44.544006+00:00",
+  "last_updated": "2026-11-21T19:00:12.910373+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -903,6 +903,36 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4397688",
+      "name": "Trey Murphy III",
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-21T18:22Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Murphy (knee) has been ruled out for Saturday's game against the Spurs.",
+      "long_comment": "Murphy missed six consecutive games due to bilateral patellar tendinopathy before returning for Friday's game against the Thunder, when he played 29 minutes and finished with 17 points, four rebounds, one assist, two steals and one block in a 126-120 loss for the Pelicans. He'll sit for the second leg of a back-to-back set, which means more minutes will be available for Jordan Poole, Herbert Jones and Derik Queen. Murphy's next opportunity to play is Monday against the Suns.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4431675",
+      "name": "Trendon Watford",
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-21T18:21Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Watford (ankle) is out for Saturday's game against the Spurs.",
+      "long_comment": "Watford can be considered week-to-week at this point until the Pelicans offer an update on his recovery. He hasn't played since Nov. 8 and is averaging just 7.2 points and 3.5 boards per game in his six appearances off the bench.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4576086",
       "name": "Bryce McGowens",
       "team": "NO",
@@ -915,21 +945,6 @@
       "return_date": "2026-11-27",
       "short_comment": "McGowens (elbow) has been ruled out for Friday's game against the Thunder.",
       "long_comment": "McGowens will miss a fifth consecutive contest due to an infection in his left elbow. He's without a timetable to return and can be considered week-to-week until the Pelicans offer an update on his status.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4431675",
-      "name": "Trendon Watford",
-      "team": "NO",
-      "team_name": "New Orleans Pelicans",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-19T21:09Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Watford (ankle) has been ruled out for Friday's game against Oklahoma City.",
-      "long_comment": "Watford will miss a seventh consecutive contest due to a right ankle sprain. He remains without a definitive return timetable.",
       "source": "ESPN"
     },
     {

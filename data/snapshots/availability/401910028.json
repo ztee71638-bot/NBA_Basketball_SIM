@@ -1,0 +1,190 @@
+{
+  "game_id": "401910028",
+  "game_date": "2026-11-22T03:00Z",
+  "home_team": "SAC",
+  "away_team": "BOS",
+  "source": "ESPN public injury report and game summaries",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-21T19:00:12.911719+00:00",
+      "minutes_to_tipoff": 479.8,
+      "injuries": [
+        {
+          "athlete_id": "3078576",
+          "name": "Derrick White",
+          "team": "BOS",
+          "team_name": "Boston Celtics",
+          "position": "G",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Left",
+          "date": "2026-11-21T01:00Z",
+          "return_date": "2026-11-21",
+          "short_comment": "White (shoulder) is questionable to play in Saturday's game against Sacramento.",
+          "long_comment": "White is dealing with a left AC joint contusion, and the ailment could force him to miss his first outing of the season. Across 15 games in 2026-27, White is averaging 12.7 points, 3.0 rebounds, 5.0 assists, 1.1 steals, 0.7 blocks and 1.7 three-pointers in 29.9 minutes. If he's unable to play, Payton Pritchard may join the starting lineup, while Hugo Gonzalez and Baylor Scheierman should see a bump in minutes off the bench.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4065648",
+          "name": "Jayson Tatum",
+          "team": "BOS",
+          "team_name": "Boston Celtics",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": null,
+          "date": "2026-11-21T01:07Z",
+          "return_date": "2026-11-21",
+          "short_comment": "Tatum (rest) is listed as questionable for Saturday's game against Sacramento.",
+          "long_comment": "Tatum might not play Saturday against the Kings, the first game of a back-to-back. If he doesn't suit up, it could result in more work for Luka Garza, Sam Hauser and Jordan Walsh.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3907387",
+          "name": "Ben Simmons",
+          "team": "SAC",
+          "team_name": "Sacramento Kings",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-21T04:22Z",
+          "return_date": "2027-10-01",
+          "short_comment": "Simmons underwent successful surgery Tuesday to repair a torn right Achilles tendon, James Ham of ESPN 1320 Sacramento reports.",
+          "long_comment": "Simmons had a quality preseason, averaging 10.5 points, 4.0 rebounds and 4.0 assists over 17.4 minutes per contest (two games). The 30-year-old was on track to suit up for the Kings on opening night, though those plans were halted after he suffered a torn Achilles tendon during practice. Now, Simmons will focus on rehab. However, it's unknown what the future holds regarding his career in the NBA.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4431679",
+          "name": "Precious Achiuwa",
+          "team": "SAC",
+          "team_name": "Sacramento Kings",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Left",
+          "date": "2026-11-21T14:55Z",
+          "return_date": "2026-11-21",
+          "short_comment": "Achiuwa (lower leg) has been ruled out for Friday's game against the Lakers.",
+          "long_comment": "Achiuwa will miss the front end of this back-to-back set due to a lower-leg contusion, and his next chance to play will come against Boston on Saturday. With the 27-year-old sidelined, Dylan Cardwell and Alex Karaban are candidates for increased playing time.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4898371",
+          "name": "Maxime Raynaud",
+          "team": "SAC",
+          "team_name": "Sacramento Kings",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-18T05:54Z",
+          "return_date": "2026-11-25",
+          "short_comment": "Raynaud (knee) will remain on the inactive list for Wednesday's game against the Suns.",
+          "long_comment": "Raynaud continues to get ruled out a full day in advance of tipoff, suggesting he's still not close. He should be considered week-to-week moving forward.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910028",
+        "date": "2026-11-22T03:00Z",
+        "home_team": "SAC",
+        "away_team": "BOS",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "3078576",
+            "name": "Derrick White",
+            "team": "BOS",
+            "team_name": "Boston Celtics",
+            "position": "G",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Left",
+            "date": "2026-11-21T01:00Z",
+            "return_date": "2026-11-21",
+            "short_comment": "White (shoulder) is questionable to play in Saturday's game against Sacramento.",
+            "long_comment": "White is dealing with a left AC joint contusion, and the ailment could force him to miss his first outing of the season. Across 15 games in 2026-27, White is averaging 12.7 points, 3.0 rebounds, 5.0 assists, 1.1 steals, 0.7 blocks and 1.7 three-pointers in 29.9 minutes. If he's unable to play, Payton Pritchard may join the starting lineup, while Hugo Gonzalez and Baylor Scheierman should see a bump in minutes off the bench.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4065648",
+            "name": "Jayson Tatum",
+            "team": "BOS",
+            "team_name": "Boston Celtics",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": null,
+            "date": "2026-11-21T01:07Z",
+            "return_date": "2026-11-21",
+            "short_comment": "Tatum (rest) is listed as questionable for Saturday's game against Sacramento.",
+            "long_comment": "Tatum might not play Saturday against the Kings, the first game of a back-to-back. If he doesn't suit up, it could result in more work for Luka Garza, Sam Hauser and Jordan Walsh.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3907387",
+            "name": "Ben Simmons",
+            "team": "SAC",
+            "team_name": "Sacramento Kings",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-21T04:22Z",
+            "return_date": "2027-10-01",
+            "short_comment": "Simmons underwent successful surgery Tuesday to repair a torn right Achilles tendon, James Ham of ESPN 1320 Sacramento reports.",
+            "long_comment": "Simmons had a quality preseason, averaging 10.5 points, 4.0 rebounds and 4.0 assists over 17.4 minutes per contest (two games). The 30-year-old was on track to suit up for the Kings on opening night, though those plans were halted after he suffered a torn Achilles tendon during practice. Now, Simmons will focus on rehab. However, it's unknown what the future holds regarding his career in the NBA.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4431679",
+            "name": "Precious Achiuwa",
+            "team": "SAC",
+            "team_name": "Sacramento Kings",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Left",
+            "date": "2026-11-21T14:55Z",
+            "return_date": "2026-11-21",
+            "short_comment": "Achiuwa (lower leg) has been ruled out for Friday's game against the Lakers.",
+            "long_comment": "Achiuwa will miss the front end of this back-to-back set due to a lower-leg contusion, and his next chance to play will come against Boston on Saturday. With the 27-year-old sidelined, Dylan Cardwell and Alex Karaban are candidates for increased playing time.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4898371",
+            "name": "Maxime Raynaud",
+            "team": "SAC",
+            "team_name": "Sacramento Kings",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-18T05:54Z",
+            "return_date": "2026-11-25",
+            "short_comment": "Raynaud (knee) will remain on the inactive list for Wednesday's game against the Suns.",
+            "long_comment": "Raynaud continues to get ruled out a full day in advance of tipoff, suggesting he's still not close. He should be considered week-to-week moving forward.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910028",
+          "date": "2026-11-22T03:00Z",
+          "home_team": "SAC",
+          "away_team": "BOS",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
+    }
+  ],
+  "last_updated": "2026-11-21T19:00:12.911719+00:00"
+}
