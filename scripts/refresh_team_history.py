@@ -45,6 +45,9 @@ def get_json(url: str, params: dict[str, Any]) -> Any:
             return response.json()
         except requests.RequestException as exc:
             last_error = exc
+            status_code = getattr(getattr(exc, "response", None), "status_code", None)
+            if status_code and 400 <= status_code < 500 and status_code != 429:
+                raise
             if attempt == 3:
                 raise
             time.sleep(2 ** attempt)
@@ -72,10 +75,9 @@ def parse_team_schedule(payload: dict[str, Any], team_id: str) -> list[dict[str,
         # ESPN schedule payloads are inconsistent about where status lives.
         # A completed box score has numeric scores for both competitors, so use
         # that as the final guard rather than silently dropping every game.
+        # Ignore scheduled/live games even when ESPN supplies 0-0 placeholders.
         if not status.get("completed", False) and status.get("state") != "post":
-            score_values = [_score(c.get("score")) for c in competitors]
-            if len(score_values) < 2 or any(value is None for value in score_values):
-                continue
+            continue
         own = next((c for c in competitors if str((c.get("team") or {}).get("id")) == str(team_id)), None)
         other = next((c for c in competitors if c is not own), None)
         if not own or not other:
@@ -145,10 +147,9 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
             competition = competitions[0]
             status = (event.get("status") or {}).get("type") or {}
             competitors = competition.get("competitors") or []
+            # Ignore scheduled/live games even when ESPN supplies 0-0 placeholders.
             if not status.get("completed", False) and status.get("state") != "post":
-                scores = [_score(item.get("score")) for item in competitors]
-                if len(scores) < 2 or any(value is None for value in scores):
-                    continue
+                continue
             if len(competitors) != 2:
                 continue
             for own in competitors:
@@ -178,22 +179,132 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
     return {abbr: sorted(rows, key=lambda row: row.get("date") or "") for abbr, rows in grouped.items()}
 
 
+
+def _stat_map(team_box: dict[str, Any]) -> dict[str, float]:
+    import re
+    result: dict[str, float] = {}
+    for item in team_box.get("statistics") or []:
+        if not isinstance(item, dict):
+            continue
+        key = str(item.get("name") or "").lower()
+        value = item.get("displayValue", item.get("value"))
+        parsed = _score(value)
+        if parsed is not None:
+            result[key] = parsed
+        if key in ("fieldgoalsmade-fieldgoalsattempted", "fieldgoals"):
+            match = re.search(r"(?:^|\s)(\d+)\s*[-/]\s*(\d+)", str(value))
+            if match:
+                result["fieldgoalsattempted"] = float(match.group(2))
+        if key in ("freethrowsmade-freethrowsattempted", "freethrows"):
+            match = re.search(r"(?:^|\s)(\d+)\s*[-/]\s*(\d+)", str(value))
+            if match:
+                result["freethrowsattempted"] = float(match.group(2))
+    return result
+
+
+def _possessions(stats: dict[str, float]) -> float | None:
+    fga = stats.get("fieldgoalsattempted")
+    fta = stats.get("freethrowsattempted")
+    turnovers = stats.get("totalturnovers", stats.get("turnovers"))
+    offensive_rebounds = stats.get("offensiverebounds")
+    if None in (fga, fta, turnovers, offensive_rebounds):
+        return None
+    estimate = fga - offensive_rebounds + turnovers + 0.44 * fta
+    return estimate if estimate > 0 else None
+
+
+def enrich_team_games_with_boxscores(teams: list[dict[str, Any]]) -> None:
+    """Attach estimated possessions and efficiency from completed ESPN boxscores."""
+    games: dict[str, list[dict[str, Any]]] = {}
+    for team in teams:
+        for season_data in team.get("seasons", {}).values():
+            for row in season_data.get("games", []):
+                if row.get("game_id"):
+                    games.setdefault(str(row["game_id"]), []).append(row)
+    enriched = 0
+    for game_id, rows in games.items():
+        if len(rows) != 2 or all(row.get("pace_estimate") for row in rows):
+            continue
+        try:
+            payload = get_json(
+                "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary",
+                {"event": game_id},
+            )
+        except requests.RequestException as exc:
+            print(f"Boxscore unavailable for {game_id}: {exc}")
+            continue
+        boxes = (payload.get("boxscore") or {}).get("teams") or []
+        by_abbr: dict[str, dict[str, float]] = {}
+        for box in boxes:
+            team_info = box.get("team") or {}
+            abbreviation = team_info.get("abbreviation") or ID_TO_TEAM.get(str(team_info.get("id") or ""))
+            if abbreviation:
+                by_abbr[str(abbreviation)] = _stat_map(box)
+        if len(by_abbr) < 2:
+            continue
+        first, second = rows
+        stats_first, stats_second = by_abbr.get(first.get("team")), by_abbr.get(second.get("team"))
+        if not stats_first or not stats_second:
+            continue
+        poss_first, poss_second = _possessions(stats_first), _possessions(stats_second)
+        if not poss_first or not poss_second:
+            continue
+        pace = (poss_first + poss_second) / 2
+        for row, own_poss, opp_poss in ((first, poss_first, poss_second), (second, poss_second, poss_first)):
+            row["possessions_estimate"] = round(own_poss, 2)
+            row["pace_estimate"] = round(pace, 2)
+            row["offensive_rating"] = round(row["points_for"] / own_poss * 100, 2)
+            row["defensive_rating"] = round(row["points_against"] / opp_poss * 100, 2)
+            row["advanced_stats_source"] = "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
+        enriched += 1
+    print(f"Added pace/efficiency estimates to {enriched} completed games.")
+
+
+def write_immutable_team_snapshot(teams: list[dict[str, Any]]) -> None:
+    snapshot_dir = DATA / "snapshots"
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d")
+    path = snapshot_dir / f"team-metrics-{stamp}.json"
+    if path.exists():
+        print(f"Immutable daily snapshot already exists: {path.name}")
+        return
+    snapshot = {
+        "snapshot_date": stamp,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "source": "ESPN team history and available boxscores",
+        "teams": [{
+            "abbreviation": team["abbreviation"],
+            "seasons": {
+                season: {
+                    "summary": data.get("summary", {}),
+                    "games_with_advanced_metrics": sum(
+                        1 for row in data.get("games", []) if row.get("pace_estimate") is not None
+                    ),
+                }
+                for season, data in team.get("seasons", {}).items()
+            },
+        } for team in teams],
+    }
+    path.write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
+
 def fetch_team_database() -> list[dict[str, Any]]:
     teams = [
         {"id": str(team_id), "abbreviation": abbreviation, "seasons": {}, "source": "ESPN"}
         for abbreviation, team_id in TEAM_IDS.items()
     ]
-    current_season = max(SEASONS)
-    # Build the active season from the same single-day ESPN scoreboard feed
-    # already proven by the live game refresh. Keep prior-season slots empty
-    # rather than silently treating preseason or incomplete data as history.
-    grouped = fetch_season_from_scoreboard(current_season)
+    # Fetch both the active and previous regular seasons. Keep only completed games.
+    grouped_by_season = {
+        season: fetch_season_from_scoreboard(season)
+        for season in sorted(SEASONS)
+    }
     for team in teams:
-        rows = grouped.get(team["abbreviation"], [])
-        team["seasons"][str(current_season)] = {"games": rows, "summary": summarize_games(rows)}
-        for season in SEASONS:
-            if season != current_season:
-                team["seasons"][str(season)] = {"games": [], "summary": summarize_games([])}
+        for season in sorted(SEASONS):
+            rows = grouped_by_season[season].get(team["abbreviation"], [])
+            team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
+    enrich_team_games_with_boxscores(teams)
+    for team in teams:
+        for season_data in team["seasons"].values():
+            season_data["summary"] = summarize_games(season_data.get("games", []))
     return teams
 
 
@@ -212,7 +323,8 @@ def main() -> None:
         "teams": teams,
     }
     (DATA / "teams.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Saved team history for {valid}/30 NBA teams.")
+    write_immutable_team_snapshot(teams)
+    print(f"Saved team history for {valid}/30 NBA teams across seasons {SEASONS}.")
 
 
 if __name__ == "__main__":
