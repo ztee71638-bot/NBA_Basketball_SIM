@@ -62,6 +62,19 @@ function canonicalTeam(abbr) {
 }
 const TEAM_NAMES = {ATL:'Atlanta Hawks',BOS:'Boston Celtics',BKN:'Brooklyn Nets',CHA:'Charlotte Hornets',CHI:'Chicago Bulls',CLE:'Cleveland Cavaliers',DAL:'Dallas Mavericks',DEN:'Denver Nuggets',DET:'Detroit Pistons',GSW:'Golden State Warriors',HOU:'Houston Rockets',IND:'Indiana Pacers',LAC:'LA Clippers',LAL:'Los Angeles Lakers',MEM:'Memphis Grizzlies',MIA:'Miami Heat',MIL:'Milwaukee Bucks',MIN:'Minnesota Timberwolves',NOP:'New Orleans Pelicans',NYK:'New York Knicks',OKC:'Oklahoma City Thunder',ORL:'Orlando Magic',PHI:'Philadelphia 76ers',PHX:'Phoenix Suns',POR:'Portland Trail Blazers',SAC:'Sacramento Kings',SAS:'San Antonio Spurs',TOR:'Toronto Raptors',UTA:'Utah Jazz',WAS:'Washington Wizards'};
 function teamDisplayName(abbr) { return TEAM_NAMES[canonicalTeam(abbr)] || String(abbr || 'NBA Team'); }
+const TEAM_COLORS = {
+ ATL:["#C8102E","#FDB927"],BOS:["#007A33","#BA9653"],BKN:["#000000","#FFFFFF"],CHA:["#1D1160","#00788C"],CHI:["#CE1141","#000000"],
+ CLE:["#6F263D","#FFB81C"],DAL:["#00538C","#B8C4CA"],DEN:["#0E2240","#FEC524"],DET:["#C8102E","#1D42BA"],GSW:["#1D428A","#FFC72C"],
+ HOU:["#CE1141","#000000"],IND:["#002D62","#FDBB30"],LAC:["#C8102E","#1D428A"],LAL:["#552583","#FDB927"],MEM:["#5D76A9","#12173F"],
+ MIA:["#98002E","#F9A01B"],MIL:["#00471B","#EEE1C6"],MIN:["#0C2340","#236192"],NOP:["#0C2340","#C8102E"],NYK:["#006BB6","#F58426"],
+ OKC:["#007AC1","#EF3B24"],ORL:["#0077C0","#C4CED4"],PHI:["#006BB6","#ED174C"],PHX:["#1D1160","#E56020"],POR:["#E03A3E","#000000"],
+ SAC:["#5A2D81","#63727A"],SAS:["#C4CED4","#000000"],TOR:["#CE1141","#000000"],UTA:["#002B5C","#F9A01B"],WAS:["#002B5C","#E31837"]
+};
+function teamColorStyle(team) {
+ const abbr=canonicalTeam(team?.abbreviation||team?.abbr||"");
+ const colors=TEAM_COLORS[abbr]||["#167f78","#20e0d0"];
+ return "--team-primary:"+colors[0]+";--team-secondary:"+colors[1];
+}
 function teamLogoUrl(team) {
   const abbr = canonicalTeam(team?.abbreviation || team?.abbr || "");
   return abbr ? "https://a.espncdn.com/i/teamlogos/nba/500/"+encodeURIComponent(abbr)+".png" : "";
@@ -186,7 +199,7 @@ function runGameSimulation() {
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
   const homeLogo=teamLogoMarkup(selectedGame.home,"split-home");
   const awayLogo=teamLogoMarkup(selectedGame.away,"split-away");
-  $("simulation-confidence").innerHTML=`<div class="split-result-team split-result-home"><div class="split-result-identity">${homeLogo}</div><div class="split-result-team-name">${escapeHtml(homeName)}</div><div class="split-result-wins">${hw.toLocaleString()} WINS</div><div class="split-result-probability">${homeWinRate.toFixed(1)}%</div></div><div class="split-result-versus">VS</div><div class="split-result-team split-result-away"><div class="split-result-identity">${awayLogo}</div><div class="split-result-team-name">${escapeHtml(awayName)}</div><div class="split-result-wins">${aw.toLocaleString()} WINS</div><div class="split-result-probability">${awayWinRate.toFixed(1)}%</div></div>${ties?`<p class="split-result-ties">Tied games: ${ties.toLocaleString()}</p>`:""}`;
+  $("simulation-confidence").innerHTML=`<div class="split-result-team split-result-home" style="${teamColorStyle(selectedGame.home)}"><div class="split-result-identity">${homeLogo}</div><div class="split-result-team-name">${escapeHtml(homeName)}</div><div class="split-result-wins">${hw.toLocaleString()} WINS</div><div class="split-result-probability">${homeWinRate.toFixed(1)}%</div></div><div class="split-result-versus">VS</div><div class="split-result-team split-result-away" style="${teamColorStyle(selectedGame.away)}"><div class="split-result-identity">${awayLogo}</div><div class="split-result-team-name">${escapeHtml(awayName)}</div><div class="split-result-wins">${aw.toLocaleString()} WINS</div><div class="split-result-probability">${awayWinRate.toFixed(1)}%</div></div>${ties?`<p class="split-result-ties">Tied games: ${ties.toLocaleString()}</p>`:""}`;
   $("simulation-modal").hidden=false;
   $("simulation-modal-close").focus();
 }
