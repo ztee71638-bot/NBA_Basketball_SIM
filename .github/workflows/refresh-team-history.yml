@@ -1,0 +1,50 @@
+name: Refresh NBA team history
+
+on:
+  schedule:
+    - cron: "45 9 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/refresh_team_history.py"
+      - "tests/test_team_history.py"
+      - ".github/workflows/refresh-team-history.yml"
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-team-history-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh-team-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest -q
+      - name: Refresh team history
+        if: github.event_name != 'pull_request'
+        run: python scripts/refresh_team_history.py
+      - name: Commit team database
+        if: github.event_name != 'pull_request'
+        run: |
+          if [[ -n "$(git status --porcelain data/teams.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/teams.json
+            git commit -m "chore: refresh NBA team history"
+            git push
+          else
+            echo "No team data changes."
+          fi
