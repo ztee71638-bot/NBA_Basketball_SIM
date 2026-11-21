@@ -300,6 +300,34 @@ def probability_bucket_report(probabilities, outcomes):
     return report
 
 
+
+def rolling_window_report(model_score_errors, baseline_score_errors,
+                          model_correct, baseline_correct, model_briers,
+                          baseline_briers, model_probabilities,
+                          baseline_probabilities, outcomes):
+    """Compare recent chronological holdout windows without reusing future games."""
+    report = {}
+    available = len(model_correct)
+    for window in (100, 250, 500):
+        if available < window:
+            continue
+        model_probs = model_probabilities[-window:]
+        baseline_probs = baseline_probabilities[-window:]
+        window_outcomes = outcomes[-window:]
+        report[str(window)] = {
+            "games": window,
+            "model_score_mae": round(mean(model_score_errors[-window:]), 3),
+            "baseline_score_mae": round(mean(baseline_score_errors[-window:]), 3),
+            "model_winner_accuracy": round(mean(model_correct[-window:]), 4),
+            "baseline_winner_accuracy": round(mean(baseline_correct[-window:]), 4),
+            "model_brier_score": round(mean(model_briers[-window:]), 4),
+            "baseline_brier_score": round(mean(baseline_briers[-window:]), 4),
+            "model_calibration_error": expected_calibration_error(model_probs, window_outcomes),
+            "baseline_calibration_error": expected_calibration_error(baseline_probs, window_outcomes),
+        }
+    return report
+
+
 def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None, include_predictions: bool = False):
     by_team = {}
     arenas = (arenas_payload or {}).get("teams", {})
@@ -337,6 +365,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     advanced_baseline_briers, advanced_baseline_probabilities, advanced_baseline_outcomes = [], [], []
     used = 0
     prediction_records = []
+    model_score_errors_by_game = []
+    baseline_score_errors_by_game = []
     season_diagnostics = defaultdict(lambda: {
         "games": 0, "model_score_errors": [], "baseline_score_errors": [],
         "model_correct": [], "baseline_correct": [], "model_briers": [],
@@ -398,6 +428,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         baseline_probabilities.append(base_probability)
         baseline_outcomes.append(float(home_win))
         baseline_briers.append((base_probability-float(home_win))**2)
+        model_score_errors_by_game.append((abs(pred_h-actual_h)+abs(pred_a-actual_a))/2)
+        baseline_score_errors_by_game.append((abs(base_h-actual_h)+abs(base_a-actual_a))/2)
 
         season_key = str(home.get("season") or "unknown")
         season_row = season_diagnostics[season_key]
@@ -498,6 +530,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     if not used:
         return {"games_tested": 0, "message": "Not enough prior games for a walk-forward evaluation yet."}
     result = {
+        "model_version": "opponent-weighted-score-v1",
+        "production_baseline_version": "last10-ui-v1",
         "games_tested": used,
         "excluded_non_nba_opponent_rows": sum(
             1 for team in payload.get("teams", [])
@@ -537,6 +571,11 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
         "production_baseline_confidence_buckets": probability_bucket_report(
             baseline_probabilities, baseline_outcomes
+        ),
+        "recent_windows": rolling_window_report(
+            model_score_errors_by_game, baseline_score_errors_by_game,
+            correct, baseline_correct, briers, baseline_briers,
+            model_probabilities, baseline_probabilities, model_outcomes,
         ),
         "by_season": {
             season: {
