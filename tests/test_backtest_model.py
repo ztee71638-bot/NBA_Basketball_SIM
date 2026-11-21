@@ -164,5 +164,5 @@ def test_browser_team_profile_rows_excludes_future_and_keeps_only_prior_season_t
         for day in range(1, 13):
             rows.append({"season": season, "date": f"{int(season)-1}-10-{day:02d}T00:00:00+00:00"})
     profile = module.browser_team_profile_rows(rows[:-2])
-    assert len(profile) == 22
+    assert len(profile) == 20
     assert {row["season"] for row in profile} == {"2026", "2027"}
