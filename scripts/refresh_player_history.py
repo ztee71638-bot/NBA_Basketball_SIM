@@ -321,7 +321,7 @@ def main() -> None:
         "players": players,
     }
     output = DATA / "players.json"
-    rendered = json.dumps(payload, separators=(",", ":"), ensure_ascii=False) + "\\n"
+    rendered = json.dumps(payload, separators=(",", ":"), ensure_ascii=False) + "\n"
     output.write_text(rendered, encoding="utf-8")
     size_mb = output.stat().st_size / (1024 * 1024)
     print(f"Saved {len(players)} NBA player records across seasons {SEASONS}; compact archive size {size_mb:.1f} MiB.")
