@@ -145,7 +145,7 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
             if not competitions:
                 continue
             competition = competitions[0]
-            status = (event.get("status") or {}).get("type") or {}
+            status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
             competitors = competition.get("competitors") or []
             # Ignore scheduled/live games even when ESPN supplies 0-0 placeholders.
             if not status.get("completed", False) and status.get("state") != "post":
