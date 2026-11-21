@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T05:11:53.190722+00:00",
+  "last_updated": "2026-11-21T05:13:07.165860+00:00",
   "source": "Polymarket public Gamma API",
   "markets": [
     {
@@ -12,7 +12,7 @@
       "outcome_prices": "[\"0.9995\", \"0.0005\"]",
       "volume": "1611822.6643379997",
       "volume_24h": 1692246.8876929998,
-      "liquidity": "539012.22394",
+      "liquidity": "546345.4272",
       "end_date": "2026-11-21T02:30:00Z",
       "url": "https://polymarket.com/event/nba-phx-uta-2026-11-20",
       "source": "Polymarket Gamma"
@@ -24,10 +24,10 @@
       "active": true,
       "closed": false,
       "outcomes": "[\"Rockets\", \"Nuggets\"]",
-      "outcome_prices": "[\"0.535\", \"0.465\"]",
+      "outcome_prices": "[\"0.505\", \"0.495\"]",
       "volume": "1405827.449744",
       "volume_24h": 1493128.6172460003,
-      "liquidity": "75168.9146",
+      "liquidity": "83292.4253",
       "end_date": "2026-11-21T03:00:00Z",
       "url": "https://polymarket.com/event/nba-hou-den-2026-11-20",
       "source": "Polymarket Gamma"
@@ -39,10 +39,10 @@
       "active": true,
       "closed": false,
       "outcomes": "[\"Kings\", \"Lakers\"]",
-      "outcome_prices": "[\"0.325\", \"0.675\"]",
+      "outcome_prices": "[\"0.105\", \"0.895\"]",
       "volume": "928493.5496929999",
       "volume_24h": 1079891.1175590004,
-      "liquidity": "56056.98",
+      "liquidity": "109560.471",
       "end_date": "2026-11-21T03:00:00Z",
       "url": "https://polymarket.com/event/nba-sac-lal-2026-11-20",
       "source": "Polymarket Gamma"
@@ -57,7 +57,7 @@
       "outcome_prices": "[\"0.9995\", \"0.0005\"]",
       "volume": "597771.0947010001",
       "volume_24h": 600263.944852,
-      "liquidity": "336144.89362",
+      "liquidity": "341456.04272",
       "end_date": "2026-11-21T02:30:00Z",
       "url": "https://polymarket.com/event/nba-phx-uta-2026-11-20-spread-away-4pt5",
       "source": "Polymarket Gamma"
@@ -72,7 +72,7 @@
       "outcome_prices": "[\"0.9925\", \"0.0075\"]",
       "volume": "341550.895633",
       "volume_24h": 343550.873633,
-      "liquidity": "46270.09526",
+      "liquidity": "45642.28026",
       "end_date": "2026-11-21T03:00:00Z",
       "url": "https://polymarket.com/event/nba-hou-den-2026-11-20-total-227pt5",
       "source": "Polymarket Gamma"
@@ -87,7 +87,7 @@
       "outcome_prices": "[\"0.0005\", \"0.9995\"]",
       "volume": "167836.85349499996",
       "volume_24h": 167643.520161,
-      "liquidity": "148979.06791",
+      "liquidity": "154592.91929",
       "end_date": "2026-11-21T02:30:00Z",
       "url": "https://polymarket.com/event/nba-phx-uta-2026-11-20-total-225pt5",
       "source": "Polymarket Gamma"
@@ -99,10 +99,10 @@
       "active": true,
       "closed": false,
       "outcomes": "[\"Nuggets\", \"Rockets\"]",
-      "outcome_prices": "[\"0.415\", \"0.585\"]",
+      "outcome_prices": "[\"0.44\", \"0.56\"]",
       "volume": "147913.86490900003",
       "volume_24h": 149034.81862000003,
-      "liquidity": "28702.8971",
+      "liquidity": "12811.4166",
       "end_date": "2026-11-21T03:00:00Z",
       "url": "https://polymarket.com/event/nba-hou-den-2026-11-20-spread-home-1pt5",
       "source": "Polymarket Gamma"
@@ -117,7 +117,7 @@
       "outcome_prices": "[\"0.0005\", \"0.9995\"]",
       "volume": "146247.385987",
       "volume_24h": 147668.15562299997,
-      "liquidity": "130392.86094",
+      "liquidity": "135707.01144",
       "end_date": "2026-11-21T02:30:00Z",
       "url": "https://polymarket.com/event/nba-phx-uta-2026-11-20-total-226pt5",
       "source": "Polymarket Gamma"
@@ -129,10 +129,10 @@
       "active": true,
       "closed": false,
       "outcomes": "[\"Over\", \"Under\"]",
-      "outcome_prices": "[\"0.115\", \"0.885\"]",
+      "outcome_prices": "[\"0.05\", \"0.95\"]",
       "volume": "137993.840066",
       "volume_24h": 138822.79740099996,
-      "liquidity": "23729.3575",
+      "liquidity": "30475.1069",
       "end_date": "2026-11-21T03:00:00Z",
       "url": "https://polymarket.com/event/nba-sac-lal-2026-11-20-total-228pt5",
       "source": "Polymarket Gamma"
@@ -144,10 +144,10 @@
       "active": true,
       "closed": false,
       "outcomes": "[\"Over\", \"Under\"]",
-      "outcome_prices": "[\"0.11\", \"0.89\"]",
+      "outcome_prices": "[\"0.075\", \"0.925\"]",
       "volume": "115146.16114",
       "volume_24h": 115930.47114000001,
-      "liquidity": "16772.89",
+      "liquidity": "10861.3859",
       "end_date": "2026-11-21T03:00:00Z",
       "url": "https://polymarket.com/event/nba-sac-lal-2026-11-20-total-229pt5",
       "source": "Polymarket Gamma"
@@ -162,7 +162,7 @@
       "outcome_prices": "[\"0.0005\", \"0.9995\"]",
       "volume": "97275.771301",
       "volume_24h": 96292.07502399999,
-      "liquidity": "111771.66317",
+      "liquidity": "121085.80817",
       "end_date": "2026-11-21T02:30:00Z",
       "url": "https://polymarket.com/event/nba-phx-uta-2026-11-20-total-227pt5",
       "source": "Polymarket Gamma"
@@ -174,10 +174,10 @@
       "active": true,
       "closed": false,
       "outcomes": "[\"Rockets\", \"Nuggets\"]",
-      "outcome_prices": "[\"0.475\", \"0.525\"]",
+      "outcome_prices": "[\"0.43\", \"0.57\"]",
       "volume": "66515.536338",
       "volume_24h": 66588.35633800001,
-      "liquidity": "26943.8129",
+      "liquidity": "18010.4648",
       "end_date": "2026-11-21T03:00:00Z",
       "url": "https://polymarket.com/event/nba-hou-den-2026-11-20-spread-away-1pt5",
       "source": "Polymarket Gamma"
