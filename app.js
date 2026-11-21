@@ -12,6 +12,8 @@ let injuryUpdatedAt = null;
 let lineupData = [];
 let lineupsUpdatedAt = null;
 let marketData = [];
+let marketsLoaded = false;
+let marketsLoading = null;
 let selectedPropMarket = null;
 let selectedGame = null;
 let selectedPlayer = null;
@@ -306,6 +308,7 @@ function selectGame(game) {
   prefillGameProjections(game);
   renderGameMarkets(game);
   renderGameLineups(game);
+  if(!marketsLoaded)ensureMarketsLoaded();
 }
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
@@ -443,12 +446,18 @@ async function loadMarkets(){
   if(root) root.innerHTML='<p class="muted">Refreshing Polymarket snapshot…</p>';
   try {
     const data=await loadJson('data/polymarket.json');
-    const rows=Array.isArray(data.markets)?data.markets:[]; marketData=rows;
+    const rows=Array.isArray(data.markets)?data.markets:[]; marketData=rows; marketsLoaded=true;
     if(!root) return;
     root.innerHTML=rows.length?rows.slice(0,150).map(m=>'<div class="market"><div><strong>'+escapeHtml(m.question||'Untitled market')+'</strong><small>'+escapeHtml(m.event_title||'')+(m.market_type?' · '+escapeHtml(m.market_type.replace('_',' ')):'')+(marketPriceSummary(m)?' · '+marketPriceSummary(m):' · Prices unavailable')+' · 24h volume: '+escapeHtml(m.volume_24h??'n/a')+' · Liquidity: '+escapeHtml(m.liquidity??'n/a')+'</small></div>'+(m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':'')+'</div>').join(''):'<p class="muted">No active NBA markets were found in the latest public snapshot.</p>' + '<p class="fine-print">Snapshot updated '+(data.last_updated?new Date(data.last_updated).toLocaleString():'at an unknown time')+'.</p>';
     if(rows.length) root.insertAdjacentHTML('beforeend','<p class="fine-print">Showing '+Math.min(rows.length,150)+' of '+rows.length+' markets · Snapshot updated '+(data.last_updated?new Date(data.last_updated).toLocaleString():'at an unknown time')+'.</p>');
     if(selectedGame) renderGameMarkets(selectedGame); if(selectedPlayer) renderPlayerMarkets(selectedPlayer);
-  } catch(e) { marketData=[]; if(root) root.innerHTML='<p class="muted">Polymarket data could not be loaded: '+escapeHtml(e.message)+'. Try Refresh Markets.</p>'; }
+  } catch(e) { marketsLoaded=false; marketData=[]; if(root) root.innerHTML='<p class="muted">Polymarket data could not be loaded: '+escapeHtml(e.message)+'. Try Refresh Markets.</p>'; }
+}
+async function ensureMarketsLoaded() {
+  if(marketsLoaded)return;
+  if(marketsLoading){await marketsLoading;return;}
+  marketsLoading=loadMarkets();
+  try{await marketsLoading;}finally{marketsLoading=null;}
 }
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -752,7 +761,7 @@ async function loadAll(){
   await loadModelMetrics();
   await loadInjuries();
   await loadLineups();
-  await loadMarkets();
+  if(marketsLoaded) await loadMarkets();
 }
 $("simulate").addEventListener("click",runGameSimulation);
 $("day-prev").addEventListener("click",()=>{activeScheduleDay=Math.max(0,activeScheduleDay-1);updateDayNavigation();});
@@ -761,6 +770,7 @@ document.querySelectorAll("[data-view]").forEach(button=>button.addEventListener
   document.querySelectorAll("[data-view]").forEach(tab=>{const active=tab===button;tab.classList.toggle("active",active);tab.setAttribute("aria-selected",String(active));});
   document.querySelectorAll(".view-panel").forEach(panel=>panel.hidden=panel.id!==button.dataset.view);
   if(button.dataset.view==="players-view") ensurePlayersLoaded();
+  if(button.dataset.view==="markets-view") ensureMarketsLoaded();
 }));
 $("prop-calc").addEventListener("click",calcProp);
 $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlayerHistoricalBaseline();});
