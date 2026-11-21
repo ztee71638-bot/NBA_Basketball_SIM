@@ -151,7 +151,11 @@ function renderPlayerSearch() {
   const matches = players.filter(p => !query || [p.name,p.team,p.position].some(v => String(v || "").toLowerCase().includes(query))).slice(0,20);
   if (!players.length) { root.innerHTML = '<p class="muted">Player history has not been loaded yet.</p>'; return; }
   if (!matches.length) { root.innerHTML = '<p class="muted">No players match that search.</p>'; return; }
-  root.innerHTML = matches.map(p => '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">View history</button></div>').join("");
+  root.innerHTML = matches.map(p => {
+    const injury = injuryData.find(item => String(item.athlete_id) === String(p.id));
+    const availability = injury ? " · Injury: " + (injury.status || "listed") : "";
+    return '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + escapeHtml(availability) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">View history</button></div>';
+  }).join("");
   root.querySelectorAll("[data-player-id]").forEach(b => b.addEventListener("click", () => showPlayer(b.dataset.playerId)));
 }
 function applyPlayerHistoricalBaseline() {
@@ -228,6 +232,7 @@ async function loadInjuries() {
     const data = await loadJson("data/injuries.json");
     injuryData = data.injuries || [];
     renderInjuries();
+    renderPlayerSearch();
     if (data.last_updated) $("data-status").textContent += " · Injuries updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
     $("injuries").textContent = "Injury report unavailable: " + e.message;
