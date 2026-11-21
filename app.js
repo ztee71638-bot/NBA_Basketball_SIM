@@ -214,8 +214,9 @@ function showPlayer(playerId) {
   const seasons = Object.entries(p.seasons || {}).sort((a,b) => Number(b[0])-Number(a[0]));
   const chosen = seasons.find(([,logs]) => logs && logs.length) || seasons[0];
   if (!chosen || !chosen[1]?.length) {
-    $("player-detail").textContent = p.name + ": roster record found, but no game logs were returned for the stored seasons.";
+    $("player-detail").innerHTML = escapeHtml(p.name) + ": roster record found, but no game logs were returned for the stored seasons.<div id="player-market-matches"></div>";
     applyPlayerHistoricalBaseline();
+    renderPlayerMarkets(p);
     return;
   }
   const season = chosen[0], logs = chosen[1];
