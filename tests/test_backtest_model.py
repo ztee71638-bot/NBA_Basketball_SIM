@@ -205,3 +205,9 @@ def test_browser_team_profile_rows_excludes_future_and_keeps_only_prior_season_t
     profile = module.browser_team_profile_rows(rows[:-2])
     assert len(profile) == 20
     assert {row["season"] for row in profile} == {"2026", "2027"}
+
+
+def test_binary_log_loss_penalizes_confident_misses_and_handles_extremes():
+    assert module.binary_log_loss([0.9, 0.1], [1.0, 0.0]) < module.binary_log_loss([0.9, 0.1], [0.0, 1.0])
+    assert module.binary_log_loss([1.0, 0.0], [1.0, 0.0]) == 0.0
+    assert module.binary_log_loss([], []) is None
