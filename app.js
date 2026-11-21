@@ -111,6 +111,11 @@ function calcProp(){
       $("prop-results").textContent="PASS — ESPN lists "+selectedPlayer.name+" as "+injury.status+". Do not use the historical baseline as an active-player projection.";
       return;
     }
+    const stat=$("prop-stat").value;
+    if(!selectedPlayerLogs.some(game=>Number.isFinite(game[stat]))){
+      $("prop-results").textContent="PASS — no usable recent "+stat+" history is available for "+selectedPlayer.name+".";
+      return;
+    }
   }
   if(![mean,sd,line].every(Number.isFinite)||sd<=0){$("prop-results").textContent="Enter valid values and a positive standard deviation.";return;}
   const over=(1-erf((line-mean)/(sd*Math.sqrt(2))))/2;
