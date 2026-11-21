@@ -300,3 +300,67 @@ footer{color:#83aaaa}
  text-shadow:0 0 18px color-mix(in srgb,var(--team-secondary) 32%,transparent);
 }
 .split-result-team .split-result-wins{color:color-mix(in srgb,var(--team-secondary) 68%,#ffffff)}
+
+/* Sport-forward NBA analytics masthead */
+.hero{
+ position:relative;isolation:isolate;overflow:hidden;min-height:278px;
+ display:flex;align-items:center;justify-content:space-between;gap:28px;
+ padding:42px 34px 38px;margin:22px auto 0;
+ border:1px solid rgba(38,222,208,.28);border-radius:24px;
+ background:linear-gradient(112deg,rgba(5,24,28,.98) 0%,rgba(7,39,43,.96) 54%,rgba(8,22,32,.98) 100%);
+ box-shadow:0 18px 55px rgba(0,0,0,.28),inset 0 1px rgba(147,255,245,.08);
+}
+.hero:before{
+ content:"";position:absolute;z-index:-1;inset:0;opacity:.26;
+ background:repeating-linear-gradient(0deg,transparent 0 37px,rgba(71,219,208,.12) 38px 39px),linear-gradient(90deg,transparent 0%,rgba(24,213,199,.08) 72%,transparent 100%);
+ clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+}
+.hero:after{
+ content:"";position:absolute;z-index:-1;left:0;bottom:0;width:58%;height:3px;
+ background:linear-gradient(90deg,#24ead8,rgba(36,234,216,0));box-shadow:0 0 20px rgba(36,234,216,.55);
+}
+.hero-copy{position:relative;z-index:2;max-width:720px}
+.hero .hero-kicker{display:flex;align-items:center;gap:9px;color:#65eee3;font-size:.72rem;font-weight:850;letter-spacing:.2em;margin-bottom:14px}
+.hero-kicker-dot{width:8px;height:8px;border-radius:50%;background:#35efda;box-shadow:0 0 12px #35efda}
+.hero h1{
+ margin:0;font-size:clamp(2.7rem,6.3vw,5rem);line-height:.94;letter-spacing:-.065em;
+ font-weight:950;text-transform:uppercase;font-style:italic;
+ text-shadow:0 5px 26px rgba(0,0,0,.38);
+}
+.hero h1 span{
+ display:block;color:#5af0e3;
+ background:linear-gradient(100deg,#f2ffff 0%,#63f3e7 56%,#21bcb4 100%);
+ -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero .hero-subtitle{margin:17px 0 16px;color:#b3cecf;font-size:1rem;letter-spacing:.015em}
+.hero-tags{display:flex;align-items:center;gap:11px;flex-wrap:wrap;color:#81aaa9;font-size:.65rem;font-weight:800;letter-spacing:.13em}
+.hero-tags i{width:4px;height:4px;border-radius:50%;background:#39d8cb;box-shadow:0 0 8px #39d8cb}
+.hero-side{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;min-width:190px}
+.hero-ball{
+ position:relative;width:132px;height:132px;border:2px solid rgba(95,244,230,.72);border-radius:50%;
+ background:radial-gradient(circle at 34% 28%,rgba(54,222,210,.2),rgba(6,36,41,.3) 64%,rgba(4,17,22,.8));
+ box-shadow:0 0 0 10px rgba(43,211,200,.045),0 0 0 22px rgba(43,211,200,.025),0 0 34px rgba(38,224,210,.18),inset 0 0 25px rgba(38,224,210,.14);
+}
+.hero-ball:before,.hero-ball:after,.hero-ball span{content:"";position:absolute;inset:0;border:1.5px solid rgba(95,244,230,.62);border-radius:50%}
+.hero-ball:before{left:32%;right:32%}
+.hero-ball:after{top:32%;bottom:32%}
+.hero-ball span{inset:-1px;border-left-color:transparent;border-right-color:transparent;transform:rotate(45deg)}
+.hero-side .status{white-space:nowrap;border-color:rgba(69,219,207,.35);background:rgba(3,23,27,.78);color:#bce9e5;font-weight:650}
+@media(max-width:700px){
+ .hero{margin:12px 16px 0;padding:29px 22px 25px;min-height:0;border-radius:19px;gap:10px}
+ .hero h1{font-size:clamp(2.35rem,11vw,3.5rem)}
+ .hero .hero-kicker{font-size:.62rem;letter-spacing:.14em}
+ .hero .hero-subtitle{font-size:.88rem;margin:13px 0}
+ .hero-tags{font-size:.56rem;gap:7px;letter-spacing:.08em}
+ .hero-side{min-width:0;align-items:flex-end;gap:10px}
+ .hero-ball{width:76px;height:76px;opacity:.8}
+ .hero-side .status{font-size:.7rem;padding:6px 9px}
+}
+@media(max-width:430px){
+ .hero{align-items:flex-start}
+ .hero-side{position:absolute;right:18px;top:20px}
+ .hero-ball{width:54px;height:54px;opacity:.42}
+ .hero-side .status{position:absolute;top:61px;right:0}
+ .hero-copy{padding-right:4px}
+ .hero-tags{max-width:275px}
+}
