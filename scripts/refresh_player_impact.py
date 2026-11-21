@@ -93,7 +93,7 @@ def fetch_source() -> str:
 def main() -> None:
     payload = build_payload(fetch_source())
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Saved {payload['record_count']} HAPM records: {payload['counts_by_season']}")
 
 
