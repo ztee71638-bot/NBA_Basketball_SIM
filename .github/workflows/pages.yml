@@ -20,8 +20,10 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  # Keep pull-request validation isolated from production deployments.
+  # A PR build must never cancel a deployment triggered by refreshed main data.
+  group: pages-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'main' }}
+  cancel-in-progress: false
 
 jobs:
   build:
