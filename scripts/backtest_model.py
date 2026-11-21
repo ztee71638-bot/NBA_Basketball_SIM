@@ -278,6 +278,28 @@ def apply_probability_calibration(probability: float, calibration: dict[str, Any
         + float(calibration.get("slope", 1.0)) * _logit(probability)
     )
 
+
+def probability_bucket_report(probabilities, outcomes):
+    """Summarize the production baseline by predicted-side confidence."""
+    edges = (0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 1.000001)
+    report = []
+    for lower, upper in zip(edges, edges[1:]):
+        selected = [
+            (float(p), float(y)) for p, y in zip(probabilities, outcomes)
+            if lower <= max(float(p), 1.0 - float(p)) < upper
+        ]
+        if not selected:
+            continue
+        report.append({
+            "confidence_range": f"{lower:.0%}-{min(upper, 1.0):.0%}",
+            "games": len(selected),
+            "average_confidence": round(mean(max(p, 1.0 - p) for p, _ in selected), 4),
+            "observed_accuracy": round(mean(float((p >= 0.5) == (y >= 0.5)) for p, y in selected), 4),
+            "brier_score": round(mean((p - y) ** 2 for p, y in selected), 4),
+        })
+    return report
+
+
 def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_payload: dict[str, Any] | None = None):
     by_team = {}
     arenas = (arenas_payload or {}).get("teams", {})
@@ -314,6 +336,11 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     advanced_baseline_errors, advanced_baseline_correct, advanced_probabilities, advanced_outcomes = [], [], [], []
     advanced_baseline_briers, advanced_baseline_probabilities, advanced_baseline_outcomes = [], [], []
     used = 0
+    season_diagnostics = defaultdict(lambda: {
+        "games": 0, "model_score_errors": [], "baseline_score_errors": [],
+        "model_correct": [], "baseline_correct": [], "model_briers": [],
+        "baseline_briers": [],
+    })
     for matchup in ordered:
         if len(matchup) != 2:
             continue
@@ -370,6 +397,16 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         baseline_probabilities.append(base_probability)
         baseline_outcomes.append(float(home_win))
         baseline_briers.append((base_probability-float(home_win))**2)
+
+        season_key = str(home.get("season") or "unknown")
+        season_row = season_diagnostics[season_key]
+        season_row["games"] += 1
+        season_row["model_score_errors"].extend((abs(pred_h-actual_h), abs(pred_a-actual_a)))
+        season_row["baseline_score_errors"].extend((abs(base_h-actual_h), abs(base_a-actual_a)))
+        season_row["model_correct"].append(float((pred_h > pred_a) == home_win))
+        season_row["baseline_correct"].append(float((base_h > base_a) == home_win))
+        season_row["model_briers"].append((p_home-float(home_win))**2)
+        season_row["baseline_briers"].append((base_probability-float(home_win))**2)
 
         # Fit only on prior, already-observed default-UI baseline predictions.
         if len(baseline_probabilities) > 100:
@@ -457,6 +494,25 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         },
         "baseline_brier_score": round(mean(baseline_briers), 4),
         "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
+        "production_baseline_confidence_buckets": probability_bucket_report(
+            baseline_probabilities, baseline_outcomes
+        ),
+        "by_season": {
+            season: {
+                "games": values["games"],
+                "model_score_mae": round(mean(values["model_score_errors"]), 3),
+                "baseline_score_mae": round(mean(values["baseline_score_errors"]), 3),
+                "model_winner_accuracy": round(mean(values["model_correct"]), 4),
+                "baseline_winner_accuracy": round(mean(values["baseline_correct"]), 4),
+                "model_brier_score": round(mean(values["model_briers"]), 4),
+                "baseline_brier_score": round(mean(values["baseline_briers"]), 4),
+            }
+            for season, values in sorted(season_diagnostics.items())
+        },
+        "diagnostics_note": (
+            "Season slices and confidence buckets are descriptive holdout diagnostics. "
+            "Small slices are not sufficient to establish a predictive edge."
+        ),
         "advanced_games_tested": len(advanced_correct),
         "advanced_score_mae": round(mean(advanced_errors), 3) if advanced_errors else None,
         "advanced_baseline_score_mae": round(mean(advanced_baseline_errors), 3) if advanced_baseline_errors else None,
