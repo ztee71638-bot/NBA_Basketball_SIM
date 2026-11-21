@@ -38,6 +38,25 @@ def test_parse_player_gamelog_maps_common_stats():
     assert rows[0]["blocks"] == 1
 
 
+
+def test_parse_player_gamelog_retains_minutes_and_impact_fields():
+    payload = {
+        "labels": ["MIN", "FG", "3PT", "FT", "OREB", "REB", "AST", "TO", "+/-", "PTS"],
+        "events": {"impact-1": {"id": "impact-1", "date": "2026-11-20T00:00Z"}},
+        "seasonTypes": [{"categories": [{"events": [{
+            "eventId": "impact-1",
+            "stats": ["34", "9-17", "2-5", "4-4", "3", "8", "6", "2", "+11", "24"]
+        }]}]}],
+    }
+    row = module.parse_player_gamelog(payload)[0]
+    assert row["minutes"] == 34
+    assert row["turnovers"] == 2
+    assert row["offensive_rebounds"] == 3
+    assert row["plus_minus"] == 11
+    assert row["field_goals_attempted"] == 17
+    assert row["three_pointers_attempted"] == 5
+    assert row["free_throws_attempted"] == 4
+
 def test_number_handles_missing_and_invalid_values():
     assert module._number(None) is None
     assert module._number("not available") is None
