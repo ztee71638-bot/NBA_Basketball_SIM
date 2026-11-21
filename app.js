@@ -568,6 +568,23 @@ function renderMarkets() {
     return '<section class="market-day-page" data-market-day="'+escapeHtml(day)+'"><div class="market-day-heading"><h3>'+escapeHtml(dayDate)+'</h3><span class="market-day-count">'+dayRows.length+' active markets</span></div>'+cards+'</section>';
   }).join("");
   root.innerHTML=pages;
+  if(!root.dataset.scrollBound){
+    root.dataset.scrollBound="true";
+    root.addEventListener("scroll",()=>{
+      if(root._marketScrollFrame)return;
+      root._marketScrollFrame=requestAnimationFrame(()=>{
+        root._marketScrollFrame=0;
+        const bounds=root.getBoundingClientRect();
+        let nearest=0,best=Infinity;
+        [...root.children].forEach((page,index)=>{
+          const distance=Math.abs(page.getBoundingClientRect().left-bounds.left);
+          if(distance<best){best=distance;nearest=index;}
+        });
+        activeMarketDay=nearest;
+        renderMarketNavigation();
+      });
+    },{passive:true});
+  }
   root.scrollTo({left:0,behavior:"instant"});
   const page=root.children[activeMarketDay];
   if(page)page.scrollIntoView({block:"nearest",inline:"start",behavior:"instant"});
