@@ -73,7 +73,7 @@ function renderGameMarkets(game) {
   }
   root.innerHTML = '<strong>Matching Polymarket markets</strong>' + matches.map(market =>
     '<div class="market"><div><strong>' + escapeHtml(market.question || market.event_title) +
-    '</strong><small>' + escapeHtml(marketPriceSummary(market) || "Prices unavailable") +
+    '</strong><small>' + escapeHtml(market.market_type || "market") + " · " + escapeHtml(market.market_type || "market") + " · " + escapeHtml(marketPriceSummary(market) || "Prices unavailable") +
     ' · 24h volume: ' + escapeHtml(market.volume_24h ?? "n/a") + '</small></div>' +
     (market.url ? '<a target="_blank" rel="noopener" href="' + escapeHtml(market.url) + '">Open market</a>' : '') +
     '</div>'
@@ -145,7 +145,7 @@ function marketPriceSummary(market) {
 }
 
 async function loadMarkets(){
-  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];marketData=rows;$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${escapeHtml(m.question||"Untitled market")}</strong><small>${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){marketData=[];$("markets").textContent="Market feed unavailable: "+e.message;}
+  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];marketData=rows;$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${escapeHtml(m.question||"Untitled market")}</strong><small>${m.market_type ? escapeHtml(m.market_type.replace("_"," ")) + " · " : ""}${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){marketData=[];$("markets").textContent="Market feed unavailable: "+e.message;}
   if(selectedGame) renderGameMarkets(selectedGame);
   if(selectedPlayer) renderPlayerMarkets(selectedPlayer);
 }
