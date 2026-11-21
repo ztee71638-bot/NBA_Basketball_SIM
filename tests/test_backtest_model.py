@@ -103,12 +103,14 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
 
 
 def test_recent_window_report_uses_only_last_n_chronological_holdouts():
-    values = [float(index % 2) for index in range(500)]
+    outcomes = [float(index % 2) for index in range(500)]
+    correct = [1.0] * 500
     errors = [float(index % 7) for index in range(500)]
-    probabilities = [0.7 if value else 0.3 for value in values]
+    probabilities = [0.7 if value else 0.3 for value in outcomes]
+    briers = [(p-y)**2 for p,y in zip(probabilities,outcomes)]
     report = module.rolling_window_report(
-        errors, errors, values, values, errors, errors,
-        probabilities, probabilities, values,
+        errors, errors, correct, correct, briers, briers,
+        probabilities, probabilities, outcomes,
     )
     assert set(report) == {"100", "250", "500"}
     assert report["100"]["games"] == 100
