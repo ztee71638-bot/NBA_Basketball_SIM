@@ -91,3 +91,21 @@ def test_date_values_includes_both_endpoints():
     assert [d.isoformat() for d in module._date_values(date(2026, 10, 1), date(2026, 10, 3))] == [
         "2026-10-01", "2026-10-02", "2026-10-03"
     ]
+
+
+def test_scoreboard_fallback_builds_team_rows(monkeypatch):
+    from datetime import date
+    season = module.datetime.now(module.timezone.utc).year + 1
+    monkeypatch.setattr(module, "_date_values", lambda start, end: [date(start.year, start.month, start.day)])
+    payload = {"events": [{
+        "id": "scoreboard-game", "date": "2026-11-20T00:00Z",
+        "status": {"type": {"completed": True, "state": "post"}},
+        "competitions": [{"competitors": [
+            {"homeAway": "home", "team": {"id": "18", "abbreviation": "NY"}, "score": "115"},
+            {"homeAway": "away", "team": {"id": "3", "abbreviation": "NO"}, "score": "109"},
+        ]}],
+    }]}
+    monkeypatch.setattr(module, "get_json", lambda url, params=None: payload)
+    grouped = module.fetch_season_from_scoreboard(season)
+    assert grouped["NYK"][0]["points_for"] == 115
+    assert grouped["NOP"][0]["points_against"] == 115
