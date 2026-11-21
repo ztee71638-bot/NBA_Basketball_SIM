@@ -44,6 +44,42 @@ def test_parse_confirmed_lineups_does_not_infer_missing_starters():
     assert parsed["home_starters"] == []
 
 
+
+def test_get_json_retries_rate_limits_and_succeeds(monkeypatch):
+    import requests
+    class FakeResponse:
+        def __init__(self, status, payload=None):
+            self.status_code = status
+            self.headers = {"Retry-After": "0"}
+            self.payload = payload or {}
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                raise requests.HTTPError(response=self)
+        def json(self):
+            return self.payload
+    responses = [FakeResponse(429), FakeResponse(200, {"ok": True})]
+    monkeypatch.setattr(module.requests, "get", lambda *args, **kwargs: responses.pop(0))
+    monkeypatch.setattr(module.time, "sleep", lambda seconds: None)
+    assert module.get_json("https://example.test/data") == {"ok": True}
+
+
+def test_get_json_does_not_retry_permanent_client_errors(monkeypatch):
+    import requests
+    class FakeResponse:
+        status_code = 404
+        headers = {}
+        def raise_for_status(self):
+            raise requests.HTTPError(response=self)
+    calls = []
+    monkeypatch.setattr(module.requests, "get", lambda *args, **kwargs: calls.append(1) or FakeResponse())
+    try:
+        module.get_json("https://example.test/missing")
+    except requests.HTTPError:
+        pass
+    else:
+        raise AssertionError("Expected permanent 404 to raise")
+    assert len(calls) == 1
+
 def test_market_text_handles_missing_fields():
     assert module._market_text({"question": "NBA: Lakers vs Celtics"}).startswith("nba")
 
