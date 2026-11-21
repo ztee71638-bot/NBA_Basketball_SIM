@@ -337,10 +337,11 @@ footer{color:#83aaaa}
 .hero-tags i{width:4px;height:4px;border-radius:50%;background:#39d8cb;box-shadow:0 0 8px #39d8cb}
 .hero-side{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;min-width:190px}
 .hero-ball{
-  position:relative;display:block;width:168px;height:168px;flex:none;
+  position:relative;display:block;width:190px;height:190px;flex:none;
   object-fit:contain;
-  filter:drop-shadow(0 14px 18px rgba(0,0,0,.42));
+  filter:drop-shadow(0 16px 22px rgba(0,0,0,.48)) drop-shadow(0 0 12px rgba(255,132,42,.13));
   transform:rotate(-7deg);
+  animation:hero-ball-float 7s ease-in-out infinite;
 }
 @keyframes hero-ball-float{
   0%,100%{transform:translateY(0) rotate(-13deg)}
@@ -355,13 +356,13 @@ footer{color:#83aaaa}
  .hero .hero-subtitle{font-size:.88rem;margin:13px 0}
  .hero-tags{font-size:.56rem;gap:7px;letter-spacing:.08em}
  .hero-side{min-width:0;align-items:flex-end;gap:10px}
- .hero-ball{width:92px;height:92px;opacity:1}
+ .hero-ball{width:84px;height:84px;opacity:1}
  .hero-side .status{font-size:.7rem;padding:6px 9px}
 }
 @media(max-width:430px){
  .hero{align-items:flex-start}
  .hero-side{position:absolute;right:18px;top:20px}
- .hero-ball{width:68px;height:68px;opacity:1}
+ .hero-ball{width:74px;height:74px;opacity:1}
  .hero-side .status{position:absolute;top:61px;right:0}
  .hero-copy{padding-right:4px}
  .hero-tags{max-width:275px}
