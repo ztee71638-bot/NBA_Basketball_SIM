@@ -36,3 +36,20 @@ table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.88rem}th,td
 .injury-status{font-size:.75rem;color:var(--accent);font-weight:650}
 .injury-player small{display:block;color:var(--muted);font-size:.76rem;margin-top:2px}
 .injury-player p{margin:4px 0 0;color:var(--muted);font-size:.78rem;line-height:1.35}
+
+/* Team-first injury list: player details are hidden until a team is tapped */
+.injury-team{border:1px solid var(--line);border-radius:10px;background:#0d1728;overflow:hidden}
+.injury-team+.injury-team{margin-top:7px}
+.injury-team-toggle{width:100%;display:flex;align-items:center;gap:10px;text-align:left;padding:11px 12px;background:transparent;border:0;border-radius:0}
+.injury-team-toggle:hover{background:#142239}
+.injury-team-name{font-weight:650;font-size:.9rem;flex:1}
+.injury-team-count{font-size:.75rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 8px}
+.injury-chevron{color:var(--muted);font-size:1rem;width:18px;text-align:center}
+.injury-team-players{padding:0 12px 8px}
+.injury-team-players[hidden]{display:none!important}
+.injury-player{padding:9px 2px;border-top:1px solid var(--line)}
+.injury-player-main{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.injury-player-main strong{font-size:.88rem}
+.injury-status{font-size:.75rem;color:var(--accent);font-weight:650}
+.injury-player small{display:block;color:var(--muted);font-size:.76rem;margin-top:2px}
+.injury-player p{margin:4px 0 0;color:var(--muted);font-size:.78rem;line-height:1.35}
