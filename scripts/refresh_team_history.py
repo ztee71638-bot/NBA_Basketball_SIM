@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -20,6 +21,7 @@ URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_
 SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 TIMEOUT = 25
 DELAY = 0.8
+WORKERS = max(1, min(4, int(os.getenv("NBA_TEAM_HISTORY_WORKERS", "4"))))
 SEASONS = sorted({int(value) for value in os.getenv("NBA_TEAM_HISTORY_SEASONS", "2027,2026,2025,2024,2023").split(",") if value.strip()}, reverse=True)
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
@@ -131,53 +133,63 @@ def _date_values(start: date, end: date):
 
 
 def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]:
-    """Reliable fallback: collect completed games from ESPN's daily scoreboard."""
+    """Reliable fallback: collect completed games from ESPN daily scoreboard feeds."""
     today = datetime.now(timezone.utc).date()
     if season == today.year + 1:
         start, end = date(season - 1, 10, 1), today
     else:
         start, end = date(season - 1, 10, 1), date(season, 6, 30)
     grouped: dict[str, list[dict[str, Any]]] = {abbr: [] for abbr in TEAM_IDS}
-    for game_date in _date_values(start, end):
+    dates = list(_date_values(start, end))
+
+    def fetch_day(game_date: date):
         payload = get_json(SCOREBOARD_URL, {
             "dates": game_date.strftime("%Y%m%d"), "seasontype": 2, "limit": 100
         })
-        for event in payload.get("events") or []:
-            competitions = event.get("competitions") or []
-            if not competitions:
-                continue
-            competition = competitions[0]
-            status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
-            competitors = competition.get("competitors") or []
-            if not status.get("completed", False) and status.get("state") != "post":
-                continue
-            if len(competitors) != 2:
-                continue
-            for own in competitors:
-                own_team = own.get("team") or {}
-                own_abbr = ID_TO_TEAM.get(str(own_team.get("id")), own_team.get("abbreviation"))
-                if own_abbr not in grouped:
+        return game_date, payload
+
+    # A small bounded pool keeps the fallback from taking hours while avoiding
+    # an aggressive burst against ESPN's public endpoints.
+    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+        futures = [executor.submit(fetch_day, game_date) for game_date in dates]
+        for future in as_completed(futures):
+            game_date, payload = future.result()
+            for event in payload.get("events") or []:
+                competitions = event.get("competitions") or []
+                if not competitions:
                     continue
-                other = next((item for item in competitors if item is not own), None)
-                if not other:
+                competition = competitions[0]
+                status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
+                competitors = competition.get("competitors") or []
+                if not status.get("completed", False) and status.get("state") != "post":
                     continue
-                other_team = other.get("team") or {}
-                pf, pa = _score(own.get("score")), _score(other.get("score"))
-                if pf is None or pa is None:
+                if len(competitors) != 2:
                     continue
-                grouped[own_abbr].append({
-                    "game_id": str(event.get("id") or ""),
-                    "date": event.get("date"),
-                    "team": own_abbr,
-                    "opponent": ID_TO_TEAM.get(str(other_team.get("id")), other_team.get("abbreviation")),
-                    "opponent_name": other_team.get("displayName"),
-                    "home_away": own.get("homeAway"),
-                    "points_for": pf,
-                    "points_against": pa,
-                    "win": pf > pa,
-                    "result": "W" if pf > pa else "L",
-                })
-    return {abbr: sorted(rows, key=lambda row: row.get("date") or "") for abbr, rows in grouped.items()}
+                for own in competitors:
+                    team = own.get("team") or {}
+                    opponent = next((c.get("team") or {} for c in competitors if c is not own), {})
+                    abbreviation = ID_TO_TEAM.get(str(team.get("id") or ""), team.get("abbreviation"))
+                    opponent_abbreviation = ID_TO_TEAM.get(str(opponent.get("id") or ""), opponent.get("abbreviation"))
+                    if abbreviation not in grouped or not opponent_abbreviation:
+                        continue
+                    points_for, points_against = _score(own.get("score")), _score(next((c.get("score") for c in competitors if c is not own), None))
+                    if points_for is None or points_against is None:
+                        continue
+                    grouped[abbreviation].append({
+                        "game_id": str(event.get("id") or ""),
+                        "date": event.get("date") or game_date.isoformat(),
+                        "team": abbreviation,
+                        "opponent": opponent_abbreviation,
+                        "opponent_name": opponent.get("displayName"),
+                        "home_away": own.get("homeAway"),
+                        "points_for": points_for,
+                        "points_against": points_against,
+                        "win": points_for > points_against,
+                        "result": "W" if points_for > points_against else "L",
+                    })
+    for rows in grouped.values():
+        rows.sort(key=lambda row: row.get("date") or "")
+    return grouped
 
 
 def fetch_season_from_team_schedules(season: int) -> dict[str, list[dict[str, Any]]]:
@@ -186,9 +198,9 @@ def fetch_season_from_team_schedules(season: int) -> dict[str, list[dict[str, An
     season_start, season_end = date(season - 1, 10, 1), (
         today if season == today.year + 1 else date(season, 6, 30)
     )
-    grouped: dict[str, list[dict[str, Any]]] = {}
-    failures = []
-    for abbreviation, team_id in TEAM_IDS.items():
+
+    def fetch_team(abbreviation: str, team_id: int):
+        failures = []
         rows = []
         # ESPN has used both the ending year and starting year as the schedule
         # query value. Accept only games inside the requested NBA season.
@@ -210,8 +222,19 @@ def fetch_season_from_team_schedules(season: int) -> dict[str, list[dict[str, An
                     break
             except requests.RequestException as exc:
                 failures.append(f"{abbreviation}/{query_season}: {exc}")
-        grouped[abbreviation] = rows
-        print(f"{season} {abbreviation}: {len(rows)} completed games", flush=True)
+        return abbreviation, rows, failures
+
+    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+        futures = [
+            executor.submit(fetch_team, abbreviation, team_id)
+            for abbreviation, team_id in TEAM_IDS.items()
+        ]
+        results = [future.result() for future in as_completed(futures)]
+
+    grouped = {abbreviation: rows for abbreviation, rows, _ in results}
+    failures = [failure for _, _, team_failures in results for failure in team_failures]
+    for abbreviation in TEAM_IDS:
+        print(f"{season} {abbreviation}: {len(grouped.get(abbreviation, []))} completed games", flush=True)
 
     total = sum(len(rows) for rows in grouped.values())
     average = total / max(1, len(TEAM_IDS))
