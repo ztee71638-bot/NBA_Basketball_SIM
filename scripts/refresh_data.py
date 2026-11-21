@@ -415,6 +415,85 @@ def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, An
     target.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def archive_pregame_availability(
+    games: list[dict[str, Any]],
+    injuries: list[dict[str, Any]],
+    lineups: list[dict[str, Any]],
+    now: datetime | None = None,
+) -> int:
+    """Archive meaningful availability changes for games within eight hours of tipoff.
+
+    Snapshots are append-only per game and are written only when injury or
+    confirmed-lineup information changes. Historical availability can later
+    support point-in-time injury-impact research without pretending today's
+    injury report was known before an old game.
+    """
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    root = DATA / "snapshots" / "availability"
+    root.mkdir(parents=True, exist_ok=True)
+    lineup_by_game = {str(row.get("game_id")): row for row in lineups if row.get("game_id")}
+    archived = 0
+    for game in games:
+        game_id = str(game.get("id") or "")
+        if not game_id or game.get("completed") or not game.get("date"):
+            continue
+        try:
+            start = datetime.fromisoformat(str(game["date"]).replace("Z", "+00:00"))
+            if start.tzinfo is None:
+                start = start.replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        minutes_to_tipoff = (start - now).total_seconds() / 60
+        if minutes_to_tipoff < 0 or minutes_to_tipoff > 8 * 60:
+            continue
+        home = (game.get("home") or {}).get("abbreviation")
+        away = (game.get("away") or {}).get("abbreviation")
+        team_codes = {code for code in (home, away) if code}
+        if len(team_codes) != 2:
+            continue
+        game_injuries = sorted(
+            [row for row in injuries if row.get("team") in team_codes],
+            key=lambda row: (
+                str(row.get("team") or ""),
+                str(row.get("athlete_id") or ""),
+                str(row.get("name") or ""),
+            ),
+        )
+        lineup = lineup_by_game.get(game_id)
+        signature = {"injuries": game_injuries, "lineup": lineup}
+        safe_game_id = re.sub(r"[^A-Za-z0-9_-]", "", game_id)
+        target = root / f"{safe_game_id}.json"
+        if target.exists():
+            payload = json.loads(target.read_text(encoding="utf-8"))
+        else:
+            payload = {
+                "game_id": game_id,
+                "game_date": game.get("date"),
+                "home_team": home,
+                "away_team": away,
+                "source": "ESPN public injury report and game summaries",
+                "snapshots": [],
+            }
+        snapshots = payload.setdefault("snapshots", [])
+        if snapshots and snapshots[-1].get("signature") == signature:
+            continue
+        snapshots.append({
+            "captured_at": now.isoformat(),
+            "minutes_to_tipoff": round(minutes_to_tipoff, 1),
+            "injuries": game_injuries,
+            "lineup": lineup,
+            "signature": signature,
+        })
+        payload["last_updated"] = now.isoformat()
+        temporary = target.with_suffix(".tmp")
+        temporary.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        temporary.replace(target)
+        archived += 1
+    return archived
+
+
 def main() -> None:
     DATA.mkdir(parents=True, exist_ok=True)
     games = fetch_games()
@@ -425,8 +504,13 @@ def main() -> None:
     write_snapshot("polymarket.json", "Polymarket public Gamma API", "markets", markets)
     write_snapshot("injuries.json", "ESPN public injury report", "injuries", injuries)
     write_snapshot("lineups.json", "ESPN game summaries", "games", lineups)
+    availability_snapshots = archive_pregame_availability(games, injuries, lineups)
     confirmed = sum(1 for item in lineups if item.get("status") == "confirmed")
-    print(f"Saved {len(games)} NBA games, {len(markets)} likely NBA markets, {len(injuries)} injury records and {confirmed} confirmed starting lineups.")
+    print(
+        f"Saved {len(games)} NBA games, {len(markets)} likely NBA markets, "
+        f"{len(injuries)} injury records, {confirmed} confirmed starting lineups "
+        f"and {availability_snapshots} changed pregame availability snapshots."
+    )
 
 
 if __name__ == "__main__":
