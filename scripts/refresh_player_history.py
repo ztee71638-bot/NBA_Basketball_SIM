@@ -308,6 +308,16 @@ def fetch_player_database() -> list[dict[str, Any]]:
     )
     return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
 
+def build_roster_index(players: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Return the small roster-only dataset needed to classify live player props."""
+    fields = ("id", "name", "team", "position", "status", "roster_seasons", "teams_by_season")
+    return [
+        {key: player.get(key) for key in fields}
+        for player in players
+        if player.get("id") and player.get("name")
+    ]
+
+
 def main() -> None:
     players = fetch_player_database()
     if len(players) < 100:
@@ -327,6 +337,18 @@ def main() -> None:
     print(f"Saved {len(players)} NBA player records across seasons {SEASONS}; compact archive size {size_mb:.1f} MiB.")
     if size_mb >= 90:
         raise RuntimeError(f"Player archive is still too large ({size_mb:.1f} MiB); refusing to publish it.")
+    roster_payload = {
+        "last_updated": payload["last_updated"],
+        "source": "ESPN historical NBA roster index",
+        "player_count": len(players),
+        "players": build_roster_index(players),
+    }
+    roster_output = DATA / "player_roster.json"
+    roster_output.write_text(
+        json.dumps(roster_payload, separators=(",", ":"), ensure_ascii=False) + "\\n",
+        encoding="utf-8",
+    )
+    print(f"Saved lightweight market roster index: {roster_output.stat().st_size / 1024:.1f} KiB.")
 
 
 if __name__ == "__main__":
