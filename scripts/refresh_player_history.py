@@ -169,7 +169,6 @@ def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
             "three_pointers_attempted": three_attempted,
             "free_throws_made": ft_made,
             "free_throws_attempted": ft_attempted,
-            "raw_stats": values,
         })
     return rows
 
