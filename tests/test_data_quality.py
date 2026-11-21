@@ -114,3 +114,26 @@ def test_audit_still_flags_missing_record_against_known_nba_team():
     )
     assert result["team_history"]["unpaired_or_mismatched_games"] == 1
     assert result["team_history"]["mismatch_breakdown"] == {"missing_opponent_record": 1}
+
+
+def test_player_audit_reports_per_season_log_coverage_and_missing_player_sample():
+    players = {
+        "player_count": 2,
+        "last_updated": "2026-11-21T00:00:00+00:00",
+        "players": [
+            {"id": "1", "name": "Player One", "team": "AAA",
+             "seasons": {"2027": {"games": [{"date": "2026-11-20"}]},
+                         "2026": {"games": [{"date": "2025-11-20"}, {"date": "2025-11-22"}]}}},
+            {"id": "2", "name": "Player Two", "team": "BBB", "seasons": {}},
+        ],
+    }
+    result = module.audit_payloads(
+        fixture(), players, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    summary = result["player_history"]
+    assert summary["game_logs_by_season"] == {"2026": 2, "2027": 1}
+    assert summary["players_with_logs_by_season"] == {"2026": 1, "2027": 1}
+    assert summary["players_without_any_logs"] == 1
+    assert summary["players_without_logs_sample"] == [
+        {"id": "2", "name": "Player Two", "team": "BBB"}
+    ]
