@@ -280,7 +280,7 @@ def reconcile_player_totals(players_payload: dict[str, Any],
     by_name: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for player in players:
         by_name[normalized_name(player.get("name"))].append(player)
-    report = {"source_rows": 0, "matched_rows": 0, "unmatched_rows": 0, "by_season": {}}
+    report = {"source_rows": 0, "matched_rows": 0, "unmatched_rows": 0, "by_season": {}, "unmatched_samples": []}
     for source_season, rows in supplemental_by_season.items():
         season_key = SEASON_MAP[source_season]
         season_report = {"source_rows": len(rows), "matched_rows": 0, "unmatched_rows": 0}
@@ -295,12 +295,27 @@ def reconcile_player_totals(players_payload: dict[str, Any],
                     for value in (player.get("teams_by_season") or {}).get(season_key, [])
                 }
             ]
+            season_candidates = [
+                player for player in candidates
+                if season_key in {str(value) for value in (player.get("roster_seasons") or [])}
+            ]
             if len(team_candidates) == 1:
                 player = team_candidates[0]
             elif len(candidates) == 1:
                 player = candidates[0]
+            elif len(season_candidates) == 1:
+                player = season_candidates[0]
             else:
                 season_report["unmatched_rows"] += 1
+                if len(report["unmatched_samples"]) < 50:
+                    report["unmatched_samples"].append({
+                        "season": source_season,
+                        "player_name": row.get("player_name"),
+                        "team": team,
+                        "same_name_candidates": len(candidates),
+                        "same_season_candidates": len(season_candidates),
+                        "same_team_candidates": len(team_candidates),
+                    })
                 continue
             record = _numeric_player_record(row)
             record.update({
