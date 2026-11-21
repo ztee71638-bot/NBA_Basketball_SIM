@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T19:54:29.282483+00:00",
+  "last_updated": "2026-11-21T20:35:52.878786+00:00",
   "source": "ESPN public scoreboard",
   "games": [
     {
@@ -8,20 +8,20 @@
       "name": "Milwaukee Bucks at Philadelphia 76ers",
       "short_name": "MIL @ PHI",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "10:08 - 4th",
+      "status_detail": "1.0 - 4th",
       "completed": false,
       "home": {
         "id": "20",
         "name": "Philadelphia 76ers",
         "abbreviation": "PHI",
-        "score": "103",
+        "score": "132",
         "winner": null
       },
       "away": {
         "id": "15",
         "name": "Milwaukee Bucks",
         "abbreviation": "MIL",
-        "score": "92",
+        "score": "129",
         "winner": null
       },
       "venue": "Xfinity Mobile Arena",

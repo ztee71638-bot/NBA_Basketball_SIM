@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7166221\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.215\\\", \\\"0.785\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Jazz vs. Trail Blazers\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T20:35:52.897951+00:00",
+      "markets": [
+        {
+          "market_id": "7166221",
+          "market_type": "moneyline",
+          "question": "Jazz vs. Trail Blazers",
+          "slug": "nba-uta-por-2026-12-03",
+          "outcomes": "[\"Jazz\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.21\", \"0.79\"]",
+          "volume_24h": 1910.703537,
+          "liquidity": "1116.9971",
+          "end_date": "2026-12-04T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-por-2026-12-03"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7166221\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Jazz vs. Trail Blazers\"}]"
     }
   ],
-  "last_updated": "2026-11-21T16:48:48.399789+00:00"
+  "last_updated": "2026-11-21T20:35:52.897951+00:00"
 }
