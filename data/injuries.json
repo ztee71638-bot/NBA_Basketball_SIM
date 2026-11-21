@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T19:00:12.910373+00:00",
+  "last_updated": "2026-11-21T19:54:29.303270+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -303,6 +303,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4278078",
+      "name": "P.J. Washington",
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-21T19:22Z",
+      "return_date": "2026-11-21",
+      "short_comment": "Washington (illness/shoulder) has been downgraded from questionable to doubtful ahead of Saturday's game against the Clippers.",
+      "long_comment": "Washington was initially tagged as questionable due to a shoulder injury, but he's now listed on the report as doubtful because of an illness. Assuming he's not cleared to play Saturday, Naji Marshall figures to be the top candidate to enter the Mavericks' starting lineup.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5106040",
       "name": "Tobi Lawal",
       "team": "DAL",
@@ -315,21 +330,6 @@
       "return_date": "2026-11-22",
       "short_comment": "Lawal (groin) is out for Saturday's game against the Clippers.",
       "long_comment": "Lawal will miss a second straight game with right groin tightness. The rookie forward isn't expected to have a big role in the rotation, so he likely won't have much fantasy upside anytime soon. His next chance to play will come Sunday against the Jazz on the second leg of a back-to-back set.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4278078",
-      "name": "P.J. Washington",
-      "team": "DAL",
-      "team_name": "Dallas Mavericks",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-20T22:40Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Washington (shoulder) is listed as questionable for Saturday's game versus the Clippers.",
-      "long_comment": "Washington has had a productive 2026-27 campaign thus far, averaging 14.0 points, 6.7 rebounds, 1.3 assists and 1.1 blocks over 30.8 minutes per outing. He has also appeared in all 15 of the Mavericks' regular-season games, though he is in danger of missing Saturday's meeting with the Clippers. If Washington gets ruled out, more minutes should open up for Zaccharie Risacher and Naji Marshall.",
       "source": "ESPN"
     },
     {
@@ -765,21 +765,6 @@
       "return_date": "2026-11-23",
       "short_comment": "Boozer is out for Saturday's game against Minnesota due to a right ankle sprain.",
       "long_comment": "The rookie sensation is sitting out for the first time this year and can be deemed day-to-day for the time being. His absence puts a ton of pressure on Ty Jerome (hip), who's set to return from a three-game layoff, and opens up a spot in the starting lineup likely for Isaiah Stewart.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4065733",
-      "name": "Ty Jerome",
-      "team": "MEM",
-      "team_name": "Memphis Grizzlies",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-20T23:11Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Jerome (hip) is probable for Saturday's game in Minnesota.",
-      "long_comment": "Jerome is set to return from a three-game layoff Saturday, which will likely shift Cam Spencer back to the second unit. Jerome has gotten off to a hot start this season, averaging 25.4 points, 5.3 assists and 2.5 triples per contest on 48.5 percent shooting from the field and 90.2 percent at the line.",
       "source": "ESPN"
     },
     {
