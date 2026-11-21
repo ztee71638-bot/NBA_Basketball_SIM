@@ -1,6 +1,6 @@
 """Build a free-first NBA player roster and game-log archive from ESPN public endpoints.
 
-Scheduled daily on the default branch; supports manual workflow dispatch and preserves the last good archive when collection is incomplete.
+Scheduled daily on the default branch; supports manual workflow dispatch and preserves the last good archive when collection is incomplete.\nThis collector intentionally retains rostered players with no appearances as explicit zero-log records.
 """
 from __future__ import annotations
 
