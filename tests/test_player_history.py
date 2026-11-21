@@ -63,6 +63,10 @@ def test_number_handles_missing_and_invalid_values():
     assert module._number("12.5") == 12.5
 
 
+def test_player_archive_collects_current_and_previous_seasons_by_default():
+    assert module.SEASONS == [2027, 2026]
+
+
 def test_team_id_map_has_30_teams():
     assert len(module.TEAM_IDS) == 30
     assert module.TEAM_IDS["LAL"] == 13
