@@ -191,11 +191,24 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
         market_id = str(market.get("id") or market.get("slug") or market.get("question") or "")
         if not market_id:
             return
+        question = market.get("question") or market.get("title")
+        group_title = market.get("groupItemTitle") or market.get("group_item_title")
+        if group_title and group_title != event_title:
+            market_type = "player_prop"
+        elif str(question or "").lower().startswith("spread:"):
+            market_type = "spread"
+        elif "o/u" in str(question or "").lower() or "over/under" in str(question or "").lower():
+            market_type = "total"
+        elif str(question or "").lower() == str(event_title).lower():
+            market_type = "moneyline"
+        else:
+            market_type = "other"
         results[market_id] = {
             "id": str(market.get("id") or ""),
             "event_id": str(event.get("id") or ""),
             "event_title": event_title,
-            "question": market.get("question") or market.get("title"),
+            "question": question,
+            "market_type": market_type,
             "slug": market.get("slug"),
             "active": market.get("active", event.get("active")),
             "closed": market.get("closed", event.get("closed")),
@@ -205,7 +218,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
             "volume_24h": market.get("volume24hr") or market.get("volume_24h"),
             "liquidity": market.get("liquidity") or market.get("liquidityNum"),
             "end_date": end_value,
-            "market_group": market.get("groupItemTitle") or market.get("group_item_title"),
+            "market_group": group_title,
             "url": ("https://polymarket.com/event/" + str(event.get("slug"))) if event.get("slug") else (
                 "https://polymarket.com/event/" + str(market.get("slug")) if market.get("slug") else None
             ),
@@ -280,7 +293,7 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
 
     print(f"Polymarket NBA discovery: {len(events)} active game events, {flat_seen} flat NBA markets scanned, {flat_matched} linked to active games ({flat_slug_matched} by event-slug prefix), {len(results)} unique markets.")
     ordered = sorted(results.values(), key=lambda item: float(item.get("volume_24h") or 0), reverse=True)
-    return ordered[:1200]
+    return ordered[:1500]
 
 
 def write_snapshot(filename: str, source: str, key: str, rows: list[dict[str, Any]]) -> None:
