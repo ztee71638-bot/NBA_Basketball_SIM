@@ -331,19 +331,22 @@ function renderInjuries() {
     root.innerHTML = '<p class="muted">No injury records are currently listed by ESPN.</p>';
     return;
   }
-  // Only teams with current injury records are included.
+
+  // Show a compact list of teams first. Player rows stay hidden until a
+  // team heading is tapped, so the full injury list never expands by default.
   const byTeam = new Map();
   injuryData.forEach(item => {
-    const team = String(item.team || "Team not specified").trim();
-    if (!byTeam.has(team)) byTeam.set(team, []);
-    byTeam.get(team).push(item);
+    const teamCode = String(item.team || "UNK").trim();
+    const teamName = String(item.team_name || teamCode).trim();
+    if (!byTeam.has(teamCode)) byTeam.set(teamCode, { name: teamName, players: [] });
+    byTeam.get(teamCode).players.push(item);
   });
-  const teams = [...byTeam.entries()].sort((a,b) => a[0].localeCompare(b[0]));
+
+  const teams = [...byTeam.entries()].sort((a,b) => a[1].name.localeCompare(b[1].name));
   root.innerHTML = '<div class="injury-overview"><strong>' + teams.length +
-    ' teams</strong><span>' + injuryData.length + ' player' +
-    (injuryData.length === 1 ? '' : 's') + ' listed</span></div>' +
-    teams.map(([team, players]) => {
-      const rows = players.map(item => {
+    ' teams with injuries</strong><span>' + injuryData.length + ' players</span></div>' +
+    teams.map(([code, group], index) => {
+      const rows = group.players.map(item => {
         const status = item.status || "Status not specified";
         const detail = [item.type, item.side].filter(Boolean).join(" · ");
         const comment = item.short_comment || item.long_comment || "";
@@ -354,10 +357,31 @@ function renderInjuries() {
           (detail || returnDate ? '<small>' + escapeHtml(detail) + escapeHtml(returnDate) + '</small>' : '') +
           (comment ? '<p>' + escapeHtml(comment) + '</p>' : '') + '</div>';
       }).join("");
-      return '<details class="injury-team"><summary><span>' + escapeHtml(team) +
-        '</span><span class="injury-team-count">' + players.length + '</span></summary>' +
-        '<div class="injury-team-players">' + rows + '</div></details>';
+      return '<section class="injury-team"><button type="button" class="injury-team-toggle" data-injury-team="' +
+        index + '" aria-expanded="false" aria-controls="injury-team-panel-' + index + '">' +
+        '<span class="injury-team-name">' + escapeHtml(group.name) + '</span>' +
+        '<span class="injury-team-count">' + group.players.length + '</span><span class="injury-chevron">＋</span></button>' +
+        '<div class="injury-team-players" id="injury-team-panel-' + index + '" hidden>' + rows + '</div></section>';
     }).join("");
+
+  root.querySelectorAll("[data-injury-team]").forEach(button => {
+    button.addEventListener("click", () => {
+      const panel = $(button.getAttribute("aria-controls").replace("injury-team-panel-", "injury-team-panel-"));
+      const opening = button.getAttribute("aria-expanded") !== "true";
+      // Keep the report tidy: only one team's players are expanded at a time.
+      root.querySelectorAll(".injury-team-toggle").forEach(other => {
+        const otherPanel = document.getElementById(other.getAttribute("aria-controls"));
+        other.setAttribute("aria-expanded", "false");
+        other.querySelector(".injury-chevron").textContent = "＋";
+        if (otherPanel) otherPanel.hidden = true;
+      });
+      if (opening) {
+        button.setAttribute("aria-expanded", "true");
+        button.querySelector(".injury-chevron").textContent = "−";
+        panel.hidden = false;
+      }
+    });
+  });
 }
 
 async function loadInjuries() {
