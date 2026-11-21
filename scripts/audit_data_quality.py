@@ -89,15 +89,28 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         if total and total / max(1, active_teams) < 60 and int(season) < now.year:
             warnings.append(f"Season {season}: average history is below 60 games/team.")
     mismatched = 0
-    for key, rows in paired_games.items():
+    mismatch_breakdown = Counter()
+    mismatch_examples: list[dict[str, Any]] = []
+    for key, rows in sorted(paired_games.items()):
+        reasons = []
         if len(rows) != 2:
+            reasons.append("missing_opponent_record" if len(rows) == 1 else "unexpected_record_count")
+        else:
+            a, b = rows
+            if a["opponent"] != b["team"] or b["opponent"] != a["team"]:
+                reasons.append("opponent_abbreviation_mismatch")
+            if a["points_for"] != b["points_against"] or a["points_against"] != b["points_for"]:
+                reasons.append("score_mismatch")
+        if reasons:
             mismatched += 1
-            continue
-        a, b = rows
-        if (a["opponent"] != b["team"] or b["opponent"] != a["team"]
-                or a["points_for"] != b["points_against"]
-                or a["points_against"] != b["points_for"]):
-            mismatched += 1
+            for reason in reasons:
+                mismatch_breakdown[reason] += 1
+            if len(mismatch_examples) < 50:
+                mismatch_examples.append({
+                    "season_game": key,
+                    "reason": reasons,
+                    "records": rows,
+                })
     if mismatched:
         warnings.append(f"{mismatched} game IDs do not have a fully matching two-team record.")
 
@@ -143,6 +156,8 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             "team_count": len(teams),
             "seasons": season_summary,
             "unpaired_or_mismatched_games": mismatched,
+            "mismatch_breakdown": dict(sorted(mismatch_breakdown.items())),
+            "mismatch_examples": mismatch_examples,
         },
         "player_history": player_summary,
         "warnings": warnings,
