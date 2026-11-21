@@ -118,6 +118,17 @@ function calcProp(){
       $("prop-results").textContent="PASS — only "+statSample.length+" usable recent "+stat+" results are available for "+selectedPlayer.name+"; at least 5 are required.";
       return;
     }
+    const minuteSample=selectedPlayerLogs.map(game=>game.minutes).filter(Number.isFinite);
+    if(minuteSample.length<5){
+      $("prop-results").textContent="PASS — fewer than 5 recent minutes records are available for "+selectedPlayer.name+".";
+      return;
+    }
+    const avgMinutes=minuteSample.reduce((sum,value)=>sum+value,0)/minuteSample.length;
+    const minuteVariance=minuteSample.reduce((sum,value)=>sum+Math.pow(value-avgMinutes,2),0)/Math.max(1,minuteSample.length-1);
+    if(avgMinutes<15||Math.sqrt(minuteVariance)>8){
+      $("prop-results").textContent="PASS — "+selectedPlayer.name+" has an unstable or limited recent minutes role (average "+avgMinutes.toFixed(1)+" minutes; variability "+Math.sqrt(minuteVariance).toFixed(1)+").";
+      return;
+    }
   }
   if(![mean,sd,line].every(Number.isFinite)||sd<=0){$("prop-results").textContent="Enter valid values and a positive standard deviation.";return;}
   const over=(1-erf((line-mean)/(sd*Math.sqrt(2))))/2;
