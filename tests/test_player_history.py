@@ -188,3 +188,27 @@ def test_player_log_tasks_cover_all_configured_seasons_when_roster_history_is_in
         for athlete_id in ("active-1", "historical-2", "legacy-3")
         for season in [2027, 2026, 2025, 2024, 2023]
     ]
+
+
+def test_merge_cached_season_advanced_totals_preserves_only_matching_player_ids():
+    refreshed = [
+        {"id": "1", "name": "Player One", "seasons": {}},
+        {"id": "2", "name": "Player Two", "seasons": {}},
+    ]
+    existing = {
+        "players": [
+            {"id": "1", "season_advanced_totals": {"2026": [{"ts_pct": 0.61}]}},
+            {"id": "2", "season_advanced_totals": {}},
+            {"id": "3", "season_advanced_totals": {"2026": [{"ts_pct": 0.70}]}},
+        ]
+    }
+    preserved = module.merge_cached_season_advanced_totals(refreshed, existing)
+    assert preserved == 1
+    assert refreshed[0]["season_advanced_totals"] == {"2026": [{"ts_pct": 0.61}]}
+    assert "season_advanced_totals" not in refreshed[1]
+
+
+def test_merge_cached_season_advanced_totals_handles_missing_existing_archive():
+    refreshed = [{"id": "1", "name": "Player One"}]
+    assert module.merge_cached_season_advanced_totals(refreshed, None) == 0
+    assert "season_advanced_totals" not in refreshed[0]
