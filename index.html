@@ -36,9 +36,11 @@
       <div class="inputs">
         <label>Projected stat average<input id="prop-mean" type="number" min="0" max="80" step="0.1" value="24.5"></label>
         <label>Standard deviation<input id="prop-sd" type="number" min="0.1" max="30" step="0.1" value="6"></label>
+        <label>Stat to project<select id="prop-stat"><option value="points">Points</option><option value="rebounds">Rebounds</option><option value="assists">Assists</option><option value="steals">Steals</option><option value="blocks">Blocks</option></select></label>
         <label>Market line<input id="prop-line" type="number" min="0" max="80" step="0.5" value="25.5"></label>
       </div>
       <button id="prop-calc">Calculate probability</button>
+      <p id="prop-source-status" class="muted">Select a player below to load a historical baseline, or enter assumptions manually.</p>
       <div id="prop-results" class="results muted">Enter a player-stat projection to calculate over/under probabilities.</div>
     </section>
     <section class="panel">
