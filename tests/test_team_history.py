@@ -216,3 +216,31 @@ def test_schedule_collection_falls_back_to_scoreboard_when_season_is_empty(monke
     grouped = module.fetch_season_from_team_schedules(season)
     assert grouped["NYK"][0]["points_for"] == 115
     assert grouped["NOP"][0]["points_against"] == 115
+
+
+def test_reconcile_missing_opponent_record_uses_reciprocal_score_and_venue():
+    grouped = {
+        "BOS": [{
+            "game_id": "g-repair", "date": "2026-11-20T00:00Z",
+            "team": "BOS", "opponent": "LAL", "opponent_name": "Los Angeles Lakers",
+            "home_away": "home", "points_for": 112, "points_against": 104,
+            "win": True, "result": "W",
+        }],
+        "LAL": [],
+    }
+    assert module.reconcile_missing_opponent_records(grouped) == 1
+    mirror = grouped["LAL"][0]
+    assert mirror["game_id"] == "g-repair"
+    assert mirror["team"] == "LAL" and mirror["opponent"] == "BOS"
+    assert mirror["home_away"] == "away"
+    assert mirror["points_for"] == 104 and mirror["points_against"] == 112
+    assert mirror["win"] is False and mirror["result"] == "L"
+
+
+def test_reconcile_does_not_overwrite_existing_opponent_record():
+    grouped = {
+        "BOS": [{"game_id":"g-existing","team":"BOS","opponent":"LAL","home_away":"home","points_for":112,"points_against":104}],
+        "LAL": [{"game_id":"g-existing","team":"LAL","opponent":"BOS","home_away":"away","points_for":104,"points_against":112}],
+    }
+    assert module.reconcile_missing_opponent_records(grouped) == 0
+    assert len(grouped["LAL"]) == 1
