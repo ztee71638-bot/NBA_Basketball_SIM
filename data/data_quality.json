@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T15:45:50.131619+00:00",
+  "generated_at": "2026-11-21T15:57:28.133019+00:00",
   "status": "warning",
   "team_history": {
-    "last_updated": "2026-11-21T15:44:21.872298+00:00",
-    "age_hours": 0.02,
+    "last_updated": "2026-11-21T15:56:42.587078+00:00",
+    "age_hours": 0.01,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -12,6 +12,9 @@
         "team_game_rows": 2774,
         "unique_game_ids": 1389,
         "duplicate_team_game_ids": 0,
+        "advanced_team_game_rows": 0,
+        "advanced_games_with_both_teams": 0,
+        "advanced_coverage_pct": 0.0,
         "min_team_games": 85,
         "max_team_games": 112
       },
@@ -21,6 +24,9 @@
         "team_game_rows": 2779,
         "unique_game_ids": 1394,
         "duplicate_team_game_ids": 0,
+        "advanced_team_game_rows": 0,
+        "advanced_games_with_both_teams": 0,
+        "advanced_coverage_pct": 0.0,
         "min_team_games": 86,
         "max_team_games": 109
       },
@@ -30,6 +36,9 @@
         "team_game_rows": 2795,
         "unique_game_ids": 1399,
         "duplicate_team_game_ids": 0,
+        "advanced_team_game_rows": 0,
+        "advanced_games_with_both_teams": 0,
+        "advanced_coverage_pct": 0.0,
         "min_team_games": 85,
         "max_team_games": 111
       },
@@ -39,6 +48,9 @@
         "team_game_rows": 2787,
         "unique_game_ids": 1396,
         "duplicate_team_game_ids": 0,
+        "advanced_team_game_rows": 260,
+        "advanced_games_with_both_teams": 130,
+        "advanced_coverage_pct": 9.3,
         "min_team_games": 85,
         "max_team_games": 111
       },
@@ -48,6 +60,9 @@
         "team_game_rows": 603,
         "unique_game_ids": 302,
         "duplicate_team_game_ids": 0,
+        "advanced_team_game_rows": 372,
+        "advanced_games_with_both_teams": 186,
+        "advanced_coverage_pct": 61.7,
         "min_team_games": 17,
         "max_team_games": 22
       }
@@ -69,7 +84,7 @@
       2023
     ],
     "last_updated": "2026-11-21T15:06:39.328159+00:00",
-    "age_hours": 0.65,
+    "age_hours": 0.85,
     "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
