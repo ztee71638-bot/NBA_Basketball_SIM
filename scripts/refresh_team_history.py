@@ -6,7 +6,8 @@ from __future__ import annotations
 
 import json
 import time
-from datetime import datetime, timezone
+import calendar
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +16,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/schedule"
+SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 TIMEOUT = 25
 DELAY = 0.35
 SEASONS = [2027, 2026]
@@ -118,6 +120,69 @@ def summarize_games(games: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _month_ranges(start: date, end: date):
+    cursor = date(start.year, start.month, 1)
+    while cursor <= end:
+        last_day = calendar.monthrange(cursor.year, cursor.month)[1]
+        month_end = min(date(cursor.year, cursor.month, last_day), end)
+        yield cursor.strftime("%Y%m%d") + "-" + month_end.strftime("%Y%m%d")
+        if cursor.month == 12:
+            cursor = date(cursor.year + 1, 1, 1)
+        else:
+            cursor = date(cursor.year, cursor.month + 1, 1)
+
+
+def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]:
+    """Fallback: build team game logs from ESPN's scoreboard date-range feed."""
+    today = datetime.now(timezone.utc).date()
+    if season == today.year + 1:
+        start, end = date(season - 1, 10, 1), today
+    else:
+        start, end = date(season - 1, 10, 1), date(season, 6, 30)
+    grouped: dict[str, list[dict[str, Any]]] = {abbr: [] for abbr in TEAM_IDS}
+    for date_range in _month_ranges(start, end):
+        payload = get_json(SCOREBOARD_URL, {"dates": date_range, "limit": 1000})
+        for event in payload.get("events") or []:
+            competitions = event.get("competitions") or []
+            if not competitions:
+                continue
+            competition = competitions[0]
+            status = (event.get("status") or {}).get("type") or {}
+            competitors = competition.get("competitors") or []
+            if not status.get("completed", False) and status.get("state") != "post":
+                scores = [_score(item.get("score")) for item in competitors]
+                if len(scores) < 2 or any(value is None for value in scores):
+                    continue
+            if len(competitors) != 2:
+                continue
+            for own in competitors:
+                own_team = own.get("team") or {}
+                own_abbr = own_team.get("abbreviation")
+                if own_abbr not in grouped:
+                    continue
+                other = next((item for item in competitors if item is not own), None)
+                if not other:
+                    continue
+                other_team = other.get("team") or {}
+                pf, pa = _score(own.get("score")), _score(other.get("score"))
+                if pf is None or pa is None:
+                    continue
+                grouped[own_abbr].append({
+                    "game_id": str(event.get("id") or ""),
+                    "date": event.get("date"),
+                    "team": own_abbr,
+                    "opponent": other_team.get("abbreviation"),
+                    "opponent_name": other_team.get("displayName"),
+                    "home_away": own.get("homeAway"),
+                    "points_for": pf,
+                    "points_against": pa,
+                    "win": pf > pa,
+                    "result": "W" if pf > pa else "L",
+                })
+        time.sleep(DELAY)
+    return {abbr: sorted(rows, key=lambda row: row.get("date") or "") for abbr, rows in grouped.items()}
+
+
 def fetch_team_database() -> list[dict[str, Any]]:
     teams = []
     for abbreviation, team_id in TEAM_IDS.items():
@@ -136,6 +201,15 @@ def fetch_team_database() -> list[dict[str, Any]]:
 
 def main() -> None:
     teams = fetch_team_database()
+    # The team-schedule endpoint can return a successful but empty payload.
+    # If that happens, fall back to ESPN's scoreboard date-range endpoint.
+    for season in SEASONS:
+        if not any(team["seasons"][str(season)]["summary"]["games"] for team in teams):
+            print(f"No team schedule rows for {season}; falling back to ESPN scoreboard date ranges.")
+            fallback = fetch_season_from_scoreboard(season)
+            for team in teams:
+                rows = fallback.get(team["abbreviation"], [])
+                team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
     valid = sum(1 for team in teams if any(season["summary"]["games"] for season in team["seasons"].values()))
     if valid < 20:
         raise RuntimeError(f"Only {valid} teams returned usable history; refusing to overwrite the existing archive.")
