@@ -104,3 +104,28 @@ def test_parse_player_gamelog_supports_current_nested_espn_shape():
     assert rows[0]["points"] == 28
     assert rows[0]["rebounds"] == 8
     assert rows[0]["assists"] == 7
+
+
+def test_player_database_fetches_all_seasons_with_bounded_parallel_workers(monkeypatch):
+    calls = []
+    def fake_get_json(url, params=None):
+        calls.append((url, params))
+        if "/roster" in url:
+            team_id = url.rsplit("/", 2)[-2]
+            if team_id == "1":
+                return {"athletes": [{"id": "athlete-1", "displayName": "Test Player",
+                                      "position": {"abbreviation": "G"}, "status": {"type": "active"}}]}
+            return {"athletes": []}
+        return {
+            "names": ["minutes", "points"],
+            "events": {"game-1": {"id": "game-1", "date": "2026-11-20T00:00Z",
+                                   "stats": ["34", "24"]}},
+        }
+    monkeypatch.setattr(module, "get_json", fake_get_json)
+    monkeypatch.setattr(module, "WORKERS", 2)
+    monkeypatch.setattr(module, "MIN_TOTAL_GAME_LOGS", 1)
+    players = module.fetch_player_database()
+    assert len(players) == 1
+    assert sorted(players[0]["seasons"]) == ["2023", "2024", "2025", "2026", "2027"]
+    assert all(len(players[0]["seasons"][str(season)]) == 1 for season in module.SEASONS)
+    assert len([call for call in calls if "/gamelog" in call[0]]) == 5

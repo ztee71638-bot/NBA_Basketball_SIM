@@ -130,54 +130,25 @@ def _date_values(start: date, end: date):
         cursor = date.fromordinal(cursor.toordinal() + 1)
 
 
-def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]:
-    """Fallback: build team game logs from ESPN's scoreboard date-range feed."""
-    today = datetime.now(timezone.utc).date()
-    if season == today.year + 1:
-        start, end = date(season - 1, 10, 1), today
-    else:
-        start, end = date(season - 1, 10, 1), date(season, 6, 30)
-    grouped: dict[str, list[dict[str, Any]]] = {abbr: [] for abbr in TEAM_IDS}
-    for game_date in _date_values(start, end):
-        # ESPN's NBA scoreboard accepts single-day dates; range queries return HTTP 400.
-        payload = get_json(SCOREBOARD_URL, {"dates": game_date.strftime("%Y%m%d"), "seasontype": 2, "limit": 100})
-        for event in payload.get("events") or []:
-            competitions = event.get("competitions") or []
-            if not competitions:
-                continue
-            competition = competitions[0]
-            status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
-            competitors = competition.get("competitors") or []
-            # Ignore scheduled/live games even when ESPN supplies 0-0 placeholders.
-            if not status.get("completed", False) and status.get("state") != "post":
-                continue
-            if len(competitors) != 2:
-                continue
-            for own in competitors:
-                own_team = own.get("team") or {}
-                own_abbr = ID_TO_TEAM.get(str(own_team.get("id")), own_team.get("abbreviation"))
-                if own_abbr not in grouped:
-                    continue
-                other = next((item for item in competitors if item is not own), None)
-                if not other:
-                    continue
-                other_team = other.get("team") or {}
-                pf, pa = _score(own.get("score")), _score(other.get("score"))
-                if pf is None or pa is None:
-                    continue
-                grouped[own_abbr].append({
-                    "game_id": str(event.get("id") or ""),
-                    "date": event.get("date"),
-                    "team": own_abbr,
-                    "opponent": ID_TO_TEAM.get(str(other_team.get("id")), other_team.get("abbreviation")),
-                    "opponent_name": other_team.get("displayName"),
-                    "home_away": own.get("homeAway"),
-                    "points_for": pf,
-                    "points_against": pa,
-                    "win": pf > pa,
-                    "result": "W" if pf > pa else "L",
-                })
-    return {abbr: sorted(rows, key=lambda row: row.get("date") or "") for abbr, rows in grouped.items()}
+def fetch_season_from_team_schedules(season: int) -> dict[str, list[dict[str, Any]]]:
+    """Fetch one season with 30 team-schedule requests instead of one request per calendar day."""
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    failures = []
+    for abbreviation, team_id in TEAM_IDS.items():
+        try:
+            payload = get_json(URL.format(team_id=team_id), {"season": season, "seasontype": 2})
+            grouped[abbreviation] = parse_team_schedule(payload, str(team_id))
+        except requests.RequestException as exc:
+            failures.append(f"{abbreviation}: {exc}")
+            grouped[abbreviation] = []
+        print(f"{season} {abbreviation}: {len(grouped[abbreviation])} completed games", flush=True)
+    total = sum(len(rows) for rows in grouped.values())
+    if total == 0:
+        detail = "; ".join(failures[:5])
+        raise RuntimeError(f"ESPN team schedule endpoint returned no completed games for season {season}. {detail}")
+    if failures:
+        print(f"Season {season}: {len(failures)} team schedule requests failed; audit will flag incomplete coverage.", flush=True)
+    return grouped
 
 
 
@@ -214,18 +185,25 @@ def _possessions(stats: dict[str, float]) -> float | None:
     return estimate if estimate > 0 else None
 
 
-def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enrich: set[str] | None = None) -> None:
-    """Attach estimated possessions and efficiency from completed ESPN boxscores."""
+def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enrich: set[str] | None = None,
+                                     max_games: int = 120) -> None:
+    """Attach estimated possessions/efficiency to a bounded set of recent ESPN boxscores."""
     games: dict[str, list[dict[str, Any]]] = {}
+    dates: dict[str, str] = {}
     for team in teams:
         for season, season_data in team.get("seasons", {}).items():
             if seasons_to_enrich is not None and str(season) not in seasons_to_enrich:
                 continue
             for row in season_data.get("games", []):
                 if row.get("game_id"):
-                    games.setdefault(str(row["game_id"]), []).append(row)
+                    game_id = str(row["game_id"])
+                    games.setdefault(game_id, []).append(row)
+                    dates[game_id] = max(dates.get(game_id, ""), str(row.get("date") or ""))
+    selected = sorted(games, key=lambda game_id: dates.get(game_id, ""), reverse=True)[:max_games]
+    print(f"Enriching {len(selected)} most recent game boxscores (limit {max_games}).", flush=True)
     enriched = 0
-    for game_id, rows in games.items():
+    for game_id in selected:
+        rows = games[game_id]
         if len(rows) != 2 or all(row.get("pace_estimate") for row in rows):
             continue
         try:
@@ -334,9 +312,10 @@ def fetch_team_database() -> list[dict[str, Any]]:
         {"id": str(team_id), "abbreviation": abbreviation, "seasons": {}, "source": "ESPN"}
         for abbreviation, team_id in TEAM_IDS.items()
     ]
-    # Fetch both the active and previous regular seasons. Keep only completed games.
+    # Use ESPN's per-team schedule endpoint: 30 calls per season, not ~270 daily
+    # scoreboard calls per season. This keeps five-season refreshes bounded.
     grouped_by_season = {
-        season: fetch_season_from_scoreboard(season)
+        season: fetch_season_from_team_schedules(season)
         for season in sorted(SEASONS)
     }
     arena_file = DATA / "arenas.json"
@@ -362,8 +341,9 @@ def fetch_team_database() -> list[dict[str, Any]]:
                 row["games_last_5_days"] = sum(1 for day in previous_dates if 0 < (current_date-day).days <= 5)
             enrich_schedule_travel(team["abbreviation"], rows, arenas)
             team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
-    # Enrich only the two newest seasons to keep the expanded archive refresh bounded.
-    enrich_team_games_with_boxscores(teams, {str(value) for value in SEASONS[:2]})
+    # Boxscore enrichment is more expensive than schedule collection. Enrich only
+    # the current season and cap it to the 120 most recent games.
+    enrich_team_games_with_boxscores(teams, {str(max(SEASONS))}, max_games=120)
     for team in teams:
         for season_data in team["seasons"].values():
             season_data["summary"] = summarize_games(season_data.get("games", []))

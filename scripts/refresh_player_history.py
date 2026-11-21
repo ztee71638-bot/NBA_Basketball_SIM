@@ -7,6 +7,7 @@ from __future__ import annotations
 import json
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -18,7 +19,9 @@ DATA = ROOT / "data"
 ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/roster"
 GAMELOG_URL = "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{athlete_id}/gamelog"
 TIMEOUT = 25
-DELAY = float(os.getenv("NBA_HISTORY_REQUEST_DELAY", "0.8"))
+DELAY = float(os.getenv("NBA_HISTORY_REQUEST_DELAY", "0.5"))
+WORKERS = max(1, min(6, int(os.getenv("NBA_HISTORY_WORKERS", "4"))))
+MIN_TOTAL_GAME_LOGS = 100
 SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027,2026,2025,2024,2023").split(",") if x.strip()]
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
@@ -178,7 +181,7 @@ def fetch_player_database() -> list[dict[str, Any]]:
         try:
             roster_payload = get_json(ROSTER_URL.format(team_id=team_id), {"season": max(SEASONS)})
         except requests.RequestException as exc:
-            print(f"Roster unavailable for {abbreviation}: {exc}")
+            print(f"Roster unavailable for {abbreviation}: {exc}", flush=True)
             continue
         for athlete in flatten_roster(roster_payload):
             athlete_id = str(athlete.get("id") or "")
@@ -187,7 +190,7 @@ def fetch_player_database() -> list[dict[str, Any]]:
             status = athlete.get("status") or {}
             if status.get("type") and status.get("type") not in ("active", "day-to-day", "injured"):
                 continue
-            player = players_by_id.setdefault(athlete_id, {
+            players_by_id.setdefault(athlete_id, {
                 "id": athlete_id,
                 "name": athlete.get("displayName") or athlete.get("fullName"),
                 "team": abbreviation,
@@ -197,16 +200,72 @@ def fetch_player_database() -> list[dict[str, Any]]:
                 "seasons": {},
                 "source": "ESPN",
             })
-            for season in SEASONS:
-                try:
-                    payload = get_json(GAMELOG_URL.format(athlete_id=athlete_id), {"season": season})
-                    player["seasons"][str(season)] = parse_player_gamelog(payload)
-                except requests.RequestException as exc:
-                    print(f"Game log unavailable for {player['name']} ({season}): {exc}")
-                    player["seasons"][str(season)] = []
-    print(f"Collected {len(players_by_id)} unique rostered players; game-log retrieval finished.", flush=True)
-    return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
 
+    if not players_by_id:
+        raise RuntimeError("ESPN returned no rostered players; refusing to write an empty archive.")
+
+    tasks = [
+        (athlete_id, season)
+        for athlete_id in players_by_id
+        for season in SEASONS
+    ]
+    print(
+        f"Fetching {len(tasks)} player-season logs for {len(players_by_id)} players "
+        f"across {SEASONS} using {WORKERS} workers.",
+        flush=True,
+    )
+
+    def fetch_one(task: tuple[str, int]) -> tuple[str, int, list[dict[str, Any]], str | None]:
+        athlete_id, season = task
+        try:
+            payload = get_json(GAMELOG_URL.format(athlete_id=athlete_id), {"season": season})
+            return athlete_id, season, parse_player_gamelog(payload), None
+        except requests.RequestException as exc:
+            return athlete_id, season, [], str(exc)
+
+    failures = 0
+    completed = 0
+    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+        futures = [executor.submit(fetch_one, task) for task in tasks]
+        for future in as_completed(futures):
+            athlete_id, season, rows, error = future.result()
+            players_by_id[athlete_id]["seasons"][str(season)] = rows
+            completed += 1
+            if error:
+                failures += 1
+                print(
+                    f"Game log unavailable for {players_by_id[athlete_id]['name']} "
+                    f"({season}): {error}",
+                    flush=True,
+                )
+            if completed % 100 == 0 or completed == len(tasks):
+                print(
+                    f"Player logs: {completed}/{len(tasks)} requests complete; "
+                    f"{failures} unavailable; "
+                    f"{sum(len(v) for p in players_by_id.values() for v in p['seasons'].values())} game rows parsed.",
+                    flush=True,
+                )
+
+    # Ensure every player has an explicit entry for every requested season.
+    for player in players_by_id.values():
+        for season in SEASONS:
+            player["seasons"].setdefault(str(season), [])
+    total_logs = sum(
+        len(rows)
+        for player in players_by_id.values()
+        for rows in player["seasons"].values()
+    )
+    if total_logs < MIN_TOTAL_GAME_LOGS:
+        raise RuntimeError(
+            f"Only {total_logs} player game-log rows were parsed from {len(tasks)} requests; "
+            "refusing to overwrite the existing archive."
+        )
+    print(
+        f"Collected {len(players_by_id)} players and {total_logs} game-log rows; "
+        f"{failures}/{len(tasks)} player-season requests unavailable.",
+        flush=True,
+    )
+    return sorted(players_by_id.values(), key=lambda p: (p["team"], p["name"] or ""))
 
 def main() -> None:
     players = fetch_player_database()
