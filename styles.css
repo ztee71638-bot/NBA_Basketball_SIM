@@ -413,3 +413,38 @@ footer{color:#83aaaa}
     font-size:.82rem;
   }
 }
+
+
+/* Polymarket: date-by-date horizontal carousel with uncluttered team groupings. */
+.market-day-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0 10px}
+.market-day-controls button{font-size:1.35rem;line-height:1;padding:8px 16px}
+.market-day-controls button:disabled{opacity:.35;cursor:not-allowed}
+.market-day-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:14px;padding:2px 2px 10px}
+.market-day-strip::-webkit-scrollbar{display:none}
+.market-day-page{flex:0 0 100%;min-width:0;scroll-snap-align:start;display:grid;align-content:start;gap:16px}
+.market-day-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 2px}
+.market-day-heading h3{margin:0;font-size:1.08rem}
+.market-day-count{color:var(--muted);font-size:.8rem}
+.market-matchup{border:1px solid var(--line);border-radius:14px;background:#0d1829;padding:13px;display:grid;gap:12px;min-width:0}
+.market-matchup-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.market-matchup-heading strong{font-size:.98rem}
+.market-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-width:0}
+.market-team-column{min-width:0;border:1px solid var(--line);border-radius:11px;padding:10px;background:rgba(255,255,255,.018)}
+.market-team-heading{font-size:.86rem;font-weight:750;margin:0 0 9px;padding:0 0 8px;border-bottom:2px solid var(--team-primary,#385170)}
+.market-team-heading small{display:block;color:var(--muted);font-size:.72rem;font-weight:500}
+.market-prop-list{display:grid;gap:7px}
+.market-prop{display:grid;gap:5px;padding:8px;border-radius:8px;background:#111f33;border:1px solid rgba(120,150,185,.13);min-width:0}
+.market-prop-title{font-size:.82rem;font-weight:650;line-height:1.35;overflow-wrap:anywhere}
+.market-prop-meta{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;color:var(--muted);font-size:.7rem}
+.market-prop-meta a{white-space:nowrap}
+.market-prop-prices{color:#b8d9f5;font-size:.74rem;font-weight:650}
+.market-game-lines{border:1px solid var(--line);border-radius:10px;padding:10px;background:rgba(100,181,246,.035)}
+.market-game-lines summary{cursor:pointer;color:#b9d9f5;font-size:.82rem;font-weight:700}
+.market-game-lines .market-prop-list{margin-top:9px}
+.market-unassigned{border:1px dashed #52657e;border-radius:10px;padding:10px}
+.market-empty{font-size:.8rem;color:var(--muted);padding:6px 2px}
+@media(max-width:640px){
+ .market-team-grid{grid-template-columns:1fr}
+ .market-matchup{padding:10px}
+ .market-day-page{gap:12px}
+}

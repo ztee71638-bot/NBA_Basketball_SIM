@@ -473,18 +473,143 @@ function marketPriceSummary(market) {
   }).filter(Boolean).join(" · ");
 }
 
+let marketDays = [];
+let marketUpdatedAt = null;
+let activeMarketDay = 0;
+
+function marketDateKey(market) {
+  const slug = String(market.slug || "");
+  const match = slug.match(/nba-[a-z]{3}-[a-z]{3}-(\d{4}-\d{2}-\d{2})/i);
+  if (match) return match[1];
+  const end = market.end_date ? new Date(market.end_date) : null;
+  return end && Number.isFinite(end.getTime()) ? end.toISOString().slice(0,10) : "date-unavailable";
+}
+function marketTeamAbbreviation(name) {
+  const normalized = normalizeMarketText(name);
+  for (const [abbr, full] of Object.entries(TEAM_NAMES)) {
+    if (normalizeMarketText(full) === normalized) return abbr;
+  }
+  const aliases = { "trail blazers":"POR", "blazers":"POR", "sixers":"PHI", "76ers":"PHI",
+    "la clippers":"LAC", "clippers":"LAC", "lakers":"LAL", "knicks":"NYK",
+    "warriors":"GSW", "mavericks":"DAL", "mavs":"DAL", "thunder":"OKC",
+    "timberwolves":"MIN", "wolves":"MIN", "pelicans":"NOP", "spurs":"SAS",
+    "celtics":"BOS", "kings":"SAC", "grizzlies":"MEM", "bucks":"MIL",
+    "hawks":"ATL", "nets":"BKN", "hornets":"CHA", "bulls":"CHI",
+    "cavaliers":"CLE", "cavs":"CLE", "nuggets":"DEN", "pistons":"DET",
+    "rockets":"HOU", "pacers":"IND", "heat":"MIA", "magic":"ORL",
+    "suns":"PHX", "raptors":"TOR", "jazz":"UTA", "wizards":"WAS" };
+  return aliases[normalized] || "";
+}
+function marketPlayerTeam(market) {
+  const text = normalizeMarketText([market.question, market.market_group, market.slug].join(" "));
+  const match = players.find(player => {
+    const name = normalizeMarketText(player.name);
+    return name.length > 3 && (" " + text + " ").includes(" " + name + " ");
+  });
+  return match ? canonicalTeam(match.team) : "";
+}
+function marketPropMarkup(market) {
+  const prices = marketPriceSummary(market);
+  const volume = Number(market.volume_24h);
+  const volumeText = Number.isFinite(volume) ? "24h vol $" + volume.toLocaleString(undefined,{maximumFractionDigits:0}) : "24h volume n/a";
+  return '<article class="market-prop"><div class="market-prop-title">'+escapeHtml(market.question||market.event_title||"Untitled market")+'</div>'+
+    '<div class="market-prop-prices">'+escapeHtml(prices||"Prices unavailable")+'</div>'+
+    '<div class="market-prop-meta"><span>'+escapeHtml((market.market_type||"market").replace("_"," "))+' · '+escapeHtml(volumeText)+'</span>'+
+    (market.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(market.url)+'">Open ↗</a>':'')+'</div></article>';
+}
+function renderMarketNavigation() {
+  const label=$("market-day-label"),prev=$("market-day-prev"),next=$("market-day-next");
+  if(!label||!prev||!next)return;
+  if(!marketDays.length){label.textContent="No market dates";prev.disabled=true;next.disabled=true;return;}
+  const key=marketDays[activeMarketDay];
+  const date=key==="date-unavailable"?"Date unavailable":new Date(key+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+  label.textContent=date+" · "+(activeMarketDay+1)+" of "+marketDays.length;
+  prev.disabled=activeMarketDay===0;next.disabled=activeMarketDay===marketDays.length-1;
+}
+function renderMarkets() {
+  const root=$("markets");
+  if(!root)return;
+  const rows=marketData.filter(m=>m.active!==false&&m.closed!==true);
+  if(!rows.length){root.innerHTML='<p class="muted">No active NBA markets were found in the latest public snapshot.</p>';return;}
+  marketDays=[...new Set(rows.map(marketDateKey))].sort();
+  activeMarketDay=Math.min(activeMarketDay,Math.max(0,marketDays.length-1));
+  const pages=marketDays.map(day=>{
+    const dayRows=rows.filter(m=>marketDateKey(m)===day);
+    const matchups=new Map();
+    dayRows.forEach(m=>{
+      const event=m.event_title||m.question||"Other NBA markets";
+      if(!matchups.has(event))matchups.set(event,[]);
+      matchups.get(event).push(m);
+    });
+    const dayDate=day==="date-unavailable"?"Date unavailable":new Date(day+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+    const cards=[...matchups.entries()].map(([event,markets])=>{
+      const names=event.split(/\s+vs\.?\s+/i);
+      const teamA=names.length>1?marketTeamAbbreviation(names[0]):"";
+      const teamB=names.length>1?marketTeamAbbreviation(names[1]):"";
+      const playerProps=markets.filter(m=>m.market_type==="player_prop");
+      const gameLines=markets.filter(m=>m.market_type!=="player_prop");
+      const teamProps={};if(teamA)teamProps[teamA]=[];if(teamB)teamProps[teamB]=[];
+      const unassigned=[];
+      playerProps.forEach(m=>{
+        const team=marketPlayerTeam(m);
+        if(team&&teamProps[team])teamProps[team].push(m);else unassigned.push(m);
+      });
+      const teamColumn=(abbr)=>{
+        const props=teamProps[abbr]||[];
+        const color=TEAM_COLORS[abbr]?.[0]||"#385170";
+        return '<section class="market-team-column"><h4 class="market-team-heading" style="--team-primary:'+color+'">'+escapeHtml(teamDisplayName(abbr))+'<small>'+props.length+' player props</small></h4>'+
+          (props.length?'<div class="market-prop-list">'+props.map(marketPropMarkup).join("")+'</div>':'<p class="market-empty">No player props matched to this roster.</p>')+'</section>';
+      };
+      return '<section class="market-matchup"><div class="market-matchup-heading"><strong>'+escapeHtml(event)+'</strong><span class="market-day-count">'+markets.length+' markets · '+playerProps.length+' player props</span></div>'+
+        (gameLines.length?'<details class="market-game-lines"><summary>Game markets · '+gameLines.length+' (moneyline, spreads & totals)</summary><div class="market-prop-list">'+gameLines.map(marketPropMarkup).join("")+'</div></details>':'')+
+        (teamA&&teamB?'<div class="market-team-grid">'+teamColumn(teamA)+teamColumn(teamB)+'</div>':'')+
+        (unassigned.length?'<section class="market-unassigned"><h4 class="market-team-heading">Unmatched player props <small>'+unassigned.length+' · team not verified from roster</small></h4><div class="market-prop-list">'+unassigned.map(marketPropMarkup).join("")+'</div></section>':'')+
+        '</section>';
+    }).join("");
+    return '<section class="market-day-page" data-market-day="'+escapeHtml(day)+'"><div class="market-day-heading"><h3>'+escapeHtml(dayDate)+'</h3><span class="market-day-count">'+dayRows.length+' active markets</span></div>'+cards+'</section>';
+  }).join("");
+  root.innerHTML=pages;
+  if(!root.dataset.scrollBound){
+    root.dataset.scrollBound="true";
+    root.addEventListener("scroll",()=>{
+      if(root._marketScrollFrame)return;
+      root._marketScrollFrame=requestAnimationFrame(()=>{
+        root._marketScrollFrame=0;
+        const bounds=root.getBoundingClientRect();
+        let nearest=0,best=Infinity;
+        [...root.children].forEach((page,index)=>{
+          const distance=Math.abs(page.getBoundingClientRect().left-bounds.left);
+          if(distance<best){best=distance;nearest=index;}
+        });
+        activeMarketDay=nearest;
+        renderMarketNavigation();
+      });
+    },{passive:true});
+  }
+  root.scrollTo({left:0,behavior:"instant"});
+  const page=root.children[activeMarketDay];
+  if(page)page.scrollIntoView({block:"nearest",inline:"start",behavior:"instant"});
+  renderMarketNavigation();
+  const snapshot=$("market-snapshot-status");
+  if(snapshot)snapshot.textContent="Snapshot updated "+(marketUpdatedAt?marketUpdatedAt.toLocaleString():"at an unknown time")+". Showing "+rows.length+" active markets.";
+}
 async function loadMarkets(){
   const root=$("markets");
-  if(root) root.innerHTML='<p class="muted">Refreshing Polymarket snapshot…</p>';
-  try {
-    const data=await loadJson('data/polymarket.json');
-    const rows=Array.isArray(data.markets)?data.markets:[]; marketData=rows; marketsLoaded=true;
-    if(!root) return;
-    root.innerHTML=rows.length?rows.slice(0,150).map(m=>'<div class="market"><div><strong>'+escapeHtml(m.question||'Untitled market')+'</strong><small>'+escapeHtml(m.event_title||'')+(m.market_type?' · '+escapeHtml(m.market_type.replace('_',' ')):'')+(marketPriceSummary(m)?' · '+marketPriceSummary(m):' · Prices unavailable')+' · 24h volume: '+escapeHtml(m.volume_24h??'n/a')+' · Liquidity: '+escapeHtml(m.liquidity??'n/a')+'</small></div>'+(m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':'')+'</div>').join(''):'<p class="muted">No active NBA markets were found in the latest public snapshot.</p>' + '<p class="fine-print">Snapshot updated '+(data.last_updated?new Date(data.last_updated).toLocaleString():'at an unknown time')+'.</p>';
-    if(rows.length) root.insertAdjacentHTML('beforeend','<p class="fine-print">Showing '+Math.min(rows.length,150)+' of '+rows.length+' markets · Snapshot updated '+(data.last_updated?new Date(data.last_updated).toLocaleString():'at an unknown time')+'.</p>');
-    if(selectedGame) renderGameMarkets(selectedGame); if(selectedPlayer) renderPlayerMarkets(selectedPlayer);
-  } catch(e) { marketsLoaded=false; marketData=[]; if(root) root.innerHTML='<p class="muted">Polymarket data could not be loaded: '+escapeHtml(e.message)+'. Try Refresh Markets.</p>'; }
+  if(root)root.innerHTML='<p class="muted">Refreshing Polymarket snapshot…</p>';
+  try{
+    const data=await loadJson("data/polymarket.json");
+    marketData=Array.isArray(data.markets)?data.markets:[];
+    marketsLoaded=true;
+    marketUpdatedAt=data.last_updated?new Date(data.last_updated):null;
+    renderMarkets();
+    if(selectedGame)renderGameMarkets(selectedGame);
+    if(selectedPlayer)renderPlayerMarkets(selectedPlayer);
+  }catch(e){
+    marketsLoaded=false;marketData=[];
+    if(root)root.innerHTML='<p class="muted">Polymarket data could not be loaded: '+escapeHtml(e.message)+'. Try Refresh Markets.</p>';
+  }
 }
+
 async function ensureMarketsLoaded() {
   if(marketsLoaded)return;
   if(marketsLoading){await marketsLoading;return;}
@@ -857,13 +982,16 @@ document.querySelectorAll("[data-view]").forEach(button=>button.addEventListener
   document.querySelectorAll("[data-view]").forEach(tab=>{const active=tab===button;tab.classList.toggle("active",active);tab.setAttribute("aria-selected",String(active));});
   document.querySelectorAll(".view-panel").forEach(panel=>panel.hidden=panel.id!==button.dataset.view);
   if(button.dataset.view==="players-view") ensurePlayersLoaded();
-  if(button.dataset.view==="markets-view") ensureMarketsLoaded();
+  if(button.dataset.view==="markets-view") { ensureMarketsLoaded(); ensurePlayersLoaded().then(()=>{if(marketsLoaded)renderMarkets();}); }
 }));
 $("prop-calc").addEventListener("click",calcProp);
 $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlayerHistoricalBaseline();});
 $("prop-line").addEventListener("input",()=>{selectedPropMarket=null;});
 $("reload").addEventListener("click",loadAll);
 $("refresh-markets").addEventListener("click",loadMarkets);
+$("market-day-prev").addEventListener("click",()=>{activeMarketDay=Math.max(0,activeMarketDay-1);renderMarketNavigation();const page=$("markets").children[activeMarketDay];if(page)page.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});});
+$("market-day-next").addEventListener("click",()=>{activeMarketDay=Math.min(marketDays.length-1,activeMarketDay+1);renderMarketNavigation();const page=$("markets").children[activeMarketDay];if(page)page.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});});
+
 $("player-search").addEventListener("input",renderPlayerSearch);
 loadAll();
 

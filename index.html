@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NBA game and player prop Monte Carlo research simulator">
   <title>NBA Basketball Simulator</title>
-  <link rel="stylesheet" href="styles.css?v=20261121-real-photo-ball-1">
+  <link rel="stylesheet" href="styles.css?v=20261121-real-photo-ball-2">
 </head>
 <body>
   <header class="hero">
@@ -77,7 +77,13 @@
     <section id="markets-view" class="view-panel" hidden>
     <section class="panel">
       <div class="section-head"><div><p class="eyebrow">READ-ONLY DISCOVERY</p><h2>Polymarket NBA markets</h2></div><button id="refresh-markets" type="button">Refresh Markets</button></div>
-      <div id="markets" class="market-list"><p class="muted">Loading markets…</p></div>
+      <div class="market-day-controls">
+        <button id="market-day-prev" type="button" aria-label="Previous market day">‹</button>
+        <span id="market-day-label" class="muted">Loading market dates…</span>
+        <button id="market-day-next" type="button" aria-label="Next market day">›</button>
+      </div>
+      <div id="markets" class="market-day-strip"><p class="muted">Loading markets…</p></div>
+      <p id="market-snapshot-status" class="fine-print">Markets are grouped by NBA game date and team.</p>
       <p class="fine-print">Markets are discovered from public endpoints. Market matching and model-vs-price edge calculations are not enabled until event/player identity matching is validated.</p>
     </section>
     </section>
@@ -103,6 +109,6 @@
     </div>
   </div>
   <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections. Basketball photograph: <a href="https://commons.wikimedia.org/wiki/File:Isolated_basketball.png" target="_blank" rel="noopener">User: MrX</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.</footer>
-  <script src="app.js?v=20261121-compact-player-logs-1"></script>
+  <script src="app.js?v=20261121-markets-team-day-1"></script>
 </body>
 </html>
