@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-21T09:04:50.386939+00:00",
+  "generated_at": "2026-11-21T10:54:36.963093+00:00",
   "status": "warning",
   "team_history": {
-    "last_updated": "2026-11-21T09:03:41.022655+00:00",
+    "last_updated": "2026-11-21T10:53:25.104354+00:00",
     "age_hours": 0.02,
     "team_count": 30,
     "seasons": {
@@ -60,10 +60,13 @@
     "declared_player_count": 528,
     "seasons": [
       2027,
-      2026
+      2026,
+      2025,
+      2024,
+      2023
     ],
-    "last_updated": "2026-11-21T08:07:22.768117+00:00",
-    "age_hours": 0.96,
+    "last_updated": "2026-11-21T10:04:17.212666+00:00",
+    "age_hours": 0.84,
     "players_without_any_logs": 8
   },
   "warnings": [

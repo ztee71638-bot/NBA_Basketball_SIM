@@ -18,5 +18,5 @@
   "advanced_calibration_error": 0.1707,
   "advanced_baseline_calibration_error": 0.1155,
   "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
-  "generated_at": "2026-11-21T09:04:50.077168+00:00"
+  "generated_at": "2026-11-21T10:54:36.196788+00:00"
 }
