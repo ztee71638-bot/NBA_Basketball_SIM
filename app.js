@@ -244,8 +244,8 @@ function prefillGameProjections(game) {
 }
 function normalizeMarketText(value) {
   return String(value || "").toLowerCase().normalize("NFD")
-    .replace(/[\\u0300-\\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, " ").trim().replace(/\\s+/g, " ");
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+/g, " ");
 }
 function containsMarketPhrase(haystack, phrase) {
   const text = " " + normalizeMarketText(haystack) + " ";
