@@ -18,7 +18,7 @@ DATA = ROOT / "data"
 URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/schedule"
 SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 TIMEOUT = 25
-DELAY = 0.35
+DELAY = 0.8
 SEASONS = [2027, 2026]
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
