@@ -103,6 +103,15 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             warnings.append(f"Season {season}: only {active_teams}/30 teams have game history.")
         if duplicate_ids:
             errors.append(f"Season {season}: {duplicate_ids} duplicate team-game IDs.")
+        # Advanced box scores are an experimental input. Report weak coverage
+        # explicitly so a clean pairing audit cannot be mistaken for complete
+        # possession/efficiency data. The current NBA season may be partial.
+        advanced_coverage = season_summary[season]["advanced_coverage_pct"]
+        if total and advanced_coverage < 50:
+            warnings.append(
+                f"Season {season}: advanced box-score coverage is only "
+                f"{advanced_coverage:.1f}% of team-game rows."
+            )
         # A finished regular season should ordinarily have about 82 games/team.
         if total and total / max(1, active_teams) < 60 and int(season) < now.year:
             warnings.append(f"Season {season}: average history is below 60 games/team.")
