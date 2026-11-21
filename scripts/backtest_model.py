@@ -83,8 +83,10 @@ def predict_advanced(home_rows, away_rows, league_pace, league_off_rating, leagu
     away_mean = ((away_off + home_def) / 2) * pace / 100
     home_score_sd = weighted_stats(home_rows, "points_for")
     away_score_sd = weighted_stats(away_rows, "points_for")
-    combined_sd = math.sqrt((home_score_sd[1] if home_score_sd else 12.0) ** 2 +
-                            (away_score_sd[1] if away_score_sd else 12.0) ** 2)
+    home_sd = home_score_sd[1] if home_score_sd else 12.0
+    away_sd = away_score_sd[1] if away_score_sd else 12.0
+    # Match the simulator's shared-environment shock (0.35 coefficient -> 0.1225 correlation).
+    combined_sd = math.sqrt(max(1.0, home_sd ** 2 + away_sd ** 2 - 2 * 0.1225 * home_sd * away_sd))
     p_home = 0.5 * (1 + math.erf((home_mean-away_mean)/(math.sqrt(2)*max(8.0,combined_sd))))
     return home_mean, away_mean, p_home, pace
 
