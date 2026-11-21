@@ -154,7 +154,7 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
                 continue
             for own in competitors:
                 own_team = own.get("team") or {}
-                own_abbr = own_team.get("abbreviation")
+                own_abbr = ID_TO_TEAM.get(str(own_team.get("id")), own_team.get("abbreviation"))
                 if own_abbr not in grouped:
                     continue
                 other = next((item for item in competitors if item is not own), None)
