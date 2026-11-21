@@ -83,8 +83,30 @@ function calcProp(){
   const over=(1-erf((line-mean)/(sd*Math.sqrt(2))))/2;
   $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate from your inputs only. No player history, minutes, matchup, injury or market adjustment is included.</p>`;
 }
+function parseMarketArray(value) {
+  if (Array.isArray(value)) return value;
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  return [];
+}
+function marketPriceSummary(market) {
+  const outcomes = parseMarketArray(market.outcomes);
+  const prices = parseMarketArray(market.outcome_prices);
+  if (!prices.length) return "";
+  return outcomes.map((outcome, index) => {
+    const price = Number(prices[index]);
+    return Number.isFinite(price) ? escapeHtml(outcome) + " " + Math.round(price * 100) + "¢" : "";
+  }).filter(Boolean).join(" · ");
+}
+
 async function loadMarkets(){
-  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${m.question||"Untitled market"}</strong><small>24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+m.url+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){$("markets").textContent="Market feed unavailable: "+e.message;}
+  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${m.question||"Untitled market"}</strong><small>${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+m.url+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){$("markets").textContent="Market feed unavailable: "+e.message;}
 }
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
