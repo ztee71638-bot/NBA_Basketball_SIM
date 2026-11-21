@@ -53,3 +53,16 @@ def test_parse_team_schedule_reads_competition_level_status():
     rows = module.parse_team_schedule(payload, "1")
     assert len(rows) == 1
     assert rows[0]["points_for"] == 112
+
+
+def test_parse_team_schedule_accepts_numeric_completed_scores_without_status():
+    payload = {"events": [{
+        "id": "g3", "date": "2026-11-22T00:00Z",
+        "competitions": [{"competitors": [
+            {"homeAway": "home", "team": {"id": "13", "abbreviation": "LAL"}, "score": "108"},
+            {"homeAway": "away", "team": {"id": "2", "abbreviation": "BOS"}, "score": "102"},
+        ]}],
+    }]}
+    rows = module.parse_team_schedule(payload, "13")
+    assert len(rows) == 1
+    assert rows[0]["points_for"] == 108
