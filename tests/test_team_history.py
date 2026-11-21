@@ -75,3 +75,17 @@ def test_date_ranges_cover_partial_weeks():
     assert list(module._date_ranges(date(2026, 10, 15), date(2026, 10, 30), 7)) == [
         "20261015-20261021", "20261022-20261028", "20261029-20261030"
     ]
+
+
+def test_team_id_canonicalization_handles_espn_short_abbreviations():
+    payload = {"events": [{
+        "id": "g4", "date": "2026-11-20T00:00Z",
+        "status": {"type": {"completed": True}},
+        "competitions": [{"competitors": [
+            {"homeAway": "home", "team": {"id": "18", "abbreviation": "NY"}, "score": "115"},
+            {"homeAway": "away", "team": {"id": "3", "abbreviation": "NO"}, "score": "109"},
+        ]}],
+    }]}
+    rows = module.parse_team_schedule(payload, "18")
+    assert rows[0]["team"] == "NYK"
+    assert rows[0]["opponent"] == "NOP"
