@@ -151,7 +151,7 @@ def main():
     payload = json.loads(args.data.read_text(encoding="utf-8"))
     result = run_backtest(payload, args.min_prior_games)
     result["generated_at"] = datetime.now(timezone.utc).isoformat()
-    rendered = json.dumps(result, indent=2) + "\\n"
+    rendered = json.dumps(result, indent=2) + "\n"
     print(rendered)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
