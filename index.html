@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NBA game and player prop Monte Carlo research simulator">
   <title>NBA Basketball Simulator</title>
-  <link rel="stylesheet" href="styles.css?v=20261121-teal-visual-matchup">
+  <link rel="stylesheet" href="styles.css?v=20261120-split-results-4">
 </head>
 <body>
   <header class="hero">
@@ -81,18 +81,18 @@
   </main>
 
   <div id="simulation-modal" class="simulation-modal" hidden role="dialog" aria-modal="true" aria-labelledby="simulation-modal-title">
-    <div class="simulation-modal-card">
+    <div class="simulation-modal-card split-result-card">
       <button type="button" id="simulation-modal-close" class="simulation-modal-close" aria-label="Close results">×</button>
-      <p class="eyebrow">100,000-TRIAL RESULT</p>
-      <h2 id="simulation-modal-title">Simulation result</h2>
+      <div class="split-result-heading"><p class="eyebrow">100,000-TRIAL RESULT</p><h2 id="simulation-modal-title">SIMULATION RESULTS</h2></div>
       <p id="simulation-winner" class="simulation-winner"></p>
+      <div id="simulation-confidence" class="simulation-confidence split-result-teams"></div>
+      <div class="split-result-score-label">PROJECTED SCORE</div>
       <div class="simulation-score" id="simulation-score"></div>
-      <p id="simulation-confidence" class="simulation-confidence"></p>
-      <p class="fine-print">Probabilities are based on the share of the 100,000 simulated games won by each team. They are model estimates, not guarantees.</p>
-      <button type="button" id="simulation-modal-done" class="primary">Done</button>
+      <p class="fine-print">Probabilities are based on the share of simulated games won. Model estimates, not guarantees.</p>
+      <button type="button" id="simulation-modal-done" class="primary split-result-close">Close Results</button>
     </div>
   </div>
   <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections.</footer>
-  <script src="app.js?v=20261121-teal-visual-matchup"></script>
+  <script src="app.js?v=20261120-split-results-4"></script>
 </body>
 </html>
