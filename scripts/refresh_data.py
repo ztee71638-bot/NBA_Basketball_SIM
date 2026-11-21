@@ -72,13 +72,13 @@ def fetch_games(today: datetime | None = None) -> list[dict[str, Any]]:
 def _market_text(market: dict[str, Any]) -> str:
     return " ".join(
         str(market.get(key) or "")
-        for key in ("question", "title", "description", "slug")
+        for key in ("question", "title", "slug")
     ).lower().strip()
 
 
 def is_nba_market(market: dict[str, Any]) -> bool:
     text = _market_text(market)
-    if "nba" in text or "basketball" in text:
+    if re.search(r"\\b(nba|basketball)\\b", text):
         return True
     return any(re.search(r"\b" + re.escape(team) + r"\b", text) for team in NBA_TEAMS)
 
