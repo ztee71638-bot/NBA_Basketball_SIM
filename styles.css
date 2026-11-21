@@ -72,3 +72,9 @@ table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.88rem}th,td
 .simulation-score{font-size:1.35rem;font-weight:750;padding:16px 8px;margin:12px 0;background:#0b1526;border:1px solid var(--line);border-radius:12px}
 .simulation-confidence{font-size:1.05rem;font-weight:700;margin:12px 0}
 .simulation-modal-card .fine-print{line-height:1.5}
+
+.simulation-probability-list{display:grid;gap:9px;margin:14px 0;text-align:left}
+.simulation-probability-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:11px 13px;background:#0b1526;border:1px solid var(--line);border-radius:10px}
+.simulation-probability-team{min-width:0;font-weight:650;overflow-wrap:anywhere}
+.simulation-probability-value{text-align:right;font-size:1.08rem;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.simulation-probability-value small{display:block;font-size:.68rem;color:var(--muted);font-weight:600}
