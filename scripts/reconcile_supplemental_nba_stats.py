@@ -146,7 +146,8 @@ def reconcile_team_games(teams_payload: dict[str, Any],
                     continue
                 matched.append((source, target, team))
             if len(matched) != 2:
-                season_report["unmatched_rows"] += len(game_rows) - len(matched)
+                # Each missing row was already classified above as either an
+                # unmatched game or a score/key conflict; do not count it twice.
                 continue
 
             source_by_team = {team: source for source, _, team in matched}
