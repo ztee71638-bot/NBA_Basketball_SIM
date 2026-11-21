@@ -8,6 +8,8 @@ on:
     branches: [main, foundation/nba-simulator-mvp]
     paths:
       - "requirements.txt"
+      - "scripts/refresh_data.py"
+      - "tests/test_refresh.py"
       - ".github/workflows/refresh-data.yml"
   pull_request:
     branches: [main]
