@@ -3,6 +3,8 @@ let games = [];
 let players = [];
 let teamData = [];
 let selectedGame = null;
+let selectedPlayer = null;
+let selectedPlayerLogs = [];
 const fmt = (n) => Number(n).toFixed(1) + "%";
 async function loadJson(path) {
   const response = await fetch(path + "?v=" + Date.now(), {cache:"no-store"});
@@ -87,6 +89,27 @@ function renderPlayerSearch() {
   root.innerHTML = matches.map(p => '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">View history</button></div>').join("");
   root.querySelectorAll("[data-player-id]").forEach(b => b.addEventListener("click", () => showPlayer(b.dataset.playerId)));
 }
+function applyPlayerHistoricalBaseline() {
+  if (!selectedPlayer || !selectedPlayerLogs.length) {
+    $("prop-source-status").textContent = "No game-log sample is available for the selected player.";
+    return;
+  }
+  const stat = $("prop-stat").value;
+  const values = selectedPlayerLogs.map(g => g[stat]).filter(v => Number.isFinite(v));
+  if (!values.length) {
+    $("prop-source-status").textContent = "No " + stat + " values were found in the latest available game logs for " + selectedPlayer.name + ".";
+    return;
+  }
+  const mean = values.reduce((sum, value) => sum + value, 0) / values.length;
+  const variance = values.length > 1
+    ? values.reduce((sum, value) => sum + Math.pow(value - mean, 2), 0) / (values.length - 1)
+    : 1;
+  $("prop-mean").value = mean.toFixed(1);
+  $("prop-sd").value = Math.max(1, Math.sqrt(variance)).toFixed(1);
+  $("prop-source-status").textContent = selectedPlayer.name + " · " + stat.toUpperCase() +
+    " historical baseline from " + values.length + " recent games. This is not adjusted for minutes, role, injuries, opponent or expected game script.";
+}
+
 function showPlayer(playerId) {
   const p = players.find(item => String(item.id) === String(playerId));
   if (!p) return;
@@ -99,6 +122,9 @@ function showPlayer(playerId) {
   const season = chosen[0], logs = chosen[1];
   const sortedLogs = [...logs].sort((a,b) => new Date(b.date || 0) - new Date(a.date || 0));
   const recent = sortedLogs.slice(0,10);
+  selectedPlayer = p;
+  selectedPlayerLogs = recent;
+  applyPlayerHistoricalBaseline();
   const avg = key => {
     const vals = recent.map(g=>g[key]).filter(v=>Number.isFinite(v));
     return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : "n/a";
@@ -134,6 +160,7 @@ async function loadAll(){
 }
 $("simulate").addEventListener("click",runGameSimulation);
 $("prop-calc").addEventListener("click",calcProp);
+$("prop-stat").addEventListener("change",applyPlayerHistoricalBaseline);
 $("reload").addEventListener("click",loadAll);
 $("player-search").addEventListener("input",renderPlayerSearch);
 loadAll();
