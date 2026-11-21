@@ -307,16 +307,19 @@ def fetch_player_database() -> list[dict[str, Any]]:
 def build_player_season_tasks(
     players_by_id: dict[str, dict[str, Any]], seasons: list[int]
 ) -> list[tuple[str, int]]:
-    """Fetch logs only for seasons in which the player appeared on an NBA roster."""
-    tasks: list[tuple[str, int]] = []
-    for athlete_id, player in players_by_id.items():
-        rostered = {str(season) for season in player.get("roster_seasons", [])}
-        relevant = [season for season in seasons if str(season) in rostered]
-        # Keep a conservative fallback for older/incomplete roster records.
-        if not rostered:
-            relevant = list(seasons)
-        tasks.extend((athlete_id, season) for season in relevant)
-    return tasks
+    """Query every configured season for every indexed player.
+
+    ESPN's public roster endpoint can return only the current roster even when
+    a historical season is requested. Treating that incomplete roster history
+    as authoritative silently dropped older player logs. Querying all configured
+    seasons costs more requests, but preserves real coverage and lets missing
+    seasons remain explicitly empty instead of assuming a player never played.
+    """
+    return [
+        (athlete_id, season)
+        for athlete_id in players_by_id
+        for season in seasons
+    ]
 
 
 def build_roster_index(players: list[dict[str, Any]]) -> list[dict[str, Any]]:
