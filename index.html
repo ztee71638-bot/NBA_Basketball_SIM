@@ -41,6 +41,13 @@
       <div id="prop-results" class="results muted">Enter a player-stat projection to calculate over/under probabilities.</div>
     </section>
     <section class="panel">
+      <p class="eyebrow">HISTORICAL PLAYER DATABASE</p><h2>Search NBA players</h2>
+      <p class="muted">Search the roster archive and inspect available game logs by season.</p>
+      <div class="inputs"><label>Player name or team<input id="player-search" type="search" placeholder="Search player, e.g. Jayson Tatum"></label></div>
+      <div id="player-search-results" class="game-list"><p class="muted">Player database is loading…</p></div>
+      <div id="player-detail" class="results muted">Select a player to view their historical game log.</div>
+    </section>
+    <section class="panel">
       <div class="section-head"><div><p class="eyebrow">READ-ONLY DISCOVERY</p><h2>Polymarket NBA markets</h2></div></div>
       <div id="markets" class="market-list"><p class="muted">Loading markets…</p></div>
       <p class="fine-print">Markets are discovered from public endpoints. Market matching and model-vs-price edge calculations are not enabled until event/player identity matching is validated.</p>
