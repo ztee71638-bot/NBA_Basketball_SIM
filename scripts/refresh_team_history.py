@@ -120,12 +120,11 @@ def summarize_games(games: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def _date_ranges(start: date, end: date, chunk_days: int = 7):
+def _date_values(start: date, end: date):
     cursor = start
     while cursor <= end:
-        chunk_end = min(date.fromordinal(cursor.toordinal() + chunk_days - 1), end)
-        yield cursor.strftime("%Y%m%d") + "-" + chunk_end.strftime("%Y%m%d")
-        cursor = date.fromordinal(chunk_end.toordinal() + 1)
+        yield cursor
+        cursor = date.fromordinal(cursor.toordinal() + 1)
 
 
 def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]:
@@ -136,9 +135,9 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
     else:
         start, end = date(season - 1, 10, 1), date(season, 6, 30)
     grouped: dict[str, list[dict[str, Any]]] = {abbr: [] for abbr in TEAM_IDS}
-    for date_range in _date_ranges(start, end, chunk_days=7):
-        # Keep each query below ESPN's practical scoreboard page size.
-        payload = get_json(SCOREBOARD_URL, {"dates": date_range, "seasontype": 2, "limit": 100})
+    for game_date in _date_values(start, end):
+        # ESPN's NBA scoreboard accepts single-day dates; range queries return HTTP 400.
+        payload = get_json(SCOREBOARD_URL, {"dates": game_date.strftime("%Y%m%d"), "seasontype": 2, "limit": 100})
         for event in payload.get("events") or []:
             competitions = event.get("competitions") or []
             if not competitions:
@@ -176,37 +175,31 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
                     "win": pf > pa,
                     "result": "W" if pf > pa else "L",
                 })
-        time.sleep(DELAY)
     return {abbr: sorted(rows, key=lambda row: row.get("date") or "") for abbr, rows in grouped.items()}
 
 
 def fetch_team_database() -> list[dict[str, Any]]:
-    teams = []
-    for abbreviation, team_id in TEAM_IDS.items():
-        record = {"id": str(team_id), "abbreviation": abbreviation, "seasons": {}, "source": "ESPN"}
+    teams = [
+        {"id": str(team_id), "abbreviation": abbreviation, "seasons": {}, "source": "ESPN"}
+        for abbreviation, team_id in TEAM_IDS.items()
+    ]
+    current_season = max(SEASONS)
+    # Build the active season from the same single-day ESPN scoreboard feed
+    # already proven by the live game refresh. Keep prior-season slots empty
+    # rather than silently treating preseason or incomplete data as history.
+    grouped = fetch_season_from_scoreboard(current_season)
+    for team in teams:
+        rows = grouped.get(team["abbreviation"], [])
+        team["seasons"][str(current_season)] = {"games": rows, "summary": summarize_games(rows)}
         for season in SEASONS:
-            try:
-                payload = get_json(URL.format(team_id=team_id), {"season": season, "seasontype": 2})
-                games = parse_team_schedule(payload, str(team_id))
-                record["seasons"][str(season)] = {"games": games, "summary": summarize_games(games)}
-            except requests.RequestException as exc:
-                print(f"Team schedule unavailable for {abbreviation} ({season}): {exc}")
-                record["seasons"][str(season)] = {"games": [], "summary": summarize_games([])}
-        teams.append(record)
+            if season != current_season:
+                team["seasons"][str(season)] = {"games": [], "summary": summarize_games([])}
     return teams
 
 
 def main() -> None:
     teams = fetch_team_database()
-    # The team-schedule endpoint can return a successful but empty payload.
-    # If that happens, fall back to ESPN's scoreboard date-range endpoint.
-    for season in SEASONS:
-        if not any(team["seasons"][str(season)]["summary"]["games"] for team in teams):
-            print(f"No team schedule rows for {season}; falling back to ESPN scoreboard date ranges.")
-            fallback = fetch_season_from_scoreboard(season)
-            for team in teams:
-                rows = fallback.get(team["abbreviation"], [])
-                team["seasons"][str(season)] = {"games": rows, "summary": summarize_games(rows)}
+    print("Collected current-season team logs from ESPN daily scoreboard feeds.")
     valid = sum(1 for team in teams if any(season["summary"]["games"] for season in team["seasons"].values()))
     if valid < 20:
         raise RuntimeError(f"Only {valid} teams returned usable history; refusing to overwrite the existing archive.")
