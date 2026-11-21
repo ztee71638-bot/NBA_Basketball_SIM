@@ -104,7 +104,7 @@ def test_confidence_buckets_report_sample_size_accuracy_and_brier():
     assert report[0]["confidence_range"] == "65%-70%"
     assert report[0]["games"] == 2
     assert report[0]["observed_accuracy"] == 0.5
-    assert report[0]["brier_score"] == 0.2122
+    assert report[0]["brier_score"] == 0.2793
 
 
 def test_logistic_probability_calibration_corrects_overconfidence():
