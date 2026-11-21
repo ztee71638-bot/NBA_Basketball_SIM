@@ -120,16 +120,12 @@ def summarize_games(games: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def _month_ranges(start: date, end: date):
+def _date_ranges(start: date, end: date, chunk_days: int = 7):
     cursor = start
     while cursor <= end:
-        last_day = calendar.monthrange(cursor.year, cursor.month)[1]
-        month_end = min(date(cursor.year, cursor.month, last_day), end)
-        yield cursor.strftime("%Y%m%d") + "-" + month_end.strftime("%Y%m%d")
-        if cursor.month == 12:
-            cursor = date(cursor.year + 1, 1, 1)
-        else:
-            cursor = date(cursor.year, cursor.month + 1, 1)
+        chunk_end = min(date.fromordinal(cursor.toordinal() + chunk_days - 1), end)
+        yield cursor.strftime("%Y%m%d") + "-" + chunk_end.strftime("%Y%m%d")
+        cursor = date.fromordinal(chunk_end.toordinal() + 1)
 
 
 def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]:
@@ -140,16 +136,9 @@ def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]
     else:
         start, end = date(season - 1, 10, 1), date(season, 6, 30)
     grouped: dict[str, list[dict[str, Any]]] = {abbr: [] for abbr in TEAM_IDS}
-    if season == today.year + 1:
-        date_ranges = [start.strftime("%Y%m%d") + "-" + end.strftime("%Y%m%d")]
-    else:
-        split = date(season, 2, 1)
-        date_ranges = [
-            start.strftime("%Y%m%d") + "-" + date(season, 1, 31).strftime("%Y%m%d"),
-            split.strftime("%Y%m%d") + "-" + end.strftime("%Y%m%d"),
-        ]
-    for date_range in date_ranges:
-        payload = get_json(SCOREBOARD_URL, {"dates": date_range, "seasontype": 2, "limit": 1000})
+    for date_range in _date_ranges(start, end, chunk_days=7):
+        # Keep each query below ESPN's practical scoreboard page size.
+        payload = get_json(SCOREBOARD_URL, {"dates": date_range, "seasontype": 2, "limit": 100})
         for event in payload.get("events") or []:
             competitions = event.get("competitions") or []
             if not competitions:
