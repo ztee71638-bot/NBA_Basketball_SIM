@@ -128,4 +128,7 @@ def test_player_database_fetches_all_seasons_with_bounded_parallel_workers(monke
     assert len(players) == 1
     assert sorted(players[0]["seasons"]) == ["2023", "2024", "2025", "2026", "2027"]
     assert all(len(players[0]["seasons"][str(season)]) == 1 for season in module.SEASONS)
+    assert players[0]["roster_seasons"] == ["2027", "2026", "2025", "2024", "2023"]
+    assert players[0]["teams_by_season"] == {str(season): ["ATL"] for season in module.SEASONS}
+    assert len([call for call in calls if "/roster" in call[0]]) == 30 * len(module.SEASONS)
     assert len([call for call in calls if "/gamelog" in call[0]]) == 5
