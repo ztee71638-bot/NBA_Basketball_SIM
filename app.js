@@ -2,6 +2,8 @@ const $ = (id) => document.getElementById(id);
 let games = [];
 let players = [];
 let teamData = [];
+let teamUpdatedAt = null;
+let playerUpdatedAt = null;
 let injuryData = [];
 let injuryUpdatedAt = null;
 let lineupData = [];
@@ -180,6 +182,10 @@ function estimateMatchup(game) {
   return {homeMean,awayMean,homeSd:home.sd,awaySd:away.sd,home,away,league};
 }
 function prefillGameProjections(game) {
+  if(!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000){
+    $("projection-status").textContent="PASS — team history is missing or older than 48 hours. Refresh the data before using an automatic team projection.";
+    return;
+  }
   const projection=estimateMatchup(game);
   if(projection){
     const homeRecent=projection.home.rows.slice(-10), awayRecent=projection.away.rows.slice(-10);
@@ -320,6 +326,10 @@ function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);cons
 function calcProp(){
   const mean=Number($("prop-mean").value),sd=Number($("prop-sd").value),line=Number($("prop-line").value);
   if(selectedPlayer){
+    if(!playerUpdatedAt || !Number.isFinite(playerUpdatedAt.getTime()) || Date.now()-playerUpdatedAt.getTime()>48*60*60*1000){
+      $("prop-results").textContent="PASS — player game logs are missing or older than 48 hours. Refresh the player database before using a player projection.";
+      return;
+    }
     if(!injuryUpdatedAt || !Number.isFinite(injuryUpdatedAt.getTime()) || Date.now()-injuryUpdatedAt.getTime()>24*60*60*1000){
       $("prop-results").textContent="PASS — the injury feed is missing or older than 24 hours. Refresh current availability before using a player projection.";
       return;
@@ -656,6 +666,7 @@ async function loadTeams() {
   try {
     const data = await loadJson("data/teams.json");
     teamData = data.teams || [];
+    teamUpdatedAt = data.last_updated ? new Date(data.last_updated) : null;
     renderPlayerSearch();
     if (data.last_updated) $("data-status").textContent += " · Teams " + teamData.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
@@ -687,6 +698,7 @@ async function loadPlayers() {
   try {
     const data = await loadJson("data/players.json");
     players = data.players || [];
+    playerUpdatedAt = data.last_updated ? new Date(data.last_updated) : null;
     renderPlayerSearch();
     if (data.last_updated) $("data-status").textContent += " · Players " + players.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
