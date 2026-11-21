@@ -9,6 +9,8 @@ on:
     paths:
       - "scripts/refresh_team_history.py"
       - "tests/test_team_history.py"
+      - "scripts/backtest_model.py"
+      - "tests/test_backtest_model.py"
       - ".github/workflows/refresh-team-history.yml"
   pull_request:
     branches: [main]
@@ -38,6 +40,9 @@ jobs:
       - name: Refresh team history
         if: github.event_name != 'pull_request'
         run: python scripts/refresh_team_history.py
+      - name: Run chronological model backtest
+        if: github.event_name != 'pull_request'
+        run: python scripts/backtest_model.py
       - name: Commit team database
         if: github.event_name != 'pull_request'
         run: |
