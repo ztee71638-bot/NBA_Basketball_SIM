@@ -36,6 +36,7 @@ def test_parse_player_gamelog_maps_common_stats():
     assert rows[0]["assists"] == 7
     assert rows[0]["steals"] == 2
     assert rows[0]["blocks"] == 1
+    assert "raw_stats" not in rows[0]
 
 
 

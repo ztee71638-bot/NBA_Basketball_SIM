@@ -390,6 +390,47 @@ def enrich_schedule_travel(team_abbreviation: str, rows: list[dict[str, Any]], a
             row["travel_miles"] = round(haversine_miles(origin, destination), 1)
 
 
+
+def reconcile_missing_opponent_records(grouped: dict[str, list[dict[str, Any]]]) -> int:
+    """Rebuild a missing team-side row from its verified completed-game mirror."""
+    rows_by_game: dict[str, list[dict[str, Any]]] = {}
+    for team_rows in grouped.values():
+        for row in team_rows:
+            game_id = str(row.get("game_id") or "")
+            if game_id:
+                rows_by_game.setdefault(game_id, []).append(row)
+    added = 0
+    for game_id, rows in rows_by_game.items():
+        if len(rows) != 1:
+            continue
+        source = rows[0]
+        team = str(source.get("team") or "")
+        opponent = str(source.get("opponent") or "")
+        if not team or opponent not in grouped or opponent == team:
+            continue
+        if any(str(existing.get("game_id")) == game_id for existing in grouped[opponent]):
+            continue
+        home_away = source.get("home_away")
+        points_for, points_against = source.get("points_for"), source.get("points_against")
+        if home_away not in ("home", "away") or not isinstance(points_for, (int, float)) or not isinstance(points_against, (int, float)):
+            continue
+        mirror = {
+            "game_id": game_id, "date": source.get("date"), "team": opponent,
+            "opponent": team, "opponent_name": team,
+            "home_away": "away" if home_away == "home" else "home",
+            "points_for": points_against, "points_against": points_for,
+            "win": points_against > points_for,
+            "result": "W" if points_against > points_for else "L",
+            "source": "ESPN completed-game reciprocal record",
+        }
+        grouped[opponent].append(mirror)
+        added += 1
+    if added:
+        for team_rows in grouped.values():
+            team_rows.sort(key=lambda row: row.get("date") or "")
+    print(f"Reconstructed {added} missing reciprocal team-game records from verified final scores.", flush=True)
+    return added
+
 def fetch_team_database() -> list[dict[str, Any]]:
     teams = [
         {"id": str(team_id), "abbreviation": abbreviation, "seasons": {}, "source": "ESPN"}
@@ -401,6 +442,8 @@ def fetch_team_database() -> list[dict[str, Any]]:
         season: fetch_season_from_team_schedules(season)
         for season in sorted(SEASONS)
     }
+    for season_rows in grouped_by_season.values():
+        reconcile_missing_opponent_records(season_rows)
     arena_file = DATA / "arenas.json"
     arena_payload = json.loads(arena_file.read_text(encoding="utf-8")) if arena_file.exists() else {}
     arenas = arena_payload.get("teams", {})

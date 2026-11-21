@@ -337,16 +337,16 @@ footer{color:#83aaaa}
 .hero-tags i{width:4px;height:4px;border-radius:50%;background:#39d8cb;box-shadow:0 0 8px #39d8cb}
 .hero-side{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;min-width:190px}
 .hero-ball{
-  position:relative;display:block;width:156px;height:156px;flex:none;overflow:visible;
-  filter:drop-shadow(0 13px 15px rgba(0,0,0,.42));
-  transform:rotate(-9deg);
-  animation:hero-ball-float 7s ease-in-out infinite;
+  position:relative;display:block;width:168px;height:168px;flex:none;
+  object-fit:contain;
+  filter:drop-shadow(0 14px 18px rgba(0,0,0,.42));
+  transform:rotate(-7deg);
 }
 @keyframes hero-ball-float{
   0%,100%{transform:translateY(0) rotate(-13deg)}
   50%{transform:translateY(-7px) rotate(-7deg)}
 }
-@media(prefers-reduced-motion:reduce){.hero-ball{animation:none}}
+
 .hero-side .status{white-space:nowrap;border-color:rgba(69,219,207,.35);background:rgba(3,23,27,.78);color:#bce9e5;font-weight:650}
 @media(max-width:700px){
  .hero{margin:12px 16px 0;padding:29px 22px 25px;min-height:0;border-radius:19px;gap:10px}
@@ -355,18 +355,21 @@ footer{color:#83aaaa}
  .hero .hero-subtitle{font-size:.88rem;margin:13px 0}
  .hero-tags{font-size:.56rem;gap:7px;letter-spacing:.08em}
  .hero-side{min-width:0;align-items:flex-end;gap:10px}
- .hero-ball{width:88px;height:88px;opacity:.94}
+ .hero-ball{width:92px;height:92px;opacity:1}
  .hero-side .status{font-size:.7rem;padding:6px 9px}
 }
 @media(max-width:430px){
  .hero{align-items:flex-start}
  .hero-side{position:absolute;right:18px;top:20px}
- .hero-ball{width:62px;height:62px;opacity:.9}
+ .hero-ball{width:68px;height:68px;opacity:1}
  .hero-side .status{position:absolute;top:61px;right:0}
  .hero-copy{padding-right:4px}
  .hero-tags{max-width:275px}
 }
 
+
+/* Real basketball photograph; keep the ball crisp and avoid synthetic SVG effects. */
+.hero-ball{animation:none!important}
 
 /* Mobile finishing pass: keep the live-data badge out of the headline and
    make every primary section reachable without horizontal tab scrolling. */
