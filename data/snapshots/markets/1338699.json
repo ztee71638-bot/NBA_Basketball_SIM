@@ -20,7 +20,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840923\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Mavericks vs. Jazz\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T23:32:14.289534+00:00",
+      "markets": [
+        {
+          "market_id": "6840923",
+          "market_type": "moneyline",
+          "question": "Mavericks vs. Jazz",
+          "slug": "nba-dal-uta-2026-11-22",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.52\", \"0.48\"]",
+          "volume_24h": 6735.064104000001,
+          "liquidity": "31388.2227",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840923\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.52\\\", \\\"0.48\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Mavericks vs. Jazz\"}]"
     }
   ],
-  "last_updated": "2026-11-21T15:57:57.080643+00:00"
+  "last_updated": "2026-11-21T23:32:14.289534+00:00"
 }

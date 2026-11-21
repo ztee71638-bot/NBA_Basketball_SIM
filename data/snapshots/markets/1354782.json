@@ -110,7 +110,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6925093\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.79\\\", \\\"0.21\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Wizards\\\"]\",\"question\":\"Celtics vs. Wizards\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T23:32:14.289534+00:00",
+      "markets": [
+        {
+          "market_id": "6925093",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Wizards",
+          "slug": "nba-bos-was-2026-11-24",
+          "outcomes": "[\"Celtics\", \"Wizards\"]",
+          "outcome_prices": "[\"0.795\", \"0.205\"]",
+          "volume_24h": 3388.968203,
+          "liquidity": "23829.8146",
+          "end_date": "2026-11-25T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-was-2026-11-24"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6925093\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.795\\\", \\\"0.205\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Wizards\\\"]\",\"question\":\"Celtics vs. Wizards\"}]"
     }
   ],
-  "last_updated": "2026-11-21T22:53:06.072760+00:00"
+  "last_updated": "2026-11-21T23:32:14.289534+00:00"
 }

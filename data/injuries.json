@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T22:53:06.071142+00:00",
+  "last_updated": "2026-11-21T23:32:14.288022+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -323,13 +323,13 @@
       "team": "DAL",
       "team_name": "Dallas Mavericks",
       "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-21T19:22Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Washington (illness/shoulder) has been downgraded from questionable to doubtful ahead of Saturday's game against the Clippers.",
-      "long_comment": "Washington was initially tagged as questionable due to a shoulder injury, but he's now listed on the report as doubtful because of an illness. Assuming he's not cleared to play Saturday, Naji Marshall figures to be the top candidate to enter the Mavericks' starting lineup.",
+      "date": "2026-11-21T23:14Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Washington (illness/shoulder) is listed as out for Saturday's game against the Clippers.",
+      "long_comment": "Washington was initially listed on the injury report due to a shoulder issue. Since then, he developed an illness and was downgraded to doubtful. Washington will now miss his first game of the 2026-27 campaign, with his next opportunity to play coming Sunday in Utah. In the meantime, Naji Marshall and Zaccharie Risacher are candidates for more minutes.",
       "source": "ESPN"
     },
     {
@@ -345,21 +345,6 @@
       "return_date": "2026-11-22",
       "short_comment": "Lawal (groin) is out for Saturday's game against the Clippers.",
       "long_comment": "Lawal will miss a second straight game with right groin tightness. The rookie forward isn't expected to have a big role in the rotation, so he likely won't have much fantasy upside anytime soon. His next chance to play will come Sunday against the Jazz on the second leg of a back-to-back set.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4896372",
-      "name": "Walter Clayton Jr.",
-      "team": "DAL",
-      "team_name": "Dallas Mavericks",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-20T22:35Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Clayton (knee) is questionable for Saturday's game against the Clippers.",
-      "long_comment": "Clayton is dealing with left knee tendinitis. Naji Marshall and Zaccharie Risacher would see more playing time off the bench if Clayton is downgraded to out Saturday.",
       "source": "ESPN"
     },
     {
@@ -423,6 +408,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4683771",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-21T23:05Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Holland (knee) is listed as questionable for Sunday's game against Atlanta.",
+      "long_comment": "Holland has missed the last three games due to a bone bruise in his left knee. If he remains sidelined versus the Hawks, Isaiah Joe, Chaz Lanier and Javonte Green are candidates for more minutes.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5258459",
       "name": "Ebuka Okorie",
       "team": "DET",
@@ -450,21 +450,6 @@
       "return_date": "2026-11-22",
       "short_comment": "Cunningham (knee) is probable to play Sunday in Atlanta.",
       "long_comment": "Cunningham is dealing with some minor soreness in his right knee, but he's planning to play through it. Cunningham is averaging 25.6 points, 5.1 rebounds, 7.9 assists, 2.0 triples, 1.4 steals and 0.9 blocks per game this season.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4683771",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-21T00:34Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Holland (knee) is listed as out for Friday's game against Toronto.",
-      "long_comment": "Holland was listed as doubtful, so most expected he would miss his third consecutive game. His next opportunity to play will come Sunday in Atlanta. In the meantime, Chaz Lanier and Isaiah Joe should continue to see more minutes.",
       "source": "ESPN"
     },
     {
@@ -1023,6 +1008,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3136195",
+      "name": "Karl-Anthony Towns",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-21T22:51Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Towns (illness) won't play in Saturday's game versus the Trail Blazers.",
+      "long_comment": "Towns was initially listed as questionable. However, he has since been ruled out, marking his first absence of the 2026-27 campaign. Towns' next opportunity to play will come Sunday against Indiana. In the meantime, Andre Drummond is in line to start.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3934719",
       "name": "OG Anunoby",
       "team": "NY",
@@ -1035,21 +1035,6 @@
       "return_date": "2026-11-22",
       "short_comment": "Anunoby (calf) has been ruled out for Saturday's game against the Trail Blazers.",
       "long_comment": "Anunoby will miss his first game of the 2026-27 regular season due to left calf tightness, although he could be back on the floor for the second leg of the Knicks' back-to-back set against the Pacers on Sunday. Landry Shamet and Miles McBride are both in line for elevated roles in Anunoby's absence.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3136195",
-      "name": "Karl-Anthony Towns",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-21T16:05Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Towns is questionable for Saturday's game against the Trail Blazers due to an illness.",
-      "long_comment": "Towns is in danger of missing a game for the first time this season, and a decision on his availability will be made closer to the 7:30 p.m. ET tipoff. Towns is riding an impressive streak of posting a double-double in each game so far in 2026-27, and if he's unable to play, Andre Drummond would be in line to start at center.",
       "source": "ESPN"
     },
     {
@@ -1068,6 +1053,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4278073",
+      "name": "Shai Gilgeous-Alexander",
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-21T22:45Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Gilgeous-Alexander (back/neck) is listed as questionable for Sunday's game versus Miami.",
+      "long_comment": "After scoring 40 points in Friday's 126-120 win over the Pelicans, Gilgeous-Alexander could miss his first game of the 2026-27 campaign due to back and neck issues. With Nikola Topic (hip), Alex Caruso (hip) and Cason Wallace (shoulder) all unavailable, Bennett Stirtz may be needed in the starting lineup if Gilgeous-Alexander is ruled out Sunday.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5159925",
       "name": "Nikola Topic",
       "team": "OKC",
@@ -1076,10 +1076,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-21T22:36Z",
+      "date": "2026-11-21T22:39Z",
       "return_date": "2026-11-23",
-      "short_comment": "Topic (hip) is out for Friday's game against New Orleans.",
-      "long_comment": "Topic suffered a hip injury during Wednesday's matchup against Atlanta, and the issue is significant enough to keep him from Friday's game. His next opportunity to return will arrive Sunday in Miami.",
+      "short_comment": "Topic (hip) is listed as out for Sunday's game versus the Heat.",
+      "long_comment": "Topic has appeared in only three games for Oklahoma City this season. He will now miss a second consecutive contest due to a hip injury, with his next opportunity to play coming Monday versus the Pacers. Considering Topic has averaged just 11.3 minutes per outing, his absence won't have much of an effect on the rotation, though he might have seen more action if Shai Gilgeous-Alexander (back/neck), who is questionable, can't suit up.",
       "source": "ESPN"
     },
     {

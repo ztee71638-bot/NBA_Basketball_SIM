@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956407\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Warriors\\\"]\",\"question\":\"Kings vs. Warriors\"}]"
+    },
+    {
+      "captured_at": "2026-11-21T23:32:14.289534+00:00",
+      "markets": [
+        {
+          "market_id": "6956407",
+          "market_type": "moneyline",
+          "question": "Kings vs. Warriors",
+          "slug": "nba-sac-gsw-2026-11-25",
+          "outcomes": "[\"Kings\", \"Warriors\"]",
+          "outcome_prices": "[\"0.295\", \"0.705\"]",
+          "volume_24h": 26,
+          "liquidity": "13589.6114",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956407\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.295\\\", \\\"0.705\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Warriors\\\"]\",\"question\":\"Kings vs. Warriors\"}]"
     }
   ],
-  "last_updated": "2026-11-21T22:53:06.072760+00:00"
+  "last_updated": "2026-11-21T23:32:14.289534+00:00"
 }
