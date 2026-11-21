@@ -96,7 +96,9 @@ function showPlayer(playerId) {
     $("player-detail").textContent = p.name + ": roster record found, but no game logs were returned for the stored seasons.";
     return;
   }
-  const season = chosen[0], logs = chosen[1];\n  const sortedLogs = [...logs].sort((a,b) => new Date(b.date || 0) - new Date(a.date || 0));\n  const recent = sortedLogs.slice(0,10);
+  const season = chosen[0], logs = chosen[1];
+  const sortedLogs = [...logs].sort((a,b) => new Date(b.date || 0) - new Date(a.date || 0));
+  const recent = sortedLogs.slice(0,10);
   const avg = key => {
     const vals = recent.map(g=>g[key]).filter(v=>Number.isFinite(v));
     return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : "n/a";
