@@ -107,7 +107,7 @@ def test_polymarket_discovery_includes_flat_player_props(monkeypatch):
         "id": "event-1", "title": "Lakers vs Celtics", "slug": "nba-lal-bos-test",
         "endDate": "2099-01-01T00:00:00Z", "active": True, "closed": False,
         "markets": [{
-            "id": "market-1", "question": "Lakers vs Celtics",
+            "id": "market-1", "question": "Lakers vs Celtics", "groupItemTitle": "Lakers",
             "slug": "nba-lal-bos-moneyline", "active": True, "closed": False,
             "outcomes": ["Lakers", "Celtics"], "outcomePrices": ["0.51", "0.49"],
             "volume24hr": 1200, "liquidity": 500,
@@ -126,6 +126,7 @@ def test_polymarket_discovery_includes_flat_player_props(monkeypatch):
     monkeypatch.setattr(module, "get_json", fake_get_json)
     rows = module.fetch_polymarket_markets()
     assert {row["id"] for row in rows} == {"market-1", "prop-1"}
+    assert next(row for row in rows if row["id"] == "market-1")["market_type"] == "moneyline"
     prop = next(row for row in rows if row["id"] == "prop-1")
     assert prop["event_id"] == "event-1"
     assert prop["market_type"] == "player_prop"
