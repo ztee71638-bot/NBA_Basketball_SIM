@@ -149,10 +149,33 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         player_ids = [str(row.get("id") or "") for row in player_rows]
         if len(player_ids) != len(set(player_ids)):
             errors.append("Player archive contains duplicate ESPN player IDs.")
-        missing_logs = sum(not any((row.get("seasons") or {}).values()) for row in player_rows)
-        player_summary["players_without_any_logs"] = missing_logs
-        if missing_logs:
-            warnings.append(f"{missing_logs} player records have no game logs in any stored season.")
+        missing_log_players = []
+        logs_by_season: Counter[str] = Counter()
+        players_with_logs_by_season: Counter[str] = Counter()
+        for player in player_rows:
+            player_seasons = player.get("seasons") or {}
+            has_any_logs = False
+            for season, season_data in player_seasons.items():
+                games = season_data.get("games") if isinstance(season_data, dict) else season_data
+                game_rows = games if isinstance(games, list) else []
+                if game_rows:
+                    logs_by_season[str(season)] += len(game_rows)
+                    players_with_logs_by_season[str(season)] += 1
+                    has_any_logs = True
+            if not has_any_logs:
+                missing_log_players.append({
+                    "id": str(player.get("id") or ""),
+                    "name": player.get("name") or "Unknown",
+                    "team": player.get("team") or "Unknown",
+                })
+        player_summary["players_without_any_logs"] = len(missing_log_players)
+        player_summary["players_without_logs_sample"] = missing_log_players[:50]
+        player_summary["game_logs_by_season"] = dict(sorted(logs_by_season.items()))
+        player_summary["players_with_logs_by_season"] = dict(sorted(players_with_logs_by_season.items()))
+        if missing_log_players:
+            warnings.append(f"{len(missing_log_players)} player records have no game logs in any stored season.")
+        if not logs_by_season:
+            warnings.append("Player archive contains no readable per-game history rows.")
     else:
         warnings.append("Player archive could not be audited because data/players.json is missing or unreadable.")
 
