@@ -83,6 +83,11 @@ def predict_advanced(home_rows, away_rows, league_pace, league_off_rating, leagu
     away_mean = ((away_off + home_def) / 2) * pace / 100
     combined_sd = 17.0
     p_home = 0.5 * (1 + math.erf((home_mean - away_mean) / (math.sqrt(2) * combined_sd)))
+    home_score_sd = weighted_stats(home_rows, "points_for")
+    away_score_sd = weighted_stats(away_rows, "points_for")
+    combined_sd = math.sqrt((home_score_sd[1] if home_score_sd else 12.0) ** 2 +
+                            (away_score_sd[1] if away_score_sd else 12.0) ** 2)
+    p_home = 0.5 * (1 + math.erf((home_mean-away_mean)/(math.sqrt(2)*max(8.0,combined_sd))))
     return home_mean, away_mean, p_home, pace
 
 
@@ -200,10 +205,16 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
         "advanced_winner_accuracy": round(mean(advanced_correct), 4) if advanced_correct else None,
         "advanced_baseline_winner_accuracy": round(mean(advanced_baseline_correct), 4) if advanced_baseline_correct else None,
         "advanced_brier_score": round(mean(advanced_briers), 4) if advanced_briers else None,
-        "advanced_calibration_error": round(mean([
-            abs(mean(advanced_outcomes[max(0, i-9):i+1])-mean(advanced_probabilities[max(0, i-9):i+1]))
-            for i in range(0, len(advanced_outcomes), 10)
-        ]), 4) if advanced_outcomes else None,
+        "advanced_calibration_error": round(sum(
+            len([p for p in advanced_probabilities if lower <= p < upper]) /
+            max(1, len(advanced_probabilities)) *
+            abs(
+                mean([y for p, y in zip(advanced_probabilities, advanced_outcomes) if lower <= p < upper]) -
+                mean([p for p in advanced_probabilities if lower <= p < upper])
+            )
+            for lower, upper in [(i/10, (i+1)/10) for i in range(10)]
+            if any(lower <= p < upper for p in advanced_probabilities)
+        ), 4) if advanced_outcomes else None,
         "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. Advanced metrics are experimental and only reported when source coverage is adequate.",
     }
 
