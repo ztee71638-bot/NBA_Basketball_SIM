@@ -457,3 +457,24 @@ footer{color:#83aaaa}
 .market-unassigned>summary::-webkit-details-marker{display:none}
 .market-unassigned[open]>.market-prop-list{margin-top:10px}
 .market-team-grid{align-items:start}
+
+
+/* Polymarket sections are individually collapsible to keep the market feed compact. */
+.market-day-section,.market-matchup,.market-team-column{min-width:0}
+.market-day-heading,.market-matchup-heading,.market-team-heading{list-style:none;cursor:pointer}
+.market-day-heading::-webkit-details-marker,.market-matchup-heading::-webkit-details-marker,.market-team-heading::-webkit-details-marker{display:none}
+.market-day-heading:after,.market-matchup-heading:after,.market-team-heading:after{content:"+";flex:none;margin-left:10px;font-size:1.05rem;font-weight:850;color:var(--accent,#4be9dd)}
+.market-day-section[open]>.market-day-heading:after,.market-matchup[open]>.market-matchup-heading:after,.market-team-column[open]>.market-team-heading:after{content:"−"}
+.market-day-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}
+.market-day-heading h3{margin:0}
+.market-day-content{display:grid;gap:12px;margin-top:12px}
+.market-matchup{padding:0;overflow:hidden}
+.market-matchup-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px;}
+.market-matchup-heading strong{min-width:0}
+.market-matchup-content{display:grid;gap:12px;padding:0 12px 12px}
+.market-team-column{padding:0;overflow:hidden}
+.market-team-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0;padding:10px;border-bottom:0}
+.market-team-heading small{margin-left:auto;margin-right:4px}
+.market-team-column[open]>.market-team-heading{border-bottom:1px solid var(--line)}
+.market-team-column>.market-prop-list,.market-team-column>.market-empty{margin:10px}
+.market-game-lines,.market-unassigned{margin:0}
