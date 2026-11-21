@@ -60,6 +60,35 @@ function canonicalTeam(abbr) {
   const aliases = {GS:"GSW",NY:"NYK",NO:"NOP",SA:"SAS",WSH:"WAS",UTAH:"UTA"};
   return aliases[abbr] || abbr;
 }
+const TEAM_NAMES = {ATL:'Atlanta Hawks',BOS:'Boston Celtics',BKN:'Brooklyn Nets',CHA:'Charlotte Hornets',CHI:'Chicago Bulls',CLE:'Cleveland Cavaliers',DAL:'Dallas Mavericks',DEN:'Denver Nuggets',DET:'Detroit Pistons',GSW:'Golden State Warriors',HOU:'Houston Rockets',IND:'Indiana Pacers',LAC:'LA Clippers',LAL:'Los Angeles Lakers',MEM:'Memphis Grizzlies',MIA:'Miami Heat',MIL:'Milwaukee Bucks',MIN:'Minnesota Timberwolves',NOP:'New Orleans Pelicans',NYK:'New York Knicks',OKC:'Oklahoma City Thunder',ORL:'Orlando Magic',PHI:'Philadelphia 76ers',PHX:'Phoenix Suns',POR:'Portland Trail Blazers',SAC:'Sacramento Kings',SAS:'San Antonio Spurs',TOR:'Toronto Raptors',UTA:'Utah Jazz',WAS:'Washington Wizards'};
+function teamDisplayName(abbr) { return TEAM_NAMES[canonicalTeam(abbr)] || String(abbr || 'NBA Team'); }
+function showTeam(abbreviation) {
+  const team = teamData.find(item => canonicalTeam(item.abbreviation) === canonicalTeam(abbreviation));
+  const root = $("team-detail"); if (!root || !team) return;
+  $("player-detail").hidden = true;
+  const seasons = Object.entries(team.seasons || {}).sort((a,b) => Number(b[0])-Number(a[0]));
+  const selected = seasons.find(([,data]) => (data.games || []).length) || seasons[0];
+  if (!selected) { root.hidden=false; root.textContent='No historical team records are available.'; return; }
+  const season=selected[0], data=selected[1], s=data.summary||{};
+  const games=[...(data.games||[])].sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
+  const pct=v=>Number.isFinite(v)?(v*100).toFixed(1)+'%':'—';
+  const num=v=>Number.isFinite(v)?Number(v).toFixed(1):'—';
+  const rows=games.map(g=>'<tr><td>'+escapeHtml(g.date?new Date(g.date).toLocaleDateString():'—')+'</td><td>'+escapeHtml(g.opponent_name||g.opponent||'—')+'</td><td>'+escapeHtml(g.home_away||'—')+'</td><td>'+escapeHtml(g.result||'—')+'</td><td>'+num(g.points_for)+'</td><td>'+num(g.points_against)+'</td><td>'+num(Number.isFinite(g.points_for)&&Number.isFinite(g.points_against)?g.points_for-g.points_against:NaN)+'</td></tr>').join('');
+  root.hidden=false;
+  root.innerHTML='<div class="section-head"><div><p class="eyebrow">TEAM HISTORY</p><h3>'+escapeHtml(teamDisplayName(team.abbreviation))+' · '+escapeHtml(team.abbreviation)+'</h3></div><span class="muted">Season '+escapeHtml(season)+'</span></div>'+
+  '<div class="result-grid">'+
+  '<div class="metric"><small>Record</small><b>'+Number(s.wins||0)+'-'+Math.max(0,Number(s.games||0)-Number(s.wins||0))+'</b></div>'+
+  '<div class="metric"><small>Win rate</small><b>'+pct(s.win_pct)+'</b></div>'+
+  '<div class="metric"><small>Points scored / game</small><b>'+num(s.avg_points_for)+'</b></div>'+
+  '<div class="metric"><small>Points allowed / game</small><b>'+num(s.avg_points_against)+'</b></div>'+
+  '<div class="metric"><small>Last 10 record</small><b>'+Number(s.last10_wins||0)+'-'+Math.max(0,Number(s.last10_games||0)-Number(s.last10_wins||0))+'</b></div>'+
+  '<div class="metric"><small>Last 10 win rate</small><b>'+pct(s.last10_win_pct)+'</b></div>'+
+  '<div class="metric"><small>Last 10 points scored</small><b>'+num(s.last10_avg_points_for)+'</b></div>'+
+  '<div class="metric"><small>Last 10 points allowed</small><b>'+num(s.last10_avg_points_against)+'</b></div></div>'+
+  '<h4>Game-by-game history ('+games.length+')</h4><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Opponent</th><th>Venue</th><th>Result</th><th>PF</th><th>PA</th><th>+/-</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+  '<p class="fine-print">Historical ESPN team schedule records. Advanced team metrics are not included in this data source.</p>';
+}
+
 function teamSummary(abbr) {
   const key = canonicalTeam(abbr);
   const team = teamData.find(t => t.abbreviation === key);
@@ -201,9 +230,16 @@ function marketPriceSummary(market) {
 }
 
 async function loadMarkets(){
-  try{const data=await loadJson("data/polymarket.json");const rows=data.markets||[];marketData=rows;$("data-status").textContent += " · Polymarket " + rows.length + " markets";$("markets").innerHTML=rows.length?rows.slice(0,40).map(m=>`<div class="market"><div><strong>${escapeHtml(m.question||"Untitled market")}</strong><small>${m.market_type ? escapeHtml(m.market_type.replace("_"," ")) + " · " : ""}${marketPriceSummary(m) ? marketPriceSummary(m) + " · " : ""}24h volume: ${m.volume_24h??"n/a"} · Liquidity: ${m.liquidity??"n/a"}</small></div>${m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':""}</div>`).join(""):'<p class="muted">No likely NBA markets found in the latest public market snapshot.</p>';}catch(e){marketData=[];$("markets").textContent="Market feed unavailable: "+e.message;}
-  if(selectedGame) renderGameMarkets(selectedGame);
-  if(selectedPlayer) renderPlayerMarkets(selectedPlayer);
+  const root=$("markets");
+  if(root) root.innerHTML='<p class="muted">Refreshing Polymarket snapshot…</p>';
+  try {
+    const data=await loadJson('data/polymarket.json');
+    const rows=Array.isArray(data.markets)?data.markets:[]; marketData=rows;
+    if(!root) return;
+    root.innerHTML=rows.length?rows.slice(0,150).map(m=>'<div class="market"><div><strong>'+escapeHtml(m.question||'Untitled market')+'</strong><small>'+escapeHtml(m.event_title||'')+(m.market_type?' · '+escapeHtml(m.market_type.replace('_',' ')):'')+(marketPriceSummary(m)?' · '+marketPriceSummary(m):' · Prices unavailable')+' · 24h volume: '+escapeHtml(m.volume_24h??'n/a')+' · Liquidity: '+escapeHtml(m.liquidity??'n/a')+'</small></div>'+(m.url?'<a target="_blank" rel="noopener" href="'+escapeHtml(m.url)+'">Open market</a>':'')+'</div>').join(''):'<p class="muted">No active NBA markets were found in the latest public snapshot.</p>' + '<p class="fine-print">Snapshot updated '+(data.last_updated?new Date(data.last_updated).toLocaleString():'at an unknown time')+'.</p>';
+    if(rows.length) root.insertAdjacentHTML('beforeend','<p class="fine-print">Showing '+Math.min(rows.length,150)+' of '+rows.length+' markets · Snapshot updated '+(data.last_updated?new Date(data.last_updated).toLocaleString():'at an unknown time')+'.</p>');
+    if(selectedGame) renderGameMarkets(selectedGame); if(selectedPlayer) renderPlayerMarkets(selectedPlayer);
+  } catch(e) { marketData=[]; if(root) root.innerHTML='<p class="muted">Polymarket data could not be loaded: '+escapeHtml(e.message)+'. Try Refresh Markets.</p>'; }
 }
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -211,23 +247,24 @@ function escapeHtml(value) {
 function renderPlayerSearch() {
   const root = $("player-search-results");
   const query = ($("player-search").value || "").trim().toLowerCase();
-  if (!query) {
-    root.innerHTML = "";
-    return;
-  }
-  if (!players.length) { root.innerHTML = '<p class="muted">Player history has not been loaded yet.</p>'; return; }
-  const matches = players.filter(p => [p.name,p.team,p.position].some(v => String(v || "").toLowerCase().includes(query))).slice(0,20);
-  if (!matches.length) { root.innerHTML = '<p class="muted">No players match that search.</p>'; return; }
-  root.innerHTML = matches.map(p => {
+  if (!query) { root.innerHTML = ""; return; }
+  if (!players.length && !teamData.length) { root.innerHTML = '<p class="muted">Player and team databases are still loading.</p>'; return; }
+  const playerMatches = players.filter(p => [p.name,p.team,p.position].some(v => String(v || "").toLowerCase().includes(query))).slice(0,15);
+  const teamMatches = teamData.filter(t => [teamDisplayName(t.abbreviation),t.abbreviation].some(v => String(v || "").toLowerCase().includes(query))).slice(0,10);
+  if (!playerMatches.length && !teamMatches.length) { root.innerHTML = '<p class="muted">No players or teams match that search.</p>'; return; }
+  const playerHtml = playerMatches.length ? '<h3 class="search-group-title">Players</h3>' + playerMatches.map(p => {
     const injury = injuryData.find(item => String(item.athlete_id) === String(p.id));
-    const availability = injury ? " · Injury: " + (injury.status || "listed") : "";
+    const availability = injury ? ' · Injury: ' + (injury.status || 'listed') : '';
     const gameCount = Object.values(p.seasons || {}).reduce((sum, logs) => sum + (Array.isArray(logs) ? logs.length : 0), 0);
-    return '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || "Position n/a") + ' · ' + escapeHtml(p.status) + ' · ' + gameCount + ' game logs' + escapeHtml(availability) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">Select player</button></div>';
-  }).join("");
-  root.querySelectorAll("[data-player-id]").forEach(b => b.addEventListener("click", () => {
-    showPlayer(b.dataset.playerId);
-    const projection = $("prop-stat-controls");
-    if (projection) projection.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    return '<div class="game"><div><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(p.team) + ' · ' + escapeHtml(p.position || 'Position n/a') + ' · ' + escapeHtml(p.status) + ' · ' + gameCount + ' game logs' + escapeHtml(availability) + '</small></div><button data-player-id="' + escapeHtml(p.id) + '">Run Simulation</button></div>';
+  }).join('') : '';
+  const teamHtml = teamMatches.length ? '<h3 class="search-group-title">Teams</h3>' + teamMatches.map(t => '<div class="game"><div><strong>' + escapeHtml(teamDisplayName(t.abbreviation)) + '</strong><small>' + escapeHtml(t.abbreviation) + ' · Historical team records and game statistics</small></div><button data-team-abbr="' + escapeHtml(t.abbreviation) + '">View Team Stats</button></div>').join('') : '';
+  root.innerHTML = playerHtml + teamHtml;
+  root.querySelectorAll('[data-player-id]').forEach(b => b.addEventListener('click', () => {
+    showPlayer(b.dataset.playerId); calcProp(); $("prop-results").scrollIntoView({behavior:'smooth',block:'nearest'});
+  }));
+  root.querySelectorAll('[data-team-abbr]').forEach(b => b.addEventListener('click', () => {
+    showTeam(b.dataset.teamAbbr); $("team-detail").scrollIntoView({behavior:'smooth',block:'nearest'});
   }));
 }
 function renderSelectedPlayerForProp() {
@@ -422,6 +459,7 @@ async function loadTeams() {
   try {
     const data = await loadJson("data/teams.json");
     teamData = data.teams || [];
+    renderPlayerSearch();
     if (data.last_updated) $("data-status").textContent += " · Teams " + teamData.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
     teamData = [];
