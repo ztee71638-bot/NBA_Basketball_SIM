@@ -130,26 +130,109 @@ def _date_values(start: date, end: date):
         cursor = date.fromordinal(cursor.toordinal() + 1)
 
 
+def fetch_season_from_scoreboard(season: int) -> dict[str, list[dict[str, Any]]]:
+    """Reliable fallback: collect completed games from ESPN's daily scoreboard."""
+    today = datetime.now(timezone.utc).date()
+    if season == today.year + 1:
+        start, end = date(season - 1, 10, 1), today
+    else:
+        start, end = date(season - 1, 10, 1), date(season, 6, 30)
+    grouped: dict[str, list[dict[str, Any]]] = {abbr: [] for abbr in TEAM_IDS}
+    for game_date in _date_values(start, end):
+        payload = get_json(SCOREBOARD_URL, {
+            "dates": game_date.strftime("%Y%m%d"), "seasontype": 2, "limit": 100
+        })
+        for event in payload.get("events") or []:
+            competitions = event.get("competitions") or []
+            if not competitions:
+                continue
+            competition = competitions[0]
+            status = (event.get("status") or {}).get("type") or (competition.get("status") or {}).get("type") or {}
+            competitors = competition.get("competitors") or []
+            if not status.get("completed", False) and status.get("state") != "post":
+                continue
+            if len(competitors) != 2:
+                continue
+            for own in competitors:
+                own_team = own.get("team") or {}
+                own_abbr = ID_TO_TEAM.get(str(own_team.get("id")), own_team.get("abbreviation"))
+                if own_abbr not in grouped:
+                    continue
+                other = next((item for item in competitors if item is not own), None)
+                if not other:
+                    continue
+                other_team = other.get("team") or {}
+                pf, pa = _score(own.get("score")), _score(other.get("score"))
+                if pf is None or pa is None:
+                    continue
+                grouped[own_abbr].append({
+                    "game_id": str(event.get("id") or ""),
+                    "date": event.get("date"),
+                    "team": own_abbr,
+                    "opponent": ID_TO_TEAM.get(str(other_team.get("id")), other_team.get("abbreviation")),
+                    "opponent_name": other_team.get("displayName"),
+                    "home_away": own.get("homeAway"),
+                    "points_for": pf,
+                    "points_against": pa,
+                    "win": pf > pa,
+                    "result": "W" if pf > pa else "L",
+                })
+    return {abbr: sorted(rows, key=lambda row: row.get("date") or "") for abbr, rows in grouped.items()}
+
+
 def fetch_season_from_team_schedules(season: int) -> dict[str, list[dict[str, Any]]]:
-    """Fetch one season with 30 team-schedule requests instead of one request per calendar day."""
+    """Prefer 30 team-schedule requests; fall back to scoreboard if season coverage is incomplete."""
+    today = datetime.now(timezone.utc).date()
+    season_start, season_end = date(season - 1, 10, 1), (
+        today if season == today.year + 1 else date(season, 6, 30)
+    )
     grouped: dict[str, list[dict[str, Any]]] = {}
     failures = []
     for abbreviation, team_id in TEAM_IDS.items():
-        try:
-            payload = get_json(URL.format(team_id=team_id), {"season": season, "seasontype": 2})
-            grouped[abbreviation] = parse_team_schedule(payload, str(team_id))
-        except requests.RequestException as exc:
-            failures.append(f"{abbreviation}: {exc}")
-            grouped[abbreviation] = []
-        print(f"{season} {abbreviation}: {len(grouped[abbreviation])} completed games", flush=True)
+        rows = []
+        # ESPN has used both the ending year and starting year as the schedule
+        # query value. Accept only games inside the requested NBA season.
+        for query_season in (season, season - 1):
+            try:
+                payload = get_json(URL.format(team_id=team_id), {
+                    "season": query_season, "seasontype": 2
+                })
+                candidate = parse_team_schedule(payload, str(team_id))
+                candidate = [
+                    row for row in candidate
+                    if row.get("date")
+                    and season_start <= datetime.fromisoformat(
+                        str(row["date"]).replace("Z", "+00:00")
+                    ).date() <= season_end
+                ]
+                if candidate:
+                    rows = candidate
+                    break
+            except requests.RequestException as exc:
+                failures.append(f"{abbreviation}/{query_season}: {exc}")
+        grouped[abbreviation] = rows
+        print(f"{season} {abbreviation}: {len(rows)} completed games", flush=True)
+
     total = sum(len(rows) for rows in grouped.values())
+    average = total / max(1, len(TEAM_IDS))
+    minimum_expected = 5 if season == today.year + 1 else 60
+    if average < minimum_expected:
+        print(
+            f"Team schedule coverage for {season} is only {average:.1f} games/team; "
+            "using the daily scoreboard fallback to fill the season.",
+            flush=True,
+        )
+        fallback = fetch_season_from_scoreboard(season)
+        fallback_total = sum(len(rows) for rows in fallback.values())
+        if fallback_total > total:
+            grouped = fallback
+            total = fallback_total
     if total == 0:
         detail = "; ".join(failures[:5])
-        raise RuntimeError(f"ESPN team schedule endpoint returned no completed games for season {season}. {detail}")
+        raise RuntimeError(f"ESPN returned no completed games for season {season}. {detail}")
     if failures:
-        print(f"Season {season}: {len(failures)} team schedule requests failed; audit will flag incomplete coverage.", flush=True)
+        print(f"Season {season}: {len(failures)} schedule request attempts failed.", flush=True)
     return grouped
-
 
 
 def _stat_map(team_box: dict[str, Any]) -> dict[str, float]:
