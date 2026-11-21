@@ -71,7 +71,7 @@ jobs:
           lines += ["", "### Errors"]
           lines += [f"- {item}" for item in data.get("errors", [])] or ["- None"]
           with Path(__import__("os").environ["GITHUB_STEP_SUMMARY"]).open("a") as output:
-              output.write("\\n".join(lines) + "\\n")
+              output.write("\n".join(lines) + "\n")
           PY
       - name: Store machine-readable audit report
         if: always()
