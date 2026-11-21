@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -243,7 +244,7 @@ def test_archive_pregame_availability_records_only_changes_for_nearby_games(tmp_
 
     assert module.archive_pregame_availability([game], injuries, lineups, now) == 1
     target = tmp_path / "snapshots" / "availability" / "game-1.json"
-    payload = __import__("json").loads(target.read_text(encoding="utf-8"))
+    payload = json.loads(target.read_text(encoding="utf-8"))
     assert len(payload["snapshots"]) == 1
     assert [row["team"] for row in payload["snapshots"][0]["injuries"]] == ["BOS"]
     assert payload["snapshots"][0]["minutes_to_tipoff"] == 90.0
