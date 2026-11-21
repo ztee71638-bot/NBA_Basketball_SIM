@@ -34,6 +34,29 @@ def test_summarize_games_uses_recent_ten():
     assert summary["last10_avg_points_for"] == 106.5
 
 
+
+def test_parse_team_boxscore_stats_and_estimated_possessions():
+    stats = module._stat_map({"statistics": [
+        {"name": "fieldGoalsMade-fieldGoalsAttempted", "displayValue": "40-85"},
+        {"name": "freeThrowsMade-freeThrowsAttempted", "displayValue": "18-22"},
+        {"name": "offensiveRebounds", "displayValue": "10"},
+        {"name": "totalTurnovers", "displayValue": "12"},
+    ]})
+    assert stats["fieldgoalsattempted"] == 85
+    assert stats["freethrowsattempted"] == 22
+    assert round(module._possessions(stats), 2) == 96.68
+
+
+def test_parse_team_schedule_does_not_treat_zero_zero_as_final():
+    payload = {"events": [{
+        "id": "future", "status": {"type": {"completed": False, "state": "pre"}},
+        "competitions": [{"competitors": [
+            {"homeAway": "home", "team": {"id": "1"}, "score": "0"},
+            {"homeAway": "away", "team": {"id": "2"}, "score": "0"},
+        ]}],
+    }]}
+    assert module.parse_team_schedule(payload, "1") == []
+
 def test_team_map_has_30_teams():
     assert len(module.TEAM_IDS) == 30
 
