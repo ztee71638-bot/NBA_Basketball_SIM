@@ -19,7 +19,7 @@ ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams
 GAMELOG_URL = "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{athlete_id}/gamelog"
 TIMEOUT = 25
 DELAY = float(os.getenv("NBA_HISTORY_REQUEST_DELAY", "0.8"))
-SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027").split(",") if x.strip()]
+SEASONS = [int(x) for x in os.getenv("NBA_HISTORY_SEASONS", "2027,2026").split(",") if x.strip()]
 TEAM_IDS = {
     "ATL": 1, "BOS": 2, "NOP": 3, "CHI": 4, "CLE": 5, "DAL": 6,
     "DEN": 7, "DET": 8, "GSW": 9, "HOU": 10, "IND": 11, "LAC": 12,
@@ -131,6 +131,20 @@ def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
         opponent = event.get("opponent") or {}
         if not isinstance(opponent, dict):
             opponent = {}
+        def pair(*keys: str) -> tuple[float | None, float | None]:
+            for key in keys:
+                raw_value = raw.get(key)
+                if raw_value is None:
+                    continue
+                import re
+                match = re.search(r"(\\d+(?:\\.\\d+)?)\\s*[-/]\\s*(\\d+(?:\\.\\d+)?)", str(raw_value))
+                if match:
+                    return float(match.group(1)), float(match.group(2))
+            return None, None
+
+        fg_made, fg_attempted = pair("field goals", "fg", "FG")
+        three_made, three_attempted = pair("3pt", "3PT", "three pointers")
+        ft_made, ft_attempted = pair("ft", "FT", "free throws")
         rows.append({
             "event_id": event_id,
             "date": event.get("date") or event.get("gameDate"),
@@ -143,6 +157,15 @@ def parse_player_gamelog(payload: dict[str, Any]) -> list[dict[str, Any]]:
             "assists": pick("assists", "ast", "AST"),
             "steals": pick("steals", "stl", "STL"),
             "blocks": pick("blocks", "blk", "BLK"),
+            "offensive_rebounds": pick("offensive rebounds", "offensiveRebounds", "OREB"),
+            "turnovers": pick("turnovers", "to", "TO"),
+            "plus_minus": pick("plus/minus", "+/-", "plusMinus"),
+            "field_goals_made": fg_made,
+            "field_goals_attempted": fg_attempted,
+            "three_pointers_made": three_made,
+            "three_pointers_attempted": three_attempted,
+            "free_throws_made": ft_made,
+            "free_throws_attempted": ft_attempted,
             "raw_stats": values,
         })
     return rows
