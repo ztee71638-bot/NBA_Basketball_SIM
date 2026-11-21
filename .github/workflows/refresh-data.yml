@@ -17,6 +17,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: nba-public-data-refresh
+  cancel-in-progress: false
+
 jobs:
   refresh-and-test:
     runs-on: ubuntu-latest
