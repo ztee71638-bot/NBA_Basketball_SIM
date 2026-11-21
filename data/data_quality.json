@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T14:50:33.621168+00:00",
+  "generated_at": "2026-11-21T15:06:40.239949+00:00",
   "status": "warning",
   "team_history": {
     "last_updated": "2026-11-21T14:47:46.086491+00:00",
-    "age_hours": 0.05,
+    "age_hours": 0.32,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -68,18 +68,13 @@
       2024,
       2023
     ],
-    "last_updated": "2026-11-21T13:54:22.905846+00:00",
-    "age_hours": 0.94,
-    "players_without_any_logs": 26,
+    "last_updated": "2026-11-21T15:06:39.328159+00:00",
+    "age_hours": 0.0,
+    "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
         "id": "5105571",
         "name": "Henri Veesaar",
-        "team": "ATL"
-      },
-      {
-        "id": "4712863",
-        "name": "Mouhamed Gueye",
         "team": "ATL"
       },
       {
@@ -93,59 +88,9 @@
         "team": "CLE"
       },
       {
-        "id": "5106268",
-        "name": "Nae'Qwan Tomlin",
-        "team": "CLE"
-      },
-      {
-        "id": "4683688",
-        "name": "Dereck Lively II",
-        "team": "DAL"
-      },
-      {
-        "id": "6430",
-        "name": "Jimmy Butler III",
-        "team": "GSW"
-      },
-      {
-        "id": "3102531",
-        "name": "Kristaps Porzingis",
-        "team": "GSW"
-      },
-      {
-        "id": "4432171",
-        "name": "Moses Moody",
-        "team": "GSW"
-      },
-      {
-        "id": "5157066",
-        "name": "Johnny Furphy",
-        "team": "IND"
-      },
-      {
-        "id": "6580",
-        "name": "Bradley Beal",
-        "team": "LAC"
-      },
-      {
-        "id": "3913176",
-        "name": "Brandon Ingram",
-        "team": "LAC"
-      },
-      {
-        "id": "4396818",
-        "name": "Jordan Miller",
-        "team": "LAC"
-      },
-      {
         "id": "5105462",
         "name": "Richie Saunders",
         "team": "MEM"
-      },
-      {
-        "id": "3934673",
-        "name": "Donte DiVincenzo",
-        "team": "MIN"
       },
       {
         "id": "5061603",
@@ -158,60 +103,33 @@
         "team": "ORL"
       },
       {
-        "id": "4065654",
-        "name": "Jonathan Isaac",
-        "team": "ORL"
-      },
-      {
-        "id": "4870562",
-        "name": "Dominick Barlow",
-        "team": "PHI"
-      },
-      {
-        "id": "4701232",
-        "name": "Mark Williams",
-        "team": "PHX"
-      },
-      {
-        "id": "4914336",
-        "name": "Shaedon Sharpe",
-        "team": "POR"
-      },
-      {
         "id": "5101845",
         "name": "Jayden Quaintance",
-        "team": "SAS"
-      },
-      {
-        "id": "6440",
-        "name": "Tobias Harris",
         "team": "SAS"
       },
       {
         "id": "4432586",
         "name": "Nate Bittle",
         "team": "TOR"
-      },
-      {
-        "id": "4606840",
-        "name": "Jamir Watkins",
-        "team": "WAS"
-      },
-      {
-        "id": "4997537",
-        "name": "Tristan Vukcevic",
-        "team": "WAS"
       }
     ],
     "game_logs_by_season": {
+      "2023": 17555,
+      "2024": 20490,
+      "2025": 23471,
+      "2026": 27155,
       "2027": 6964
     },
     "players_with_logs_by_season": {
+      "2023": 264,
+      "2024": 317,
+      "2025": 381,
+      "2026": 444,
       "2027": 502
     }
   },
   "warnings": [
-    "26 player records have no game logs in any stored season."
+    "8 player records have no game logs in any stored season."
   ],
   "errors": [],
   "note": "This is a coverage and integrity audit, not a measure of predictive accuracy."
