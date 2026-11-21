@@ -28,6 +28,7 @@ jobs:
           python -m json.tool data/polymarket.json >/dev/null
           python -m json.tool data/players.json >/dev/null
           python -m json.tool data/teams.json >/dev/null
+          python -m json.tool data/injuries.json >/dev/null
           node --check app.js
       - uses: actions/upload-pages-artifact@v3
         with:
