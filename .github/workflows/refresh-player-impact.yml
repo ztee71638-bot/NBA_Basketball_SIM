@@ -10,6 +10,7 @@ on:
       - "scripts/refresh_player_impact.py"
       - "tests/test_player_impact.py"
       - ".github/workflows/refresh-player-impact.yml"
+      - "data/snapshots/player-impact/"
 
 permissions:
   contents: write
@@ -35,10 +36,10 @@ jobs:
         run: python scripts/refresh_player_impact.py
       - name: Commit player impact snapshot
         run: |
-          if [[ -n "$(git status --porcelain data/player_impact.json)" ]]; then
+          if [[ -n "$(git status --porcelain data/player_impact.json data/snapshots/player-impact/)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/player_impact.json
+            git add data/player_impact.json data/snapshots/player-impact/
             git commit -m "chore: refresh NBA player impact ratings"
             git pull --rebase origin main
             git push
