@@ -53,3 +53,11 @@ table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.88rem}th,td
 .injury-status{font-size:.75rem;color:var(--accent);font-weight:650}
 .injury-player small{display:block;color:var(--muted);font-size:.76rem;margin-top:2px}
 .injury-player p{margin:4px 0 0;color:var(--muted);font-size:.78rem;line-height:1.35}
+
+
+/* Unified player and team search results */
+.search-group-title{font-size:.95rem;margin:16px 0 4px;color:var(--accent)}
+#team-detail h3{margin:0;font-size:1.15rem}
+#team-detail h4{margin:18px 0 8px}
+#team-detail .result-grid{margin-top:14px}
+#refresh-markets{white-space:nowrap}
