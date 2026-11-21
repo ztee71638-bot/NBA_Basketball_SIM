@@ -9,15 +9,20 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 - Read-only discovery of active NBA game markets and nested player props from Polymarket's NBA series.
 - Selected game and player panels show likely matching Polymarket markets and available outcome prices.
 - Live ESPN injury report snapshot with player/team/status details.
-- Browser-based 100,000-trial Monte Carlo game simulator with recency-weighted, opponent-informed scoring estimates, small-sample shrinkage, team-specific scoring variance and a modest shared pace shock.
+- Browser-based 100,000-trial Monte Carlo game simulator with a conservative last-10 baseline, prior-season context, team-specific scoring variance and correlated score variation.
+- Experimental opponent-adjusted and pace/efficiency models are evaluated separately against the baseline and are not promoted unless they improve out-of-sample results.
 - Player-prop probability calculator with manual assumptions or recent-game baselines; matched Polymarket player props can prefill the stat and line for simulation.
 - Searchable player roster and historical game-log interface.
-- Current-season team game history and recent form (points for/against, wins, last-10 averages) built from ESPN daily scoreboards to seed game projections.
+- Two-season team game histories from completed ESPN regular-season scoreboard results; upcoming 0-0 placeholders are excluded.
+- Boxscore enrichment estimates possessions, pace, offensive rating and defensive rating from field-goal attempts, offensive rebounds, turnovers and free-throw attempts when ESPN exposes complete team statistics.
+- Immutable daily team-metric snapshots preserve historical model-input states for auditability.
 - A chronological walk-forward backtest (`python scripts/backtest_model.py`) that reports score MAE, winner accuracy and Brier score against a simple last-10 baseline, using only games before each test game. Daily metrics are published to the simulator so experimental changes can be compared against the baseline.
-- Separate nightly player-history refresh and frequent game/market refresh workflows.
+- Two-season player game logs retain minutes, shooting attempts, turnovers, offensive rebounds and plus/minus when available; player baselines blend recent per-minute production with minutes trends.
+- ESPN-confirmed starting lineups are checked near tipoff and displayed only when five starters per team are explicitly flagged; no guessed starters or unvalidated player-impact penalties are used.
+- Separate nightly player-history refresh and frequent game/market/lineup refresh workflows.
 - Automated tests for feed parsing, market filtering, and player-log normalization.
 
-**Important model limitation:** the game simulator now uses a recency-weighted, opponent-informed team scoring model with sample-size shrinkage and correlated score noise, but it is not yet a validated predictive model. The walk-forward backtest is a measurement tool, not proof of predictive edge; review its sample size and compare results across multiple seasons. Advanced pace/possessions, offensive/defensive efficiency, player-level availability and minutes/role impact, confirmed lineups, travel/rest effects and probability calibration remain incomplete. Injury flags are displayed as context but are not converted into unsupported point adjustments. Player-prop estimates remain historical baselines, not validated projections. Missing, stale or uncertain inputs must result in PASS. Players listed as Out, Doubtful, Questionable or Day-To-Day are blocked with a PASS warning when ESPN injury data is available; the prop calculator also passes on fewer than five stat observations or unstable/limited minutes roles. Polymarket comparisons are raw historical-baseline differences, not validated edges. Missing, stale or uncertain inputs must result in PASS.
+**Important model limitation:** the game simulator now uses a recency-weighted, opponent-informed team scoring model with sample-size shrinkage and correlated score noise, but it is not yet a validated predictive model. The walk-forward backtest is a measurement tool, not proof of predictive edge; review its sample size and compare results across multiple seasons. Pace/possessions and efficiency are now collected as experimental features where boxscore coverage permits; their scoring and winner metrics are measured on identical holdout games before promotion. Minutes-trend adjustments are descriptive player baselines, not official expected minutes. Confirmed lineup flags are displayed only when ESPN explicitly supplies five starters per side. Player on/off impact, schedule rest/travel, and full multi-season probability calibration remain incomplete. Injury flags are displayed as context but are not converted into unsupported point adjustments. Player-prop estimates remain historical baselines, not validated projections. Missing, stale or uncertain inputs must result in PASS. Players listed as Out, Doubtful, Questionable or Day-To-Day are blocked with a PASS warning when ESPN injury data is available; the prop calculator also passes on fewer than five stat observations or unstable/limited minutes roles. Polymarket comparisons are raw historical-baseline differences, not validated edges. Missing, stale or uncertain inputs must result in PASS.
 
 ## Run locally
 ```bash
@@ -39,10 +44,9 @@ Open http://localhost:8000.
 ESPN's public endpoints are undocumented/unofficial and may change or rate-limit requests. Polymarket Gamma is read-only public market metadata; it is not a trading API. See [DATA_SOURCES.md](docs/DATA_SOURCES.md).
 
 ## Next development phases
-1. Extend historical coverage across multiple seasons and retain immutable daily snapshots for reproducible backtests.
-2. Add pace, possessions, offensive/defensive ratings, rest and travel features from a reliable free data source.
-3. Add minutes/role projections, confirmed starting lineups and verified injury/status-change monitoring.
-4. Build player-level impact and game-script-aware correlated player/game Monte Carlo models.
-5. Calibrate probabilities on out-of-sample seasons and add strict sample-size, freshness and PASS thresholds.
-6. Validate Polymarket event/player identity matching and compare calibrated model probabilities with market prices.
-7. Add automated monitoring, model drift alerts, regression tests and production deployment verification.
+1. Validate coverage and data quality of the new two-season team and player archives after the next successful refresh.
+2. Extend historical seasons and immutable snapshots without overwriting prior daily inputs.
+3. Add travel/rest and player on/off impact only from verified, time-aligned sources.
+4. Expand out-of-sample calibration across more seasons and monitor model drift.
+5. Validate Polymarket event/player identity matching and compare calibrated model probabilities with market prices.
+6. Add automated data freshness/coverage alerts and keep strict PASS thresholds.
