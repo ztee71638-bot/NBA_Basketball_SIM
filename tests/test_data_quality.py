@@ -73,3 +73,15 @@ def test_current_season_partial_schedule_is_not_flagged_as_incomplete_finished_s
         payload, None, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
     )
     assert not any("average history is below 60 games/team" in item for item in result["warnings"])
+
+
+def test_audit_reports_mismatch_reasons_and_record_examples():
+    payload = fixture()
+    payload["teams"][1]["seasons"]["2027"]["games"][0]["points_for"] = 99
+    result = module.audit_payloads(
+        payload, None, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    audit = result["team_history"]
+    assert audit["mismatch_breakdown"] == {"score_mismatch": 1}
+    assert audit["mismatch_examples"][0]["season_game"] == "2027:game-1"
+    assert audit["mismatch_examples"][0]["records"][0]["team"] == "AAA"
