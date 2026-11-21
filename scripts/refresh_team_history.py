@@ -595,7 +595,17 @@ def fetch_team_database() -> list[dict[str, Any]]:
             print(f"Restored {restored} team-game rows with previously verified boxscore metrics.", flush=True)
         except (OSError, json.JSONDecodeError, TypeError) as exc:
             print(f"Could not restore cached boxscore metrics: {exc}", flush=True)
-    enrich_team_games_with_boxscores(teams, {str(value) for value in SEASONS}, max_games=600)
+    # Prioritize the two seasons most relevant to current predictions. The
+    # latest season is still in progress; the prior season is complete. A
+    # larger bounded batch is safe here because the boxscore requests are
+    # sequential and retry-aware. Older seasons continue to receive their own
+    # independent backfill after the recent seasons have been serviced.
+    recent_seasons = {str(value) for value in SEASONS if value in (2026, 2027)}
+    older_seasons = {str(value) for value in SEASONS if value not in (2026, 2027)}
+    if recent_seasons:
+        enrich_team_games_with_boxscores(teams, recent_seasons, max_games=1200)
+    if older_seasons:
+        enrich_team_games_with_boxscores(teams, older_seasons, max_games=600)
     for team in teams:
         for season_data in team["seasons"].values():
             season_data["summary"] = summarize_games(season_data.get("games", []))
