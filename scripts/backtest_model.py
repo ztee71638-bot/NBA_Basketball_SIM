@@ -48,7 +48,7 @@ def predict(home_rows, away_rows, league_average, league_sd):
         reliability = count / (count + 8)
         return league_average + (value - league_average) * reliability
     h_off, h_def = shrink(home_off[0], home_off[2]), shrink(home_def[0], home_def[2])
-    a_off, a_def = shrink(away_off[0], away_def[0]), shrink(away_def[0], away_def[2])
+    a_off, a_def = shrink(away_off[0], away_off[2]), shrink(away_def[0], away_def[2])
     # Keep this calculation aligned with the browser model.
     home_mean = league_average + (h_off - league_average) * 0.55 + (a_def - league_average) * 0.45 + 1.8
     away_mean = league_average + (a_off - league_average) * 0.55 + (h_def - league_average) * 0.45
