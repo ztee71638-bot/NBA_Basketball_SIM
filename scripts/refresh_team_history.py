@@ -1,6 +1,6 @@
 """Build team season and recent-form data from ESPN public team schedules.
 
-Scheduled daily on the default branch; supports manual workflow dispatch.
+Scheduled daily on the default branch; supports manual workflow dispatch and preserves the last good archive when collection is incomplete.
 """
 from __future__ import annotations
 
