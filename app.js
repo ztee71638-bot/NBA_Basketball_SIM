@@ -226,7 +226,19 @@ function renderPlayerSearch() {
   }).join("");
   root.querySelectorAll("[data-player-id]").forEach(b => b.addEventListener("click", () => showPlayer(b.dataset.playerId)));
 }
+function renderSelectedPlayerForProp() {
+  const root = $("prop-selected-player");
+  if (!root) return;
+  if (!selectedPlayer) {
+    root.textContent = "No player selected. Search below and choose View history to connect a player.";
+    return;
+  }
+  root.innerHTML = "<strong>" + escapeHtml(selectedPlayer.name) + "</strong> · " + escapeHtml(selectedPlayer.team || "Team unavailable") +
+    " · " + selectedPlayerLogs.length + " recent game logs loaded. Change the stat below to refresh its historical baseline.";
+}
+
 function applyPlayerHistoricalBaseline() {
+  renderSelectedPlayerForProp();
   if (!selectedPlayer || !selectedPlayerLogs.length) {
     $("prop-source-status").textContent = selectedPlayer
       ? "No game-log sample is available for " + selectedPlayer.name + "."
