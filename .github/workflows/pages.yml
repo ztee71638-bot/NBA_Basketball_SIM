@@ -29,6 +29,8 @@ jobs:
           python -m json.tool data/players.json >/dev/null
           python -m json.tool data/teams.json >/dev/null
           python -m json.tool data/injuries.json >/dev/null
+          python -m json.tool data/model_metrics.json >/dev/null
+          if [ -f data/lineups.json ]; then python -m json.tool data/lineups.json >/dev/null; fi
           node --check app.js
       - uses: actions/upload-pages-artifact@v3
         with:
