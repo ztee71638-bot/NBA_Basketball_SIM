@@ -3,6 +3,7 @@ let games = [];
 let players = [];
 let teamData = [];
 let injuryData = [];
+let injuryUpdatedAt = null;
 let marketData = [];
 let selectedPropMarket = null;
 let selectedGame = null;
@@ -274,9 +275,13 @@ function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);cons
 function calcProp(){
   const mean=Number($("prop-mean").value),sd=Number($("prop-sd").value),line=Number($("prop-line").value);
   if(selectedPlayer){
+    if(!injuryUpdatedAt || !Number.isFinite(injuryUpdatedAt.getTime()) || Date.now()-injuryUpdatedAt.getTime()>24*60*60*1000){
+      $("prop-results").textContent="PASS — the injury feed is missing or older than 24 hours. Refresh current availability before using a player projection.";
+      return;
+    }
     const injury=injuryData.find(item=>String(item.athlete_id)===String(selectedPlayer.id));
     const status=String(injury?.status||"").toLowerCase();
-    if(injury && ["out","doubtful","questionable","day-to-day"].some(flag=>status.includes(flag))){
+    if(injury && ["out","doubtful","questionable","day-to-day","game time decision"].some(flag=>status.includes(flag))){
       $("prop-results").textContent="PASS — ESPN lists "+selectedPlayer.name+" as "+injury.status+". Do not use the historical baseline as an active-player projection.";
       return;
     }
@@ -292,9 +297,11 @@ function calcProp(){
       return;
     }
     const avgMinutes=minuteSample.reduce((sum,value)=>sum+value,0)/minuteSample.length;
+    const recentFive=minuteSample.slice(0,Math.min(5,minuteSample.length));
+    const recentFiveAvg=recentFive.reduce((sum,value)=>sum+value,0)/recentFive.length;
     const minuteVariance=minuteSample.reduce((sum,value)=>sum+Math.pow(value-avgMinutes,2),0)/Math.max(1,minuteSample.length-1);
-    if(avgMinutes<15||Math.sqrt(minuteVariance)>8){
-      $("prop-results").textContent="PASS — "+selectedPlayer.name+" has an unstable or limited recent minutes role (average "+avgMinutes.toFixed(1)+" minutes; variability "+Math.sqrt(minuteVariance).toFixed(1)+").";
+    if(avgMinutes<15||Math.sqrt(minuteVariance)>8||recentFiveAvg<12){
+      $("prop-results").textContent="PASS — "+selectedPlayer.name+" has an unstable or limited recent minutes role (average "+avgMinutes.toFixed(1)+" minutes; last-five average "+recentFiveAvg.toFixed(1)+"; variability "+Math.sqrt(minuteVariance).toFixed(1)+").";
       return;
     }
   }
@@ -311,7 +318,7 @@ function calcProp(){
       marketComparison='<p class="fine-print">Polymarket implied Over: '+fmt(marketOver*100)+'. Historical baseline difference: '+(over*100-marketOver*100).toFixed(1)+' percentage points. This is an uncalibrated comparison, not a validated betting edge.</p>';
     }
   }
-  $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate from recent history or manual assumptions. Minutes, role, matchup and game-script adjustments are not included.</p>`+marketComparison;
+  $("prop-results").innerHTML=`<div class="result-grid"><div class="metric"><small>Over probability</small><b>${fmt(over*100)}</b></div><div class="metric"><small>Under probability</small><b>${fmt((1-over)*100)}</b></div></div><p class="fine-print">Normal-distribution estimate. When player logs and a fresh injury feed are available, the historical mean is adjusted using recent per-minute production and minutes trends; this is not a confirmed lineup or official minutes projection.</p>`+marketComparison;
 }
 function parseMarketArray(value) {
   if (Array.isArray(value)) return value;
@@ -394,25 +401,46 @@ function applyPlayerHistoricalBaseline() {
     return;
   }
   const stat = $("prop-stat").value;
-  const values = selectedPlayerLogs.map(g => g[stat]).filter(v => Number.isFinite(v));
-  if (!values.length) {
-    $("prop-source-status").textContent = "No " + stat + " values were found in the latest available game logs for " + selectedPlayer.name + ".";
+  const rows = selectedPlayerLogs.filter(g => Number.isFinite(g[stat]));
+  const minuteRows = rows.filter(g => Number.isFinite(g.minutes) && g.minutes > 0);
+  if (rows.length < 5 || minuteRows.length < 5) {
+    $("prop-source-status").textContent = "Insufficient recent " + stat + " and minutes data to build a role-adjusted baseline.";
     return;
   }
-  const mean = values.reduce((sum, value) => sum + value, 0) / values.length;
-  const variance = values.length > 1
-    ? values.reduce((sum, value) => sum + Math.pow(value - mean, 2), 0) / (values.length - 1)
-    : 1;
-  $("prop-mean").value = mean.toFixed(1);
-  $("prop-sd").value = Math.max(1, Math.sqrt(variance)).toFixed(1);
+  const weighted = (values, halfLife=4) => {
+    let total=0, sum=0;
+    values.forEach((value,index)=>{const weight=Math.pow(0.5,index/halfLife);total+=weight;sum+=value*weight;});
+    return total ? sum/total : null;
+  };
+  // Logs are newest-first. A recent-minutes blend reacts to role changes,
+  // while per-minute production is smoothed over the same recent sample.
+  const minutes = minuteRows.map(g=>g.minutes);
+  const allMinutes = weighted(minutes);
+  const recentMinutes = weighted(minutes.slice(0,Math.min(5,minutes.length)),3);
+  const projectedMinutes = 0.65*recentMinutes+0.35*allMinutes;
+  const perMinute = rows.filter(g=>Number.isFinite(g.minutes)&&g.minutes>0)
+    .map(g=>g[stat]/g.minutes);
+  const rate = weighted(perMinute);
+  const rateMean = perMinute.reduce((a,b)=>a+b,0)/perMinute.length;
+  const rateVariance = perMinute.length>1
+    ? perMinute.reduce((sum,v)=>sum+Math.pow(v-rateMean,2),0)/(perMinute.length-1) : 0;
+  const minuteMean = minutes.reduce((a,b)=>a+b,0)/minutes.length;
+  const minuteVariance = minutes.length>1
+    ? minutes.reduce((sum,v)=>sum+Math.pow(v-minuteMean,2),0)/(minutes.length-1) : 0;
+  const adjustedMean = rate*projectedMinutes;
+  const adjustedSd = Math.sqrt(Math.pow(Math.sqrt(rateVariance)*projectedMinutes,2)+Math.pow(rate*Math.sqrt(minuteVariance),2));
+  $("prop-mean").value = adjustedMean.toFixed(1);
+  $("prop-sd").value = Math.max(1,adjustedSd).toFixed(1);
   const injury = injuryData.find(item => String(item.athlete_id) === String(selectedPlayer.id));
   const injuryWarning = injury
     ? " ESPN injury report: " + (injury.status || "status unspecified") + (injury.type ? " (" + injury.type + ")" : "") + "."
     : "";
+  const freshness = injuryUpdatedAt ? " Injury feed age: " + Math.max(0,Math.round((Date.now()-injuryUpdatedAt.getTime())/60000)) + " minutes." : " Injury feed timestamp unavailable.";
   $("prop-source-status").textContent = selectedPlayer.name + " · " + stat.toUpperCase() +
-    " historical baseline from " + values.length + " recent games. This is not adjusted for minutes, role, injuries, opponent or expected game script." + injuryWarning;
+    " minutes-adjusted historical estimate from " + rows.length + " recent games. Estimated minutes: " +
+    projectedMinutes.toFixed(1) + " (last-5 trend blended with last-10 baseline)." +
+    " This is still not a confirmed lineup/minutes projection." + injuryWarning + freshness;
 }
-
 function renderPlayerMarkets(player) {
   const root = $("player-market-matches");
   if (!root || !player) return;
@@ -553,6 +581,7 @@ async function loadInjuries() {
   try {
     const data = await loadJson("data/injuries.json");
     injuryData = data.injuries || [];
+    injuryUpdatedAt = data.last_updated ? new Date(data.last_updated) : null;
     renderInjuries();
     renderPlayerSearch();
     if (selectedPlayer) applyPlayerHistoricalBaseline();
