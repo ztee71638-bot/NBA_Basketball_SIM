@@ -375,6 +375,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     errors_home, errors_away, briers, correct = [], [], [], []
     model_probabilities, model_outcomes = [], []
     calibrated_probabilities, calibrated_briers = [], []
+    prior_calibration = {"intercept": 0.0, "slope": 1.0, "training_games": 0, "enabled": False}
+    last_calibration_fit_count = 0
     baseline_errors_home, baseline_errors_away, baseline_correct = [], [], []
     baseline_briers, baseline_probabilities, baseline_outcomes = [], [], []
     advanced_errors, advanced_correct, advanced_briers = [], [], []
@@ -539,11 +541,19 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
                 },
             })
 
-        # Fit only on prior, already-observed default-UI baseline predictions.
-        if len(baseline_probabilities) > 100:
-            prior_calibration = fit_probability_calibrator(
-                baseline_probabilities[:-1], baseline_outcomes[:-1]
-            )
+        # Refit periodically using only already-observed predictions. Holding
+        # coefficients for the next 25 games preserves strict prequential
+        # evaluation while avoiding a full-history fit on every single game.
+        prior_game_count = len(baseline_probabilities) - 1
+        if prior_game_count >= 100:
+            if (
+                not prior_calibration.get("enabled")
+                or prior_game_count - last_calibration_fit_count >= 25
+            ):
+                prior_calibration = fit_probability_calibrator(
+                    baseline_probabilities[:-1], baseline_outcomes[:-1]
+                )
+                last_calibration_fit_count = prior_game_count
             calibrated_p_home = apply_probability_calibration(base_probability, prior_calibration)
         else:
             calibrated_p_home = base_probability
@@ -622,6 +632,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
             "training_model": "last10_baseline_simulation_probability",
             "validation_method": "prequential_walk_forward",
             "validation_games": len(calibrated_probabilities),
+            "minimum_training_games": 100,
+            "refit_interval_games": 25,
             "validation_brier_score": round(mean(calibrated_briers), 4),
             "validation_log_loss": binary_log_loss(calibrated_probabilities, baseline_outcomes),
             "validation_calibration_error": expected_calibration_error(calibrated_probabilities, baseline_outcomes),
