@@ -70,17 +70,23 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
             "game_id": game_id, "date": date, "team": "AAA", "opponent": "BBB",
             "home_away": "home", "points_for": 112 + index % 4,
             "points_against": 105 + index % 3,
+            "pace_estimate": 100.0, "offensive_rating": 112.0,
+            "defensive_rating": 108.0,
         })
         team_b.append({
             "game_id": game_id, "date": date, "team": "BBB", "opponent": "AAA",
             "home_away": "away", "points_for": 105 + index % 3,
             "points_against": 112 + index % 4,
+            "pace_estimate": 100.0, "offensive_rating": 108.0,
+            "defensive_rating": 112.0,
         })
     target_date = "2026-11-20T00:00:00+00:00"
     team_a.append({"game_id": "target", "date": target_date, "team": "AAA", "opponent": "BBB",
-                   "home_away": "home", "points_for": 114, "points_against": 108})
+                   "home_away": "home", "points_for": 114, "points_against": 108,
+                   "pace_estimate": 100.0, "offensive_rating": 112.0, "defensive_rating": 108.0})
     team_b.append({"game_id": "target", "date": target_date, "team": "BBB", "opponent": "AAA",
-                   "home_away": "away", "points_for": 108, "points_against": 114})
+                   "home_away": "away", "points_for": 108, "points_against": 114,
+                   "pace_estimate": 100.0, "offensive_rating": 108.0, "defensive_rating": 112.0})
     payload = {"teams": [
         {"abbreviation": "AAA", "seasons": {"2027": {"games": team_a}}},
         {"abbreviation": "BBB", "seasons": {"2027": {"games": team_b}}},
@@ -90,6 +96,13 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
     assert "model_score_mae" in result
     assert "model_brier_score" in result
     assert result["by_season"]["2027"]["games"] == 1
+    assert result["advanced_games_tested"] == 1
+    assert result["advanced_log_loss"] is not None
+    assert result["advanced_baseline_log_loss"] is not None
+    assert result["advanced_by_season"]["2027"]["games"] == 1
+    assert result["calibration"]["validation_method"] == "prequential_walk_forward"
+    assert result["calibration"]["validation_games"] == 1
+    assert result["calibrated_log_loss"] is not None
     assert sum(bucket["games"] for bucket in result["production_baseline_confidence_buckets"]) == 1
     ledger_result = module.run_backtest(payload, include_predictions=True)
     assert len(ledger_result["predictions"]) == 1
