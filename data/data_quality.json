@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T10:54:36.963093+00:00",
+  "generated_at": "2026-11-21T13:31:49.658231+00:00",
   "status": "warning",
   "team_history": {
     "last_updated": "2026-11-21T10:53:25.104354+00:00",
-    "age_hours": 0.02,
+    "age_hours": 2.64,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -52,7 +52,348 @@
         "max_team_games": 22
       }
     },
-    "unpaired_or_mismatched_games": 24
+    "unpaired_or_mismatched_games": 24,
+    "mismatch_breakdown": {
+      "missing_opponent_record": 24
+    },
+    "mismatch_examples": [
+      {
+        "season_game": "2023:401474848",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "PHX",
+            "opponent": "ADL",
+            "points_for": 124.0,
+            "points_against": 134.0
+          }
+        ]
+      },
+      {
+        "season_game": "2023:401474865",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "OKC",
+            "opponent": "ADL",
+            "points_for": 131.0,
+            "points_against": 98.0
+          }
+        ]
+      },
+      {
+        "season_game": "2023:401474867",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "POR",
+            "opponent": "MRC",
+            "points_for": 138.0,
+            "points_against": 85.0
+          }
+        ]
+      },
+      {
+        "season_game": "2023:401474878",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "OKC",
+            "opponent": "MRC",
+            "points_for": 144.0,
+            "points_against": 97.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591882",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "WAS",
+            "opponent": "CNS",
+            "points_for": 145.0,
+            "points_against": 82.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591890",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "POR",
+            "opponent": "NZL",
+            "points_for": 106.0,
+            "points_against": 66.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591897",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "BKN",
+            "opponent": "MRC",
+            "points_for": 135.0,
+            "points_against": 103.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591908",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "TOR",
+            "opponent": "CNS",
+            "points_for": 134.0,
+            "points_against": 93.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591912",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "CLE",
+            "opponent": "MRC",
+            "points_for": 120.0,
+            "points_against": 89.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591916",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "UTA",
+            "opponent": "NZL",
+            "points_for": 114.0,
+            "points_against": 94.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591921",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "MIN",
+            "opponent": "MRC",
+            "points_for": 138.0,
+            "points_against": 111.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401591935",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "ORL",
+            "opponent": "FLMG",
+            "points_for": 109.0,
+            "points_against": 76.0
+          }
+        ]
+      },
+      {
+        "season_game": "2024:401608099",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "DAL",
+            "opponent": "REAL",
+            "points_for": 123.0,
+            "points_against": 127.0
+          }
+        ]
+      },
+      {
+        "season_game": "2025:401716948",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "UTA",
+            "opponent": "NZL",
+            "points_for": 116.0,
+            "points_against": 87.0
+          }
+        ]
+      },
+      {
+        "season_game": "2025:401716981",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "OKC",
+            "opponent": "NZL",
+            "points_for": 117.0,
+            "points_against": 89.0
+          }
+        ]
+      },
+      {
+        "season_game": "2025:401717012",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "POR",
+            "opponent": null,
+            "points_for": 111.0,
+            "points_against": 100.0
+          }
+        ]
+      },
+      {
+        "season_game": "2025:401717054",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "PHI",
+            "opponent": "NZL",
+            "points_for": 139.0,
+            "points_against": 84.0
+          }
+        ]
+      },
+      {
+        "season_game": "2026:401812481",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "NOP",
+            "opponent": "MEL",
+            "points_for": 107.0,
+            "points_against": 97.0
+          }
+        ]
+      },
+      {
+        "season_game": "2026:401812484",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "BKN",
+            "opponent": "HAPOEL",
+            "points_for": 123.0,
+            "points_against": 88.0
+          }
+        ]
+      },
+      {
+        "season_game": "2026:401812487",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "NOP",
+            "opponent": null,
+            "points_for": 127.0,
+            "points_against": 92.0
+          }
+        ]
+      },
+      {
+        "season_game": "2026:401812681",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "SAS",
+            "opponent": "GUA",
+            "points_for": 119.0,
+            "points_against": 88.0
+          }
+        ]
+      },
+      {
+        "season_game": "2026:401812695",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "LAC",
+            "opponent": "GUA",
+            "points_for": 142.0,
+            "points_against": 95.0
+          }
+        ]
+      },
+      {
+        "season_game": "2026:401812714",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "MIN",
+            "opponent": "GUA",
+            "points_for": 134.0,
+            "points_against": 74.0
+          }
+        ]
+      },
+      {
+        "season_game": "2027:401914130",
+        "reason": [
+          "missing_opponent_record"
+        ],
+        "records": [
+          {
+            "team": "POR",
+            "opponent": "LON",
+            "points_for": 119.0,
+            "points_against": 66.0
+          }
+        ]
+      }
+    ]
   },
   "player_history": {
     "available": true,
@@ -65,8 +406,8 @@
       2024,
       2023
     ],
-    "last_updated": "2026-11-21T10:04:17.212666+00:00",
-    "age_hours": 0.84,
+    "last_updated": "2026-11-21T13:31:48.941028+00:00",
+    "age_hours": 0.0,
     "players_without_any_logs": 8
   },
   "warnings": [
