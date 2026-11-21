@@ -350,11 +350,41 @@ def build_roster_index(players: list[dict[str, Any]]) -> list[dict[str, Any]]:
     ]
 
 
+def merge_cached_season_advanced_totals(
+    refreshed_players: list[dict[str, Any]],
+    existing_payload: dict[str, Any] | None,
+) -> int:
+    """Preserve independently reconciled season totals across ESPN refreshes."""
+    existing_by_id = {
+        str(player.get("id")): player
+        for player in (existing_payload or {}).get("players", [])
+        if player.get("id")
+    }
+    preserved = 0
+    for player in refreshed_players:
+        cached = existing_by_id.get(str(player.get("id")), {}).get("season_advanced_totals")
+        if isinstance(cached, dict) and cached:
+            player["season_advanced_totals"] = cached
+            preserved += 1
+    return preserved
+
+
 def main() -> None:
     players = fetch_player_database()
     if len(players) < 100:
         raise RuntimeError(f"Only {len(players)} player records retrieved; refusing to overwrite the existing archive.")
     DATA.mkdir(parents=True, exist_ok=True)
+    output = DATA / "players.json"
+    existing_payload: dict[str, Any] = {}
+    if output.exists():
+        try:
+            existing_payload = json.loads(output.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise RuntimeError(
+                "Existing player archive is unreadable; refusing to discard cached advanced season totals."
+            ) from exc
+    preserved = merge_cached_season_advanced_totals(players, existing_payload)
+    print(f"Preserved supplemental advanced season totals for {preserved} player records.", flush=True)
     payload = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "source": "ESPN public roster and athlete game-log endpoints",
@@ -362,7 +392,6 @@ def main() -> None:
         "player_count": len(players),
         "players": players,
     }
-    output = DATA / "players.json"
     rendered = json.dumps(payload, separators=(",", ":"), ensure_ascii=False) + "\n"
     output.write_text(rendered, encoding="utf-8")
     size_mb = output.stat().st_size / (1024 * 1024)
