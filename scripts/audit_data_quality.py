@@ -45,6 +45,7 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
     game_ids_by_season: dict[str, set[str]] = defaultdict(set)
     duplicate_ids_by_season: Counter[str] = Counter()
     paired_games: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    advanced_team_game_rows_by_season: Counter[str] = Counter()
     malformed = 0
     for team in teams:
         abbreviation = team.get("abbreviation") or "UNKNOWN"
@@ -62,9 +63,16 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
                     errors.append(f"Duplicate game {game_id} for {abbreviation} in season {season}.")
                 seen.add(game_id)
                 game_ids_by_season[str(season)].add(game_id)
+                has_advanced_metrics = all(
+                    row.get(field) is not None
+                    for field in ("pace_estimate", "offensive_rating", "defensive_rating")
+                )
+                if has_advanced_metrics:
+                    advanced_team_game_rows_by_season[str(season)] += 1
                 paired_games[f"{season}:{game_id}"].append({
                     "team": abbreviation, "opponent": row.get("opponent"),
-                    "points_for": row.get("points_for"), "points_against": row.get("points_against")
+                    "points_for": row.get("points_for"), "points_against": row.get("points_against"),
+                    "has_advanced_metrics": has_advanced_metrics,
                 })
     if malformed:
         warnings.append(f"{malformed} team-game rows have missing IDs, dates, or numeric scores.")
@@ -74,10 +82,20 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         active_teams = sum(value > 0 for value in counts.values())
         # A normal NBA game appears once in each team log. Count only duplicates within one team season.
         duplicate_ids = duplicate_ids_by_season[season]
+        advanced_game_ids = {
+            key.split(":", 1)[1]
+            for key, rows in paired_games.items()
+            if key.startswith(f"{season}:") and len(rows) == 2
+            and all(row.get("has_advanced_metrics") for row in rows)
+        }
+        advanced_team_rows = advanced_team_game_rows_by_season[season]
         season_summary[season] = {
             "team_records": len(counts), "teams_with_games": active_teams,
             "team_game_rows": total, "unique_game_ids": len(set(game_ids_by_season[season])),
             "duplicate_team_game_ids": duplicate_ids,
+            "advanced_team_game_rows": advanced_team_rows,
+            "advanced_games_with_both_teams": len(advanced_game_ids),
+            "advanced_coverage_pct": round(100 * advanced_team_rows / total, 1) if total else 0.0,
             "min_team_games": min(counts.values()) if counts else 0,
             "max_team_games": max(counts.values()) if counts else 0,
         }
