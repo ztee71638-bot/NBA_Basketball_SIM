@@ -38,6 +38,7 @@ jobs:
           python -m json.tool data/teams.json >/dev/null
           python -m json.tool data/injuries.json >/dev/null
           python -m json.tool data/model_metrics.json >/dev/null
+          if [ -f data/backtest_predictions.json ]; then python -m json.tool data/backtest_predictions.json >/dev/null; fi
           python -m json.tool data/arenas.json >/dev/null
           if [ -f data/data_quality.json ]; then python -m json.tool data/data_quality.json >/dev/null; fi
           if [ -f data/lineups.json ]; then python -m json.tool data/lineups.json >/dev/null; fi
