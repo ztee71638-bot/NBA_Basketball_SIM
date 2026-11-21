@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -226,3 +227,40 @@ def test_polymarket_discovery_includes_flat_player_props(monkeypatch):
     assert prop["event_id"] == "event-1"
     assert prop["market_type"] == "player_prop"
     assert any(params.get("tag_id") == "745" for _, params in calls)
+
+
+def test_archive_pregame_availability_records_only_changes_for_nearby_games(tmp_path, monkeypatch):
+    now = datetime(2026, 11, 21, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(module, "DATA", tmp_path)
+    game = {
+        "id": "game-1", "date": "2026-11-21T13:30:00+00:00", "completed": False,
+        "home": {"abbreviation": "MIA"}, "away": {"abbreviation": "BOS"},
+    }
+    injuries = [
+        {"athlete_id": "1", "name": "Player One", "team": "BOS", "status": "Questionable"},
+        {"athlete_id": "2", "name": "Player Two", "team": "LAL", "status": "Out"},
+    ]
+    lineups = [{"game_id": "game-1", "status": "not_available"}]
+
+    assert module.archive_pregame_availability([game], injuries, lineups, now) == 1
+    target = tmp_path / "snapshots" / "availability" / "game-1.json"
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    assert len(payload["snapshots"]) == 1
+    assert [row["team"] for row in payload["snapshots"][0]["injuries"]] == ["BOS"]
+    assert payload["snapshots"][0]["minutes_to_tipoff"] == 90.0
+
+    # An identical feed is not duplicated every 15 minutes.
+    assert module.archive_pregame_availability([game], injuries, lineups, now) == 0
+    assert len(__import__("json").loads(target.read_text(encoding="utf-8"))["snapshots"]) == 1
+
+    changed_injuries = [dict(injuries[0], status="Out"), injuries[1]]
+    changed_lineups = [{
+        "game_id": "game-1", "status": "confirmed",
+        "home_starters": [{"name": "Home Starter"}],
+        "away_starters": [{"name": "Away Starter"}],
+    }]
+    assert module.archive_pregame_availability([game], changed_injuries, changed_lineups, now) == 1
+    final_payload = __import__("json").loads(target.read_text(encoding="utf-8"))
+    assert len(final_payload["snapshots"]) == 2
+    assert final_payload["snapshots"][-1]["injuries"][0]["status"] == "Out"
+    assert final_payload["snapshots"][-1]["lineup"]["status"] == "confirmed"
