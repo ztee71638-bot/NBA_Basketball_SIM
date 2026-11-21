@@ -10,7 +10,7 @@ import argparse
 import json
 import math
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from statistics import mean
 from typing import Any
@@ -146,9 +146,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=Path, default=DATA_PATH)
     parser.add_argument("--min-prior-games", type=int, default=5)
+    parser.add_argument("--output", type=Path, default=None, help="Optional path for a JSON metrics snapshot")
     args = parser.parse_args()
     payload = json.loads(args.data.read_text(encoding="utf-8"))
-    print(json.dumps(run_backtest(payload, args.min_prior_games), indent=2))
+    result = run_backtest(payload, args.min_prior_games)
+    result["generated_at"] = datetime.now(timezone.utc).isoformat()
+    rendered = json.dumps(result, indent=2) + "\\n"
+    print(rendered)
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(rendered, encoding="utf-8")
 
 
 if __name__ == "__main__":
