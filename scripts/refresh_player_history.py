@@ -320,10 +320,13 @@ def main() -> None:
         "player_count": len(players),
         "players": players,
     }
-    (DATA / "players.json").write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
-    print(f"Saved {len(players)} NBA player records across seasons {SEASONS}.")
+    output = DATA / "players.json"
+    rendered = json.dumps(payload, separators=(",", ":"), ensure_ascii=False) + "\\n"
+    output.write_text(rendered, encoding="utf-8")
+    size_mb = output.stat().st_size / (1024 * 1024)
+    print(f"Saved {len(players)} NBA player records across seasons {SEASONS}; compact archive size {size_mb:.1f} MiB.")
+    if size_mb >= 90:
+        raise RuntimeError(f"Player archive is still too large ({size_mb:.1f} MiB); refusing to publish it.")
 
 
 if __name__ == "__main__":
