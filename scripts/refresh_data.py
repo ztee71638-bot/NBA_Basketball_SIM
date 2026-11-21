@@ -225,13 +225,15 @@ def fetch_polymarket_markets() -> list[dict[str, Any]]:
     flat_seen = 0
     flat_matched = 0
     flat_slug_matched = 0
-    for offset in range(0, 5000, 100):
+    for offset in range(0, 2001, 100):
         page_payload = get_json(GAMMA_URL, {
             "tag_id": "745",
             "active": "true",
             "closed": "false",
             "limit": 100,
             "offset": offset,
+            "order": "endDate",
+            "ascending": "true",
         })
         if isinstance(page_payload, dict):
             page = page_payload.get("markets") or []
