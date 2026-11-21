@@ -1,0 +1,83 @@
+name: Continuous NBA data quality audit
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_data_quality.py"
+      - "scripts/refresh_team_history.py"
+      - "scripts/refresh_player_history.py"
+      - "tests/test_data_quality.py"
+      - "data/teams.json"
+      - "data/players.json"
+      - "data/player_roster.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nba-continuous-data-quality-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run regression tests
+        run: pytest -q
+      - name: Audit team and player archives
+        run: python scripts/audit_data_quality.py --output /tmp/data_quality.json
+      - name: Publish audit summary
+        if: always()
+        run: |
+          if [[ ! -f /tmp/data_quality.json ]]; then
+            echo "## NBA data-quality audit" >> "$GITHUB_STEP_SUMMARY"
+            echo "Audit output was not generated; inspect the preceding workflow step." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("/tmp/data_quality.json").read_text())
+          team = data.get("team_history", {})
+          player = data.get("player_history", {})
+          lines = [
+              "## NBA data-quality audit",
+              f"**Overall status:** {data.get('status', 'unknown')}",
+              f"**NBA teams:** {team.get('team_count', 'unknown')}/30",
+              f"**Unpaired or mismatched team games:** {team.get('unpaired_or_mismatched_games', 'unknown')}",
+              f"**Player records:** {player.get('player_count', 'unknown')}",
+              f"**Players without any stored logs:** {player.get('players_without_any_logs', 'unknown')}",
+              "",
+              "### Advanced-stat coverage by season",
+          ]
+          for season, values in sorted(team.get("seasons", {}).items()):
+              lines.append(
+                  f"- {season}: {values.get('advanced_coverage_pct', 0)}% "
+                  f"({values.get('advanced_games_with_both_teams', 0)} complete paired games)"
+              )
+          lines += ["", "### Warnings"]
+          lines += [f"- {item}" for item in data.get("warnings", [])] or ["- None"]
+          lines += ["", "### Errors"]
+          lines += [f"- {item}" for item in data.get("errors", [])] or ["- None"]
+          with Path(__import__("os").environ["GITHUB_STEP_SUMMARY"]).open("a") as output:
+              output.write("\\n".join(lines) + "\\n")
+          PY
+      - name: Store machine-readable audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nba-data-quality-audit-${{ github.run_id }}
+          path: /tmp/data_quality.json
+          if-no-files-found: ignore
+          retention-days: 30
