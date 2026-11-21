@@ -389,8 +389,11 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "model_correct": [], "baseline_correct": [], "model_briers": [],
         "baseline_briers": [],
     })
-    # Matchups are chronological and games on the same date share identical
-    # pregame league context. Build that expensive context once per date.
+    # Matchups are chronological. Freeze shared league context at the earliest
+    # tipoff each calendar day; this conservatively excludes all same-day games
+    # from the league baseline while team histories still use each exact cutoff.
+    # That avoids look-ahead and avoids rebuilding large league aggregates for
+    # every matchup on a busy slate.
     cached_cutoff = None
     cached_context = None
     for matchup in ordered:
@@ -408,7 +411,7 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         h_rows, a_rows = prior.get(home["team"], []), prior.get(away["team"], [])
         if len(h_rows) < min_prior_games or len(a_rows) < min_prior_games:
             continue
-        cutoff_key = cutoff.isoformat()
+        cutoff_key = cutoff.date().isoformat()
         if cutoff_key != cached_cutoff:
             league_rows = [row for row in all_rows if parse_date(row["date"]) < cutoff]
             league_values = [row["points_for"] for row in league_rows]
