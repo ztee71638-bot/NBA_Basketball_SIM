@@ -73,25 +73,56 @@ def fetch_games(today: datetime | None = None) -> list[dict[str, Any]]:
 
 def fetch_injuries() -> list[dict[str, Any]]:
     payload = get_json(INJURIES_URL)
-    grouped = payload.get("injuries") or []
+    entries = payload.get("injuries") or []
     rows = []
-    for team_group in grouped:
-        team = team_group.get("team") or {}
-        for injury in team_group.get("injuries") or []:
+
+    def flatten_links(value: Any) -> str:
+        if isinstance(value, dict):
+            return " ".join(flatten_links(v) for v in value.values())
+        if isinstance(value, list):
+            return " ".join(flatten_links(v) for v in value)
+        return str(value or "")
+
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        nested = entry.get("injuries")
+        if isinstance(nested, list):
+            injury_rows = nested
+        else:
+            injury_rows = [entry]
+        for injury in injury_rows:
+            if not isinstance(injury, dict):
+                continue
             athlete = injury.get("athlete") or {}
+            if not isinstance(athlete, dict):
+                athlete = {}
+            team = injury.get("team") or entry.get("team") or athlete.get("team") or {}
+            if not isinstance(team, dict):
+                team = {}
             details = injury.get("details") or {}
+            if not isinstance(details, dict):
+                details = {}
             injury_type = injury.get("type") or {}
+            if not isinstance(injury_type, dict):
+                injury_type = {"name": injury_type}
+            athlete_links = flatten_links(athlete.get("links") or athlete.get("link") or athlete.get("href"))
+            athlete_id = str(athlete.get("id") or "")
+            if not athlete_id:
+                match = re.search(r"/id/(\d+)(?:/|$)", athlete_links)
+                if match:
+                    athlete_id = match.group(1)
             rows.append({
-                "athlete_id": str(athlete.get("id") or ""),
-                "name": athlete.get("displayName") or athlete.get("fullName"),
-                "team": team.get("abbreviation"),
-                "team_name": team.get("displayName"),
-                "position": (athlete.get("position") or {}).get("abbreviation"),
-                "status": injury.get("status"),
+                "athlete_id": athlete_id,
+                "name": athlete.get("displayName") or athlete.get("fullName") or injury.get("displayName"),
+                "team": team.get("abbreviation") or athlete.get("teamAbbreviation"),
+                "team_name": team.get("displayName") or team.get("name"),
+                "position": (athlete.get("position") or {}).get("abbreviation") if isinstance(athlete.get("position"), dict) else athlete.get("position"),
+                "status": injury.get("status") or details.get("status"),
                 "type": injury_type.get("name") or details.get("type"),
                 "side": details.get("side"),
                 "date": injury.get("date"),
-                "return_date": details.get("returnDate"),
+                "return_date": details.get("returnDate") or injury.get("returnDate"),
                 "short_comment": injury.get("shortComment"),
                 "long_comment": injury.get("longComment"),
                 "source": "ESPN",
