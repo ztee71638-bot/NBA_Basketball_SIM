@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NBA game and player prop Monte Carlo research simulator">
   <title>NBA Basketball Simulator</title>
-  <link rel="stylesheet" href="styles.css?v=20261121-player-search-integrated">
+  <link rel="stylesheet" href="styles.css?v=20261121-team-search-polymarket-fix">
 </head>
 <body>
   <header class="hero">
@@ -34,12 +34,7 @@
       <button class="primary" id="simulate">Run simulation</button>
       <div id="game-results" class="results muted">Choose a game and run the simulation.</div>
     </section>
-    <section class="panel">
-      <div class="section-head"><div><p class="eyebrow">READ-ONLY DISCOVERY</p><h2>Polymarket NBA markets</h2></div></div>
-      <div id="markets" class="market-list"><p class="muted">Loading markets…</p></div>
-      <p class="fine-print">Markets are discovered from public endpoints. Market matching and model-vs-price edge calculations are not enabled until event/player identity matching is validated.</p>
-    </section>
-    </div>
+        </div>
     <section id="players-view" class="view-panel" hidden>
       <section class="panel player-workspace">
         <p class="eyebrow">PLAYER DATABASE & PROP TOOL</p>
@@ -50,6 +45,7 @@
         </div>
         <div id="player-search-results" class="game-list"></div>
         <div id="player-detail" class="results muted" hidden></div>
+        <div id="team-detail" class="results muted" hidden></div>
         <div class="player-projection">
           <p class="eyebrow">INDIVIDUAL STAT PROJECTION</p>
           <h3>Player stat calculator</h3>
@@ -70,7 +66,7 @@
     </section>
     <section id="markets-view" class="view-panel" hidden>
     <section class="panel">
-      <div class="section-head"><div><p class="eyebrow">READ-ONLY DISCOVERY</p><h2>Polymarket NBA markets</h2></div></div>
+      <div class="section-head"><div><p class="eyebrow">READ-ONLY DISCOVERY</p><h2>Polymarket NBA markets</h2></div><button id="refresh-markets" type="button">Refresh Markets</button></div>
       <div id="markets" class="market-list"><p class="muted">Loading markets…</p></div>
       <p class="fine-print">Markets are discovered from public endpoints. Market matching and model-vs-price edge calculations are not enabled until event/player identity matching is validated.</p>
     </section>
@@ -84,6 +80,6 @@
     </section>
   </main>
   <footer>Research tool only · No trading or order placement · Verify injuries, lineups and source freshness before relying on projections.</footer>
-  <script src="app.js?v=20261121-player-search-integrated"></script>
+  <script src="app.js?v=20261121-team-search-polymarket-fix"></script>
 </body>
 </html>
