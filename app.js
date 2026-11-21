@@ -14,15 +14,47 @@ async function loadJson(path) {
   if (!response.ok) throw new Error(path + " returned HTTP " + response.status);
   return response.json();
 }
+let scheduleDays = [];
+let activeScheduleDay = 0;
 function showGames() {
   const root = $("games");
-  if (!games.length) { root.innerHTML = '<p class="muted">No games found in the current three-day feed.</p>'; return; }
-  root.innerHTML = games.map((g,i) => {
-    const away = g.away?.name || "Away team", home = g.home?.name || "Home team";
-    const score = g.completed || g.status === "STATUS_IN_PROGRESS" ? ` · ${g.away?.score ?? "–"}–${g.home?.score ?? "–"}` : "";
-    return `<div class="game"><div><strong>${away} @ ${home}</strong><small>${new Date(g.date).toLocaleString()} · ${g.status_detail || g.status || "Scheduled"}${score}</small></div><button data-game="${i}">Simulate</button></div>`;
+  if (!games.length) { root.innerHTML = '<p class="muted">No games found in the current feed.</p>'; $("day-label").textContent = "No games scheduled"; return; }
+  const grouped = new Map();
+  games.forEach((game,index) => {
+    const date = new Date(game.date);
+    const key = Number.isNaN(date.getTime()) ? "unknown" : date.toLocaleDateString("en-CA");
+    if (!grouped.has(key)) grouped.set(key, []);
+    grouped.get(key).push({game,index});
+  });
+  scheduleDays = [...grouped.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+  activeScheduleDay = Math.min(activeScheduleDay, scheduleDays.length-1);
+  root.innerHTML = scheduleDays.map(([key,items],dayIndex) => {
+    const label = key === "unknown" ? "Date unavailable" : new Date(items[0].game.date).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});
+    return '<section class="day-page" data-day-index="'+dayIndex+'"><div class="day-page-heading"><strong>'+escapeHtml(label)+'</strong><span>'+items.length+' '+(items.length===1?'game':'games')+'</span></div>'+
+      items.map(({game,index}) => {
+        const away=game.away?.name||"Away team",home=game.home?.name||"Home team";
+        const score=game.completed||game.status==="STATUS_IN_PROGRESS"?' · '+(game.away?.score??"–")+'–'+(game.home?.score??"–"):"";
+        return '<div class="game"><div><strong>'+escapeHtml(away)+' @ '+escapeHtml(home)+'</strong><small>'+escapeHtml(new Date(game.date).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"}))+' · '+escapeHtml(game.status_detail||game.status||"Scheduled")+escapeHtml(score)+'</small></div><button data-game="'+index+'">Simulate 100K</button></div>';
+      }).join("")+'</section>';
   }).join("");
-  root.querySelectorAll("[data-game]").forEach(b=>b.addEventListener("click",()=>selectGame(games[Number(b.dataset.game)])));
+  root.querySelectorAll("[data-game]").forEach(button=>button.addEventListener("click",()=>{
+    selectGame(games[Number(button.dataset.game)]);
+    runGameSimulation();
+    $("selected-title").scrollIntoView({behavior:"smooth",block:"start"});
+  }));
+  updateDayNavigation();
+}
+function updateDayNavigation() {
+  const label=$("day-label");
+  const current=scheduleDays[activeScheduleDay];
+  if(label&&current){
+    const first=current[1][0].game.date;
+    label.textContent=new Date(first).toLocaleDateString(undefined,{weekday:"long",month:"short",day:"numeric"})+' · '+(activeScheduleDay+1)+' of '+scheduleDays.length;
+  }
+  $("day-prev").disabled=activeScheduleDay<=0;
+  $("day-next").disabled=activeScheduleDay>=scheduleDays.length-1;
+  const page=$("games").querySelector('[data-day-index="'+activeScheduleDay+'"]');
+  if(page) page.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});
 }
 function canonicalTeam(abbr) {
   const aliases = {GS:"GSW",NY:"NYK",NO:"NOP",SA:"SAS",WSH:"WAS",UTAH:"UTA"};
@@ -95,7 +127,7 @@ function normalSample(mean, sd) {
 function runGameSimulation() {
   if (!selectedGame) { $("game-results").textContent="Select a matchup first."; return; }
   const hm=Number($("home-mean").value), am=Number($("away-mean").value), sd=Number($("score-sd").value);
-  const trials=Math.min(100000,Math.max(1000,Number($("trials").value)||10000));
+  const trials=100000;
   if (![hm,am,sd].every(Number.isFinite) || sd<=0) { $("game-results").textContent="Enter valid projections and a positive standard deviation."; return; }
   let hw=0,aw=0,homeTotal=0,awayTotal=0,totals=[];
   for(let i=0;i<trials;i++){let h=Math.max(50,Math.round(normalSample(hm,sd))),a=Math.max(50,Math.round(normalSample(am,sd)));if(h>a)hw++;else if(a>h)aw++;homeTotal+=h;awayTotal+=a;totals.push(h+a);}
@@ -351,6 +383,12 @@ async function loadAll(){
   await loadMarkets();
 }
 $("simulate").addEventListener("click",runGameSimulation);
+$("day-prev").addEventListener("click",()=>{activeScheduleDay=Math.max(0,activeScheduleDay-1);updateDayNavigation();});
+$("day-next").addEventListener("click",()=>{activeScheduleDay=Math.min(scheduleDays.length-1,activeScheduleDay+1);updateDayNavigation();});
+document.querySelectorAll("[data-view]").forEach(button=>button.addEventListener("click",()=>{
+  document.querySelectorAll("[data-view]").forEach(tab=>{const active=tab===button;tab.classList.toggle("active",active);tab.setAttribute("aria-selected",String(active));});
+  document.querySelectorAll(".view-panel").forEach(panel=>panel.hidden=panel.id!==button.dataset.view);
+}));
 $("prop-calc").addEventListener("click",calcProp);
 $("prop-stat").addEventListener("change",()=>{selectedPropMarket=null;applyPlayerHistoricalBaseline();});
 $("prop-line").addEventListener("input",()=>{selectedPropMarket=null;});
