@@ -449,3 +449,11 @@ footer{color:#83aaaa}
  .market-matchup{padding:10px}
  .market-day-page{gap:12px}
 }
+
+
+/* Keep the rare genuinely unresolved Polymarket props compact. */
+.market-unassigned{margin-top:10px;border:1px solid var(--border-color,rgba(255,255,255,.12));border-radius:10px;padding:9px 12px}
+.market-unassigned>summary{cursor:pointer;font-size:.82rem;font-weight:650;color:var(--muted,#9aa8b8);list-style:none}
+.market-unassigned>summary::-webkit-details-marker{display:none}
+.market-unassigned[open]>.market-prop-list{margin-top:10px}
+.market-team-grid{align-items:start}

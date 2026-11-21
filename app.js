@@ -519,13 +519,31 @@ function marketTeamAbbreviation(name) {
     "suns":"PHX", "raptors":"TOR", "jazz":"UTA", "wizards":"WAS" };
   return aliases[normalized] || "";
 }
-function marketPlayerTeam(market) {
+function marketPlayerRecord(market) {
   const text = normalizeMarketText([market.question, market.market_group, market.slug].join(" "));
-  const match = marketRoster.find(player => {
-    const name = normalizeMarketText(player.name);
-    return name.length > 3 && (" " + text + " ").includes(" " + name + " ");
-  });
-  return match ? canonicalTeam(match.team) : "";
+  // Prefer the longest exact full-name match so shared surnames and names such
+  // as "Jalen Williams" never get assigned to a shorter roster-name substring.
+  const matches = marketRoster
+    .map(player => ({ player, name: normalizeMarketText(player.name) }))
+    .filter(item => item.name.length > 3 && (" " + text + " ").includes(" " + item.name + " "))
+    .sort((a, b) => b.name.length - a.name.length);
+  if (!matches.length) return null;
+  const longest = matches[0].name.length;
+  const best = matches.filter(item => item.name.length === longest);
+  // If duplicate names exist, use the matchup's NBA team codes from the
+  // market slug to disambiguate where possible; otherwise avoid guessing.
+  if (best.length === 1) return best[0].player;
+  const slug = String(market.slug || "").toUpperCase();
+  const slugTeams = slug.match(/^NBA-([A-Z]{3})-([A-Z]{3})-/);
+  if (slugTeams) {
+    const candidate = best.find(item => [slugTeams[1], slugTeams[2]].includes(canonicalTeam(item.player.team)));
+    if (candidate) return candidate.player;
+  }
+  return null;
+}
+function marketPlayerTeam(market) {
+  const player = marketPlayerRecord(market);
+  return player ? canonicalTeam(player.team) : "";
 }
 function marketPropMarkup(market) {
   const prices = marketPriceSummary(market);
@@ -571,7 +589,12 @@ function renderMarkets() {
       const unassigned=[];
       playerProps.forEach(m=>{
         const team=marketPlayerTeam(m);
-        if(team&&teamProps[team])teamProps[team].push(m);else unassigned.push(m);
+        if(team){
+          // Keep the prop with the player's verified roster team, even if the
+          // market event label is stale or the player is listed on another team.
+          if(!teamProps[team])teamProps[team]=[];
+          teamProps[team].push(m);
+        }else unassigned.push(m);
       });
       const teamColumn=(abbr)=>{
         const props=teamProps[abbr]||[];
@@ -581,8 +604,8 @@ function renderMarkets() {
       };
       return '<section class="market-matchup"><div class="market-matchup-heading"><strong>'+escapeHtml(event)+'</strong><span class="market-day-count">'+markets.length+' markets · '+playerProps.length+' player props</span></div>'+
         (gameLines.length?'<details class="market-game-lines"><summary>Game markets · '+gameLines.length+' (moneyline, spreads & totals)</summary><div class="market-prop-list">'+gameLines.map(marketPropMarkup).join("")+'</div></details>':'')+
-        (teamA&&teamB?'<div class="market-team-grid">'+teamColumn(teamA)+teamColumn(teamB)+'</div>':'')+
-        (unassigned.length?'<section class="market-unassigned"><h4 class="market-team-heading">Unmatched player props <small>'+unassigned.length+' · team not verified from roster</small></h4><div class="market-prop-list">'+unassigned.map(marketPropMarkup).join("")+'</div></section>':'')+
+        (Object.keys(teamProps).length?'<div class="market-team-grid">'+Object.keys(teamProps).map(teamColumn).join("")+'</div>':'')+
+        (unassigned.length?'<details class="market-unassigned"><summary>Needs roster match · '+unassigned.length+' props</summary><div class="market-prop-list">'+unassigned.map(marketPropMarkup).join("")+'</div></details>':'')+
         '</section>';
     }).join("");
     return '<section class="market-day-page" data-market-day="'+escapeHtml(day)+'"><div class="market-day-heading"><h3>'+escapeHtml(dayDate)+'</h3><span class="market-day-count">'+dayRows.length+' active markets</span></div>'+cards+'</section>';
