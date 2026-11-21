@@ -42,7 +42,8 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         errors.append("Duplicate team records: " + ", ".join(duplicates))
 
     season_counts: dict[str, dict[str, int]] = defaultdict(dict)
-    game_ids_by_season: dict[str, list[str]] = defaultdict(list)
+    game_ids_by_season: dict[str, set[str]] = defaultdict(set)
+    duplicate_ids_by_season: Counter[str] = Counter()
     paired_games: dict[str, list[dict[str, Any]]] = defaultdict(list)
     malformed = 0
     for team in teams:
@@ -57,9 +58,10 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
                     malformed += 1
                     continue
                 if game_id in seen:
+                    duplicate_ids_by_season[str(season)] += 1
                     errors.append(f"Duplicate game {game_id} for {abbreviation} in season {season}.")
                 seen.add(game_id)
-                game_ids_by_season[str(season)].append(game_id)
+                game_ids_by_season[str(season)].add(game_id)
                 paired_games[f"{season}:{game_id}"].append({
                     "team": abbreviation, "opponent": row.get("opponent"),
                     "points_for": row.get("points_for"), "points_against": row.get("points_against")
@@ -70,7 +72,8 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
     for season, counts in sorted(season_counts.items()):
         total = sum(counts.values())
         active_teams = sum(value > 0 for value in counts.values())
-        duplicate_ids = len(game_ids_by_season[season]) - len(set(game_ids_by_season[season]))
+        # A normal NBA game appears once in each team log. Count only duplicates within one team season.
+        duplicate_ids = duplicate_ids_by_season[season]
         season_summary[season] = {
             "team_records": len(counts), "teams_with_games": active_teams,
             "team_game_rows": total, "unique_game_ids": len(set(game_ids_by_season[season])),
@@ -83,7 +86,7 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         if duplicate_ids:
             errors.append(f"Season {season}: {duplicate_ids} duplicate team-game IDs.")
         # A finished regular season should ordinarily have about 82 games/team.
-        if total and total / max(1, active_teams) < 60 and int(season) <= now.year:
+        if total and total / max(1, active_teams) < 60 and int(season) < now.year:
             warnings.append(f"Season {season}: average history is below 60 games/team.")
     mismatched = 0
     for key, rows in paired_games.items():

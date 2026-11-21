@@ -175,19 +175,44 @@ def test_multiseason_fetch_uses_one_team_schedule_request_per_team(monkeypatch):
     def fake_get_json(url, params):
         calls.append((url, params))
         team_id = url.rsplit("/", 2)[-2]
-        if team_id != "1":
-            return {"events": []}
-        return {"events": [{
-            "id": "schedule-game",
-            "date": "2026-11-20T00:00Z",
-            "status": {"type": {"completed": True, "state": "post"}},
-            "competitions": [{"competitors": [
-                {"homeAway": "home", "team": {"id": "1", "abbreviation": "ATL"}, "score": "110"},
-                {"homeAway": "away", "team": {"id": "2", "abbreviation": "BOS"}, "score": "105"},
-            ]}],
-        }]}
+        opponent_id = "2" if team_id != "2" else "1"
+        abbreviation = module.ID_TO_TEAM[team_id]
+        opponent_abbreviation = module.ID_TO_TEAM[opponent_id]
+        events = []
+        for index in range(6):
+            events.append({
+                "id": f"schedule-game-{team_id}-{index}",
+                "date": f"2026-11-{20-index:02d}T00:00Z",
+                "status": {"type": {"completed": True, "state": "post"}},
+                "competitions": [{"competitors": [
+                    {"homeAway": "home", "team": {"id": team_id, "abbreviation": abbreviation}, "score": "110"},
+                    {"homeAway": "away", "team": {"id": opponent_id, "abbreviation": opponent_abbreviation}, "score": "105"},
+                ]}],
+            })
+        return {"events": events}
     monkeypatch.setattr(module, "get_json", fake_get_json)
     grouped = module.fetch_season_from_team_schedules(2027)
     assert len(calls) == 30
     assert len(grouped) == 30
+    assert len(grouped["ATL"]) == 6
     assert grouped["ATL"][0]["points_for"] == 110
+
+def test_schedule_collection_falls_back_to_scoreboard_when_season_is_empty(monkeypatch):
+    from datetime import date
+    season = module.datetime.now(module.timezone.utc).year + 1
+    monkeypatch.setattr(module, "_date_values", lambda start, end: [date(start.year, start.month, start.day)])
+    def fake_get_json(url, params=None):
+        if "/teams/" in url:
+            return {"events": []}
+        return {"events": [{
+            "id": "fallback-game", "date": "2026-11-20T00:00Z",
+            "status": {"type": {"completed": True, "state": "post"}},
+            "competitions": [{"competitors": [
+                {"homeAway": "home", "team": {"id": "18", "abbreviation": "NY"}, "score": "115"},
+                {"homeAway": "away", "team": {"id": "3", "abbreviation": "NO"}, "score": "109"},
+            ]}],
+        }]}
+    monkeypatch.setattr(module, "get_json", fake_get_json)
+    grouped = module.fetch_season_from_team_schedules(season)
+    assert grouped["NYK"][0]["points_for"] == 115
+    assert grouped["NOP"][0]["points_against"] == 115
