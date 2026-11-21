@@ -1,0 +1,155 @@
+"""Strict walk-forward backtest for the NBA score projection model.
+
+Only games dated before each test game are used to build team and league
+baselines. The script reports prediction errors; it does not tune parameters
+on the test results or claim that a small sample is calibrated.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import math
+from collections import defaultdict
+from datetime import datetime
+from pathlib import Path
+from statistics import mean
+from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA_PATH = ROOT / "data" / "teams.json"
+
+
+def parse_date(value: str) -> datetime:
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def weighted_stats(rows: list[dict[str, Any]], key: str, half_life: float = 8.0):
+    values = [(float(row[key]), len(rows) - 1 - index)
+              for index, row in enumerate(rows)
+              if isinstance(row.get(key), (int, float))]
+    if not values:
+        return None
+    weights = [0.5 ** (age / half_life) for _, age in values]
+    total = sum(weights)
+    avg = sum(value * weight for (value, _), weight in zip(values, weights)) / total
+    variance = sum(weight * (value - avg) ** 2
+                   for (value, _), weight in zip(values, weights)) / total
+    return avg, math.sqrt(variance), len(values)
+
+
+def predict(home_rows, away_rows, league_average, league_sd):
+    home_off = weighted_stats(home_rows, "points_for")
+    home_def = weighted_stats(home_rows, "points_against")
+    away_off = weighted_stats(away_rows, "points_for")
+    away_def = weighted_stats(away_rows, "points_against")
+    if not all((home_off, home_def, away_off, away_def)):
+        return None
+    def shrink(value, count):
+        reliability = count / (count + 8)
+        return league_average + (value - league_average) * reliability
+    h_off, h_def = shrink(home_off[0], home_off[2]), shrink(home_def[0], home_def[2])
+    a_off, a_def = shrink(away_off[0], away_def[0]), shrink(away_def[0], away_def[2])
+    # Keep this calculation aligned with the browser model.
+    home_mean = league_average + (h_off - league_average) * 0.55 + (a_def - league_average) * 0.45 + 1.8
+    away_mean = league_average + (a_off - league_average) * 0.55 + (h_def - league_average) * 0.45
+    def blended_sd(stats):
+        reliability = stats[2] / (stats[2] + 10)
+        return math.sqrt(reliability * stats[1] ** 2 + (1 - reliability) * league_sd ** 2)
+    home_sd, away_sd = blended_sd(home_off), blended_sd(away_off)
+    combined_sd = math.sqrt(home_sd ** 2 + away_sd ** 2)
+    p_home = 0.5 * (1 + math.erf((home_mean - away_mean) / (math.sqrt(2) * combined_sd)))
+    return home_mean, away_mean, p_home
+
+
+def run_backtest(payload: dict[str, Any], min_prior_games: int = 5):
+    by_team = {}
+    all_rows = []
+    for team in payload.get("teams", []):
+        seasons = team.get("seasons", {})
+        season = next((v for _, v in sorted(seasons.items(), key=lambda x: int(x[0]), reverse=True)
+                       if len(v.get("games", [])) >= min_prior_games), None)
+        rows = []
+        if season:
+            rows = [dict(row, team=team["abbreviation"]) for row in season.get("games", [])
+                    if row.get("date") and row.get("game_id")
+                    and isinstance(row.get("points_for"), (int, float))
+                    and isinstance(row.get("points_against"), (int, float))]
+            rows.sort(key=lambda row: parse_date(row["date"]))
+        by_team[team["abbreviation"]] = rows
+        all_rows.extend(rows)
+
+    games = defaultdict(list)
+    for row in all_rows:
+        games[row["game_id"]].append(row)
+    ordered = sorted(games.values(), key=lambda rows: parse_date(rows[0]["date"]))
+    errors_home, errors_away, briers, correct = [], [], [], []
+    baseline_errors_home, baseline_errors_away, baseline_correct = [], [], []
+    used = 0
+    for matchup in ordered:
+        if len(matchup) != 2:
+            continue
+        home = next((r for r in matchup if r.get("home_away") == "home"), None)
+        away = next((r for r in matchup if r.get("home_away") == "away"), None)
+        if not home or not away:
+            continue
+        cutoff = parse_date(home["date"])
+        prior = {
+            abbr: [row for row in rows if parse_date(row["date"]) < cutoff]
+            for abbr, rows in by_team.items()
+        }
+        h_rows, a_rows = prior.get(home["team"], []), prior.get(away["team"], [])
+        if len(h_rows) < min_prior_games or len(a_rows) < min_prior_games:
+            continue
+        league_rows = [row for row in all_rows if parse_date(row["date"]) < cutoff]
+        league_values = [row["points_for"] for row in league_rows]
+        if len(league_values) < 60:
+            continue
+        league_avg = mean(league_values)
+        league_sd = math.sqrt(mean((value - league_avg) ** 2 for value in league_values))
+        prediction = predict(h_rows, a_rows, league_avg, league_sd)
+        if not prediction:
+            continue
+        pred_h, pred_a, p_home = prediction
+        actual_h, actual_a = home["points_for"], away["points_for"]
+        home_win = actual_h > actual_a
+        errors_home.append(abs(pred_h - actual_h))
+        errors_away.append(abs(pred_a - actual_a))
+        briers.append((p_home - float(home_win)) ** 2)
+        correct.append((pred_h > pred_a) == home_win)
+
+        # Previous simple last-10 scoring/allowance baseline, included only
+        # as a benchmark; the new model is evaluated on the same games.
+        h10, a10 = h_rows[-10:], a_rows[-10:]
+        h_pf, h_pa = mean(r["points_for"] for r in h10), mean(r["points_against"] for r in h10)
+        a_pf, a_pa = mean(r["points_for"] for r in a10), mean(r["points_against"] for r in a10)
+        base_h = (h_pf + a_pa) / 2 + 1.5
+        base_a = (a_pf + h_pa) / 2 - 1.5
+        baseline_errors_home.append(abs(base_h - actual_h))
+        baseline_errors_away.append(abs(base_a - actual_a))
+        baseline_correct.append((base_h > base_a) == home_win)
+        used += 1
+
+    if not used:
+        return {"games_tested": 0, "message": "Not enough prior games for a walk-forward evaluation yet."}
+    return {
+        "games_tested": used,
+        "model_score_mae": round(mean(errors_home + errors_away), 3),
+        "baseline_score_mae": round(mean(baseline_errors_home + baseline_errors_away), 3),
+        "model_winner_accuracy": round(mean(correct), 4),
+        "baseline_winner_accuracy": round(mean(baseline_correct), 4),
+        "model_brier_score": round(mean(briers), 4),
+        "note": "Chronological same-season walk-forward results; not a guarantee of future performance. Review sample size and compare across multiple seasons before trusting calibration.",
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data", type=Path, default=DATA_PATH)
+    parser.add_argument("--min-prior-games", type=int, default=5)
+    args = parser.parse_args()
+    payload = json.loads(args.data.read_text(encoding="utf-8"))
+    print(json.dumps(run_backtest(payload, args.min_prior_games), indent=2))
+
+
+if __name__ == "__main__":
+    main()
