@@ -1,0 +1,10 @@
+{
+  "games_tested": 227,
+  "model_score_mae": 12.816,
+  "baseline_score_mae": 12.763,
+  "model_winner_accuracy": 0.6079,
+  "baseline_winner_accuracy": 0.63,
+  "model_brier_score": 0.2332,
+  "note": "Chronological same-season walk-forward results; not a guarantee of future performance. Review sample size and compare across multiple seasons before trusting calibration.",
+  "generated_at": "2026-11-21T07:42:19.551065+00:00"
+}
