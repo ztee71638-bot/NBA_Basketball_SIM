@@ -35,6 +35,8 @@ def get_json(url: str, params: dict[str, Any] | None = None) -> Any:
                 headers={"User-Agent": "NBA-Simulator/0.1", "Accept": "application/json"},
             )
             if response.status_code == 429 or response.status_code >= 500:
+                if attempt == 3:
+                    response.raise_for_status()
                 wait = float(response.headers.get("Retry-After", 2 ** attempt))
                 time.sleep(min(wait, 30))
                 continue
