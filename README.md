@@ -8,6 +8,7 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 - Browser-based 10,000-trial Monte Carlo game calculator.
 - Player-prop probability calculator with explicit user-supplied mean and standard deviation.
 - Searchable player roster and historical game-log interface.
+- Team season/recent-form database (points for/against, wins, last-10 averages) to seed game projections when sufficient records are available.
 - Separate nightly player-history refresh and frequent game/market refresh workflows.
 - Automated tests for feed parsing, market filtering, and player-log normalization.
 
@@ -25,6 +26,7 @@ Open http://localhost:8000.
 ## Automated data collection
 - `Refresh NBA data`: every 15 minutes; schedule and read-only market snapshot.
 - `Refresh NBA player history`: nightly; team rosters plus player game logs for seasons 2027 and 2026.
+- `Refresh NBA team history`: nightly; team schedules and season/recent-form summaries for all 30 teams.
 - Player history requests are rate-limited and retried. If fewer than 100 player records are retrieved, the job refuses to overwrite the existing archive.
 - No API secrets, Polymarket trading permissions, wallet access or paid subscription are required for the current public feeds.
 
@@ -33,7 +35,7 @@ ESPN's public endpoints are undocumented/unofficial and may change or rate-limit
 
 ## Next development phases
 1. Verify full roster/game-log coverage and player identity mapping against real season records.
-2. Add team game logs, pace, offensive/defensive ratings, rest and matchup features.
+2. Extend team game logs with pace, possessions, offensive/defensive ratings, rest and matchup features.
 3. Add minutes/role projections, injuries, starting lineups and status-change monitoring.
 4. Build correlated player/game Monte Carlo models and calibrated uncertainty.
 5. Backtest against historical results with strict no-leakage and PASS thresholds.
