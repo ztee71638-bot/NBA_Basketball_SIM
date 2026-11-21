@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -70,7 +69,10 @@ def fetch_games(today: datetime | None = None) -> list[dict[str, Any]]:
 
 
 def _market_text(market: dict[str, Any]) -> str:
-    return " ".join(str(market.get(key) or "") for key in ("question", "title", "description", "slug")).lower()
+    return " ".join(
+        str(market.get(key) or "")
+        for key in ("question", "title", "description", "slug")
+    ).lower().strip()
 
 
 def fetch_polymarket_markets() -> list[dict[str, Any]]:
