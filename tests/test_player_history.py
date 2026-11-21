@@ -59,3 +59,25 @@ def test_parse_player_gamelog_supports_event_dictionary():
     assert rows[0]["event_id"] == "game-2"
     assert rows[0]["minutes"] == 32
     assert rows[0]["points"] == 24
+
+
+def test_parse_player_gamelog_supports_current_nested_espn_shape():
+    payload = {
+        "labels": ["MIN", "FG", "3PT", "FT", "REB", "AST", "STL", "BLK", "PTS"],
+        "events": {"game-3": {
+            "id": "game-3", "gameDate": "2026-11-20T00:00Z",
+            "opponent": {"displayName": "Boston Celtics", "abbreviation": "BOS"},
+            "gameResult": "W",
+        }},
+        "seasonTypes": [{ "categories": [{ "events": [{
+            "eventId": "game-3", "stats": ["35", "10-18", "3-7", "5-6", "8", "7", "2", "1", "28"]
+        }]}]}],
+    }
+    rows = module.parse_player_gamelog(payload)
+    assert len(rows) == 1
+    assert rows[0]["date"] == "2026-11-20T00:00Z"
+    assert rows[0]["opponent_abbreviation"] == "BOS"
+    assert rows[0]["minutes"] == 35
+    assert rows[0]["points"] == 28
+    assert rows[0]["rebounds"] == 8
+    assert rows[0]["assists"] == 7
