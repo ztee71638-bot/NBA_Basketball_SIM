@@ -102,6 +102,20 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
 
 
 
+def test_recent_window_report_uses_only_last_n_chronological_holdouts():
+    values = [float(index % 2) for index in range(500)]
+    errors = [float(index % 7) for index in range(500)]
+    probabilities = [0.7 if value else 0.3 for value in values]
+    report = module.rolling_window_report(
+        errors, errors, values, values, errors, errors,
+        probabilities, probabilities, values,
+    )
+    assert set(report) == {"100", "250", "500"}
+    assert report["100"]["games"] == 100
+    assert report["100"]["model_winner_accuracy"] == 1.0
+    assert report["500"]["games"] == 500
+
+
 def test_confidence_buckets_report_sample_size_accuracy_and_brier():
     report = module.probability_bucket_report(
         [0.72, 0.68, 0.31, 0.27],
