@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T15:11:37.461723+00:00",
+  "last_updated": "2026-11-21T15:22:17.291026+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -357,7 +357,7 @@
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
       "date": "2026-11-19T14:51Z",
-      "return_date": "2026-11-21",
+      "return_date": "2026-11-22",
       "short_comment": "Lawal is out for Wednesday's game against the Warriors due to tightness in his right groin.",
       "long_comment": "It sounds like the rookie forward is dealing with a minor issue. His next chance to suit up comes Saturday against the Clippers.",
       "source": "ESPN"
