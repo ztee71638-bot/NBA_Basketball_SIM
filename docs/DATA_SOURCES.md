@@ -8,9 +8,9 @@ The first implementation uses:
 - League injury report: `site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries`
 - Player game logs: `site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{athlete_id}/gamelog?season={year}`
 
-The scoreboard feed has been exercised successfully by the initial scheduled data refresh. The player roster and game-log collector has parser tests. The initial build now prioritizes the active 2026–27 season (`season=2027`) to populate a usable current-player database first; additional prior-season enrichment can be enabled through `NBA_HISTORY_SEASONS` after the current-season archive is verified.
+The scoreboard feed has been exercised successfully by the initial scheduled data refresh. The player roster and game-log collector has parser tests. The collector prioritizes the active 2026–27 roster (`season=2027`) and retrieves five seasons of game logs by default (2027 through 2023); `NBA_HISTORY_SEASONS` can override the comma-separated season-ending years. The player index is based on the current roster, so players no longer on a current NBA roster are not guaranteed to be represented.
 
-ESPN endpoints are public but undocumented and unofficial. They can change, omit older seasons, or throttle requests. The collector uses timeouts, a request delay, retries for transient errors, and a minimum-record guard; permanent client errors are not retried, and failed player requests are recorded as empty season logs rather than fabricated values.
+ESPN endpoints are public but undocumented and unofficial. They can change, omit older seasons, or throttle requests. The collector uses timeouts, a request delay, retries for transient errors, a 120-minute workflow limit, and a minimum-record guard; permanent client errors are not retried, and failed player requests are recorded as empty season logs rather than fabricated values.
 
 ## Team history
 
