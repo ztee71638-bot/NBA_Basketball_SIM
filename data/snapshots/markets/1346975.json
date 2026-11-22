@@ -56,7 +56,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895709\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Hornets\\\"]\",\"question\":\"Grizzlies vs. Hornets\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T05:40:31.051418+00:00",
+      "markets": [
+        {
+          "market_id": "6895709",
+          "market_type": "moneyline",
+          "question": "Grizzlies vs. Hornets",
+          "slug": "nba-mem-cha-2026-11-23",
+          "outcomes": "[\"Grizzlies\", \"Hornets\"]",
+          "outcome_prices": "[\"0.6\", \"0.4\"]",
+          "volume_24h": 1808.7486339999998,
+          "liquidity": "14912.2086",
+          "end_date": "2026-11-24T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-mem-cha-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895709\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.6\\\", \\\"0.4\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Hornets\\\"]\",\"question\":\"Grizzlies vs. Hornets\"}]"
     }
   ],
-  "last_updated": "2026-11-22T03:35:45.789207+00:00"
+  "last_updated": "2026-11-22T05:40:31.051418+00:00"
 }

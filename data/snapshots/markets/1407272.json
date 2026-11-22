@@ -56,7 +56,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7110982\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"Clippers\\\", \\\"Suns\\\"]\",\"question\":\"Clippers vs. Suns\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T05:40:31.051418+00:00",
+      "markets": [
+        {
+          "market_id": "7110982",
+          "market_type": "moneyline",
+          "question": "Clippers vs. Suns",
+          "slug": "nba-lac-phx-2026-12-01",
+          "outcomes": "[\"Clippers\", \"Suns\"]",
+          "outcome_prices": "[\"0.305\", \"0.695\"]",
+          "volume_24h": null,
+          "liquidity": "703.5174",
+          "end_date": "2026-12-02T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-lac-phx-2026-12-01"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7110982\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Clippers\\\", \\\"Suns\\\"]\",\"question\":\"Clippers vs. Suns\"}]"
     }
   ],
-  "last_updated": "2026-11-22T03:35:45.789207+00:00"
+  "last_updated": "2026-11-22T05:40:31.051418+00:00"
 }

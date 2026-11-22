@@ -128,7 +128,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895719\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.38\\\", \\\"0.62\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"76ers\\\"]\",\"question\":\"Trail Blazers vs. 76ers\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T05:40:31.051418+00:00",
+      "markets": [
+        {
+          "market_id": "6895719",
+          "market_type": "moneyline",
+          "question": "Trail Blazers vs. 76ers",
+          "slug": "nba-por-phi-2026-11-23",
+          "outcomes": "[\"Trail Blazers\", \"76ers\"]",
+          "outcome_prices": "[\"0.395\", \"0.605\"]",
+          "volume_24h": 1047.006383,
+          "liquidity": "15162.9431",
+          "end_date": "2026-11-24T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-por-phi-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895719\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.395\\\", \\\"0.605\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"76ers\\\"]\",\"question\":\"Trail Blazers vs. 76ers\"}]"
     }
   ],
-  "last_updated": "2026-11-22T04:41:59.658009+00:00"
+  "last_updated": "2026-11-22T05:40:31.051418+00:00"
 }

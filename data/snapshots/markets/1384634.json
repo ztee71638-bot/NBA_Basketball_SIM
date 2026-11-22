@@ -74,7 +74,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7031361\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Rockets\\\"]\",\"question\":\"76ers vs. Rockets\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T05:40:31.051418+00:00",
+      "markets": [
+        {
+          "market_id": "7031361",
+          "market_type": "moneyline",
+          "question": "76ers vs. Rockets",
+          "slug": "nba-phi-hou-2026-11-28",
+          "outcomes": "[\"76ers\", \"Rockets\"]",
+          "outcome_prices": "[\"0.3\", \"0.7\"]",
+          "volume_24h": null,
+          "liquidity": "22595.8933",
+          "end_date": "2026-11-29T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phi-hou-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031361\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Rockets\\\"]\",\"question\":\"76ers vs. Rockets\"}]"
     }
   ],
-  "last_updated": "2026-11-22T04:41:59.658009+00:00"
+  "last_updated": "2026-11-22T05:40:31.051418+00:00"
 }
