@@ -1,22 +1,7 @@
 {
-  "last_updated": "2026-11-22T18:38:46.333220+00:00",
+  "last_updated": "2026-11-22T19:35:24.620293+00:00",
   "source": "ESPN public injury report",
   "injuries": [
-    {
-      "athlete_id": "5149077",
-      "name": "Kingston Flemings",
-      "team": "ATL",
-      "team_name": "Atlanta Hawks",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-21T22:16Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Flemings (back) is questionable to play Sunday against the Pistons.",
-      "long_comment": "Flemings has missed the past three games, but it looks like there's a chance he could return Sunday. If he's cleared to play, Aaron Wiggins would likely head back to the second unit.",
-      "source": "ESPN"
-    },
     {
       "athlete_id": "3146557",
       "name": "Jock Landale",
@@ -356,10 +341,25 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-22T15:02Z",
+      "date": "2026-11-22T19:07Z",
       "return_date": "2026-11-22",
-      "short_comment": "Washington (illness/shoulder) is listed as out for Saturday's game against the Clippers.",
-      "long_comment": "Washington was initially listed on the injury report due to a shoulder issue. Since then, he developed an illness and was downgraded to doubtful. Washington will now miss his first game of the 2026-27 campaign, with his next opportunity to play coming Sunday in Utah. In the meantime, Naji Marshall and Zaccharie Risacher are candidates for more minutes.",
+      "short_comment": "Washington (illness) is doubtful to play Sunday's game against the Jazz.",
+      "long_comment": "Washington is in danger of missing a second straight contest due to an illness. Zaccharie Risacher started in place of Washington during Saturday's 110-100 win over the Clippers, and that is likely to be the case again versus Utah.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4896372",
+      "name": "Walter Clayton Jr.",
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-22T19:07Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Clayton (knee) is listed as questionable for Sunday's game against the Jazz.",
+      "long_comment": "Clayton is in danger of missing the second leg of this back-to-back set due to left patellar tendinitis. The two-way player has logged at least 23 minutes in five of the last six games, and if he's forced to miss Sunday's contest, Marcus Sasser and Max Christie would likely see increased playing time.",
       "source": "ESPN"
     },
     {
@@ -368,13 +368,13 @@
       "team": "DAL",
       "team_name": "Dallas Mavericks",
       "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-22T15:02Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Lawal (groin) is out for Saturday's game against the Clippers.",
-      "long_comment": "Lawal will miss a second straight game with right groin tightness. The rookie forward isn't expected to have a big role in the rotation, so he likely won't have much fantasy upside anytime soon. His next chance to play will come Sunday against the Jazz on the second leg of a back-to-back set.",
+      "date": "2026-11-22T19:04Z",
+      "return_date": "2026-11-24",
+      "short_comment": "Lawal (groin) has been ruled out for Sunday's game against the Jazz.",
+      "long_comment": "Lawal will miss a third consecutive game due to a right groin strain. His absence won't have much of an impact on the Mavericks' rotation. Lawal's next chance to suit up will come Tuesday against Denver.",
       "source": "ESPN"
     },
     {
@@ -435,21 +435,6 @@
       "return_date": "2026-11-29",
       "short_comment": "Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports.",
       "long_comment": "Strawther suffered the injury in Wednesday's preseason game against the Clippers. The 24-year-old has appeared in 172 regular-season games for the Nuggets since entering the league in 2023, averaging 7.1 points, 2.0 rebounds and 1.1 assists over 16.2 minutes per contest. He was in line to compete for an expanded role during the 2026-27 campaign. While that may be the case once Strawther is cleared to suit up, Tyus Jones and potentially Ryan Nembhard are candidates to receive more minutes in the interim.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4683771",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-21T23:05Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Holland (knee) is listed as questionable for Sunday's game against Atlanta.",
-      "long_comment": "Holland has missed the last three games due to a bone bruise in his left knee. If he remains sidelined versus the Hawks, Isaiah Joe, Chaz Lanier and Javonte Green are candidates for more minutes.",
       "source": "ESPN"
     },
     {
@@ -1316,10 +1301,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-21T14:55Z",
+      "date": "2026-11-22T18:34Z",
       "return_date": "2026-11-23",
-      "short_comment": "Dunn won't return to Friday's game against the Jazz due to a right quad injury, Amanda Pflugrad of 3TV Phoenix reports.",
-      "long_comment": "Dunn will end his evening with five rebounds and nothing else in nine minutes off the bench. For now, he should be considered questionable for Monday's meeting in New Orleans.",
+      "short_comment": "Dunn (quadriceps) was a full participant in Sunday's practice, Duane Rankin of The Arizona Republic reports.",
+      "long_comment": "Dunn exited Friday's win over Utah early due to a right quad injury, though it's encouraging that he was able to practice Sunday. The Suns will provide an update on his status for Monday's game at New Orleans by Sunday night.",
       "source": "ESPN"
     },
     {
