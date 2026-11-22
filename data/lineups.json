@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T17:04:26.362499+00:00",
+  "last_updated": "2026-11-22T17:52:31.014689+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -57,6 +57,16 @@
       "date": "2026-11-23T01:00Z",
       "home_team": "NY",
       "away_team": "IND",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910035",
+      "date": "2026-11-23T01:30Z",
+      "home_team": "GS",
+      "away_team": "BOS",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",

@@ -214,7 +214,217 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-22T17:52:31.014841+00:00",
+      "minutes_to_tipoff": 367.5,
+      "injuries": [
+        {
+          "athlete_id": "2595516",
+          "name": "Norman Powell",
+          "team": "CHI",
+          "team_name": "Chicago Bulls",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-22T15:25Z",
+          "return_date": "2026-11-28",
+          "short_comment": "Powell has been diagnosed with a mild right hamstring strain and will be re-evaluated later this week.",
+          "long_comment": "Powell sustained the hamstring injury in Friday's loss to the Wizards and is now set to miss at least the next two contests. With the veteran swingman on the shelf, Isaac Okoro, Buddy Hield, Tre Jones and Patrick Williams are all candidates for increased playing time.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4278067",
+          "name": "Nic Claxton",
+          "team": "CHI",
+          "team_name": "Chicago Bulls",
+          "position": "C",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": null,
+          "date": "2026-11-22T17:24Z",
+          "return_date": "2026-11-22",
+          "short_comment": "Claxton (illness) is questionable to play in Sunday's game against the Nuggets.",
+          "long_comment": "After missing the first eight outings of the 2026-27 campaign due to a hamstring injury, Claxton has suited up in six of the last seven games for Chicago. However, he's now dealing with an illness that will leave his status for Sunday up in the air. If Claxton doesn't play, expect Zach Collins and Noa Essengue to earn more minutes off the bench.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4397189",
+          "name": "Jalen Smith",
+          "team": "CHI",
+          "team_name": "Chicago Bulls",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": null,
+          "date": "2026-11-22T17:22Z",
+          "return_date": "2026-11-22",
+          "short_comment": "Smith (illness) has been upgraded to probable for Sunday's game against the Nuggets.",
+          "long_comment": "Smith was initially listed as questionable but is now expected to return from a one-game absence due to an illness. Over his last five appearances, the big man has averaged 17.2 points, 8.2 rebounds, 2.8 assists, 1.2 steals and 1.2 blocks across 28.2 minutes per showing. He could also see a slight bump in minutes if Nic Claxton (illness) is ruled out.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4431687",
+          "name": "Patrick Williams",
+          "team": "CHI",
+          "team_name": "Chicago Bulls",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Left",
+          "date": "2026-11-22T06:06Z",
+          "return_date": "2026-11-22",
+          "short_comment": "Williams is probable for Sunday's game against the Nuggets due to a left thumb sprain.",
+          "long_comment": "Williams is dealing with a sprained thumb on his non-shooting hand, but he's expected to play through it. Williams is averaging 6.9 points and 1.9 assists per game this season.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5095151",
+          "name": "Caleb Wilson",
+          "team": "CHI",
+          "team_name": "Chicago Bulls",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-12T21:35Z",
+          "return_date": "2026-12-13",
+          "short_comment": "Wilson (hand) is expected to miss four to six weeks, Shams Charania of ESPN reports.",
+          "long_comment": "The rookie forward went down during Wednesday's loss to the Spurs, and he now needs surgery to repair a fractured right hand. More pressure will likely fall on Josh Giddey going forward, while the likes of Tre Jones and Isaac Okoro will have a chance for added streaming value.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4432181",
+          "name": "Julian Strawther",
+          "team": "DEN",
+          "team_name": "Denver Nuggets",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-10-17T00:52Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports.",
+          "long_comment": "Strawther suffered the injury in Wednesday's preseason game against the Clippers. The 24-year-old has appeared in 172 regular-season games for the Nuggets since entering the league in 2023, averaging 7.1 points, 2.0 rebounds and 1.1 assists over 16.2 minutes per contest. He was in line to compete for an expanded role during the 2026-27 campaign. While that may be the case once Strawther is cleared to suit up, Tyus Jones and potentially Ryan Nembhard are candidates to receive more minutes in the interim.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910032",
+        "date": "2026-11-23T00:00Z",
+        "home_team": "CHI",
+        "away_team": "DEN",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "2595516",
+            "name": "Norman Powell",
+            "team": "CHI",
+            "team_name": "Chicago Bulls",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-22T15:25Z",
+            "return_date": "2026-11-28",
+            "short_comment": "Powell has been diagnosed with a mild right hamstring strain and will be re-evaluated later this week.",
+            "long_comment": "Powell sustained the hamstring injury in Friday's loss to the Wizards and is now set to miss at least the next two contests. With the veteran swingman on the shelf, Isaac Okoro, Buddy Hield, Tre Jones and Patrick Williams are all candidates for increased playing time.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4278067",
+            "name": "Nic Claxton",
+            "team": "CHI",
+            "team_name": "Chicago Bulls",
+            "position": "C",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": null,
+            "date": "2026-11-22T17:24Z",
+            "return_date": "2026-11-22",
+            "short_comment": "Claxton (illness) is questionable to play in Sunday's game against the Nuggets.",
+            "long_comment": "After missing the first eight outings of the 2026-27 campaign due to a hamstring injury, Claxton has suited up in six of the last seven games for Chicago. However, he's now dealing with an illness that will leave his status for Sunday up in the air. If Claxton doesn't play, expect Zach Collins and Noa Essengue to earn more minutes off the bench.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4397189",
+            "name": "Jalen Smith",
+            "team": "CHI",
+            "team_name": "Chicago Bulls",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": null,
+            "date": "2026-11-22T17:22Z",
+            "return_date": "2026-11-22",
+            "short_comment": "Smith (illness) has been upgraded to probable for Sunday's game against the Nuggets.",
+            "long_comment": "Smith was initially listed as questionable but is now expected to return from a one-game absence due to an illness. Over his last five appearances, the big man has averaged 17.2 points, 8.2 rebounds, 2.8 assists, 1.2 steals and 1.2 blocks across 28.2 minutes per showing. He could also see a slight bump in minutes if Nic Claxton (illness) is ruled out.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4431687",
+            "name": "Patrick Williams",
+            "team": "CHI",
+            "team_name": "Chicago Bulls",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Left",
+            "date": "2026-11-22T06:06Z",
+            "return_date": "2026-11-22",
+            "short_comment": "Williams is probable for Sunday's game against the Nuggets due to a left thumb sprain.",
+            "long_comment": "Williams is dealing with a sprained thumb on his non-shooting hand, but he's expected to play through it. Williams is averaging 6.9 points and 1.9 assists per game this season.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5095151",
+            "name": "Caleb Wilson",
+            "team": "CHI",
+            "team_name": "Chicago Bulls",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-12T21:35Z",
+            "return_date": "2026-12-13",
+            "short_comment": "Wilson (hand) is expected to miss four to six weeks, Shams Charania of ESPN reports.",
+            "long_comment": "The rookie forward went down during Wednesday's loss to the Spurs, and he now needs surgery to repair a fractured right hand. More pressure will likely fall on Josh Giddey going forward, while the likes of Tre Jones and Isaac Okoro will have a chance for added streaming value.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4432181",
+            "name": "Julian Strawther",
+            "team": "DEN",
+            "team_name": "Denver Nuggets",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-10-17T00:52Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports.",
+            "long_comment": "Strawther suffered the injury in Wednesday's preseason game against the Clippers. The 24-year-old has appeared in 172 regular-season games for the Nuggets since entering the league in 2023, averaging 7.1 points, 2.0 rebounds and 1.1 assists over 16.2 minutes per contest. He was in line to compete for an expanded role during the 2026-27 campaign. While that may be the case once Strawther is cleared to suit up, Tyus Jones and potentially Ryan Nembhard are candidates to receive more minutes in the interim.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910032",
+          "date": "2026-11-23T00:00Z",
+          "home_team": "CHI",
+          "away_team": "DEN",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-22T16:14:57.186248+00:00"
+  "last_updated": "2026-11-22T17:52:31.014841+00:00"
 }

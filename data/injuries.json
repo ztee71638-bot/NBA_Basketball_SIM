@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T17:04:26.361002+00:00",
+  "last_updated": "2026-11-22T17:52:31.013349+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -228,6 +228,36 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4278067",
+      "name": "Nic Claxton",
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-22T17:24Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Claxton (illness) is questionable to play in Sunday's game against the Nuggets.",
+      "long_comment": "After missing the first eight outings of the 2026-27 campaign due to a hamstring injury, Claxton has suited up in six of the last seven games for Chicago. However, he's now dealing with an illness that will leave his status for Sunday up in the air. If Claxton doesn't play, expect Zach Collins and Noa Essengue to earn more minutes off the bench.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4397189",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-22T17:22Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Smith (illness) has been upgraded to probable for Sunday's game against the Nuggets.",
+      "long_comment": "Smith was initially listed as questionable but is now expected to return from a one-game absence due to an illness. Over his last five appearances, the big man has averaged 17.2 points, 8.2 rebounds, 2.8 assists, 1.2 steals and 1.2 blocks across 28.2 minutes per showing. He could also see a slight bump in minutes if Nic Claxton (illness) is ruled out.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2595516",
       "name": "Norman Powell",
       "team": "CHI",
@@ -255,36 +285,6 @@
       "return_date": "2026-11-22",
       "short_comment": "Williams is probable for Sunday's game against the Nuggets due to a left thumb sprain.",
       "long_comment": "Williams is dealing with a sprained thumb on his non-shooting hand, but he's expected to play through it. Williams is averaging 6.9 points and 1.9 assists per game this season.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4397189",
-      "name": "Jalen Smith",
-      "team": "CHI",
-      "team_name": "Chicago Bulls",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-21T14:54Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Smith (illness) is out for Friday's game against the Wizards, Joel Lorenzi of The Athletic reports.",
-      "long_comment": "With Smith unavailable after being downgraded to questionable earlier Friday, Chicago will need to cover his center minutes elsewhere. His absence opens up added frontcourt work most prominently for Zach Collins and Nic Claxton, the latter of whom is the likelier candidate to start at center.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5105555",
-      "name": "Tobe Awaka",
-      "team": "CHI",
-      "team_name": "Chicago Bulls",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-17T20:53Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Awaka (back) has been ruled out for Wednesday's game against the Nets.",
-      "long_comment": "Awaka is missing a fifth straight contest due to a back problem. The rookie big man can be considered week-to-week going forward.",
       "source": "ESPN"
     },
     {
@@ -1481,10 +1481,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-21T14:52Z",
+      "date": "2026-11-22T17:10Z",
       "return_date": "2026-11-23",
-      "short_comment": "Murray-Boyles (concussion) has been ruled out for Friday's game against the Pistons.",
-      "long_comment": "Murray-Boyles has been placed in the league's concussion protocol after leaving Wednesday's loss to the Wizards with what was initially called an illness. With the second-year big man sidelined, Jakob Poeltl, Kyle Anderson and Trayce Jackson-Davis are all candidates for increased playing time. Murray-Boyles' next chance to play will come Monday against Milwaukee.",
+      "short_comment": "Murray-Boyles (concussion) participated in Sunday's practice, Michael Grange of Sportsnet.ca reports.",
+      "long_comment": "Murray-Boyles missed Friday's win over Detroit while in the league's concussion protocol, though it's encouraging to see him back at practice. The Raptors should offer an update on his status for Monday's game against the Bucks by Sunday night.",
       "source": "ESPN"
     },
     {
@@ -1575,6 +1575,21 @@
       "return_date": "2026-12-14",
       "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
       "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4278129",
+      "name": "Deandre Ayton",
+      "team": "WSH",
+      "team_name": "Washington Wizards",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Not Specified",
+      "date": "2026-11-22T17:28Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Ayton (illness) is questionable to play in Sunday's game against Orlando.",
+      "long_comment": "Ayton played 11 minutes during Friday's 98-94 win over Chicago, but he appears to have picked up some sort of illness over the weekend. If he can't play Sunday, expect Khris Middleton and Bilal Coulibaly to see increased burn off the Wizards' bench.",
       "source": "ESPN"
     },
     {

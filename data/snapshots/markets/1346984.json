@@ -56,7 +56,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895753\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Lakers\\\"]\",\"question\":\"Jazz vs. Lakers\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T17:52:31.014841+00:00",
+      "markets": [
+        {
+          "market_id": "6895753",
+          "market_type": "moneyline",
+          "question": "Jazz vs. Lakers",
+          "slug": "nba-uta-lal-2026-11-23",
+          "outcomes": "[\"Jazz\", \"Lakers\"]",
+          "outcome_prices": "[\"0.14\", \"0.86\"]",
+          "volume_24h": 1398.403231,
+          "liquidity": "29939.5437",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895753\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.14\\\", \\\"0.86\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Lakers\\\"]\",\"question\":\"Jazz vs. Lakers\"}]"
     }
   ],
-  "last_updated": "2026-11-22T09:42:47.008257+00:00"
+  "last_updated": "2026-11-22T17:52:31.014841+00:00"
 }
