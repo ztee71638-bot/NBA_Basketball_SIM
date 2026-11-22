@@ -4736,7 +4736,205 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840925\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Celtics vs. Warriors\"},{\"market_id\":\"7242613\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-9.5)\"},{\"market_id\":\"7242620\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-10.5)\"},{\"market_id\":\"7242626\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-8.5)\"},{\"market_id\":\"7242632\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-11.5)\"},{\"market_id\":\"7242638\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-7.5)\"},{\"market_id\":\"7242644\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.41\\\", \\\"0.59\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-12.5)\"},{\"market_id\":\"7242650\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.61\\\", \\\"0.39\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-6.5)\"},{\"market_id\":\"7242656\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-13.5)\"},{\"market_id\":\"7242662\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.64\\\", \\\"0.36\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-5.5)\"},{\"market_id\":\"7242668\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.36\\\", \\\"0.64\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-14.5)\"},{\"market_id\":\"7242674\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.665\\\", \\\"0.335\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-4.5)\"},{\"market_id\":\"7242680\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.325\\\", \\\"0.675\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-15.5)\"},{\"market_id\":\"7242686\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-3.5)\"},{\"market_id\":\"7242692\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.265\\\", \\\"0.735\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-17.5)\"},{\"market_id\":\"7242698\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-1.5)\"},{\"market_id\":\"7242702\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-19.5)\"},{\"market_id\":\"7242706\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.18\\\", \\\"0.82\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-21.5)\"},{\"market_id\":\"7242710\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-2.5)\"},{\"market_id\":\"7242714\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.17\\\", \\\"0.83\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-23.5)\"},{\"market_id\":\"7242718\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.16\\\", \\\"0.84\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-4.5)\"},{\"market_id\":\"7242722\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-25.5)\"},{\"market_id\":\"7242726\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.14\\\", \\\"0.86\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-6.5)\"},{\"market_id\":\"7242730\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.095\\\", \\\"0.905\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-27.5)\"},{\"market_id\":\"7242734\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.1\\\", \\\"0.9\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-8.5)\"},{\"market_id\":\"7242738\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.08\\\", \\\"0.92\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-29.5)\"},{\"market_id\":\"7242742\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.08\\\", \\\"0.92\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-10.5)\"},{\"market_id\":\"7242744\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.075\\\", \\\"0.925\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-31.5)\"},{\"market_id\":\"7242746\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.065\\\", \\\"0.935\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-12.5)\"},{\"market_id\":\"7242748\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-33.5)\"},{\"market_id\":\"7242750\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-14.5)\"},{\"market_id\":\"7242751\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.04\\\", \\\"0.96\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-35.5)\"},{\"market_id\":\"7242948\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-16.5)\"},{\"market_id\":\"7242953\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-37.5)\"},{\"market_id\":\"7242957\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.13\\\", \\\"0.87\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-18.5)\"},{\"market_id\":\"7242615\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 211.5\"},{\"market_id\":\"7242623\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 209.5\"},{\"market_id\":\"7242629\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 213.5\"},{\"market_id\":\"7242635\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.61\\\", \\\"0.39\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 207.5\"},{\"market_id\":\"7242641\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.44\\\", \\\"0.56\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 215.5\"},{\"market_id\":\"7242647\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.655\\\", \\\"0.345\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 205.5\"},{\"market_id\":\"7242653\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.4\\\", \\\"0.6\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 217.5\"},{\"market_id\":\"7242659\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.7\\\", \\\"0.3\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 203.5\"},{\"market_id\":\"7242665\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.36\\\", \\\"0.64\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 219.5\"},{\"market_id\":\"7242671\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.74\\\", \\\"0.26\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 201.5\"},{\"market_id\":\"7242677\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.325\\\", \\\"0.675\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 221.5\"},{\"market_id\":\"7242683\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 199.5\"},{\"market_id\":\"7242689\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 223.5\"},{\"market_id\":\"7242695\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.805\\\", \\\"0.195\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 197.5\"},{\"market_id\":\"7242700\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.235\\\", \\\"0.765\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 225.5\"},{\"market_id\":\"7242704\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.835\\\", \\\"0.165\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 195.5\"},{\"market_id\":\"7242708\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 227.5\"},{\"market_id\":\"7242712\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.87\\\", \\\"0.13\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 193.5\"},{\"market_id\":\"7242716\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.18\\\", \\\"0.82\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 229.5\"},{\"market_id\":\"7242720\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.88\\\", \\\"0.12\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 191.5\"},{\"market_id\":\"7242724\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.16\\\", \\\"0.84\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 231.5\"},{\"market_id\":\"7242728\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.9\\\", \\\"0.1\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 189.5\"},{\"market_id\":\"7242732\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.12\\\", \\\"0.88\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 233.5\"},{\"market_id\":\"7242736\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.915\\\", \\\"0.085\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 187.5\"},{\"market_id\":\"7242740\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.125\\\", \\\"0.875\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 235.5\"},{\"market_id\":\"7242743\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.96\\\", \\\"0.04\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 185.5\"},{\"market_id\":\"7242745\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.1\\\", \\\"0.9\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 237.5\"},{\"market_id\":\"7242747\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.9565\\\", \\\"0.0435\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 183.5\"},{\"market_id\":\"7242749\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.09\\\", \\\"0.91\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 239.5\"},{\"market_id\":\"7242942\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 212.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T07:55:22.945671+00:00",
+      "markets": [
+        {
+          "market_id": "6840925",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Warriors",
+          "slug": "nba-bos-gsw-2026-11-22",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.775\", \"0.225\"]",
+          "volume_24h": 7154.544343,
+          "liquidity": "29220.9613",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242613",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-9.5)",
+          "slug": "nba-bos-gsw-2026-11-22-spread-away-9pt5",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 881.41,
+          "liquidity": "25336.2539",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242620",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-10.5)",
+          "slug": "nba-bos-gsw-2026-11-22-spread-away-10pt5",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 20,
+          "liquidity": "13481.6698",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242626",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-8.5)",
+          "slug": "nba-bos-gsw-2026-11-22-spread-away-8pt5",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.545\", \"0.455\"]",
+          "volume_24h": 216.43532,
+          "liquidity": "24253.4123",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242632",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-11.5)",
+          "slug": "nba-bos-gsw-2026-11-22-spread-away-11pt5",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.43\", \"0.57\"]",
+          "volume_24h": 15.461537,
+          "liquidity": "10857.1384",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242638",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-7.5)",
+          "slug": "nba-bos-gsw-2026-11-22-spread-away-7pt5",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.57\", \"0.43\"]",
+          "volume_24h": 5,
+          "liquidity": "22179.7031",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242680",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-15.5)",
+          "slug": "nba-bos-gsw-2026-11-22-spread-away-15pt5",
+          "outcomes": "[\"Celtics\", \"Warriors\"]",
+          "outcome_prices": "[\"0.325\", \"0.675\"]",
+          "volume_24h": 5,
+          "liquidity": "11379.233",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242710",
+          "market_type": "spread",
+          "question": "Spread: Warriors (-2.5)",
+          "slug": "nba-bos-gsw-2026-11-22-spread-home-2pt5",
+          "outcomes": "[\"Warriors\", \"Celtics\"]",
+          "outcome_prices": "[\"0.195\", \"0.805\"]",
+          "volume_24h": 32.379737999999996,
+          "liquidity": "7646.0166",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242615",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 211.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-211pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.51\", \"0.49\"]",
+          "volume_24h": 1006.6325940000002,
+          "liquidity": "23136.7584",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242623",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 209.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-209pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.565\", \"0.435\"]",
+          "volume_24h": 298.505807,
+          "liquidity": "23758.6049",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242629",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 213.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-213pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.48\", \"0.52\"]",
+          "volume_24h": 1750.617534,
+          "liquidity": "23205.8973",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242635",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 207.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-207pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.59\", \"0.41\"]",
+          "volume_24h": 10,
+          "liquidity": "21649.1603",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242641",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 215.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-215pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": 120.135594,
+          "liquidity": "22934.7005",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242647",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 205.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-205pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.655\", \"0.345\"]",
+          "volume_24h": 449.809959,
+          "liquidity": "22812.47",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242659",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 203.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-203pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.705\", \"0.295\"]",
+          "volume_24h": 289,
+          "liquidity": "20375.4324",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        },
+        {
+          "market_id": "7242942",
+          "market_type": "total",
+          "question": "Celtics vs. Warriors: O/U 212.5",
+          "slug": "nba-bos-gsw-2026-11-22-total-212pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": 1801.825406,
+          "liquidity": "21196.0965",
+          "end_date": "2026-11-23T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-bos-gsw-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840925\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Celtics vs. Warriors\"},{\"market_id\":\"7242613\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-9.5)\"},{\"market_id\":\"7242620\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-10.5)\"},{\"market_id\":\"7242626\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-8.5)\"},{\"market_id\":\"7242632\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.43\\\", \\\"0.57\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-11.5)\"},{\"market_id\":\"7242638\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.57\\\", \\\"0.43\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-7.5)\"},{\"market_id\":\"7242680\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.325\\\", \\\"0.675\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Celtics (-15.5)\"},{\"market_id\":\"7242710\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Warriors (-2.5)\"},{\"market_id\":\"7242615\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.51\\\", \\\"0.49\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 211.5\"},{\"market_id\":\"7242623\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 209.5\"},{\"market_id\":\"7242629\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 213.5\"},{\"market_id\":\"7242635\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.59\\\", \\\"0.41\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 207.5\"},{\"market_id\":\"7242641\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 215.5\"},{\"market_id\":\"7242647\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.655\\\", \\\"0.345\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 205.5\"},{\"market_id\":\"7242659\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.705\\\", \\\"0.295\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 203.5\"},{\"market_id\":\"7242942\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Warriors: O/U 212.5\"}]"
     }
   ],
-  "last_updated": "2026-11-22T06:40:05.813964+00:00"
+  "last_updated": "2026-11-22T07:55:22.945671+00:00"
 }
