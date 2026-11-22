@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T05:40:31.050413+00:00",
+  "last_updated": "2026-11-22T06:40:05.810465+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -225,6 +225,21 @@
       "return_date": "2026-11-25",
       "short_comment": "Schroder has been diagnosed with a left hamstring strain and will be reevaluated in two weeks, Michael Scotto of HoopsHype.com reports.",
       "long_comment": "Schroder, who missed Friday's game due to what was described as a left thigh injury, has been diagnosed with a hamstring strain. He is set to be reevaluated in two weeks, suggesting he will miss at least the next five games. Christian Anderson and Sion James could see extra minutes with Schroder sidelined.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4431687",
+      "name": "Patrick Williams",
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-22T06:06Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Williams is probable for Sunday's game against the Nuggets due to a left thumb sprain.",
+      "long_comment": "Williams is dealing with a sprained thumb on his non-shooting hand, but he's expected to play through it. Williams is averaging 6.9 points and 1.9 assists per game this season.",
       "source": "ESPN"
     },
     {
@@ -528,21 +543,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "6589",
-      "name": "Draymond Green",
-      "team": "GS",
-      "team_name": "Golden State Warriors",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Not Specified",
-      "date": "2026-11-20T03:53Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Green (elbow) is out for Thursday's game against the Grizzlies.",
-      "long_comment": "Nick Friedell of The Athletic reported Wednesday that the veteran forward would sit out the second half of this back-to-back set, and now it's official. Al Horford should help pick up the slack for the Warriors on Thursday.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4397040",
       "name": "Brandon Williams",
       "team": "GS",
@@ -551,10 +551,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-18T17:12Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Williams (hamstring) has progressed to on-court activities and will be re-evaluated Saturday.",
-      "long_comment": "Williams sustained a left hamstring strain in the Nov. 9 win over New Orleans, and his next opportunity to play will come Sunday against Boston. LJ Cryer will likely continue seeing increased burn in Williams' stead.",
+      "date": "2026-11-22T06:10Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Williams (hamstring) is out for Sunday's game against the Celtics.",
+      "long_comment": "Williams recently progressed to on-court work, but he will remain on the inactive list for Sunday's game. His next chance to play will come Wednesday against the Kings.",
       "source": "ESPN"
     },
     {
@@ -1212,7 +1212,7 @@
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
       "date": "2026-11-21T21:09Z",
-      "return_date": "2026-11-29",
+      "return_date": "2026-11-28",
       "short_comment": "Isaac (knee) is out for Sunday's game against the Wizards.",
       "long_comment": "Isaac continues to deal with a knee injury that has kept him out of action for the entire 2026-27 season. He should continue to be considered week to week until the Magic offer an update on his recovery process.",
       "source": "ESPN"
