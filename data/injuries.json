@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T23:00:50.736606+00:00",
+  "last_updated": "2026-11-22T23:54:21.593176+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -398,10 +398,10 @@
       "team": "DET",
       "team_name": "Detroit Pistons",
       "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-21T22:34Z",
+      "date": "2026-11-22T22:57Z",
       "return_date": "2026-11-24",
       "short_comment": "Okorie (oblique) is out for Sunday's game in Atlanta.",
       "long_comment": "This will be Okorie's second straight game on the inactive list due to injury. His next chance to play will come Tuesday in Orlando.",
@@ -600,21 +600,6 @@
       "return_date": "2027-01-02",
       "short_comment": "Head coach Rick Carlise confirmed Sheppard will miss \"months\" after undergoing surgery to repair a torn meniscus in his left knee, Tony East of Forbes.com reports.",
       "long_comment": "Sheppard required a full repair and is without a definitive timetable for a return to action. With Tyrese Haliburton (hamstring) expected to miss at least two weeks, Quenton Jackson figures to see a significant uptick in playing time. Two-way player Braden Smith could also see increased action with the parent club.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3913176",
-      "name": "Brandon Ingram",
-      "team": "LAC",
-      "team_name": "LA Clippers",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-20T20:20Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Ingram (Achilles) is expected to make his season and team debut Monday against the Rockets, per Shams Charania of ESPN.",
-      "long_comment": "The star forward is set to make his long-awaited return after undergoing surgery for a partially torn Achilles tendon in May. Ingram, who'll miss Saturday's game in Dallas, is likely to carry a minutes restriction following a lengthy layoff, though his presence is certain to cut into the playing time of the likes of Kris Dunn, Max Strus and Gradey Dick on the wing for the Clippers.",
       "source": "ESPN"
     },
     {
@@ -1211,10 +1196,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-22T18:34Z",
+      "date": "2026-11-22T23:24Z",
       "return_date": "2026-11-23",
-      "short_comment": "Dunn (quadriceps) was a full participant in Sunday's practice, Duane Rankin of The Arizona Republic reports.",
-      "long_comment": "Dunn exited Friday's win over Utah early due to a right quad injury, though it's encouraging that he was able to practice Sunday. The Suns will provide an update on his status for Monday's game at New Orleans by Sunday night.",
+      "short_comment": "Dunn (quadriceps) is listed as questionable for Monday's game against the Pelicans.",
+      "long_comment": "Dunn exited Friday's win over Utah early due to right quad soreness, and despite practicing in full Sunday, he's still questionable to suit up versus New Orleans.",
       "source": "ESPN"
     },
     {
@@ -1470,36 +1455,6 @@
       "return_date": "2026-12-14",
       "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
       "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4845374",
-      "name": "Bub Carrington",
-      "team": "WSH",
-      "team_name": "Washington Wizards",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-22T18:21Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Carrington (illness) has been downgraded to questionable for Sunday's game against the Magic.",
-      "long_comment": "Carrington was a late addition to the injury report due to an illness. If the third-year guard is unable to play Sunday, Tre Johnson could see a slight bump in minutes. Carrington has seen limited playing time of late, totaling just eight minutes in two appearances over Washington's last three games.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4278129",
-      "name": "Deandre Ayton",
-      "team": "WSH",
-      "team_name": "Washington Wizards",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Not Specified",
-      "date": "2026-11-22T17:28Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Ayton (illness) is questionable to play in Sunday's game against Orlando.",
-      "long_comment": "Ayton played 11 minutes during Friday's 98-94 win over Chicago, but he appears to have picked up some sort of illness over the weekend. If he can't play Sunday, expect Khris Middleton and Bilal Coulibaly to see increased burn off the Wizards' bench.",
       "source": "ESPN"
     },
     {

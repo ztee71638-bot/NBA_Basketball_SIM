@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T23:00:50.717425+00:00",
+  "last_updated": "2026-11-22T23:54:21.573665+00:00",
   "source": "ESPN public scoreboard",
   "games": [
     {
@@ -32,21 +32,21 @@
       "date": "2026-11-22T23:00Z",
       "name": "Oklahoma City Thunder at Miami Heat",
       "short_name": "OKC @ MIA",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/22 - 6:00 PM EST",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "4:36 - 2nd",
       "completed": false,
       "home": {
         "id": "14",
         "name": "Miami Heat",
         "abbreviation": "MIA",
-        "score": "0",
+        "score": "53",
         "winner": null
       },
       "away": {
         "id": "25",
         "name": "Oklahoma City Thunder",
         "abbreviation": "OKC",
-        "score": "0",
+        "score": "42",
         "winner": null
       },
       "venue": "Kaseya Center",
