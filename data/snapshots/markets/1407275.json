@@ -20,7 +20,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7110995\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.295\\\", \\\"0.705\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Warriors\\\"]\",\"question\":\"Jazz vs. Warriors\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T02:38:57.521861+00:00",
+      "markets": [
+        {
+          "market_id": "7110995",
+          "market_type": "moneyline",
+          "question": "Jazz vs. Warriors",
+          "slug": "nba-uta-gsw-2026-12-01",
+          "outcomes": "[\"Jazz\", \"Warriors\"]",
+          "outcome_prices": "[\"0.29\", \"0.71\"]",
+          "volume_24h": null,
+          "liquidity": "689.7656",
+          "end_date": "2026-12-02T04:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-gsw-2026-12-01"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7110995\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Warriors\\\"]\",\"question\":\"Jazz vs. Warriors\"}]"
     }
   ],
-  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+  "last_updated": "2026-11-22T02:38:57.521861+00:00"
 }

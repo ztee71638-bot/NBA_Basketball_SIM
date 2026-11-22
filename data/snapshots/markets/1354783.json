@@ -92,7 +92,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6925094\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Nuggets\\\"]\",\"question\":\"Mavericks vs. Nuggets\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T02:38:57.521861+00:00",
+      "markets": [
+        {
+          "market_id": "6925094",
+          "market_type": "moneyline",
+          "question": "Mavericks vs. Nuggets",
+          "slug": "nba-dal-den-2026-11-24",
+          "outcomes": "[\"Mavericks\", \"Nuggets\"]",
+          "outcome_prices": "[\"0.24\", \"0.76\"]",
+          "volume_24h": 113.6,
+          "liquidity": "22365.0153",
+          "end_date": "2026-11-25T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-den-2026-11-24"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6925094\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Nuggets\\\"]\",\"question\":\"Mavericks vs. Nuggets\"}]"
     }
   ],
-  "last_updated": "2026-11-21T19:54:29.304999+00:00"
+  "last_updated": "2026-11-22T02:38:57.521861+00:00"
 }

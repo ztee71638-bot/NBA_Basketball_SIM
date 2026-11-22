@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T01:44:40.431317+00:00",
+  "last_updated": "2026-11-22T02:38:57.520412+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1410,21 +1410,6 @@
       "return_date": "2027-03-02",
       "short_comment": "Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
       "long_comment": "It's a tough blow to the Trail Blazers' depth on the wing ahead of training camp. Sharpe, who is now likely to be sidelined until after the All-Star break, had been ticketed for a reserve role behind Toumani Camara following an injury-plagued 2025-26 campaign, which saw average a career-high 20.8 points, 1.4 steals and 2.1 three-pointers per game over 50 regular-season appearances. The door is now open for Vit Krejci and Jeremy Sochan to compete for bench minutes during camp.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4431679",
-      "name": "Precious Achiuwa",
-      "team": "SAC",
-      "team_name": "Sacramento Kings",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-21T21:19Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Achiuwa (lower leg) is questionable for Saturday's game against the Celtics.",
-      "long_comment": "Achiuwa has missed three of the Kings' last four games while recovering from a left lower leg contusion, but there's a chance that the veteran forward is available for Saturday's contest. If he's cleared to play, then Dylan Cardwell would likely see a drop in playing time.",
       "source": "ESPN"
     },
     {
