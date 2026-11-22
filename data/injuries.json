@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T02:38:57.520412+00:00",
+  "last_updated": "2026-11-22T03:35:45.788421+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1043,28 +1043,13 @@
       "team": "NY",
       "team_name": "New York Knicks",
       "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-21T22:51Z",
+      "date": "2026-11-22T03:05Z",
       "return_date": "2026-11-22",
       "short_comment": "Towns (illness) won't play in Saturday's game versus the Trail Blazers.",
       "long_comment": "Towns was initially listed as questionable. However, he has since been ruled out, marking his first absence of the 2026-27 campaign. Towns' next opportunity to play will come Sunday against Indiana. In the meantime, Andre Drummond is in line to start.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3934719",
-      "name": "OG Anunoby",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-21T21:49Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Anunoby (calf) has been ruled out for Saturday's game against the Trail Blazers.",
-      "long_comment": "Anunoby will miss his first game of the 2026-27 regular season due to left calf tightness, although he could be back on the floor for the second leg of the Knicks' back-to-back set against the Pacers on Sunday. Landry Shamet and Miles McBride are both in line for elevated roles in Anunoby's absence.",
       "source": "ESPN"
     },
     {
@@ -1073,13 +1058,28 @@
       "team": "NY",
       "team_name": "New York Knicks",
       "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-20T22:21Z",
+      "date": "2026-11-22T03:05Z",
       "return_date": "2026-11-22",
       "short_comment": "Clarkson (foot) won't play in Saturday's game against Portland.",
       "long_comment": "Clarkson is battling a case of plantar fasciitis in his right foot, so he will miss a second consecutive contest. Without Clarkson on the floor, Landry Shamet is in line for more playing time.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3934719",
+      "name": "OG Anunoby",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-22T03:04Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Anunoby (calf) has been ruled out for Saturday's game against the Trail Blazers.",
+      "long_comment": "Anunoby will miss his first game of the 2026-27 regular season due to left calf tightness, although he could be back on the floor for the second leg of the Knicks' back-to-back set against the Pacers on Sunday. Landry Shamet and Miles McBride are both in line for elevated roles in Anunoby's absence.",
       "source": "ESPN"
     },
     {

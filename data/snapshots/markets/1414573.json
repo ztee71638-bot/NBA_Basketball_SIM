@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7136816\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.68\\\", \\\"0.32\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Clippers\\\"]\",\"question\":\"Timberwolves vs. Clippers\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T03:35:45.789207+00:00",
+      "markets": [
+        {
+          "market_id": "7136816",
+          "market_type": "moneyline",
+          "question": "Timberwolves vs. Clippers",
+          "slug": "nba-min-lac-2026-12-02",
+          "outcomes": "[\"Timberwolves\", \"Clippers\"]",
+          "outcome_prices": "[\"0.685\", \"0.315\"]",
+          "volume_24h": null,
+          "liquidity": "743.51",
+          "end_date": "2026-12-03T03:30:00Z",
+          "url": "https://polymarket.com/event/nba-min-lac-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136816\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.685\\\", \\\"0.315\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Clippers\\\"]\",\"question\":\"Timberwolves vs. Clippers\"}]"
     }
   ],
-  "last_updated": "2026-11-22T02:38:57.521861+00:00"
+  "last_updated": "2026-11-22T03:35:45.789207+00:00"
 }

@@ -20,7 +20,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956404\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Clippers\\\", \\\"Grizzlies\\\"]\",\"question\":\"Clippers vs. Grizzlies\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T03:35:45.789207+00:00",
+      "markets": [
+        {
+          "market_id": "6956404",
+          "market_type": "moneyline",
+          "question": "Clippers vs. Grizzlies",
+          "slug": "nba-lac-mem-2026-11-25",
+          "outcomes": "[\"Clippers\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.3\", \"0.7\"]",
+          "volume_24h": null,
+          "liquidity": "13357.7529",
+          "end_date": "2026-11-26T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-lac-mem-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956404\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"Clippers\\\", \\\"Grizzlies\\\"]\",\"question\":\"Clippers vs. Grizzlies\"}]"
     }
   ],
-  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+  "last_updated": "2026-11-22T03:35:45.789207+00:00"
 }
