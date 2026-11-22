@@ -3,7 +3,7 @@
   "upstream_source": "NBA Stats public data, as described by provider",
   "license": "CC BY 4.0",
   "attribution": "BoxScore Lab, boxscorelab.com, downloaded by NBA Basketball Simulator",
-  "retrieved_at": "2026-11-21T19:44:52.484226+00:00",
+  "retrieved_at": "2026-11-22T10:47:43.429212+00:00",
   "datasets": {
     "2025-26:team_games": {
       "file": "2025_26_team_games.json",
