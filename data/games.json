@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T22:15:20.173731+00:00",
+  "last_updated": "2026-11-22T23:00:50.717425+00:00",
   "source": "ESPN public scoreboard",
   "games": [
     {
@@ -7,22 +7,22 @@
       "date": "2026-11-22T20:30Z",
       "name": "Detroit Pistons at Atlanta Hawks",
       "short_name": "DET @ ATL",
-      "status": "STATUS_IN_PROGRESS",
-      "status_detail": "2:27 - 3rd",
-      "completed": false,
+      "status": "STATUS_FINAL",
+      "status_detail": "Final",
+      "completed": true,
       "home": {
         "id": "1",
         "name": "Atlanta Hawks",
         "abbreviation": "ATL",
-        "score": "71",
-        "winner": null
+        "score": "107",
+        "winner": true
       },
       "away": {
         "id": "8",
         "name": "Detroit Pistons",
         "abbreviation": "DET",
-        "score": "81",
-        "winner": null
+        "score": "97",
+        "winner": false
       },
       "venue": "State Farm Arena",
       "source": "ESPN"
