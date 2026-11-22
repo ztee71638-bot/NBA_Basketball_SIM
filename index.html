@@ -20,7 +20,7 @@
       <div class="status" id="data-status">Loading data…</div>
     </div>
   </header>
-  <nav class="view-tabs" aria-label="Main views"><button class="view-tab active" data-view="simulator-view" aria-selected="true">Games</button><button class="view-tab" data-view="players-view" aria-selected="false">NBA Players</button><button class="view-tab" data-view="markets-view" aria-selected="false">Polymarket</button><button class="view-tab" data-view="injuries-view" aria-selected="false">Injury Report</button></nav>
+  <nav class="view-tabs" aria-label="Main views"><button class="view-tab active" data-view="simulator-view" aria-selected="true">Games</button><button class="view-tab" data-view="players-view" aria-selected="false">NBA Players</button><button class="view-tab" data-view="markets-view" aria-selected="false">Polymarket</button><button class="view-tab" data-view="injuries-view" aria-selected="false">Injury Report</button><button class="view-tab" data-view="tracker-view" aria-selected="false">Track Record</button></nav>
   <main>
     <div id="simulator-view" class="view-panel">
     <section class="panel">
@@ -87,6 +87,13 @@
         <p class="muted">Current player availability reported by ESPN.</p>
         <div id="injuries" class="game-list"><p class="muted">Loading injury report…</p></div>
         <p class="fine-print">ESPN-reported injury information is a secondary source, not a substitute for official team or league status reports.</p>
+      </section>
+    </section>
+    <section id="tracker-view" class="view-panel" hidden>
+      <section class="panel">
+        <div class="section-head"><div><p class="eyebrow">PREDICTION HISTORY</p><h2>Simulator track record</h2></div><div class="tracker-actions"><button id="prediction-export" type="button">Export backup</button><button id="prediction-import" type="button">Import backup</button><input id="prediction-import-file" type="file" accept="application/json,.json" hidden></div></div>
+        <p class="muted">Every game simulation is recorded with its original timestamp, model inputs and predicted win probabilities. Final scores are matched automatically from the schedule or historical team-game records after the game is completed.</p>
+        <div id="prediction-tracker" class="results muted">Loading prediction history…</div>
       </section>
     </section>
   </main>

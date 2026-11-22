@@ -511,3 +511,18 @@ footer{color:#83aaaa}
 @media(max-width:430px){
   .hero-ball{width:208px;height:208px;right:14px;top:14px}
 }
+
+
+/* Persistent prediction tracker */
+.tracker-actions{display:flex;gap:8px;flex-wrap:wrap}
+.tracker-actions button{font-size:.82rem;padding:8px 11px}
+.tracker-table-wrap{overflow-x:auto;margin-top:14px}
+.tracker-table-wrap table{min-width:900px}
+.tracker-hit{color:#80cbc4;font-weight:800}
+.tracker-miss{color:#ff8a80;font-weight:800}
+.tracker-live{color:#ffcc80;font-weight:700}
+.tracker-pending{color:#9fb0c6;font-weight:700}
+.tracker-reported{margin:14px 0;padding:12px;border:1px solid #536b83;border-radius:10px;background:rgba(120,145,170,.08);font-size:.88rem}
+@media(max-width:600px){.tracker-actions{width:100%}.tracker-actions button{flex:1}}
+
+.view-tabs{overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap}.view-tabs::-webkit-scrollbar{display:none}.view-tab{flex-shrink:0;white-space:nowrap}

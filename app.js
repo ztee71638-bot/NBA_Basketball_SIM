@@ -374,6 +374,125 @@ function getSimulationReadiness(game, calibrationEligible) {
   reasons.push("model-to-market identity and edge validation are not enabled");
   return reasons;
 }
+
+const PREDICTION_STORAGE_KEY="nba-simulator-predictions-v1";
+function readPredictionLog(){
+  try{
+    const parsed=JSON.parse(localStorage.getItem(PREDICTION_STORAGE_KEY)||"[]");
+    return Array.isArray(parsed)?parsed.filter(item=>item&&typeof item==="object"):[];
+  }catch(e){return [];}
+}
+function writePredictionLog(records){
+  try{localStorage.setItem(PREDICTION_STORAGE_KEY,JSON.stringify(records));return true;}
+  catch(e){const status=$("prediction-tracker-status");if(status)status.textContent="Could not save locally. Browser storage may be full or disabled; export a backup and check browser settings.";return false;}
+}
+function saveSimulationPrediction(record){
+  const records=readPredictionLog();
+  records.push(record);
+  writePredictionLog(records);
+  renderPredictionTracker();
+}
+function historicalFinalScore(record){
+  const dateKey=String(record.gameDate||"").slice(0,10);
+  if(!dateKey||!Array.isArray(teamData))return null;
+  for(const team of teamData){
+    const abbr=canonicalTeam(team.abbreviation||"");
+    if(abbr!==record.homeAbbr&&abbr!==record.awayAbbr)continue;
+    for(const season of Object.values(team.seasons||{})){
+      const row=(season.games||[]).find(item=>String(item.date||"").slice(0,10)===dateKey);
+      if(!row)continue;
+      const pf=Number(row.points_for),pa=Number(row.points_against);
+      if(!Number.isFinite(pf)||!Number.isFinite(pa)||pf<=0||pa<=0||pf===pa)continue;
+      const venue=String(row.home_away||"").toLowerCase();
+      if(venue==="home")return {homeScore:pf,awayScore:pa};
+      if(venue==="away")return {homeScore:pa,awayScore:pf};
+    }
+  }
+  return null;
+}
+function reconcilePredictionLog(){
+  const records=readPredictionLog();
+  let changed=false;
+  records.forEach(record=>{
+    if(record.source!=="simulator"||record.actualWinner||!record.gameId)return;
+    let finalScore=null;
+    const finalGame=games.find(game=>String(game.id)===String(record.gameId)&&game.completed);
+    if(finalGame){
+      const homeScore=Number(finalGame.home?.score),awayScore=Number(finalGame.away?.score);
+      if(Number.isFinite(homeScore)&&Number.isFinite(awayScore)&&homeScore!==awayScore)finalScore={homeScore,awayScore};
+    }
+    if(!finalScore)finalScore=historicalFinalScore(record);
+    if(!finalScore)return;
+    record.actualHomeScore=finalScore.homeScore;
+    record.actualAwayScore=finalScore.awayScore;
+    record.actualWinner=finalScore.homeScore>finalScore.awayScore?record.homeAbbr:record.awayAbbr;
+    record.gradedAt=new Date().toISOString();
+    changed=true;
+  });
+  if(changed)writePredictionLog(records);
+  renderPredictionTracker();
+}
+function renderPredictionTracker(){
+  const root=$("prediction-tracker");
+  if(!root)return;
+  const records=readPredictionLog().sort((a,b)=>String(b.createdAt||"").localeCompare(String(a.createdAt||"")));
+  const modelRecords=records.filter(r=>r.source==="simulator");
+  const graded=modelRecords.filter(r=>r.pregame===true&&r.actualWinner);
+  const correct=graded.filter(r=>r.predictedWinner===r.actualWinner).length;
+  const pending=modelRecords.filter(r=>!r.actualWinner).length;
+  const postTip=modelRecords.filter(r=>r.pregame===false).length;
+  const reported={date:"Nov 21, 2026",correct:5,total:6};
+  const pct=graded.length?(100*correct/graded.length).toFixed(1)+"%":"—";
+  const rows=records.slice(0,100).map(r=>{
+    const home=escapeHtml(r.homeName||r.homeAbbr||"Home");
+    const away=escapeHtml(r.awayName||r.awayAbbr||"Away");
+    const predicted=escapeHtml(r.predictedWinnerName||r.predictedWinner||"—");
+    const date=r.gameDate?new Date(r.gameDate).toLocaleString():"—";
+    const result=r.actualWinner
+      ?(r.predictedWinner===r.actualWinner?'<span class="tracker-hit">HIT</span>':'<span class="tracker-miss">MISS</span>')+
+        ' · '+escapeHtml(String(r.actualHomeScore??""))+'–'+escapeHtml(String(r.actualAwayScore??""))
+      :(r.pregame===false?'<span class="tracker-live">POST-TIP · excluded</span>':'<span class="tracker-pending">PENDING</span>');
+    const probability=Number.isFinite(r.homeProbability)?(r.homeProbability*100).toFixed(1)+"% / "+((1-r.homeProbability)*100).toFixed(1)+"%":"Not recorded";
+    const source=r.source==="reported"?"User-reported session":r.pregame===true?"Pregame simulation":"Post-tip simulation";
+    return '<tr><td>'+escapeHtml(date)+'</td><td>'+away+' @ '+home+'</td><td>'+predicted+'</td><td>'+escapeHtml(probability)+'</td><td>'+result+'</td><td>'+source+'</td></tr>';
+  }).join("");
+  root.innerHTML=
+    '<div class="result-grid tracker-metrics">'+
+      '<div class="metric"><small>Verified pregame picks</small><b>'+graded.length+'</b></div>'+
+      '<div class="metric"><small>Pregame winner accuracy</small><b>'+pct+'</b></div>'+
+      '<div class="metric"><small>Awaiting final result</small><b>'+pending+'</b></div>'+
+      '<div class="metric"><small>Post-tip runs excluded</small><b>'+postTip+'</b></div>'+
+    '</div>'+
+    '<p class="fine-print">Only simulations saved before scheduled tipoff and later matched to a final score count toward verified pregame accuracy. Multiple runs of one game are retained as separate records. This tracker is stored in this browser/device, not synced to a server.</p>'+
+    '<div class="tracker-reported"><strong>Earlier session reported by you:</strong> '+reported.correct+'/'+reported.total+' correct (83.3%) on Nov 21, 2026. This is kept separate because the original six simulation outputs were not saved and cannot be independently verified.</div>'+
+    '<div class="tracker-table-wrap"><table><thead><tr><th>Saved</th><th>Matchup</th><th>Pick</th><th>Home / away chance</th><th>Grade</th><th>Record type</th></tr></thead><tbody>'+
+    (rows||'<tr><td colspan="6">No saved simulations yet. Run a game simulation to start building your record.</td></tr>')+
+    '</tbody></table></div>'+
+    '<p id="prediction-tracker-status" class="fine-print">Showing '+records.length+' saved simulation records (latest 100 displayed).</p>';
+}
+function exportPredictionLog(){
+  const payload={schema_version:1,exported_at:new Date().toISOString(),records:readPredictionLog()};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement("a");link.href=url;link.download="nba-simulator-predictions-backup.json";link.click();
+  URL.revokeObjectURL(url);
+  $("prediction-tracker-status").textContent="Prediction backup exported.";
+}
+async function importPredictionLog(file){
+  if(!file)return;
+  try{
+    const payload=JSON.parse(await file.text());
+    const incoming=Array.isArray(payload)?payload:payload.records;
+    if(!Array.isArray(incoming))throw new Error("Backup does not contain a records array.");
+    const existing=readPredictionLog(),seen=new Set(existing.map(r=>r.recordId).filter(Boolean));
+    const clean=incoming.filter(r=>r&&typeof r==="object"&&r.recordId&&!seen.has(r.recordId));
+    const merged=existing.concat(clean);
+    if(!writePredictionLog(merged))return;
+    renderPredictionTracker();
+    $("prediction-tracker-status").textContent="Imported "+clean.length+" new records; "+(incoming.length-clean.length)+" duplicates or invalid records skipped.";
+  }catch(e){$("prediction-tracker-status").textContent="Import failed: "+e.message;}
+}
+
 function runGameSimulation() {
   if (!selectedGame) { $("game-results").textContent="Select a matchup first."; return; }
   const hm=Number($("home-mean").value), am=Number($("away-mean").value), sd=Number($("score-sd").value);
@@ -414,6 +533,19 @@ function runGameSimulation() {
   const chanceLabel=calibrationEligible?"CALIBRATED CHANCE":"SIMULATED CHANCE";
   const winner=homeWins?homeName:awayName;
   const projectedHome=Math.round(avgHome), projectedAway=Math.round(avgAway);
+  const gameStart=new Date(selectedGame.date).getTime();
+  const isPregame=Number.isFinite(gameStart)&&Date.now()<gameStart&&!selectedGame.completed;
+  const homeAbbr=canonicalTeam(selectedGame.home?.abbreviation||"");
+  const awayAbbr=canonicalTeam(selectedGame.away?.abbreviation||"");
+  saveSimulationPrediction({
+    recordId:"sim-"+Date.now()+"-"+Math.random().toString(36).slice(2,9),
+    source:"simulator",createdAt:new Date().toISOString(),gameId:String(selectedGame.id||""),
+    gameDate:selectedGame.date,homeName,awayName,homeAbbr,awayAbbr,
+    predictedWinner:homeWins?homeAbbr:awayAbbr,predictedWinnerName:winner,
+    homeProbability:calibratedHomeProbability,projectedHome,projectedAway,
+    inputHomeMean:hm,inputAwayMean:am,inputScoreSd:sd,trials,
+    calibrationEligible,pregame:isPregame,modelVersion:"team-history-monte-carlo-v1"
+  });
   const winnerScore=homeWins?projectedHome:projectedAway;
   const loserScore=homeWins?projectedAway:projectedHome;
   const calibrationNote=calibrationEligible
@@ -1054,6 +1186,7 @@ async function loadAll(){
   try{const data=await loadJson("data/games.json");games=data.games||[];$("data-status").textContent="ESPN updated "+(data.last_updated?new Date(data.last_updated).toLocaleString():"time unavailable");showGames();}catch(e){$("data-status").textContent="Game feed unavailable";$("games").textContent=e.message;}
   if(playersLoaded) await loadPlayers();
   await loadTeams();
+  reconcilePredictionLog();
   await loadArenas();
   await loadModelMetrics();
   await loadInjuries();
@@ -1077,6 +1210,10 @@ $("refresh-markets").addEventListener("click",loadMarkets);
 
 
 $("player-search").addEventListener("input",renderPlayerSearch);
+$("prediction-export").addEventListener("click",exportPredictionLog);
+$("prediction-import").addEventListener("click",()=>$("prediction-import-file").click());
+$("prediction-import-file").addEventListener("change",event=>{importPredictionLog(event.target.files?.[0]);event.target.value="";});
+renderPredictionTracker();
 loadAll();
 
 $("simulation-modal-close").addEventListener("click",()=>{$("simulation-modal").hidden=true;});
