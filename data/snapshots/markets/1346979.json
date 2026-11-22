@@ -146,7 +146,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895746\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.17\\\", \\\"0.83\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Timberwolves\\\"]\",\"question\":\"Nets vs. Timberwolves\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T10:48:46.256318+00:00",
+      "markets": [
+        {
+          "market_id": "6895746",
+          "market_type": "moneyline",
+          "question": "Nets vs. Timberwolves",
+          "slug": "nba-bkn-min-2026-11-23",
+          "outcomes": "[\"Nets\", \"Timberwolves\"]",
+          "outcome_prices": "[\"0.165\", \"0.835\"]",
+          "volume_24h": 572.434506,
+          "liquidity": "23123.2678",
+          "end_date": "2026-11-24T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-min-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895746\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.165\\\", \\\"0.835\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Timberwolves\\\"]\",\"question\":\"Nets vs. Timberwolves\"}]"
     }
   ],
-  "last_updated": "2026-11-22T07:55:22.945671+00:00"
+  "last_updated": "2026-11-22T10:48:46.256318+00:00"
 }

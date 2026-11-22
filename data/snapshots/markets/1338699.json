@@ -4088,7 +4088,229 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840923\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Mavericks vs. Jazz\"},{\"market_id\":\"7246080\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-1.5)\"},{\"market_id\":\"7246082\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-2.5)\"},{\"market_id\":\"7246086\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-3.5)\"},{\"market_id\":\"7246099\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Jazz (-3.5)\"},{\"market_id\":\"7246109\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.215\\\", \\\"0.785\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-11.5)\"},{\"market_id\":\"7246119\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.155\\\", \\\"0.845\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Jazz (-12.5)\"},{\"market_id\":\"7246081\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 226.5\"},{\"market_id\":\"7246084\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 224.5\"},{\"market_id\":\"7246088\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 228.5\"},{\"market_id\":\"7246094\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 220.5\"},{\"market_id\":\"7246098\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.645\\\", \\\"0.355\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 218.5\"},{\"market_id\":\"7246102\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.685\\\", \\\"0.315\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 216.5\"},{\"market_id\":\"7246478\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 225.5\"},{\"market_id\":\"7248407\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Kyrie Irving: 3-Pointers Made O/U 2.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T10:48:46.256318+00:00",
+      "markets": [
+        {
+          "market_id": "6840923",
+          "market_type": "moneyline",
+          "question": "Mavericks vs. Jazz",
+          "slug": "nba-dal-uta-2026-11-22",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.545\", \"0.455\"]",
+          "volume_24h": 15428.444985999999,
+          "liquidity": "84823.9118",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246080",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-1.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-away-1pt5",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.525\", \"0.475\"]",
+          "volume_24h": 767.561667,
+          "liquidity": "44016.4041",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246082",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-2.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-away-2pt5",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.48\", \"0.52\"]",
+          "volume_24h": 48.70312,
+          "liquidity": "41607.266",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246086",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-3.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-away-3pt5",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": 14.444445,
+          "liquidity": "36838.7759",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246099",
+          "market_type": "spread",
+          "question": "Spread: Jazz (-3.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-home-3pt5",
+          "outcomes": "[\"Jazz\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.375\", \"0.625\"]",
+          "volume_24h": 220.14,
+          "liquidity": "23024.4169",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246101",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-7.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-away-7pt5",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.33\", \"0.67\"]",
+          "volume_24h": 11.088236,
+          "liquidity": "24662.8087",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246105",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-9.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-away-9pt5",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.275\", \"0.725\"]",
+          "volume_24h": 7.068966,
+          "liquidity": "23870.2518",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246109",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-11.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-away-11pt5",
+          "outcomes": "[\"Mavericks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.23\", \"0.77\"]",
+          "volume_24h": 5,
+          "liquidity": "21421.7108",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246119",
+          "market_type": "spread",
+          "question": "Spread: Jazz (-12.5)",
+          "slug": "nba-dal-uta-2026-11-22-spread-home-12pt5",
+          "outcomes": "[\"Jazz\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.16\", \"0.84\"]",
+          "volume_24h": 5,
+          "liquidity": "13350.9322",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246081",
+          "market_type": "total",
+          "question": "Mavericks vs. Jazz: O/U 226.5",
+          "slug": "nba-dal-uta-2026-11-22-total-226pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 37.735848,
+          "liquidity": "39260.9218",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246084",
+          "market_type": "total",
+          "question": "Mavericks vs. Jazz: O/U 224.5",
+          "slug": "nba-dal-uta-2026-11-22-total-224pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 271.339744,
+          "liquidity": "40315.4867",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246088",
+          "market_type": "total",
+          "question": "Mavericks vs. Jazz: O/U 228.5",
+          "slug": "nba-dal-uta-2026-11-22-total-228pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.42\", \"0.58\"]",
+          "volume_24h": 43.98,
+          "liquidity": "36189.9704",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246094",
+          "market_type": "total",
+          "question": "Mavericks vs. Jazz: O/U 220.5",
+          "slug": "nba-dal-uta-2026-11-22-total-220pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.605\", \"0.395\"]",
+          "volume_24h": 5,
+          "liquidity": "24956.1357",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246098",
+          "market_type": "total",
+          "question": "Mavericks vs. Jazz: O/U 218.5",
+          "slug": "nba-dal-uta-2026-11-22-total-218pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.65\", \"0.35\"]",
+          "volume_24h": 5,
+          "liquidity": "24292.1722",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246102",
+          "market_type": "total",
+          "question": "Mavericks vs. Jazz: O/U 216.5",
+          "slug": "nba-dal-uta-2026-11-22-total-216pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.685\", \"0.315\"]",
+          "volume_24h": 5,
+          "liquidity": "22202.5813",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7246478",
+          "market_type": "total",
+          "question": "Mavericks vs. Jazz: O/U 225.5",
+          "slug": "nba-dal-uta-2026-11-22-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": 65.862746,
+          "liquidity": "37053.7059",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7248407",
+          "market_type": "total",
+          "question": "Kyrie Irving: 3-Pointers Made O/U 2.5",
+          "slug": "nba-dal-uta-2026-11-22-threes-kyrie-irving-2pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.245\", \"0.755\"]",
+          "volume_24h": 26,
+          "liquidity": "1804.1621",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        },
+        {
+          "market_id": "7248408",
+          "market_type": "total",
+          "question": "Kyrie Irving: 3-Pointers Made O/U 3.5",
+          "slug": "nba-dal-uta-2026-11-22-threes-kyrie-irving-3pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.25\", \"0.75\"]",
+          "volume_24h": 775.147059,
+          "liquidity": "2812.1684",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-uta-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840923\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Mavericks vs. Jazz\"},{\"market_id\":\"7246080\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-1.5)\"},{\"market_id\":\"7246082\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-2.5)\"},{\"market_id\":\"7246086\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-3.5)\"},{\"market_id\":\"7246099\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Jazz (-3.5)\"},{\"market_id\":\"7246101\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.33\\\", \\\"0.67\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-7.5)\"},{\"market_id\":\"7246105\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.275\\\", \\\"0.725\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-9.5)\"},{\"market_id\":\"7246109\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.23\\\", \\\"0.77\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Mavericks (-11.5)\"},{\"market_id\":\"7246119\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.16\\\", \\\"0.84\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Jazz (-12.5)\"},{\"market_id\":\"7246081\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 226.5\"},{\"market_id\":\"7246084\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 224.5\"},{\"market_id\":\"7246088\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.42\\\", \\\"0.58\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 228.5\"},{\"market_id\":\"7246094\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 220.5\"},{\"market_id\":\"7246098\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.65\\\", \\\"0.35\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 218.5\"},{\"market_id\":\"7246102\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.685\\\", \\\"0.315\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 216.5\"},{\"market_id\":\"7246478\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Jazz: O/U 225.5\"},{\"market_id\":\"7248407\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Kyrie Irving: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7248408\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.25\\\", \\\"0.75\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Kyrie Irving: 3-Pointers Made O/U 3.5\"}]"
     }
   ],
-  "last_updated": "2026-11-22T09:42:47.008257+00:00"
+  "last_updated": "2026-11-22T10:48:46.256318+00:00"
 }
