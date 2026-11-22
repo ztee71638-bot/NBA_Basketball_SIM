@@ -47,3 +47,10 @@ def test_duplicate_full_rows_are_counted_without_silently_dropping_data():
     parsed = module.parse_and_validate_csv("\n".join(rows), "2026-27", "player_totals")
     assert parsed["row_count"] == 100
     assert parsed["duplicate_full_rows"] == 1
+
+
+def test_utf8_csv_decoding_preserves_accented_player_names():
+    raw = "player_name,team\\nLuka Dončić,LAL\\nNikola Jokić,DEN\\n".encode("utf-8")
+    decoded = module.decode_csv_bytes(raw)
+    assert "Luka Dončić" in decoded
+    assert "Nikola Jokić" in decoded

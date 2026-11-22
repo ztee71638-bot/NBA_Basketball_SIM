@@ -45,6 +45,11 @@ MINIMUM_ROWS = {
 }
 
 
+def decode_csv_bytes(content: bytes) -> str:
+    """Decode provider CSV as UTF-8, preserving accented player names."""
+    return content.decode("utf-8-sig")
+
+
 def fetch_csv(url: str) -> str:
     last_error: Exception | None = None
     for attempt in range(4):
