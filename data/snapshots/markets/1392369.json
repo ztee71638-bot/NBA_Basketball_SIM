@@ -1,0 +1,26 @@
+{
+  "event_id": "1392369",
+  "event_title": "Magic vs. Pistons",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7058818",
+          "market_type": "moneyline",
+          "question": "Magic vs. Pistons",
+          "slug": "nba-orl-det-2026-11-29",
+          "outcomes": "[\"Magic\", \"Pistons\"]",
+          "outcome_prices": "[\"0.3\", \"0.7\"]",
+          "volume_24h": null,
+          "liquidity": "17895.2955",
+          "end_date": "2026-11-29T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-orl-det-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058818\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Pistons\\\"]\",\"question\":\"Magic vs. Pistons\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "event_id": "1377581",
+  "event_title": "Mavericks vs. Suns",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7008995",
+          "market_type": "moneyline",
+          "question": "Mavericks vs. Suns",
+          "slug": "nba-dal-phx-2026-11-27",
+          "outcomes": "[\"Mavericks\", \"Suns\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": null,
+          "liquidity": "22079.7178",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008995\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Mavericks vs. Suns\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

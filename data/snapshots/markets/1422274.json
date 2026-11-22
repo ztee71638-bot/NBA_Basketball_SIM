@@ -1,0 +1,26 @@
+{
+  "event_id": "1422274",
+  "event_title": "Pacers vs. Hawks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7166206",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Hawks",
+          "slug": "nba-ind-atl-2026-12-03",
+          "outcomes": "[\"Pacers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.3\", \"0.7\"]",
+          "volume_24h": null,
+          "liquidity": "1243.7165",
+          "end_date": "2026-12-04T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-atl-2026-12-03"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7166206\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Hawks\\\"]\",\"question\":\"Pacers vs. Hawks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

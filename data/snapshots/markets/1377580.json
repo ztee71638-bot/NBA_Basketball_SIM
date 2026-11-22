@@ -1,0 +1,26 @@
+{
+  "event_id": "1377580",
+  "event_title": "Grizzlies vs. Timberwolves",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7008994",
+          "market_type": "moneyline",
+          "question": "Grizzlies vs. Timberwolves",
+          "slug": "nba-mem-min-2026-11-27",
+          "outcomes": "[\"Grizzlies\", \"Timberwolves\"]",
+          "outcome_prices": "[\"0.37\", \"0.63\"]",
+          "volume_24h": null,
+          "liquidity": "17628.0379",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008994\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Grizzlies vs. Timberwolves\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

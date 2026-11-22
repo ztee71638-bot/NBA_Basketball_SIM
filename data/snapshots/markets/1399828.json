@@ -1,0 +1,26 @@
+{
+  "event_id": "1399828",
+  "event_title": "Pelicans vs. Kings",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7086139",
+          "market_type": "moneyline",
+          "question": "Pelicans vs. Kings",
+          "slug": "nba-nop-sac-2026-11-30",
+          "outcomes": "[\"Pelicans\", \"Kings\"]",
+          "outcome_prices": "[\"0.605\", \"0.395\"]",
+          "volume_24h": null,
+          "liquidity": "21508.4862",
+          "end_date": "2026-12-01T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-nop-sac-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086139\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Kings\\\"]\",\"question\":\"Pelicans vs. Kings\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T00:20:38.887172+00:00",
+  "last_updated": "2026-11-22T01:44:40.431317+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -236,10 +236,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-22T00:06Z",
+      "date": "2026-11-22T00:11Z",
       "return_date": "2026-11-22",
-      "short_comment": "Powell tallied 16 points (7-18 FG, 1-5 3Pt, 1-2 FT), three rebounds, two assists and one steal in 33 minutes during Friday's 98-84 loss to Washington.",
-      "long_comment": "Powell and the rest of Chicago's offense struggled Friday, as the team finished 36-for-88 (40.9 percent) from the field and 9-for-33 (27.3 percent) on three-pointers. Powell couldn't quite find the range from behind the arc for the second time in three outings, but he should be given plenty of opportunities to keep working as the Bulls' primary scoring threat.",
+      "short_comment": "Powell is questionable for Sunday's game against the Nuggets due to a right hamstring strain.",
+      "long_comment": "Powell has been one of the few bright spots for the Bulls this season, averaging 20.8 points, 2.8 rebounds and 2.4 assists per game in 13 starts. If he's ruled out, it'd be a huge blow for an anemic Bulls offense. Buddy Hield and Tre Jones could see more playing time if Powell has to miss time.",
       "source": "ESPN"
     },
     {
@@ -945,6 +945,21 @@
       "return_date": "2027-04-02",
       "short_comment": "DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
       "long_comment": "DiVincenzo is approaching six months since tearing his right Achilles during the first round of the playoffs and has been rehabbing with the expectation that he'll play at some point this season. The veteran guard has sought advice from Jayson Tatum, Tyrese Haliburton and Damian Lillard during his recovery, though Minnesota has yet to establish a timetable for his return.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4395628",
+      "name": "Zion Williamson",
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-22T00:39Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Williamson is out for Saturday's game against the Spurs due to a left thigh contusion.",
+      "long_comment": "Williamson won't suit up Saturday on the second leg of this back-to-back set. Derik Queen will start in his place alongside Yves Missi in the frontcourt. This will be Williamson's second absence this season. The 26-year-old is averaging 21.7 points, 5.4 rebounds, 2.8 assists and 1.8 steals across 32.4 minutes per outing in 16 regular-season games.",
       "source": "ESPN"
     },
     {

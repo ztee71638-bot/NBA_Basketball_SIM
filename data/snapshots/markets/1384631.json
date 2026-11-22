@@ -1,0 +1,26 @@
+{
+  "event_id": "1384631",
+  "event_title": "Pacers vs. Bulls",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7031353",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Bulls",
+          "slug": "nba-ind-chi-2026-11-28",
+          "outcomes": "[\"Pacers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": null,
+          "liquidity": "22712.6617",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-chi-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031353\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Bulls\\\"]\",\"question\":\"Pacers vs. Bulls\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

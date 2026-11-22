@@ -1,0 +1,26 @@
+{
+  "event_id": "1384632",
+  "event_title": "Thunder vs. Bucks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7031354",
+          "market_type": "moneyline",
+          "question": "Thunder vs. Bucks",
+          "slug": "nba-okc-mil-2026-11-28",
+          "outcomes": "[\"Thunder\", \"Bucks\"]",
+          "outcome_prices": "[\"0.775\", \"0.225\"]",
+          "volume_24h": null,
+          "liquidity": "14894.1675",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-okc-mil-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031354\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Bucks\\\"]\",\"question\":\"Thunder vs. Bucks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

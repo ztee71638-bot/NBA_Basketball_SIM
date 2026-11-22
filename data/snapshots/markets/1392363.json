@@ -1,0 +1,26 @@
+{
+  "event_id": "1392363",
+  "event_title": "Lakers vs. Grizzlies",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7058801",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Grizzlies",
+          "slug": "nba-lal-mem-2026-11-29",
+          "outcomes": "[\"Lakers\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.53\", \"0.47\"]",
+          "volume_24h": null,
+          "liquidity": "22317.0465",
+          "end_date": "2026-11-29T21:00:00Z",
+          "url": "https://polymarket.com/event/nba-lal-mem-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058801\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.53\\\", \\\"0.47\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Grizzlies\\\"]\",\"question\":\"Lakers vs. Grizzlies\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

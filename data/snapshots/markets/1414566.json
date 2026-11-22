@@ -1,0 +1,26 @@
+{
+  "event_id": "1414566",
+  "event_title": "Magic vs. Mavericks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7136795",
+          "market_type": "moneyline",
+          "question": "Magic vs. Mavericks",
+          "slug": "nba-orl-dal-2026-12-02",
+          "outcomes": "[\"Magic\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.48\", \"0.52\"]",
+          "volume_24h": null,
+          "liquidity": "1015.2482",
+          "end_date": "2026-12-03T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-orl-dal-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136795\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Mavericks\\\"]\",\"question\":\"Magic vs. Mavericks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

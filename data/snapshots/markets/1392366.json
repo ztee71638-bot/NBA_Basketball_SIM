@@ -1,0 +1,26 @@
+{
+  "event_id": "1392366",
+  "event_title": "Suns vs. Jazz",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7058811",
+          "market_type": "moneyline",
+          "question": "Suns vs. Jazz",
+          "slug": "nba-phx-uta-2026-11-29",
+          "outcomes": "[\"Suns\", \"Jazz\"]",
+          "outcome_prices": "[\"0.66\", \"0.34\"]",
+          "volume_24h": null,
+          "liquidity": "17305.5363",
+          "end_date": "2026-11-29T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-uta-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058811\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.66\\\", \\\"0.34\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Jazz\\\"]\",\"question\":\"Suns vs. Jazz\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840924\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Knicks\\\"]\",\"question\":\"Pacers vs. Knicks\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "6840924",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Knicks",
+          "slug": "nba-ind-nyk-2026-11-22",
+          "outcomes": "[\"Pacers\", \"Knicks\"]",
+          "outcome_prices": "[\"0.24\", \"0.76\"]",
+          "volume_24h": 4253.3128130000005,
+          "liquidity": "27075.491",
+          "end_date": "2026-11-23T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-nyk-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840924\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Knicks\\\"]\",\"question\":\"Pacers vs. Knicks\"}]"
     }
   ],
-  "last_updated": "2026-11-21T22:10:35.940450+00:00"
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
 }

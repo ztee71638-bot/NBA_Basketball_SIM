@@ -1,0 +1,26 @@
+{
+  "event_id": "1414570",
+  "event_title": "Nets vs. Thunder",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7136809",
+          "market_type": "moneyline",
+          "question": "Nets vs. Thunder",
+          "slug": "nba-bkn-okc-2026-12-02",
+          "outcomes": "[\"Nets\", \"Thunder\"]",
+          "outcome_prices": "[\"0.195\", \"0.805\"]",
+          "volume_24h": null,
+          "liquidity": "800.4988",
+          "end_date": "2026-12-03T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-okc-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136809\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Thunder\\\"]\",\"question\":\"Nets vs. Thunder\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

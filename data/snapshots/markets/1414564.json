@@ -1,0 +1,26 @@
+{
+  "event_id": "1414564",
+  "event_title": "Nuggets vs. 76ers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7136788",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. 76ers",
+          "slug": "nba-den-phi-2026-12-02",
+          "outcomes": "[\"Nuggets\", \"76ers\"]",
+          "outcome_prices": "[\"0.56\", \"0.44\"]",
+          "volume_24h": null,
+          "liquidity": "1279.7686",
+          "end_date": "2026-12-03T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-phi-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136788\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.56\\\", \\\"0.44\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"76ers\\\"]\",\"question\":\"Nuggets vs. 76ers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

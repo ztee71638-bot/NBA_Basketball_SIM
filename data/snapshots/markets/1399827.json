@@ -1,0 +1,26 @@
+{
+  "event_id": "1399827",
+  "event_title": "Spurs vs. Bucks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7086138",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Bucks",
+          "slug": "nba-sas-mil-2026-11-30",
+          "outcomes": "[\"Spurs\", \"Bucks\"]",
+          "outcome_prices": "[\"0.79\", \"0.21\"]",
+          "volume_24h": null,
+          "liquidity": "14328.3388",
+          "end_date": "2026-12-01T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-mil-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086138\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.79\\\", \\\"0.21\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Bucks\\\"]\",\"question\":\"Spurs vs. Bucks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "event_id": "1392370",
+  "event_title": "Hawks vs. Knicks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-22T01:44:40.432700+00:00",
+      "markets": [
+        {
+          "market_id": "7058825",
+          "market_type": "moneyline",
+          "question": "Hawks vs. Knicks",
+          "slug": "nba-atl-nyk-2026-11-29",
+          "outcomes": "[\"Hawks\", \"Knicks\"]",
+          "outcome_prices": "[\"0.32\", \"0.68\"]",
+          "volume_24h": null,
+          "liquidity": "18385.6478",
+          "end_date": "2026-11-29T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-atl-nyk-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058825\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.32\\\", \\\"0.68\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"Knicks\\\"]\",\"question\":\"Hawks vs. Knicks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+}
