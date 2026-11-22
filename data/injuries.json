@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T21:19:48.128247+00:00",
+  "last_updated": "2026-11-22T22:15:20.192169+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -147,7 +147,7 @@
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
       "date": "2026-11-21T14:49Z",
-      "return_date": "2026-11-23",
+      "return_date": "2026-11-25",
       "short_comment": "Williams (hamstring) is listed as out for Friday's game versus the Hawks.",
       "long_comment": "Williams started in Tuesday's 118-114 loss to the Lakers, but he will sit out Friday to rest. With Grayson Allen (concussion) also sidelined, Royce O'Neale could find his way into the starting lineup.",
       "source": "ESPN"
@@ -281,10 +281,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-19T21:55Z",
+      "date": "2026-11-22T21:51Z",
       "return_date": "2026-11-23",
-      "short_comment": "Tyson (ankle) has been ruled out for Friday's game against Indiana.",
-      "long_comment": "Tyson will miss a third consecutive contest due to a right ankle injury, and his next chance to play will come Monday at Chicago. With Evan Mobley (toe) out and Peyton Watson (back) questionable, Tyrese Proctor, Meleek Thomas and Mario Hezonja could all see increased playing time once again.",
+      "short_comment": "Tyson (ankle) is probable for Monday's game against the Bulls.",
+      "long_comment": "Tyson has missed the last three games due to right ankle injury management. An upgrade to probable is a good sign, but we'll need to get confirmation from Cleveland prior to tipoff in Chicago. If he does indeed suit up, Tyrese Proctor, Mario Hezonja and Meleek Thomas could all see their minutes dip.",
       "source": "ESPN"
     },
     {
@@ -558,21 +558,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "3102529",
-      "name": "Clint Capela",
-      "team": "HOU",
-      "team_name": "Houston Rockets",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-19T23:19Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Capela (ankle) is out for Friday's game against Denver.",
-      "long_comment": "Capela hasn't taken the court since suffering a right ankle sprain against the Thunder on Oct. 31. His next opportunity to return will arrive Monday against the Clippers.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "2530530",
       "name": "T.J. McConnell",
       "team": "IND",
@@ -798,21 +783,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4431772",
-      "name": "Myron Gardner",
-      "team": "MIA",
-      "team_name": "Miami Heat",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-21T20:35Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Gardner (hamstring) is probable for Sunday's game against the Thunder.",
-      "long_comment": "The probable tag suggests Gardner is on the verge of returning to the hardwood after a one-game absence due to injury. He's been in and out of the starting five, but he started his last three games before missing Wednesday's win over the Bucks. He's averaging 3.0 points, 2.3 rebounds and 1.1 assists per game this season, so even if he's cleared to play Sunday, he shouldn't carry a ton of fantasy appeal.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "3032977",
       "name": "Giannis Antetokounmpo",
       "team": "MIA",
@@ -822,7 +792,7 @@
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
       "date": "2026-11-21T20:33Z",
-      "return_date": "2026-11-22",
+      "return_date": "2026-11-25",
       "short_comment": "Antetokounmpo (groin) is listed as questionable for Sunday's game against Oklahoma City, Ira Winderman of the South Florida Sun Sentinel reports.",
       "long_comment": "Antetokounmpo previously dealt with a wrist injury in November, and he's now working through a groin issue that puts his status for Sunday's game up in the air. He has yet to miss a game this season, but if he's not cleared to play against Oklahoma City, then Andrew Wiggins and Bobby Portis would be the top candidates to enter Miami's starting lineup.",
       "source": "ESPN"
@@ -836,10 +806,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-15T23:46Z",
-      "return_date": "2026-12-14",
-      "short_comment": "Dieng will undergo a procedure to repair a fractured left finger Monday, Justin Garcia of the Milwaukee Bucks Radio Network reports.",
-      "long_comment": "Dieng was recently diagnosed with a fractured left finger, and the team has determined that he'll need to go under the knife to repair the injury. Milwaukee has yet to provide a timeline for his return, though more information should become available following the procedure.",
+      "date": "2026-11-22T21:37Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Dieng (finger) is questionable for Monday's game against the Raptors.",
+      "long_comment": "Dieng has missed the last four games while recovering from a procedure to repair a fractured left finger. He reportedly underwent surgery Nov. 16, so his questionable status is somewhat shocking considering it's only been one week. Still, Milwaukee will provide another update prior to tip.",
       "source": "ESPN"
     },
     {
@@ -1028,13 +998,13 @@
       "team": "OKC",
       "team_name": "Oklahoma City Thunder",
       "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-21T22:45Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Gilgeous-Alexander (back/neck) is listed as questionable for Sunday's game versus Miami.",
-      "long_comment": "After scoring 40 points in Friday's 126-120 win over the Pelicans, Gilgeous-Alexander could miss his first game of the 2026-27 campaign due to back and neck issues. With Nikola Topic (hip), Alex Caruso (hip) and Cason Wallace (shoulder) all unavailable, Bennett Stirtz may be needed in the starting lineup if Gilgeous-Alexander is ruled out Sunday.",
+      "date": "2026-11-22T21:35Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Gilgeous-Alexander (back/neck) is listed as out for Sunday's game against the Heat.",
+      "long_comment": "Gilgeous-Alexander will miss his first game of the 2026-27 campaign. His next opportunity to suit up will come Monday against the Pacers. Nikola Topic (hip), Alex Caruso (hip) and Cason Wallace (shoulder) are also unavailable, so Bennett Stirtz, Kenrich Williams and Nique Clifford are candidates for more minutes, with one of those players potentially moving into the starting lineup.",
       "source": "ESPN"
     },
     {
@@ -1436,10 +1406,25 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-22T17:10Z",
+      "date": "2026-11-22T21:15Z",
       "return_date": "2026-11-23",
-      "short_comment": "Murray-Boyles (concussion) participated in Sunday's practice, Michael Grange of Sportsnet.ca reports.",
-      "long_comment": "Murray-Boyles missed Friday's win over Detroit while in the league's concussion protocol, though it's encouraging to see him back at practice. The Raptors should offer an update on his status for Monday's game against the Bucks by Sunday night.",
+      "short_comment": "Murray-Boyles (concussion) is listed as probable for Monday's game against Milwaukee, Blake Murphy of Sportsnet.ca reports.",
+      "long_comment": "Murray-Boyles exited Wednesday's game versus the Wizards and didn't suit up for Friday's 105-102 win over the Pistons. It appears a one-game absence will be all that is needed for the 21-year-old, though it's unclear if he will reclaim his spot in the starting lineup over Allen Graves.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4432586",
+      "name": "Nate Bittle",
+      "team": "TOR",
+      "team_name": "Toronto Raptors",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-22T21:13Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
+      "long_comment": "Bittle continues to work his way back from a fractured right foot, as he's yet to make his 2026-27 season debut. He remains week-to-week until Toronto provides a definitive update.",
       "source": "ESPN"
     },
     {
@@ -1470,21 +1455,6 @@
       "return_date": "2026-12-13",
       "short_comment": "Barrett has been diagnosed with a right hamstring strain and will be re-evaluated in two weeks, Brett Siegel of ClutchPoints.com reports.",
       "long_comment": "Based on his re-evaluation timeline, Barrett likely won't return to game action until mid-December at the earliest. Jamison Battle, Allen Graves and Jamal Shead are candidates for increased playing time in Barrett's absence, especially while Kawhi Leonard (knee) is also sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4432586",
-      "name": "Nate Bittle",
-      "team": "TOR",
-      "team_name": "Toronto Raptors",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-14T21:59Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Bittle (foot) has been ruled out for Sunday's game against the Knicks, Zulfi Sheikh of Sportsnet.ca reports.",
-      "long_comment": "Bittle is still working his way back from a foot fracture that has plagued him for multiple months, and he remains without a clear return timeline. He can be considered week-to-week for the time being.",
       "source": "ESPN"
     },
     {
