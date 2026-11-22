@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T16:14:57.184849+00:00",
+  "last_updated": "2026-11-22T17:04:26.361002+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -495,21 +495,6 @@
       "return_date": "2026-12-13",
       "short_comment": "Prince (knee) underwent surgery to address lingering issues and has no timeline for a return, Hunter Patterson of The Athletic reports.",
       "long_comment": "With Detroit still without a return timetable for Prince after right knee surgery, he appears set for an extended absence well beyond Friday's tilt against Toronto. Prince hasn't been a significant part of the Pistons' rotation this season, so his continued absence is unlikely to create a major fantasy ripple effect.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5037878",
-      "name": "Ugonna Onyenso",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-19T16:15Z",
-      "return_date": "2026-11-21",
-      "short_comment": "Onyenso agreed to a two-way contract with the Pistons on Thursday.",
-      "long_comment": "The No. 53 overall pick in the 2026 NBA Draft, Onyenso appears poised to see run in the G League after putting pen to paper on a two-way deal. He'll likely face an uphill battle to carve out a role in the rotation, so Detroit will presumably allow him to continue his development with Motor City.",
       "source": "ESPN"
     },
     {
