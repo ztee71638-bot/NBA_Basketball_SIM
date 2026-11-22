@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895748\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.63\\\", \\\"0.37\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Suns vs. Pelicans\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T18:38:46.334792+00:00",
+      "markets": [
+        {
+          "market_id": "6895748",
+          "market_type": "moneyline",
+          "question": "Suns vs. Pelicans",
+          "slug": "nba-phx-nop-2026-11-23",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.62\", \"0.38\"]",
+          "volume_24h": 2355.160297,
+          "liquidity": "32003.3384",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895748\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.62\\\", \\\"0.38\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Suns vs. Pelicans\"}]"
     }
   ],
-  "last_updated": "2026-11-22T17:52:31.014841+00:00"
+  "last_updated": "2026-11-22T18:38:46.334792+00:00"
 }
