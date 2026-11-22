@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-22T10:48:18.199736+00:00",
+  "generated_at": "2026-11-22T13:54:46.302316+00:00",
   "status": "warning",
   "team_history": {
-    "last_updated": "2026-11-22T10:47:42.851818+00:00",
+    "last_updated": "2026-11-22T13:54:13.251219+00:00",
     "age_hours": 0.01,
     "team_count": 30,
     "seasons": {
@@ -12,9 +12,9 @@
         "team_game_rows": 2774,
         "unique_game_ids": 1389,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 552,
-        "advanced_games_with_both_teams": 276,
-        "advanced_coverage_pct": 19.9,
+        "advanced_team_game_rows": 618,
+        "advanced_games_with_both_teams": 309,
+        "advanced_coverage_pct": 22.3,
         "min_team_games": 85,
         "max_team_games": 112
       },
@@ -24,9 +24,9 @@
         "team_game_rows": 2779,
         "unique_game_ids": 1394,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 574,
-        "advanced_games_with_both_teams": 287,
-        "advanced_coverage_pct": 20.7,
+        "advanced_team_game_rows": 646,
+        "advanced_games_with_both_teams": 323,
+        "advanced_coverage_pct": 23.2,
         "min_team_games": 86,
         "max_team_games": 109
       },
@@ -36,9 +36,9 @@
         "team_game_rows": 2795,
         "unique_game_ids": 1399,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 512,
-        "advanced_games_with_both_teams": 256,
-        "advanced_coverage_pct": 18.3,
+        "advanced_team_game_rows": 576,
+        "advanced_games_with_both_teams": 288,
+        "advanced_coverage_pct": 20.6,
         "min_team_games": 85,
         "max_team_games": 111
       },
@@ -86,7 +86,7 @@
       2023
     ],
     "last_updated": "2026-11-22T10:04:43.999112+00:00",
-    "age_hours": 0.73,
+    "age_hours": 3.83,
     "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
@@ -150,9 +150,9 @@
     "invalid_player_stat_rows": 0
   },
   "warnings": [
-    "Season 2023: advanced box-score coverage is only 19.9% of team-game rows.",
-    "Season 2024: advanced box-score coverage is only 20.7% of team-game rows.",
-    "Season 2025: advanced box-score coverage is only 18.3% of team-game rows.",
+    "Season 2023: advanced box-score coverage is only 22.3% of team-game rows.",
+    "Season 2024: advanced box-score coverage is only 23.2% of team-game rows.",
+    "Season 2025: advanced box-score coverage is only 20.6% of team-game rows.",
     "8 player records have no game logs in any stored season."
   ],
   "errors": [],
