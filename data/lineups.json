@@ -1,5 +1,16 @@
 {
-  "last_updated": "2026-11-22T12:14:46.760641+00:00",
+  "last_updated": "2026-11-22T13:20:31.559488+00:00",
   "source": "ESPN game summaries",
-  "games": []
+  "games": [
+    {
+      "game_id": "401910029",
+      "date": "2026-11-22T20:30Z",
+      "home_team": "ATL",
+      "away_team": "DET",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    }
+  ]
 }
