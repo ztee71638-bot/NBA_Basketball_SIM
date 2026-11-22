@@ -1,4 +1,5 @@
 name: Refresh NBA player history
+# Post-merge player archive refresh: run on workflow changes to rebuild the current main-branch player archive.
 
 on:
   schedule:
