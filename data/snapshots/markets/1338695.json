@@ -68,7 +68,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840919\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.555\\\", \\\"0.445\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Hawks\\\"]\",\"question\":\"Pistons vs. Hawks\"},{\"market_id\":\"7240967\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pistons vs. Hawks: O/U 227.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T00:20:38.888368+00:00",
+      "markets": [
+        {
+          "market_id": "6840919",
+          "market_type": "moneyline",
+          "question": "Pistons vs. Hawks",
+          "slug": "nba-det-atl-2026-11-22",
+          "outcomes": "[\"Pistons\", \"Hawks\"]",
+          "outcome_prices": "[\"0.55\", \"0.45\"]",
+          "volume_24h": 2446.817967,
+          "liquidity": "37944.0238",
+          "end_date": "2026-11-22T20:30:00Z",
+          "url": "https://polymarket.com/event/nba-det-atl-2026-11-22"
+        },
+        {
+          "market_id": "7240967",
+          "market_type": "total",
+          "question": "Pistons vs. Hawks: O/U 227.5",
+          "slug": "nba-det-atl-2026-11-22-total-227pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 204.49142899999998,
+          "liquidity": "4659.5754",
+          "end_date": "2026-11-22T20:30:00Z",
+          "url": "https://polymarket.com/event/nba-det-atl-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840919\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.55\\\", \\\"0.45\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Hawks\\\"]\",\"question\":\"Pistons vs. Hawks\"},{\"market_id\":\"7240967\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pistons vs. Hawks: O/U 227.5\"}]"
     }
   ],
-  "last_updated": "2026-11-21T23:32:14.289534+00:00"
+  "last_updated": "2026-11-22T00:20:38.888368+00:00"
 }

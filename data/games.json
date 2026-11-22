@@ -1,157 +1,7 @@
 {
-  "last_updated": "2026-11-21T23:32:14.270996+00:00",
+  "last_updated": "2026-11-22T00:20:38.870444+00:00",
   "source": "ESPN public scoreboard",
   "games": [
-    {
-      "id": "401910023",
-      "date": "2026-11-21T18:00Z",
-      "name": "Milwaukee Bucks at Philadelphia 76ers",
-      "short_name": "MIL @ PHI",
-      "status": "STATUS_FINAL",
-      "status_detail": "Final",
-      "completed": true,
-      "home": {
-        "id": "20",
-        "name": "Philadelphia 76ers",
-        "abbreviation": "PHI",
-        "score": "132",
-        "winner": true
-      },
-      "away": {
-        "id": "15",
-        "name": "Milwaukee Bucks",
-        "abbreviation": "MIL",
-        "score": "129",
-        "winner": false
-      },
-      "venue": "Xfinity Mobile Arena",
-      "source": "ESPN"
-    },
-    {
-      "id": "401910024",
-      "date": "2026-11-22T00:30Z",
-      "name": "Portland Trail Blazers at New York Knicks",
-      "short_name": "POR @ NY",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/21 - 7:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "18",
-        "name": "New York Knicks",
-        "abbreviation": "NY",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "22",
-        "name": "Portland Trail Blazers",
-        "abbreviation": "POR",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Madison Square Garden",
-      "source": "ESPN"
-    },
-    {
-      "id": "401910025",
-      "date": "2026-11-22T01:00Z",
-      "name": "LA Clippers at Dallas Mavericks",
-      "short_name": "LAC @ DAL",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/21 - 8:00 PM EST",
-      "completed": false,
-      "home": {
-        "id": "6",
-        "name": "Dallas Mavericks",
-        "abbreviation": "DAL",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "12",
-        "name": "LA Clippers",
-        "abbreviation": "LAC",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "American Airlines Center",
-      "source": "ESPN"
-    },
-    {
-      "id": "401910026",
-      "date": "2026-11-22T01:00Z",
-      "name": "Memphis Grizzlies at Minnesota Timberwolves",
-      "short_name": "MEM @ MIN",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/21 - 8:00 PM EST",
-      "completed": false,
-      "home": {
-        "id": "16",
-        "name": "Minnesota Timberwolves",
-        "abbreviation": "MIN",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "29",
-        "name": "Memphis Grizzlies",
-        "abbreviation": "MEM",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Target Center",
-      "source": "ESPN"
-    },
-    {
-      "id": "401910027",
-      "date": "2026-11-22T01:00Z",
-      "name": "New Orleans Pelicans at San Antonio Spurs",
-      "short_name": "NO @ SA",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/21 - 8:00 PM EST",
-      "completed": false,
-      "home": {
-        "id": "24",
-        "name": "San Antonio Spurs",
-        "abbreviation": "SA",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "3",
-        "name": "New Orleans Pelicans",
-        "abbreviation": "NO",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Frost Bank Center",
-      "source": "ESPN"
-    },
-    {
-      "id": "401910028",
-      "date": "2026-11-22T03:00Z",
-      "name": "Boston Celtics at Sacramento Kings",
-      "short_name": "BOS @ SAC",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/21 - 10:00 PM EST",
-      "completed": false,
-      "home": {
-        "id": "23",
-        "name": "Sacramento Kings",
-        "abbreviation": "SAC",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "2",
-        "name": "Boston Celtics",
-        "abbreviation": "BOS",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Golden 1 Center",
-      "source": "ESPN"
-    },
     {
       "id": "401910029",
       "date": "2026-11-22T20:30Z",
@@ -575,6 +425,81 @@
         "winner": null
       },
       "venue": "Golden 1 Center",
+      "source": "ESPN"
+    },
+    {
+      "id": "401909314",
+      "date": "2026-11-25T00:00Z",
+      "name": "Detroit Pistons at Orlando Magic",
+      "short_name": "DET @ ORL",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/24 - 7:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "19",
+        "name": "Orlando Magic",
+        "abbreviation": "ORL",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "8",
+        "name": "Detroit Pistons",
+        "abbreviation": "DET",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Kia Center",
+      "source": "ESPN"
+    },
+    {
+      "id": "401909315",
+      "date": "2026-11-25T01:00Z",
+      "name": "Boston Celtics at Washington Wizards",
+      "short_name": "BOS @ WSH",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/24 - 8:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "27",
+        "name": "Washington Wizards",
+        "abbreviation": "WSH",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "2",
+        "name": "Boston Celtics",
+        "abbreviation": "BOS",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Capital One Arena",
+      "source": "ESPN"
+    },
+    {
+      "id": "401909316",
+      "date": "2026-11-25T03:00Z",
+      "name": "Dallas Mavericks at Denver Nuggets",
+      "short_name": "DAL @ DEN",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/24 - 10:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "7",
+        "name": "Denver Nuggets",
+        "abbreviation": "DEN",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "6",
+        "name": "Dallas Mavericks",
+        "abbreviation": "DAL",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Ball Arena",
       "source": "ESPN"
     }
   ]

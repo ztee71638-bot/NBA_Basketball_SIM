@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T23:32:14.288022+00:00",
+  "last_updated": "2026-11-22T00:20:38.887172+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -225,6 +225,21 @@
       "return_date": "2026-11-25",
       "short_comment": "Schroder has been diagnosed with a left hamstring strain and will be reevaluated in two weeks, Michael Scotto of HoopsHype.com reports.",
       "long_comment": "Schroder, who missed Friday's game due to what was described as a left thigh injury, has been diagnosed with a hamstring strain. He is set to be reevaluated in two weeks, suggesting he will miss at least the next five games. Christian Anderson and Sion James could see extra minutes with Schroder sidelined.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "2595516",
+      "name": "Norman Powell",
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-22T00:06Z",
+      "return_date": "2026-11-22",
+      "short_comment": "Powell tallied 16 points (7-18 FG, 1-5 3Pt, 1-2 FT), three rebounds, two assists and one steal in 33 minutes during Friday's 98-84 loss to Washington.",
+      "long_comment": "Powell and the rest of Chicago's offense struggled Friday, as the team finished 36-for-88 (40.9 percent) from the field and 9-for-33 (27.3 percent) on three-pointers. Powell couldn't quite find the range from behind the arc for the second time in three outings, but he should be given plenty of opportunities to keep working as the Bulls' primary scoring threat.",
       "source": "ESPN"
     },
     {

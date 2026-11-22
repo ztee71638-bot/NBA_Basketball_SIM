@@ -92,7 +92,49 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840922\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Nuggets vs. Bulls\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T00:20:38.888368+00:00",
+      "markets": [
+        {
+          "market_id": "6840922",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Bulls",
+          "slug": "nba-den-chi-2026-11-22",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.765\", \"0.235\"]",
+          "volume_24h": 460.426861,
+          "liquidity": "38076.0839",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241602",
+          "market_type": "total",
+          "question": "Nuggets vs. Bulls: O/U 238.5",
+          "slug": "nba-den-chi-2026-11-22-total-238pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 1136.352223,
+          "liquidity": "755.1401",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241610",
+          "market_type": "total",
+          "question": "Nuggets vs. Bulls: O/U 236.5",
+          "slug": "nba-den-chi-2026-11-22-total-236pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.53\", \"0.47\"]",
+          "volume_24h": 733,
+          "liquidity": "2345.9951",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840922\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Nuggets vs. Bulls\"},{\"market_id\":\"7241602\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 238.5\"},{\"market_id\":\"7241610\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.53\\\", \\\"0.47\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 236.5\"}]"
     }
   ],
-  "last_updated": "2026-11-21T19:54:29.304999+00:00"
+  "last_updated": "2026-11-22T00:20:38.888368+00:00"
 }
