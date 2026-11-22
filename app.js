@@ -384,7 +384,7 @@ function readPredictionLog(){
 }
 function writePredictionLog(records){
   try{localStorage.setItem(PREDICTION_STORAGE_KEY,JSON.stringify(records));return true;}
-  catch(e){$("prediction-tracker-status").textContent="Could not save locally. Browser storage may be full or disabled; export a backup and check browser settings.";return false;}
+  catch(e){const status=$("prediction-tracker-status");if(status)status.textContent="Could not save locally. Browser storage may be full or disabled; export a backup and check browser settings.";return false;}
 }
 function saveSimulationPrediction(record){
   const records=readPredictionLog();
@@ -392,18 +392,40 @@ function saveSimulationPrediction(record){
   writePredictionLog(records);
   renderPredictionTracker();
 }
+function historicalFinalScore(record){
+  const dateKey=String(record.gameDate||"").slice(0,10);
+  if(!dateKey||!Array.isArray(teamData))return null;
+  for(const team of teamData){
+    const abbr=canonicalTeam(team.abbreviation||"");
+    if(abbr!==record.homeAbbr&&abbr!==record.awayAbbr)continue;
+    for(const season of Object.values(team.seasons||{})){
+      const row=(season.games||[]).find(item=>String(item.date||"").slice(0,10)===dateKey);
+      if(!row)continue;
+      const pf=Number(row.points_for),pa=Number(row.points_against);
+      if(!Number.isFinite(pf)||!Number.isFinite(pa)||pf<=0||pa<=0||pf===pa)continue;
+      const venue=String(row.home_away||"").toLowerCase();
+      if(venue==="home")return {homeScore:pf,awayScore:pa};
+      if(venue==="away")return {homeScore:pa,awayScore:pf};
+    }
+  }
+  return null;
+}
 function reconcilePredictionLog(){
   const records=readPredictionLog();
   let changed=false;
   records.forEach(record=>{
     if(record.source!=="simulator"||record.actualWinner||!record.gameId)return;
+    let finalScore=null;
     const finalGame=games.find(game=>String(game.id)===String(record.gameId)&&game.completed);
-    if(!finalGame)return;
-    const homeScore=Number(finalGame.home?.score),awayScore=Number(finalGame.away?.score);
-    if(!Number.isFinite(homeScore)||!Number.isFinite(awayScore)||homeScore===awayScore)return;
-    record.actualWinner=homeScore>awayScore?record.homeAbbr:record.awayAbbr;
-    record.actualHomeScore=homeScore;
-    record.actualAwayScore=awayScore;
+    if(finalGame){
+      const homeScore=Number(finalGame.home?.score),awayScore=Number(finalGame.away?.score);
+      if(Number.isFinite(homeScore)&&Number.isFinite(awayScore)&&homeScore!==awayScore)finalScore={homeScore,awayScore};
+    }
+    if(!finalScore)finalScore=historicalFinalScore(record);
+    if(!finalScore)return;
+    record.actualHomeScore=finalScore.homeScore;
+    record.actualAwayScore=finalScore.awayScore;
+    record.actualWinner=finalScore.homeScore>finalScore.awayScore?record.homeAbbr:record.awayAbbr;
     record.gradedAt=new Date().toISOString();
     changed=true;
   });
