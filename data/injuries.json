@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T19:35:24.620293+00:00",
+  "last_updated": "2026-11-22T20:29:20.675363+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -218,13 +218,13 @@
       "team": "CHI",
       "team_name": "Chicago Bulls",
       "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-22T17:24Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Claxton (illness) is questionable to play in Sunday's game against the Nuggets.",
-      "long_comment": "After missing the first eight outings of the 2026-27 campaign due to a hamstring injury, Claxton has suited up in six of the last seven games for Chicago. However, he's now dealing with an illness that will leave his status for Sunday up in the air. If Claxton doesn't play, expect Zach Collins and Noa Essengue to earn more minutes off the bench.",
+      "date": "2026-11-22T20:22Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Claxton (illness) won't play in Sunday's game against the Nuggets.",
+      "long_comment": "Claxton will miss Sunday's contest due to an illness. He started Friday's 98-94 loss to the Wizards with Jalen Smith (illness) sidelined, but the latter is expected to return versus Denver. Zach Collins and Noa Essengue should get a bump in opportunities with Claxton out.",
       "source": "ESPN"
     },
     {
@@ -450,21 +450,6 @@
       "return_date": "2026-11-24",
       "short_comment": "Okorie (oblique) is out for Sunday's game in Atlanta.",
       "long_comment": "This will be Okorie's second straight game on the inactive list due to injury. His next chance to play will come Tuesday in Orlando.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4432166",
-      "name": "Cade Cunningham",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-21T22:23Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Cunningham (knee) is probable to play Sunday in Atlanta.",
-      "long_comment": "Cunningham is dealing with some minor soreness in his right knee, but he's planning to play through it. Cunningham is averaging 25.6 points, 5.1 rebounds, 7.9 assists, 2.0 triples, 1.4 steals and 0.9 blocks per game this season.",
       "source": "ESPN"
     },
     {
@@ -731,10 +716,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-21T01:26Z",
+      "date": "2026-11-22T20:25Z",
       "return_date": "2026-11-23",
-      "short_comment": "Head coach JJ Redick said he expects Reaves (heel) to return for Monday's matchup with Utah or Friday's game in San Antonio, Mark Medina of TheSportingTribune.com reports.",
-      "long_comment": "Reaves will miss his fourth straight game Friday, but it sounds like he'll be back next week. Quentin Grimes and Collin Sexton will continue to pick up the slack while Reaves is out, and Luka Doncic will be operating with a hefty usage rate.",
+      "short_comment": "Reaves (heel) was a full participant in Sunday's practice, Thuc Nhi Nguyen of the Los Angeles Times reports.",
+      "long_comment": "The Lakers didn't do any live work Sunday, though this update is still encouraging. Head coach JJ Redick said Friday that Reaves is expected to return in one of the Lakers' next two games. Quentin Grimes will likely continue seeing an expanded role for as long as Reaves is out.",
       "source": "ESPN"
     },
     {

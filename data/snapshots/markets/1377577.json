@@ -380,7 +380,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008991\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.67\\\", \\\"0.33\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Pacers\\\"]\",\"question\":\"76ers vs. Pacers\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T20:29:20.677915+00:00",
+      "markets": [
+        {
+          "market_id": "7008991",
+          "market_type": "moneyline",
+          "question": "76ers vs. Pacers",
+          "slug": "nba-phi-ind-2026-11-27",
+          "outcomes": "[\"76ers\", \"Pacers\"]",
+          "outcome_prices": "[\"0.7\", \"0.3\"]",
+          "volume_24h": 26.594592,
+          "liquidity": "26668.1496",
+          "end_date": "2026-11-28T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-phi-ind-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008991\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.7\\\", \\\"0.3\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Pacers\\\"]\",\"question\":\"76ers vs. Pacers\"}]"
     }
   ],
-  "last_updated": "2026-11-22T19:35:24.621818+00:00"
+  "last_updated": "2026-11-22T20:29:20.677915+00:00"
 }
