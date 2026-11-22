@@ -12200,7 +12200,265 @@
         }
       ],
       "signature": "[{\"market_id\":\"6840922\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Nuggets vs. Bulls\"},{\"market_id\":\"7241600\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-8.5)\"},{\"market_id\":\"7241607\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-9.5)\"},{\"market_id\":\"7241613\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.555\\\", \\\"0.445\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-7.5)\"},{\"market_id\":\"7241618\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-10.5)\"},{\"market_id\":\"7241622\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-6.5)\"},{\"market_id\":\"7241626\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-11.5)\"},{\"market_id\":\"7241634\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-12.5)\"},{\"market_id\":\"7241638\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.66\\\", \\\"0.34\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-4.5)\"},{\"market_id\":\"7241650\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-14.5)\"},{\"market_id\":\"7241654\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.705\\\", \\\"0.295\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-2.5)\"},{\"market_id\":\"7241663\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.215\\\", \\\"0.785\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Bulls (-1.5)\"},{\"market_id\":\"7241667\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.175\\\", \\\"0.825\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Bulls (-3.5)\"},{\"market_id\":\"7241669\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-22.5)\"},{\"market_id\":\"7241679\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.07\\\", \\\"0.93\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Bulls (-9.5)\"},{\"market_id\":\"7241681\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.067\\\", \\\"0.933\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-28.5)\"},{\"market_id\":\"7241602\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 238.5\"},{\"market_id\":\"7241610\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 236.5\"},{\"market_id\":\"7241620\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 234.5\"},{\"market_id\":\"7241624\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 242.5\"},{\"market_id\":\"7244003\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 237.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T14:20:39.278196+00:00",
+      "markets": [
+        {
+          "market_id": "6840922",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Bulls",
+          "slug": "nba-den-chi-2026-11-22",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.775\", \"0.225\"]",
+          "volume_24h": 13652.389725,
+          "liquidity": "103142.4113",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241600",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-8.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-8pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 9781.176008,
+          "liquidity": "64268.5533",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241607",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-9.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-9pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 1879.2791519999998,
+          "liquidity": "66898.1888",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241613",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-7.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-7pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.56\", \"0.44\"]",
+          "volume_24h": 78,
+          "liquidity": "50563.4738",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241618",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-10.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-10pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": 164,
+          "liquidity": "48190.869",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241622",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-6.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-6pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.585\", \"0.415\"]",
+          "volume_24h": 183.513154,
+          "liquidity": "45816.1244",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241626",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-11.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-11pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.415\", \"0.585\"]",
+          "volume_24h": 184.02213,
+          "liquidity": "48203.81",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241634",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-12.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-12pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.385\", \"0.615\"]",
+          "volume_24h": 15.384614,
+          "liquidity": "34233.6876",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241638",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-4.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-4pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.66\", \"0.34\"]",
+          "volume_24h": 33.924241,
+          "liquidity": "32960.1736",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241650",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-14.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-14pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.325\", \"0.675\"]",
+          "volume_24h": 10,
+          "liquidity": "31538.4275",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241654",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-2.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-2pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.705\", \"0.295\"]",
+          "volume_24h": 9.78125,
+          "liquidity": "32279.1126",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241663",
+          "market_type": "spread",
+          "question": "Spread: Bulls (-1.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-home-1pt5",
+          "outcomes": "[\"Bulls\", \"Nuggets\"]",
+          "outcome_prices": "[\"0.21\", \"0.79\"]",
+          "volume_24h": 1361.47,
+          "liquidity": "29640.1721",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241667",
+          "market_type": "spread",
+          "question": "Spread: Bulls (-3.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-home-3pt5",
+          "outcomes": "[\"Bulls\", \"Nuggets\"]",
+          "outcome_prices": "[\"0.17\", \"0.83\"]",
+          "volume_24h": 101,
+          "liquidity": "22342.1194",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241669",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-22.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-22pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.125\", \"0.875\"]",
+          "volume_24h": 135,
+          "liquidity": "24283.7668",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241679",
+          "market_type": "spread",
+          "question": "Spread: Bulls (-9.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-home-9pt5",
+          "outcomes": "[\"Bulls\", \"Nuggets\"]",
+          "outcome_prices": "[\"0.075\", \"0.925\"]",
+          "volume_24h": 5,
+          "liquidity": "21722.3867",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241681",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-28.5)",
+          "slug": "nba-den-chi-2026-11-22-spread-away-28pt5",
+          "outcomes": "[\"Nuggets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.0715\", \"0.9285\"]",
+          "volume_24h": 162,
+          "liquidity": "16271.48975",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241602",
+          "market_type": "total",
+          "question": "Nuggets vs. Bulls: O/U 238.5",
+          "slug": "nba-den-chi-2026-11-22-total-238pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 1204.934864,
+          "liquidity": "45402.8068",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241610",
+          "market_type": "total",
+          "question": "Nuggets vs. Bulls: O/U 236.5",
+          "slug": "nba-den-chi-2026-11-22-total-236pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.525\", \"0.475\"]",
+          "volume_24h": 742.433963,
+          "liquidity": "46323.1185",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241620",
+          "market_type": "total",
+          "question": "Nuggets vs. Bulls: O/U 234.5",
+          "slug": "nba-den-chi-2026-11-22-total-234pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.575\", \"0.425\"]",
+          "volume_24h": 160.362069,
+          "liquidity": "43031.566",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7241624",
+          "market_type": "total",
+          "question": "Nuggets vs. Bulls: O/U 242.5",
+          "slug": "nba-den-chi-2026-11-22-total-242pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.405\", \"0.595\"]",
+          "volume_24h": 7,
+          "liquidity": "34334.5855",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        },
+        {
+          "market_id": "7244003",
+          "market_type": "total",
+          "question": "Nuggets vs. Bulls: O/U 237.5",
+          "slug": "nba-den-chi-2026-11-22-total-237pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 2778.780041,
+          "liquidity": "54999.3418",
+          "end_date": "2026-11-23T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-chi-2026-11-22"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6840922\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Nuggets vs. Bulls\"},{\"market_id\":\"7241600\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-8.5)\"},{\"market_id\":\"7241607\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-9.5)\"},{\"market_id\":\"7241613\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.56\\\", \\\"0.44\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-7.5)\"},{\"market_id\":\"7241618\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-10.5)\"},{\"market_id\":\"7241622\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-6.5)\"},{\"market_id\":\"7241626\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-11.5)\"},{\"market_id\":\"7241634\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-12.5)\"},{\"market_id\":\"7241638\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.66\\\", \\\"0.34\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-4.5)\"},{\"market_id\":\"7241650\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.325\\\", \\\"0.675\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-14.5)\"},{\"market_id\":\"7241654\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.705\\\", \\\"0.295\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-2.5)\"},{\"market_id\":\"7241663\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Bulls (-1.5)\"},{\"market_id\":\"7241667\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.17\\\", \\\"0.83\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Bulls (-3.5)\"},{\"market_id\":\"7241669\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.125\\\", \\\"0.875\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-22.5)\"},{\"market_id\":\"7241679\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.075\\\", \\\"0.925\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Bulls (-9.5)\"},{\"market_id\":\"7241681\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.0715\\\", \\\"0.9285\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Nuggets (-28.5)\"},{\"market_id\":\"7241602\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 238.5\"},{\"market_id\":\"7241610\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 236.5\"},{\"market_id\":\"7241620\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 234.5\"},{\"market_id\":\"7241624\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 242.5\"},{\"market_id\":\"7244003\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Bulls: O/U 237.5\"}]"
     }
   ],
-  "last_updated": "2026-11-22T13:20:31.559577+00:00"
+  "last_updated": "2026-11-22T14:20:39.278196+00:00"
 }

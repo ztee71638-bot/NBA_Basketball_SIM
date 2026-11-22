@@ -128,7 +128,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895761\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.885\\\", \\\"0.115\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spurs vs. Kings\"}]"
+    },
+    {
+      "captured_at": "2026-11-22T14:20:39.278196+00:00",
+      "markets": [
+        {
+          "market_id": "6895761",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Kings",
+          "slug": "nba-sas-sac-2026-11-23",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.88\", \"0.12\"]",
+          "volume_24h": 3413.2489279999995,
+          "liquidity": "40834.906",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895761\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.88\\\", \\\"0.12\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spurs vs. Kings\"}]"
     }
   ],
-  "last_updated": "2026-11-22T13:20:31.559577+00:00"
+  "last_updated": "2026-11-22T14:20:39.278196+00:00"
 }
