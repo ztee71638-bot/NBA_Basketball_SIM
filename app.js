@@ -7,6 +7,7 @@ let marketRosterLoading = null;
 let playerImpactData = [];
 let winnerCalibration = null;
 let opponentModelCalibration = null;
+let opponentModelHistoryCache = null;
 let playerImpactLoaded = false;
 let playerImpactLoading = null;
 let playersLoaded = false;
@@ -359,18 +360,23 @@ function opponentWeightedStats(rows,key){
 function opponentAdjustedMatchup(game){
   const cutoff=new Date(game?.date).getTime();
   if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()<0||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
-  const nbaCodes=new Set(teamData.map(team=>canonicalTeam(team.abbreviation||"")).filter(Boolean));
-  const allRows=[];
-  teamData.forEach(team=>{
-    const abbreviation=canonicalTeam(team.abbreviation||"");
-    Object.entries(team.seasons||{}).forEach(([season,data])=>(data.games||[]).forEach(row=>{
-      const date=new Date(row.date).getTime(),opponent=canonicalTeam(row.opponent||"");
-      const pf=Number(row.points_for),pa=Number(row.points_against);
-      if(!row.game_id||!Number.isFinite(date)||date>=cutoff||!nbaCodes.has(opponent)
-        ||!Number.isFinite(pf)||!Number.isFinite(pa)||pf<=0||pa<=0)return;
-      allRows.push({team:abbreviation,opponent,season:String(season),date,points_for:pf,points_against:pa});
-    }));
-  });
+  const updatedAt=teamUpdatedAt.getTime();
+  if(!opponentModelHistoryCache||opponentModelHistoryCache.updatedAt!==updatedAt){
+    const nbaCodes=new Set(teamData.map(team=>canonicalTeam(team.abbreviation||"")).filter(Boolean));
+    const rows=[];
+    teamData.forEach(team=>{
+      const abbreviation=canonicalTeam(team.abbreviation||"");
+      Object.entries(team.seasons||{}).forEach(([season,data])=>(data.games||[]).forEach(row=>{
+        const date=new Date(row.date).getTime(),opponent=canonicalTeam(row.opponent||"");
+        const pf=Number(row.points_for),pa=Number(row.points_against);
+        if(!row.game_id||!Number.isFinite(date)||!nbaCodes.has(opponent)
+          ||!Number.isFinite(pf)||!Number.isFinite(pa)||pf<=0||pa<=0)return;
+        rows.push({team:abbreviation,opponent,season:String(season),date,points_for:pf,points_against:pa});
+      }));
+    });
+    opponentModelHistoryCache={updatedAt,rows};
+  }
+  const allRows=opponentModelHistoryCache.rows.filter(row=>row.date<cutoff);
   if(allRows.length<60)return null;
   const homeCode=canonicalTeam(game.home?.abbreviation||""),awayCode=canonicalTeam(game.away?.abbreviation||"");
   const homeRows=allRows.filter(row=>row.team===homeCode).sort((a,b)=>a.date-b.date);
