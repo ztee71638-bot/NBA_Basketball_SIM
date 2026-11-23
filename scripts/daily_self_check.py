@@ -220,7 +220,7 @@ def run(ledger_path: Path = LEDGER, data_dir: Path = DATA, scoreboard_fetcher=fe
         ledger["rolling"] = rolling_summary
         ledger["last_run"] = last_run
         ledger_path.parent.mkdir(parents=True, exist_ok=True)
-        ledger_path.write_text(json.dumps(ledger, indent=2) + "\\n", encoding="utf-8")
+        ledger_path.write_text(json.dumps(ledger, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({
         "last_run": last_run,
         "ledger_changed": ledger_changed,
