@@ -24,24 +24,19 @@ OUTPUT = ROOT / "data" / "supplemental" / "boxscorelab"
 BASE_URL = "https://boxscorelab.com/downloads"
 TIMEOUT = 30
 DATASETS = {
-    "2025-26": {
-        "team_games": "2025-26-team-game-results.csv",
-        "player_totals": "2025-26-player-season-totals.csv",
-        "team_standings": "2025-26-team-standings.csv",
-    },
-    "2026-27": {
-        "team_games": "2026-27-team-game-results.csv",
-        "player_totals": "2026-27-player-season-totals.csv",
-        "team_standings": "2026-27-team-standings.csv",
-    },
+    season: {
+        "team_games": f"{season}-team-game-results.csv",
+        "player_totals": f"{season}-player-season-totals.csv",
+        "team_standings": f"{season}-team-standings.csv",
+    }
+    for season in ("2022-23", "2023-24", "2024-25", "2025-26", "2026-27")
 }
 MINIMUM_ROWS = {
-    ("2025-26", "team_games"): 2000,
+    **{(season, "team_games"): 2000 for season in ("2022-23", "2023-24", "2024-25", "2025-26")},
     ("2026-27", "team_games"): 100,
-    ("2025-26", "player_totals"): 250,
+    **{(season, "player_totals"): 250 for season in ("2022-23", "2023-24", "2024-25", "2025-26")},
     ("2026-27", "player_totals"): 100,
-    ("2025-26", "team_standings"): 30,
-    ("2026-27", "team_standings"): 30,
+    **{(season, "team_standings"): 30 for season in ("2022-23", "2023-24", "2024-25", "2025-26", "2026-27")},
 }
 
 
@@ -64,9 +59,9 @@ def fetch_csv(url: str) -> str:
                 time.sleep(min(float(response.headers.get("Retry-After", 2 ** attempt)), 30))
                 continue
             response.raise_for_status()
-            if not response.text.strip():
+            if not response.content.strip():
                 raise RuntimeError(f"Empty CSV response from {url}")
-            return response.text.lstrip("\ufeff")
+            return decode_csv_bytes(response.content)
         except requests.RequestException as exc:
             last_error = exc
             status = getattr(getattr(exc, "response", None), "status_code", None)
@@ -166,7 +161,7 @@ def main(output_dir: Path = OUTPUT) -> None:
             parsed = parse_and_validate_csv(fetch_csv(url), season, kind)
             parsed.update({
                 "source_url": url,
-                "provider_data_through": "2026-11-21",
+                "provider_data_through": "nightly provider build",
                 "retrieved_at": retrieved_at,
                 "license": "CC BY 4.0",
                 "attribution": "BoxScore Lab (boxscorelab.com); underlying source stated as NBA Stats",

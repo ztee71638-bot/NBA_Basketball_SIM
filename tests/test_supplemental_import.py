@@ -54,3 +54,11 @@ def test_utf8_csv_decoding_preserves_accented_player_names():
     decoded = module.decode_csv_bytes(raw)
     assert "Luka Dončić" in decoded
     assert "Nikola Jokić" in decoded
+
+
+def test_importer_covers_all_five_published_seasons():
+    assert set(module.DATASETS) == {"2022-23", "2023-24", "2024-25", "2025-26", "2026-27"}
+    for season in ("2022-23", "2023-24", "2024-25"):
+        assert module.MINIMUM_ROWS[(season, "team_games")] == 2000
+        assert module.MINIMUM_ROWS[(season, "player_totals")] == 250
+        assert module.MINIMUM_ROWS[(season, "team_standings")] == 30
