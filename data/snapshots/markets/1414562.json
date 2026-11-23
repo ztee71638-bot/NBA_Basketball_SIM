@@ -92,7 +92,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7136781\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.295\\\", \\\"0.705\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Pistons\\\"]\",\"question\":\"Grizzlies vs. Pistons\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T03:10:42.664590+00:00",
+      "markets": [
+        {
+          "market_id": "7136781",
+          "market_type": "moneyline",
+          "question": "Grizzlies vs. Pistons",
+          "slug": "nba-mem-det-2026-12-02",
+          "outcomes": "[\"Grizzlies\", \"Pistons\"]",
+          "outcome_prices": "[\"0.29\", \"0.71\"]",
+          "volume_24h": null,
+          "liquidity": "789.9578",
+          "end_date": "2026-12-03T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-mem-det-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136781\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Pistons\\\"]\",\"question\":\"Grizzlies vs. Pistons\"}]"
     }
   ],
-  "last_updated": "2026-11-23T02:11:21.826246+00:00"
+  "last_updated": "2026-11-23T03:10:42.664590+00:00"
 }
