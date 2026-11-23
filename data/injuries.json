@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T03:10:42.663271+00:00",
+  "last_updated": "2026-11-23T04:22:34.727558+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -638,10 +638,10 @@
       "team": "MEM",
       "team_name": "Memphis Grizzlies",
       "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-23T01:14Z",
+      "date": "2026-11-23T04:04Z",
       "return_date": "2026-12-12",
       "short_comment": "Grant was diagnosed with a grade 1 left calf strain and will be re-evaluated in two weeks.",
       "long_comment": "Grant suffered the injury during Thursday's 126-98 victory over Golden State. He will now be sidelined for at least two weeks, with the team expected to provide an update on his condition at that time. While Grant is on the shelf, Taylor Hendricks and Kris Murray are candidates for more minutes.",
