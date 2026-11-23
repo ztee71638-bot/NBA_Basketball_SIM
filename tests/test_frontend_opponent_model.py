@@ -144,8 +144,8 @@ def test_live_advanced_model_matches_prequential_backtest_projection():
     away_rows = sorted(by_code["BOS"], key=lambda row: row["date"])
     home_rest = current_rest_days(home_rows, cutoff)
     away_rest = current_rest_days(away_rows, cutoff)
-    home_travel = current_travel_miles(home_rows, "NYK", "BOS", "home", cutoff, {"teams": arenas})
-    away_travel = current_travel_miles(away_rows, "BOS", "NYK", "away", cutoff, {"teams": arenas})
+    home_travel = current_travel_miles(home_rows, "NYK", "BOS", "home", cutoff, arenas)
+    away_travel = current_travel_miles(away_rows, "BOS", "NYK", "away", cutoff, arenas)
     expected = predict_advanced(
         home_rows, away_rows, league_pace, league_off, league_def,
         home_rest_days=home_rest, away_rest_days=away_rest,
