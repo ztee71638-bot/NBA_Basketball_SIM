@@ -359,7 +359,7 @@ function opponentWeightedStats(rows,key){
 }
 function opponentAdjustedMatchup(game){
   const cutoff=new Date(game?.date).getTime();
-  if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()<0||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
+  if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime() < -15*60*1000||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
   const updatedAt=teamUpdatedAt.getTime();
   if(!opponentModelHistoryCache||opponentModelHistoryCache.updatedAt!==updatedAt){
     const nbaCodes=new Set(teamData.map(team=>canonicalTeam(team.abbreviation||"")).filter(Boolean));
@@ -1193,7 +1193,7 @@ async function loadModelMetrics() {
     const opponentCalibration=data.opponent_model_calibration;
     const metricsGeneratedAt=new Date(data.generated_at||0).getTime();
     const metricsAge=Date.now()-metricsGeneratedAt;
-    const metricsFresh=Number.isFinite(metricsGeneratedAt)&&metricsAge>=0&&metricsAge<=48*60*60*1000;
+    const metricsFresh=Number.isFinite(metricsGeneratedAt)&&metricsAge>=-15*60*1000&&metricsAge<=48*60*60*1000;
     opponentModelCalibration=metricsFresh&&opponentCalibration?.live_enabled===true
       &&opponentCalibration?.enabled===true
       &&opponentCalibration?.training_model==="opponent_weighted_score_v1"
