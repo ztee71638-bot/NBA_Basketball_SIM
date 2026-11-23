@@ -744,6 +744,13 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "opponent_model_calibrated_confidence_selection": confidence_selection_report(
             model_calibrated_probabilities, model_outcomes
         ),
+        "opponent_model_calibrated_confidence_recent_windows": {
+            str(window): confidence_selection_report(
+                model_calibrated_probabilities[-window:], model_outcomes[-window:]
+            )
+            for window in (100, 250, 500)
+            if len(model_calibrated_probabilities) >= window
+        },
         "baseline_brier_score": round(mean(baseline_briers), 4),
         "baseline_log_loss": binary_log_loss(baseline_probabilities, baseline_outcomes),
         "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
