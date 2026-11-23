@@ -1131,6 +1131,12 @@ async function loadModelMetrics() {
     const gatedRecentRows=Object.entries(data.confidence_selection_recent_windows||{}).sort((a,b)=>Number(a[0])-Number(b[0])).map(([window,rows])=>
       '<tr><td>Last '+escapeHtml(window)+'</td><td>'+rows.map(row=>Math.round(Number(row.minimum_confidence)*100)+'%+: '+Number(row.games)+' games / '+(row.accuracy==null?'n/a':(Number(row.accuracy)*100).toFixed(1)+'%')).join('<br>')+'</td></tr>'
     ).join("");
+    const modelGatedRows=(data.opponent_adjusted_model_confidence_selection||[]).map(row=>
+      '<tr><td>'+Math.round(Number(row.minimum_confidence)*100)+'%+</td><td>'+Number(row.games).toLocaleString()+'</td><td>'+(Number(row.coverage)*100).toFixed(1)+'%</td><td>'+(row.accuracy==null?'n/a':(Number(row.accuracy)*100).toFixed(1)+'%')+'</td><td>'+(row.brier_score==null?'n/a':Number(row.brier_score).toFixed(3))+'</td><td>'+(row.log_loss==null?'n/a':Number(row.log_loss).toFixed(3))+'</td></tr>'
+    ).join("");
+    const modelGatedRecentRows=Object.entries(data.opponent_adjusted_model_confidence_recent_windows||{}).sort((a,b)=>Number(a[0])-Number(b[0])).map(([window,rows])=>
+      '<tr><td>Last '+escapeHtml(window)+'</td><td>'+rows.map(row=>Math.round(Number(row.minimum_confidence)*100)+'%+: '+Number(row.games)+' games / '+(row.accuracy==null?'n/a':(Number(row.accuracy)*100).toFixed(1)+'%')).join('<br>')+'</td></tr>'
+    ).join("");
     const recentRows=Object.entries(data.recent_windows||{}).sort((a,b)=>Number(a[0])-Number(b[0])).map(([window,row])=>
       '<tr><td>Last '+escapeHtml(window)+'</td><td>'+Number(row.games).toLocaleString()+'</td><td>'+Number(row.model_score_mae).toFixed(2)+'</td><td>'+Number(row.baseline_score_mae).toFixed(2)+'</td><td>'+(Number(row.model_winner_accuracy)*100).toFixed(1)+'%</td><td>'+(Number(row.baseline_winner_accuracy)*100).toFixed(1)+'%</td><td>'+Number(row.model_brier_score).toFixed(3)+'</td><td>'+Number(row.baseline_brier_score).toFixed(3)+'</td><td>'+(row.model_log_loss==null?'n/a':Number(row.model_log_loss).toFixed(3))+'</td><td>'+(row.baseline_log_loss==null?'n/a':Number(row.baseline_log_loss).toFixed(3))+'</td></tr>'
     ).join("");
@@ -1148,6 +1154,8 @@ async function loadModelMetrics() {
         '<strong>Production baseline confidence buckets</strong><div style="overflow-x:auto"><table><thead><tr><th>Confidence</th><th>Games</th><th>Avg. confidence</th><th>Observed accuracy</th><th>Brier</th></tr></thead><tbody>'+confidenceRows+'</tbody></table></div>'+
         (gatedConfidenceRows?'<strong>Confidence-gated historical results</strong><div style="overflow-x:auto"><table><thead><tr><th>Minimum confidence</th><th>Games selected</th><th>Coverage</th><th>Observed accuracy</th><th>Brier</th><th>Log loss</th></tr></thead><tbody>'+gatedConfidenceRows+'</tbody></table></div>':'')+
         (gatedRecentRows?'<strong>Confidence gate · recent windows</strong><div style="overflow-x:auto"><table><thead><tr><th>Window</th><th>Selected hit rates</th></tr></thead><tbody>'+gatedRecentRows+'</tbody></table></div>':'')+
+        (modelGatedRows?'<strong>Opponent-adjusted model · confidence gates</strong><div style="overflow-x:auto"><table><thead><tr><th>Minimum confidence</th><th>Games selected</th><th>Coverage</th><th>Observed accuracy</th><th>Brier</th><th>Log loss</th></tr></thead><tbody>'+modelGatedRows+'</tbody></table></div>':'')+
+        (modelGatedRecentRows?'<strong>Opponent-adjusted model · recent confidence gates</strong><div style="overflow-x:auto"><table><thead><tr><th>Window</th><th>Selected hit rates</th></tr></thead><tbody>'+modelGatedRecentRows+'</tbody></table></div>':'')+
         '<p class="fine-print">Confidence gates are a selective historical analysis, not a change to the prediction model or a guarantee. Coverage shows how many games are retained; thresholds must be evaluated on future unseen games before being used as a live betting filter. Brier and log loss assess probability quality.</p>'
       : "";
     root.innerHTML='<strong>Walk-forward validation · '+Number(data.games_tested).toLocaleString()+' games</strong>'+
