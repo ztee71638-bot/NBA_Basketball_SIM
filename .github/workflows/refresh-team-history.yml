@@ -41,12 +41,16 @@ jobs:
         env:
           EVENT_PATH: ${{ github.event_path }}
         run: |
-          if jq -e '[.commits[]? | (.added[]?, .modified[]?, .removed[]?)] | any(test("^(scripts/refresh_team_history.py|tests/test_team_history.py)$"))' "$EVENT_PATH" >/dev/null; then
+          # Merge/squash pushes can expose changed files on head_commit even when
+          # the commits array is empty or truncated. Inspect both representations.
+          CHANGED_FILES="$(jq -r '([.commits[]? | (.added[]?, .modified[]?, .removed[]?)] + [.head_commit? | (.added[]?, .modified[]?, .removed[]?)] | .[])' "$EVENT_PATH" | sort -u)"
+          echo "$CHANGED_FILES"
+          if grep -Eq '^(scripts/refresh_team_history.py|tests/test_team_history.py)$' <<< "$CHANGED_FILES"; then
             echo "refresh=true" >> "$GITHUB_OUTPUT"
           else
             echo "refresh=false" >> "$GITHUB_OUTPUT"
           fi
-          if jq -e '[.commits[]? | (.added[]?, .modified[]?, .removed[]?)] | any(test("^(scripts/refresh_team_history.py|scripts/import_supplemental_nba_stats.py|scripts/reconcile_supplemental_nba_stats.py|tests/test_team_history.py|tests/test_supplemental_import.py|tests/test_supplemental_reconcile.py)$"))' "$EVENT_PATH" >/dev/null; then
+          if grep -Eq '^(scripts/refresh_team_history.py|scripts/import_supplemental_nba_stats.py|scripts/reconcile_supplemental_nba_stats.py|tests/test_team_history.py|tests/test_supplemental_import.py|tests/test_supplemental_reconcile.py|.github/workflows/refresh-team-history.yml)$' <<< "$CHANGED_FILES"; then
             echo "supplemental=true" >> "$GITHUB_OUTPUT"
           else
             echo "supplemental=false" >> "$GITHUB_OUTPUT"
