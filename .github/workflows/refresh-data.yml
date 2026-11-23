@@ -41,7 +41,7 @@ jobs:
         run: python scripts/refresh_data.py
       - name: Refresh data quality audit
         if: github.event_name != 'pull_request'
-        run: python scripts/audit_data_quality.py
+        run: python scripts/audit_data_quality.py --output data/data_quality.json
       - name: Commit changed snapshots
         if: github.event_name != 'pull_request'
         run: |
