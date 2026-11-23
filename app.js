@@ -527,7 +527,7 @@ function reconcilePredictionLog(){
   const records=readPredictionLog();
   let changed=false;
   records.forEach(record=>{
-    if(!["simulator","opponent-model"].includes(record.source)||record.actualWinner||!record.gameId)return;
+    if(!["simulator","opponent-model","advanced-model"].includes(record.source)||record.actualWinner||!record.gameId)return;
     let finalScore=null;
     const finalGame=games.find(game=>String(game.id)===String(record.gameId)&&game.completed);
     if(finalGame){
@@ -551,6 +551,10 @@ function renderPredictionTracker(){
   const records=readPredictionLog().sort((a,b)=>String(b.createdAt||"").localeCompare(String(a.createdAt||"")));
   const modelRecords=records.filter(r=>r.source==="simulator");
   const opponentRecords=records.filter(r=>r.source==="opponent-model");
+  const advancedRecords=records.filter(r=>r.source==="advanced-model");
+  const advancedGraded=advancedRecords.filter(r=>r.pregame===true&&r.actualWinner);
+  const advancedCorrect=advancedGraded.filter(r=>r.predictedWinner===r.actualWinner).length;
+  const advancedPct=advancedGraded.length?(100*advancedCorrect/advancedGraded.length).toFixed(1)+"%":"—";
   const opponentGraded=opponentRecords.filter(r=>r.pregame===true&&r.actualWinner);
   const opponentCorrect=opponentGraded.filter(r=>r.predictedWinner===r.actualWinner).length;
   const opponentPct=opponentGraded.length?(100*opponentCorrect/opponentGraded.length).toFixed(1)+"%":"—";
@@ -570,7 +574,7 @@ function renderPredictionTracker(){
         ' · '+escapeHtml(String(r.actualHomeScore??""))+'–'+escapeHtml(String(r.actualAwayScore??""))
       :(r.pregame===false?'<span class="tracker-live">POST-TIP · excluded</span>':'<span class="tracker-pending">PENDING</span>');
     const probability=Number.isFinite(r.homeProbability)?(r.homeProbability*100).toFixed(1)+"% / "+((1-r.homeProbability)*100).toFixed(1)+"%":"Not recorded";
-    const source=r.source==="reported"?"User-reported session":r.source==="opponent-model"?"Opponent-adjusted calibrated model":r.pregame===true?"Pregame simulation":"Post-tip simulation";
+    const source=r.source==="reported"?"User-reported session":r.source==="opponent-model"?"Opponent-adjusted calibrated model":r.source==="advanced-model"?"Calibrated advanced pace / efficiency model":r.pregame===true?"Pregame simulation":"Post-tip simulation";
     return '<tr><td>'+escapeHtml(date)+'</td><td>'+away+' @ '+home+'</td><td>'+predicted+'</td><td>'+escapeHtml(probability)+'</td><td>'+result+'</td><td>'+source+'</td></tr>';
   }).join("");
   root.innerHTML=
@@ -581,7 +585,8 @@ function renderPredictionTracker(){
       '<div class="metric"><small>Post-tip runs excluded</small><b>'+postTip+'</b></div>'+
     '</div>'+
     '<div class="result-grid tracker-metrics"><div class="metric"><small>Opponent-model verified picks</small><b>'+opponentGraded.length+'</b></div><div class="metric"><small>Opponent-model accuracy</small><b>'+opponentPct+'</b></div><div class="metric"><small>Opponent-model pending</small><b>'+opponentRecords.filter(r=>!r.actualWinner).length+'</b></div><div class="metric"><small>Opponent-model post-tip</small><b>'+opponentRecords.filter(r=>r.pregame===false).length+'</b></div></div>'+
-    '<p class="fine-print">Opponent-adjusted calibrated predictions are tracked separately from the original Monte Carlo simulator; their records are never combined. Only pregame picks matched to final scores count toward each model\'s accuracy. This tracker is stored in this browser/device, not synced to a server.</p>'+
+    '<div class="result-grid tracker-metrics"><div class="metric"><small>Advanced-model verified picks</small><b>'+advancedGraded.length+'</b></div><div class="metric"><small>Advanced-model accuracy</small><b>'+advancedPct+'</b></div><div class="metric"><small>Advanced-model pending</small><b>'+advancedRecords.filter(r=>!r.actualWinner).length+'</b></div><div class="metric"><small>Advanced-model post-tip</small><b>'+advancedRecords.filter(r=>r.pregame===false).length+'</b></div></div>'+
+    '<p class="fine-print">The baseline Monte Carlo, opponent-adjusted, and calibrated advanced-model predictions are tracked separately; their records are never combined. Only pregame picks matched to final scores count toward each model\'s accuracy. This tracker is stored in this browser/device, not synced to a server.</p>'+
     '<div class="tracker-reported"><strong>Earlier session reported by you:</strong> '+reported.correct+'/'+reported.total+' correct (83.3%) on Nov 21, 2026. This is kept separate because the original six simulation outputs were not saved and cannot be independently verified.</div>'+
     '<div class="tracker-table-wrap"><table><thead><tr><th>Saved</th><th>Matchup</th><th>Pick</th><th>Home / away chance</th><th>Grade</th><th>Record type</th></tr></thead><tbody>'+
     (rows||'<tr><td colspan="6">No saved simulations yet. Run a game simulation to start building your record.</td></tr>')+
