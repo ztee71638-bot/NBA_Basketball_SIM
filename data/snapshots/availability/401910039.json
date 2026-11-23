@@ -394,7 +394,187 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-23T18:53:53.692472+00:00",
+      "minutes_to_tipoff": 336.1,
+      "injuries": [
+        {
+          "athlete_id": "4395625",
+          "name": "RJ Barrett",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-19T21:13Z",
+          "return_date": "2026-12-13",
+          "short_comment": "Barrett has been diagnosed with a right hamstring strain and will be re-evaluated in two weeks, Brett Siegel of ClutchPoints.com reports.",
+          "long_comment": "Based on his re-evaluation timeline, Barrett likely won't return to game action until mid-December at the earliest. Jamison Battle, Allen Graves and Jamal Shead are candidates for increased playing time in Barrett's absence, especially while Kawhi Leonard (knee) is also sidelined.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4432586",
+          "name": "Nate Bittle",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-22T21:13Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
+          "long_comment": "Bittle continues to work his way back from a fractured right foot, as he's yet to make his 2026-27 season debut. He remains week-to-week until Toronto provides a definitive update.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4432737",
+          "name": "Jaden Bradley",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "G",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Right",
+          "date": "2026-11-23T17:37Z",
+          "return_date": "2026-11-23",
+          "short_comment": "Bradley is questionable for Monday's game against the Bucks due to an ankle sprain, Blake Murphy of Sportsnet.ca reports.",
+          "long_comment": "Bradley was recalled from the G League on Sunday but may not be available for the parent club Monday. However, the rookie second-rounder's potential absence wouldn't significantly impact the rotation.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5093267",
+          "name": "Collin Murray-Boyles",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": null,
+          "date": "2026-11-22T21:15Z",
+          "return_date": "2026-11-23",
+          "short_comment": "Murray-Boyles (concussion) is listed as probable for Monday's game against Milwaukee, Blake Murphy of Sportsnet.ca reports.",
+          "long_comment": "Murray-Boyles exited Wednesday's game versus the Wizards and didn't suit up for Friday's 105-102 win over the Pistons. It appears a one-game absence will be all that is needed for the 21-year-old, though it's unclear if he will reclaim his spot in the starting lineup over Allen Graves.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "6450",
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-20T20:42Z",
+          "return_date": "2026-12-03",
+          "short_comment": "Leonard (knee) could return in the next few weeks, per Shams Charania of ESPN.",
+          "long_comment": "This was the expectation after the Raptors ruled out the star forward Tuesday for at least one more week. Collin Murray-Boyles should continue to handle a larger role once he passes the concussion protocol, and Ja'Kobe Walter should remain a starter for the time being.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910039",
+        "date": "2026-11-24T00:30Z",
+        "home_team": "TOR",
+        "away_team": "MIL",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "4395625",
+            "name": "RJ Barrett",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-19T21:13Z",
+            "return_date": "2026-12-13",
+            "short_comment": "Barrett has been diagnosed with a right hamstring strain and will be re-evaluated in two weeks, Brett Siegel of ClutchPoints.com reports.",
+            "long_comment": "Based on his re-evaluation timeline, Barrett likely won't return to game action until mid-December at the earliest. Jamison Battle, Allen Graves and Jamal Shead are candidates for increased playing time in Barrett's absence, especially while Kawhi Leonard (knee) is also sidelined.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4432586",
+            "name": "Nate Bittle",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-22T21:13Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
+            "long_comment": "Bittle continues to work his way back from a fractured right foot, as he's yet to make his 2026-27 season debut. He remains week-to-week until Toronto provides a definitive update.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4432737",
+            "name": "Jaden Bradley",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "G",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Right",
+            "date": "2026-11-23T17:37Z",
+            "return_date": "2026-11-23",
+            "short_comment": "Bradley is questionable for Monday's game against the Bucks due to an ankle sprain, Blake Murphy of Sportsnet.ca reports.",
+            "long_comment": "Bradley was recalled from the G League on Sunday but may not be available for the parent club Monday. However, the rookie second-rounder's potential absence wouldn't significantly impact the rotation.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5093267",
+            "name": "Collin Murray-Boyles",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": null,
+            "date": "2026-11-22T21:15Z",
+            "return_date": "2026-11-23",
+            "short_comment": "Murray-Boyles (concussion) is listed as probable for Monday's game against Milwaukee, Blake Murphy of Sportsnet.ca reports.",
+            "long_comment": "Murray-Boyles exited Wednesday's game versus the Wizards and didn't suit up for Friday's 105-102 win over the Pistons. It appears a one-game absence will be all that is needed for the 21-year-old, though it's unclear if he will reclaim his spot in the starting lineup over Allen Graves.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "6450",
+            "name": "Kawhi Leonard",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-20T20:42Z",
+            "return_date": "2026-12-03",
+            "short_comment": "Leonard (knee) could return in the next few weeks, per Shams Charania of ESPN.",
+            "long_comment": "This was the expectation after the Raptors ruled out the star forward Tuesday for at least one more week. Collin Murray-Boyles should continue to handle a larger role once he passes the concussion protocol, and Ja'Kobe Walter should remain a starter for the time being.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910039",
+          "date": "2026-11-24T00:30Z",
+          "home_team": "TOR",
+          "away_team": "MIL",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-23T17:54:38.240418+00:00"
+  "last_updated": "2026-11-23T18:53:53.692472+00:00"
 }
