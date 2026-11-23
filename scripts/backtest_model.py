@@ -314,6 +314,37 @@ def probability_bucket_report(probabilities, outcomes):
         })
     return report
 
+def confidence_selection_report(probabilities, outcomes, thresholds=(0.60, 0.65, 0.70, 0.75, 0.80)):
+    """Evaluate predeclared confidence gates without changing the underlying model."""
+    if len(probabilities) != len(outcomes):
+        raise ValueError("Confidence probabilities and outcomes must have equal lengths")
+    total = len(probabilities)
+    report = []
+    for threshold in thresholds:
+        selected = [
+            (float(p), float(y)) for p, y in zip(probabilities, outcomes)
+            if max(float(p), 1.0 - float(p)) >= threshold
+        ]
+        count = len(selected)
+        if not count:
+            report.append({
+                "minimum_confidence": round(float(threshold), 2),
+                "games": 0, "coverage": 0.0, "accuracy": None,
+                "average_confidence": None, "brier_score": None, "log_loss": None,
+            })
+            continue
+        correct = [float((p >= 0.5) == (y >= 0.5)) for p, y in selected]
+        report.append({
+            "minimum_confidence": round(float(threshold), 2),
+            "games": count,
+            "coverage": round(count / total, 4) if total else 0.0,
+            "accuracy": round(mean(correct), 4),
+            "average_confidence": round(mean(max(p, 1.0 - p) for p, _ in selected), 4),
+            "brier_score": round(mean((p - y) ** 2 for p, y in selected), 4),
+            "log_loss": binary_log_loss([p for p, _ in selected], [y for _, y in selected]),
+        })
+    return report
+
 
 
 def rolling_window_report(model_score_errors, baseline_score_errors,
@@ -663,6 +694,16 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "production_baseline_confidence_buckets": probability_bucket_report(
             baseline_probabilities, baseline_outcomes
         ),
+        "confidence_selection": confidence_selection_report(
+            baseline_probabilities, baseline_outcomes
+        ),
+        "confidence_selection_recent_windows": {
+            str(window): confidence_selection_report(
+                baseline_probabilities[-window:], baseline_outcomes[-window:]
+            )
+            for window in (100, 250, 500)
+            if len(baseline_probabilities) >= window
+        },
         "recent_windows": rolling_window_report(
             model_score_errors_by_game, baseline_score_errors_by_game,
             correct, baseline_correct, briers, baseline_briers,
