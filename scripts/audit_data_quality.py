@@ -393,6 +393,16 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
     else:
         warnings.append("Player archive could not be audited because data/players.json is missing or unreadable.")
 
+    availability_summary = summarize_availability_snapshots(availability_payloads or [], now)
+    if (
+        availability_summary["snapshot_count"] > 0
+        and availability_summary["confirmed_lineup_snapshots"] == 0
+    ):
+        warnings.append(
+            "Availability archive has snapshots but no confirmed starting-lineup snapshots yet; "
+            "lineup-dependent predictions must remain on PASS until verified coverage is collected."
+        )
+
     status = "error" if errors else ("warning" if warnings else "ok")
     return {
         "generated_at": now.isoformat(),
@@ -410,7 +420,7 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             "advanced_metric_examples": advanced_metric_examples,
         },
         "player_history": player_summary,
-        "availability_history": summarize_availability_snapshots(availability_payloads or [], now),
+        "availability_history": availability_summary,
         "warnings": warnings,
         "errors": errors,
         "note": "This is a coverage and integrity audit, not a measure of predictive accuracy."
