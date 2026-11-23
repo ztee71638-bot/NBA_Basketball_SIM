@@ -8066,7 +8066,217 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895761\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.795\\\", \\\"0.205\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spurs vs. Kings\"},{\"market_id\":\"7274756\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.36\\\", \\\"0.64\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-15.5)\"},{\"market_id\":\"7274764\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.32\\\", \\\"0.68\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-16.5)\"},{\"market_id\":\"7274776\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-14.5)\"},{\"market_id\":\"7274783\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.295\\\", \\\"0.705\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-17.5)\"},{\"market_id\":\"7274788\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-13.5)\"},{\"market_id\":\"7274792\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.27\\\", \\\"0.73\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-18.5)\"},{\"market_id\":\"7274796\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-12.5)\"},{\"market_id\":\"7274800\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-19.5)\"},{\"market_id\":\"7274804\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-11.5)\"},{\"market_id\":\"7274808\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.23\\\", \\\"0.77\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-20.5)\"},{\"market_id\":\"7274812\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-10.5)\"},{\"market_id\":\"7274815\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-21.5)\"},{\"market_id\":\"7274817\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.55\\\", \\\"0.45\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-9.5)\"},{\"market_id\":\"7274819\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.18\\\", \\\"0.82\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-23.5)\"},{\"market_id\":\"7274821\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-7.5)\"},{\"market_id\":\"7274823\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.145\\\", \\\"0.855\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-25.5)\"},{\"market_id\":\"7274825\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.67\\\", \\\"0.33\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-5.5)\"},{\"market_id\":\"7274827\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.11\\\", \\\"0.89\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-27.5)\"},{\"market_id\":\"7274829\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.73\\\", \\\"0.27\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-3.5)\"},{\"market_id\":\"7274831\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.09\\\", \\\"0.91\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-29.5)\"},{\"market_id\":\"7274833\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.78\\\", \\\"0.22\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-1.5)\"},{\"market_id\":\"7274835\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.065\\\", \\\"0.935\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-31.5)\"},{\"market_id\":\"7274837\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.05\\\", \\\"0.95\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-33.5)\"},{\"market_id\":\"7274839\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.165\\\", \\\"0.835\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Kings (-2.5)\"},{\"market_id\":\"7274841\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.0315\\\", \\\"0.9685\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-35.5)\"},{\"market_id\":\"7274843\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.125\\\", \\\"0.875\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Kings (-4.5)\"},{\"market_id\":\"7274845\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.0285\\\", \\\"0.9715\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-37.5)\"},{\"market_id\":\"7274847\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.09\\\", \\\"0.91\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Kings (-6.5)\"},{\"market_id\":\"7274849\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.045\\\", \\\"0.955\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-39.5)\"},{\"market_id\":\"7274851\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.065\\\", \\\"0.935\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Kings (-8.5)\"},{\"market_id\":\"7274852\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.05\\\", \\\"0.95\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-41.5)\"},{\"market_id\":\"7275026\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.05\\\", \\\"0.95\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Kings (-10.5)\"},{\"market_id\":\"7275029\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.045\\\", \\\"0.955\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-43.5)\"},{\"market_id\":\"7275032\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.0395\\\", \\\"0.9605\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Kings (-12.5)\"},{\"market_id\":\"7274758\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 225.5\"},{\"market_id\":\"7274770\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 223.5\"},{\"market_id\":\"7274780\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.42\\\", \\\"0.58\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 227.5\"},{\"market_id\":\"7274786\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.55\\\", \\\"0.45\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 221.5\"},{\"market_id\":\"7274790\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 229.5\"},{\"market_id\":\"7274794\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.6\\\", \\\"0.4\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 219.5\"},{\"market_id\":\"7274798\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.33\\\", \\\"0.67\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 231.5\"},{\"market_id\":\"7274802\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.645\\\", \\\"0.355\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 217.5\"},{\"market_id\":\"7274806\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.295\\\", \\\"0.705\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 233.5\"},{\"market_id\":\"7274810\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 215.5\"},{\"market_id\":\"7274814\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.25\\\", \\\"0.75\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 235.5\"},{\"market_id\":\"7274816\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.73\\\", \\\"0.27\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 213.5\"},{\"market_id\":\"7274818\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 237.5\"},{\"market_id\":\"7274820\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 211.5\"},{\"market_id\":\"7274822\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.18\\\", \\\"0.82\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 239.5\"},{\"market_id\":\"7274824\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.805\\\", \\\"0.195\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 209.5\"},{\"market_id\":\"7274826\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.155\\\", \\\"0.845\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 241.5\"},{\"market_id\":\"7274828\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.835\\\", \\\"0.165\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 207.5\"},{\"market_id\":\"7274830\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.13\\\", \\\"0.87\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 243.5\"},{\"market_id\":\"7274832\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.87\\\", \\\"0.13\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 205.5\"},{\"market_id\":\"7274834\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.1\\\", \\\"0.9\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 245.5\"},{\"market_id\":\"7274836\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.9\\\", \\\"0.1\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 203.5\"},{\"market_id\":\"7274838\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.08\\\", \\\"0.92\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 247.5\"},{\"market_id\":\"7274840\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.92\\\", \\\"0.08\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 201.5\"},{\"market_id\":\"7274842\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.07\\\", \\\"0.93\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 249.5\"},{\"market_id\":\"7274844\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.93\\\", \\\"0.07\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 199.5\"},{\"market_id\":\"7274846\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 251.5\"},{\"market_id\":\"7274848\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.95\\\", \\\"0.05\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 197.5\"},{\"market_id\":\"7274850\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.04\\\", \\\"0.96\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 253.5\"},{\"market_id\":\"7275993\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.43\\\", \\\"0.57\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 226.5\"},{\"market_id\":\"7278094\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 224.5\"},{\"market_id\":\"7279106\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Darius Acuff Jr.: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7279109\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.41\\\", \\\"0.59\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Darius Acuff Jr.: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7279112\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Darius Acuff Jr.: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7279115\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.2\\\", \\\"0.8\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Darius Acuff Jr.: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7279118\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Darius Acuff Jr.: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7279340\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Andre Hunter: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7279342\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.335\\\", \\\"0.665\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Andre Hunter: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7279344\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Andre Hunter: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7279346\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Keegan Murray: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7279348\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.255\\\", \\\"0.745\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Keegan Murray: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7279350\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Keegan Murray: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7279352\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Zach LaVine: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7279354\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Zach LaVine: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7279356\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Zach LaVine: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7279358\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.155\\\", \\\"0.845\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Zach LaVine: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7279360\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.075\\\", \\\"0.925\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Zach LaVine: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7280846\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.23\\\", \\\"0.77\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Aaron Fox: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7280852\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Aaron Fox: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7280857\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Aaron Fox: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7280862\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.46\\\", \\\"0.54\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Stephon Castle: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7280867\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.33\\\", \\\"0.67\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Stephon Castle: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7280872\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Stephon Castle: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7281176\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Devin Vassell: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7281179\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Devin Vassell: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7281182\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.19\\\", \\\"0.81\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Devin Vassell: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7281429\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Julian Champagnie: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7281431\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Julian Champagnie: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7281433\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.33\\\", \\\"0.67\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Julian Champagnie: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7281435\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.22\\\", \\\"0.78\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Julian Champagnie: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7281437\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.145\\\", \\\"0.855\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Julian Champagnie: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7282025\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.04\\\", \\\"0.96\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Keegan Murray: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7282793\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.13\\\", \\\"0.87\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Andre Hunter: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7282930\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.065\\\", \\\"0.935\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Keegan Murray: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7283060\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Aaron Fox: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7283063\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.06\\\", \\\"0.94\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Andre Hunter: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7283066\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Devin Vassell: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7283069\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.065\\\", \\\"0.935\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Stephon Castle: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7283349\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Stephon Castle: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7283428\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.105\\\", \\\"0.895\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Devin Vassell: 3-Pointers Made O/U 3.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T11:06:25.183777+00:00",
+      "markets": [
+        {
+          "market_id": "6895761",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Kings",
+          "slug": "nba-sas-sac-2026-11-23",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.795\", \"0.205\"]",
+          "volume_24h": 52216.126548,
+          "liquidity": "86180.6256",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274792",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-18.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-18pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.275\", \"0.725\"]",
+          "volume_24h": 5.344828,
+          "liquidity": "20737.2557",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274796",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-12.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-12pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 333,
+          "liquidity": "32949.4979",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274800",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-19.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-19pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.255\", \"0.745\"]",
+          "volume_24h": 105,
+          "liquidity": "24536.5106",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274804",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-11.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-11pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 1108.8125009999999,
+          "liquidity": "42244.7566",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274812",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-10.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-10pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 2316.654754,
+          "liquidity": "42393.7732",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274817",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-9.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-9pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.545\", \"0.455\"]",
+          "volume_24h": 315,
+          "liquidity": "39012.415",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274819",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-23.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-23pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.185\", \"0.815\"]",
+          "volume_24h": 106,
+          "liquidity": "16913.5857",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274823",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-25.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-25pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.155\", \"0.845\"]",
+          "volume_24h": 80,
+          "liquidity": "17991.9396",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274831",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-29.5)",
+          "slug": "nba-sas-sac-2026-11-23-spread-away-29pt5",
+          "outcomes": "[\"Spurs\", \"Kings\"]",
+          "outcome_prices": "[\"0.095\", \"0.905\"]",
+          "volume_24h": 81,
+          "liquidity": "14715.1515",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274758",
+          "market_type": "total",
+          "question": "Spurs vs. Kings: O/U 225.5",
+          "slug": "nba-sas-sac-2026-11-23-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.45\", \"0.55\"]",
+          "volume_24h": 33.674059,
+          "liquidity": "31343.6119",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274770",
+          "market_type": "total",
+          "question": "Spurs vs. Kings: O/U 223.5",
+          "slug": "nba-sas-sac-2026-11-23-total-223pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": 224.12,
+          "liquidity": "37249.4085",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274786",
+          "market_type": "total",
+          "question": "Spurs vs. Kings: O/U 221.5",
+          "slug": "nba-sas-sac-2026-11-23-total-221pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.55\", \"0.45\"]",
+          "volume_24h": 83.10000000000001,
+          "liquidity": "31982.2779",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274790",
+          "market_type": "total",
+          "question": "Spurs vs. Kings: O/U 229.5",
+          "slug": "nba-sas-sac-2026-11-23-total-229pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.37\", \"0.63\"]",
+          "volume_24h": 7.421875,
+          "liquidity": "20934.3785",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7274820",
+          "market_type": "total",
+          "question": "Spurs vs. Kings: O/U 211.5",
+          "slug": "nba-sas-sac-2026-11-23-total-211pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.765\", \"0.235\"]",
+          "volume_24h": 16.2,
+          "liquidity": "19475.7198",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7278094",
+          "market_type": "total",
+          "question": "Spurs vs. Kings: O/U 224.5",
+          "slug": "nba-sas-sac-2026-11-23-total-224pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 21.962265,
+          "liquidity": "37966.0387",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        },
+        {
+          "market_id": "7280852",
+          "market_type": "total",
+          "question": "De'Aaron Fox: 3-Pointers Made O/U 1.5",
+          "slug": "nba-sas-sac-2026-11-23-threes-deaaron-fox-1pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.195\", \"0.805\"]",
+          "volume_24h": 7.692308,
+          "liquidity": "3262.369",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-sac-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895761\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.795\\\", \\\"0.205\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spurs vs. Kings\"},{\"market_id\":\"7274792\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.275\\\", \\\"0.725\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-18.5)\"},{\"market_id\":\"7274796\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-12.5)\"},{\"market_id\":\"7274800\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.255\\\", \\\"0.745\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-19.5)\"},{\"market_id\":\"7274804\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-11.5)\"},{\"market_id\":\"7274812\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-10.5)\"},{\"market_id\":\"7274817\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-9.5)\"},{\"market_id\":\"7274819\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.185\\\", \\\"0.815\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-23.5)\"},{\"market_id\":\"7274823\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.155\\\", \\\"0.845\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-25.5)\"},{\"market_id\":\"7274831\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.095\\\", \\\"0.905\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Kings\\\"]\",\"question\":\"Spread: Spurs (-29.5)\"},{\"market_id\":\"7274758\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 225.5\"},{\"market_id\":\"7274770\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 223.5\"},{\"market_id\":\"7274786\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.55\\\", \\\"0.45\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 221.5\"},{\"market_id\":\"7274790\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 229.5\"},{\"market_id\":\"7274820\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 211.5\"},{\"market_id\":\"7278094\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Kings: O/U 224.5\"},{\"market_id\":\"7280852\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"De'Aaron Fox: 3-Pointers Made O/U 1.5\"}]"
     }
   ],
-  "last_updated": "2026-11-23T09:53:39.655869+00:00"
+  "last_updated": "2026-11-23T11:06:25.183777+00:00"
 }
