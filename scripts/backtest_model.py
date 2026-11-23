@@ -704,6 +704,16 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
             for window in (100, 250, 500)
             if len(baseline_probabilities) >= window
         },
+        "opponent_adjusted_model_confidence_selection": confidence_selection_report(
+            model_probabilities, model_outcomes
+        ),
+        "opponent_adjusted_model_confidence_recent_windows": {
+            str(window): confidence_selection_report(
+                model_probabilities[-window:], model_outcomes[-window:]
+            )
+            for window in (100, 250, 500)
+            if len(model_probabilities) >= window
+        },
         "recent_windows": rolling_window_report(
             model_score_errors_by_game, baseline_score_errors_by_game,
             correct, baseline_correct, briers, baseline_briers,
