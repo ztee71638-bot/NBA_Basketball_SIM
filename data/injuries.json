@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T23:54:21.593176+00:00",
+  "last_updated": "2026-11-23T00:53:36.274973+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -543,21 +543,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "3149673",
-      "name": "Pascal Siakam",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-21T22:19Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Siakam (hip) is listed as questionable for Sunday's game against New York.",
-      "long_comment": "Siakam has only missed one game this season, but he's in danger of sitting out Sunday due to left hip soreness. If the 32-year-old can't suit up versus the Knicks, Obi Toppin may move into the starting lineup.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4396993",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -888,6 +873,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4431823",
+      "name": "Miles McBride",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-23T00:04Z",
+      "return_date": "2026-11-25",
+      "short_comment": "McBride (abdomen) has been ruled out for Sunday's game against the Pacers.",
+      "long_comment": "McBride will miss his first outing of the 2026-27 campaign due to left adductor tightness. Tyler Kolek and Jose Alvarado should absorb the majority of the vacated minutes off the Knicks' bench.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3934719",
       "name": "OG Anunoby",
       "team": "NY",
@@ -900,21 +900,6 @@
       "return_date": "2026-11-25",
       "short_comment": "Anunoby (calf) won't play Sunday against the Pacers.",
       "long_comment": "Anunoby will miss a second straight game due to left calf tightness. Landry Shamet got the start in Saturday's 97-96 win over Portland, so fantasy managers should expect the same versus Indiana. Anunoby's next chance to suit up will come against the Cavaliers on Wednesday.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3136195",
-      "name": "Karl-Anthony Towns",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-22T18:09Z",
-      "return_date": "2026-11-22",
-      "short_comment": "Towns (illness) is questionable to play in Sunday's game against the Pacers.",
-      "long_comment": "Towns missed Saturday's 97-96 win over Portland due to an illness, and that same ailment could force him to miss a second consecutive game. Andre Drummond got the start in Towns' place while James Wiseman saw a season-high 25 minutes off the bench. If Towns is forced to sit again Sunday, expect a similar approach for New York.",
       "source": "ESPN"
     },
     {
