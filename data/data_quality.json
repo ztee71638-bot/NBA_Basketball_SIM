@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T21:44:22.354506+00:00",
+  "generated_at": "2026-11-23T21:47:41.965134+00:00",
   "status": "warning",
   "team_history": {
     "last_updated": "2026-11-23T21:31:26.496650+00:00",
-    "age_hours": 0.22,
+    "age_hours": 0.27,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -86,7 +86,7 @@
       2023
     ],
     "last_updated": "2026-11-23T10:30:16.607728+00:00",
-    "age_hours": 11.23,
+    "age_hours": 11.29,
     "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
