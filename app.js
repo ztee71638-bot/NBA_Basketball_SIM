@@ -7,6 +7,7 @@ let marketRosterLoading = null;
 let playerImpactData = [];
 let winnerCalibration = null;
 let opponentModelCalibration = null;
+let advancedModelCalibration = null;
 let opponentModelHistoryCache = null;
 let playerImpactLoaded = false;
 let playerImpactLoading = null;
@@ -373,7 +374,14 @@ function opponentAdjustedMatchup(game){
         const pf=Number(row.points_for),pa=Number(row.points_against);
         if(!row.game_id||!Number.isFinite(date)||!nbaCodes.has(opponent)
           ||!Number.isFinite(pf)||!Number.isFinite(pa)||pf<=0||pa<=0)return;
-        rows.push({team:abbreviation,opponent,season:String(season),date,points_for:pf,points_against:pa});
+        const pace=Number(row.pace_estimate),offense=Number(row.offensive_rating),defense=Number(row.defensive_rating);
+        rows.push({
+          team:abbreviation,opponent,season:String(season),date,
+          home_away:row.home_away,points_for:pf,points_against:pa,
+          pace_estimate:Number.isFinite(pace)?pace:null,
+          offensive_rating:Number.isFinite(offense)?offense:null,
+          defensive_rating:Number.isFinite(defense)?defense:null
+        });
       }));
     });
     opponentModelHistoryCache={updatedAt,rows};
@@ -398,6 +406,58 @@ function opponentAdjustedMatchup(game){
   const combinedSd=Math.sqrt(homeSd*homeSd+awaySd*awaySd);
   const rawHomeProbability=0.5*(1+erf((homeMean-awayMean)/(Math.sqrt(2)*combinedSd)));
   return {homeMean,awayMean,homeSd,awaySd,rawHomeProbability,homeGames:homeRows.length,awayGames:awayRows.length,leagueGames:allRows.length};
+}
+function advancedModelMatchup(game){
+  const cutoff=new Date(game?.date).getTime();
+  if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt
+    ||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime() < -15*60*1000
+    ||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
+  if(!opponentModelHistoryCache)return null;
+  const allRows=opponentModelHistoryCache.rows.filter(row=>row.date<cutoff);
+  const advancedRows=allRows.filter(row=>Number.isFinite(row.pace_estimate)
+    &&Number.isFinite(row.offensive_rating)&&Number.isFinite(row.defensive_rating));
+  if(advancedRows.length<60)return null;
+  const leaguePace=advancedRows.reduce((sum,row)=>sum+row.pace_estimate,0)/advancedRows.length;
+  const leagueOff=advancedRows.reduce((sum,row)=>sum+row.offensive_rating,0)/advancedRows.length;
+  const leagueDef=advancedRows.reduce((sum,row)=>sum+row.defensive_rating,0)/advancedRows.length;
+  const matchTeamCode=abbr=>teamData.find(team=>canonicalTeam(team.abbreviation||"")===canonicalTeam(abbr))?.abbreviation||abbr;
+  const homeCode=matchTeamCode(game.home?.abbreviation||""),awayCode=matchTeamCode(game.away?.abbreviation||"");
+  const homeRows=advancedRows.filter(row=>row.team===homeCode).sort((a,b)=>a.date-b.date);
+  const awayRows=advancedRows.filter(row=>row.team===awayCode).sort((a,b)=>a.date-b.date);
+  if(!homeRows.length||!awayRows.length)return null;
+  const hOff=opponentWeightedStats(homeRows,"offensive_rating"),hDef=opponentWeightedStats(homeRows,"defensive_rating");
+  const aOff=opponentWeightedStats(awayRows,"offensive_rating"),aDef=opponentWeightedStats(awayRows,"defensive_rating");
+  const hPace=opponentWeightedStats(homeRows,"pace_estimate"),aPace=opponentWeightedStats(awayRows,"pace_estimate");
+  if(!hOff||!hDef||!aOff||!aDef||!hPace||!aPace)return null;
+  const shrink=(value,baseline)=>baseline+(value.mean-baseline)*(value.count/(value.count+10));
+  const homeOff=shrink(hOff,leagueOff),homeDef=shrink(hDef,leagueDef);
+  const awayOff=shrink(aOff,leagueOff),awayDef=shrink(aDef,leagueDef);
+  const pace=(shrink(hPace,leaguePace)+shrink(aPace,leaguePace))/2;
+  const homeRowsAll=allRows.filter(row=>row.team===homeCode).sort((a,b)=>a.date-b.date);
+  const awayRowsAll=allRows.filter(row=>row.team===awayCode).sort((a,b)=>a.date-b.date);
+  const restDays=rows=>{
+    const prior=rows.filter(row=>row.date<cutoff);
+    if(!prior.length)return 1;
+    const gap=Math.floor((new Date(cutoff).setUTCHours(0,0,0,0)-new Date(prior[prior.length-1].date).setUTCHours(0,0,0,0))/86400000);
+    return Math.max(0,gap-1);
+  };
+  const scheduleAdjustment=(days,miles)=>Math.max(-0.8,Math.min(0.8,(Number(days)-1)*0.2))
+    -Math.max(0,Math.min(1.2,Number(miles||0)*0.00035));
+  const homeTravel=estimateTravelMiles(homeRowsAll,homeCode,awayCode,true,game.date)||0;
+  const awayTravel=estimateTravelMiles(awayRowsAll,awayCode,homeCode,false,game.date)||0;
+  const homeMean=((homeOff+awayDef)/2)*pace/100+1.8+scheduleAdjustment(restDays(homeRowsAll),homeTravel);
+  const awayMean=((awayOff+homeDef)/2)*pace/100+scheduleAdjustment(restDays(awayRowsAll),awayTravel);
+  const homeScoreSd=opponentWeightedStats(homeRows,"points_for");
+  const awayScoreSd=opponentWeightedStats(awayRows,"points_for");
+  const homeSd=homeScoreSd?.sd??12,awaySd=awayScoreSd?.sd??12;
+  const combinedSd=Math.sqrt(Math.max(1,homeSd*homeSd+awaySd*awaySd-2*0.1225*homeSd*awaySd));
+  const rawHomeProbability=0.5*(1+erf((homeMean-awayMean)/(Math.sqrt(2)*Math.max(8,combinedSd))));
+  return {
+    homeMean,awayMean,rawHomeProbability,pace,
+    homeGames:homeRows.length,awayGames:awayRows.length,leagueGames:advancedRows.length,
+    homeRestDays:restDays(homeRowsAll),awayRestDays:restDays(awayRowsAll),
+    homeTravelMiles:homeTravel,awayTravelMiles:awayTravel
+  };
 }
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
@@ -467,7 +527,7 @@ function reconcilePredictionLog(){
   const records=readPredictionLog();
   let changed=false;
   records.forEach(record=>{
-    if(!["simulator","opponent-model"].includes(record.source)||record.actualWinner||!record.gameId)return;
+    if(!["simulator","opponent-model","advanced-model"].includes(record.source)||record.actualWinner||!record.gameId)return;
     let finalScore=null;
     const finalGame=games.find(game=>String(game.id)===String(record.gameId)&&game.completed);
     if(finalGame){
@@ -491,6 +551,10 @@ function renderPredictionTracker(){
   const records=readPredictionLog().sort((a,b)=>String(b.createdAt||"").localeCompare(String(a.createdAt||"")));
   const modelRecords=records.filter(r=>r.source==="simulator");
   const opponentRecords=records.filter(r=>r.source==="opponent-model");
+  const advancedRecords=records.filter(r=>r.source==="advanced-model");
+  const advancedGraded=advancedRecords.filter(r=>r.pregame===true&&r.actualWinner);
+  const advancedCorrect=advancedGraded.filter(r=>r.predictedWinner===r.actualWinner).length;
+  const advancedPct=advancedGraded.length?(100*advancedCorrect/advancedGraded.length).toFixed(1)+"%":"—";
   const opponentGraded=opponentRecords.filter(r=>r.pregame===true&&r.actualWinner);
   const opponentCorrect=opponentGraded.filter(r=>r.predictedWinner===r.actualWinner).length;
   const opponentPct=opponentGraded.length?(100*opponentCorrect/opponentGraded.length).toFixed(1)+"%":"—";
@@ -510,7 +574,7 @@ function renderPredictionTracker(){
         ' · '+escapeHtml(String(r.actualHomeScore??""))+'–'+escapeHtml(String(r.actualAwayScore??""))
       :(r.pregame===false?'<span class="tracker-live">POST-TIP · excluded</span>':'<span class="tracker-pending">PENDING</span>');
     const probability=Number.isFinite(r.homeProbability)?(r.homeProbability*100).toFixed(1)+"% / "+((1-r.homeProbability)*100).toFixed(1)+"%":"Not recorded";
-    const source=r.source==="reported"?"User-reported session":r.source==="opponent-model"?"Opponent-adjusted calibrated model":r.pregame===true?"Pregame simulation":"Post-tip simulation";
+    const source=r.source==="reported"?"User-reported session":r.source==="opponent-model"?"Opponent-adjusted calibrated model":r.source==="advanced-model"?"Calibrated advanced pace / efficiency model":r.pregame===true?"Pregame simulation":"Post-tip simulation";
     return '<tr><td>'+escapeHtml(date)+'</td><td>'+away+' @ '+home+'</td><td>'+predicted+'</td><td>'+escapeHtml(probability)+'</td><td>'+result+'</td><td>'+source+'</td></tr>';
   }).join("");
   root.innerHTML=
@@ -521,7 +585,8 @@ function renderPredictionTracker(){
       '<div class="metric"><small>Post-tip runs excluded</small><b>'+postTip+'</b></div>'+
     '</div>'+
     '<div class="result-grid tracker-metrics"><div class="metric"><small>Opponent-model verified picks</small><b>'+opponentGraded.length+'</b></div><div class="metric"><small>Opponent-model accuracy</small><b>'+opponentPct+'</b></div><div class="metric"><small>Opponent-model pending</small><b>'+opponentRecords.filter(r=>!r.actualWinner).length+'</b></div><div class="metric"><small>Opponent-model post-tip</small><b>'+opponentRecords.filter(r=>r.pregame===false).length+'</b></div></div>'+
-    '<p class="fine-print">Opponent-adjusted calibrated predictions are tracked separately from the original Monte Carlo simulator; their records are never combined. Only pregame picks matched to final scores count toward each model\'s accuracy. This tracker is stored in this browser/device, not synced to a server.</p>'+
+    '<div class="result-grid tracker-metrics"><div class="metric"><small>Advanced-model verified picks</small><b>'+advancedGraded.length+'</b></div><div class="metric"><small>Advanced-model accuracy</small><b>'+advancedPct+'</b></div><div class="metric"><small>Advanced-model pending</small><b>'+advancedRecords.filter(r=>!r.actualWinner).length+'</b></div><div class="metric"><small>Advanced-model post-tip</small><b>'+advancedRecords.filter(r=>r.pregame===false).length+'</b></div></div>'+
+    '<p class="fine-print">The baseline Monte Carlo, opponent-adjusted, and calibrated advanced-model predictions are tracked separately; their records are never combined. Only pregame picks matched to final scores count toward each model\'s accuracy. This tracker is stored in this browser/device, not synced to a server.</p>'+
     '<div class="tracker-reported"><strong>Earlier session reported by you:</strong> '+reported.correct+'/'+reported.total+' correct (83.3%) on Nov 21, 2026. This is kept separate because the original six simulation outputs were not saved and cannot be independently verified.</div>'+
     '<div class="tracker-table-wrap"><table><thead><tr><th>Saved</th><th>Matchup</th><th>Pick</th><th>Home / away chance</th><th>Grade</th><th>Record type</th></tr></thead><tbody>'+
     (rows||'<tr><td colspan="6">No saved simulations yet. Run a game simulation to start building your record.</td></tr>')+
@@ -574,6 +639,14 @@ function runGameSimulation() {
   const homeName=selectedGame.home?.name||"Home team";
   const awayName=selectedGame.away?.name||"Away team";
   const opponentProjection=opponentAdjustedMatchup(selectedGame);
+  const advancedProjection=advancedModelMatchup(selectedGame);
+  const advancedCalibrationReady=!!advancedModelCalibration&&advancedModelCalibration.live_enabled===true
+    &&advancedModelCalibration.enabled===true
+    &&advancedModelCalibration.training_model==="advanced_pace_efficiency_v1"
+    &&advancedModelCalibration.validation_method==="prequential_walk_forward"
+    &&Number(advancedModelCalibration.validation_games)>=500;
+  const advancedCalibratedProbability=advancedProjection&&advancedCalibrationReady
+    ?applyWinnerCalibration(advancedProjection.rawHomeProbability,advancedModelCalibration):null;
   const opponentCalibrationReady=!!opponentModelCalibration&&opponentModelCalibration.live_enabled===true
     &&opponentModelCalibration.enabled===true
     &&opponentModelCalibration.training_model==="opponent_weighted_score_v1"
@@ -627,6 +700,24 @@ function runGameSimulation() {
       modelVersion:"opponent-weighted-score-v1-calibrated"
     });
   }
+  if(advancedProjection&&advancedCalibratedProbability!==null){
+    const advancedHomeWins=advancedCalibratedProbability>=0.5;
+    saveSimulationPrediction({
+      recordId:"adv-"+Date.now()+"-"+Math.random().toString(36).slice(2,9),
+      source:"advanced-model",createdAt:new Date().toISOString(),gameId:String(selectedGame.id||""),
+      gameDate:selectedGame.date,homeName,awayName,homeAbbr,awayAbbr,
+      predictedWinner:advancedHomeWins?homeAbbr:awayAbbr,
+      predictedWinnerName:advancedHomeWins?homeName:awayName,
+      homeProbability:advancedCalibratedProbability,
+      projectedHome:Math.round(advancedProjection.homeMean),projectedAway:Math.round(advancedProjection.awayMean),
+      rawHomeProbability:advancedProjection.rawHomeProbability,
+      calibrationEligible:true,pregame:isPregame,
+      modelVersion:"advanced-pace-efficiency-v1-calibrated"
+    });
+  }
+  const advancedModelHtml=advancedProjection
+    ?'<section class="metric" style="margin-top:12px"><small>ADVANCED PACE / EFFICIENCY '+(advancedCalibratedProbability!==null?'CALIBRATED':'RAW')+' MODEL · '+(advancedProjection.homeGames+advancedProjection.awayGames)+' team games</small><b>'+escapeHtml(advancedProjection.homeMean.toFixed(1)+' — '+advancedProjection.awayMean.toFixed(1))+'</b><p class="fine-print">'+escapeHtml(homeName)+' '+(advancedCalibratedProbability!==null?(advancedCalibratedProbability*100).toFixed(1):(advancedProjection.rawHomeProbability*100).toFixed(1))+'% · '+escapeHtml(awayName)+' '+(advancedCalibratedProbability!==null?((1-advancedCalibratedProbability)*100).toFixed(1):((1-advancedProjection.rawHomeProbability)*100).toFixed(1))+'%'+(advancedCalibratedProbability!==null?' · prequential calibration active':' · calibration gate unavailable; raw estimate only')+'</p></section>'
+    :'<p class="fine-print">Advanced pace/efficiency model unavailable: insufficient verified pregame efficiency history.</p>';
   const opponentModelHtml=opponentProjection
     ?'<section class="metric" style="margin-top:12px"><small>OPPONENT-ADJUSTED '+(opponentCalibratedProbability!==null?'CALIBRATED':'RAW')+' MODEL · '+(opponentProjection.homeGames+opponentProjection.awayGames)+' team games</small><b>'+escapeHtml(opponentProjection.homeMean.toFixed(1)+' — '+opponentProjection.awayMean.toFixed(1))+'</b><p class="fine-print">'+escapeHtml(homeName)+' '+(opponentCalibratedProbability!==null?(opponentCalibratedProbability*100).toFixed(1):(opponentProjection.rawHomeProbability*100).toFixed(1))+'% · '+escapeHtml(awayName)+' '+(opponentCalibratedProbability!==null?((1-opponentCalibratedProbability)*100).toFixed(1):((1-opponentProjection.rawHomeProbability)*100).toFixed(1))+'%'+(opponentCalibratedProbability!==null?' · walk-forward calibration active':' · calibration gate unavailable; raw estimate only')+'</p></section>'
     :'<p class="fine-print">Opponent-adjusted model unavailable: insufficient clean pregame team-history rows.</p>';
@@ -645,7 +736,7 @@ function runGameSimulation() {
     : winnerCalibration
       ? " Calibration is not applied to manually changed assumptions; displayed win chance is the raw simulation."
       : "";
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`+opponentModelHtml+readinessHtml;  $("simulation-modal-title").textContent="Simulation result";
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`+opponentModelHtml+advancedModelHtml+readinessHtml;  $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
   const homeLogo=teamLogoMarkup(selectedGame.home,"split-home");
@@ -1203,6 +1294,13 @@ async function loadModelMetrics() {
       &&opponentCalibration?.validation_method==="prequential_walk_forward"
       &&Number(opponentCalibration?.validation_games)>=500
       ?opponentCalibration:null;
+    const advancedCalibration=data.advanced_calibration;
+    advancedModelCalibration=metricsFresh&&advancedCalibration?.live_enabled===true
+      &&advancedCalibration?.enabled===true
+      &&advancedCalibration?.training_model==="advanced_pace_efficiency_v1"
+      &&advancedCalibration?.validation_method==="prequential_walk_forward"
+      &&Number(advancedCalibration?.validation_games)>=500
+      ?advancedCalibration:null;
     if(!data.games_tested){root.textContent=data.message||"Not enough historical games to evaluate the model yet.";return;}
     let qualityHtml="";
     try {
@@ -1289,8 +1387,9 @@ async function loadModelMetrics() {
       '<p class="fine-print">Log loss — experimental: '+(data.model_log_loss==null?'n/a':Number(data.model_log_loss).toFixed(3))+' · baseline: '+(data.baseline_log_loss==null?'n/a':Number(data.baseline_log_loss).toFixed(3))+'. Lower is better; confident incorrect probabilities receive a larger penalty.</p>'+
       '<p class="fine-print">Walk-forward probability calibration: raw Brier '+Number(data.model_brier_score).toFixed(3)+' · calibrated Brier '+(data.calibrated_brier_score==null?'n/a':Number(data.calibrated_brier_score).toFixed(3))+' · calibrated log loss '+(data.calibrated_log_loss==null?'n/a':Number(data.calibrated_log_loss).toFixed(3))+' · calibrated error '+(data.calibrated_calibration_error==null?'n/a':Number(data.calibrated_calibration_error).toFixed(3))+'. '+(data.calibration?.live_enabled?'Calibrated win probabilities are enabled because the sequential test beat both the raw model and baseline on Brier score, log loss and calibration error.':'Calibration remains disabled unless a sequential holdout beats both the raw model and baseline on Brier score, log loss and calibration error.')+'</p>'+
       '<p class="fine-print">'+(!modelEnough?"At least 500 chronological holdout games are required before considering promotion.":modelBetter?"Experimental model leads on all four validation measures.":"The experimental blend has not beaten the baseline on all four measures; default score estimates remain on the baseline.")+'</p>'+
-      (data.advanced_games_tested?'<strong>Experimental pace / efficiency / rest / travel model · '+Number(data.advanced_games_tested).toLocaleString()+' matched holdout games</strong><div class="result-grid"><div class="metric"><small>Efficiency model MAE</small><b>'+Number(data.advanced_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Same-game baseline MAE</small><b>'+Number(data.advanced_baseline_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Efficiency winner accuracy</small><b>'+(Number(data.advanced_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Same-game baseline accuracy</small><b>'+(Number(data.advanced_baseline_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Efficiency Brier score</small><b>'+Number(data.advanced_brier_score).toFixed(3)+'</b></div></div><p class="fine-print">Log loss: '+(data.advanced_log_loss==null?'n/a':Number(data.advanced_log_loss).toFixed(3))+' · same-game baseline: '+(data.advanced_baseline_log_loss==null?'n/a':Number(data.advanced_baseline_log_loss).toFixed(3))+'. Calibration error: '+(data.advanced_calibration_error==null?'n/a':Number(data.advanced_calibration_error).toFixed(3))+'. '+(!advancedEnough?"At least 500 matched holdout games are required before considering promotion.":advancedBetter?"The experimental schedule-aware model leads on all four validation measures.":"The experimental schedule-aware model has not beaten the baseline on all four measures; it remains disabled in the default score projection.")+'</p>':'<p class="fine-print">Pace/efficiency model awaits enough completed boxscores with all required statistics.</p>')+
+      (data.advanced_games_tested?'<strong>Experimental pace / efficiency / rest / travel model · '+Number(data.advanced_games_tested).toLocaleString()+' matched holdout games</strong><div class="result-grid"><div class="metric"><small>Efficiency model MAE</small><b>'+Number(data.advanced_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Same-game baseline MAE</small><b>'+Number(data.advanced_baseline_score_mae).toFixed(2)+' pts</b></div><div class="metric"><small>Efficiency winner accuracy</small><b>'+(Number(data.advanced_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Same-game baseline accuracy</small><b>'+(Number(data.advanced_baseline_winner_accuracy)*100).toFixed(1)+'%</b></div><div class="metric"><small>Efficiency Brier score</small><b>'+Number(data.advanced_brier_score).toFixed(3)+'</b></div></div><p class="fine-print">Log loss: '+(data.advanced_log_loss==null?'n/a':Number(data.advanced_log_loss).toFixed(3))+' · same-game baseline: '+(data.advanced_baseline_log_loss==null?'n/a':Number(data.advanced_baseline_log_loss).toFixed(3))+'. Calibration error: '+(data.advanced_calibration_error==null?'n/a':Number(data.advanced_calibration_error).toFixed(3))+'. '+(!advancedEnough?"At least 500 matched holdout games are required before considering promotion.":advancedBetter?"The experimental schedule-aware model leads on all four validation measures.":"The raw advanced projection remains experimental because its probability calibration is weaker; the separately calibrated path is gated independently and never replaces the default model.")+'</p>':'<p class="fine-print">Pace/efficiency model awaits enough completed boxscores with all required statistics.</p>')+
       (data.opponent_model_calibration?'<p class="fine-print"><strong>Opponent-adjusted calibration · '+Number(data.opponent_model_calibration.validation_games).toLocaleString()+' prequential games:</strong> Brier '+Number(data.opponent_model_calibration.raw_brier_score).toFixed(4)+' → '+Number(data.opponent_model_calibration.validation_brier_score).toFixed(4)+' · log loss '+Number(data.opponent_model_calibration.raw_log_loss).toFixed(4)+' → '+Number(data.opponent_model_calibration.validation_log_loss).toFixed(4)+' · calibration error '+Number(data.opponent_model_calibration.raw_calibration_error).toFixed(4)+' → '+Number(data.opponent_model_calibration.validation_calibration_error).toFixed(4)+'. '+(opponentModelCalibration?'Live calibrated opponent-model path is active.':'Live calibration gate is off.')+'</p>':'')+
+      (data.advanced_calibration?'<p class="fine-print"><strong>Advanced pace/efficiency calibration · '+Number(data.advanced_calibration.validation_games).toLocaleString()+' prequential games:</strong> Brier '+Number(data.advanced_calibration.raw_brier_score).toFixed(4)+' → '+Number(data.advanced_calibration.validation_brier_score).toFixed(4)+' · log loss '+Number(data.advanced_calibration.raw_log_loss).toFixed(4)+' → '+Number(data.advanced_calibration.validation_log_loss).toFixed(4)+' · calibration error '+Number(data.advanced_calibration.raw_calibration_error).toFixed(4)+' → '+Number(data.advanced_calibration.validation_calibration_error).toFixed(4)+'. '+(advancedModelCalibration?'Separate calibrated advanced-model path is active; default model remains unchanged.':'Advanced-model calibration gate is off.')+'</p>':'')+
       diagnosticsHtml+
       '<p class="fine-print">Last updated: '+(data.generated_at?new Date(data.generated_at).toLocaleString():"unknown")+'. Multi-season walk-forward results are preliminary, not proof of future accuracy.</p>'+qualityHtml;
   } catch(e) {
