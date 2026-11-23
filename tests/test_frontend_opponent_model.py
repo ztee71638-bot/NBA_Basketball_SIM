@@ -107,7 +107,7 @@ def test_live_advanced_model_matches_prequential_backtest_projection():
     if not node:
         pytest.skip("Node.js is unavailable; CI separately installs/runs Node syntax validation")
     app_source = (ROOT / "app.js").read_text(encoding="utf-8")
-    js_functions = "\\n".join(
+    js_functions = "\n".join(
         _function_source(app_source, name)
         for name in (
             "opponentWeightedStats", "opponentAdjustedMatchup",
