@@ -452,7 +452,12 @@ function advancedModelMatchup(game){
   const homeSd=homeScoreSd?.sd??12,awaySd=awayScoreSd?.sd??12;
   const combinedSd=Math.sqrt(Math.max(1,homeSd*homeSd+awaySd*awaySd-2*0.1225*homeSd*awaySd));
   const rawHomeProbability=0.5*(1+erf((homeMean-awayMean)/(Math.sqrt(2)*Math.max(8,combinedSd))));
-  return {homeMean,awayMean,rawHomeProbability,pace,homeGames:homeRows.length,awayGames:awayRows.length,leagueGames:advancedRows.length};
+  return {
+    homeMean,awayMean,rawHomeProbability,pace,
+    homeGames:homeRows.length,awayGames:awayRows.length,leagueGames:advancedRows.length,
+    homeRestDays:restDays(homeRowsAll),awayRestDays:restDays(awayRowsAll),
+    homeTravelMiles:homeTravel,awayTravelMiles:awayTravel
+  };
 }
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
