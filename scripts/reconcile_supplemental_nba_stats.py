@@ -20,7 +20,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 SUPPLEMENTAL = DATA / "supplemental" / "boxscorelab"
-SEASON_MAP = {"2025-26": "2026", "2026-27": "2027"}
+SEASON_MAP = {"2022-23": "2023", "2023-24": "2024", "2024-25": "2025", "2025-26": "2026", "2026-27": "2027"}
 BOX_FIELDS = (
     "field_goals_made", "field_goal_attempts", "field_goal_pct",
     "three_point_makes", "three_point_attempts", "three_point_pct",
