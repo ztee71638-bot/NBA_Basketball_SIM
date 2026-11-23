@@ -285,7 +285,7 @@ def test_confidence_selection_report_tracks_accuracy_coverage_and_probability_qu
 
 
 def test_calibrated_confidence_recent_windows_use_only_each_latest_chronological_slice():
-    probabilities = [0.55] * 100 + [0.80] * 100
+    probabilities = [0.65] * 100 + [0.80] * 100
     outcomes = [0.0] * 100 + [1.0] * 100
     latest = module.confidence_selection_report(probabilities[-100:], outcomes[-100:])
     full = module.confidence_selection_report(probabilities, outcomes)
