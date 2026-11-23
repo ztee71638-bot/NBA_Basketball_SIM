@@ -1,0 +1,190 @@
+{
+  "game_id": "401910040",
+  "game_date": "2026-11-24T00:30Z",
+  "home_team": "MIN",
+  "away_team": "BKN",
+  "source": "ESPN public injury report and game summaries",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-23T16:55:37.814531+00:00",
+      "minutes_to_tipoff": 454.4,
+      "injuries": [
+        {
+          "athlete_id": "4702670",
+          "name": "Grant Nelson",
+          "team": "BKN",
+          "team_name": "Brooklyn Nets",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Right",
+          "date": "2026-11-22T20:39Z",
+          "return_date": "2026-11-23",
+          "short_comment": "Nelson (ankle) is probable for Monday's game against the Timberwolves.",
+          "long_comment": "Nelson looks poised to come off the inactive list due to a sprained right ankle. However, his presence is not likely to affect Brooklyn's rotation.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5279130",
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "team_name": "Brooklyn Nets",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-23T15:22Z",
+          "return_date": "2027-01-27",
+          "short_comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports.",
+          "long_comment": "Traore had a productive start to his second year in the NBA, though he's now set to miss an extended period after sustaining a hamstring injury in Friday's loss to Orlando. With the 20-year-old point guard sidelined, Egor Demin, Mikel Brown and Keon Ellis are candidates for increased playing time.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3934673",
+          "name": "Donte DiVincenzo",
+          "team": "MIN",
+          "team_name": "Minnesota Timberwolves",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-05T20:53Z",
+          "return_date": "2027-04-02",
+          "short_comment": "DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
+          "long_comment": "DiVincenzo is approaching six months since tearing his right Achilles during the first round of the playoffs and has been rehabbing with the expectation that he'll play at some point this season. The veteran guard has sought advice from Jayson Tatum, Tyrese Haliburton and Damian Lillard during his recovery, though Minnesota has yet to establish a timetable for his return.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4432247",
+          "name": "Jaylen Clark",
+          "team": "MIN",
+          "team_name": "Minnesota Timberwolves",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-15T22:40Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Clark (hamstring) has been ruled out for the next two weeks.",
+          "long_comment": "Clark suffered a right hamstring strain during Saturday's 117-106 loss to Chicago. He played three minutes as a result of the injury, and he's now slated to miss at least two weeks and will be re-evaluated at that time. Terrence Shannon Jr. and Bones Hyland will see increased playing time off the bench in Clark's absence.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4594268",
+          "name": "Anthony Edwards",
+          "team": "MIN",
+          "team_name": "Minnesota Timberwolves",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-29T18:33Z",
+          "return_date": "2026-12-21",
+          "short_comment": "Edwards underwent a successful arthroscopic procedure on his right knee Thursday, the Timberwolves announced.",
+          "long_comment": "Edwards underwent debridement surgery in Minnesota, though the team did not provide a timetable for his return. The star guard is expected to make a full recovery, with additional updates coming as he progresses through rehabilitation. Based on previous reporting from ESPN's Shams Charania, Edwards could miss up to two months. Edwards was off to a scorching start this season, averaging 33.3 points, 4.8 rebounds, 3.5 assists and 2.0 steals across four appearances.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910040",
+        "date": "2026-11-24T00:30Z",
+        "home_team": "MIN",
+        "away_team": "BKN",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "4702670",
+            "name": "Grant Nelson",
+            "team": "BKN",
+            "team_name": "Brooklyn Nets",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Right",
+            "date": "2026-11-22T20:39Z",
+            "return_date": "2026-11-23",
+            "short_comment": "Nelson (ankle) is probable for Monday's game against the Timberwolves.",
+            "long_comment": "Nelson looks poised to come off the inactive list due to a sprained right ankle. However, his presence is not likely to affect Brooklyn's rotation.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5279130",
+            "name": "Nolan Traore",
+            "team": "BKN",
+            "team_name": "Brooklyn Nets",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-23T15:22Z",
+            "return_date": "2027-01-27",
+            "short_comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports.",
+            "long_comment": "Traore had a productive start to his second year in the NBA, though he's now set to miss an extended period after sustaining a hamstring injury in Friday's loss to Orlando. With the 20-year-old point guard sidelined, Egor Demin, Mikel Brown and Keon Ellis are candidates for increased playing time.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3934673",
+            "name": "Donte DiVincenzo",
+            "team": "MIN",
+            "team_name": "Minnesota Timberwolves",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-05T20:53Z",
+            "return_date": "2027-04-02",
+            "short_comment": "DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
+            "long_comment": "DiVincenzo is approaching six months since tearing his right Achilles during the first round of the playoffs and has been rehabbing with the expectation that he'll play at some point this season. The veteran guard has sought advice from Jayson Tatum, Tyrese Haliburton and Damian Lillard during his recovery, though Minnesota has yet to establish a timetable for his return.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4432247",
+            "name": "Jaylen Clark",
+            "team": "MIN",
+            "team_name": "Minnesota Timberwolves",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-15T22:40Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Clark (hamstring) has been ruled out for the next two weeks.",
+            "long_comment": "Clark suffered a right hamstring strain during Saturday's 117-106 loss to Chicago. He played three minutes as a result of the injury, and he's now slated to miss at least two weeks and will be re-evaluated at that time. Terrence Shannon Jr. and Bones Hyland will see increased playing time off the bench in Clark's absence.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4594268",
+            "name": "Anthony Edwards",
+            "team": "MIN",
+            "team_name": "Minnesota Timberwolves",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-29T18:33Z",
+            "return_date": "2026-12-21",
+            "short_comment": "Edwards underwent a successful arthroscopic procedure on his right knee Thursday, the Timberwolves announced.",
+            "long_comment": "Edwards underwent debridement surgery in Minnesota, though the team did not provide a timetable for his return. The star guard is expected to make a full recovery, with additional updates coming as he progresses through rehabilitation. Based on previous reporting from ESPN's Shams Charania, Edwards could miss up to two months. Edwards was off to a scorching start this season, averaging 33.3 points, 4.8 rebounds, 3.5 assists and 2.0 steals across four appearances.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910040",
+          "date": "2026-11-24T00:30Z",
+          "home_team": "MIN",
+          "away_team": "BKN",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
+    }
+  ],
+  "last_updated": "2026-11-23T16:55:37.814531+00:00"
+}

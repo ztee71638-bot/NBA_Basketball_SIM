@@ -1,5 +1,56 @@
 {
-  "last_updated": "2026-11-23T15:45:58.105658+00:00",
+  "last_updated": "2026-11-23T16:55:37.813892+00:00",
   "source": "ESPN game summaries",
-  "games": []
+  "games": [
+    {
+      "game_id": "401910036",
+      "date": "2026-11-24T00:00Z",
+      "home_team": "CHA",
+      "away_team": "MEM",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910037",
+      "date": "2026-11-24T00:00Z",
+      "home_team": "PHI",
+      "away_team": "POR",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910038",
+      "date": "2026-11-24T00:30Z",
+      "home_team": "IND",
+      "away_team": "OKC",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910039",
+      "date": "2026-11-24T00:30Z",
+      "home_team": "TOR",
+      "away_team": "MIL",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910040",
+      "date": "2026-11-24T00:30Z",
+      "home_team": "MIN",
+      "away_team": "BKN",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    }
+  ]
 }

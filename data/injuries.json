@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T15:45:58.104866+00:00",
+  "last_updated": "2026-11-23T16:55:37.811816+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1110,6 +1110,21 @@
       "return_date": "2026-11-29",
       "short_comment": "Banchero is expected to be sidelined for the next four-to-six weeks due to a right high-ankle sprain, Shams Charania of ESPN reports.",
       "long_comment": "Banchero left during Friday's loss against the Timberwolves due to an ankle injury, and follow-up tests have confirmed a high-ankle sprain for the fifth-year forward. With an extended absence expected, the Magic will have to rely more heavily on Franz Wagner and Desmond Bane offensively, and Tristan da Silva figures to be the top candidate to enter the Magic's starting lineup for as long as Banchero is sidelined.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3059318",
+      "name": "Joel Embiid",
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-23T16:49Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Embiid (knee) has been downgraded to questionable for Monday's game against Portland.",
+      "long_comment": "Embiid is under the weather and was a late addition to the injury report. If the star big man is unable to suit up, Adem Bona (back), Dominick Barlow and Jabari Walker would be candidates to see increased minutes at center. Over his last four games, Embiid has averaged 27.3 points, 8.0 rebounds, 5.0 assists, 1.8 blocks and 1.0 steals in 32.5 minutes per tilt.",
       "source": "ESPN"
     },
     {
