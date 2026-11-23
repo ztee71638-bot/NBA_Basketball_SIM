@@ -98,6 +98,10 @@ def test_backtest_uses_only_prior_games_and_reports_metrics():
     assert result["by_season"]["2027"]["games"] == 1
     assert result["advanced_games_tested"] == 1
     assert result["advanced_log_loss"] is not None
+    assert result["advanced_calibration"]["validation_method"] == "prequential_walk_forward"
+    assert result["advanced_calibration"]["validation_games"] == 1
+    assert result["advanced_calibrated_log_loss"] is not None
+    assert sum(row["games"] for row in result["advanced_calibrated_confidence_selection"]) >= 1
     assert result["advanced_baseline_log_loss"] is not None
     assert result["advanced_by_season"]["2027"]["games"] == 1
     assert result["calibration"]["validation_method"] == "prequential_walk_forward"
