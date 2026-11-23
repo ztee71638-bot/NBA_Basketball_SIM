@@ -103,6 +103,149 @@
       "log_loss": 0.4229
     }
   ],
+  "opponent_model_calibrated_confidence_recent_windows": {
+    "100": [
+      {
+        "minimum_confidence": 0.6,
+        "games": 69,
+        "coverage": 0.69,
+        "accuracy": 0.7101,
+        "average_confidence": 0.7183,
+        "brier_score": 0.2045,
+        "log_loss": 0.5999
+      },
+      {
+        "minimum_confidence": 0.65,
+        "games": 53,
+        "coverage": 0.53,
+        "accuracy": 0.717,
+        "average_confidence": 0.7473,
+        "brier_score": 0.2004,
+        "log_loss": 0.5916
+      },
+      {
+        "minimum_confidence": 0.7,
+        "games": 33,
+        "coverage": 0.33,
+        "accuracy": 0.7576,
+        "average_confidence": 0.7907,
+        "brier_score": 0.1828,
+        "log_loss": 0.555
+      },
+      {
+        "minimum_confidence": 0.75,
+        "games": 23,
+        "coverage": 0.23,
+        "accuracy": 0.8261,
+        "average_confidence": 0.8173,
+        "brier_score": 0.1516,
+        "log_loss": 0.4888
+      },
+      {
+        "minimum_confidence": 0.8,
+        "games": 12,
+        "coverage": 0.12,
+        "accuracy": 0.75,
+        "average_confidence": 0.8538,
+        "brier_score": 0.1973,
+        "log_loss": 0.5976
+      }
+    ],
+    "250": [
+      {
+        "minimum_confidence": 0.6,
+        "games": 155,
+        "coverage": 0.62,
+        "accuracy": 0.6968,
+        "average_confidence": 0.7081,
+        "brier_score": 0.2029,
+        "log_loss": 0.5925
+      },
+      {
+        "minimum_confidence": 0.65,
+        "games": 113,
+        "coverage": 0.452,
+        "accuracy": 0.7168,
+        "average_confidence": 0.7392,
+        "brier_score": 0.1944,
+        "log_loss": 0.5737
+      },
+      {
+        "minimum_confidence": 0.7,
+        "games": 71,
+        "coverage": 0.284,
+        "accuracy": 0.7887,
+        "average_confidence": 0.7772,
+        "brier_score": 0.1629,
+        "log_loss": 0.505
+      },
+      {
+        "minimum_confidence": 0.75,
+        "games": 38,
+        "coverage": 0.152,
+        "accuracy": 0.8684,
+        "average_confidence": 0.8209,
+        "brier_score": 0.1203,
+        "log_loss": 0.4093
+      },
+      {
+        "minimum_confidence": 0.8,
+        "games": 24,
+        "coverage": 0.096,
+        "accuracy": 0.8333,
+        "average_confidence": 0.8466,
+        "brier_score": 0.1375,
+        "log_loss": 0.4464
+      }
+    ],
+    "500": [
+      {
+        "minimum_confidence": 0.6,
+        "games": 308,
+        "coverage": 0.616,
+        "accuracy": 0.711,
+        "average_confidence": 0.716,
+        "brier_score": 0.2029,
+        "log_loss": 0.5947
+      },
+      {
+        "minimum_confidence": 0.65,
+        "games": 237,
+        "coverage": 0.474,
+        "accuracy": 0.7257,
+        "average_confidence": 0.7436,
+        "brier_score": 0.1969,
+        "log_loss": 0.5817
+      },
+      {
+        "minimum_confidence": 0.7,
+        "games": 162,
+        "coverage": 0.324,
+        "accuracy": 0.7407,
+        "average_confidence": 0.7753,
+        "brier_score": 0.1891,
+        "log_loss": 0.5644
+      },
+      {
+        "minimum_confidence": 0.75,
+        "games": 90,
+        "coverage": 0.18,
+        "accuracy": 0.7889,
+        "average_confidence": 0.8139,
+        "brier_score": 0.1655,
+        "log_loss": 0.5124
+      },
+      {
+        "minimum_confidence": 0.8,
+        "games": 49,
+        "coverage": 0.098,
+        "accuracy": 0.8367,
+        "average_confidence": 0.8489,
+        "brier_score": 0.1365,
+        "log_loss": 0.4455
+      }
+    ]
+  },
   "baseline_brier_score": 0.2267,
   "baseline_log_loss": 0.6447,
   "baseline_calibration_error": 0.0214,
@@ -760,5 +903,5 @@
     }
   },
   "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
-  "generated_at": "2026-11-23T21:49:30.211418+00:00"
+  "generated_at": "2026-11-23T21:59:59.927385+00:00"
 }
