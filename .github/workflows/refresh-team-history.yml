@@ -44,6 +44,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest -q
+      - name: Validate simulator JavaScript syntax
+        run: node --check app.js
       - name: Refresh team history
         if: github.event_name != 'pull_request'
         run: python scripts/refresh_team_history.py
