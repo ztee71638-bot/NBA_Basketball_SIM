@@ -6,6 +6,7 @@ let marketRosterLoaded = false;
 let marketRosterLoading = null;
 let playerImpactData = [];
 let winnerCalibration = null;
+let opponentModelCalibration = null;
 let playerImpactLoaded = false;
 let playerImpactLoading = null;
 let playersLoaded = false;
@@ -346,6 +347,49 @@ function applyWinnerCalibration(probability, calibration) {
   const z=Number(calibration.intercept||0)+Number(calibration.slope||1)*logit;
   return 1/(1+Math.exp(-Math.max(-30,Math.min(30,z))));
 }
+function opponentWeightedStats(rows,key){
+  const values=rows.map(row=>Number(row[key])).filter(Number.isFinite);
+  if(!values.length)return null;
+  const weights=values.map((value,index)=>Math.pow(0.5,(values.length-1-index)/8));
+  const totalWeight=weights.reduce((sum,value)=>sum+value,0);
+  const mean=values.reduce((sum,value,index)=>sum+value*weights[index],0)/totalWeight;
+  const variance=values.reduce((sum,value,index)=>sum+weights[index]*Math.pow(value-mean,2),0)/totalWeight;
+  return {mean,sd:Math.sqrt(variance),count:values.length};
+}
+function opponentAdjustedMatchup(game){
+  const cutoff=new Date(game?.date).getTime();
+  if(!Number.isFinite(cutoff)||!teamData.length)return null;
+  const nbaCodes=new Set(teamData.map(team=>canonicalTeam(team.abbreviation||"")).filter(Boolean));
+  const allRows=[];
+  teamData.forEach(team=>{
+    const abbreviation=canonicalTeam(team.abbreviation||"");
+    Object.entries(team.seasons||{}).forEach(([season,data])=>(data.games||[]).forEach(row=>{
+      const date=new Date(row.date).getTime(),opponent=canonicalTeam(row.opponent||"");
+      const pf=Number(row.points_for),pa=Number(row.points_against);
+      if(!row.game_id||!Number.isFinite(date)||date>=cutoff||!nbaCodes.has(opponent)
+        ||!Number.isFinite(pf)||!Number.isFinite(pa)||pf<=0||pa<=0)return;
+      allRows.push({team:abbreviation,opponent,season:String(season),date,points_for:pf,points_against:pa});
+    }));
+  });
+  if(allRows.length<60)return null;
+  const homeCode=canonicalTeam(game.home?.abbreviation||""),awayCode=canonicalTeam(game.away?.abbreviation||"");
+  const homeRows=allRows.filter(row=>row.team===homeCode).sort((a,b)=>a.date-b.date);
+  const awayRows=allRows.filter(row=>row.team===awayCode).sort((a,b)=>a.date-b.date);
+  if(homeRows.length<5||awayRows.length<5)return null;
+  const leagueAverage=allRows.reduce((sum,row)=>sum+row.points_for,0)/allRows.length;
+  const leagueSd=Math.sqrt(allRows.reduce((sum,row)=>sum+Math.pow(row.points_for-leagueAverage,2),0)/allRows.length);
+  const hOff=opponentWeightedStats(homeRows,"points_for"),hDef=opponentWeightedStats(homeRows,"points_against");
+  const aOff=opponentWeightedStats(awayRows,"points_for"),aDef=opponentWeightedStats(awayRows,"points_against");
+  if(!hOff||!hDef||!aOff||!aDef)return null;
+  const shrink=value=>leagueAverage+(value.mean-leagueAverage)*(value.count/(value.count+8));
+  const homeMean=leagueAverage+(shrink(hOff)-leagueAverage)*0.55+(shrink(aDef)-leagueAverage)*0.45+1.8;
+  const awayMean=leagueAverage+(shrink(aOff)-leagueAverage)*0.55+(shrink(hDef)-leagueAverage)*0.45;
+  const blendedSd=value=>Math.sqrt((value.count/(value.count+10))*value.sd*value.sd+(1-value.count/(value.count+10))*leagueSd*leagueSd);
+  const homeSd=blendedSd(hOff),awaySd=blendedSd(aOff);
+  const combinedSd=Math.sqrt(homeSd*homeSd+awaySd*awaySd);
+  const rawHomeProbability=0.5*(1+erf((homeMean-awayMean)/(Math.sqrt(2)*combinedSd)));
+  return {homeMean,awayMean,homeSd,awaySd,rawHomeProbability,homeGames:homeRows.length,awayGames:awayRows.length,leagueGames:allRows.length};
+}
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
   return mean + sd * Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
@@ -414,7 +458,7 @@ function reconcilePredictionLog(){
   const records=readPredictionLog();
   let changed=false;
   records.forEach(record=>{
-    if(record.source!=="simulator"||record.actualWinner||!record.gameId)return;
+    if(!["simulator","opponent-model"].includes(record.source)||record.actualWinner||!record.gameId)return;
     let finalScore=null;
     const finalGame=games.find(game=>String(game.id)===String(record.gameId)&&game.completed);
     if(finalGame){
@@ -437,6 +481,10 @@ function renderPredictionTracker(){
   if(!root)return;
   const records=readPredictionLog().sort((a,b)=>String(b.createdAt||"").localeCompare(String(a.createdAt||"")));
   const modelRecords=records.filter(r=>r.source==="simulator");
+  const opponentRecords=records.filter(r=>r.source==="opponent-model");
+  const opponentGraded=opponentRecords.filter(r=>r.pregame===true&&r.actualWinner);
+  const opponentCorrect=opponentGraded.filter(r=>r.predictedWinner===r.actualWinner).length;
+  const opponentPct=opponentGraded.length?(100*opponentCorrect/opponentGraded.length).toFixed(1)+"%":"—";
   const graded=modelRecords.filter(r=>r.pregame===true&&r.actualWinner);
   const correct=graded.filter(r=>r.predictedWinner===r.actualWinner).length;
   const pending=modelRecords.filter(r=>!r.actualWinner).length;
@@ -453,7 +501,7 @@ function renderPredictionTracker(){
         ' · '+escapeHtml(String(r.actualHomeScore??""))+'–'+escapeHtml(String(r.actualAwayScore??""))
       :(r.pregame===false?'<span class="tracker-live">POST-TIP · excluded</span>':'<span class="tracker-pending">PENDING</span>');
     const probability=Number.isFinite(r.homeProbability)?(r.homeProbability*100).toFixed(1)+"% / "+((1-r.homeProbability)*100).toFixed(1)+"%":"Not recorded";
-    const source=r.source==="reported"?"User-reported session":r.pregame===true?"Pregame simulation":"Post-tip simulation";
+    const source=r.source==="reported"?"User-reported session":r.source==="opponent-model"?"Opponent-adjusted calibrated model":r.pregame===true?"Pregame simulation":"Post-tip simulation";
     return '<tr><td>'+escapeHtml(date)+'</td><td>'+away+' @ '+home+'</td><td>'+predicted+'</td><td>'+escapeHtml(probability)+'</td><td>'+result+'</td><td>'+source+'</td></tr>';
   }).join("");
   root.innerHTML=
@@ -463,7 +511,8 @@ function renderPredictionTracker(){
       '<div class="metric"><small>Awaiting final result</small><b>'+pending+'</b></div>'+
       '<div class="metric"><small>Post-tip runs excluded</small><b>'+postTip+'</b></div>'+
     '</div>'+
-    '<p class="fine-print">Only simulations saved before scheduled tipoff and later matched to a final score count toward verified pregame accuracy. Multiple runs of one game are retained as separate records. This tracker is stored in this browser/device, not synced to a server.</p>'+
+    '<div class="result-grid tracker-metrics"><div class="metric"><small>Opponent-model verified picks</small><b>'+opponentGraded.length+'</b></div><div class="metric"><small>Opponent-model accuracy</small><b>'+opponentPct+'</b></div><div class="metric"><small>Opponent-model pending</small><b>'+opponentRecords.filter(r=>!r.actualWinner).length+'</b></div><div class="metric"><small>Opponent-model post-tip</small><b>'+opponentRecords.filter(r=>r.pregame===false).length+'</b></div></div>'+
+    '<p class="fine-print">Opponent-adjusted calibrated predictions are tracked separately from the original Monte Carlo simulator; their records are never combined. Only pregame picks matched to final scores count toward each model\'s accuracy. This tracker is stored in this browser/device, not synced to a server.</p>'+
     '<div class="tracker-reported"><strong>Earlier session reported by you:</strong> '+reported.correct+'/'+reported.total+' correct (83.3%) on Nov 21, 2026. This is kept separate because the original six simulation outputs were not saved and cannot be independently verified.</div>'+
     '<div class="tracker-table-wrap"><table><thead><tr><th>Saved</th><th>Matchup</th><th>Pick</th><th>Home / away chance</th><th>Grade</th><th>Record type</th></tr></thead><tbody>'+
     (rows||'<tr><td colspan="6">No saved simulations yet. Run a game simulation to start building your record.</td></tr>')+
@@ -515,6 +564,14 @@ function runGameSimulation() {
   const avgHome=homeTotal/trials, avgAway=awayTotal/trials;
   const homeName=selectedGame.home?.name||"Home team";
   const awayName=selectedGame.away?.name||"Away team";
+  const opponentProjection=opponentAdjustedMatchup(selectedGame);
+  const opponentCalibrationReady=!!opponentModelCalibration&&opponentModelCalibration.live_enabled===true
+    &&opponentModelCalibration.enabled===true
+    &&opponentModelCalibration.training_model==="opponent_weighted_score_v1"
+    &&opponentModelCalibration.validation_method==="prequential_walk_forward"
+    &&Number(opponentModelCalibration.validation_games)>=500;
+  const opponentCalibratedProbability=opponentProjection&&opponentCalibrationReady
+    ?applyWinnerCalibration(opponentProjection.rawHomeProbability,opponentModelCalibration):null;
   const rawHomeProbability=hw/(hw+aw||trials);
   const defaults=selectedGame.defaultProjection;
   const calibrationEligible=!!winnerCalibration&&!!defaults
@@ -546,6 +603,24 @@ function runGameSimulation() {
     inputHomeMean:hm,inputAwayMean:am,inputScoreSd:sd,trials,
     calibrationEligible,pregame:isPregame,modelVersion:"team-history-monte-carlo-v1"
   });
+  if(opponentProjection&&opponentCalibratedProbability!==null){
+    const opponentHomeWins=opponentCalibratedProbability>=0.5;
+    saveSimulationPrediction({
+      recordId:"opp-"+Date.now()+"-"+Math.random().toString(36).slice(2,9),
+      source:"opponent-model",createdAt:new Date().toISOString(),gameId:String(selectedGame.id||""),
+      gameDate:selectedGame.date,homeName,awayName,homeAbbr,awayAbbr,
+      predictedWinner:opponentHomeWins?homeAbbr:awayAbbr,
+      predictedWinnerName:opponentHomeWins?homeName:awayName,
+      homeProbability:opponentCalibratedProbability,
+      projectedHome:Math.round(opponentProjection.homeMean),projectedAway:Math.round(opponentProjection.awayMean),
+      rawHomeProbability:opponentProjection.rawHomeProbability,
+      calibrationEligible:true,pregame:isPregame,
+      modelVersion:"opponent-weighted-score-v1-calibrated"
+    });
+  }
+  const opponentModelHtml=opponentProjection
+    ?'<section class="metric" style="margin-top:12px"><small>OPPONENT-ADJUSTED '+(opponentCalibratedProbability!==null?'CALIBRATED':'RAW')+' MODEL · '+(opponentProjection.homeGames+opponentProjection.awayGames)+' team games</small><b>'+escapeHtml(opponentProjection.homeMean.toFixed(1)+' — '+opponentProjection.awayMean.toFixed(1))+'</b><p class="fine-print">'+escapeHtml(homeName)+' '+(opponentCalibratedProbability!==null?(opponentCalibratedProbability*100).toFixed(1):(opponentProjection.rawHomeProbability*100).toFixed(1))+'% · '+escapeHtml(awayName)+' '+(opponentCalibratedProbability!==null?((1-opponentCalibratedProbability)*100).toFixed(1):((1-opponentProjection.rawHomeProbability)*100).toFixed(1))+'%'+(opponentCalibratedProbability!==null?' · walk-forward calibration active':' · calibration gate unavailable; raw estimate only')+'</p></section>'
+    :'<p class="fine-print">Opponent-adjusted model unavailable: insufficient clean pregame team-history rows.</p>';
   const winnerScore=homeWins?projectedHome:projectedAway;
   const loserScore=homeWins?projectedAway:projectedHome;
   const calibrationNote=calibrationEligible
@@ -553,7 +628,7 @@ function runGameSimulation() {
     : winnerCalibration
       ? " Calibration is not applied to manually changed assumptions; displayed win chance is the raw simulation."
       : "";
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`+readinessHtml;  $("simulation-modal-title").textContent="Simulation result";
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`+opponentModelHtml+readinessHtml;  $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
   const homeLogo=teamLogoMarkup(selectedGame.home,"split-home");
@@ -1100,6 +1175,13 @@ async function loadModelMetrics() {
   try {
     const data=await loadJson("data/model_metrics.json");
     winnerCalibration = data.calibration?.live_enabled ? data.calibration : null;
+    const opponentCalibration=data.opponent_model_calibration;
+    opponentModelCalibration=opponentCalibration?.live_enabled===true
+      &&opponentCalibration?.enabled===true
+      &&opponentCalibration?.training_model==="opponent_weighted_score_v1"
+      &&opponentCalibration?.validation_method==="prequential_walk_forward"
+      &&Number(opponentCalibration?.validation_games)>=500
+      ?opponentCalibration:null;
     if(!data.games_tested){root.textContent=data.message||"Not enough historical games to evaluate the model yet.";return;}
     let qualityHtml="";
     try {
