@@ -12,7 +12,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from statistics import mean
 from urllib.request import Request, urlopen
+import sys
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from backtest_model import apply_probability_calibration, predict
 
 ROOT = Path(__file__).resolve().parents[1]
