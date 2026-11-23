@@ -1117,5 +1117,5 @@
     }
   },
   "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
-  "generated_at": "2026-11-23T22:26:58.484804+00:00"
+  "generated_at": "2026-11-23T22:48:38.836041+00:00"
 }
