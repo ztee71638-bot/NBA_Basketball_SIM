@@ -29,8 +29,62 @@ def age_hours(value: str | None, now: datetime) -> float | None:
         return None
 
 
+def summarize_availability_snapshots(payloads: list[dict[str, Any]], now: datetime) -> dict[str, Any]:
+    """Describe point-in-time injury/lineup coverage without treating sparse history as an error."""
+    game_ids = set()
+    total_snapshots = 0
+    confirmed_lineup_snapshots = 0
+    injury_observations = 0
+    captured_times = []
+    unreadable = 0
+    for payload in payloads:
+        game_id = str(payload.get("game_id") or "")
+        if game_id:
+            game_ids.add(game_id)
+        snapshots = payload.get("snapshots") or []
+        for snapshot in snapshots:
+            if not isinstance(snapshot, dict):
+                unreadable += 1
+                continue
+            total_snapshots += 1
+            stamp = snapshot.get("captured_at")
+            if stamp:
+                try:
+                    captured = datetime.fromisoformat(str(stamp).replace("Z", "+00:00"))
+                    if captured.tzinfo is None:
+                        captured = captured.replace(tzinfo=timezone.utc)
+                    captured_times.append(captured)
+                except (TypeError, ValueError):
+                    unreadable += 1
+            injury_observations += len(snapshot.get("injuries") or [])
+            lineup = snapshot.get("lineup") or {}
+            if (
+                lineup.get("status") == "confirmed"
+                and len(lineup.get("home_starters") or []) == 5
+                and len(lineup.get("away_starters") or []) == 5
+            ):
+                confirmed_lineup_snapshots += 1
+    latest = max(captured_times) if captured_times else None
+    return {
+        "status": "collecting" if total_snapshots else "not_started",
+        "game_files": len(payloads),
+        "games_with_snapshots": len(game_ids),
+        "snapshot_count": total_snapshots,
+        "injury_player_observations": injury_observations,
+        "confirmed_lineup_snapshots": confirmed_lineup_snapshots,
+        "confirmed_lineup_snapshot_rate_pct": round(
+            100 * confirmed_lineup_snapshots / total_snapshots, 1
+        ) if total_snapshots else 0.0,
+        "first_captured_at": min(captured_times).isoformat() if captured_times else None,
+        "last_captured_at": latest.isoformat() if latest else None,
+        "latest_snapshot_age_hours": age_hours(latest.isoformat(), now) if latest else None,
+        "unreadable_snapshot_records": unreadable,
+    }
+
+
 def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any] | None = None,
-                   now: datetime | None = None) -> dict[str, Any]:
+                   now: datetime | None = None,
+                   availability_payloads: list[dict[str, Any]] | None = None) -> dict[str, Any]:
     now = now or datetime.now(timezone.utc)
     warnings: list[str] = []
     errors: list[str] = []
@@ -356,6 +410,7 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             "advanced_metric_examples": advanced_metric_examples,
         },
         "player_history": player_summary,
+        "availability_history": summarize_availability_snapshots(availability_payloads or [], now),
         "warnings": warnings,
         "errors": errors,
         "note": "This is a coverage and integrity audit, not a measure of predictive accuracy."
@@ -376,7 +431,15 @@ def main() -> None:
             players = json.loads(args.players.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
             players = None
-    result = audit_payloads(teams, players)
+    availability_payloads = []
+    availability_dir = DATA / "snapshots" / "availability"
+    if availability_dir.exists():
+        for path in sorted(availability_dir.glob("*.json")):
+            try:
+                availability_payloads.append(json.loads(path.read_text(encoding="utf-8")))
+            except (json.JSONDecodeError, OSError):
+                print(f"::warning::Unreadable availability snapshot: {path.name}")
+    result = audit_payloads(teams, players, availability_payloads=availability_payloads)
     rendered = json.dumps(result, indent=2)
     print(rendered)
     for warning in result["warnings"]:
