@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T16:55:37.813892+00:00",
+  "last_updated": "2026-11-23T17:54:38.239992+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -47,6 +47,36 @@
       "date": "2026-11-24T00:30Z",
       "home_team": "MIN",
       "away_team": "BKN",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910041",
+      "date": "2026-11-24T01:00Z",
+      "home_team": "CHI",
+      "away_team": "CLE",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910042",
+      "date": "2026-11-24T01:00Z",
+      "home_team": "NO",
+      "away_team": "PHX",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910043",
+      "date": "2026-11-24T01:30Z",
+      "home_team": "HOU",
+      "away_team": "LAC",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",

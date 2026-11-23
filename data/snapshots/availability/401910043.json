@@ -1,0 +1,100 @@
+{
+  "game_id": "401910043",
+  "game_date": "2026-11-24T01:30Z",
+  "home_team": "HOU",
+  "away_team": "LAC",
+  "source": "ESPN public injury report and game summaries",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-23T17:54:38.240418+00:00",
+      "minutes_to_tipoff": 455.4,
+      "injuries": [
+        {
+          "athlete_id": "4396818",
+          "name": "Jordan Miller",
+          "team": "LAC",
+          "team_name": "LA Clippers",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-08-26T20:04Z",
+          "return_date": "2027-03-02",
+          "short_comment": "Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic.",
+          "long_comment": "It's a tough break for Miller, who had an opportunity to battle for a reserve role during training camp in the fall. The timeline for a return is likely to keep him on the shelf until after the All-Star break. Miller's extended stay on the sidelines gives Kobe Sanders a chance to crack the Clippers' rotation.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "6580",
+          "name": "Bradley Beal",
+          "team": "LAC",
+          "team_name": "LA Clippers",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-15T01:03Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Beal (knee) will not be ready for the start of the regular season, NBA writer Justin Russo reports.",
+          "long_comment": "Beal is dealing with knee inflammation that will keep him sidelined for Opening Night. While it's unclear how long the Clippers will be without the veteran guard, Darius Garland, Keaton Wagler and Kris Dunn should dominate the backcourt minutes in his absence. Beal's 2025-26 campaign was cut short by a hip injury after he averaged 8.2 points and 1.7 assists in 20.6 minutes across just six regular-season appearances.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910043",
+        "date": "2026-11-24T01:30Z",
+        "home_team": "HOU",
+        "away_team": "LAC",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "4396818",
+            "name": "Jordan Miller",
+            "team": "LAC",
+            "team_name": "LA Clippers",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-08-26T20:04Z",
+            "return_date": "2027-03-02",
+            "short_comment": "Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic.",
+            "long_comment": "It's a tough break for Miller, who had an opportunity to battle for a reserve role during training camp in the fall. The timeline for a return is likely to keep him on the shelf until after the All-Star break. Miller's extended stay on the sidelines gives Kobe Sanders a chance to crack the Clippers' rotation.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "6580",
+            "name": "Bradley Beal",
+            "team": "LAC",
+            "team_name": "LA Clippers",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-15T01:03Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Beal (knee) will not be ready for the start of the regular season, NBA writer Justin Russo reports.",
+            "long_comment": "Beal is dealing with knee inflammation that will keep him sidelined for Opening Night. While it's unclear how long the Clippers will be without the veteran guard, Darius Garland, Keaton Wagler and Kris Dunn should dominate the backcourt minutes in his absence. Beal's 2025-26 campaign was cut short by a hip injury after he averaged 8.2 points and 1.7 assists in 20.6 minutes across just six regular-season appearances.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910043",
+          "date": "2026-11-24T01:30Z",
+          "home_team": "HOU",
+          "away_team": "LAC",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
+    }
+  ],
+  "last_updated": "2026-11-23T17:54:38.240418+00:00"
+}
