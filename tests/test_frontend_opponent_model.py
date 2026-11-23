@@ -1,3 +1,4 @@
+import importlib.util
 import json
 import math
 import re
@@ -7,7 +8,11 @@ from pathlib import Path
 
 import pytest
 
-from scripts.backtest_model import predict
+ROOT = Path(__file__).resolve().parents[1]
+_spec = importlib.util.spec_from_file_location("backtest_model", ROOT / "scripts" / "backtest_model.py")
+_backtest = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_backtest)
+predict = _backtest.predict
 
 
 TEAM_CODES = [
@@ -28,7 +33,7 @@ def test_live_opponent_model_matches_backtest_prediction():
     if not node:
         pytest.skip("Node.js is unavailable; CI separately installs/runs Node syntax validation")
 
-    root = Path(__file__).resolve().parents[1]
+    root = ROOT
     app_source = (root / "app.js").read_text(encoding="utf-8")
     js_functions = "\n".join(
         _function_source(app_source, name)
