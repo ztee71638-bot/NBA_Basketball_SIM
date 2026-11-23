@@ -69,3 +69,27 @@ def test_parse_events_falls_back_to_event_status_when_competition_status_is_empt
     game = module.parse_events(payload)[0]
     assert game["status"] == "post"
     assert game["completed"] is True
+
+
+def test_run_does_not_rewrite_ledger_when_nothing_changes(tmp_path):
+    ledger_path = tmp_path / "daily_predictions.json"
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    (data_dir / "teams.json").write_text('{"teams": []}', encoding="utf-8")
+    (data_dir / "model_metrics.json").write_text("{}", encoding="utf-8")
+    empty = module.summarize([])
+    initial = {
+        "schema_version": 1,
+        "created_at": "2026-11-20T00:00:00+00:00",
+        "source": "ESPN scoreboard",
+        "updated_at": "2026-11-20T00:00:00+00:00",
+        "records": [],
+        "daily": {},
+        "overall": empty,
+        "rolling": {"7d": empty, "30d": empty},
+        "last_run": {"at": "2026-11-20T00:00:00+00:00"},
+    }
+    original = module.json.dumps(initial, indent=2) + "\\n"
+    ledger_path.write_text(original, encoding="utf-8")
+    module.run(ledger_path, data_dir, scoreboard_fetcher=lambda day: {"events": []})
+    assert ledger_path.read_text(encoding="utf-8") == original
