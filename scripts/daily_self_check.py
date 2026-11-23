@@ -53,7 +53,9 @@ def parse_events(payload: dict) -> list[dict]:
         away = next((c for c in competitors if c.get("homeAway") == "away"), None)
         if not home or not away:
             continue
-        status = (competition.get("status") or event.get("status") or {}).get("type", {})
+        event_status = (event.get("status") or {}).get("type") or {}
+        competition_status = (competition.get("status") or {}).get("type") or {}
+        status = {**event_status, **competition_status}
         parsed.append({
             "game_id": str(event.get("id") or competition.get("id") or ""),
             "date": event.get("date") or competition.get("date"),
@@ -172,7 +174,9 @@ def run(ledger_path: Path = LEDGER, data_dir: Path = DATA, scoreboard_fetcher=fe
             if existing:
                 changed = reconcile_record(existing, game) or changed
                 continue
-            if game["completed"] or game["status"] not in ("pre", ""):
+            # Unknown status is not proof that a game is upcoming. Only save
+            # predictions when ESPN explicitly marks the event as pregame.
+            if game["completed"] or game["status"] != "pre":
                 continue
             prediction = make_prediction(game, rows, metrics, stamp)
             if prediction:
@@ -187,6 +191,18 @@ def run(ledger_path: Path = LEDGER, data_dir: Path = DATA, scoreboard_fetcher=fe
     ledger["records"] = records
     ledger["daily"] = {day: summarize(items) for day, items in sorted(daily.items())}
     ledger["overall"] = summarize(records)
+    def within_days(record: dict, days: int) -> bool:
+        try:
+            game_time = datetime.fromisoformat(str(record.get("game_date", "")).replace("Z", "+00:00"))
+            if game_time.tzinfo is None:
+                game_time = game_time.replace(tzinfo=timezone.utc)
+            return now - timedelta(days=days) <= game_time <= now
+        except (TypeError, ValueError):
+            return False
+    ledger["rolling"] = {
+        "7d": summarize([record for record in records if within_days(record, 7)]),
+        "30d": summarize([record for record in records if within_days(record, 30)]),
+    }
     ledger["last_run"] = {"at": stamp, "scoreboard_dates_checked": dates, "events_seen": seen}
     ledger_path.parent.mkdir(parents=True, exist_ok=True)
     ledger_path.write_text(json.dumps(ledger, indent=2) + "\n", encoding="utf-8")
