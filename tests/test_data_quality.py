@@ -316,3 +316,41 @@ def test_availability_audit_empty_archive_is_collecting_not_an_error():
     assert result["snapshot_count"] == 0
     assert result["confirmed_lineup_snapshot_rate_pct"] == 0.0
 
+
+
+def test_full_audit_warns_when_availability_snapshots_have_no_confirmed_lineups():
+    payloads = [{
+        "game_id": "g1",
+        "snapshots": [{
+            "captured_at": "2026-11-21T17:00:00+00:00",
+            "injuries": [{"name": "Player A"}],
+            "lineup": {"status": "not_available", "home_starters": [], "away_starters": []},
+        }],
+    }]
+    result = module.audit_payloads(
+        fixture(), None, datetime(2026, 11, 21, 18, tzinfo=timezone.utc),
+        availability_payloads=payloads,
+    )
+    assert result["status"] == "warning"
+    assert result["availability_history"]["confirmed_lineup_snapshots"] == 0
+    assert any("no confirmed starting-lineup snapshots yet" in item for item in result["warnings"])
+
+
+def test_full_audit_does_not_warn_when_confirmed_lineups_are_present():
+    payloads = [{
+        "game_id": "g1",
+        "snapshots": [{
+            "captured_at": "2026-11-21T17:00:00+00:00",
+            "injuries": [],
+            "lineup": {
+                "status": "confirmed",
+                "home_starters": ["1", "2", "3", "4", "5"],
+                "away_starters": ["6", "7", "8", "9", "10"],
+            },
+        }],
+    }]
+    result = module.audit_payloads(
+        fixture(), None, datetime(2026, 11, 21, 18, tzinfo=timezone.utc),
+        availability_payloads=payloads,
+    )
+    assert not any("no confirmed starting-lineup snapshots yet" in item for item in result["warnings"])
