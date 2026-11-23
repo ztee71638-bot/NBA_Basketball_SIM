@@ -59,9 +59,9 @@ def fetch_csv(url: str) -> str:
                 time.sleep(min(float(response.headers.get("Retry-After", 2 ** attempt)), 30))
                 continue
             response.raise_for_status()
-            if not response.text.strip():
+            if not response.content.strip():
                 raise RuntimeError(f"Empty CSV response from {url}")
-            return response.text.lstrip("\ufeff")
+            return decode_csv_bytes(response.content)
         except requests.RequestException as exc:
             last_error = exc
             status = getattr(getattr(exc, "response", None), "status_code", None)
