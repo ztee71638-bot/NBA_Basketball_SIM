@@ -104,3 +104,33 @@ def test_local_game_date_matches_next_day_utc_event_timestamp():
     report = module.reconcile_team_games(teams, {"2025-26": source_fixture()})
     assert report["matched_rows"] == 2
     assert report["score_or_key_mismatches"] == 0
+
+
+def test_historical_season_keys_map_to_canonical_archive_years():
+    assert module.SEASON_MAP == {
+        "2022-23": "2023",
+        "2023-24": "2024",
+        "2024-25": "2025",
+        "2025-26": "2026",
+        "2026-27": "2027",
+    }
+
+    teams = {"teams": [
+        {"abbreviation": "AAA", "seasons": {"2023": {"games": [{
+            "game_id": "old-game", "date": "2023-01-01T00:00:00Z",
+            "opponent": "BBB", "points_for": 110, "points_against": 100,
+            "possessions_estimate": None, "pace_estimate": None,
+            "offensive_rating": None, "defensive_rating": None,
+        }]}}},
+        {"abbreviation": "BBB", "seasons": {"2023": {"games": [{
+            "game_id": "old-game", "date": "2023-01-01T00:00:00Z",
+            "opponent": "AAA", "points_for": 100, "points_against": 110,
+            "possessions_estimate": None, "pace_estimate": None,
+            "offensive_rating": None, "defensive_rating": None,
+        }]}}},
+    ]}
+    rows = [dict(row, game_date="2023-01-01") for row in source_fixture()]
+    report = module.reconcile_team_games(teams, {"2022-23": rows})
+    assert report["matched_rows"] == 2
+    assert report["unmatched_rows"] == 0
+    assert teams["teams"][0]["seasons"]["2023"]["games"][0]["pace_estimate"] is not None
