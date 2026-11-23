@@ -222,6 +222,8 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
         if len(player_ids) != len(set(player_ids)):
             errors.append("Player archive contains duplicate ESPN player IDs.")
         missing_log_players = []
+        roster_only_players = []
+        players_missing_logs_despite_appearances = []
         logs_by_season: Counter[str] = Counter()
         players_with_logs_by_season: Counter[str] = Counter()
         duplicate_player_game_logs = 0
@@ -290,13 +292,29 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
                                 row_invalid = True
                     invalid_player_stat_rows += int(row_invalid)
             if not has_any_logs:
-                missing_log_players.append({
+                missing_record = {
                     "id": str(player.get("id") or ""),
                     "name": player.get("name") or "Unknown",
                     "team": player.get("team") or "Unknown",
-                })
+                }
+                missing_log_players.append(missing_record)
+                reported_appearances = any(
+                    isinstance(total, dict)
+                    and total.get("games_played") is not None
+                    and float(total.get("games_played")) > 0
+                    for season_totals in (player.get("season_advanced_totals") or {}).values()
+                    for total in (season_totals if isinstance(season_totals, list) else [season_totals])
+                )
+                if reported_appearances:
+                    players_missing_logs_despite_appearances.append(missing_record)
+                else:
+                    roster_only_players.append(missing_record)
         player_summary["players_without_any_logs"] = len(missing_log_players)
         player_summary["players_without_logs_sample"] = missing_log_players[:50]
+        player_summary["roster_only_players_without_appearances"] = len(roster_only_players)
+        player_summary["roster_only_players_sample"] = roster_only_players[:50]
+        player_summary["players_missing_logs_despite_reported_appearances"] = len(players_missing_logs_despite_appearances)
+        player_summary["players_missing_logs_despite_appearances_sample"] = players_missing_logs_despite_appearances[:50]
         player_summary["game_logs_by_season"] = dict(sorted(logs_by_season.items()))
         player_summary["players_with_logs_by_season"] = dict(sorted(players_with_logs_by_season.items()))
         player_summary["duplicate_player_game_logs"] = duplicate_player_game_logs
@@ -311,8 +329,11 @@ def audit_payloads(teams_payload: dict[str, Any], players_payload: dict[str, Any
             warnings.append(f"Player archive contains {out_of_season_player_game_logs} game logs dated outside their declared season.")
         if invalid_player_stat_rows:
             errors.append(f"Player archive contains {invalid_player_stat_rows} game logs with invalid or impossible box-score values.")
-        if missing_log_players:
-            warnings.append(f"{len(missing_log_players)} player records have no game logs in any stored season.")
+        if players_missing_logs_despite_appearances:
+            warnings.append(
+                f"{len(players_missing_logs_despite_appearances)} player records report NBA appearances "
+                "in season totals but have no per-game logs."
+            )
         if not logs_by_season:
             warnings.append("Player archive contains no readable per-game history rows.")
     else:
