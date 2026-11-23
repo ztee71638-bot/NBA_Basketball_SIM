@@ -49,7 +49,7 @@ def test_live_opponent_model_matches_backtest_prediction():
             rows.append({
                 "game_id": f"{code}-{game_index}",
                 "date": f"2026-11-{game_index + 1:02d}T20:00:00Z",
-                "opponent": TEAM_CODES[(team_index + 1) % len(TEAM_CODES)],
+                "opponent": ("GS" if code == "BOS" and game_index == 0 else TEAM_CODES[(team_index + 1) % len(TEAM_CODES)]),
                 "points_for": 99 + (team_index % 13) + game_index * 1.7,
                 "points_against": 101 + (team_index % 9) + game_index * 1.1,
             })
