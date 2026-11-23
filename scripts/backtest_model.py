@@ -415,6 +415,9 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     baseline_briers, baseline_probabilities, baseline_outcomes = [], [], []
     advanced_errors, advanced_correct, advanced_briers = [], [], []
     advanced_baseline_errors, advanced_baseline_correct, advanced_probabilities, advanced_outcomes = [], [], [], []
+    advanced_calibrated_probabilities, advanced_calibrated_briers = [], []
+    prior_advanced_calibration = {"intercept": 0.0, "slope": 1.0, "training_games": 0, "enabled": False}
+    last_advanced_calibration_fit_count = 0
     advanced_baseline_briers, advanced_baseline_probabilities, advanced_baseline_outcomes = [], [], []
     advanced_score_errors_by_game, advanced_baseline_score_errors_by_game = [], []
     advanced_season_diagnostics = defaultdict(lambda: {
@@ -640,6 +643,23 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
                     advanced_briers.append((adv_prob-float(home_win))**2)
                     advanced_baseline_errors.extend((abs(base_h-actual_h),abs(base_a-actual_a)))
                     advanced_baseline_correct.append((base_h>base_a)==home_win)
+                    # Fit only on earlier advanced-model holdouts. The current
+                    # game's result is appended after its calibrated probability
+                    # has been produced, preserving strict prequential ordering.
+                    prior_advanced_count = len(advanced_probabilities)
+                    if (prior_advanced_count >= 100
+                            and prior_advanced_count - last_advanced_calibration_fit_count >= 25):
+                        prior_advanced_calibration = fit_probability_calibrator(
+                            advanced_probabilities, advanced_outcomes
+                        )
+                        last_advanced_calibration_fit_count = prior_advanced_count
+                    calibrated_advanced_prob = apply_probability_calibration(
+                        adv_prob, prior_advanced_calibration
+                    )
+                    advanced_calibrated_probabilities.append(calibrated_advanced_prob)
+                    advanced_calibrated_briers.append(
+                        (calibrated_advanced_prob - float(home_win)) ** 2
+                    )
                     advanced_probabilities.append(adv_prob)
                     advanced_outcomes.append(float(home_win))
                     advanced_baseline_probabilities.append(base_probability)
@@ -808,6 +828,45 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "advanced_log_loss": binary_log_loss(advanced_probabilities, advanced_outcomes),
         "advanced_baseline_log_loss": binary_log_loss(advanced_baseline_probabilities, advanced_baseline_outcomes),
         "advanced_calibration_error": expected_calibration_error(advanced_probabilities, advanced_outcomes),
+        "advanced_calibrated_brier_score": round(mean(advanced_calibrated_briers), 4) if advanced_calibrated_briers else None,
+        "advanced_calibrated_log_loss": binary_log_loss(advanced_calibrated_probabilities, advanced_outcomes),
+        "advanced_calibrated_calibration_error": expected_calibration_error(advanced_calibrated_probabilities, advanced_outcomes),
+        "advanced_calibration": {
+            **fit_probability_calibrator(advanced_probabilities, advanced_outcomes),
+            "training_model": "advanced_pace_efficiency_v1",
+            "validation_method": "prequential_walk_forward",
+            "validation_games": len(advanced_calibrated_probabilities),
+            "minimum_training_games": 100,
+            "refit_interval_games": 25,
+            "validation_brier_score": round(mean(advanced_calibrated_briers), 4) if advanced_calibrated_briers else None,
+            "validation_log_loss": binary_log_loss(advanced_calibrated_probabilities, advanced_outcomes),
+            "validation_calibration_error": expected_calibration_error(advanced_calibrated_probabilities, advanced_outcomes),
+            "raw_brier_score": round(mean(advanced_briers), 4) if advanced_briers else None,
+            "raw_log_loss": binary_log_loss(advanced_probabilities, advanced_outcomes),
+            "raw_calibration_error": expected_calibration_error(advanced_probabilities, advanced_outcomes),
+            "baseline_brier_score": round(mean(advanced_baseline_briers), 4) if advanced_baseline_briers else None,
+            "baseline_log_loss": binary_log_loss(advanced_baseline_probabilities, advanced_baseline_outcomes),
+            "baseline_calibration_error": expected_calibration_error(advanced_baseline_probabilities, advanced_baseline_outcomes),
+            "live_enabled": bool(
+                len(advanced_calibrated_probabilities) >= 500
+                and mean(advanced_calibrated_briers) < mean(advanced_briers)
+                and binary_log_loss(advanced_calibrated_probabilities, advanced_outcomes) < binary_log_loss(advanced_probabilities, advanced_outcomes)
+                and expected_calibration_error(advanced_calibrated_probabilities, advanced_outcomes) < expected_calibration_error(advanced_probabilities, advanced_outcomes)
+                and mean(advanced_calibrated_briers) < mean(advanced_baseline_briers)
+                and binary_log_loss(advanced_calibrated_probabilities, advanced_outcomes) < binary_log_loss(advanced_baseline_probabilities, advanced_baseline_outcomes)
+                and expected_calibration_error(advanced_calibrated_probabilities, advanced_outcomes) < expected_calibration_error(advanced_baseline_probabilities, advanced_baseline_outcomes)
+            ),
+        },
+        "advanced_calibrated_confidence_selection": confidence_selection_report(
+            advanced_calibrated_probabilities, advanced_outcomes
+        ),
+        "advanced_calibrated_confidence_recent_windows": {
+            str(window): confidence_selection_report(
+                advanced_calibrated_probabilities[-window:], advanced_outcomes[-window:]
+            )
+            for window in (100, 250, 500)
+            if len(advanced_calibrated_probabilities) >= window
+        },
         "advanced_baseline_calibration_error": expected_calibration_error(advanced_baseline_probabilities, advanced_baseline_outcomes),
         "advanced_recent_windows": rolling_window_report(
             advanced_score_errors_by_game, advanced_baseline_score_errors_by_game,
