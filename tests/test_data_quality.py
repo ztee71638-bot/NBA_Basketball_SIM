@@ -331,7 +331,9 @@ def test_full_audit_warns_when_availability_snapshots_have_no_confirmed_lineups(
         fixture(), None, datetime(2026, 11, 21, 18, tzinfo=timezone.utc),
         availability_payloads=payloads,
     )
-    assert result["status"] == "warning"
+    # The shared fixture intentionally has only two teams, so the overall audit
+    # remains an error; the availability-specific warning must still be present.
+    assert result["status"] == "error"
     assert result["availability_history"]["confirmed_lineup_snapshots"] == 0
     assert any("no confirmed starting-lineup snapshots yet" in item for item in result["warnings"])
 
