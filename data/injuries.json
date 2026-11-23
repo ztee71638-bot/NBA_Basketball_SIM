@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T18:53:53.690930+00:00",
+  "last_updated": "2026-11-23T19:57:59.263784+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -798,21 +798,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4576086",
-      "name": "Bryce McGowens",
-      "team": "NO",
-      "team_name": "New Orleans Pelicans",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-22T20:53Z",
-      "return_date": "2026-11-23",
-      "short_comment": "McGowens (elbow) is listed as probable for Monday's game against Phoenix.",
-      "long_comment": "McGowens has missed the Pelicans' last six games due to a left elbow infection, but it's an encouraging sign to see him listed as probable to return Monday. In seven regular-season outings, he's averaged 3.7 points and 1.1 steals in 10.6 minutes per game.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4395628",
       "name": "Zion Williamson",
       "team": "NO",
@@ -926,10 +911,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-23T18:49Z",
+      "date": "2026-11-23T19:09Z",
       "return_date": "2026-11-25",
-      "short_comment": "Williams (back) is listed as out for Sunday's game against Miami.",
-      "long_comment": "Williams missed seven consecutive contests due to back spasms. He has since appeared in the Thunder's last two games. However, the 24-year-old won't suit up Sunday against the Heat, the first game of a back-to-back for Oklahoma City. Without Williams on the floor, Aday Mara, Kenrich Williams and Micah Peavy could see more minutes.",
+      "short_comment": "Williams (back) has been ruled out for Monday's game against the Pacers",
+      "long_comment": "Williams returned from a seven-game absence to make two appearances before sitting out Sunday against Miami. His recurring back issues leave Oklahoma City's depleted frontcourt even thinner, potentially opening additional minutes for Kenrich Williams and Micah Peavy.",
       "source": "ESPN"
     },
     {
@@ -941,10 +926,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-23T18:46Z",
+      "date": "2026-11-23T18:49Z",
       "return_date": "2026-11-25",
-      "short_comment": "Topic (hip) is listed as out for Sunday's game versus the Heat.",
-      "long_comment": "Topic has appeared in only three games for Oklahoma City this season. He will now miss a second consecutive contest due to a hip injury, with his next opportunity to play coming Monday versus the Pacers. Considering Topic has averaged just 11.3 minutes per outing, his absence won't have much of an effect on the rotation, though he might have seen more action if Shai Gilgeous-Alexander (back/neck), who is questionable, can't suit up.",
+      "short_comment": "Topic (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
+      "long_comment": "Topic will miss his third consecutive game due to a left hip strain. The rookie has averaged just 11.3 minutes across three appearances this season, so his absence should have minimal fantasy implications despite Oklahoma City's depleted backcourt.",
       "source": "ESPN"
     },
     {
@@ -1170,21 +1155,6 @@
       "return_date": "2027-10-01",
       "short_comment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
       "long_comment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4888725",
-      "name": "Ryan Dunn",
-      "team": "PHX",
-      "team_name": "Phoenix Suns",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-22T23:24Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Dunn (quadriceps) is listed as questionable for Monday's game against the Pelicans.",
-      "long_comment": "Dunn exited Friday's win over Utah early due to right quad soreness, and despite practicing in full Sunday, he's still questionable to suit up versus New Orleans.",
       "source": "ESPN"
     },
     {

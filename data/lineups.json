@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T18:53:53.692224+00:00",
+  "last_updated": "2026-11-23T19:57:59.265144+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -77,6 +77,26 @@
       "date": "2026-11-24T01:30Z",
       "home_team": "HOU",
       "away_team": "LAC",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910044",
+      "date": "2026-11-24T03:00Z",
+      "home_team": "LAL",
+      "away_team": "UTAH",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910045",
+      "date": "2026-11-24T03:00Z",
+      "home_team": "SAC",
+      "away_team": "SA",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",

@@ -1,0 +1,190 @@
+{
+  "game_id": "401910044",
+  "game_date": "2026-11-24T03:00Z",
+  "home_team": "LAL",
+  "away_team": "UTAH",
+  "source": "ESPN public injury report and game summaries",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-23T19:57:59.265395+00:00",
+      "minutes_to_tipoff": 422.0,
+      "injuries": [
+        {
+          "athlete_id": "4066457",
+          "name": "Austin Reaves",
+          "team": "LAL",
+          "team_name": "Los Angeles Lakers",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-23T01:09Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Reaves (heel) has been ruled out for Monday's game against the Jazz, Jovan Buha of The Athletic reports.",
+          "long_comment": "Reaves will miss a fifth consecutive game due to a bruised left heel. His next chance to suit up will come against the Spurs on Friday. Quentin Grimes should remain in the starting lineup versus Utah, while Collin Sexton and Cameron Carr are likely to see additional minutes off the Lakers' bench.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3102530",
+          "name": "Jusuf Nurkic",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-20T22:40Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Nurkic (foot) has been cleared for on-court work and will be re-evaluated in one week.",
+          "long_comment": "Nurkic continues to make progress in his recovery from a partial plantar plate tear of the second toe on his right foot, and getting cleared for on-court work is a big step in his rehab. There are still a few steps he'll need to clear before he makes his return to the floor, but once he's able to get through full-contact, 5-on-5 work, we'll know he's close.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4066336",
+          "name": "Lauri Markkanen",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-11T18:22Z",
+          "return_date": "2027-01-04",
+          "short_comment": "Markkanen has been diagnosed with a non-displaced fracture in his right hand and will be sidelined for at least one month, Shams Charania of ESPN reports.",
+          "long_comment": "Markkanen has missed two straight games due to what was being described as a right wrist sprain, but it appears the issue was much worse than initially thought. The talented big man now joins Jusuf Nurkic (foot) and Jaren Jackson (knee) on Utah's long-term injury list, while Keyonte George's status moving forward is unclear while dealing with an ankle sprain. Given all of the injuries, Ace Bailey and Darryn Peterson will have to lead the offense, while Isaiah Collier, Brice Sensabaugh, Svi Mykhailiuk, Josh Okogie and Josh Green are candidates for increased roles.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4277961",
+          "name": "Jaren Jackson Jr.",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-27T19:25Z",
+          "return_date": "2026-12-14",
+          "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
+          "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4397077",
+          "name": "Jaxson Hayes",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "C",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Left",
+          "date": "2026-11-23T15:06Z",
+          "return_date": "2026-11-23",
+          "short_comment": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports.",
+          "long_comment": "Hayes will not return Sunday due to a left knee injury. Mo Bamba will soak up most of Hayes' vacated minutes, while Brice Sensabaugh and Tony Bradley could see additional opportunities.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910044",
+        "date": "2026-11-24T03:00Z",
+        "home_team": "LAL",
+        "away_team": "UTAH",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "4066457",
+            "name": "Austin Reaves",
+            "team": "LAL",
+            "team_name": "Los Angeles Lakers",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-23T01:09Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Reaves (heel) has been ruled out for Monday's game against the Jazz, Jovan Buha of The Athletic reports.",
+            "long_comment": "Reaves will miss a fifth consecutive game due to a bruised left heel. His next chance to suit up will come against the Spurs on Friday. Quentin Grimes should remain in the starting lineup versus Utah, while Collin Sexton and Cameron Carr are likely to see additional minutes off the Lakers' bench.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3102530",
+            "name": "Jusuf Nurkic",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-20T22:40Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Nurkic (foot) has been cleared for on-court work and will be re-evaluated in one week.",
+            "long_comment": "Nurkic continues to make progress in his recovery from a partial plantar plate tear of the second toe on his right foot, and getting cleared for on-court work is a big step in his rehab. There are still a few steps he'll need to clear before he makes his return to the floor, but once he's able to get through full-contact, 5-on-5 work, we'll know he's close.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4066336",
+            "name": "Lauri Markkanen",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-11T18:22Z",
+            "return_date": "2027-01-04",
+            "short_comment": "Markkanen has been diagnosed with a non-displaced fracture in his right hand and will be sidelined for at least one month, Shams Charania of ESPN reports.",
+            "long_comment": "Markkanen has missed two straight games due to what was being described as a right wrist sprain, but it appears the issue was much worse than initially thought. The talented big man now joins Jusuf Nurkic (foot) and Jaren Jackson (knee) on Utah's long-term injury list, while Keyonte George's status moving forward is unclear while dealing with an ankle sprain. Given all of the injuries, Ace Bailey and Darryn Peterson will have to lead the offense, while Isaiah Collier, Brice Sensabaugh, Svi Mykhailiuk, Josh Okogie and Josh Green are candidates for increased roles.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4277961",
+            "name": "Jaren Jackson Jr.",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-27T19:25Z",
+            "return_date": "2026-12-14",
+            "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
+            "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4397077",
+            "name": "Jaxson Hayes",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "C",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Left",
+            "date": "2026-11-23T15:06Z",
+            "return_date": "2026-11-23",
+            "short_comment": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports.",
+            "long_comment": "Hayes will not return Sunday due to a left knee injury. Mo Bamba will soak up most of Hayes' vacated minutes, while Brice Sensabaugh and Tony Bradley could see additional opportunities.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910044",
+          "date": "2026-11-24T03:00Z",
+          "home_team": "LAL",
+          "away_team": "UTAH",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
+    }
+  ],
+  "last_updated": "2026-11-23T19:57:59.265395+00:00"
+}
