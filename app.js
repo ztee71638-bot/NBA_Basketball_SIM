@@ -7,6 +7,7 @@ let marketRosterLoading = null;
 let playerImpactData = [];
 let winnerCalibration = null;
 let opponentModelCalibration = null;
+let advancedModelCalibration = null;
 let opponentModelHistoryCache = null;
 let playerImpactLoaded = false;
 let playerImpactLoading = null;
@@ -373,7 +374,14 @@ function opponentAdjustedMatchup(game){
         const pf=Number(row.points_for),pa=Number(row.points_against);
         if(!row.game_id||!Number.isFinite(date)||!nbaCodes.has(opponent)
           ||!Number.isFinite(pf)||!Number.isFinite(pa)||pf<=0||pa<=0)return;
-        rows.push({team:abbreviation,opponent,season:String(season),date,points_for:pf,points_against:pa});
+        const pace=Number(row.pace_estimate),offense=Number(row.offensive_rating),defense=Number(row.defensive_rating);
+        rows.push({
+          team:abbreviation,opponent,season:String(season),date,
+          home_away:row.home_away,points_for:pf,points_against:pa,
+          pace_estimate:Number.isFinite(pace)?pace:null,
+          offensive_rating:Number.isFinite(offense)?offense:null,
+          defensive_rating:Number.isFinite(defense)?defense:null
+        });
       }));
     });
     opponentModelHistoryCache={updatedAt,rows};
@@ -398,6 +406,53 @@ function opponentAdjustedMatchup(game){
   const combinedSd=Math.sqrt(homeSd*homeSd+awaySd*awaySd);
   const rawHomeProbability=0.5*(1+erf((homeMean-awayMean)/(Math.sqrt(2)*combinedSd)));
   return {homeMean,awayMean,homeSd,awaySd,rawHomeProbability,homeGames:homeRows.length,awayGames:awayRows.length,leagueGames:allRows.length};
+}
+function advancedModelMatchup(game){
+  const cutoff=new Date(game?.date).getTime();
+  if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt
+    ||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime() < -15*60*1000
+    ||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
+  if(!opponentModelHistoryCache)return null;
+  const allRows=opponentModelHistoryCache.rows.filter(row=>row.date<cutoff);
+  const advancedRows=allRows.filter(row=>Number.isFinite(row.pace_estimate)
+    &&Number.isFinite(row.offensive_rating)&&Number.isFinite(row.defensive_rating));
+  if(advancedRows.length<60)return null;
+  const leaguePace=advancedRows.reduce((sum,row)=>sum+row.pace_estimate,0)/advancedRows.length;
+  const leagueOff=advancedRows.reduce((sum,row)=>sum+row.offensive_rating,0)/advancedRows.length;
+  const leagueDef=advancedRows.reduce((sum,row)=>sum+row.defensive_rating,0)/advancedRows.length;
+  const matchTeamCode=abbr=>teamData.find(team=>canonicalTeam(team.abbreviation||"")===canonicalTeam(abbr))?.abbreviation||abbr;
+  const homeCode=matchTeamCode(game.home?.abbreviation||""),awayCode=matchTeamCode(game.away?.abbreviation||"");
+  const homeRows=advancedRows.filter(row=>row.team===homeCode).sort((a,b)=>a.date-b.date);
+  const awayRows=advancedRows.filter(row=>row.team===awayCode).sort((a,b)=>a.date-b.date);
+  if(!homeRows.length||!awayRows.length)return null;
+  const hOff=opponentWeightedStats(homeRows,"offensive_rating"),hDef=opponentWeightedStats(homeRows,"defensive_rating");
+  const aOff=opponentWeightedStats(awayRows,"offensive_rating"),aDef=opponentWeightedStats(awayRows,"defensive_rating");
+  const hPace=opponentWeightedStats(homeRows,"pace_estimate"),aPace=opponentWeightedStats(awayRows,"pace_estimate");
+  if(!hOff||!hDef||!aOff||!aDef||!hPace||!aPace)return null;
+  const shrink=(value,baseline)=>baseline+(value.mean-baseline)*(value.count/(value.count+10));
+  const homeOff=shrink(hOff,leagueOff),homeDef=shrink(hDef,leagueDef);
+  const awayOff=shrink(aOff,leagueOff),awayDef=shrink(aDef,leagueDef);
+  const pace=(shrink(hPace,leaguePace)+shrink(aPace,leaguePace))/2;
+  const homeRowsAll=allRows.filter(row=>row.team===homeCode).sort((a,b)=>a.date-b.date);
+  const awayRowsAll=allRows.filter(row=>row.team===awayCode).sort((a,b)=>a.date-b.date);
+  const restDays=rows=>{
+    const prior=rows.filter(row=>row.date<cutoff);
+    if(!prior.length)return 1;
+    const gap=Math.floor((new Date(cutoff).setUTCHours(0,0,0,0)-new Date(prior[prior.length-1].date).setUTCHours(0,0,0,0))/86400000);
+    return Math.max(0,gap-1);
+  };
+  const scheduleAdjustment=(days,miles)=>Math.max(-0.8,Math.min(0.8,(Number(days)-1)*0.2))
+    -Math.max(0,Math.min(1.2,Number(miles||0)*0.00035));
+  const homeTravel=estimateTravelMiles(homeRowsAll,homeCode,awayCode,true,game.date)||0;
+  const awayTravel=estimateTravelMiles(awayRowsAll,awayCode,homeCode,false,game.date)||0;
+  const homeMean=((homeOff+awayDef)/2)*pace/100+1.8+scheduleAdjustment(restDays(homeRowsAll),homeTravel);
+  const awayMean=((awayOff+homeDef)/2)*pace/100+scheduleAdjustment(restDays(awayRowsAll),awayTravel);
+  const homeScoreSd=opponentWeightedStats(homeRows,"points_for");
+  const awayScoreSd=opponentWeightedStats(awayRows,"points_for");
+  const homeSd=homeScoreSd?.sd??12,awaySd=awayScoreSd?.sd??12;
+  const combinedSd=Math.sqrt(Math.max(1,homeSd*homeSd+awaySd*awaySd-2*0.1225*homeSd*awaySd));
+  const rawHomeProbability=0.5*(1+erf((homeMean-awayMean)/(Math.sqrt(2)*Math.max(8,combinedSd))));
+  return {homeMean,awayMean,rawHomeProbability,pace,homeGames:homeRows.length,awayGames:awayRows.length,leagueGames:advancedRows.length};
 }
 function normalSample(mean, sd) {
   let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
@@ -574,6 +629,14 @@ function runGameSimulation() {
   const homeName=selectedGame.home?.name||"Home team";
   const awayName=selectedGame.away?.name||"Away team";
   const opponentProjection=opponentAdjustedMatchup(selectedGame);
+  const advancedProjection=advancedModelMatchup(selectedGame);
+  const advancedCalibrationReady=!!advancedModelCalibration&&advancedModelCalibration.live_enabled===true
+    &&advancedModelCalibration.enabled===true
+    &&advancedModelCalibration.training_model==="advanced_pace_efficiency_v1"
+    &&advancedModelCalibration.validation_method==="prequential_walk_forward"
+    &&Number(advancedModelCalibration.validation_games)>=500;
+  const advancedCalibratedProbability=advancedProjection&&advancedCalibrationReady
+    ?applyWinnerCalibration(advancedProjection.rawHomeProbability,advancedModelCalibration):null;
   const opponentCalibrationReady=!!opponentModelCalibration&&opponentModelCalibration.live_enabled===true
     &&opponentModelCalibration.enabled===true
     &&opponentModelCalibration.training_model==="opponent_weighted_score_v1"
@@ -627,6 +690,24 @@ function runGameSimulation() {
       modelVersion:"opponent-weighted-score-v1-calibrated"
     });
   }
+  if(advancedProjection&&advancedCalibratedProbability!==null){
+    const advancedHomeWins=advancedCalibratedProbability>=0.5;
+    saveSimulationPrediction({
+      recordId:"adv-"+Date.now()+"-"+Math.random().toString(36).slice(2,9),
+      source:"advanced-model",createdAt:new Date().toISOString(),gameId:String(selectedGame.id||""),
+      gameDate:selectedGame.date,homeName,awayName,homeAbbr,awayAbbr,
+      predictedWinner:advancedHomeWins?homeAbbr:awayAbbr,
+      predictedWinnerName:advancedHomeWins?homeName:awayName,
+      homeProbability:advancedCalibratedProbability,
+      projectedHome:Math.round(advancedProjection.homeMean),projectedAway:Math.round(advancedProjection.awayMean),
+      rawHomeProbability:advancedProjection.rawHomeProbability,
+      calibrationEligible:true,pregame:isPregame,
+      modelVersion:"advanced-pace-efficiency-v1-calibrated"
+    });
+  }
+  const advancedModelHtml=advancedProjection
+    ?'<section class="metric" style="margin-top:12px"><small>ADVANCED PACE / EFFICIENCY '+(advancedCalibratedProbability!==null?'CALIBRATED':'RAW')+' MODEL · '+(advancedProjection.homeGames+advancedProjection.awayGames)+' team games</small><b>'+escapeHtml(advancedProjection.homeMean.toFixed(1)+' — '+advancedProjection.awayMean.toFixed(1))+'</b><p class="fine-print">'+escapeHtml(homeName)+' '+(advancedCalibratedProbability!==null?(advancedCalibratedProbability*100).toFixed(1):(advancedProjection.rawHomeProbability*100).toFixed(1))+'% · '+escapeHtml(awayName)+' '+(advancedCalibratedProbability!==null?((1-advancedCalibratedProbability)*100).toFixed(1):((1-advancedProjection.rawHomeProbability)*100).toFixed(1))+'%'+(advancedCalibratedProbability!==null?' · prequential calibration active':' · calibration gate unavailable; raw estimate only')+'</p></section>'
+    :'<p class="fine-print">Advanced pace/efficiency model unavailable: insufficient verified pregame efficiency history.</p>';
   const opponentModelHtml=opponentProjection
     ?'<section class="metric" style="margin-top:12px"><small>OPPONENT-ADJUSTED '+(opponentCalibratedProbability!==null?'CALIBRATED':'RAW')+' MODEL · '+(opponentProjection.homeGames+opponentProjection.awayGames)+' team games</small><b>'+escapeHtml(opponentProjection.homeMean.toFixed(1)+' — '+opponentProjection.awayMean.toFixed(1))+'</b><p class="fine-print">'+escapeHtml(homeName)+' '+(opponentCalibratedProbability!==null?(opponentCalibratedProbability*100).toFixed(1):(opponentProjection.rawHomeProbability*100).toFixed(1))+'% · '+escapeHtml(awayName)+' '+(opponentCalibratedProbability!==null?((1-opponentCalibratedProbability)*100).toFixed(1):((1-opponentProjection.rawHomeProbability)*100).toFixed(1))+'%'+(opponentCalibratedProbability!==null?' · walk-forward calibration active':' · calibration gate unavailable; raw estimate only')+'</p></section>'
     :'<p class="fine-print">Opponent-adjusted model unavailable: insufficient clean pregame team-history rows.</p>';
@@ -645,7 +726,7 @@ function runGameSimulation() {
     : winnerCalibration
       ? " Calibration is not applied to manually changed assumptions; displayed win chance is the raw simulation."
       : "";
-  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`+opponentModelHtml+readinessHtml;  $("simulation-modal-title").textContent="Simulation result";
+  $("game-results").innerHTML=`<div class="result-grid"><div class="metric"><small>${escapeHtml(homeName)} wins</small><b>${hw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(awayName)} wins</small><b>${aw.toLocaleString()}</b></div><div class="metric"><small>${escapeHtml(homeName)} avg. score</small><b>${avgHome.toFixed(1)}</b></div><div class="metric"><small>${escapeHtml(awayName)} avg. score</small><b>${avgAway.toFixed(1)}</b></div><div class="metric"><small>Median total</small><b>${totals[Math.floor(trials*.5)]}</b></div></div><p class="fine-print">${trials.toLocaleString()} trials. 100,000 trials using last-10 baseline score estimates, team-specific historical scoring variance and a modest shared scoring-environment shock. Experimental opponent-adjusted and pace/efficiency models are not active unless validation supports them. Simulated win counts are shown separately from the displayed win probability. This is not a betting recommendation.${calibrationNote}</p>`+opponentModelHtml+advancedModelHtml+readinessHtml;  $("simulation-modal-title").textContent="Simulation result";
   $("simulation-winner").textContent="Predicted winner: "+winner;
   $("simulation-score").textContent=homeWins?homeName+" "+projectedHome+" — "+awayName+" "+projectedAway:awayName+" "+projectedAway+" — "+homeName+" "+projectedHome;
   const homeLogo=teamLogoMarkup(selectedGame.home,"split-home");
@@ -1203,6 +1284,13 @@ async function loadModelMetrics() {
       &&opponentCalibration?.validation_method==="prequential_walk_forward"
       &&Number(opponentCalibration?.validation_games)>=500
       ?opponentCalibration:null;
+    const advancedCalibration=data.advanced_calibration;
+    advancedModelCalibration=metricsFresh&&advancedCalibration?.live_enabled===true
+      &&advancedCalibration?.enabled===true
+      &&advancedCalibration?.training_model==="advanced_pace_efficiency_v1"
+      &&advancedCalibration?.validation_method==="prequential_walk_forward"
+      &&Number(advancedCalibration?.validation_games)>=500
+      ?advancedCalibration:null;
     if(!data.games_tested){root.textContent=data.message||"Not enough historical games to evaluate the model yet.";return;}
     let qualityHtml="";
     try {
