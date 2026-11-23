@@ -573,3 +573,11 @@ footer{color:#83aaaa}
   .hero .hero-subtitle{max-width:calc(100% - 158px);font-size:.73rem}
   .hero-tags{max-width:100%;font-size:.52rem}
 }
+
+
+/* Let the hero headline use the full space up to the basketball artwork. */
+@media(min-width:701px){
+  .hero-copy{flex:1 1 auto;min-width:0;max-width:none}
+  .hero h1{max-width:none}
+  .hero .hero-subtitle{max-width:100%}
+}
