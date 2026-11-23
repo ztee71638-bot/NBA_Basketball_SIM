@@ -265,3 +265,23 @@ def test_prequential_calibrator_refits_periodically_on_prior_games_only(monkeypa
     assert calls == [100, 125, 130]
     assert result["calibration"]["minimum_training_games"] == 100
     assert result["calibration"]["refit_interval_games"] == 25
+
+
+
+def test_confidence_selection_report_tracks_accuracy_coverage_and_probability_quality():
+    probabilities = [0.80, 0.75, 0.62, 0.38, 0.55, 0.45]
+    outcomes = [1.0, 0.0, 1.0, 0.0, 0.0, 1.0]
+    report = module.confidence_selection_report(probabilities, outcomes, thresholds=(0.60, 0.75))
+    assert report[0]["games"] == 4
+    assert report[0]["coverage"] == 4 / 6
+    assert report[0]["accuracy"] == 0.75
+    assert report[1]["games"] == 2
+    assert report[1]["accuracy"] == 0.5
+    assert report[0]["brier_score"] is not None
+    assert report[0]["log_loss"] is not None
+
+
+def test_confidence_selection_rejects_mismatched_arrays():
+    import pytest
+    with pytest.raises(ValueError):
+        module.confidence_selection_report([0.7], [])
