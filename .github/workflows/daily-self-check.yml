@@ -1,0 +1,56 @@
+name: Daily NBA prediction and results self-check
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/daily_self_check.py"
+      - "tests/test_daily_self_check.py"
+      - ".github/workflows/daily-self-check.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-daily-self-check
+  cancel-in-progress: false
+
+jobs:
+  daily-self-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run simulator tests
+        run: pytest -q
+      - name: Run daily prediction and results reconciliation
+        run: python scripts/daily_self_check.py
+      - name: Commit prediction ledger
+        run: |
+          if [[ -n "$(git status --porcelain data/daily_predictions.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/daily_predictions.json
+            git commit -m "chore: update daily NBA prediction results"
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then
+                exit 0
+              fi
+              git rebase --abort || true
+              sleep 2
+            done
+            echo "Unable to push daily prediction ledger after 5 attempts."
+            exit 1
+          else
+            echo "No daily prediction ledger changes."
+          fi
