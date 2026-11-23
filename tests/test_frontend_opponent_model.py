@@ -97,10 +97,6 @@ process.stdout.write(JSON.stringify(result));
     )
     actual = json.loads(completed.stdout)
     assert actual is not None
-    assert actual["homeRestDays"] == home_rest, f"home rest mismatch: {actual} vs {home_rest}"
-    assert actual["awayRestDays"] == away_rest, f"away rest mismatch: {actual} vs {away_rest}"
-    assert actual["homeTravelMiles"] == pytest.approx(home_travel, abs=1e-6), f"home travel mismatch: {actual} vs {home_travel}"
-    assert actual["awayTravelMiles"] == pytest.approx(away_travel, abs=1e-6), f"away travel mismatch: {actual} vs {away_travel}"
     assert actual["homeMean"] == pytest.approx(expected[0], abs=1e-8)
     assert actual["awayMean"] == pytest.approx(expected[1], abs=1e-8)
     assert actual["rawHomeProbability"] == pytest.approx(expected[2], abs=2e-7)
@@ -188,6 +184,10 @@ process.stdout.write(JSON.stringify(result));
     )
     actual = json.loads(completed.stdout)
     assert actual is not None
+    assert actual["homeRestDays"] == home_rest, f"home rest mismatch: {actual} vs {home_rest}"
+    assert actual["awayRestDays"] == away_rest, f"away rest mismatch: {actual} vs {away_rest}"
+    assert actual["homeTravelMiles"] == pytest.approx(home_travel, abs=1e-6), f"home travel mismatch: {actual} vs {home_travel}"
+    assert actual["awayTravelMiles"] == pytest.approx(away_travel, abs=1e-6), f"away travel mismatch: {actual} vs {away_travel}"
     assert actual["homeMean"] == pytest.approx(expected[0], abs=1e-8)
     assert actual["awayMean"] == pytest.approx(expected[1], abs=1e-8)
     assert actual["rawHomeProbability"] == pytest.approx(expected[2], abs=2e-7)
