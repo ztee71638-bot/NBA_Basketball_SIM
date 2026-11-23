@@ -273,3 +273,46 @@ def test_player_audit_warns_only_when_season_totals_prove_missing_game_logs():
     assert summary["players_missing_logs_despite_reported_appearances"] == 1
     assert summary["roster_only_players_without_appearances"] == 0
     assert any("report NBA appearances" in item for item in result["warnings"])
+
+
+def test_availability_audit_reports_point_in_time_snapshot_coverage():
+    payloads = [{
+        "game_id": "g1",
+        "snapshots": [
+            {
+                "captured_at": "2026-11-21T15:00:00+00:00",
+                "injuries": [{"name": "Player A"}, {"name": "Player B"}],
+                "lineup": {"status": "not_available", "home_starters": [], "away_starters": []},
+            },
+            {
+                "captured_at": "2026-11-21T17:00:00+00:00",
+                "injuries": [{"name": "Player A"}],
+                "lineup": {
+                    "status": "confirmed",
+                    "home_starters": ["1", "2", "3", "4", "5"],
+                    "away_starters": ["6", "7", "8", "9", "10"],
+                },
+            },
+        ],
+    }, {
+        "game_id": "g2",
+        "snapshots": [{"captured_at": "2026-11-22T15:00:00+00:00", "injuries": [], "lineup": None}],
+    }]
+    now = datetime(2026, 11, 22, 16, tzinfo=timezone.utc)
+    result = module.summarize_availability_snapshots(payloads, now)
+    assert result["status"] == "collecting"
+    assert result["game_files"] == 2
+    assert result["games_with_snapshots"] == 2
+    assert result["snapshot_count"] == 3
+    assert result["injury_player_observations"] == 3
+    assert result["confirmed_lineup_snapshots"] == 1
+    assert result["confirmed_lineup_snapshot_rate_pct"] == 33.3
+    assert result["latest_snapshot_age_hours"] == 1.0
+
+
+def test_availability_audit_empty_archive_is_collecting_not_an_error():
+    result = module.summarize_availability_snapshots([], datetime(2026, 11, 22, tzinfo=timezone.utc))
+    assert result["status"] == "not_started"
+    assert result["snapshot_count"] == 0
+    assert result["confirmed_lineup_snapshot_rate_pct"] == 0.0
+
