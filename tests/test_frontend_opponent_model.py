@@ -167,11 +167,13 @@ function erf(x) {
   return sign*y;
 }
 """ + js_functions + r"""
-const result = advancedModelMatchup({
+const game = {
   date: input.cutoff,
   home: {abbreviation:"NYK"},
   away: {abbreviation:"BOS"}
-});
+};
+opponentAdjustedMatchup(game); // Build the shared chronological history cache as the live simulation does.
+const result = advancedModelMatchup(game);
 process.stdout.write(JSON.stringify(result));
 """
     completed = subprocess.run(
