@@ -164,7 +164,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008997\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.85\\\", \\\"0.15\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Nuggets vs. Jazz\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T22:37:06.507186+00:00",
+      "markets": [
+        {
+          "market_id": "7008997",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Jazz",
+          "slug": "nba-den-uta-2026-11-27",
+          "outcomes": "[\"Nuggets\", \"Jazz\"]",
+          "outcome_prices": "[\"0.855\", \"0.145\"]",
+          "volume_24h": 11,
+          "liquidity": "14836.1093",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008997\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.855\\\", \\\"0.145\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Nuggets vs. Jazz\"}]"
     }
   ],
-  "last_updated": "2026-11-23T22:33:39.951688+00:00"
+  "last_updated": "2026-11-23T22:37:06.507186+00:00"
 }
