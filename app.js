@@ -358,7 +358,7 @@ function opponentWeightedStats(rows,key){
 }
 function opponentAdjustedMatchup(game){
   const cutoff=new Date(game?.date).getTime();
-  if(!Number.isFinite(cutoff)||!teamData.length)return null;
+  if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
   const nbaCodes=new Set(teamData.map(team=>canonicalTeam(team.abbreviation||"")).filter(Boolean));
   const allRows=[];
   teamData.forEach(team=>{
@@ -1184,7 +1184,9 @@ async function loadModelMetrics() {
     const data=await loadJson("data/model_metrics.json");
     winnerCalibration = data.calibration?.live_enabled ? data.calibration : null;
     const opponentCalibration=data.opponent_model_calibration;
-    opponentModelCalibration=opponentCalibration?.live_enabled===true
+    const metricsGeneratedAt=new Date(data.generated_at||0).getTime();
+    const metricsFresh=Number.isFinite(metricsGeneratedAt)&&Date.now()-metricsGeneratedAt<=48*60*60*1000;
+    opponentModelCalibration=metricsFresh&&opponentCalibration?.live_enabled===true
       &&opponentCalibration?.enabled===true
       &&opponentCalibration?.training_model==="opponent_weighted_score_v1"
       &&opponentCalibration?.validation_method==="prequential_walk_forward"
