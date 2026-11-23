@@ -362,7 +362,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956403\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Thunder\\\"]\",\"question\":\"Timberwolves vs. Thunder\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T09:53:39.655869+00:00",
+      "markets": [
+        {
+          "market_id": "6956403",
+          "market_type": "moneyline",
+          "question": "Timberwolves vs. Thunder",
+          "slug": "nba-min-okc-2026-11-25",
+          "outcomes": "[\"Timberwolves\", \"Thunder\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 1857.25669,
+          "liquidity": "28752.4042",
+          "end_date": "2026-11-26T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-min-okc-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956403\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Thunder\\\"]\",\"question\":\"Timberwolves vs. Thunder\"}]"
     }
   ],
-  "last_updated": "2026-11-23T08:29:59.183877+00:00"
+  "last_updated": "2026-11-23T09:53:39.655869+00:00"
 }
