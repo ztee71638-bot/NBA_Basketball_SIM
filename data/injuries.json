@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T20:51:13.464045+00:00",
+  "last_updated": "2026-11-23T21:45:58.336187+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -78,21 +78,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4251",
-      "name": "Paul George",
-      "team": "BOS",
-      "team_name": "Boston Celtics",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-23T15:07Z",
-      "return_date": "2026-11-24",
-      "short_comment": "George (rest) has been ruled out for Sunday's game against Golden State, Justin Turpin of WEEI.com reports.",
-      "long_comment": "George will sit out the second leg of this back-to-back set. With the veteran forward sidelined, Baylor Scheierman, Hugo Gonzalez and Sam Hauser could all see increased burn. George will likely return for Tuesday's game at Washington.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4351852",
       "name": "Mitchell Robinson",
       "team": "BOS",
@@ -101,10 +86,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-22T20:58Z",
-      "return_date": "2026-11-24",
-      "short_comment": "Robinson (illness) has been ruled out for Sunday's game against Golden State, Justin Turpin of WEEI.com reports.",
-      "long_comment": "Robinson will miss both halves of this back-to-back set due to an illness. The big man's next opportunity to play will come Tuesday at Washington. Luka Garza will likely see increased minutes in Robinson's stead.",
+      "date": "2026-11-23T21:09Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Robinson (illness) is out for Tuesday's game against Washington, Taylor Snow of the Celtics' official site reports.",
+      "long_comment": "With Robinson set to miss a third contest due to an illness, Boston will again be without one of its primary center options. His absence should continue to leave more frontcourt minutes available for Neemias Queta and Luka Garza on Tuesday, with the former being in line to see the lion's share of the playing time.",
       "source": "ESPN"
     },
     {
@@ -461,10 +446,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-22T06:10Z",
+      "date": "2026-11-23T20:52Z",
       "return_date": "2026-11-25",
-      "short_comment": "Williams (hamstring) is out for Sunday's game against the Celtics.",
-      "long_comment": "Williams recently progressed to on-court work, but he will remain on the inactive list for Sunday's game. His next chance to play will come Wednesday against the Kings.",
+      "short_comment": "Head coach Steve Kerr said Monday that Williams (hamstring) is on track to return Wednesday against the Kings, Kenzo Fukuda of ClutchPoints.com reports.",
+      "long_comment": "Williams hasn't played since Nov. 9 due to a left hamstring strain, though he could return to action as soon as Wednesday. The Warriors will provide an update on his status by Tuesday night, and if the 27-year-old is cleared to return, there would be fewer minutes available for guys like Gary Payton, LJ Cryer and Will Richard.",
       "source": "ESPN"
     },
     {
@@ -1433,13 +1418,13 @@
       "team": "UTAH",
       "team_name": "Utah Jazz",
       "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-23T15:06Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports.",
-      "long_comment": "Hayes will not return Sunday due to a left knee injury. Mo Bamba will soak up most of Hayes' vacated minutes, while Brice Sensabaugh and Tony Bradley could see additional opportunities.",
+      "date": "2026-11-23T21:04Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Hayes (knee) has been ruled out for Monday's game against the Lakers.",
+      "long_comment": "Hayes left Sunday's tilt against the Mavericks with what's now being described as a left knee strain, and it's not yet known how much time he may miss beyond Monday. Mo Bamba should start at center for the Jazz and is worthy of streaming consideration in all fantasy leagues.",
       "source": "ESPN"
     },
     {
