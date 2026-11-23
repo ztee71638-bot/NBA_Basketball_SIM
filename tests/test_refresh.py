@@ -31,6 +31,31 @@ def test_parse_confirmed_lineups_requires_five_explicit_starters_per_team():
     assert len(parsed["away_starters"]) == 5
 
 
+def test_parse_confirmed_lineups_normalizes_scoreboard_team_aliases():
+    game = {
+        "id": "alias-game", "date": "2026-11-24T00:00Z",
+        "home": {"abbreviation": "NO"}, "away": {"abbreviation": "UTAH"},
+    }
+    players = []
+    for team_id, code in (("3", "NOP"), ("26", "UTA")):
+        players.append({
+            "team": {"id": team_id},
+            "statistics": [{
+                "athletes": [
+                    {"athlete": {"id": team_id + str(i), "displayName": code + " Starter " + str(i)},
+                     "starter": True, "active": True}
+                    for i in range(5)
+                ]
+            }],
+        })
+    parsed = module.parse_confirmed_lineups({"boxscore": {"players": players}}, game)
+    assert parsed["status"] == "confirmed"
+    assert parsed["home_team"] == "NOP"
+    assert parsed["away_team"] == "UTA"
+    assert len(parsed["home_starters"]) == 5
+    assert len(parsed["away_starters"]) == 5
+
+
 def test_parse_confirmed_lineups_does_not_infer_missing_starters():
     game = {"id": "lineup-game", "home": {"abbreviation": "MIA"}, "away": {"abbreviation": "BOS"}}
     payload = {"boxscore": {"players": [{
