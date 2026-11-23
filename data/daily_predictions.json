@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-23T22:56:43.991149+00:00",
+  "source": "ESPN scoreboard",
+  "records": [
+    {
+      "game_id": "401910036",
+      "game_date": "2026-11-24T00:00Z",
+      "home_team": "CHA",
+      "away_team": "MEM",
+      "predicted_home_score": 109.98,
+      "predicted_away_score": 115.12,
+      "predicted_winner": "MEM",
+      "home_win_probability": 0.283107,
+      "confidence": 0.716893,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910037",
+      "game_date": "2026-11-24T00:00Z",
+      "home_team": "PHI",
+      "away_team": "POR",
+      "predicted_home_score": 114.99,
+      "predicted_away_score": 114.45,
+      "predicted_winner": "PHI",
+      "home_win_probability": 0.502061,
+      "confidence": 0.502061,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910038",
+      "game_date": "2026-11-24T00:30Z",
+      "home_team": "IND",
+      "away_team": "OKC",
+      "predicted_home_score": 113.95,
+      "predicted_away_score": 115.25,
+      "predicted_winner": "OKC",
+      "home_win_probability": 0.410641,
+      "confidence": 0.589359,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910039",
+      "game_date": "2026-11-24T00:30Z",
+      "home_team": "TOR",
+      "away_team": "MIL",
+      "predicted_home_score": 117.45,
+      "predicted_away_score": 110.81,
+      "predicted_winner": "TOR",
+      "home_win_probability": 0.748562,
+      "confidence": 0.748562,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910040",
+      "game_date": "2026-11-24T00:30Z",
+      "home_team": "MIN",
+      "away_team": "BKN",
+      "predicted_home_score": 117.43,
+      "predicted_away_score": 109.47,
+      "predicted_winner": "MIN",
+      "home_win_probability": 0.803217,
+      "confidence": 0.803217,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910041",
+      "game_date": "2026-11-24T01:00Z",
+      "home_team": "CHI",
+      "away_team": "CLE",
+      "predicted_home_score": 119.41,
+      "predicted_away_score": 119.81,
+      "predicted_winner": "CLE",
+      "home_win_probability": 0.460154,
+      "confidence": 0.539846,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910042",
+      "game_date": "2026-11-24T01:00Z",
+      "home_team": "NOP",
+      "away_team": "PHX",
+      "predicted_home_score": 114.48,
+      "predicted_away_score": 116.96,
+      "predicted_winner": "PHX",
+      "home_win_probability": 0.371341,
+      "confidence": 0.628659,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910043",
+      "game_date": "2026-11-24T01:30Z",
+      "home_team": "HOU",
+      "away_team": "LAC",
+      "predicted_home_score": 118.87,
+      "predicted_away_score": 111.82,
+      "predicted_winner": "HOU",
+      "home_win_probability": 0.777685,
+      "confidence": 0.777685,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910045",
+      "game_date": "2026-11-24T03:00Z",
+      "home_team": "SAC",
+      "away_team": "SAS",
+      "predicted_home_score": 107.56,
+      "predicted_away_score": 116.58,
+      "predicted_winner": "SAS",
+      "home_win_probability": 0.083348,
+      "confidence": 0.916652,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401909314",
+      "game_date": "2026-11-25T00:00Z",
+      "home_team": "ORL",
+      "away_team": "DET",
+      "predicted_home_score": 111.53,
+      "predicted_away_score": 112.37,
+      "predicted_winner": "DET",
+      "home_win_probability": 0.440152,
+      "confidence": 0.559848,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401909315",
+      "game_date": "2026-11-25T01:00Z",
+      "home_team": "WAS",
+      "away_team": "BOS",
+      "predicted_home_score": 108.83,
+      "predicted_away_score": 113.31,
+      "predicted_winner": "BOS",
+      "home_win_probability": 0.311132,
+      "confidence": 0.688868,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401909316",
+      "game_date": "2026-11-25T03:00Z",
+      "home_team": "DEN",
+      "away_team": "DAL",
+      "predicted_home_score": 118.82,
+      "predicted_away_score": 114.38,
+      "predicted_winner": "DEN",
+      "home_win_probability": 0.649984,
+      "confidence": 0.649984,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-23T22:56:43.991149+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    }
+  ],
+  "daily": {
+    "2026-11-24": {
+      "predictions_saved": 9,
+      "games_evaluated": 0,
+      "pending_results": 9
+    },
+    "2026-11-25": {
+      "predictions_saved": 3,
+      "games_evaluated": 0,
+      "pending_results": 3
+    }
+  },
+  "overall": {
+    "predictions_saved": 12,
+    "games_evaluated": 0,
+    "pending_results": 12
+  },
+  "updated_at": "2026-11-23T22:56:43.991149+00:00",
+  "rolling": {
+    "7d": {
+      "predictions_saved": 0,
+      "games_evaluated": 0,
+      "pending_results": 0
+    },
+    "30d": {
+      "predictions_saved": 0,
+      "games_evaluated": 0,
+      "pending_results": 0
+    }
+  },
+  "last_run": {
+    "at": "2026-11-23T22:56:43.991149+00:00",
+    "scoreboard_dates_checked": [
+      "20261122",
+      "20261123",
+      "20261124"
+    ],
+    "events_seen": 20
+  }
+}
