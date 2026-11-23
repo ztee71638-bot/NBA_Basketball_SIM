@@ -304,7 +304,217 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-23T23:45:12.897726+00:00",
+      "minutes_to_tipoff": 14.8,
+      "injuries": [
+        {
+          "athlete_id": "3059318",
+          "name": "Joel Embiid",
+          "team": "PHI",
+          "team_name": "Philadelphia 76ers",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": null,
+          "date": "2026-11-23T22:49Z",
+          "return_date": "2026-11-25",
+          "short_comment": "Embiid (illness) is out for Monday's game against Portland, Austin Krell of OnPattison.com reports.",
+          "long_comment": "The star big man can be considered day-to-day moving forward. With Embiid sidelined Monday, Dominick Barlow is a candidate to start at center for the 76ers while Adem Bona (back) helps pick up the slack off the bench.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4871141",
+          "name": "Ariel Hukporti",
+          "team": "PHI",
+          "team_name": "Philadelphia 76ers",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-06T19:17Z",
+          "return_date": "2027-10-01",
+          "short_comment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+          "long_comment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4279888",
+          "name": "Ja Morant",
+          "team": "POR",
+          "team_name": "Portland Trail Blazers",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-08T02:18Z",
+          "return_date": "2026-12-01",
+          "short_comment": "Head coach Micah Nori said Morant met with a doctor in Los Angeles, who gave him a positive outlook on his recovery from the hamstring injury. While Nori declined to update Morant's timetable, he added Morant \"may not be out for as long as we thought,\" Trail Blazers Insider Sean Highkin reports.",
+          "long_comment": "Morant was initially given a four-week timetable after he suffered a Grade 2 left hamstring strain on Oct. 30. It sounds like he's making solid progress, though it would be surprising to see him beat that timetable given the tricky nature of hamstring injuries. Scoot Henderson will continue to start in his absence and there will be more minutes available for Jrue Holiday.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4578893",
+          "name": "Vit Krejci",
+          "team": "POR",
+          "team_name": "Portland Trail Blazers",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-11T19:56Z",
+          "return_date": "2027-01-12",
+          "short_comment": "Krejci underwent surgery on his fractured left ankle Wednesday and will be re-evaluated in eight weeks, Brett Siegel of ClutchPoints.com reports.",
+          "long_comment": "Krejci suffered the ankle injury in last Wednesday's win over the Suns and is set to miss an extended period after undergoing surgery. With the 26-year-old and Ja Morant (hamstring) both on the shelf, Jrue Holiday and Sidy Cissoko should continue seeing increased minutes.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4706557",
+          "name": "Chris Youngblood",
+          "team": "POR",
+          "team_name": "Portland Trail Blazers",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-20T22:18Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Youngblood (heel) has been ruled out for Saturday's game against the Knicks.",
+          "long_comment": "Youngblood has been on the shelf since Nov. 10 due to a right heel bone bruise. Until Portland signals otherwise, Youngblood can be considered out indefinitely moving forward.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4914336",
+          "name": "Shaedon Sharpe",
+          "team": "POR",
+          "team_name": "Portland Trail Blazers",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-08-24T20:23Z",
+          "return_date": "2027-03-02",
+          "short_comment": "Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
+          "long_comment": "It's a tough blow to the Trail Blazers' depth on the wing ahead of training camp. Sharpe, who is now likely to be sidelined until after the All-Star break, had been ticketed for a reserve role behind Toumani Camara following an injury-plagued 2025-26 campaign, which saw average a career-high 20.8 points, 1.4 steals and 2.1 three-pointers per game over 50 regular-season appearances. The door is now open for Vit Krejci and Jeremy Sochan to compete for bench minutes during camp.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910037",
+        "date": "2026-11-24T00:00Z",
+        "home_team": "PHI",
+        "away_team": "POR",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "3059318",
+            "name": "Joel Embiid",
+            "team": "PHI",
+            "team_name": "Philadelphia 76ers",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": null,
+            "date": "2026-11-23T22:49Z",
+            "return_date": "2026-11-25",
+            "short_comment": "Embiid (illness) is out for Monday's game against Portland, Austin Krell of OnPattison.com reports.",
+            "long_comment": "The star big man can be considered day-to-day moving forward. With Embiid sidelined Monday, Dominick Barlow is a candidate to start at center for the 76ers while Adem Bona (back) helps pick up the slack off the bench.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4871141",
+            "name": "Ariel Hukporti",
+            "team": "PHI",
+            "team_name": "Philadelphia 76ers",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-06T19:17Z",
+            "return_date": "2027-10-01",
+            "short_comment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+            "long_comment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4279888",
+            "name": "Ja Morant",
+            "team": "POR",
+            "team_name": "Portland Trail Blazers",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-08T02:18Z",
+            "return_date": "2026-12-01",
+            "short_comment": "Head coach Micah Nori said Morant met with a doctor in Los Angeles, who gave him a positive outlook on his recovery from the hamstring injury. While Nori declined to update Morant's timetable, he added Morant \"may not be out for as long as we thought,\" Trail Blazers Insider Sean Highkin reports.",
+            "long_comment": "Morant was initially given a four-week timetable after he suffered a Grade 2 left hamstring strain on Oct. 30. It sounds like he's making solid progress, though it would be surprising to see him beat that timetable given the tricky nature of hamstring injuries. Scoot Henderson will continue to start in his absence and there will be more minutes available for Jrue Holiday.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4578893",
+            "name": "Vit Krejci",
+            "team": "POR",
+            "team_name": "Portland Trail Blazers",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-11T19:56Z",
+            "return_date": "2027-01-12",
+            "short_comment": "Krejci underwent surgery on his fractured left ankle Wednesday and will be re-evaluated in eight weeks, Brett Siegel of ClutchPoints.com reports.",
+            "long_comment": "Krejci suffered the ankle injury in last Wednesday's win over the Suns and is set to miss an extended period after undergoing surgery. With the 26-year-old and Ja Morant (hamstring) both on the shelf, Jrue Holiday and Sidy Cissoko should continue seeing increased minutes.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4706557",
+            "name": "Chris Youngblood",
+            "team": "POR",
+            "team_name": "Portland Trail Blazers",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-20T22:18Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Youngblood (heel) has been ruled out for Saturday's game against the Knicks.",
+            "long_comment": "Youngblood has been on the shelf since Nov. 10 due to a right heel bone bruise. Until Portland signals otherwise, Youngblood can be considered out indefinitely moving forward.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4914336",
+            "name": "Shaedon Sharpe",
+            "team": "POR",
+            "team_name": "Portland Trail Blazers",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-08-24T20:23Z",
+            "return_date": "2027-03-02",
+            "short_comment": "Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
+            "long_comment": "It's a tough blow to the Trail Blazers' depth on the wing ahead of training camp. Sharpe, who is now likely to be sidelined until after the All-Star break, had been ticketed for a reserve role behind Toumani Camara following an injury-plagued 2025-26 campaign, which saw average a career-high 20.8 points, 1.4 steals and 2.1 three-pointers per game over 50 regular-season appearances. The door is now open for Vit Krejci and Jeremy Sochan to compete for bench minutes during camp.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910037",
+          "date": "2026-11-24T00:00Z",
+          "home_team": "PHI",
+          "away_team": "POR",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-23T16:55:37.814531+00:00"
+  "last_updated": "2026-11-23T23:45:12.897726+00:00"
 }
