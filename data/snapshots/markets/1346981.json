@@ -3602,7 +3602,265 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895748\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Suns vs. Pelicans\"},{\"market_id\":\"7275574\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-2.5)\"},{\"market_id\":\"7275581\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-3.5)\"},{\"market_id\":\"7275589\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-1.5)\"},{\"market_id\":\"7275597\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-4.5)\"},{\"market_id\":\"7275605\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-5.5)\"},{\"market_id\":\"7275613\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.395\\\", \\\"0.605\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-6.5)\"},{\"market_id\":\"7275637\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.355\\\", \\\"0.645\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Pelicans (-2.5)\"},{\"market_id\":\"7275661\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.27\\\", \\\"0.73\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-10.5)\"},{\"market_id\":\"7275577\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 233.5\"},{\"market_id\":\"7275585\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 231.5\"},{\"market_id\":\"7275601\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 229.5\"},{\"market_id\":\"7275625\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 239.5\"},{\"market_id\":\"7275665\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.735\\\", \\\"0.265\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 221.5\"},{\"market_id\":\"7275991\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 232.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T15:45:58.105712+00:00",
+      "markets": [
+        {
+          "market_id": "6895748",
+          "market_type": "moneyline",
+          "question": "Suns vs. Pelicans",
+          "slug": "nba-phx-nop-2026-11-23",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.585\", \"0.415\"]",
+          "volume_24h": 26390.734089,
+          "liquidity": "147367.6185",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275574",
+          "market_type": "spread",
+          "question": "Spread: Suns (-2.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-away-2pt5",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 2112.419885,
+          "liquidity": "59864.9643",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275581",
+          "market_type": "spread",
+          "question": "Spread: Suns (-3.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-away-3pt5",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 6574.356236,
+          "liquidity": "119636.2138",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275589",
+          "market_type": "spread",
+          "question": "Spread: Suns (-1.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-away-1pt5",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.575\", \"0.425\"]",
+          "volume_24h": 105,
+          "liquidity": "48098.6882",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275597",
+          "market_type": "spread",
+          "question": "Spread: Suns (-4.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-away-4pt5",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": 684.592984,
+          "liquidity": "51659.1816",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275605",
+          "market_type": "spread",
+          "question": "Spread: Suns (-5.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-away-5pt5",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": 27.325582,
+          "liquidity": "48195.2522",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275613",
+          "market_type": "spread",
+          "question": "Spread: Suns (-6.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-away-6pt5",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.39\", \"0.61\"]",
+          "volume_24h": 3.174602,
+          "liquidity": "26379.8166",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275637",
+          "market_type": "spread",
+          "question": "Spread: Pelicans (-2.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-home-2pt5",
+          "outcomes": "[\"Pelicans\", \"Suns\"]",
+          "outcome_prices": "[\"0.36\", \"0.64\"]",
+          "volume_24h": 27.75,
+          "liquidity": "23476.9186",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275661",
+          "market_type": "spread",
+          "question": "Spread: Suns (-10.5)",
+          "slug": "nba-phx-nop-2026-11-23-spread-away-10pt5",
+          "outcomes": "[\"Suns\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.275\", \"0.725\"]",
+          "volume_24h": 5,
+          "liquidity": "25288.0813",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275577",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 233.5",
+          "slug": "nba-phx-nop-2026-11-23-total-233pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 21592.027905,
+          "liquidity": "61397.7054",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275585",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 231.5",
+          "slug": "nba-phx-nop-2026-11-23-total-231pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 17813.479781,
+          "liquidity": "45638.0087",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275593",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 235.5",
+          "slug": "nba-phx-nop-2026-11-23-total-235pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": 14.444446,
+          "liquidity": "45065.7744",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275601",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 229.5",
+          "slug": "nba-phx-nop-2026-11-23-total-229pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.575\", \"0.425\"]",
+          "volume_24h": 5,
+          "liquidity": "27516.1948",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275625",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 239.5",
+          "slug": "nba-phx-nop-2026-11-23-total-239pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.365\", \"0.635\"]",
+          "volume_24h": 13.343077,
+          "liquidity": "28071.8159",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275641",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 241.5",
+          "slug": "nba-phx-nop-2026-11-23-total-241pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.34\", \"0.66\"]",
+          "volume_24h": 29.566618,
+          "liquidity": "26774.0287",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275665",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 221.5",
+          "slug": "nba-phx-nop-2026-11-23-total-221pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.745\", \"0.255\"]",
+          "volume_24h": 10.967742,
+          "liquidity": "24565.0691",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7275991",
+          "market_type": "total",
+          "question": "Suns vs. Pelicans: O/U 232.5",
+          "slug": "nba-phx-nop-2026-11-23-total-232pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.525\", \"0.475\"]",
+          "volume_24h": 28108.82877499999,
+          "liquidity": "67980.7671",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7278730",
+          "market_type": "total",
+          "question": "Devin Booker: 3-Pointers Made O/U 2.5",
+          "slug": "nba-phx-nop-2026-11-23-threes-devin-booker-2pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.21\", \"0.79\"]",
+          "volume_24h": 61.097561,
+          "liquidity": "2727.3996",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7278735",
+          "market_type": "total",
+          "question": "Jalen Green: 3-Pointers Made O/U 1.5",
+          "slug": "nba-phx-nop-2026-11-23-threes-jalen-green-1pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.275\", \"0.725\"]",
+          "volume_24h": 45.545455,
+          "liquidity": "2823.2465",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7279049",
+          "market_type": "total",
+          "question": "Jeremiah Fears: 3-Pointers Made O/U 1.5",
+          "slug": "nba-phx-nop-2026-11-23-threes-jeremiah-fears-1pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.265\", \"0.735\"]",
+          "volume_24h": 96.25,
+          "liquidity": "2729.365",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        },
+        {
+          "market_id": "7279061",
+          "market_type": "total",
+          "question": "Jordan Goodwin: 3-Pointers Made O/U 1.5",
+          "slug": "nba-phx-nop-2026-11-23-threes-jordan-goodwin-1pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.255\", \"0.745\"]",
+          "volume_24h": 5,
+          "liquidity": "2423.355",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-nop-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895748\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Suns vs. Pelicans\"},{\"market_id\":\"7275574\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-2.5)\"},{\"market_id\":\"7275581\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-3.5)\"},{\"market_id\":\"7275589\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-1.5)\"},{\"market_id\":\"7275597\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-4.5)\"},{\"market_id\":\"7275605\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-5.5)\"},{\"market_id\":\"7275613\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.39\\\", \\\"0.61\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-6.5)\"},{\"market_id\":\"7275637\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.36\\\", \\\"0.64\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Pelicans (-2.5)\"},{\"market_id\":\"7275661\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.275\\\", \\\"0.725\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Pelicans\\\"]\",\"question\":\"Spread: Suns (-10.5)\"},{\"market_id\":\"7275577\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 233.5\"},{\"market_id\":\"7275585\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 231.5\"},{\"market_id\":\"7275593\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 235.5\"},{\"market_id\":\"7275601\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 229.5\"},{\"market_id\":\"7275625\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 239.5\"},{\"market_id\":\"7275641\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.34\\\", \\\"0.66\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 241.5\"},{\"market_id\":\"7275665\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 221.5\"},{\"market_id\":\"7275991\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Pelicans: O/U 232.5\"},{\"market_id\":\"7278730\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Devin Booker: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7278735\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.275\\\", \\\"0.725\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Jalen Green: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7279049\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.265\\\", \\\"0.735\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Jeremiah Fears: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7279061\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.255\\\", \\\"0.745\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Jordan Goodwin: 3-Pointers Made O/U 1.5\"}]"
     }
   ],
-  "last_updated": "2026-11-23T14:32:48.228786+00:00"
+  "last_updated": "2026-11-23T15:45:58.105712+00:00"
 }
