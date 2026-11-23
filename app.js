@@ -1177,6 +1177,7 @@ async function loadTeams() {
     const data = await loadJson("data/teams.json");
     teamData = data.teams || [];
     teamUpdatedAt = data.last_updated ? new Date(data.last_updated) : null;
+    opponentModelHistoryCache = null;
     renderPlayerSearch();
     if (data.last_updated) $("data-status").textContent += " · Teams " + teamData.length + " updated " + new Date(data.last_updated).toLocaleString();
   } catch (e) {
