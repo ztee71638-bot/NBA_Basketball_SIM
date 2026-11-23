@@ -10,7 +10,8 @@ A free-first NBA game and player-prop research simulator. The first foundation u
 - Selected game and player panels show likely matching Polymarket markets and available outcome prices.
 - Live ESPN injury report snapshot with player/team/status details.
 - Browser-based 100,000-trial Monte Carlo game simulator with a conservative last-10 baseline, prior-season context, team-specific scoring variance and correlated score variation.
-- Experimental opponent-adjusted and pace/efficiency models are evaluated separately against the baseline and are not promoted unless they improve out-of-sample results.
+- A separate opponent-weighted score model now reports its own calibrated home/away win probability when fresh team history and a passing prequential calibration artifact are available. Its predictions and verified record are tracked separately from the last-10 Monte Carlo simulator.
+- The opponent-weighted score model is evaluated with chronological walk-forward validation and has a separately fitted prequential calibrator; live output is enabled only when it beats its raw model and the baseline on required probability-quality safeguards. Pace/efficiency remains experimental and is not promoted.
 - Player-prop probability calculator with manual assumptions or recent-game baselines; matched Polymarket player props can prefill the stat and line for simulation.
 - Searchable player roster and historical game-log interface.
 - Configurable multi-season team game histories from completed ESPN regular-season scoreboard results (five seasons by default); upcoming 0-0 placeholders are excluded. Older seasons retain score-level history, while boxscore enrichment is limited to the two newest seasons to bound collection time.
