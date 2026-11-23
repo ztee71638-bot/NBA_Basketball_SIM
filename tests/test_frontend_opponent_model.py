@@ -97,6 +97,10 @@ process.stdout.write(JSON.stringify(result));
     )
     actual = json.loads(completed.stdout)
     assert actual is not None
+    assert actual["homeRestDays"] == home_rest, f"home rest mismatch: {actual} vs {home_rest}"
+    assert actual["awayRestDays"] == away_rest, f"away rest mismatch: {actual} vs {away_rest}"
+    assert actual["homeTravelMiles"] == pytest.approx(home_travel, abs=1e-6), f"home travel mismatch: {actual} vs {home_travel}"
+    assert actual["awayTravelMiles"] == pytest.approx(away_travel, abs=1e-6), f"away travel mismatch: {actual} vs {away_travel}"
     assert actual["homeMean"] == pytest.approx(expected[0], abs=1e-8)
     assert actual["awayMean"] == pytest.approx(expected[1], abs=1e-8)
     assert actual["rawHomeProbability"] == pytest.approx(expected[2], abs=2e-7)
@@ -142,12 +146,14 @@ def test_live_advanced_model_matches_prequential_backtest_projection():
     league_def = sum(row["defensive_rating"] for row in advanced_rows) / len(advanced_rows)
     home_rows = sorted(by_code["NYK"], key=lambda row: row["date"])
     away_rows = sorted(by_code["BOS"], key=lambda row: row["date"])
+    home_rest = current_rest_days(home_rows, cutoff)
+    away_rest = current_rest_days(away_rows, cutoff)
+    home_travel = current_travel_miles(home_rows, "NYK", "BOS", "home", cutoff, {"teams": arenas})
+    away_travel = current_travel_miles(away_rows, "BOS", "NYK", "away", cutoff, {"teams": arenas})
     expected = predict_advanced(
         home_rows, away_rows, league_pace, league_off, league_def,
-        home_rest_days=current_rest_days(home_rows, cutoff),
-        away_rest_days=current_rest_days(away_rows, cutoff),
-        home_travel_miles=current_travel_miles(home_rows, "NYK", "BOS", "home", cutoff, {"teams": arenas}),
-        away_travel_miles=current_travel_miles(away_rows, "BOS", "NYK", "away", cutoff, {"teams": arenas}),
+        home_rest_days=home_rest, away_rest_days=away_rest,
+        home_travel_miles=home_travel, away_travel_miles=away_travel,
     )
     assert expected is not None
     payload = {"teams": teams, "cutoff": cutoff_text, "arenas": arenas}
