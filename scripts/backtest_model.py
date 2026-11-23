@@ -832,7 +832,8 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         "advanced_calibrated_log_loss": binary_log_loss(advanced_calibrated_probabilities, advanced_outcomes),
         "advanced_calibrated_calibration_error": expected_calibration_error(advanced_calibrated_probabilities, advanced_outcomes),
         "advanced_calibration": {
-            **fit_probability_calibrator(advanced_probabilities, advanced_outcomes),
+            **(fit_probability_calibrator(advanced_probabilities, advanced_outcomes)
+               if advanced_probabilities else prior_advanced_calibration),
             "training_model": "advanced_pace_efficiency_v1",
             "validation_method": "prequential_walk_forward",
             "validation_games": len(advanced_calibrated_probabilities),
