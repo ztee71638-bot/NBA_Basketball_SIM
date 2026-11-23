@@ -408,6 +408,9 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
     calibrated_probabilities, calibrated_briers = [], []
     prior_calibration = {"intercept": 0.0, "slope": 1.0, "training_games": 0, "enabled": False}
     last_calibration_fit_count = 0
+    model_calibrated_probabilities, model_calibrated_briers = [], []
+    prior_model_calibration = {"intercept": 0.0, "slope": 1.0, "training_games": 0, "enabled": False}
+    last_model_calibration_fit_count = 0
     baseline_errors_home, baseline_errors_away, baseline_correct = [], [], []
     baseline_briers, baseline_probabilities, baseline_outcomes = [], [], []
     advanced_errors, advanced_correct, advanced_briers = [], [], []
@@ -591,6 +594,28 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
         calibrated_probabilities.append(calibrated_p_home)
         calibrated_briers.append((calibrated_p_home - float(home_win)) ** 2)
 
+        # Independently calibrate the opponent-adjusted model. Fit only on
+        # its own previously observed predictions; never borrow baseline
+        # coefficients or include the current game's outcome.
+        if prior_game_count >= 100:
+            if (
+                not prior_model_calibration.get("enabled")
+                or prior_game_count - last_model_calibration_fit_count >= 25
+            ):
+                prior_model_calibration = fit_probability_calibrator(
+                    model_probabilities[:-1], model_outcomes[:-1]
+                )
+                last_model_calibration_fit_count = prior_game_count
+            calibrated_model_p_home = apply_probability_calibration(
+                p_home, prior_model_calibration
+            )
+        else:
+            calibrated_model_p_home = p_home
+        model_calibrated_probabilities.append(calibrated_model_p_home)
+        model_calibrated_briers.append(
+            (calibrated_model_p_home - float(home_win)) ** 2
+        )
+
         # Experimental pace/efficiency model is evaluated only when the test
         # game and all required pregame history contain verified boxscore data.
         if all(home.get(key) is not None and away.get(key) is not None
@@ -688,6 +713,37 @@ def run_backtest(payload: dict[str, Any], min_prior_games: int = 5, arenas_paylo
                     < expected_calibration_error(model_probabilities, model_outcomes)
             ),
         },
+        "opponent_model_calibration": {
+            **fit_probability_calibrator(model_probabilities, model_outcomes),
+            "training_model": "opponent_weighted_score_v1",
+            "validation_method": "prequential_walk_forward",
+            "validation_games": len(model_calibrated_probabilities),
+            "minimum_training_games": 100,
+            "refit_interval_games": 25,
+            "validation_brier_score": round(mean(model_calibrated_briers), 4),
+            "validation_log_loss": binary_log_loss(model_calibrated_probabilities, model_outcomes),
+            "validation_calibration_error": expected_calibration_error(model_calibrated_probabilities, model_outcomes),
+            "raw_brier_score": round(mean(briers), 4),
+            "raw_log_loss": binary_log_loss(model_probabilities, model_outcomes),
+            "raw_calibration_error": expected_calibration_error(model_probabilities, model_outcomes),
+            "baseline_brier_score": round(mean(baseline_briers), 4),
+            "baseline_log_loss": binary_log_loss(baseline_probabilities, baseline_outcomes),
+            "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
+            "live_enabled": bool(
+                len(model_calibrated_probabilities) >= 500
+                and mean(model_calibrated_briers) < mean(briers)
+                and binary_log_loss(model_calibrated_probabilities, model_outcomes)
+                    < binary_log_loss(model_probabilities, model_outcomes)
+                and expected_calibration_error(model_calibrated_probabilities, model_outcomes)
+                    < expected_calibration_error(model_probabilities, model_outcomes)
+                and mean(model_calibrated_briers) < mean(baseline_briers)
+                and binary_log_loss(model_calibrated_probabilities, model_outcomes)
+                    < binary_log_loss(baseline_probabilities, baseline_outcomes)
+            ),
+        },
+        "opponent_model_calibrated_confidence_selection": confidence_selection_report(
+            model_calibrated_probabilities, model_outcomes
+        ),
         "baseline_brier_score": round(mean(baseline_briers), 4),
         "baseline_log_loss": binary_log_loss(baseline_probabilities, baseline_outcomes),
         "baseline_calibration_error": expected_calibration_error(baseline_probabilities, baseline_outcomes),
