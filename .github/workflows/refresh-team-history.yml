@@ -35,15 +35,18 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Decide which data refreshes are required
         id: history-refresh
         if: github.event_name == 'push'
         env:
-          EVENT_PATH: ${{ github.event_path }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
         run: |
-          # Merge/squash pushes can expose changed files on head_commit even when
-          # the commits array is empty or truncated. Inspect both representations.
-          CHANGED_FILES="$(jq -r '([.commits[]? | (.added[]?, .modified[]?, .removed[]?)] + [.head_commit? | (.added[]?, .modified[]?, .removed[]?)] | .[])' "$EVENT_PATH" | sort -u)"
+          # Use the actual pushed commit range. This is reliable for merge commits,
+          # where webhook commit file lists may be incomplete.
+          CHANGED_FILES="$(git diff --name-only "$BEFORE_SHA" "$AFTER_SHA")"
           echo "$CHANGED_FILES"
           if grep -Eq '^(scripts/refresh_team_history.py|tests/test_team_history.py)$' <<< "$CHANGED_FILES"; then
             echo "refresh=true" >> "$GITHUB_OUTPUT"
