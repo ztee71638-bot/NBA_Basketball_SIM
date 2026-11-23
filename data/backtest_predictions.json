@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22T13:54:45.784750+00:00",
-  "prediction_count": 5769,
+  "generated_at": "2026-11-23T07:16:41.332174+00:00",
+  "prediction_count": 5776,
   "method": "chronological walk-forward; pregame inputs only",
   "predictions": [
     {
@@ -196146,6 +196146,244 @@
       "actual": {
         "home_score": 97.0,
         "away_score": 96.0,
+        "home_win": true
+      }
+    },
+    {
+      "game_id": "401910029",
+      "date": "2026-11-22T20:30Z",
+      "season": "2027",
+      "home_team": "ATL",
+      "away_team": "DET",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.031,
+        "league_points_sd": 12.686,
+        "home_prior_games": 382,
+        "away_prior_games": 384,
+        "home_recent10_points_for": 116.2,
+        "home_recent10_points_against": 114.7,
+        "away_recent10_points_for": 116.8,
+        "away_recent10_points_against": 111.3
+      },
+      "production_baseline": {
+        "home_score": 115.25,
+        "away_score": 114.25,
+        "home_win_probability": 0.525994
+      },
+      "experimental_model": {
+        "home_score": 115.21,
+        "away_score": 114.33,
+        "home_win_probability": 0.521981
+      },
+      "actual": {
+        "home_score": 107.0,
+        "away_score": 97.0,
+        "home_win": true
+      }
+    },
+    {
+      "game_id": "401910030",
+      "date": "2026-11-22T23:00Z",
+      "season": "2027",
+      "home_team": "MIA",
+      "away_team": "OKC",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.031,
+        "league_points_sd": 12.686,
+        "home_prior_games": 408,
+        "away_prior_games": 419,
+        "home_recent10_points_for": 124.3,
+        "home_recent10_points_against": 119.4,
+        "away_recent10_points_for": 116.9,
+        "away_recent10_points_against": 109.4
+      },
+      "production_baseline": {
+        "home_score": 118.35,
+        "away_score": 116.65,
+        "home_win_probability": 0.541807
+      },
+      "experimental_model": {
+        "home_score": 119.51,
+        "away_score": 116.78,
+        "home_win_probability": 0.563534
+      },
+      "actual": {
+        "home_score": 123.0,
+        "away_score": 113.0,
+        "home_win": true
+      }
+    },
+    {
+      "game_id": "401910032",
+      "date": "2026-11-23T00:00Z",
+      "season": "2027",
+      "home_team": "CHI",
+      "away_team": "DEN",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.018,
+        "league_points_sd": 12.688,
+        "home_prior_games": 372,
+        "away_prior_games": 419,
+        "home_recent10_points_for": 115.1,
+        "home_recent10_points_against": 119.1,
+        "away_recent10_points_for": 116.1,
+        "away_recent10_points_against": 112.7
+      },
+      "production_baseline": {
+        "home_score": 115.4,
+        "away_score": 116.1,
+        "home_win_probability": 0.483218
+      },
+      "experimental_model": {
+        "home_score": 116.83,
+        "away_score": 117.78,
+        "home_win_probability": 0.479662
+      },
+      "actual": {
+        "home_score": 145.0,
+        "away_score": 151.0,
+        "home_win": false
+      }
+    },
+    {
+      "game_id": "401910033",
+      "date": "2026-11-23T00:00Z",
+      "season": "2027",
+      "home_team": "UTA",
+      "away_team": "DAL",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.018,
+        "league_points_sd": 12.688,
+        "home_prior_games": 366,
+        "away_prior_games": 386,
+        "home_recent10_points_for": 109.2,
+        "home_recent10_points_against": 113.5,
+        "away_recent10_points_for": 110.9,
+        "away_recent10_points_against": 112.7
+      },
+      "production_baseline": {
+        "home_score": 112.45,
+        "away_score": 110.7,
+        "home_win_probability": 0.545653
+      },
+      "experimental_model": {
+        "home_score": 114.41,
+        "away_score": 114.19,
+        "home_win_probability": 0.505522
+      },
+      "actual": {
+        "home_score": 114.0,
+        "away_score": 116.0,
+        "home_win": false
+      }
+    },
+    {
+      "game_id": "401910031",
+      "date": "2026-11-23T00:00Z",
+      "season": "2027",
+      "home_team": "WAS",
+      "away_team": "ORL",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.018,
+        "league_points_sd": 12.688,
+        "home_prior_games": 363,
+        "away_prior_games": 384,
+        "home_recent10_points_for": 110.4,
+        "home_recent10_points_against": 122.9,
+        "away_recent10_points_for": 109.5,
+        "away_recent10_points_against": 109.8
+      },
+      "production_baseline": {
+        "home_score": 111.6,
+        "away_score": 114.7,
+        "home_win_probability": 0.426852
+      },
+      "experimental_model": {
+        "home_score": 112.92,
+        "away_score": 114.72,
+        "home_win_probability": 0.461835
+      },
+      "actual": {
+        "home_score": 116.0,
+        "away_score": 96.0,
+        "home_win": true
+      }
+    },
+    {
+      "game_id": "401910034",
+      "date": "2026-11-23T01:00Z",
+      "season": "2027",
+      "home_team": "NYK",
+      "away_team": "IND",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.018,
+        "league_points_sd": 12.688,
+        "home_prior_games": 429,
+        "away_prior_games": 405,
+        "home_recent10_points_for": 109.7,
+        "home_recent10_points_against": 100.3,
+        "away_recent10_points_for": 109.2,
+        "away_recent10_points_against": 113.1
+      },
+      "production_baseline": {
+        "home_score": 112.9,
+        "away_score": 103.25,
+        "home_win_probability": 0.744532
+      },
+      "experimental_model": {
+        "home_score": 114.52,
+        "away_score": 109.21,
+        "home_win_probability": 0.632599
+      },
+      "actual": {
+        "home_score": 113.0,
+        "away_score": 106.0,
+        "home_win": true
+      }
+    },
+    {
+      "game_id": "401910035",
+      "date": "2026-11-23T01:30Z",
+      "season": "2027",
+      "home_team": "GSW",
+      "away_team": "BOS",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.018,
+        "league_points_sd": 12.688,
+        "home_prior_games": 399,
+        "away_prior_games": 423,
+        "home_recent10_points_for": 110.3,
+        "home_recent10_points_against": 112.6,
+        "away_recent10_points_for": 109.2,
+        "away_recent10_points_against": 99.3
+      },
+      "production_baseline": {
+        "home_score": 106.3,
+        "away_score": 109.4,
+        "home_win_probability": 0.429981
+      },
+      "experimental_model": {
+        "home_score": 108.98,
+        "away_score": 112.86,
+        "home_win_probability": 0.4225
+      },
+      "actual": {
+        "home_score": 88.0,
+        "away_score": 87.0,
         "home_win": true
       }
     }

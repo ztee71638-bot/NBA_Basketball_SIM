@@ -3,7 +3,7 @@
   "upstream_source": "NBA Stats public data, as described by provider",
   "license": "CC BY 4.0",
   "attribution": "BoxScore Lab, boxscorelab.com, downloaded by NBA Basketball Simulator",
-  "retrieved_at": "2026-11-22T13:54:13.555835+00:00",
+  "retrieved_at": "2026-11-23T07:16:09.283068+00:00",
   "datasets": {
     "2025-26:team_games": {
       "file": "2025_26_team_games.json",
@@ -115,7 +115,7 @@
     },
     "2026-27:team_games": {
       "file": "2026_27_team_games.json",
-      "rows": 470,
+      "rows": 482,
       "columns": [
         "season",
         "team",
@@ -154,7 +154,7 @@
     },
     "2026-27:player_totals": {
       "file": "2026_27_player_totals.json",
-      "rows": 473,
+      "rows": 474,
       "columns": [
         "season",
         "player_name",
@@ -192,7 +192,7 @@
       "duplicate_full_rows": 0,
       "unique_teams": 30,
       "unique_games": null,
-      "unique_players": 473,
+      "unique_players": 474,
       "source_url": "https://boxscorelab.com/downloads/2026-27-player-season-totals.csv"
     },
     "2026-27:team_standings": {
