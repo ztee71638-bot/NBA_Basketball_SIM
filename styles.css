@@ -547,29 +547,29 @@ footer{color:#83aaaa}
 }
 
 
-/* Larger responsive hero basketball; reserve text clearance at every width. */
+/* Basketball artwork enlarged by 25% from the previous responsive dimensions. */
 .hero{gap:clamp(16px,2vw,24px)}
-.hero-side{min-width:clamp(220px,28vw,300px);flex:0 0 clamp(220px,28vw,300px)}
+.hero-side{min-width:clamp(275px,35vw,375px);flex:0 0 clamp(275px,35vw,375px)}
 .hero-ball{
-  width:100%;height:auto;aspect-ratio:1/1;max-width:300px;
+  width:100%;height:auto;aspect-ratio:1/1;max-width:375px;
   object-fit:contain;transform:scale(1.12) rotate(-7deg);
 }
 @media(max-width:900px) and (min-width:701px){
-  .hero-side{min-width:210px;flex-basis:210px}
-  .hero-ball{width:210px;height:210px}
+  .hero-side{min-width:263px;flex-basis:263px}
+  .hero-ball{width:263px;height:263px}
 }
 @media(max-width:700px){
-  .hero-side{min-width:0;flex:0 0 170px;align-items:flex-end}
-  .hero-ball{width:170px;height:170px;max-width:none;transform:scale(1.08) rotate(-7deg)}
+  .hero-side{min-width:0;flex:0 0 213px;align-items:flex-end}
+  .hero-ball{width:213px;height:213px;max-width:none;transform:scale(1.08) rotate(-7deg)}
 }
 @media(max-width:430px){
-  .hero{position:relative;min-height:250px}
-  .hero-side{position:absolute;right:10px;top:12px;width:142px;min-width:0;flex:none;align-items:flex-end;gap:8px}
-  .hero-ball{position:static;width:142px;height:142px;max-width:none;transform:scale(1.08) rotate(-7deg)}
+  .hero{position:relative;min-height:290px}
+  .hero-side{position:absolute;right:10px;top:12px;width:178px;min-width:0;flex:none;align-items:flex-end;gap:8px}
+  .hero-ball{position:static;width:178px;height:178px;max-width:none;transform:scale(1.08) rotate(-7deg)}
   .hero-side .status{position:static;max-width:100%;font-size:.65rem;padding:5px 7px}
   .hero-copy{padding-right:0;max-width:100%}
-  .hero h1{max-width:calc(100% - 126px);font-size:clamp(1.8rem,8vw,2.35rem)}
-  .hero .hero-kicker{max-width:calc(100% - 126px);font-size:.56rem;letter-spacing:.08em}
-  .hero .hero-subtitle{max-width:calc(100% - 126px);font-size:.76rem}
+  .hero h1{max-width:calc(100% - 158px);font-size:clamp(1.75rem,7.7vw,2.3rem)}
+  .hero .hero-kicker{max-width:calc(100% - 158px);font-size:.54rem;letter-spacing:.07em}
+  .hero .hero-subtitle{max-width:calc(100% - 158px);font-size:.73rem}
   .hero-tags{max-width:100%;font-size:.52rem}
 }
