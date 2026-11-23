@@ -137,6 +137,9 @@ def test_player_audit_reports_per_season_log_coverage_and_missing_player_sample(
     assert summary["players_without_logs_sample"] == [
         {"id": "2", "name": "Player Two", "team": "BBB"}
     ]
+    assert summary["roster_only_players_without_appearances"] == 1
+    assert summary["players_missing_logs_despite_reported_appearances"] == 0
+    assert not any("no game logs" in item for item in result["warnings"])
 
 
 
@@ -247,3 +250,26 @@ def test_audit_validates_advanced_metric_formulas_against_both_team_box_scores()
     invalid = module.audit_payloads(payload, None, now)
     assert invalid["team_history"]["advanced_metric_integrity_errors"] == 1
     assert any("do not reconcile" in item for item in invalid["errors"])
+
+
+
+def test_player_audit_warns_only_when_season_totals_prove_missing_game_logs():
+    players = {
+        "player_count": 1,
+        "last_updated": "2026-11-21T00:00:00+00:00",
+        "players": [{
+            "id": "3", "name": "Appeared Player", "team": "AAA",
+            "seasons": {},
+            "season_advanced_totals": {
+                "2026": [{"games_played": 24, "player_name": "Appeared Player"}]
+            },
+        }],
+    }
+    result = module.audit_payloads(
+        fixture(), players, datetime(2026, 11, 21, 1, tzinfo=timezone.utc)
+    )
+    summary = result["player_history"]
+    assert summary["players_without_any_logs"] == 1
+    assert summary["players_missing_logs_despite_reported_appearances"] == 1
+    assert summary["roster_only_players_without_appearances"] == 0
+    assert any("report NBA appearances" in item for item in result["warnings"])
