@@ -262,9 +262,12 @@ def test_prequential_calibrator_refits_periodically_on_prior_games_only(monkeypa
     # Prequential fits use 100 and then 125 prior outcomes; the final saved fit
     # uses all 130 outcomes only after walk-forward evaluation is complete.
     assert result["games_tested"] == 130
-    assert calls == [100, 125, 130]
+    assert calls == [100, 100, 125, 125, 130, 130]
     assert result["calibration"]["minimum_training_games"] == 100
     assert result["calibration"]["refit_interval_games"] == 25
+    assert result["opponent_model_calibration"]["validation_method"] == "prequential_walk_forward"
+    assert result["opponent_model_calibration"]["validation_games"] == 130
+    assert result["opponent_model_calibration"]["minimum_training_games"] == 100
 
 
 
