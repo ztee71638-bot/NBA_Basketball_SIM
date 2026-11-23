@@ -547,30 +547,29 @@ footer{color:#83aaaa}
 }
 
 
-/* Final responsive basketball sizing: use the available hero space without
-   crowding the headline or data-status badge. Overrides legacy size rules. */
-.hero{gap:clamp(16px,2.5vw,28px)}
-.hero-side{min-width:clamp(180px,23vw,250px);flex:0 0 clamp(180px,23vw,250px)}
+/* Larger responsive hero basketball; reserve text clearance at every width. */
+.hero{gap:clamp(16px,2vw,24px)}
+.hero-side{min-width:clamp(220px,28vw,300px);flex:0 0 clamp(220px,28vw,300px)}
 .hero-ball{
-  width:100%;height:auto;aspect-ratio:1/1;max-width:250px;
+  width:100%;height:auto;aspect-ratio:1/1;max-width:300px;
   object-fit:contain;transform:scale(1.12) rotate(-7deg);
 }
 @media(max-width:900px) and (min-width:701px){
-  .hero-side{min-width:180px;flex-basis:180px}
-  .hero-ball{width:180px;height:180px}
+  .hero-side{min-width:210px;flex-basis:210px}
+  .hero-ball{width:210px;height:210px}
 }
 @media(max-width:700px){
-  .hero-side{min-width:0;flex:0 0 142px;align-items:flex-end}
-  .hero-ball{width:142px;height:142px;max-width:none;transform:scale(1.08) rotate(-7deg)}
+  .hero-side{min-width:0;flex:0 0 170px;align-items:flex-end}
+  .hero-ball{width:170px;height:170px;max-width:none;transform:scale(1.08) rotate(-7deg)}
 }
 @media(max-width:430px){
-  .hero{position:relative;min-height:230px}
-  .hero-side{position:absolute;right:12px;top:14px;width:116px;min-width:0;flex:none;align-items:flex-end;gap:8px}
-  .hero-ball{position:static;width:116px;height:116px;max-width:none;transform:scale(1.08) rotate(-7deg)}
+  .hero{position:relative;min-height:250px}
+  .hero-side{position:absolute;right:10px;top:12px;width:142px;min-width:0;flex:none;align-items:flex-end;gap:8px}
+  .hero-ball{position:static;width:142px;height:142px;max-width:none;transform:scale(1.08) rotate(-7deg)}
   .hero-side .status{position:static;max-width:100%;font-size:.65rem;padding:5px 7px}
   .hero-copy{padding-right:0;max-width:100%}
-  .hero h1{max-width:calc(100% - 104px);font-size:clamp(1.9rem,8.4vw,2.5rem)}
-  .hero .hero-kicker{max-width:calc(100% - 94px);font-size:.58rem;letter-spacing:.1em}
-  .hero .hero-subtitle{max-width:calc(100% - 84px);font-size:.8rem}
-  .hero-tags{max-width:100%;font-size:.53rem}
+  .hero h1{max-width:calc(100% - 126px);font-size:clamp(1.8rem,8vw,2.35rem)}
+  .hero .hero-kicker{max-width:calc(100% - 126px);font-size:.56rem;letter-spacing:.08em}
+  .hero .hero-subtitle{max-width:calc(100% - 126px);font-size:.76rem}
+  .hero-tags{max-width:100%;font-size:.52rem}
 }
