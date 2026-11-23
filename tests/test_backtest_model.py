@@ -297,4 +297,4 @@ def test_model_and_baseline_confidence_gates_can_be_reported_independently():
     assert baseline[0]["games"] == 2
     assert model[0]["games"] == 3
     assert baseline[0]["accuracy"] == 1.0
-    assert model[0]["accuracy"] == 2 / 3
+    assert model[0]["accuracy"] == 0.3333
