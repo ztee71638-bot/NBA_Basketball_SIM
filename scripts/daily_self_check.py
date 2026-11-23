@@ -187,10 +187,8 @@ def run(ledger_path: Path = LEDGER, data_dir: Path = DATA, scoreboard_fetcher=fe
     for record in records:
         key = (record.get("game_date") or "unknown")[:10]
         daily.setdefault(key, []).append(record)
-    ledger["updated_at"] = stamp
-    ledger["records"] = records
-    ledger["daily"] = {day: summarize(items) for day, items in sorted(daily.items())}
-    ledger["overall"] = summarize(records)
+    daily_summary = {day: summarize(items) for day, items in sorted(daily.items())}
+    overall_summary = summarize(records)
     def within_days(record: dict, days: int) -> bool:
         try:
             game_time = datetime.fromisoformat(str(record.get("game_date", "")).replace("Z", "+00:00"))
@@ -199,14 +197,36 @@ def run(ledger_path: Path = LEDGER, data_dir: Path = DATA, scoreboard_fetcher=fe
             return now - timedelta(days=days) <= game_time <= now
         except (TypeError, ValueError):
             return False
-    ledger["rolling"] = {
+    rolling_summary = {
         "7d": summarize([record for record in records if within_days(record, 7)]),
         "30d": summarize([record for record in records if within_days(record, 30)]),
     }
-    ledger["last_run"] = {"at": stamp, "scoreboard_dates_checked": dates, "events_seen": seen}
-    ledger_path.parent.mkdir(parents=True, exist_ok=True)
-    ledger_path.write_text(json.dumps(ledger, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"last_run": ledger["last_run"], "overall": ledger["overall"]}, indent=2))
+    # Persist only meaningful ledger changes. Hourly heartbeat timestamps are
+    # printed to Actions logs but must not create a commit when no game data or
+    # rolling-window summary has changed.
+    ledger_changed = (
+        changed
+        or ledger.get("daily") != daily_summary
+        or ledger.get("overall") != overall_summary
+        or ledger.get("rolling") != rolling_summary
+        or not ledger_path.exists()
+    )
+    last_run = {"at": stamp, "scoreboard_dates_checked": dates, "events_seen": seen}
+    if ledger_changed:
+        ledger["updated_at"] = stamp
+        ledger["records"] = records
+        ledger["daily"] = daily_summary
+        ledger["overall"] = overall_summary
+        ledger["rolling"] = rolling_summary
+        ledger["last_run"] = last_run
+        ledger_path.parent.mkdir(parents=True, exist_ok=True)
+        ledger_path.write_text(json.dumps(ledger, indent=2) + "\\n", encoding="utf-8")
+    print(json.dumps({
+        "last_run": last_run,
+        "ledger_changed": ledger_changed,
+        "overall": overall_summary,
+        "rolling": rolling_summary,
+    }, indent=2))
     return ledger
 
 
