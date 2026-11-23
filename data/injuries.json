@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T21:45:58.336187+00:00",
+  "last_updated": "2026-11-23T22:27:38.269373+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -120,21 +120,6 @@
       "return_date": "2026-11-25",
       "short_comment": "Allen (concussion) has been ruled out for Monday's game against the Grizzlies.",
       "long_comment": "Allen is set to miss a third consecutive contest due to a concussion. Sion James will continue to start while Royce O'Neale should get more minutes off the bench.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4433287",
-      "name": "Brandon Miller",
-      "team": "CHA",
-      "team_name": "Charlotte Hornets",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-22T22:08Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Miller is probable for Monday's game against the Grizzlies due to a right knee contusion.",
-      "long_comment": "Miller is dealing with a right knee bone bruise, but he is expected to suit up Monday. In three games since returning from a groin injury, Miller has averaged 17.3 points, 4.0 rebounds and 3.7 assists in 29.7 minutes per contest.",
       "source": "ESPN"
     },
     {
@@ -383,13 +368,43 @@
       "team": "DET",
       "team_name": "Detroit Pistons",
       "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-23T22:10Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Okorie (oblique) won't play Tuesday in Orlando.",
+      "long_comment": "Okorie lacks a concrete timeline for a return due to an oblique injury. His ongoing absence carries little fantasy relevance moving forward.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4433621",
+      "name": "Jalen Duren",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-23T22:08Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Duren (hamstring) has been ruled out for Tuesday's game against the Magic.",
+      "long_comment": "Duren hasn't played since Oct. 23 due to a right hamstring strain, though he's expected to be re-evaluated soon. Until the Pistons offer an update on the 23-year-old big man's progress, he can be considered week-to-week. Paul Reed will likely continue seeing increased minutes for as long as Duren is sidelined.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4432166",
+      "name": "Cade Cunningham",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "G",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-22T22:57Z",
+      "side": null,
+      "date": "2026-11-23T22:07Z",
       "return_date": "2026-11-24",
-      "short_comment": "Okorie (oblique) is out for Sunday's game in Atlanta.",
-      "long_comment": "This will be Okorie's second straight game on the inactive list due to injury. His next chance to play will come Tuesday in Orlando.",
+      "short_comment": "Cunningham (knee) is probable for Tuesday's game against the Orlando.",
+      "long_comment": "The superstar point guard has been managing lingering knee soreness as of late, but he's expected to fight through the issue Tuesday. Since the start of November,  Cunningham has averaged 25.6 points, 9.1 assists, 4.8 rebounds and 1.6 steals per contest covering nine appearances.",
       "source": "ESPN"
     },
     {
@@ -420,21 +435,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Robinson will be re-evaluated in one week due to a left quadriceps strain, Coty M. Davis of The Detroit News reports.",
       "long_comment": "Robinson has gotten off to a strong start this season, though he's now expected to miss at least the next week after appearing in each of Detroit's first 12 regular-season games. The sharpshooter is averaging 17.4 points in 30.5 minutes per contest, and his absence will open up additional minutes for Kevin Huerter and Javonte Green.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4433621",
-      "name": "Jalen Duren",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-08T16:05Z",
-      "return_date": "2026-11-24",
-      "short_comment": "Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports.",
-      "long_comment": "Duren is progressing in his rehab after suffering a right hamstring strain Oct. 23, though he'll remain on the inactive list for at least the next two weeks while ramping up toward a return to game action. Paul Reed should continue to play a sizable role in Duren's stead.",
       "source": "ESPN"
     },
     {
@@ -1481,10 +1481,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-16T18:14Z",
-      "return_date": "2026-11-24",
-      "short_comment": "Vukcevic (hip) has been ruled out for Monday's game against Memphis.",
-      "long_comment": "Vukcevic has yet to make his season debut due to a left hip injury. He can be considered week-to-week until the Wizards offer an update on his progress.",
+      "date": "2026-11-23T22:10Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Vukcevic (hip) has been ruled out for Tuesday's game against Boston.",
+      "long_comment": "Vukcevic has yet to suit up this season due to a left hip injury. He can be considered week-to-week until the Wizards provide an update on his progress.",
       "source": "ESPN"
     },
     {

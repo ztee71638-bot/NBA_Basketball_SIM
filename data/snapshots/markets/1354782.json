@@ -662,7 +662,73 @@
         }
       ],
       "signature": "[{\"market_id\":\"6925093\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.77\\\", \\\"0.23\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Wizards\\\"]\",\"question\":\"Celtics vs. Wizards\"},{\"market_id\":\"7291769\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.46\\\", \\\"0.54\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Wizards\\\"]\",\"question\":\"Spread: Celtics (-11.5)\"},{\"market_id\":\"7291754\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Wizards: O/U 215.5\"},{\"market_id\":\"7291766\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.28\\\", \\\"0.72\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Wizards: O/U 217.5\"},{\"market_id\":\"7291790\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.23\\\", \\\"0.77\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Wizards: O/U 221.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T22:27:38.270634+00:00",
+      "markets": [
+        {
+          "market_id": "6925093",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Wizards",
+          "slug": "nba-bos-was-2026-11-24",
+          "outcomes": "[\"Celtics\", \"Wizards\"]",
+          "outcome_prices": "[\"0.775\", \"0.225\"]",
+          "volume_24h": 9665.938012000002,
+          "liquidity": "36037.2769",
+          "end_date": "2026-11-25T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-was-2026-11-24"
+        },
+        {
+          "market_id": "7291769",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-11.5)",
+          "slug": "nba-bos-was-2026-11-24-spread-away-11pt5",
+          "outcomes": "[\"Celtics\", \"Wizards\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": 8.955224,
+          "liquidity": "2359.2156",
+          "end_date": "2026-11-25T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-was-2026-11-24"
+        },
+        {
+          "market_id": "7291754",
+          "market_type": "total",
+          "question": "Celtics vs. Wizards: O/U 215.5",
+          "slug": "nba-bos-was-2026-11-24-total-215pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.53\", \"0.47\"]",
+          "volume_24h": 95.450982,
+          "liquidity": "1246.45",
+          "end_date": "2026-11-25T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-was-2026-11-24"
+        },
+        {
+          "market_id": "7291766",
+          "market_type": "total",
+          "question": "Celtics vs. Wizards: O/U 217.5",
+          "slug": "nba-bos-was-2026-11-24-total-217pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 240.789287,
+          "liquidity": "1631.8664",
+          "end_date": "2026-11-25T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-was-2026-11-24"
+        },
+        {
+          "market_id": "7291790",
+          "market_type": "total",
+          "question": "Celtics vs. Wizards: O/U 221.5",
+          "slug": "nba-bos-was-2026-11-24-total-221pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 31.359375,
+          "liquidity": "1358.64",
+          "end_date": "2026-11-25T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-was-2026-11-24"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6925093\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Wizards\\\"]\",\"question\":\"Celtics vs. Wizards\"},{\"market_id\":\"7291769\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Wizards\\\"]\",\"question\":\"Spread: Celtics (-11.5)\"},{\"market_id\":\"7291754\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.53\\\", \\\"0.47\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Wizards: O/U 215.5\"},{\"market_id\":\"7291766\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Wizards: O/U 217.5\"},{\"market_id\":\"7291790\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Wizards: O/U 221.5\"}]"
     }
   ],
-  "last_updated": "2026-11-23T21:45:58.337536+00:00"
+  "last_updated": "2026-11-23T22:27:38.270634+00:00"
 }

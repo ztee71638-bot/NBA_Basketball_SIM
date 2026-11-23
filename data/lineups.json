@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T21:45:58.337388+00:00",
+  "last_updated": "2026-11-23T22:27:38.270402+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -65,7 +65,7 @@
     {
       "game_id": "401910042",
       "date": "2026-11-24T01:00Z",
-      "home_team": "NO",
+      "home_team": "NOP",
       "away_team": "PHX",
       "home_starters": [],
       "away_starters": [],
@@ -86,7 +86,7 @@
       "game_id": "401910044",
       "date": "2026-11-24T03:00Z",
       "home_team": "LAL",
-      "away_team": "UTAH",
+      "away_team": "UTA",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",
@@ -96,7 +96,7 @@
       "game_id": "401910045",
       "date": "2026-11-24T03:00Z",
       "home_team": "SAC",
-      "away_team": "SA",
+      "away_team": "SAS",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",
