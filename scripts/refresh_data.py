@@ -103,6 +103,14 @@ def parse_confirmed_lineups(payload: dict[str, Any], game: dict[str, Any]) -> di
     """Extract starters only when ESPN explicitly marks five for each team."""
     boxes = (payload.get("boxscore") or {}).get("players") or []
     collected: dict[str, dict[str, dict[str, Any]]] = {}
+    # ESPN scoreboard and summary endpoints do not always use the same
+    # abbreviations (for example NO/NOP and UTAH/UTA). Normalize both sides
+    # before matching starters to the scheduled game.
+    aliases = {"NO": "NOP", "SA": "SAS", "GS": "GSW", "NY": "NYK",
+               "WSH": "WAS", "UTAH": "UTA"}
+
+    def normalize_team_code(value: str | None) -> str | None:
+        return aliases.get(value, value) if value else value
 
     def walk(node: Any, team_code: str | None = None) -> None:
         if isinstance(node, list):
@@ -115,7 +123,7 @@ def parse_confirmed_lineups(payload: dict[str, Any], game: dict[str, Any]) -> di
         code = team.get("abbreviation") if isinstance(team, dict) else None
         if not code and isinstance(team, dict):
             code = {"1":"ATL","2":"BOS","3":"NOP","4":"CHI","5":"CLE","6":"DAL","7":"DEN","8":"DET","9":"GSW","10":"HOU","11":"IND","12":"LAC","13":"LAL","14":"MIA","15":"MIL","16":"MIN","17":"BKN","18":"NYK","19":"ORL","20":"PHI","21":"PHX","22":"POR","23":"SAC","24":"SAS","25":"OKC","26":"UTA","27":"WAS","28":"TOR","29":"MEM","30":"CHA"}.get(str(team.get("id") or ""))
-        context = code or team_code
+        context = normalize_team_code(code or team_code)
         athlete = node.get("athlete")
         if isinstance(athlete, dict) and context and ("starter" in node or "active" in node):
             name = athlete.get("displayName") or athlete.get("fullName")
@@ -131,8 +139,8 @@ def parse_confirmed_lineups(payload: dict[str, Any], game: dict[str, Any]) -> di
                 walk(value, context)
 
     walk(boxes)
-    home_code = (game.get("home") or {}).get("abbreviation")
-    away_code = (game.get("away") or {}).get("abbreviation")
+    home_code = normalize_team_code((game.get("home") or {}).get("abbreviation"))
+    away_code = normalize_team_code((game.get("away") or {}).get("abbreviation"))
     home = list(collected.get(home_code, {}).values()) if home_code else []
     away = list(collected.get(away_code, {}).values()) if away_code else []
     confirmed = len(home) == 5 and len(away) == 5
