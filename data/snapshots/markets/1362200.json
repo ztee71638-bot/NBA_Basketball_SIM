@@ -218,7 +218,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956401\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.44\\\", \\\"0.56\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Hornets\\\"]\",\"question\":\"Bulls vs. Hornets\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T05:41:00.545274+00:00",
+      "markets": [
+        {
+          "market_id": "6956401",
+          "market_type": "moneyline",
+          "question": "Bulls vs. Hornets",
+          "slug": "nba-chi-cha-2026-11-25",
+          "outcomes": "[\"Bulls\", \"Hornets\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 104.28428600000001,
+          "liquidity": "25603.7907",
+          "end_date": "2026-11-26T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-chi-cha-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956401\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Hornets\\\"]\",\"question\":\"Bulls vs. Hornets\"}]"
     }
   ],
-  "last_updated": "2026-11-23T00:53:36.276171+00:00"
+  "last_updated": "2026-11-23T05:41:00.545274+00:00"
 }

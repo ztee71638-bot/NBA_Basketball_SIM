@@ -2420,7 +2420,133 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895747\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.755\\\", \\\"0.245\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Cavaliers vs. Bulls\"},{\"market_id\":\"7275573\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-7.5)\"},{\"market_id\":\"7275580\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-8.5)\"},{\"market_id\":\"7275588\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-6.5)\"},{\"market_id\":\"7275596\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-9.5)\"},{\"market_id\":\"7275604\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.625\\\", \\\"0.375\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-5.5)\"},{\"market_id\":\"7275612\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.44\\\", \\\"0.56\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-10.5)\"},{\"market_id\":\"7275620\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.66\\\", \\\"0.34\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-4.5)\"},{\"market_id\":\"7275628\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.42\\\", \\\"0.58\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-11.5)\"},{\"market_id\":\"7275636\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.685\\\", \\\"0.315\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-3.5)\"},{\"market_id\":\"7275644\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-12.5)\"},{\"market_id\":\"7275652\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.75\\\", \\\"0.25\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-2.5)\"},{\"market_id\":\"7275660\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-13.5)\"},{\"market_id\":\"7275668\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-1.5)\"},{\"market_id\":\"7275676\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-15.5)\"},{\"market_id\":\"7275684\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-17.5)\"},{\"market_id\":\"7275692\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.215\\\", \\\"0.785\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-2.5)\"},{\"market_id\":\"7275700\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.19\\\", \\\"0.81\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-19.5)\"},{\"market_id\":\"7275708\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.175\\\", \\\"0.825\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-4.5)\"},{\"market_id\":\"7275716\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.185\\\", \\\"0.815\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-21.5)\"},{\"market_id\":\"7275724\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.145\\\", \\\"0.855\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-6.5)\"},{\"market_id\":\"7275732\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.17\\\", \\\"0.83\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-23.5)\"},{\"market_id\":\"7275740\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.12\\\", \\\"0.88\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-8.5)\"},{\"market_id\":\"7275748\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-25.5)\"},{\"market_id\":\"7275756\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.12\\\", \\\"0.88\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-10.5)\"},{\"market_id\":\"7275764\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.145\\\", \\\"0.855\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-27.5)\"},{\"market_id\":\"7275772\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.07\\\", \\\"0.93\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-12.5)\"},{\"market_id\":\"7275780\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.075\\\", \\\"0.925\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-29.5)\"},{\"market_id\":\"7275788\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.09\\\", \\\"0.91\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-14.5)\"},{\"market_id\":\"7275796\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.12\\\", \\\"0.88\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-31.5)\"},{\"market_id\":\"7275804\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.075\\\", \\\"0.925\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-16.5)\"},{\"market_id\":\"7275808\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.075\\\", \\\"0.925\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-33.5)\"},{\"market_id\":\"7275995\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.07\\\", \\\"0.93\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-18.5)\"},{\"market_id\":\"7275999\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-35.5)\"},{\"market_id\":\"7276003\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-20.5)\"},{\"market_id\":\"7275576\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 241.5\"},{\"market_id\":\"7275584\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 239.5\"},{\"market_id\":\"7275592\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 243.5\"},{\"market_id\":\"7275600\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.57\\\", \\\"0.43\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 237.5\"},{\"market_id\":\"7275608\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 245.5\"},{\"market_id\":\"7275616\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.61\\\", \\\"0.39\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 235.5\"},{\"market_id\":\"7275624\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.38\\\", \\\"0.62\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 247.5\"},{\"market_id\":\"7275632\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.65\\\", \\\"0.35\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 233.5\"},{\"market_id\":\"7275640\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.35\\\", \\\"0.65\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 249.5\"},{\"market_id\":\"7275648\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 231.5\"},{\"market_id\":\"7275656\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.32\\\", \\\"0.68\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 251.5\"},{\"market_id\":\"7275664\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.72\\\", \\\"0.28\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 229.5\"},{\"market_id\":\"7275672\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.255\\\", \\\"0.745\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 253.5\"},{\"market_id\":\"7275680\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.76\\\", \\\"0.24\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 227.5\"},{\"market_id\":\"7275688\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.235\\\", \\\"0.765\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 255.5\"},{\"market_id\":\"7275696\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 225.5\"},{\"market_id\":\"7275704\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.19\\\", \\\"0.81\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 257.5\"},{\"market_id\":\"7275712\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.825\\\", \\\"0.175\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 223.5\"},{\"market_id\":\"7275720\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.175\\\", \\\"0.825\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 259.5\"},{\"market_id\":\"7275728\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.835\\\", \\\"0.165\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 221.5\"},{\"market_id\":\"7275736\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.17\\\", \\\"0.83\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 261.5\"},{\"market_id\":\"7275744\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.85\\\", \\\"0.15\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 219.5\"},{\"market_id\":\"7275752\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.175\\\", \\\"0.825\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 263.5\"},{\"market_id\":\"7275760\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.855\\\", \\\"0.145\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 217.5\"},{\"market_id\":\"7275768\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.155\\\", \\\"0.845\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 265.5\"},{\"market_id\":\"7275776\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.87\\\", \\\"0.13\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 215.5\"},{\"market_id\":\"7275784\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.07\\\", \\\"0.93\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 267.5\"},{\"market_id\":\"7275792\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.84\\\", \\\"0.16\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 213.5\"},{\"market_id\":\"7275800\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.085\\\", \\\"0.915\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 269.5\"},{\"market_id\":\"7277091\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 240.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T05:41:00.545274+00:00",
+      "markets": [
+        {
+          "market_id": "6895747",
+          "market_type": "moneyline",
+          "question": "Cavaliers vs. Bulls",
+          "slug": "nba-cle-chi-2026-11-23",
+          "outcomes": "[\"Cavaliers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.745\", \"0.255\"]",
+          "volume_24h": 12953.795537000002,
+          "liquidity": "40383.3515",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275573",
+          "market_type": "spread",
+          "question": "Spread: Cavaliers (-7.5)",
+          "slug": "nba-cle-chi-2026-11-23-spread-away-7pt5",
+          "outcomes": "[\"Cavaliers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 1219,
+          "liquidity": "5705.3558",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275580",
+          "market_type": "spread",
+          "question": "Spread: Cavaliers (-8.5)",
+          "slug": "nba-cle-chi-2026-11-23-spread-away-8pt5",
+          "outcomes": "[\"Cavaliers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.51\", \"0.49\"]",
+          "volume_24h": 36.076227,
+          "liquidity": "5714.2515",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275596",
+          "market_type": "spread",
+          "question": "Spread: Cavaliers (-9.5)",
+          "slug": "nba-cle-chi-2026-11-23-spread-away-9pt5",
+          "outcomes": "[\"Cavaliers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 107.3,
+          "liquidity": "5874.9835",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275636",
+          "market_type": "spread",
+          "question": "Spread: Cavaliers (-3.5)",
+          "slug": "nba-cle-chi-2026-11-23-spread-away-3pt5",
+          "outcomes": "[\"Cavaliers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.675\", \"0.325\"]",
+          "volume_24h": 17.142858,
+          "liquidity": "5736.0194",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275652",
+          "market_type": "spread",
+          "question": "Spread: Cavaliers (-2.5)",
+          "slug": "nba-cle-chi-2026-11-23-spread-away-2pt5",
+          "outcomes": "[\"Cavaliers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.705\", \"0.295\"]",
+          "volume_24h": 322,
+          "liquidity": "4955.9784",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275692",
+          "market_type": "spread",
+          "question": "Spread: Bulls (-2.5)",
+          "slug": "nba-cle-chi-2026-11-23-spread-home-2pt5",
+          "outcomes": "[\"Bulls\", \"Cavaliers\"]",
+          "outcome_prices": "[\"0.24\", \"0.76\"]",
+          "volume_24h": 77,
+          "liquidity": "4849.7543",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275576",
+          "market_type": "total",
+          "question": "Cavaliers vs. Bulls: O/U 241.5",
+          "slug": "nba-cle-chi-2026-11-23-total-241pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.48\", \"0.52\"]",
+          "volume_24h": 1021.538462,
+          "liquidity": "8921.7607",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275584",
+          "market_type": "total",
+          "question": "Cavaliers vs. Bulls: O/U 239.5",
+          "slug": "nba-cle-chi-2026-11-23-total-239pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 27,
+          "liquidity": "7491.0994",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        },
+        {
+          "market_id": "7275656",
+          "market_type": "total",
+          "question": "Cavaliers vs. Bulls: O/U 251.5",
+          "slug": "nba-cle-chi-2026-11-23-total-251pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.29\", \"0.71\"]",
+          "volume_24h": 149.16438399999998,
+          "liquidity": "5839.1425",
+          "end_date": "2026-11-24T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895747\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Cavaliers vs. Bulls\"},{\"market_id\":\"7275573\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-7.5)\"},{\"market_id\":\"7275580\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.51\\\", \\\"0.49\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-8.5)\"},{\"market_id\":\"7275596\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-9.5)\"},{\"market_id\":\"7275636\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.675\\\", \\\"0.325\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-3.5)\"},{\"market_id\":\"7275652\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.705\\\", \\\"0.295\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Spread: Cavaliers (-2.5)\"},{\"market_id\":\"7275692\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Cavaliers\\\"]\",\"question\":\"Spread: Bulls (-2.5)\"},{\"market_id\":\"7275576\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 241.5\"},{\"market_id\":\"7275584\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 239.5\"},{\"market_id\":\"7275656\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Bulls: O/U 251.5\"}]"
     }
   ],
-  "last_updated": "2026-11-23T04:22:34.728978+00:00"
+  "last_updated": "2026-11-23T05:41:00.545274+00:00"
 }

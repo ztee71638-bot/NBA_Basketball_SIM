@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T04:22:34.727558+00:00",
+  "last_updated": "2026-11-23T05:41:00.542910+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1290,6 +1290,21 @@
       "return_date": "2027-10-01",
       "short_comment": "Simmons underwent successful surgery Tuesday to repair a torn right Achilles tendon, James Ham of ESPN 1320 Sacramento reports.",
       "long_comment": "Simmons had a quality preseason, averaging 10.5 points, 4.0 rebounds and 4.0 assists over 17.4 minutes per contest (two games). The 30-year-old was on track to suit up for the Kings on opening night, though those plans were halted after he suffered a torn Achilles tendon during practice. Now, Simmons will focus on rehab. However, it's unknown what the future holds regarding his career in the NBA.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "5104157",
+      "name": "Victor Wembanyama",
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-23T04:52Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Wembanyama (back) is questionable for Monday's game against the Kings, Jared Weiss of The Athletic reports.",
+      "long_comment": "Wembanyama is dealing with lower-back tightness, leaving his status for Monday's road tilt up in the air. If he's unable to play, Luke Kornet would likely replace Wembanyama in the starting lineup, while Carter Bryant, Keldon Johnson and rookie Tarris Reed Jr. could all see a bump in minutes off the Spurs' bench.",
       "source": "ESPN"
     },
     {
