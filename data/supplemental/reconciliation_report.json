@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T21:48:57.616957+00:00",
+  "generated_at": "2026-11-23T22:17:46.486691+00:00",
   "source": "BoxScore Lab (upstream attribution: NBA Stats)",
   "license": "CC BY 4.0",
   "team_games": {
@@ -8,32 +8,32 @@
     "unmatched_rows": 0,
     "score_or_key_mismatches": 0,
     "duplicate_source_rows": 0,
-    "advanced_rows_added": 5670,
-    "advanced_fields_filled": 28350,
+    "advanced_rows_added": 0,
+    "advanced_fields_filled": 0,
     "by_season": {
       "2022-23": {
         "source_rows": 2460,
         "matched_rows": 2460,
         "unmatched_rows": 0,
         "score_or_key_mismatches": 0,
-        "advanced_rows_added": 1890,
-        "advanced_fields_filled": 9450
+        "advanced_rows_added": 0,
+        "advanced_fields_filled": 0
       },
       "2023-24": {
         "source_rows": 2460,
         "matched_rows": 2460,
         "unmatched_rows": 0,
         "score_or_key_mismatches": 0,
-        "advanced_rows_added": 1860,
-        "advanced_fields_filled": 9300
+        "advanced_rows_added": 0,
+        "advanced_fields_filled": 0
       },
       "2024-25": {
         "source_rows": 2460,
         "matched_rows": 2460,
         "unmatched_rows": 0,
         "score_or_key_mismatches": 0,
-        "advanced_rows_added": 1920,
-        "advanced_fields_filled": 9600
+        "advanced_rows_added": 0,
+        "advanced_fields_filled": 0
       },
       "2025-26": {
         "source_rows": 2460,

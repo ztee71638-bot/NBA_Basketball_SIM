@@ -783,85 +783,85 @@
     }
   },
   "diagnostics_note": "Season slices and confidence buckets are descriptive holdout diagnostics. Small slices are not sufficient to establish a predictive edge.",
-  "advanced_games_tested": 5462,
-  "advanced_score_mae": 9.461,
-  "advanced_baseline_score_mae": 9.486,
-  "advanced_winner_accuracy": 0.6505,
-  "advanced_baseline_winner_accuracy": 0.6232,
-  "advanced_brier_score": 0.2227,
-  "advanced_baseline_brier_score": 0.2256,
-  "advanced_log_loss": 0.6368,
-  "advanced_baseline_log_loss": 0.6422,
-  "advanced_calibration_error": 0.0613,
-  "advanced_calibrated_brier_score": 0.2176,
-  "advanced_calibrated_log_loss": 0.6252,
+  "advanced_games_tested": 5557,
+  "advanced_score_mae": 9.456,
+  "advanced_baseline_score_mae": 9.489,
+  "advanced_winner_accuracy": 0.6516,
+  "advanced_baseline_winner_accuracy": 0.6225,
+  "advanced_brier_score": 0.2232,
+  "advanced_baseline_brier_score": 0.2262,
+  "advanced_log_loss": 0.6378,
+  "advanced_baseline_log_loss": 0.6436,
+  "advanced_calibration_error": 0.0626,
+  "advanced_calibrated_brier_score": 0.2185,
+  "advanced_calibrated_log_loss": 0.6271,
   "advanced_calibrated_calibration_error": 0.0125,
   "advanced_calibration": {
-    "intercept": -0.11532282,
-    "slope": 1.86490106,
-    "training_games": 5462,
+    "intercept": -0.11372278,
+    "slope": 1.83938676,
+    "training_games": 5557,
     "enabled": true,
     "training_model": "advanced_pace_efficiency_v1",
     "validation_method": "prequential_walk_forward",
-    "validation_games": 5462,
+    "validation_games": 5557,
     "minimum_training_games": 100,
     "refit_interval_games": 25,
-    "validation_brier_score": 0.2176,
-    "validation_log_loss": 0.6252,
+    "validation_brier_score": 0.2185,
+    "validation_log_loss": 0.6271,
     "validation_calibration_error": 0.0125,
-    "raw_brier_score": 0.2227,
-    "raw_log_loss": 0.6368,
-    "raw_calibration_error": 0.0613,
-    "baseline_brier_score": 0.2256,
-    "baseline_log_loss": 0.6422,
-    "baseline_calibration_error": 0.0256,
+    "raw_brier_score": 0.2232,
+    "raw_log_loss": 0.6378,
+    "raw_calibration_error": 0.0626,
+    "baseline_brier_score": 0.2262,
+    "baseline_log_loss": 0.6436,
+    "baseline_calibration_error": 0.0238,
     "live_enabled": true
   },
   "advanced_calibrated_confidence_selection": [
     {
       "minimum_confidence": 0.6,
-      "games": 3396,
-      "coverage": 0.6218,
-      "accuracy": 0.7102,
-      "average_confidence": 0.7101,
-      "brier_score": 0.2002,
-      "log_loss": 0.5884
+      "games": 3369,
+      "coverage": 0.6063,
+      "accuracy": 0.7079,
+      "average_confidence": 0.7062,
+      "brier_score": 0.2009,
+      "log_loss": 0.5898
     },
     {
       "minimum_confidence": 0.65,
-      "games": 2401,
-      "coverage": 0.4396,
-      "accuracy": 0.7455,
-      "average_confidence": 0.7455,
-      "brier_score": 0.186,
-      "log_loss": 0.558
+      "games": 2311,
+      "coverage": 0.4159,
+      "accuracy": 0.7456,
+      "average_confidence": 0.7436,
+      "brier_score": 0.1858,
+      "log_loss": 0.5575
     },
     {
       "minimum_confidence": 0.7,
-      "games": 1645,
-      "coverage": 0.3012,
-      "accuracy": 0.7842,
-      "average_confidence": 0.7782,
-      "brier_score": 0.1686,
-      "log_loss": 0.5203
+      "games": 1548,
+      "coverage": 0.2786,
+      "accuracy": 0.7862,
+      "average_confidence": 0.7774,
+      "brier_score": 0.1674,
+      "log_loss": 0.5178
     },
     {
       "minimum_confidence": 0.75,
-      "games": 985,
-      "coverage": 0.1803,
-      "accuracy": 0.803,
-      "average_confidence": 0.8146,
-      "brier_score": 0.1574,
-      "log_loss": 0.4952
+      "games": 926,
+      "coverage": 0.1666,
+      "accuracy": 0.8067,
+      "average_confidence": 0.8134,
+      "brier_score": 0.1555,
+      "log_loss": 0.4911
     },
     {
       "minimum_confidence": 0.8,
-      "games": 539,
-      "coverage": 0.0987,
-      "accuracy": 0.8442,
-      "average_confidence": 0.8489,
-      "brier_score": 0.1334,
-      "log_loss": 0.4414
+      "games": 499,
+      "coverage": 0.0898,
+      "accuracy": 0.8397,
+      "average_confidence": 0.8475,
+      "brier_score": 0.1367,
+      "log_loss": 0.4497
     }
   ],
   "advanced_calibrated_confidence_recent_windows": {
@@ -871,143 +871,143 @@
         "games": 76,
         "coverage": 0.76,
         "accuracy": 0.7237,
-        "average_confidence": 0.7214,
-        "brier_score": 0.202,
-        "log_loss": 0.5957
+        "average_confidence": 0.719,
+        "brier_score": 0.2019,
+        "log_loss": 0.5954
       },
       {
         "minimum_confidence": 0.65,
-        "games": 52,
-        "coverage": 0.52,
-        "accuracy": 0.7115,
-        "average_confidence": 0.7654,
-        "brier_score": 0.1994,
-        "log_loss": 0.5906
+        "games": 51,
+        "coverage": 0.51,
+        "accuracy": 0.7059,
+        "average_confidence": 0.7649,
+        "brier_score": 0.2007,
+        "log_loss": 0.5928
       },
       {
         "minimum_confidence": 0.7,
         "games": 38,
         "coverage": 0.38,
         "accuracy": 0.7895,
-        "average_confidence": 0.7974,
-        "brier_score": 0.1675,
-        "log_loss": 0.5241
+        "average_confidence": 0.7946,
+        "brier_score": 0.1676,
+        "log_loss": 0.5237
       },
       {
         "minimum_confidence": 0.75,
-        "games": 28,
-        "coverage": 0.28,
-        "accuracy": 0.8214,
-        "average_confidence": 0.8236,
-        "brier_score": 0.1519,
-        "log_loss": 0.4917
+        "games": 27,
+        "coverage": 0.27,
+        "accuracy": 0.8148,
+        "average_confidence": 0.8234,
+        "brier_score": 0.1551,
+        "log_loss": 0.4987
       },
       {
         "minimum_confidence": 0.8,
         "games": 19,
         "coverage": 0.19,
         "accuracy": 0.8421,
-        "average_confidence": 0.8473,
+        "average_confidence": 0.8444,
         "brier_score": 0.141,
-        "log_loss": 0.4711
+        "log_loss": 0.4705
       }
     ],
     "250": [
       {
         "minimum_confidence": 0.6,
-        "games": 172,
-        "coverage": 0.688,
-        "accuracy": 0.7035,
-        "average_confidence": 0.72,
-        "brier_score": 0.2012,
-        "log_loss": 0.5885
+        "games": 171,
+        "coverage": 0.684,
+        "accuracy": 0.7018,
+        "average_confidence": 0.7183,
+        "brier_score": 0.2014,
+        "log_loss": 0.5888
       },
       {
         "minimum_confidence": 0.65,
-        "games": 129,
-        "coverage": 0.516,
-        "accuracy": 0.7209,
-        "average_confidence": 0.7513,
-        "brier_score": 0.1907,
-        "log_loss": 0.5652
+        "games": 128,
+        "coverage": 0.512,
+        "accuracy": 0.7188,
+        "average_confidence": 0.7495,
+        "brier_score": 0.1912,
+        "log_loss": 0.566
       },
       {
         "minimum_confidence": 0.7,
-        "games": 88,
-        "coverage": 0.352,
-        "accuracy": 0.7841,
-        "average_confidence": 0.7864,
-        "brier_score": 0.1626,
-        "log_loss": 0.5038
+        "games": 87,
+        "coverage": 0.348,
+        "accuracy": 0.7931,
+        "average_confidence": 0.7846,
+        "brier_score": 0.1589,
+        "log_loss": 0.4959
       },
       {
         "minimum_confidence": 0.75,
-        "games": 58,
-        "coverage": 0.232,
-        "accuracy": 0.8621,
-        "average_confidence": 0.819,
-        "brier_score": 0.1228,
-        "log_loss": 0.4156
+        "games": 56,
+        "coverage": 0.224,
+        "accuracy": 0.8571,
+        "average_confidence": 0.8186,
+        "brier_score": 0.1252,
+        "log_loss": 0.4208
       },
       {
         "minimum_confidence": 0.8,
-        "games": 35,
-        "coverage": 0.14,
-        "accuracy": 0.8571,
-        "average_confidence": 0.8473,
-        "brier_score": 0.124,
-        "log_loss": 0.4179
+        "games": 34,
+        "coverage": 0.136,
+        "accuracy": 0.8529,
+        "average_confidence": 0.8457,
+        "brier_score": 0.1266,
+        "log_loss": 0.4237
       }
     ],
     "500": [
       {
         "minimum_confidence": 0.6,
-        "games": 334,
-        "coverage": 0.668,
-        "accuracy": 0.7425,
-        "average_confidence": 0.7265,
-        "brier_score": 0.1868,
-        "log_loss": 0.5599
+        "games": 333,
+        "coverage": 0.666,
+        "accuracy": 0.7417,
+        "average_confidence": 0.7243,
+        "brier_score": 0.187,
+        "log_loss": 0.5602
       },
       {
         "minimum_confidence": 0.65,
-        "games": 257,
-        "coverage": 0.514,
-        "accuracy": 0.7626,
-        "average_confidence": 0.7572,
-        "brier_score": 0.1754,
-        "log_loss": 0.5353
+        "games": 254,
+        "coverage": 0.508,
+        "accuracy": 0.7598,
+        "average_confidence": 0.7556,
+        "brier_score": 0.1761,
+        "log_loss": 0.5366
       },
       {
         "minimum_confidence": 0.7,
-        "games": 190,
-        "coverage": 0.38,
-        "accuracy": 0.8,
-        "average_confidence": 0.7858,
-        "brier_score": 0.1575,
-        "log_loss": 0.4967
+        "games": 184,
+        "coverage": 0.368,
+        "accuracy": 0.7989,
+        "average_confidence": 0.7856,
+        "brier_score": 0.1577,
+        "log_loss": 0.4969
       },
       {
         "minimum_confidence": 0.75,
-        "games": 121,
-        "coverage": 0.242,
-        "accuracy": 0.8512,
+        "games": 116,
+        "coverage": 0.232,
+        "accuracy": 0.8448,
         "average_confidence": 0.8213,
-        "brier_score": 0.1298,
-        "log_loss": 0.4362
+        "brier_score": 0.1329,
+        "log_loss": 0.443
       },
       {
         "minimum_confidence": 0.8,
-        "games": 70,
-        "coverage": 0.14,
-        "accuracy": 0.8857,
-        "average_confidence": 0.855,
-        "brier_score": 0.1077,
-        "log_loss": 0.3882
+        "games": 69,
+        "coverage": 0.138,
+        "accuracy": 0.8841,
+        "average_confidence": 0.8527,
+        "brier_score": 0.109,
+        "log_loss": 0.3911
       }
     ]
   },
-  "advanced_baseline_calibration_error": 0.0256,
+  "advanced_baseline_calibration_error": 0.0238,
   "advanced_recent_windows": {
     "100": {
       "games": 100,
@@ -1017,14 +1017,14 @@
       "baseline_winner_accuracy": 0.7,
       "model_brier_score": 0.218,
       "baseline_brier_score": 0.2177,
-      "model_log_loss": 0.6274,
+      "model_log_loss": 0.6273,
       "baseline_log_loss": 0.6261,
-      "model_calibration_error": 0.1136,
+      "model_calibration_error": 0.1135,
       "baseline_calibration_error": 0.0965
     },
     "250": {
       "games": 250,
-      "model_score_mae": 10.013,
+      "model_score_mae": 10.012,
       "baseline_score_mae": 9.98,
       "model_winner_accuracy": 0.672,
       "baseline_winner_accuracy": 0.6,
@@ -1032,62 +1032,62 @@
       "baseline_brier_score": 0.2324,
       "model_log_loss": 0.6295,
       "baseline_log_loss": 0.6559,
-      "model_calibration_error": 0.0924,
+      "model_calibration_error": 0.0923,
       "baseline_calibration_error": 0.0494
     },
     "500": {
       "games": 500,
-      "model_score_mae": 10.154,
+      "model_score_mae": 10.153,
       "baseline_score_mae": 10.13,
       "model_winner_accuracy": 0.696,
       "baseline_winner_accuracy": 0.65,
       "model_brier_score": 0.2136,
       "baseline_brier_score": 0.2203,
-      "model_log_loss": 0.618,
+      "model_log_loss": 0.6179,
       "baseline_log_loss": 0.6309,
-      "model_calibration_error": 0.1005,
+      "model_calibration_error": 0.1004,
       "baseline_calibration_error": 0.0425
     }
   },
   "advanced_by_season": {
     "2023": {
-      "games": 1263,
-      "model_score_mae": 9.11,
-      "baseline_score_mae": 9.172,
-      "model_winner_accuracy": 0.6271,
-      "baseline_winner_accuracy": 0.6017,
-      "model_brier_score": 0.2316,
-      "baseline_brier_score": 0.2343,
-      "model_log_loss": 0.6554,
-      "baseline_log_loss": 0.6605,
-      "model_calibration_error": 0.0541,
-      "baseline_calibration_error": 0.0116
+      "games": 1276,
+      "model_score_mae": 9.125,
+      "baseline_score_mae": 9.196,
+      "model_winner_accuracy": 0.6277,
+      "baseline_winner_accuracy": 0.5995,
+      "model_brier_score": 0.2322,
+      "baseline_brier_score": 0.2355,
+      "model_log_loss": 0.6566,
+      "baseline_log_loss": 0.6633,
+      "model_calibration_error": 0.0543,
+      "baseline_calibration_error": 0.0106
     },
     "2024": {
-      "games": 1298,
-      "model_score_mae": 9.502,
-      "baseline_score_mae": 9.456,
-      "model_winner_accuracy": 0.6371,
-      "baseline_winner_accuracy": 0.6233,
-      "model_brier_score": 0.2224,
-      "baseline_brier_score": 0.2253,
-      "model_log_loss": 0.6362,
-      "baseline_log_loss": 0.6415,
-      "model_calibration_error": 0.059,
-      "baseline_calibration_error": 0.0425
+      "games": 1340,
+      "model_score_mae": 9.488,
+      "baseline_score_mae": 9.428,
+      "model_winner_accuracy": 0.6388,
+      "baseline_winner_accuracy": 0.6246,
+      "model_brier_score": 0.2229,
+      "baseline_brier_score": 0.2252,
+      "model_log_loss": 0.637,
+      "baseline_log_loss": 0.6414,
+      "model_calibration_error": 0.053,
+      "baseline_calibration_error": 0.0384
     },
     "2025": {
-      "games": 1289,
-      "model_score_mae": 9.439,
-      "baseline_score_mae": 9.451,
-      "model_winner_accuracy": 0.6695,
-      "baseline_winner_accuracy": 0.6362,
-      "model_brier_score": 0.2181,
-      "baseline_brier_score": 0.221,
-      "model_log_loss": 0.627,
-      "baseline_log_loss": 0.6322,
-      "model_calibration_error": 0.0703,
-      "baseline_calibration_error": 0.0464
+      "games": 1329,
+      "model_score_mae": 9.423,
+      "baseline_score_mae": 9.472,
+      "model_winner_accuracy": 0.6719,
+      "baseline_winner_accuracy": 0.6336,
+      "model_brier_score": 0.2193,
+      "baseline_brier_score": 0.2225,
+      "model_log_loss": 0.6295,
+      "baseline_log_loss": 0.6355,
+      "model_calibration_error": 0.0735,
+      "baseline_calibration_error": 0.0422
     },
     "2026": {
       "games": 1323,
@@ -1099,7 +1099,7 @@
       "baseline_brier_score": 0.2198,
       "model_log_loss": 0.6283,
       "baseline_log_loss": 0.63,
-      "model_calibration_error": 0.0724,
+      "model_calibration_error": 0.0723,
       "baseline_calibration_error": 0.0362
     },
     "2027": {
@@ -1117,5 +1117,5 @@
     }
   },
   "note": "Chronological multi-season walk-forward results; each prediction uses only games dated earlier than the test game. The experimental pace/efficiency model also includes small capped rest and straight-line travel adjustments; it is not promoted unless it beats the same-game baseline.",
-  "generated_at": "2026-11-23T22:06:01.275751+00:00"
+  "generated_at": "2026-11-23T22:18:54.512444+00:00"
 }

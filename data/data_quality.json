@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T22:06:02.205264+00:00",
+  "generated_at": "2026-11-23T22:18:55.645833+00:00",
   "status": "ok",
   "team_history": {
-    "last_updated": "2026-11-23T21:31:26.496650+00:00",
-    "age_hours": 0.58,
+    "last_updated": "2026-11-23T22:17:43.301523+00:00",
+    "age_hours": 0.02,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -12,9 +12,9 @@
         "team_game_rows": 2774,
         "unique_game_ids": 1389,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 2590,
-        "advanced_games_with_both_teams": 1295,
-        "advanced_coverage_pct": 93.4,
+        "advanced_team_game_rows": 2676,
+        "advanced_games_with_both_teams": 1338,
+        "advanced_coverage_pct": 96.5,
         "min_team_games": 85,
         "max_team_games": 112
       },
@@ -24,9 +24,9 @@
         "team_game_rows": 2779,
         "unique_game_ids": 1394,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 2596,
-        "advanced_games_with_both_teams": 1298,
-        "advanced_coverage_pct": 93.4,
+        "advanced_team_game_rows": 2680,
+        "advanced_games_with_both_teams": 1340,
+        "advanced_coverage_pct": 96.4,
         "min_team_games": 86,
         "max_team_games": 109
       },
@@ -36,9 +36,9 @@
         "team_game_rows": 2795,
         "unique_game_ids": 1399,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 2578,
-        "advanced_games_with_both_teams": 1289,
-        "advanced_coverage_pct": 92.2,
+        "advanced_team_game_rows": 2658,
+        "advanced_games_with_both_teams": 1329,
+        "advanced_coverage_pct": 95.1,
         "min_team_games": 85,
         "max_team_games": 111
       },
@@ -86,7 +86,7 @@
       2023
     ],
     "last_updated": "2026-11-23T10:30:16.607728+00:00",
-    "age_hours": 11.6,
+    "age_hours": 11.81,
     "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
