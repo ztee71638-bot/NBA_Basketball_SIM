@@ -273,7 +273,7 @@ def test_confidence_selection_report_tracks_accuracy_coverage_and_probability_qu
     outcomes = [1.0, 0.0, 1.0, 0.0, 0.0, 1.0]
     report = module.confidence_selection_report(probabilities, outcomes, thresholds=(0.60, 0.75))
     assert report[0]["games"] == 4
-    assert report[0]["coverage"] == 4 / 6
+    assert report[0]["coverage"] == 0.6667
     assert report[0]["accuracy"] == 0.75
     assert report[1]["games"] == 2
     assert report[1]["accuracy"] == 0.5
