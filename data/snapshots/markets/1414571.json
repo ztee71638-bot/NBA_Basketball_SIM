@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7136810\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.22\\\", \\\"0.78\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Suns\\\"]\",\"question\":\"Kings vs. Suns\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T02:11:21.826246+00:00",
+      "markets": [
+        {
+          "market_id": "7136810",
+          "market_type": "moneyline",
+          "question": "Kings vs. Suns",
+          "slug": "nba-sac-phx-2026-12-02",
+          "outcomes": "[\"Kings\", \"Suns\"]",
+          "outcome_prices": "[\"0.25\", \"0.75\"]",
+          "volume_24h": null,
+          "liquidity": "784.4179",
+          "end_date": "2026-12-03T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-phx-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136810\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.25\\\", \\\"0.75\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Suns\\\"]\",\"question\":\"Kings vs. Suns\"}]"
     }
   ],
-  "last_updated": "2026-11-22T01:44:40.432700+00:00"
+  "last_updated": "2026-11-23T02:11:21.826246+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T00:53:36.274973+00:00",
+  "last_updated": "2026-11-23T02:11:21.824914+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -626,10 +626,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-22T20:25Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Reaves (heel) was a full participant in Sunday's practice, Thuc Nhi Nguyen of the Los Angeles Times reports.",
-      "long_comment": "The Lakers didn't do any live work Sunday, though this update is still encouraging. Head coach JJ Redick said Friday that Reaves is expected to return in one of the Lakers' next two games. Quentin Grimes will likely continue seeing an expanded role for as long as Reaves is out.",
+      "date": "2026-11-23T01:09Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Reaves (heel) has been ruled out for Monday's game against the Jazz, Jovan Buha of The Athletic reports.",
+      "long_comment": "Reaves will miss a fifth consecutive game due to a bruised left heel. His next chance to suit up will come against the Spurs on Friday. Quentin Grimes should remain in the starting lineup versus Utah, while Collin Sexton and Cameron Carr are likely to see additional minutes off the Lakers' bench.",
       "source": "ESPN"
     },
     {
@@ -641,10 +641,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-22T22:21Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Grant (calf) has been ruled out for Monday's game against the Hornets.",
-      "long_comment": "Grant picked up a left calf strain during Thursday's 126-98 win over the Warriors, and he'll now be forced to miss a second consecutive game with the ailment. With Cameron Boozer (ankle) also sidelined, expect Taylor Hendricks and Olivier-Maxence Prosper to continue earning more minutes off the bench.",
+      "date": "2026-11-23T01:14Z",
+      "return_date": "2026-12-12",
+      "short_comment": "Grant was diagnosed with a grade 1 left calf strain and will be re-evaluated in two weeks.",
+      "long_comment": "Grant suffered the injury during Thursday's 126-98 victory over Golden State. He will now be sidelined for at least two weeks, with the team expected to provide an update on his condition at that time. While Grant is on the shelf, Taylor Hendricks and Kris Murray are candidates for more minutes.",
       "source": "ESPN"
     },
     {
@@ -1293,6 +1293,36 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4066259",
+      "name": "De'Aaron Fox",
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-23T01:39Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Fox is questionable for Monday's game against the Kings due to a right shin contusion, Jared Weiss of The Athletic reports.",
+      "long_comment": "Fox could miss Monday's game due to a shin injury he likely picked up during Saturday's game against the Pelicans. With Dylan Harper (hip) out and Jordan McLaughlin (shoulder) questionable, the Spurs could be thin at the lead guard position, leaving more ball-handling responsibilities for Stephon Castle.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3134916",
+      "name": "Jordan McLaughlin",
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-23T01:38Z",
+      "return_date": "2026-11-23",
+      "short_comment": "McLaughlin (shoulder) is listed as questionable for Monday's game against the Kings.",
+      "long_comment": "McLaughlin may miss his seventh game of the year. With De'Aaron Fox (shin) also questionable and Dylan Harper (hip) already sidelined, McLaughlin would be in line to receive extra minutes if he manages to suit up. However, if he's not available versus Sacramento, David Jones Garcia could see significantly more work than usual.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5037871",
       "name": "Dylan Harper",
       "team": "SA",
@@ -1395,6 +1425,21 @@
       "return_date": "2026-12-13",
       "short_comment": "Barrett has been diagnosed with a right hamstring strain and will be re-evaluated in two weeks, Brett Siegel of ClutchPoints.com reports.",
       "long_comment": "Based on his re-evaluation timeline, Barrett likely won't return to game action until mid-December at the earliest. Jamison Battle, Allen Graves and Jamal Shead are candidates for increased playing time in Barrett's absence, especially while Kawhi Leonard (knee) is also sidelined.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4397077",
+      "name": "Jaxson Hayes",
+      "team": "UTAH",
+      "team_name": "Utah Jazz",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-23T01:16Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports.",
+      "long_comment": "Hayes will not return Sunday due to a left knee injury. Mo Bamba will soak up most of Hayes' vacated minutes, while Brice Sensabaugh and Tony Bradley could see additional opportunities.",
       "source": "ESPN"
     },
     {
