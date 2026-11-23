@@ -39,7 +39,7 @@ jobs:
         id: history-refresh
         if: github.event_name == 'push'
         env:
-          EVENT_PATH: \${{ github.event_path }}
+          EVENT_PATH: ${{ github.event_path }}
         run: |
           if jq -e '[.commits[]? | (.added[]?, .modified[]?, .removed[]?)] | any(test("^(scripts/refresh_team_history.py|scripts/import_supplemental_nba_stats.py|scripts/reconcile_supplemental_nba_stats.py|tests/test_team_history.py|tests/test_supplemental_import.py|tests/test_supplemental_reconcile.py)$"))' "$EVENT_PATH" >/dev/null; then
             echo "refresh=true" >> "$GITHUB_OUTPUT"
