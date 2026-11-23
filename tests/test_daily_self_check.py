@@ -56,3 +56,16 @@ def test_prediction_never_uses_game_actual_score():
     assert prediction is not None
     assert prediction["actual"] is None
     assert "home_score" not in prediction
+
+
+
+def test_parse_events_falls_back_to_event_status_when_competition_status_is_empty():
+    payload = {"events": [{"id": "g2", "date": "2026-11-24T19:00Z",
+        "status": {"type": {"state": "post", "completed": True}},
+        "competitions": [{"status": {}, "competitors": [
+            {"homeAway": "home", "score": "108", "team": {"abbreviation": "BOS"}},
+            {"homeAway": "away", "score": "102", "team": {"abbreviation": "NYK"}},
+        ]}]}]}
+    game = module.parse_events(payload)[0]
+    assert game["status"] == "post"
+    assert game["completed"] is True
