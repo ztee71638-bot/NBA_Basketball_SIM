@@ -89,7 +89,7 @@ def test_run_does_not_rewrite_ledger_when_nothing_changes(tmp_path):
         "rolling": {"7d": empty, "30d": empty},
         "last_run": {"at": "2026-11-20T00:00:00+00:00"},
     }
-    original = module.json.dumps(initial, indent=2) + "\\n"
+    original = module.json.dumps(initial, indent=2) + "\n"
     ledger_path.write_text(original, encoding="utf-8")
     module.run(ledger_path, data_dir, scoreboard_fetcher=lambda day: {"events": []})
     assert ledger_path.read_text(encoding="utf-8") == original
