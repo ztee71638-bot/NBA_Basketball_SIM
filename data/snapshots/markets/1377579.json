@@ -452,7 +452,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008993\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"Celtics\\\"]\",\"question\":\"Hawks vs. Celtics\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T22:33:39.951688+00:00",
+      "markets": [
+        {
+          "market_id": "7008993",
+          "market_type": "moneyline",
+          "question": "Hawks vs. Celtics",
+          "slug": "nba-atl-bos-2026-11-27",
+          "outcomes": "[\"Hawks\", \"Celtics\"]",
+          "outcome_prices": "[\"0.365\", \"0.635\"]",
+          "volume_24h": 35.99,
+          "liquidity": "13835.0378",
+          "end_date": "2026-11-28T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-atl-bos-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008993\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"Celtics\\\"]\",\"question\":\"Hawks vs. Celtics\"}]"
     }
   ],
-  "last_updated": "2026-11-23T17:54:38.240418+00:00"
+  "last_updated": "2026-11-23T22:33:39.951688+00:00"
 }
