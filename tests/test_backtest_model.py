@@ -285,3 +285,16 @@ def test_confidence_selection_rejects_mismatched_arrays():
     import pytest
     with pytest.raises(ValueError):
         module.confidence_selection_report([0.7], [])
+
+
+def test_model_and_baseline_confidence_gates_can_be_reported_independently():
+    baseline = module.confidence_selection_report(
+        [0.8, 0.7, 0.6, 0.4], [1.0, 1.0, 0.0, 1.0], thresholds=(0.65,)
+    )
+    model = module.confidence_selection_report(
+        [0.55, 0.9, 0.8, 0.2], [1.0, 1.0, 0.0, 1.0], thresholds=(0.65,)
+    )
+    assert baseline[0]["games"] == 2
+    assert model[0]["games"] == 3
+    assert baseline[0]["accuracy"] == 1.0
+    assert model[0]["accuracy"] == 2 / 3
