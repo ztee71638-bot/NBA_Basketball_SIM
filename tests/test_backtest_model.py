@@ -284,6 +284,17 @@ def test_confidence_selection_report_tracks_accuracy_coverage_and_probability_qu
     assert report[0]["log_loss"] is not None
 
 
+def test_calibrated_confidence_recent_windows_use_only_each_latest_chronological_slice():
+    probabilities = [0.55] * 100 + [0.80] * 100
+    outcomes = [0.0] * 100 + [1.0] * 100
+    latest = module.confidence_selection_report(probabilities[-100:], outcomes[-100:])
+    full = module.confidence_selection_report(probabilities, outcomes)
+    assert latest[0]["games"] == 100
+    assert latest[0]["accuracy"] == 1.0
+    assert full[0]["games"] == 200
+    assert full[0]["accuracy"] == 0.5
+
+
 def test_confidence_selection_rejects_mismatched_arrays():
     import pytest
     with pytest.raises(ValueError):
