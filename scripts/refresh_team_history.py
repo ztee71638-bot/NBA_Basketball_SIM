@@ -399,22 +399,14 @@ def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enr
         f"(limit {max_games}); batch by season: {dict(sorted(selected_by_season.items()))}.",
         flush=True,
     )
-    enriched = 0
-    for game_id in selected:
-        rows = games[game_id]
-        if len(rows) != 2 or all(
-            all(row.get(field) is not None for field in BOX_SCORE_METRIC_FIELDS)
-            for row in rows
-        ):
-            continue
+    def fetch_boxscore_metrics(game_id: str):
         try:
             payload = get_json(
                 "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary",
                 {"event": game_id},
             )
         except requests.RequestException as exc:
-            print(f"Boxscore unavailable for {game_id}: {exc}")
-            continue
+            return game_id, None, str(exc)
         boxes = (payload.get("boxscore") or {}).get("teams") or []
         by_abbr: dict[str, dict[str, float]] = {}
         for box in boxes:
@@ -423,22 +415,53 @@ def enrich_team_games_with_boxscores(teams: list[dict[str, Any]], seasons_to_enr
             if abbreviation:
                 by_abbr[str(abbreviation)] = _stat_map(box)
         if len(by_abbr) < 2:
-            continue
+            return game_id, None, None
+        rows = games[game_id]
         first, second = rows
         stats_first, stats_second = by_abbr.get(first.get("team")), by_abbr.get(second.get("team"))
         if not stats_first or not stats_second:
-            continue
+            return game_id, None, None
         poss_first, poss_second = _possessions(stats_first), _possessions(stats_second)
         if not poss_first or not poss_second:
-            continue
+            return game_id, None, None
         pace = (poss_first + poss_second) / 2
+        values = {}
         for row, own_poss, opp_poss in ((first, poss_first, poss_second), (second, poss_second, poss_first)):
-            row["possessions_estimate"] = round(own_poss, 2)
-            row["pace_estimate"] = round(pace, 2)
-            row["offensive_rating"] = round(row["points_for"] / own_poss * 100, 2)
-            row["defensive_rating"] = round(row["points_against"] / opp_poss * 100, 2)
-            row["advanced_stats_source"] = "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA"
-        enriched += 1
+            values[str(row.get("team"))] = {
+                "possessions_estimate": round(own_poss, 2),
+                "pace_estimate": round(pace, 2),
+                "offensive_rating": round(row["points_for"] / own_poss * 100, 2),
+                "defensive_rating": round(row["points_against"] / opp_poss * 100, 2),
+                "advanced_stats_source": "ESPN boxscore; estimated possessions = FGA - OREB + TO + 0.44*FTA",
+            }
+        return game_id, values, None
+
+    # Boxscore requests are independent. A small bounded worker pool cuts the
+    # multi-season refresh time substantially without creating an API burst.
+    pending = [
+        game_id for game_id in selected
+        if len(games[game_id]) == 2 and not all(
+            all(row.get(field) is not None for field in BOX_SCORE_METRIC_FIELDS)
+            for row in games[game_id]
+        )
+    ]
+    enriched = 0
+    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+        futures = {executor.submit(fetch_boxscore_metrics, game_id): game_id for game_id in pending}
+        for future in as_completed(futures):
+            game_id, values, error = future.result()
+            if error:
+                print(f"Boxscore unavailable for {game_id}: {error}", flush=True)
+                continue
+            if not values:
+                continue
+            for row in games[game_id]:
+                row.update(values.get(str(row.get("team")), {}))
+            if all(
+                all(row.get(field) is not None for field in BOX_SCORE_METRIC_FIELDS)
+                for row in games[game_id]
+            ):
+                enriched += 1
     print(f"Added pace/efficiency estimates to {enriched} completed games.")
 
 
