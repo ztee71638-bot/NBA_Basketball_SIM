@@ -581,3 +581,20 @@ footer{color:#83aaaa}
   .hero h1{max-width:none}
   .hero .hero-subtitle{max-width:100%}
 }
+
+
+/* Keep all hero copy inside its own column, clear of the enlarged basketball. */
+@media(min-width:431px){
+  .hero-copy{flex:1 1 0;min-width:0;max-width:none}
+  .hero h1,.hero .hero-kicker,.hero .hero-subtitle{max-width:100%}
+}
+@media(max-width:430px){
+  .hero{min-height:310px}
+  .hero-copy{width:100%;min-width:0;padding-right:205px;max-width:none}
+  .hero h1,.hero .hero-kicker,.hero .hero-subtitle{max-width:100%}
+  .hero h1{font-size:clamp(1.55rem,7.2vw,2.15rem);overflow-wrap:normal}
+  .hero .hero-kicker{font-size:.52rem;letter-spacing:.055em}
+  .hero .hero-subtitle{font-size:.70rem}
+  .hero-side{right:10px;top:12px;width:178px}
+  .hero-ball{width:178px;height:178px;transform:scale(1.04) rotate(-7deg)}
+}
