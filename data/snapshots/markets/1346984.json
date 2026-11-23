@@ -2624,7 +2624,229 @@
         }
       ],
       "signature": "[{\"market_id\":\"6895753\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.145\\\", \\\"0.855\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Lakers\\\"]\",\"question\":\"Jazz vs. Lakers\"},{\"market_id\":\"7275582\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.52\\\", \\\"0.48\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-13.5)\"},{\"market_id\":\"7275590\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-15.5)\"},{\"market_id\":\"7275678\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.73\\\", \\\"0.27\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-6.5)\"},{\"market_id\":\"7275578\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 230.5\"},{\"market_id\":\"7275586\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 228.5\"},{\"market_id\":\"7275618\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 224.5\"},{\"market_id\":\"7275626\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.32\\\", \\\"0.68\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 236.5\"},{\"market_id\":\"7275642\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.295\\\", \\\"0.705\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 238.5\"},{\"market_id\":\"7275658\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 240.5\"},{\"market_id\":\"7275674\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 242.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-23T06:51:32.718293+00:00",
+      "markets": [
+        {
+          "market_id": "6895753",
+          "market_type": "moneyline",
+          "question": "Jazz vs. Lakers",
+          "slug": "nba-uta-lal-2026-11-23",
+          "outcomes": "[\"Jazz\", \"Lakers\"]",
+          "outcome_prices": "[\"0.135\", \"0.865\"]",
+          "volume_24h": 7917.7704619999995,
+          "liquidity": "73300.461",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275575",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-14.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-14pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 5,
+          "liquidity": "32977.805",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275582",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-13.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-13pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 881.6489259999998,
+          "liquidity": "28790.9687",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275590",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-15.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-15pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 9.404256,
+          "liquidity": "23998.7441",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275606",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-16.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-16pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.405\", \"0.595\"]",
+          "volume_24h": 256,
+          "liquidity": "26420.7538",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275614",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-11.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-11pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.585\", \"0.415\"]",
+          "volume_24h": 5,
+          "liquidity": "22417.6468",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275622",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-17.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-17pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.4\", \"0.6\"]",
+          "volume_24h": 5,
+          "liquidity": "12018.0058",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275678",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-6.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-6pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.735\", \"0.265\"]",
+          "volume_24h": 20,
+          "liquidity": "10422.2371",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275686",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-22.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-22pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.265\", \"0.735\"]",
+          "volume_24h": 422,
+          "liquidity": "10145.9302",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275694",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-4.5)",
+          "slug": "nba-uta-lal-2026-11-23-spread-home-4pt5",
+          "outcomes": "[\"Lakers\", \"Jazz\"]",
+          "outcome_prices": "[\"0.775\", \"0.225\"]",
+          "volume_24h": 6.409091,
+          "liquidity": "10193.6241",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275578",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 230.5",
+          "slug": "nba-uta-lal-2026-11-23-total-230pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": 2016.7868310000001,
+          "liquidity": "31502.5038",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275586",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 228.5",
+          "slug": "nba-uta-lal-2026-11-23-total-228pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": 823.977952,
+          "liquidity": "31912.9821",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275618",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 224.5",
+          "slug": "nba-uta-lal-2026-11-23-total-224pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.585\", \"0.415\"]",
+          "volume_24h": 326.88772,
+          "liquidity": "12597.8874",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275626",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 236.5",
+          "slug": "nba-uta-lal-2026-11-23-total-236pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.335\", \"0.665\"]",
+          "volume_24h": 12.260866,
+          "liquidity": "10446.0103",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275642",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 238.5",
+          "slug": "nba-uta-lal-2026-11-23-total-238pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.31\", \"0.69\"]",
+          "volume_24h": 13.219176000000001,
+          "liquidity": "12164.5279",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275658",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 240.5",
+          "slug": "nba-uta-lal-2026-11-23-total-240pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.245\", \"0.755\"]",
+          "volume_24h": 241.20779,
+          "liquidity": "8651.3418",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275674",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 242.5",
+          "slug": "nba-uta-lal-2026-11-23-total-242pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.205\", \"0.795\"]",
+          "volume_24h": 247.2,
+          "liquidity": "8928.3663",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        },
+        {
+          "market_id": "7275730",
+          "market_type": "total",
+          "question": "Jazz vs. Lakers: O/U 210.5",
+          "slug": "nba-uta-lal-2026-11-23-total-210pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.855\", \"0.145\"]",
+          "volume_24h": 223,
+          "liquidity": "9665.4904",
+          "end_date": "2026-11-24T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-11-23"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6895753\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Lakers\\\"]\",\"question\":\"Jazz vs. Lakers\"},{\"market_id\":\"7275575\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-14.5)\"},{\"market_id\":\"7275582\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-13.5)\"},{\"market_id\":\"7275590\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-15.5)\"},{\"market_id\":\"7275606\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-16.5)\"},{\"market_id\":\"7275614\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-11.5)\"},{\"market_id\":\"7275622\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.4\\\", \\\"0.6\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-17.5)\"},{\"market_id\":\"7275678\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.735\\\", \\\"0.265\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-6.5)\"},{\"market_id\":\"7275686\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.265\\\", \\\"0.735\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-22.5)\"},{\"market_id\":\"7275694\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.775\\\", \\\"0.225\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Lakers (-4.5)\"},{\"market_id\":\"7275578\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 230.5\"},{\"market_id\":\"7275586\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 228.5\"},{\"market_id\":\"7275618\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 224.5\"},{\"market_id\":\"7275626\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.335\\\", \\\"0.665\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 236.5\"},{\"market_id\":\"7275642\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.31\\\", \\\"0.69\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 238.5\"},{\"market_id\":\"7275658\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 240.5\"},{\"market_id\":\"7275674\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 242.5\"},{\"market_id\":\"7275730\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.855\\\", \\\"0.145\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Jazz vs. Lakers: O/U 210.5\"}]"
     }
   ],
-  "last_updated": "2026-11-23T05:41:00.545274+00:00"
+  "last_updated": "2026-11-23T06:51:32.718293+00:00"
 }
