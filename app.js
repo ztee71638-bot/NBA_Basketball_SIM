@@ -247,7 +247,7 @@ function prefillGameProjections(game) {
     const homeTravel=estimateTravelMiles(projection.home.rows,game.home?.abbreviation,game.away?.abbreviation,true,game.date);
     const awayTravel=estimateTravelMiles(projection.away.rows,game.away?.abbreviation,game.home?.abbreviation,false,game.date);
     const travelNote=homeTravel!==null&&awayTravel!==null?" Estimated arena-to-arena travel since prior game: home "+Math.round(homeTravel)+" mi / away "+Math.round(awayTravel)+" mi (straight-line).":"";
-    $("projection-status").textContent="Default score estimates use the historical last-10 scoring/allowance baseline. Team-specific scoring variance uses "+projection.home.count+" home-team and "+projection.away.count+" away-team games across "+projection.home.year+"/"+projection.away.year+". Experimental opponent-adjusted and pace/efficiency models remain off until they beat the baseline in holdout testing. Confirmed lineups are shown separately when available; rest, travel and player on/off effects are context only and are not yet score adjustments."+restNote+travelNote+injuryNote;
+    $("projection-status").textContent="Default score estimates use the historical last-10 scoring/allowance baseline. Team-specific scoring variance uses "+projection.home.count+" home-team and "+projection.away.count+" away-team games across "+projection.home.year+"/"+projection.away.year+". The opponent-adjusted weighted-score model is displayed separately when its own prequential calibration gate and fresh-data checks pass; it does not replace this last-10 Monte Carlo result. Pace/efficiency remains experimental. Confirmed lineups are shown separately when available; rest, travel and player on/off effects are context only and are not yet score adjustments."+restNote+travelNote+injuryNote;
     $("score-sd").value=((projection.homeSd+projection.awaySd)/2).toFixed(1);
   }else{
     $("projection-status").textContent="Insufficient team history (at least 5 games per team required). Enter manual assumptions; no model-backed projection is available.";
@@ -358,7 +358,7 @@ function opponentWeightedStats(rows,key){
 }
 function opponentAdjustedMatchup(game){
   const cutoff=new Date(game?.date).getTime();
-  if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
+  if(!Number.isFinite(cutoff)||!teamData.length||!teamUpdatedAt||!Number.isFinite(teamUpdatedAt.getTime())||Date.now()-teamUpdatedAt.getTime()<0||Date.now()-teamUpdatedAt.getTime()>48*60*60*1000)return null;
   const nbaCodes=new Set(teamData.map(team=>canonicalTeam(team.abbreviation||"")).filter(Boolean));
   const allRows=[];
   teamData.forEach(team=>{
@@ -414,7 +414,7 @@ function getSimulationReadiness(game, calibrationEligible) {
       && Array.isArray(match.away_starters) && match.away_starters.length===5;
     if (!fresh || !confirmed) reasons.push("five starters per team are not freshly confirmed near tipoff");
   }
-  if (!calibrationEligible) reasons.push("validated live probability calibration is not active for these inputs");
+  if (!calibrationEligible) reasons.push("last-10 Monte Carlo calibration is not active for these inputs");
   reasons.push("model-to-market identity and edge validation are not enabled");
   return reasons;
 }
@@ -1185,7 +1185,8 @@ async function loadModelMetrics() {
     winnerCalibration = data.calibration?.live_enabled ? data.calibration : null;
     const opponentCalibration=data.opponent_model_calibration;
     const metricsGeneratedAt=new Date(data.generated_at||0).getTime();
-    const metricsFresh=Number.isFinite(metricsGeneratedAt)&&Date.now()-metricsGeneratedAt<=48*60*60*1000;
+    const metricsAge=Date.now()-metricsGeneratedAt;
+    const metricsFresh=Number.isFinite(metricsGeneratedAt)&&metricsAge>=0&&metricsAge<=48*60*60*1000;
     opponentModelCalibration=metricsFresh&&opponentCalibration?.live_enabled===true
       &&opponentCalibration?.enabled===true
       &&opponentCalibration?.training_model==="opponent_weighted_score_v1"
