@@ -162,18 +162,20 @@ def run(ledger_path: Path = LEDGER, data_dir: Path = DATA, scoreboard_fetcher=fe
     # Previous/current/next UTC scoreboard dates cover overnight NBA schedules.
     dates = [(now + timedelta(days=offset)).strftime("%Y%m%d") for offset in (-1, 0, 1)]
     seen = 0
+    changed = False
     for day in dates:
         for game in parse_events(scoreboard_fetcher(day)):
             seen += 1
             existing = by_id.get(game["game_id"])
             if existing:
-                reconcile_record(existing, game)
+                changed = reconcile_record(existing, game) or changed
                 continue
             if game["completed"] or game["status"] not in ("pre", ""):
                 continue
             prediction = make_prediction(game, rows, metrics, stamp)
             if prediction:
                 by_id[game["game_id"]] = prediction
+                changed = True
     records = sorted(by_id.values(), key=lambda r: (r.get("game_date") or "", r["game_id"]))
     daily = {}
     for record in records:
