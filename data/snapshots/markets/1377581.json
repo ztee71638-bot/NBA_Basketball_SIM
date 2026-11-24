@@ -398,7 +398,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008995\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.41\\\", \\\"0.59\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Mavericks vs. Suns\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T09:49:35.588094+00:00",
+      "markets": [
+        {
+          "market_id": "7008995",
+          "market_type": "moneyline",
+          "question": "Mavericks vs. Suns",
+          "slug": "nba-dal-phx-2026-11-27",
+          "outcomes": "[\"Mavericks\", \"Suns\"]",
+          "outcome_prices": "[\"0.415\", \"0.585\"]",
+          "volume_24h": null,
+          "liquidity": "22715.3959",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008995\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Mavericks vs. Suns\"}]"
     }
   ],
-  "last_updated": "2026-11-24T08:39:36.189284+00:00"
+  "last_updated": "2026-11-24T09:49:35.588094+00:00"
 }
