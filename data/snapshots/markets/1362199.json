@@ -12446,7 +12446,277 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956400\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Heat vs. 76ers\"},{\"market_id\":\"7303244\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.43\\\", \\\"0.57\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-3.5)\"},{\"market_id\":\"7303247\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-2.5)\"},{\"market_id\":\"7303253\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-1.5)\"},{\"market_id\":\"7303255\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.355\\\", \\\"0.645\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-5.5)\"},{\"market_id\":\"7303261\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.47\\\", \\\"0.53\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-1.5)\"},{\"market_id\":\"7303265\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.43\\\", \\\"0.57\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-2.5)\"},{\"market_id\":\"7303269\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-4.5)\"},{\"market_id\":\"7303273\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-6.5)\"},{\"market_id\":\"7303245\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 238.5\"},{\"market_id\":\"7303249\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 236.5\"},{\"market_id\":\"7303252\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 240.5\"},{\"market_id\":\"7303254\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.56\\\", \\\"0.44\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 234.5\"},{\"market_id\":\"7303256\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 242.5\"},{\"market_id\":\"7303260\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.39\\\", \\\"0.61\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 244.5\"},{\"market_id\":\"7303264\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.355\\\", \\\"0.645\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 246.5\"},{\"market_id\":\"7303268\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 248.5\"},{\"market_id\":\"7303302\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.935\\\", \\\"0.065\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 210.5\"},{\"market_id\":\"7322456\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 237.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T23:44:46.177095+00:00",
+      "markets": [
+        {
+          "market_id": "6956400",
+          "market_type": "moneyline",
+          "question": "Heat vs. 76ers",
+          "slug": "nba-mia-phi-2026-11-25",
+          "outcomes": "[\"Heat\", \"76ers\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 38784.105844,
+          "liquidity": "51973.0237",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303244",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-3.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-home-3pt5",
+          "outcomes": "[\"76ers\", \"Heat\"]",
+          "outcome_prices": "[\"0.42\", \"0.58\"]",
+          "volume_24h": 222.730785,
+          "liquidity": "23138.0346",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303247",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-2.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-home-2pt5",
+          "outcomes": "[\"76ers\", \"Heat\"]",
+          "outcome_prices": "[\"0.45\", \"0.55\"]",
+          "volume_24h": 52.28301999999999,
+          "liquidity": "23086.3108",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303253",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-1.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-home-1pt5",
+          "outcomes": "[\"76ers\", \"Heat\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 62,
+          "liquidity": "24861.0167",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303255",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-5.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-home-5pt5",
+          "outcomes": "[\"76ers\", \"Heat\"]",
+          "outcome_prices": "[\"0.355\", \"0.645\"]",
+          "volume_24h": 26,
+          "liquidity": "22151.8061",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303261",
+          "market_type": "spread",
+          "question": "Spread: Heat (-1.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-away-1pt5",
+          "outcomes": "[\"Heat\", \"76ers\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 30,
+          "liquidity": "23572.1162",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303265",
+          "market_type": "spread",
+          "question": "Spread: Heat (-2.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-away-2pt5",
+          "outcomes": "[\"Heat\", \"76ers\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 301.086207,
+          "liquidity": "23497.0589",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303269",
+          "market_type": "spread",
+          "question": "Spread: Heat (-4.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-away-4pt5",
+          "outcomes": "[\"Heat\", \"76ers\"]",
+          "outcome_prices": "[\"0.375\", \"0.625\"]",
+          "volume_24h": 136.875,
+          "liquidity": "23345.7485",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303273",
+          "market_type": "spread",
+          "question": "Spread: Heat (-6.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-away-6pt5",
+          "outcomes": "[\"Heat\", \"76ers\"]",
+          "outcome_prices": "[\"0.305\", \"0.695\"]",
+          "volume_24h": 83.666668,
+          "liquidity": "23174.798",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303281",
+          "market_type": "spread",
+          "question": "Spread: Heat (-10.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-away-10pt5",
+          "outcomes": "[\"Heat\", \"76ers\"]",
+          "outcome_prices": "[\"0.215\", \"0.785\"]",
+          "volume_24h": 5,
+          "liquidity": "17461.4226",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303289",
+          "market_type": "spread",
+          "question": "Spread: Heat (-14.5)",
+          "slug": "nba-mia-phi-2026-11-25-spread-away-14pt5",
+          "outcomes": "[\"Heat\", \"76ers\"]",
+          "outcome_prices": "[\"0.15\", \"0.85\"]",
+          "volume_24h": 5,
+          "liquidity": "21116.1685",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303245",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 238.5",
+          "slug": "nba-mia-phi-2026-11-25-total-238pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.49\", \"0.51\"]",
+          "volume_24h": 162.520588,
+          "liquidity": "25587.2503",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303249",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 236.5",
+          "slug": "nba-mia-phi-2026-11-25-total-236pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.53\", \"0.47\"]",
+          "volume_24h": 5,
+          "liquidity": "23122.6382",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303252",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 240.5",
+          "slug": "nba-mia-phi-2026-11-25-total-240pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.45\", \"0.55\"]",
+          "volume_24h": 213,
+          "liquidity": "25904.5362",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303254",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 234.5",
+          "slug": "nba-mia-phi-2026-11-25-total-234pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.565\", \"0.435\"]",
+          "volume_24h": 35,
+          "liquidity": "24537.2705",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303256",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 242.5",
+          "slug": "nba-mia-phi-2026-11-25-total-242pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.41\", \"0.59\"]",
+          "volume_24h": 253,
+          "liquidity": "21957.3215",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303260",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 244.5",
+          "slug": "nba-mia-phi-2026-11-25-total-244pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.375\", \"0.625\"]",
+          "volume_24h": 147.93,
+          "liquidity": "24129.4775",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303264",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 246.5",
+          "slug": "nba-mia-phi-2026-11-25-total-246pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.345\", \"0.655\"]",
+          "volume_24h": 270.986058,
+          "liquidity": "22880.2492",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303268",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 248.5",
+          "slug": "nba-mia-phi-2026-11-25-total-248pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.3\", \"0.7\"]",
+          "volume_24h": 220,
+          "liquidity": "22692.4339",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7303302",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 210.5",
+          "slug": "nba-mia-phi-2026-11-25-total-210pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.93\", \"0.07\"]",
+          "volume_24h": 50,
+          "liquidity": "15257.1966",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7322456",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 237.5",
+          "slug": "nba-mia-phi-2026-11-25-total-237pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.52\", \"0.48\"]",
+          "volume_24h": 5,
+          "liquidity": "12029.1586",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        },
+        {
+          "market_id": "7324698",
+          "market_type": "total",
+          "question": "Heat vs. 76ers: O/U 239.5",
+          "slug": "nba-mia-phi-2026-11-25-total-239pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 5,
+          "liquidity": "8929.049",
+          "end_date": "2026-11-25T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-phi-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956400\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Heat vs. 76ers\"},{\"market_id\":\"7303244\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.42\\\", \\\"0.58\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-3.5)\"},{\"market_id\":\"7303247\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-2.5)\"},{\"market_id\":\"7303253\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-1.5)\"},{\"market_id\":\"7303255\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.355\\\", \\\"0.645\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Heat\\\"]\",\"question\":\"Spread: 76ers (-5.5)\"},{\"market_id\":\"7303261\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-1.5)\"},{\"market_id\":\"7303265\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-2.5)\"},{\"market_id\":\"7303269\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-4.5)\"},{\"market_id\":\"7303273\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-6.5)\"},{\"market_id\":\"7303281\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.215\\\", \\\"0.785\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-10.5)\"},{\"market_id\":\"7303289\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.15\\\", \\\"0.85\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Heat (-14.5)\"},{\"market_id\":\"7303245\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.49\\\", \\\"0.51\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 238.5\"},{\"market_id\":\"7303249\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.53\\\", \\\"0.47\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 236.5\"},{\"market_id\":\"7303252\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 240.5\"},{\"market_id\":\"7303254\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 234.5\"},{\"market_id\":\"7303256\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.41\\\", \\\"0.59\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 242.5\"},{\"market_id\":\"7303260\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 244.5\"},{\"market_id\":\"7303264\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.345\\\", \\\"0.655\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 246.5\"},{\"market_id\":\"7303268\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 248.5\"},{\"market_id\":\"7303302\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.93\\\", \\\"0.07\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 210.5\"},{\"market_id\":\"7322456\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.52\\\", \\\"0.48\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 237.5\"},{\"market_id\":\"7324698\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Heat vs. 76ers: O/U 239.5\"}]"
     }
   ],
-  "last_updated": "2026-11-24T22:52:55.187614+00:00"
+  "last_updated": "2026-11-24T23:44:46.177095+00:00"
 }

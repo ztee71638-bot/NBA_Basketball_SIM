@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T22:52:55.186094+00:00",
+  "last_updated": "2026-11-24T23:44:46.175705+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -333,6 +333,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4432166",
+      "name": "Cade Cunningham",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-24T23:36Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Cunningham (knee) is listed as out for Tuesday's game against Orlando.",
+      "long_comment": "Cunningham was listed as probable, so his absence for Tuesday's meeting with the Magic is concerning. Head coach J.B. Bickerstaff indicated that the knee has been giving the two-time All-Star some trouble of late, and while he's mostly played through it, he will now miss his second game of the 2026-27 campaign. Without Cunningham, Isaiah Joe will enter the starting lineup.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5258459",
       "name": "Ebuka Okorie",
       "team": "DET",
@@ -393,18 +408,18 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4432166",
-      "name": "Cade Cunningham",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "G",
+      "athlete_id": "5175737",
+      "name": "Yaxel Lendeborg",
+      "team": "GS",
+      "team_name": "Golden State Warriors",
+      "position": "F",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-23T22:07Z",
-      "return_date": "2026-11-24",
-      "short_comment": "Cunningham (knee) is probable for Tuesday's game against the Orlando.",
-      "long_comment": "The superstar point guard has been managing lingering knee soreness as of late, but he's expected to fight through the issue Tuesday. Since the start of November,  Cunningham has averaged 25.6 points, 9.1 assists, 4.8 rebounds and 1.6 steals per contest covering nine appearances.",
+      "date": "2026-11-24T23:20Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Lendeborg is questionable for Wednesday's game against the Kings with an illness.",
+      "long_comment": "The standout rookie is in danger of sitting out for the first time all season. Georges Niang and Gui Santos would be in line for more playing time in the frontcourt if Lendeborg isn't feeling well enough to play.",
       "source": "ESPN"
     },
     {
@@ -603,6 +618,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4431785",
+      "name": "Scotty Pippen Jr.",
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-24T23:04Z",
+      "return_date": "2026-12-12",
+      "short_comment": "Pippen (back) is out for Wednesday's game against the Clippers.",
+      "long_comment": "Pippen hasn't been available for Memphis since Oct. 29 due to a lumbar disc herniation and remains without a clear timeline to return. He can be deemed week-to-week going forward, though his absence could extend into mid-December if the Grizzlies don't advance in the NBA Cup.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5041935",
       "name": "Cameron Boozer",
       "team": "MEM",
@@ -645,21 +675,6 @@
       "return_date": "2027-01-18",
       "short_comment": "Jackson underwent a procedure Wednesday to repair a broken fifth metatarsal in his left foot. He is expected to recover fully and will be re-evaluated in approximately three months.",
       "long_comment": "Jackson suffered a foot injury in Saturday's 129-110 win over the Nets. Head coach Tuomas Iisalo indicated after the game that the injury was \"relatively serious,\" though it is now confirmed he will miss extended time. While Jackson is out of commission, Taylor Hendricks and Jerami Grant should receive more playing time.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4431785",
-      "name": "Scotty Pippen Jr.",
-      "team": "MEM",
-      "team_name": "Memphis Grizzlies",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-16T17:16Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Pippen (back) is progressing in his recovery but is still considered week-to-week.",
-      "long_comment": "Pippen hasn't played since Oct. 29 due to a lumbar disc herniation and remains without a firm timetable to return.  Cam Spencer and Javon Small will likely continue seeing increased playing time in Pippen's absence.",
       "source": "ESPN"
     },
     {
@@ -858,36 +873,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4432823",
-      "name": "Jaylin Williams",
-      "team": "OKC",
-      "team_name": "Oklahoma City Thunder",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-24T04:36Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Williams (back) has been ruled out for Monday's game against the Pacers",
-      "long_comment": "Williams returned from a seven-game absence to make two appearances before sitting out Sunday against Miami. His recurring back issues leave Oklahoma City's depleted frontcourt even thinner, potentially opening additional minutes for Kenrich Williams and Micah Peavy.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5174983",
-      "name": "Aday Mara",
-      "team": "OKC",
-      "team_name": "Oklahoma City Thunder",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-24T04:36Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Mara (shin) has been ruled out for Monday's game against the Pacers.",
-      "long_comment": "Mara will miss a second consecutive contest due to a right shin contusion, with his next opportunity to play coming against Minnesota on Wednesday. With the rookie big man sidelined, Kenrich Williams and Micah Peavy are candidates for increased playing time.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "5159925",
       "name": "Nikola Topic",
       "team": "OKC",
@@ -896,10 +881,40 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-23T18:49Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Topic (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
-      "long_comment": "Topic will miss his third consecutive game due to a left hip strain. The rookie has averaged just 11.3 minutes across three appearances this season, so his absence should have minimal fantasy implications despite Oklahoma City's depleted backcourt.",
+      "date": "2026-11-24T23:29Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Topic (hip) is listed as out for Wednesday's game versus Minnesota.",
+      "long_comment": "Topic has appeared in only three games for the Thunder this season. He's missed the last three contests because of a hip strain, with his next opportunity to suit up coming Saturday in Milwaukee. Without Topic, Bennett Stirtz and Josh Dix could continue to receive more playing time.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4432823",
+      "name": "Jaylin Williams",
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-24T23:24Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Williams (back) is listed as out for Wednesday's game against Minnesota.",
+      "long_comment": "Williams has only played twice in the Thunder's last 11 games. It's unclear when he will be available to return, though his next opportunity to suit up will come Saturday in Milwaukee. With Aday Mara (shin) also ruled out, Kenrich Williams and Micah Peavy should both see more action versus the Timberwolves.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "5174983",
+      "name": "Aday Mara",
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-24T23:19Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Mara (leg) is out for Wednesday's game versus the Timberwolves.",
+      "long_comment": "This will be Mara's third straight game on the inactive list, and for now, he should be considered questionable at best for Saturday's game in Milwaukee. With Jaylin Williams (back) also unavailable, Micah Peavy and Kenrich Williams will help back up Isaiah Hartenstein at the center position.",
       "source": "ESPN"
     },
     {
@@ -915,21 +930,6 @@
       "return_date": "2027-03-02",
       "short_comment": "Williams (ankle) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
       "long_comment": "Williams remains sidelined following left ankle surgery, with no confirmed return date. His continued absence leaves Oklahoma City without a key offensive contributor, allowing additional opportunities for the Thunder's remaining perimeter players.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2991350",
-      "name": "Alex Caruso",
-      "team": "OKC",
-      "team_name": "Oklahoma City Thunder",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-23T18:38Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Caruso (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
-      "long_comment": "Caruso will miss his second consecutive game as Oklahoma City continues managing his right hip injury. His absence further depletes the Thunder's backcourt, potentially creating additional opportunities for Ajay Mitchell and Jared McCain.",
       "source": "ESPN"
     },
     {

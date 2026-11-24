@@ -746,7 +746,73 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956408\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Spurs vs. Trail Blazers\"},{\"market_id\":\"7326684\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.73\\\", \\\"0.27\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 226.5\"},{\"market_id\":\"7326697\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 224.5\"},{\"market_id\":\"7326707\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 222.5\"},{\"market_id\":\"7326713\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 220.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T23:44:46.177095+00:00",
+      "markets": [
+        {
+          "market_id": "6956408",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Trail Blazers",
+          "slug": "nba-sas-por-2026-11-25",
+          "outcomes": "[\"Spurs\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.595\", \"0.405\"]",
+          "volume_24h": 3436.359438,
+          "liquidity": "40105.1876",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-por-2026-11-25"
+        },
+        {
+          "market_id": "7326684",
+          "market_type": "total",
+          "question": "Spurs vs. Trail Blazers: O/U 226.5",
+          "slug": "nba-sas-por-2026-11-25-total-226pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.73\", \"0.27\"]",
+          "volume_24h": 720.0660560000002,
+          "liquidity": "2322.4226",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-por-2026-11-25"
+        },
+        {
+          "market_id": "7326697",
+          "market_type": "total",
+          "question": "Spurs vs. Trail Blazers: O/U 224.5",
+          "slug": "nba-sas-por-2026-11-25-total-224pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 257.55,
+          "liquidity": "223.91",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-por-2026-11-25"
+        },
+        {
+          "market_id": "7326707",
+          "market_type": "total",
+          "question": "Spurs vs. Trail Blazers: O/U 222.5",
+          "slug": "nba-sas-por-2026-11-25-total-222pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 553,
+          "liquidity": "16.19",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-por-2026-11-25"
+        },
+        {
+          "market_id": "7326713",
+          "market_type": "total",
+          "question": "Spurs vs. Trail Blazers: O/U 220.5",
+          "slug": "nba-sas-por-2026-11-25-total-220pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 1093.39,
+          "liquidity": "16.19",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-por-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956408\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.595\\\", \\\"0.405\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Spurs vs. Trail Blazers\"},{\"market_id\":\"7326684\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.73\\\", \\\"0.27\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 226.5\"},{\"market_id\":\"7326697\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 224.5\"},{\"market_id\":\"7326707\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 222.5\"},{\"market_id\":\"7326713\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Trail Blazers: O/U 220.5\"}]"
     }
   ],
-  "last_updated": "2026-11-24T22:52:55.187614+00:00"
+  "last_updated": "2026-11-24T23:44:46.177095+00:00"
 }
