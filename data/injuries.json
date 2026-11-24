@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T19:57:38.964125+00:00",
+  "last_updated": "2026-11-24T20:52:12.600016+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -483,6 +483,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "2530530",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-24T19:43Z",
+      "return_date": "2026-11-27",
+      "short_comment": "McConnell (hamstring) was recalled from the G League's Noblesville Boom on Tuesday, Shams Charania of ESPN reports.",
+      "long_comment": "After missing Indiana's past two games with left hamstring soreness, McConnell joined the club's G League affiliate for practice Tuesday. The veteran point guard can be considered questionable for Friday's game against Philadelphia until the Pacers provide an update on his progress.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4396993",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -495,21 +510,6 @@
       "return_date": "2026-12-13",
       "short_comment": "Haliburton (hamstring) was recalled from the G League's Noblesville Boom on Tuesday, Tony East of Forbes.com reports.",
       "long_comment": "Haliburton joined the Pacers' G League affiliate for practice Tuesday, taking a significant step forward in his recovery from a left hamstring strain. However, Shams Charania of ESPN reported Friday that the star point guard is expected to miss at least two more weeks, so Haliburton isn't expected to return to game action in the near future.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2530530",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-24T16:02Z",
-      "return_date": "2026-11-27",
-      "short_comment": "McConnell (hamstring) was assigned to the G League's Noblesville Boom on Tuesday.",
-      "long_comment": "McConnell was held out of Indiana's last two games due to left hamstring soreness, and he's presumably joining the Boom for additional practice reps. The veteran point guard's next chance to suit up for Indiana will come Friday against Philadelphia.",
       "source": "ESPN"
     },
     {

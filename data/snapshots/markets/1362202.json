@@ -6350,7 +6350,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956403\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Thunder\\\"]\",\"question\":\"Timberwolves vs. Thunder\"},{\"market_id\":\"7303421\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Thunder (-2.5)\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T20:52:12.601139+00:00",
+      "markets": [
+        {
+          "market_id": "6956403",
+          "market_type": "moneyline",
+          "question": "Timberwolves vs. Thunder",
+          "slug": "nba-min-okc-2026-11-25",
+          "outcomes": "[\"Timberwolves\", \"Thunder\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 8825.669312,
+          "liquidity": "37485.3394",
+          "end_date": "2026-11-26T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-min-okc-2026-11-25"
+        },
+        {
+          "market_id": "7303421",
+          "market_type": "spread",
+          "question": "Spread: Thunder (-2.5)",
+          "slug": "nba-min-okc-2026-11-25-spread-home-2pt5",
+          "outcomes": "[\"Thunder\", \"Timberwolves\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 5,
+          "liquidity": "19316.2378",
+          "end_date": "2026-11-26T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-min-okc-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956403\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Thunder\\\"]\",\"question\":\"Timberwolves vs. Thunder\"},{\"market_id\":\"7303421\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Thunder (-2.5)\"}]"
     }
   ],
-  "last_updated": "2026-11-24T19:57:38.965444+00:00"
+  "last_updated": "2026-11-24T20:52:12.601139+00:00"
 }
