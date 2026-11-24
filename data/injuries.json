@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T23:45:12.896215+00:00",
+  "last_updated": "2026-11-24T00:36:09.411707+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -315,21 +315,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Biberovic (heel) is out for Wednesday's game against the Warriors.",
       "long_comment": "Biberovic has yet to debut for the Mavs this season due to a right heel bursitis issue, and the fact that he continues to get ruled out a full day in advance of tipoff suggests he's still not close. Biberovic should be considered week-to-week moving forward.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4432181",
-      "name": "Julian Strawther",
-      "team": "DEN",
-      "team_name": "Denver Nuggets",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-10-17T00:52Z",
-      "return_date": "2026-11-29",
-      "short_comment": "Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports.",
-      "long_comment": "Strawther suffered the injury in Wednesday's preseason game against the Clippers. The 24-year-old has appeared in 172 regular-season games for the Nuggets since entering the league in 2023, averaging 7.1 points, 2.0 rebounds and 1.1 assists over 16.2 minutes per contest. He was in line to compete for an expanded role during the 2026-27 campaign. While that may be the case once Strawther is cleared to suit up, Tyus Jones and potentially Ryan Nembhard are candidates to receive more minutes in the interim.",
       "source": "ESPN"
     },
     {
