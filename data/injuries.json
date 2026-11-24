@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T05:59:47.709629+00:00",
+  "last_updated": "2026-11-24T07:15:25.981407+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1143,33 +1143,33 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4066259",
-      "name": "De'Aaron Fox",
-      "team": "SA",
-      "team_name": "San Antonio Spurs",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-24T01:24Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Fox (shin) has been ruled out for Monday's game against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
-      "long_comment": "Fox will miss his second outing of the regular season due to a right shin contusion. Stephon Castle will operate as the primary ballhandler with Dylan Harper (hip) also sidelined, while Jordan McLaughlin should see increased burn off the Spurs' bench.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "5104157",
       "name": "Victor Wembanyama",
       "team": "SA",
       "team_name": "San Antonio Spurs",
       "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-24T01:24Z",
+      "date": "2026-11-24T06:06Z",
       "return_date": "2026-11-25",
       "short_comment": "Wembanyama (back) won't play Monday against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
       "long_comment": "Wembanyama is dealing with some back pain and will sit out Monday's game against the 1-14 Kings, but he's expected to return for Wednesday's NBA Cup game in Portland. Luka Kornet will likely get the start with Wembanyama unavailable, and Stephon Castle should see a sizeable uptick in usage.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4066259",
+      "name": "De'Aaron Fox",
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-24T06:06Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Fox (shin) has been ruled out for Monday's game against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
+      "long_comment": "Fox will miss his second outing of the regular season due to a right shin contusion. Stephon Castle will operate as the primary ballhandler with Dylan Harper (hip) also sidelined, while Jordan McLaughlin should see increased burn off the Spurs' bench.",
       "source": "ESPN"
     },
     {
@@ -1268,10 +1268,10 @@
       "team": "UTAH",
       "team_name": "Utah Jazz",
       "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-23T21:04Z",
+      "date": "2026-11-24T06:07Z",
       "return_date": "2026-11-27",
       "short_comment": "Hayes (knee) has been ruled out for Monday's game against the Lakers.",
       "long_comment": "Hayes left Sunday's tilt against the Mavericks with what's now being described as a left knee strain, and it's not yet known how much time he may miss beyond Monday. Mo Bamba should start at center for the Jazz and is worthy of streaming consideration in all fantasy leagues.",

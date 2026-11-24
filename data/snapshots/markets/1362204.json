@@ -452,7 +452,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956405\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Bucks\\\"]\",\"question\":\"Nets vs. Bucks\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T07:15:25.982660+00:00",
+      "markets": [
+        {
+          "market_id": "6956405",
+          "market_type": "moneyline",
+          "question": "Nets vs. Bucks",
+          "slug": "nba-bkn-mil-2026-11-25",
+          "outcomes": "[\"Nets\", \"Bucks\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 1104.582917,
+          "liquidity": "35590.3023",
+          "end_date": "2026-11-26T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-mil-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956405\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Bucks\\\"]\",\"question\":\"Nets vs. Bucks\"}]"
     }
   ],
-  "last_updated": "2026-11-24T04:59:12.667132+00:00"
+  "last_updated": "2026-11-24T07:15:25.982660+00:00"
 }
