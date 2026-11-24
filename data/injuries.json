@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T20:52:12.600016+00:00",
+  "last_updated": "2026-11-24T21:52:15.550868+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -416,10 +416,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-23T20:52Z",
+      "date": "2026-11-24T20:58Z",
       "return_date": "2026-11-25",
-      "short_comment": "Head coach Steve Kerr said Monday that Williams (hamstring) is on track to return Wednesday against the Kings, Kenzo Fukuda of ClutchPoints.com reports.",
-      "long_comment": "Williams hasn't played since Nov. 9 due to a left hamstring strain, though he could return to action as soon as Wednesday. The Warriors will provide an update on his status by Tuesday night, and if the 27-year-old is cleared to return, there would be fewer minutes available for guys like Gary Payton, LJ Cryer and Will Richard.",
+      "short_comment": "Head coach Steve Kerr said Tuesday that Williams (hamstring) is questionable to play Wednesday against the Kings, per Dalton Johnson of NBC Sports Bay Area.",
+      "long_comment": "It sounds like Williams is closing in on ending an extended absence with a hamstring strain. Will Richard and LJ Cryer figure to have the most to lose from a fantasy standpoint once Williams is cleared to return to action.",
       "source": "ESPN"
     },
     {
@@ -1218,6 +1218,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "6450",
+      "name": "Kawhi Leonard",
+      "team": "TOR",
+      "team_name": "Toronto Raptors",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-24T21:15Z",
+      "return_date": "2026-12-03",
+      "short_comment": "Leonard has begun individual on-court workouts following treatment to address swelling in his left knee, and he will be re-evaluated in one week, Marc J. Spears of ESPN.com reports.",
+      "long_comment": "Leonard continues to progress in his recovery, and the Raptors are expected to provide another update in a week. Collin Murray-Boyles and Allen Graves will likely continue seeing increased burn for as long as Leonard is sidelined.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4432586",
       "name": "Nate Bittle",
       "team": "TOR",
@@ -1230,21 +1245,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
       "long_comment": "Bittle continues to work his way back from a fractured right foot, as he's yet to make his 2026-27 season debut. He remains week-to-week until Toronto provides a definitive update.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "6450",
-      "name": "Kawhi Leonard",
-      "team": "TOR",
-      "team_name": "Toronto Raptors",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-20T20:42Z",
-      "return_date": "2026-12-03",
-      "short_comment": "Leonard (knee) could return in the next few weeks, per Shams Charania of ESPN.",
-      "long_comment": "This was the expectation after the Raptors ruled out the star forward Tuesday for at least one more week. Collin Murray-Boyles should continue to handle a larger role once he passes the concussion protocol, and Ja'Kobe Walter should remain a starter for the time being.",
       "source": "ESPN"
     },
     {
