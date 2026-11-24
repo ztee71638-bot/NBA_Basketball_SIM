@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T15:36:27.232733+00:00",
+  "last_updated": "2026-11-24T16:46:41.287794+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -468,6 +468,36 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "2530530",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-24T16:02Z",
+      "return_date": "2026-11-27",
+      "short_comment": "McConnell (hamstring) was assigned to the G League's Noblesville Boom on Tuesday.",
+      "long_comment": "McConnell was held out of Indiana's last two games due to left hamstring soreness, and he's presumably joining the Boom for additional practice reps. The veteran point guard's next chance to suit up for Indiana will come Friday against Philadelphia.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4396993",
+      "name": "Tyrese Haliburton",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-24T15:57Z",
+      "return_date": "2026-12-13",
+      "short_comment": "Haliburton (hamstring) was assigned to the G League's Noblesville Boom on Tuesday.",
+      "long_comment": "Haliburton is still working his way back from a left hamstring strain, though he's seemingly made enough progress to get some practice reps in with the Pacers' G League affiliate. Shams Charania of ESPN reported Friday that the star point guard is expected to miss at least two more weeks, so it's possible he won't return until mid-December.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4396909",
       "name": "Aaron Nesmith",
       "team": "IND",
@@ -483,21 +513,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "2530530",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-24T04:40Z",
-      "return_date": "2026-11-27",
-      "short_comment": "McConnell is out for Monday's game against the Thunder due to left hamstring soreness.",
-      "long_comment": "The veteran floor general is missing both ends of this back-to-back set, but he'll have some extra time to heal up ahead of Friday's tilt against the 76ers. Quenton Jackson should play a significant role off the bench in McConnell's absence Monday.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "2580365",
       "name": "Larry Nance Jr.",
       "team": "IND",
@@ -510,36 +525,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Nance exited Monday's game against the Thunder due to a sore right ankle and he will not return, Tony East of Forbes.com reports.",
       "long_comment": "Nance will have three full days to rest his sore ankle before the Pacers' next game, although with Friday's matchup with the 76ers being the first of a back-to-back set, Nance may need to miss that one as well. Obi Toppin figures to pick up most of Nance's minutes while he's sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4396993",
-      "name": "Tyrese Haliburton",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-20T20:41Z",
-      "return_date": "2026-12-13",
-      "short_comment": "Haliburton (hamstring) is expected to miss at least two more weeks, Shams Charania of ESPN reports.",
-      "long_comment": "Haliburton hasn't played since Oct. 26 due to a left hamstring strain, and the Pacers won't rush him back. With the star floor general unlikely to return until mid-December at the earliest, Quenton Jackson and T.J. McConnell are candidates for increased playing time, while Andrew Nembhard figures to continue seeing increased playmaking duties.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5157066",
-      "name": "Johnny Furphy",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-10-30T19:06Z",
-      "return_date": "2027-01-02",
-      "short_comment": "Furphy (knee) is practicing with the G League's Noblesville Boom, per Alex Golden of SI.com.",
-      "long_comment": "The Pacers have been pretty quiet regarding Furphy's ACL recovery since the offseason, but it's encouraging to hear some form of progress as the forward begins to ramp up his activity. Although Furphy still lacks a firm timetable for a return and is likely to be brought back slowly, it appears a season debut before the start of the new calendar year is in the cards.",
       "source": "ESPN"
     },
     {

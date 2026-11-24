@@ -1,5 +1,16 @@
 {
-  "last_updated": "2026-11-24T15:36:27.233867+00:00",
+  "last_updated": "2026-11-24T16:46:41.288923+00:00",
   "source": "ESPN game summaries",
-  "games": []
+  "games": [
+    {
+      "game_id": "401909314",
+      "date": "2026-11-25T00:00Z",
+      "home_team": "ORL",
+      "away_team": "DET",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    }
+  ]
 }
