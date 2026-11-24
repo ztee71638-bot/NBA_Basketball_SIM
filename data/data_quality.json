@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T10:29:09.075926+00:00",
+  "generated_at": "2026-11-24T10:46:15.426321+00:00",
   "status": "warning",
   "team_history": {
-    "last_updated": "2026-11-23T22:26:14.483051+00:00",
-    "age_hours": 12.05,
+    "last_updated": "2026-11-24T10:45:16.022532+00:00",
+    "age_hours": 0.02,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -57,14 +57,14 @@
       "2027": {
         "team_records": 30,
         "teams_with_games": 30,
-        "team_game_rows": 629,
-        "unique_game_ids": 315,
+        "team_game_rows": 649,
+        "unique_game_ids": 325,
         "duplicate_team_game_ids": 0,
-        "advanced_team_game_rows": 578,
-        "advanced_games_with_both_teams": 289,
-        "advanced_coverage_pct": 91.9,
-        "min_team_games": 18,
-        "max_team_games": 23
+        "advanced_team_game_rows": 592,
+        "advanced_games_with_both_teams": 296,
+        "advanced_coverage_pct": 91.2,
+        "min_team_games": 19,
+        "max_team_games": 24
       }
     },
     "unpaired_or_mismatched_games": 0,
@@ -86,7 +86,7 @@
       2023
     ],
     "last_updated": "2026-11-24T10:29:08.006250+00:00",
-    "age_hours": 0.0,
+    "age_hours": 0.29,
     "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
@@ -204,7 +204,7 @@
     "confirmed_lineup_snapshot_rate_pct": 0.0,
     "first_captured_at": "2026-11-21T15:02:11.487839+00:00",
     "last_captured_at": "2026-11-23T23:45:12.897726+00:00",
-    "latest_snapshot_age_hours": 10.73,
+    "latest_snapshot_age_hours": 11.02,
     "unreadable_snapshot_records": 0
   },
   "warnings": [

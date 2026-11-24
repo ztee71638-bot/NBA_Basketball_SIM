@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T22:26:18.986893+00:00",
+  "generated_at": "2026-11-24T10:45:18.983590+00:00",
   "source": "BoxScore Lab (upstream attribution: NBA Stats)",
   "license": "CC BY 4.0",
   "team_games": {
@@ -58,28 +58,28 @@
   },
   "player_totals": {
     "source_rows": 2736,
-    "matched_rows": 1858,
-    "unmatched_rows": 878,
+    "matched_rows": 1862,
+    "unmatched_rows": 874,
     "by_season": {
       "2022-23": {
         "source_rows": 539,
-        "matched_rows": 260,
-        "unmatched_rows": 279
+        "matched_rows": 261,
+        "unmatched_rows": 278
       },
       "2023-24": {
         "source_rows": 572,
-        "matched_rows": 312,
-        "unmatched_rows": 260
+        "matched_rows": 313,
+        "unmatched_rows": 259
       },
       "2024-25": {
         "source_rows": 569,
-        "matched_rows": 375,
-        "unmatched_rows": 194
+        "matched_rows": 376,
+        "unmatched_rows": 193
       },
       "2025-26": {
         "source_rows": 582,
-        "matched_rows": 441,
-        "unmatched_rows": 141
+        "matched_rows": 442,
+        "unmatched_rows": 140
       },
       "2026-27": {
         "source_rows": 474,
@@ -282,14 +282,6 @@
       },
       {
         "season": "2022-23",
-        "player_name": "Gabe Vincent",
-        "team": "MIA",
-        "same_name_candidates": 0,
-        "same_season_candidates": 0,
-        "same_team_candidates": 0
-      },
-      {
-        "season": "2022-23",
         "player_name": "Malcolm Brogdon",
         "team": "BOS",
         "same_name_candidates": 0,
@@ -484,6 +476,14 @@
         "season": "2022-23",
         "player_name": "Devonte' Graham",
         "team": "SAS",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2022-23",
+        "player_name": "Terrence Ross",
+        "team": "PHX",
         "same_name_candidates": 0,
         "same_season_candidates": 0,
         "same_team_candidates": 0
