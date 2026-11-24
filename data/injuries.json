@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T03:54:05.598377+00:00",
+  "last_updated": "2026-11-24T04:59:12.666072+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -108,6 +108,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4066218",
+      "name": "Grant Williams",
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-24T04:32Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Williams (hamstring) won't play Monday's game against the Grizzlies.",
+      "long_comment": "Williams will miss a second consecutive game due to right hamstring injury management. Royce O'Neale and Tidjane Salaun should continue to see more minutes off the bench for Charlotte.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4576060",
       "name": "Ryan Kalkbrenner",
       "team": "CHA",
@@ -135,21 +150,6 @@
       "return_date": "2026-11-25",
       "short_comment": "Allen (concussion) has been ruled out for Monday's game against the Grizzlies.",
       "long_comment": "Allen is set to miss a third consecutive contest due to a concussion. Sion James will continue to start while Royce O'Neale should get more minutes off the bench.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4066218",
-      "name": "Grant Williams",
-      "team": "CHA",
-      "team_name": "Charlotte Hornets",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-22T22:05Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Williams (hamstring) won't play Monday's game against the Grizzlies.",
-      "long_comment": "Williams will miss a second consecutive game due to right hamstring injury management. Royce O'Neale and Tidjane Salaun should continue to see more minutes off the bench for Charlotte.",
       "source": "ESPN"
     },
     {
@@ -468,6 +468,36 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4396909",
+      "name": "Aaron Nesmith",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-24T04:40Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Nesmith is out for Monday's game against the Thunder due to right foot soreness.",
+      "long_comment": "The swingman is sitting out the second leg of this back-to-back set and is likely facing a short-term absence. Nesmith's absence should get Obi Toppin onto the streaming map in fantasy leagues Monday.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "2530530",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-24T04:40Z",
+      "return_date": "2026-11-27",
+      "short_comment": "McConnell is out for Monday's game against the Thunder due to left hamstring soreness.",
+      "long_comment": "The veteran floor general is missing both ends of this back-to-back set, but he'll have some extra time to heal up ahead of Friday's tilt against the 76ers. Quenton Jackson should play a significant role off the bench in McConnell's absence Monday.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2580365",
       "name": "Larry Nance Jr.",
       "team": "IND",
@@ -480,36 +510,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Nance exited Monday's game against the Thunder due to a sore right ankle and he will not return, Tony East of Forbes.com reports.",
       "long_comment": "Nance will have three full days to rest his sore ankle before the Pacers' next game, although with Friday's matchup with the 76ers being the first of a back-to-back set, Nance may need to miss that one as well. Obi Toppin figures to pick up most of Nance's minutes while he's sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2530530",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-23T18:25Z",
-      "return_date": "2026-11-27",
-      "short_comment": "McConnell is out for Monday's game against the Thunder due to left hamstring soreness.",
-      "long_comment": "The veteran floor general is missing both ends of this back-to-back set, but he'll have some extra time to heal up ahead of Friday's tilt against the 76ers. Quenton Jackson should play a significant role off the bench in McConnell's absence Monday.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4396909",
-      "name": "Aaron Nesmith",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-23T18:22Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Nesmith is out for Monday's game against the Thunder due to right foot soreness.",
-      "long_comment": "The swingman is sitting out the second leg of this back-to-back set and is likely facing a short-term absence. Nesmith's absence should get Obi Toppin onto the streaming map in fantasy leagues Monday.",
       "source": "ESPN"
     },
     {
@@ -833,13 +833,28 @@
       "team": "OKC",
       "team_name": "Oklahoma City Thunder",
       "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-23T19:09Z",
+      "date": "2026-11-24T04:36Z",
       "return_date": "2026-11-25",
       "short_comment": "Williams (back) has been ruled out for Monday's game against the Pacers",
       "long_comment": "Williams returned from a seven-game absence to make two appearances before sitting out Sunday against Miami. His recurring back issues leave Oklahoma City's depleted frontcourt even thinner, potentially opening additional minutes for Kenrich Williams and Micah Peavy.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "5174983",
+      "name": "Aday Mara",
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-24T04:36Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Mara (shin) has been ruled out for Monday's game against the Pacers.",
+      "long_comment": "Mara will miss a second consecutive contest due to a right shin contusion, with his next opportunity to play coming against Minnesota on Wednesday. With the rookie big man sidelined, Kenrich Williams and Micah Peavy are candidates for increased playing time.",
       "source": "ESPN"
     },
     {
@@ -855,21 +870,6 @@
       "return_date": "2026-11-25",
       "short_comment": "Topic (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
       "long_comment": "Topic will miss his third consecutive game due to a left hip strain. The rookie has averaged just 11.3 minutes across three appearances this season, so his absence should have minimal fantasy implications despite Oklahoma City's depleted backcourt.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5174983",
-      "name": "Aday Mara",
-      "team": "OKC",
-      "team_name": "Oklahoma City Thunder",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-23T18:45Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Mara (shin) has been ruled out for Monday's game against the Pacers.",
-      "long_comment": "Mara will miss a second consecutive contest due to a right shin contusion, with his next opportunity to play coming against Minnesota on Wednesday. With the rookie big man sidelined, Kenrich Williams and Micah Peavy are candidates for increased playing time.",
       "source": "ESPN"
     },
     {
@@ -1013,10 +1013,10 @@
       "team": "PHI",
       "team_name": "Philadelphia 76ers",
       "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-23T22:49Z",
+      "date": "2026-11-24T04:33Z",
       "return_date": "2026-11-25",
       "short_comment": "Embiid (illness) is out for Monday's game against Portland, Austin Krell of OnPattison.com reports.",
       "long_comment": "The star big man can be considered day-to-day moving forward. With Embiid sidelined Monday, Dominick Barlow is a candidate to start at center for the 76ers while Adem Bona (back) helps pick up the slack off the bench.",
@@ -1035,21 +1035,6 @@
       "return_date": "2027-10-01",
       "short_comment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
       "long_comment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4278585",
-      "name": "Collin Gillespie",
-      "team": "PHX",
-      "team_name": "Phoenix Suns",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Not Specified",
-      "date": "2026-11-24T02:48Z",
-      "return_date": "2026-11-23",
-      "short_comment": "Gillespie went to the locker room during the third quarter of Monday's game against the Pelicans due to an undisclosed injury, Duane Rankin of The Arizona Republic reports.",
-      "long_comment": "Gillespie was shaken up following a collision under the basket, and he headed right to the locker room to be evaluated further. Luke Kennard could see more time in the second half if Gillespie is unable to return.",
       "source": "ESPN"
     },
     {
