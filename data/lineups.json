@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T18:52:15.797761+00:00",
+  "last_updated": "2026-11-24T19:57:38.965317+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -17,6 +17,16 @@
       "date": "2026-11-25T01:00Z",
       "home_team": "WAS",
       "away_team": "BOS",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909316",
+      "date": "2026-11-25T03:00Z",
+      "home_team": "DEN",
+      "away_team": "DAL",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",

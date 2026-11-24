@@ -4754,7 +4754,97 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956406\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.235\\\", \\\"0.765\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Suns vs. Rockets\"},{\"market_id\":\"7303964\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-10.5)\"},{\"market_id\":\"7303999\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.64\\\", \\\"0.36\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-5.5)\"},{\"market_id\":\"7304051\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Spread: Suns (-7.5)\"},{\"market_id\":\"7303973\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.44\\\", \\\"0.56\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 225.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T19:57:38.965444+00:00",
+      "markets": [
+        {
+          "market_id": "6956406",
+          "market_type": "moneyline",
+          "question": "Suns vs. Rockets",
+          "slug": "nba-phx-hou-2026-11-25",
+          "outcomes": "[\"Suns\", \"Rockets\"]",
+          "outcome_prices": "[\"0.23\", \"0.77\"]",
+          "volume_24h": 2419.6990570000003,
+          "liquidity": "42933.9578",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303964",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-10.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-10pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 23.457676,
+          "liquidity": "21928.3493",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303967",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-9.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-9pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 5049.73585,
+          "liquidity": "22979.5041",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303999",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-5.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-5pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.635\", \"0.365\"]",
+          "volume_24h": 15.789474,
+          "liquidity": "23464.94",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304031",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-22.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-22pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.195\", \"0.805\"]",
+          "volume_24h": 9.999511,
+          "liquidity": "15844.7698",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304051",
+          "market_type": "spread",
+          "question": "Spread: Suns (-7.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-away-7pt5",
+          "outcomes": "[\"Suns\", \"Rockets\"]",
+          "outcome_prices": "[\"0.115\", \"0.885\"]",
+          "volume_24h": 21.505371,
+          "liquidity": "16444.039",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303973",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 225.5",
+          "slug": "nba-phx-hou-2026-11-25-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.44\", \"0.56\"]",
+          "volume_24h": 144.866669,
+          "liquidity": "22773.0736",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956406\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.23\\\", \\\"0.77\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Suns vs. Rockets\"},{\"market_id\":\"7303964\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-10.5)\"},{\"market_id\":\"7303967\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-9.5)\"},{\"market_id\":\"7303999\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.635\\\", \\\"0.365\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-5.5)\"},{\"market_id\":\"7304031\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-22.5)\"},{\"market_id\":\"7304051\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Spread: Suns (-7.5)\"},{\"market_id\":\"7303973\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.44\\\", \\\"0.56\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 225.5\"}]"
     }
   ],
-  "last_updated": "2026-11-24T18:52:15.797849+00:00"
+  "last_updated": "2026-11-24T19:57:38.965444+00:00"
 }

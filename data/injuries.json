@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T18:52:15.796364+00:00",
+  "last_updated": "2026-11-24T19:57:38.964125+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -333,6 +333,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "5258459",
+      "name": "Ebuka Okorie",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-24T18:37Z",
+      "return_date": "2026-12-13",
+      "short_comment": "The Pistons announced Tuesday that Okorie (oblique) will miss at least two weeks, per Eric Vincent of ClutchPoints.com.",
+      "long_comment": "Okorie has been diagnosed with an oblique strain, which he sustained in a G League game. The rookie first-rounder has logged a grand total of 20 minutes across five brief appearances, so his absence doesn't have major fantasy ramifications.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2990962",
       "name": "Taurean Prince",
       "team": "DET",
@@ -375,21 +390,6 @@
       "return_date": "2026-11-30",
       "short_comment": "Duren (hamstring) is being assigned to the Motor City Cruise on Wednesday for practice as he ramps up for a return, Eric Vincent of ClutchPoints.com reports.",
       "long_comment": "With Duren still out for Detroit and now progressing to a G League practice assignment, this marks a tangible step forward in his recovery from the right hamstring strain that has kept him sidelined since Oct. 23. The Pistons haven't provided a return timeline, but his return appears to be drawing closer as he increases his activity.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5258459",
-      "name": "Ebuka Okorie",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-23T22:10Z",
-      "return_date": "2026-12-13",
-      "short_comment": "Okorie (oblique) won't play Tuesday in Orlando.",
-      "long_comment": "Okorie lacks a concrete timeline for a return due to an oblique injury. His ongoing absence carries little fantasy relevance moving forward.",
       "source": "ESPN"
     },
     {
@@ -483,6 +483,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4396993",
+      "name": "Tyrese Haliburton",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-24T19:41Z",
+      "return_date": "2026-12-13",
+      "short_comment": "Haliburton (hamstring) was recalled from the G League's Noblesville Boom on Tuesday, Tony East of Forbes.com reports.",
+      "long_comment": "Haliburton joined the Pacers' G League affiliate for practice Tuesday, taking a significant step forward in his recovery from a left hamstring strain. However, Shams Charania of ESPN reported Friday that the star point guard is expected to miss at least two more weeks, so Haliburton isn't expected to return to game action in the near future.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2530530",
       "name": "T.J. McConnell",
       "team": "IND",
@@ -495,21 +510,6 @@
       "return_date": "2026-11-27",
       "short_comment": "McConnell (hamstring) was assigned to the G League's Noblesville Boom on Tuesday.",
       "long_comment": "McConnell was held out of Indiana's last two games due to left hamstring soreness, and he's presumably joining the Boom for additional practice reps. The veteran point guard's next chance to suit up for Indiana will come Friday against Philadelphia.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4396993",
-      "name": "Tyrese Haliburton",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-24T15:57Z",
-      "return_date": "2026-12-13",
-      "short_comment": "Haliburton (hamstring) was assigned to the G League's Noblesville Boom on Tuesday.",
-      "long_comment": "Haliburton is still working his way back from a left hamstring strain, though he's seemingly made enough progress to get some practice reps in with the Pacers' G League affiliate. Shams Charania of ESPN reported Friday that the star point guard is expected to miss at least two more weeks, so it's possible he won't return until mid-December.",
       "source": "ESPN"
     },
     {
@@ -686,10 +686,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-23T15:04Z",
+      "date": "2026-11-24T18:56Z",
       "return_date": "2026-11-25",
-      "short_comment": "Antetokounmpo (groin) won't play in Sunday's game against Oklahoma City, Clemente Almanza of USA Today reports.",
-      "long_comment": "Antetokounmpo is dealing with a groin injury. He was initially listed as questionable, though he has since been ruled out, marking his first absence of the year. His next opportunity to suit up will come Wednesday against Philadelphia. In the meantime, Bobby Portis and Andrew Wiggins are candidates to fill the void in the starting lineup.",
+      "short_comment": "Antetokounmpo (groin) participated in most of Tuesday's practice, Zachary Weinberger of ClutchPoints.com reports.",
+      "long_comment": "Antetokounmpo is trending in the right direction after missing Sunday's win over the Thunder with a groin injury. If the superstar forward returns to action in Wednesday's game against Philadelphia, there would be fewer minutes available for guys like Bobby Portis, Nikola Jovic and Andrew Wiggins.",
       "source": "ESPN"
     },
     {
@@ -783,18 +783,18 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4431823",
-      "name": "Miles McBride",
+      "athlete_id": "2528426",
+      "name": "Jordan Clarkson",
       "team": "NY",
       "team_name": "New York Knicks",
       "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-23T15:07Z",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-24T18:48Z",
       "return_date": "2026-11-25",
-      "short_comment": "McBride (abdomen) has been ruled out for Sunday's game against the Pacers.",
-      "long_comment": "McBride will miss his first outing of the 2026-27 campaign due to left adductor tightness. Tyler Kolek and Jose Alvarado should absorb the majority of the vacated minutes off the Knicks' bench.",
+      "short_comment": "Clarkson (foot) didn't participate in Tuesday's practice, Jared Schwartz of the New York Post reports.",
+      "long_comment": "Clarkson has hit the inactive list in each of New York's last two games due to plantar fasciitis in his right foot. If he remains out Wednesday against Cleveland, Landry Shamet and Pacome Dadiet would be candidates for more minutes, especially if OG Anunoby (calf) or Miles McBride (adductor) is ruled out.",
       "source": "ESPN"
     },
     {
@@ -806,25 +806,25 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-23T15:07Z",
+      "date": "2026-11-24T18:42Z",
       "return_date": "2026-11-25",
-      "short_comment": "Anunoby (calf) won't play Sunday against the Pacers.",
-      "long_comment": "Anunoby will miss a second straight game due to left calf tightness. Landry Shamet got the start in Saturday's 97-96 win over Portland, so fantasy managers should expect the same versus Indiana. Anunoby's next chance to suit up will come against the Cavaliers on Wednesday.",
+      "short_comment": "Anunoby (calf) did not participate in Tuesday's practice, Jared Schwartz of the New York Post reports.",
+      "long_comment": "Anunoby has missed two straight games with a left calf issue, and it's not encouraging to see him sit out Tuesday's practice ahead of Wednesday's game against Cleveland. If the 29-year-old forward remains sidelined, Pacome Dadiet, Mohamed Diawara and Landry Shamet would be candidates for increased playing time.",
       "source": "ESPN"
     },
     {
-      "athlete_id": "2528426",
-      "name": "Jordan Clarkson",
+      "athlete_id": "4431823",
+      "name": "Miles McBride",
       "team": "NY",
       "team_name": "New York Knicks",
       "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-22T18:05Z",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-24T18:40Z",
       "return_date": "2026-11-25",
-      "short_comment": "Clarkson (foot) has been ruled out for Sunday's game against Indiana.",
-      "long_comment": "Clarkson will miss a third consecutive game due to plantar fasciitis in his right foot. In his absence, Tyler Kolek and Jose Alvarado should see an uptick in playing time off the Knicks' bench. Clarkson's next chance to suit up will come Wednesday against Cleveland.",
+      "short_comment": "McBride (groin) practiced Tuesday, per Jared Schwartz of the New York Post.",
+      "long_comment": "McBride is progressing well from left adductor tightness. The Knicks will reveal later Tuesday if the guard carries an injury designation into Wednesday's game against Cleveland.",
       "source": "ESPN"
     },
     {

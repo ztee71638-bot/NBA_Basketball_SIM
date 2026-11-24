@@ -1,0 +1,190 @@
+{
+  "game_id": "401909316",
+  "game_date": "2026-11-25T03:00Z",
+  "home_team": "DEN",
+  "away_team": "DAL",
+  "source": "ESPN public injury report and game summaries",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-24T19:57:38.965444+00:00",
+      "minutes_to_tipoff": 422.4,
+      "injuries": [
+        {
+          "athlete_id": "4278078",
+          "name": "P.J. Washington",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": null,
+          "date": "2026-11-23T23:21Z",
+          "return_date": "2026-11-24",
+          "short_comment": "Washington (illness) is questionable for Tuesday's game against the Nuggets.",
+          "long_comment": "Washington is trying to end a two-game absence Tuesday with an illness. Following consecutive starts, Zaccharie Risacher figures to have the most to gain from another potential absence for Washington from a fantasy perspective.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4683688",
+          "name": "Dereck Lively II",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-20T19:31Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
+          "long_comment": "Lively hasn't seen game action since Nov. 21, 2025, and he remains without a firm timetable to return after undergoing right foot surgery last December. However, this update suggests that the big man is trending in the right direction.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5106040",
+          "name": "Tobi Lawal",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-23T23:25Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Lawal (groin) is out for Tuesday's game against Denver.",
+          "long_comment": "Lawal is slated for a fourth consecutive absence due to a right groin strain. His next opportunity to return will arrive Friday in Phoenix.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5148538",
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-17T22:42Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Biberovic (heel) is out for Wednesday's game against the Warriors.",
+          "long_comment": "Biberovic has yet to debut for the Mavs this season due to a right heel bursitis issue, and the fact that he continues to get ruled out a full day in advance of tipoff suggests he's still not close. Biberovic should be considered week-to-week moving forward.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5279129",
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-17T22:53Z",
+          "return_date": "2026-11-27",
+          "short_comment": "De Larrea (knee) is listed as out for Wednesday's game against the Warriors.",
+          "long_comment": "De Larrea has only played four games during the 2026-27 campaign. There hasn't been any indication of when he will be cleared to return, so he should be considered week-to-week for now.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909316",
+        "date": "2026-11-25T03:00Z",
+        "home_team": "DEN",
+        "away_team": "DAL",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "4278078",
+            "name": "P.J. Washington",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": null,
+            "date": "2026-11-23T23:21Z",
+            "return_date": "2026-11-24",
+            "short_comment": "Washington (illness) is questionable for Tuesday's game against the Nuggets.",
+            "long_comment": "Washington is trying to end a two-game absence Tuesday with an illness. Following consecutive starts, Zaccharie Risacher figures to have the most to gain from another potential absence for Washington from a fantasy perspective.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4683688",
+            "name": "Dereck Lively II",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-20T19:31Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
+            "long_comment": "Lively hasn't seen game action since Nov. 21, 2025, and he remains without a firm timetable to return after undergoing right foot surgery last December. However, this update suggests that the big man is trending in the right direction.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5106040",
+            "name": "Tobi Lawal",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-23T23:25Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Lawal (groin) is out for Tuesday's game against Denver.",
+            "long_comment": "Lawal is slated for a fourth consecutive absence due to a right groin strain. His next opportunity to return will arrive Friday in Phoenix.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5148538",
+            "name": "Tarik Biberovic",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-17T22:42Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Biberovic (heel) is out for Wednesday's game against the Warriors.",
+            "long_comment": "Biberovic has yet to debut for the Mavs this season due to a right heel bursitis issue, and the fact that he continues to get ruled out a full day in advance of tipoff suggests he's still not close. Biberovic should be considered week-to-week moving forward.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5279129",
+            "name": "Sergio de Larrea",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-17T22:53Z",
+            "return_date": "2026-11-27",
+            "short_comment": "De Larrea (knee) is listed as out for Wednesday's game against the Warriors.",
+            "long_comment": "De Larrea has only played four games during the 2026-27 campaign. There hasn't been any indication of when he will be cleared to return, so he should be considered week-to-week for now.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909316",
+          "date": "2026-11-25T03:00Z",
+          "home_team": "DEN",
+          "away_team": "DAL",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
+    }
+  ],
+  "last_updated": "2026-11-24T19:57:38.965444+00:00"
+}
