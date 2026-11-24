@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T17:48:25.558910+00:00",
+  "last_updated": "2026-11-24T18:52:15.796364+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -183,6 +183,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4397189",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-24T18:21Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Smith (illness) is listed as questionable for Wednesday's game against the Hornets.",
+      "long_comment": "Smith has been a regular on the injury report recently due to a gastrointestinal illness, though he played in Chicago's last two outings, averaging 18.5 points, 5.0 rebounds, 2.5 assists and 2.0 combined steals-plus-blocks in 29.5 minutes per contest over that brief stretch. If the big man is unable to play Wednesday, Nic Claxton would likely enter the first unit.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2595516",
       "name": "Norman Powell",
       "team": "CHI",
@@ -318,18 +333,33 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "5258459",
-      "name": "Ebuka Okorie",
+      "athlete_id": "2990962",
+      "name": "Taurean Prince",
       "team": "DET",
       "team_name": "Detroit Pistons",
-      "position": "G",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-24T18:33Z",
+      "return_date": "2026-12-26",
+      "short_comment": "Prince underwent arthroscopic right knee surgery Nov. 18 and will be re-evaluated in four weeks, Eric Vincent of ClutchPoints.com reports.",
+      "long_comment": "Prince last appeared in a game for Detroit on Nov. 14 and is now set to miss an extended period as he recovers from knee surgery. However, the veteran forward's absence shouldn't significantly impact Detroit's rotation.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3157465",
+      "name": "Duncan Robinson",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "F",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-23T22:10Z",
-      "return_date": "2026-11-30",
-      "short_comment": "Okorie (oblique) won't play Tuesday in Orlando.",
-      "long_comment": "Okorie lacks a concrete timeline for a return due to an oblique injury. His ongoing absence carries little fantasy relevance moving forward.",
+      "date": "2026-11-24T18:30Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Robinson (quadriceps) is considered day-to-day as he progresses in his rehab, Eric Vincent of ClutchPoints.com reports.",
+      "long_comment": "Robinson will miss a fifth consecutive contest Tuesday due to a left quadriceps strain, though he can be considered questionable for Friday's game against Milwaukee until the Pistons provide an update on his status. Kevin Huerter will likely continue seeing increased playing time for as long as Robinson is sidelined.",
       "source": "ESPN"
     },
     {
@@ -341,10 +371,25 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-23T22:08Z",
+      "date": "2026-11-24T18:27Z",
       "return_date": "2026-11-30",
-      "short_comment": "Duren (hamstring) has been ruled out for Tuesday's game against the Magic.",
-      "long_comment": "Duren hasn't played since Oct. 23 due to a right hamstring strain, though he's expected to be re-evaluated soon. Until the Pistons offer an update on the 23-year-old big man's progress, he can be considered week-to-week. Paul Reed will likely continue seeing increased minutes for as long as Duren is sidelined.",
+      "short_comment": "Duren (hamstring) is being assigned to the Motor City Cruise on Wednesday for practice as he ramps up for a return, Eric Vincent of ClutchPoints.com reports.",
+      "long_comment": "With Duren still out for Detroit and now progressing to a G League practice assignment, this marks a tangible step forward in his recovery from the right hamstring strain that has kept him sidelined since Oct. 23. The Pistons haven't provided a return timeline, but his return appears to be drawing closer as he increases his activity.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "5258459",
+      "name": "Ebuka Okorie",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-23T22:10Z",
+      "return_date": "2026-12-13",
+      "short_comment": "Okorie (oblique) won't play Tuesday in Orlando.",
+      "long_comment": "Okorie lacks a concrete timeline for a return due to an oblique injury. His ongoing absence carries little fantasy relevance moving forward.",
       "source": "ESPN"
     },
     {
@@ -360,36 +405,6 @@
       "return_date": "2026-11-24",
       "short_comment": "Cunningham (knee) is probable for Tuesday's game against the Orlando.",
       "long_comment": "The superstar point guard has been managing lingering knee soreness as of late, but he's expected to fight through the issue Tuesday. Since the start of November,  Cunningham has averaged 25.6 points, 9.1 assists, 4.8 rebounds and 1.6 steals per contest covering nine appearances.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2990962",
-      "name": "Taurean Prince",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-20T23:02Z",
-      "return_date": "2026-12-13",
-      "short_comment": "Prince (knee) underwent surgery to address lingering issues and has no timeline for a return, Hunter Patterson of The Athletic reports.",
-      "long_comment": "With Detroit still without a return timetable for Prince after right knee surgery, he appears set for an extended absence well beyond Friday's tilt against Toronto. Prince hasn't been a significant part of the Pistons' rotation this season, so his continued absence is unlikely to create a major fantasy ripple effect.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3157465",
-      "name": "Duncan Robinson",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-17T16:25Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Robinson will be re-evaluated in one week due to a left quadriceps strain, Coty M. Davis of The Detroit News reports.",
-      "long_comment": "Robinson has gotten off to a strong start this season, though he's now expected to miss at least the next week after appearing in each of Detroit's first 12 regular-season games. The sharpshooter is averaging 17.4 points in 30.5 minutes per contest, and his absence will open up additional minutes for Kevin Huerter and Javonte Green.",
       "source": "ESPN"
     },
     {
