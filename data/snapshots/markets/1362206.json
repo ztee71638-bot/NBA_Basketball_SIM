@@ -1100,7 +1100,97 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956407\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Warriors\\\"]\",\"question\":\"Kings vs. Warriors\"},{\"market_id\":\"7325506\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.68\\\", \\\"0.32\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 222.5\"},{\"market_id\":\"7325519\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 220.5\"},{\"market_id\":\"7325541\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.715\\\", \\\"0.285\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 218.5\"},{\"market_id\":\"7325552\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 226.5\"},{\"market_id\":\"7325563\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.735\\\", \\\"0.265\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 216.5\"},{\"market_id\":\"7325580\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.755\\\", \\\"0.245\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 214.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T22:52:55.187614+00:00",
+      "markets": [
+        {
+          "market_id": "6956407",
+          "market_type": "moneyline",
+          "question": "Kings vs. Warriors",
+          "slug": "nba-sac-gsw-2026-11-25",
+          "outcomes": "[\"Kings\", \"Warriors\"]",
+          "outcome_prices": "[\"0.305\", \"0.695\"]",
+          "volume_24h": 2184.357366,
+          "liquidity": "28087.0245",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        },
+        {
+          "market_id": "7325506",
+          "market_type": "total",
+          "question": "Kings vs. Warriors: O/U 222.5",
+          "slug": "nba-sac-gsw-2026-11-25-total-222pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.42\", \"0.58\"]",
+          "volume_24h": 1107.03,
+          "liquidity": "3081.8575",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        },
+        {
+          "market_id": "7325519",
+          "market_type": "total",
+          "question": "Kings vs. Warriors: O/U 220.5",
+          "slug": "nba-sac-gsw-2026-11-25-total-220pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.69\", \"0.31\"]",
+          "volume_24h": 1191.84,
+          "liquidity": "691.82",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        },
+        {
+          "market_id": "7325541",
+          "market_type": "total",
+          "question": "Kings vs. Warriors: O/U 218.5",
+          "slug": "nba-sac-gsw-2026-11-25-total-218pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.715\", \"0.285\"]",
+          "volume_24h": 1292.11,
+          "liquidity": "764.8684",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        },
+        {
+          "market_id": "7325552",
+          "market_type": "total",
+          "question": "Kings vs. Warriors: O/U 226.5",
+          "slug": "nba-sac-gsw-2026-11-25-total-226pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.69\", \"0.31\"]",
+          "volume_24h": 10,
+          "liquidity": "166.7918",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        },
+        {
+          "market_id": "7325563",
+          "market_type": "total",
+          "question": "Kings vs. Warriors: O/U 216.5",
+          "slug": "nba-sac-gsw-2026-11-25-total-216pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.735\", \"0.265\"]",
+          "volume_24h": 1442.06,
+          "liquidity": "765.1477",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        },
+        {
+          "market_id": "7325580",
+          "market_type": "total",
+          "question": "Kings vs. Warriors: O/U 214.5",
+          "slug": "nba-sac-gsw-2026-11-25-total-214pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.76\", \"0.24\"]",
+          "volume_24h": 1589.96,
+          "liquidity": "809.4644",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sac-gsw-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956407\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Kings\\\", \\\"Warriors\\\"]\",\"question\":\"Kings vs. Warriors\"},{\"market_id\":\"7325506\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.42\\\", \\\"0.58\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 222.5\"},{\"market_id\":\"7325519\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 220.5\"},{\"market_id\":\"7325541\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.715\\\", \\\"0.285\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 218.5\"},{\"market_id\":\"7325552\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 226.5\"},{\"market_id\":\"7325563\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.735\\\", \\\"0.265\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 216.5\"},{\"market_id\":\"7325580\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.76\\\", \\\"0.24\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Kings vs. Warriors: O/U 214.5\"}]"
     }
   ],
-  "last_updated": "2026-11-24T21:52:15.551733+00:00"
+  "last_updated": "2026-11-24T22:52:55.187614+00:00"
 }
