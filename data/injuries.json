@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T02:54:19.592669+00:00",
+  "last_updated": "2026-11-24T03:54:05.598377+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1035,6 +1035,21 @@
       "return_date": "2027-10-01",
       "short_comment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
       "long_comment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4278585",
+      "name": "Collin Gillespie",
+      "team": "PHX",
+      "team_name": "Phoenix Suns",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Not Specified",
+      "date": "2026-11-24T02:48Z",
+      "return_date": "2026-11-23",
+      "short_comment": "Gillespie went to the locker room during the third quarter of Monday's game against the Pelicans due to an undisclosed injury, Duane Rankin of The Arizona Republic reports.",
+      "long_comment": "Gillespie was shaken up following a collision under the basket, and he headed right to the locker room to be evaluated further. Luke Kennard could see more time in the second half if Gillespie is unable to return.",
       "source": "ESPN"
     },
     {
