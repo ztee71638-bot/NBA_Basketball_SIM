@@ -524,7 +524,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956408\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.595\\\", \\\"0.405\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Spurs vs. Trail Blazers\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T10:52:28.974875+00:00",
+      "markets": [
+        {
+          "market_id": "6956408",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Trail Blazers",
+          "slug": "nba-sas-por-2026-11-25",
+          "outcomes": "[\"Spurs\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.615\", \"0.385\"]",
+          "volume_24h": 2009.378036,
+          "liquidity": "30009.4216",
+          "end_date": "2026-11-26T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-por-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956408\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.615\\\", \\\"0.385\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Spurs vs. Trail Blazers\"}]"
     }
   ],
-  "last_updated": "2026-11-24T08:39:36.189284+00:00"
+  "last_updated": "2026-11-24T10:52:28.974875+00:00"
 }
