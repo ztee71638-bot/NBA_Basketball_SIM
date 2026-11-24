@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T01:59:22.925797+00:00",
+  "last_updated": "2026-11-24T02:54:19.592669+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -105,6 +105,21 @@
       "return_date": "2027-01-27",
       "short_comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports.",
       "long_comment": "Traore had a productive start to his second year in the NBA, though he's now set to miss an extended period after sustaining a hamstring injury in Friday's loss to Orlando. With the 20-year-old point guard sidelined, Egor Demin, Mikel Brown and Keon Ellis are candidates for increased playing time.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4576060",
+      "name": "Ryan Kalkbrenner",
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-24T02:14Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Kalkbrenner has been ruled out for the rest of Monday's game against Memphis due to left hip soreness. He'll end with two rebounds in nine minutes.",
+      "long_comment": "Hannes Steinbach could see additional opportunities as the backup center with Kalkbrenner shut down for the rest of the night. The Creighton product can be considered day-to-day moving forward.",
       "source": "ESPN"
     },
     {
@@ -450,6 +465,21 @@
       "return_date": "2027-01-02",
       "short_comment": "Butler (knee) could return sometime between January and February as he continues recovering from a torn right ACL, Anthony Slater of ESPN reports.",
       "long_comment": "Butler, who underwent surgery after suffering the injury Jan. 19, has progressed to individual court work but still has several rehabilitation milestones to clear. His next step involves landing comfortably after a game-speed jump. Coach Steve Kerr is hopeful Butler can rejoin Golden State for the latter portion of the season, though no official return date has been announced. The 37-year-old forward remains a significant part of the Warriors' plans and could provide a substantial boost during the second half of the campaign.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "2580365",
+      "name": "Larry Nance Jr.",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-24T02:00Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Nance exited Monday's game against the Thunder due to a sore right ankle and he will not return, Tony East of Forbes.com reports.",
+      "long_comment": "Nance will have three full days to rest his sore ankle before the Pacers' next game, although with Friday's matchup with the 76ers being the first of a back-to-back set, Nance may need to miss that one as well. Obi Toppin figures to pick up most of Nance's minutes while he's sidelined.",
       "source": "ESPN"
     },
     {
