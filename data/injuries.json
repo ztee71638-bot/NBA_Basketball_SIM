@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T16:46:41.287794+00:00",
+  "last_updated": "2026-11-24T17:48:25.558910+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -678,6 +678,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3934673",
+      "name": "Donte DiVincenzo",
+      "team": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-24T17:10Z",
+      "return_date": "2027-01-03",
+      "short_comment": "DiVincenzo (Achilles) has been cleared for team basketball activities and is targeting a return to game action in January, Jon Krawczynski of The Athletic reports.",
+      "long_comment": "DiVincenzo suffered a ruptured right Achilles in late April but is seemingly ahead of schedule in his recovery. With the veteran guard and Anthony Edwards (knee) both sidelined, Bones Hyland and Terrence Shannon figure to continue seeing increased playing time.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4432247",
       "name": "Jaylen Clark",
       "team": "MIN",
@@ -705,21 +720,6 @@
       "return_date": "2026-12-21",
       "short_comment": "Edwards underwent a successful arthroscopic procedure on his right knee Thursday, the Timberwolves announced.",
       "long_comment": "Edwards underwent debridement surgery in Minnesota, though the team did not provide a timetable for his return. The star guard is expected to make a full recovery, with additional updates coming as he progresses through rehabilitation. Based on previous reporting from ESPN's Shams Charania, Edwards could miss up to two months. Edwards was off to a scorching start this season, averaging 33.3 points, 4.8 rebounds, 3.5 assists and 2.0 steals across four appearances.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3934673",
-      "name": "Donte DiVincenzo",
-      "team": "MIN",
-      "team_name": "Minnesota Timberwolves",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-10-05T20:53Z",
-      "return_date": "2027-04-02",
-      "short_comment": "DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
-      "long_comment": "DiVincenzo is approaching six months since tearing his right Achilles during the first round of the playoffs and has been rehabbing with the expectation that he'll play at some point this season. The veteran guard has sought advice from Jayson Tatum, Tyrese Haliburton and Damian Lillard during his recovery, though Minnesota has yet to establish a timetable for his return.",
       "source": "ESPN"
     },
     {
@@ -1305,6 +1305,21 @@
       "return_date": "2026-12-14",
       "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
       "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4432819",
+      "name": "Tre Mann",
+      "team": "WSH",
+      "team_name": "Washington Wizards",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-24T16:47Z",
+      "return_date": "2026-11-24",
+      "short_comment": "Mann (illness) has been downgraded to questionable for Tuesday's game against Boston.",
+      "long_comment": "Mann is under the weather and was a late addition to the injury report. However, his potential absence wouldn't cause any significant waves in Washington's rotation.",
       "source": "ESPN"
     },
     {
