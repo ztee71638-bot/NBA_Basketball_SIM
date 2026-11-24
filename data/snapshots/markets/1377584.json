@@ -542,7 +542,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008998\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Clippers\\\"]\",\"question\":\"Pelicans vs. Clippers\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T13:05:40.145690+00:00",
+      "markets": [
+        {
+          "market_id": "7008998",
+          "market_type": "moneyline",
+          "question": "Pelicans vs. Clippers",
+          "slug": "nba-nop-lac-2026-11-27",
+          "outcomes": "[\"Pelicans\", \"Clippers\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 54.883497,
+          "liquidity": "22503.7878",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-nop-lac-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008998\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Clippers\\\"]\",\"question\":\"Pelicans vs. Clippers\"}]"
     }
   ],
-  "last_updated": "2026-11-24T11:53:07.928166+00:00"
+  "last_updated": "2026-11-24T13:05:40.145690+00:00"
 }
