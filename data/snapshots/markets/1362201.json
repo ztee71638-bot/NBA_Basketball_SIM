@@ -6404,7 +6404,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956402\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.335\\\", \\\"0.665\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Knicks\\\"]\",\"question\":\"Cavaliers vs. Knicks\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T15:36:27.233972+00:00",
+      "markets": [
+        {
+          "market_id": "6956402",
+          "market_type": "moneyline",
+          "question": "Cavaliers vs. Knicks",
+          "slug": "nba-cle-nyk-2026-11-25",
+          "outcomes": "[\"Cavaliers\", \"Knicks\"]",
+          "outcome_prices": "[\"0.325\", \"0.675\"]",
+          "volume_24h": 2063.939617,
+          "liquidity": "26301.1289",
+          "end_date": "2026-11-26T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-cle-nyk-2026-11-25"
+        },
+        {
+          "market_id": "7303422",
+          "market_type": "total",
+          "question": "Cavaliers vs. Knicks: O/U 220.5",
+          "slug": "nba-cle-nyk-2026-11-25-total-220pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": 3.584906,
+          "liquidity": "10850.6672",
+          "end_date": "2026-11-26T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-cle-nyk-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956402\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.325\\\", \\\"0.675\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Knicks\\\"]\",\"question\":\"Cavaliers vs. Knicks\"},{\"market_id\":\"7303422\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Cavaliers vs. Knicks: O/U 220.5\"}]"
     }
   ],
-  "last_updated": "2026-11-24T14:28:40.844966+00:00"
+  "last_updated": "2026-11-24T15:36:27.233972+00:00"
 }
