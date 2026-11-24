@@ -92,7 +92,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008994\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.35\\\", \\\"0.65\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Grizzlies vs. Timberwolves\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T01:59:22.927257+00:00",
+      "markets": [
+        {
+          "market_id": "7008994",
+          "market_type": "moneyline",
+          "question": "Grizzlies vs. Timberwolves",
+          "slug": "nba-mem-min-2026-11-27",
+          "outcomes": "[\"Grizzlies\", \"Timberwolves\"]",
+          "outcome_prices": "[\"0.335\", \"0.665\"]",
+          "volume_24h": null,
+          "liquidity": "16457.4906",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008994\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.335\\\", \\\"0.665\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Grizzlies vs. Timberwolves\"}]"
     }
   ],
-  "last_updated": "2026-11-23T02:11:21.826246+00:00"
+  "last_updated": "2026-11-24T01:59:22.927257+00:00"
 }

@@ -56,7 +56,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7166210\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.63\\\", \\\"0.37\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Cavaliers vs. Bulls\"}]"
+    },
+    {
+      "captured_at": "2026-11-24T01:59:22.927257+00:00",
+      "markets": [
+        {
+          "market_id": "7166210",
+          "market_type": "moneyline",
+          "question": "Cavaliers vs. Bulls",
+          "slug": "nba-cle-chi-2026-12-03",
+          "outcomes": "[\"Cavaliers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.65\", \"0.35\"]",
+          "volume_24h": null,
+          "liquidity": "1262.336",
+          "end_date": "2026-12-04T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-cle-chi-2026-12-03"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7166210\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.65\\\", \\\"0.35\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Bulls\\\"]\",\"question\":\"Cavaliers vs. Bulls\"}]"
     }
   ],
-  "last_updated": "2026-11-23T03:10:42.664590+00:00"
+  "last_updated": "2026-11-24T01:59:22.927257+00:00"
 }
