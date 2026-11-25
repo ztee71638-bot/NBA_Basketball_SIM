@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T21:52:36.929636+00:00",
+  "last_updated": "2026-11-25T22:49:41.932143+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -7,9 +7,71 @@
       "date": "2026-11-25T22:00Z",
       "home_team": "PHI",
       "away_team": "MIA",
-      "home_starters": [],
-      "away_starters": [],
-      "status": "not_available",
+      "home_starters": [
+        {
+          "id": "1966",
+          "name": "LeBron James",
+          "position": "F",
+          "starter": true
+        },
+        {
+          "id": "4432446",
+          "name": "Jabari Walker",
+          "position": "F",
+          "starter": true
+        },
+        {
+          "id": "3917376",
+          "name": "Jaylen Brown",
+          "position": "G",
+          "starter": true
+        },
+        {
+          "id": "4431678",
+          "name": "Tyrese Maxey",
+          "position": "G",
+          "starter": true
+        },
+        {
+          "id": "5124612",
+          "name": "VJ Edgecombe",
+          "position": "G",
+          "starter": true
+        }
+      ],
+      "away_starters": [
+        {
+          "id": "3032977",
+          "name": "Giannis Antetokounmpo",
+          "position": "F",
+          "starter": true
+        },
+        {
+          "id": "4066261",
+          "name": "Bam Adebayo",
+          "position": "C",
+          "starter": true
+        },
+        {
+          "id": "6475",
+          "name": "Klay Thompson",
+          "position": "G",
+          "starter": true
+        },
+        {
+          "id": "4278053",
+          "name": "Davion Mitchell",
+          "position": "G",
+          "starter": true
+        },
+        {
+          "id": "4601025",
+          "name": "Pelle Larsson",
+          "position": "G",
+          "starter": true
+        }
+      ],
+      "status": "confirmed",
       "source": "ESPN game summary; starters explicitly flagged"
     },
     {

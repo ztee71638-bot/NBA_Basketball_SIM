@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T21:52:36.912384+00:00",
+  "last_updated": "2026-11-25T22:49:41.912521+00:00",
   "source": "ESPN public scoreboard",
   "games": [
     {
@@ -7,21 +7,21 @@
       "date": "2026-11-25T22:00Z",
       "name": "Miami Heat at Philadelphia 76ers",
       "short_name": "MIA @ PHI",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/25 - 5:00 PM EST",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "7:31 - 2nd",
       "completed": false,
       "home": {
         "id": "20",
         "name": "Philadelphia 76ers",
         "abbreviation": "PHI",
-        "score": "0",
+        "score": "45",
         "winner": null
       },
       "away": {
         "id": "14",
         "name": "Miami Heat",
         "abbreviation": "MIA",
-        "score": "0",
+        "score": "39",
         "winner": null
       },
       "venue": "Xfinity Mobile Arena",

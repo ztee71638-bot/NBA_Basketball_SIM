@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T21:52:36.928615+00:00",
+  "last_updated": "2026-11-25T22:49:41.930921+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -153,21 +153,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4602025",
-      "name": "Sion James",
-      "team": "CHA",
-      "team_name": "Charlotte Hornets",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-24T22:30Z",
-      "return_date": "2026-11-25",
-      "short_comment": "James is probable for Wednesday's game against the Bulls due to general soreness.",
-      "long_comment": "James is experiencing some soreness on the left side of his body, but he's expected to power through it Wednesday. James is averaging 5.8 points, 3.8 rebounds, 3.1 assists and 1.1 triples per game this season.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "5061575",
       "name": "Kon Knueppel",
       "team": "CHA",
@@ -188,13 +173,13 @@
       "team": "CHI",
       "team_name": "Chicago Bulls",
       "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-24T18:21Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Smith (illness) is listed as questionable for Wednesday's game against the Hornets.",
-      "long_comment": "Smith has been a regular on the injury report recently due to a gastrointestinal illness, though he played in Chicago's last two outings, averaging 18.5 points, 5.0 rebounds, 2.5 assists and 2.0 combined steals-plus-blocks in 29.5 minutes per contest over that brief stretch. If the big man is unable to play Wednesday, Nic Claxton would likely enter the first unit.",
+      "date": "2026-11-25T22:07Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Smith (illness) is listed as out for Wednesday's game against Charlotte.",
+      "long_comment": "Smith is dealing with a gastrointestinal illness, so he won't suit up Wednesday versus the Hornets. Without him, Nic Claxton will presumably enter the starting lineup. Zach Collins might also be more involved.",
       "source": "ESPN"
     },
     {
@@ -1143,6 +1128,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3064440",
+      "name": "Zach LaVine",
+      "team": "SAC",
+      "team_name": "Sacramento Kings",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-25T22:40Z",
+      "return_date": "2026-11-29",
+      "short_comment": "LaVine (knee) is listed as out for Wednesday's game versus the Warriors.",
+      "long_comment": "LaVine will miss his second game of the 2026-27 campaign. His next opportunity to play will come Sunday against the Timberwolves. In the meantime, Leaky Black, Emanuel Sharp and Malik Monk are candidates for more minutes, with one of those players expected to move into the starting lineup.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4898371",
       "name": "Maxime Raynaud",
       "team": "SAC",
@@ -1155,21 +1155,6 @@
       "return_date": "2026-12-02",
       "short_comment": "Raynaud (knee) was recalled from the G League's Stockton Kings on Wednesday, Marc J. Spears of ESPN.com reports.",
       "long_comment": "Raynaud presumably joined the G League Kings for practice Wednesday. He's recovering from a right patellar subluxation and remains without a timetable to return, and while it's encouraging that he's getting reps with Stockton, the big man can be considered week-to-week until the Kings offer another update on his status.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3064440",
-      "name": "Zach LaVine",
-      "team": "SAC",
-      "team_name": "Sacramento Kings",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-25T20:49Z",
-      "return_date": "2026-11-25",
-      "short_comment": "LaVine (knee) has been downgraded to questionable for Wednesday's game against Golden State.",
-      "long_comment": "LaVine was a late addition to the injury report due to right knee soreness. If the veteran swingman is unable to suit up, Emanuel Sharp, Malik Monk and Gabe Vincent would all be candidates for increased playing time.",
       "source": "ESPN"
     },
     {
