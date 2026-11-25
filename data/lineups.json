@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T15:33:34.949358+00:00",
+  "last_updated": "2026-11-25T16:46:14.881539+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -7,6 +7,36 @@
       "date": "2026-11-25T22:00Z",
       "home_team": "PHI",
       "away_team": "MIA",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909318",
+      "date": "2026-11-26T00:00Z",
+      "home_team": "CHA",
+      "away_team": "CHI",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909319",
+      "date": "2026-11-26T00:30Z",
+      "home_team": "NYK",
+      "away_team": "CLE",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909320",
+      "date": "2026-11-26T00:30Z",
+      "home_team": "OKC",
+      "away_team": "MIN",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",

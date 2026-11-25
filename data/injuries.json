@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T15:33:34.948399+00:00",
+  "last_updated": "2026-11-25T16:46:14.880579+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -738,6 +738,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4683742",
+      "name": "Julian Reese",
+      "team": "NO",
+      "team_name": "New Orleans Pelicans",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-25T16:11Z",
+      "return_date": "2026-11-25",
+      "short_comment": "The Pelicans transferred Reese from the G League's Laketown Squadron, and he will be available for New Orleans' game against the Warriors on Monday.",
+      "long_comment": "Reese dropped a 15-point, 15-rebound double-double in the Squadron's win over the Mexico City Capitanes on Saturday and will return to the parent club ahead of its game Monday. Through five regular-season appearances at the NBA level this season, the big man is averaging 1.2 points and 1.0 rebounds in 5.4 minutes per tilt.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4431675",
       "name": "Trendon Watford",
       "team": "NO",
@@ -1136,10 +1151,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-25T04:21Z",
+      "date": "2026-11-25T16:25Z",
       "return_date": "2026-12-02",
-      "short_comment": "Raynaud (knee) is out for Wednesday's game against the Warriors.",
-      "long_comment": "The Kings have not provided any updates on Raynaud, and he continues to get ruled out 24 hours in advance of tipoff, suggesting he's still not close. Raynaud should be considered week-to-week.",
+      "short_comment": "Raynaud (knee) was assigned to the G League's Stockton Kings on Wednesday, James Ham of ESPN 1320 Sacramento reports.",
+      "long_comment": "Raynaud is presumably joining the G League Kings for practice, which is an encouraging sign in his recovery from a right patellar subluxation. Until the big man is cleared to return, Dylan Cardwell and Precious Achiuwa are candidates for more minutes.",
       "source": "ESPN"
     },
     {
