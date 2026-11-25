@@ -124,7 +124,127 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-25T20:50:02.022738+00:00",
+      "minutes_to_tipoff": 70.0,
+      "injuries": [
+        {
+          "athlete_id": "3032977",
+          "name": "Giannis Antetokounmpo",
+          "team": "MIA",
+          "team_name": "Miami Heat",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": null,
+          "date": "2026-11-25T20:20Z",
+          "return_date": "2026-11-25",
+          "short_comment": "Antetokounmpo (groin) has been upgraded to probable for Wednesday's game against the 76ers.",
+          "long_comment": "Antetokounmpo is trending toward returning from a one-game absence due to a right groin injury. The superstar's return would likely force Bobby Portis back to the bench. Over his last five appearances, Antetokounmpo has averaged 29.6 points, 12.2 rebounds, 5.8 assists and 2.2 combined steals-plus-blocks in 30.8 minutes per tilt.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3059318",
+          "name": "Joel Embiid",
+          "team": "PHI",
+          "team_name": "Philadelphia 76ers",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": null,
+          "date": "2026-11-25T20:07Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Embiid (illness) is out for Wednesday's game against Miami, Ira Winderman of the South Florida Sun Sentinel reports.",
+          "long_comment": "With Embiid set to miss a second straight game due to illness after previously being listed as doubtful, Philadelphia will again need to cover his vacated minutes at center. His absence removes one of the 76ers' top offensive options and should leave added frontcourt work available to the likes of Jabari Walker, Dominick Barlow and Adem Bona.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4871141",
+          "name": "Ariel Hukporti",
+          "team": "PHI",
+          "team_name": "Philadelphia 76ers",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-06T19:17Z",
+          "return_date": "2027-10-01",
+          "short_comment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+          "long_comment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909317",
+        "date": "2026-11-25T22:00Z",
+        "home_team": "PHI",
+        "away_team": "MIA",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "3032977",
+            "name": "Giannis Antetokounmpo",
+            "team": "MIA",
+            "team_name": "Miami Heat",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": null,
+            "date": "2026-11-25T20:20Z",
+            "return_date": "2026-11-25",
+            "short_comment": "Antetokounmpo (groin) has been upgraded to probable for Wednesday's game against the 76ers.",
+            "long_comment": "Antetokounmpo is trending toward returning from a one-game absence due to a right groin injury. The superstar's return would likely force Bobby Portis back to the bench. Over his last five appearances, Antetokounmpo has averaged 29.6 points, 12.2 rebounds, 5.8 assists and 2.2 combined steals-plus-blocks in 30.8 minutes per tilt.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3059318",
+            "name": "Joel Embiid",
+            "team": "PHI",
+            "team_name": "Philadelphia 76ers",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": null,
+            "date": "2026-11-25T20:07Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Embiid (illness) is out for Wednesday's game against Miami, Ira Winderman of the South Florida Sun Sentinel reports.",
+            "long_comment": "With Embiid set to miss a second straight game due to illness after previously being listed as doubtful, Philadelphia will again need to cover his vacated minutes at center. His absence removes one of the 76ers' top offensive options and should leave added frontcourt work available to the likes of Jabari Walker, Dominick Barlow and Adem Bona.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4871141",
+            "name": "Ariel Hukporti",
+            "team": "PHI",
+            "team_name": "Philadelphia 76ers",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-06T19:17Z",
+            "return_date": "2027-10-01",
+            "short_comment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+            "long_comment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909317",
+          "date": "2026-11-25T22:00Z",
+          "home_team": "PHI",
+          "away_team": "MIA",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-25T14:18:46.691274+00:00"
+  "last_updated": "2026-11-25T20:50:02.022738+00:00"
 }
