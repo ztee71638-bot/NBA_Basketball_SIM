@@ -8582,7 +8582,265 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956406\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Suns vs. Rockets\"},{\"market_id\":\"7303964\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-10.5)\"},{\"market_id\":\"7303967\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-9.5)\"},{\"market_id\":\"7303971\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.41\\\", \\\"0.59\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-11.5)\"},{\"market_id\":\"7303975\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-8.5)\"},{\"market_id\":\"7303999\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.625\\\", \\\"0.375\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-5.5)\"},{\"market_id\":\"7304031\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.165\\\", \\\"0.835\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-22.5)\"},{\"market_id\":\"7304051\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Spread: Suns (-7.5)\"},{\"market_id\":\"7304055\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.07\\\", \\\"0.93\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-28.5)\"},{\"market_id\":\"7304063\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-30.5)\"},{\"market_id\":\"7303965\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 223.5\"},{\"market_id\":\"7303969\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 221.5\"},{\"market_id\":\"7303973\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 225.5\"},{\"market_id\":\"7303977\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.6\\\", \\\"0.4\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 219.5\"},{\"market_id\":\"7303985\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.64\\\", \\\"0.36\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 217.5\"},{\"market_id\":\"7303989\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.38\\\", \\\"0.62\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 229.5\"},{\"market_id\":\"7303993\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.685\\\", \\\"0.315\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 215.5\"},{\"market_id\":\"7303997\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.35\\\", \\\"0.65\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 231.5\"},{\"market_id\":\"7304029\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.19\\\", \\\"0.81\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 239.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-25T06:42:26.295732+00:00",
+      "markets": [
+        {
+          "market_id": "6956406",
+          "market_type": "moneyline",
+          "question": "Suns vs. Rockets",
+          "slug": "nba-phx-hou-2026-11-25",
+          "outcomes": "[\"Suns\", \"Rockets\"]",
+          "outcome_prices": "[\"0.225\", \"0.775\"]",
+          "volume_24h": 4407.1165980000005,
+          "liquidity": "72873.8199",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303964",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-10.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-10pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": 33.457676,
+          "liquidity": "33869.9878",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303967",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-9.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-9pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 7779.643996999999,
+          "liquidity": "42856.956",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303971",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-11.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-11pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.415\", \"0.585\"]",
+          "volume_24h": 119.135592,
+          "liquidity": "34187.8702",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303975",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-8.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-8pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 146.06383200000002,
+          "liquidity": "37345.8748",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303983",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-7.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-7pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.56\", \"0.44\"]",
+          "volume_24h": 39,
+          "liquidity": "38866.736",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303999",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-5.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-5pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.625\", \"0.375\"]",
+          "volume_24h": 15.789474,
+          "liquidity": "25368.113",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304027",
+          "market_type": "spread",
+          "question": "Spread: Suns (-1.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-away-1pt5",
+          "outcomes": "[\"Suns\", \"Rockets\"]",
+          "outcome_prices": "[\"0.205\", \"0.795\"]",
+          "volume_24h": 116.6,
+          "liquidity": "15824.69",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304031",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-22.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-22pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.17\", \"0.83\"]",
+          "volume_24h": 9.999511,
+          "liquidity": "17132.1482",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304051",
+          "market_type": "spread",
+          "question": "Spread: Suns (-7.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-away-7pt5",
+          "outcomes": "[\"Suns\", \"Rockets\"]",
+          "outcome_prices": "[\"0.105\", \"0.895\"]",
+          "volume_24h": 21.505371,
+          "liquidity": "16246.8324",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304055",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-28.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-28pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.075\", \"0.925\"]",
+          "volume_24h": 595,
+          "liquidity": "16456.0733",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304063",
+          "market_type": "spread",
+          "question": "Spread: Rockets (-30.5)",
+          "slug": "nba-phx-hou-2026-11-25-spread-home-30pt5",
+          "outcomes": "[\"Rockets\", \"Suns\"]",
+          "outcome_prices": "[\"0.06\", \"0.94\"]",
+          "volume_24h": 676,
+          "liquidity": "15132.6832",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303965",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 223.5",
+          "slug": "nba-phx-hou-2026-11-25-total-223pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 2441.526972,
+          "liquidity": "40917.2632",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303969",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 221.5",
+          "slug": "nba-phx-hou-2026-11-25-total-221pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.565\", \"0.435\"]",
+          "volume_24h": 91.52,
+          "liquidity": "34113.0201",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303973",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 225.5",
+          "slug": "nba-phx-hou-2026-11-25-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 416.253691,
+          "liquidity": "38448.6934",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303977",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 219.5",
+          "slug": "nba-phx-hou-2026-11-25-total-219pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.605\", \"0.395\"]",
+          "volume_24h": 85.47,
+          "liquidity": "26176.4189",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303985",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 217.5",
+          "slug": "nba-phx-hou-2026-11-25-total-217pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.655\", \"0.345\"]",
+          "volume_24h": 5,
+          "liquidity": "26134.971",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303989",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 229.5",
+          "slug": "nba-phx-hou-2026-11-25-total-229pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.38\", \"0.62\"]",
+          "volume_24h": 732.36,
+          "liquidity": "24294.4454",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303993",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 215.5",
+          "slug": "nba-phx-hou-2026-11-25-total-215pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.69\", \"0.31\"]",
+          "volume_24h": 51.2,
+          "liquidity": "22719.3328",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7303997",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 231.5",
+          "slug": "nba-phx-hou-2026-11-25-total-231pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.35\", \"0.65\"]",
+          "volume_24h": 5,
+          "liquidity": "24929.543",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        },
+        {
+          "market_id": "7304029",
+          "market_type": "total",
+          "question": "Suns vs. Rockets: O/U 239.5",
+          "slug": "nba-phx-hou-2026-11-25-total-239pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.185\", \"0.815\"]",
+          "volume_24h": 10.238095999999999,
+          "liquidity": "22320.1637",
+          "end_date": "2026-11-26T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956406\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Suns vs. Rockets\"},{\"market_id\":\"7303964\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-10.5)\"},{\"market_id\":\"7303967\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-9.5)\"},{\"market_id\":\"7303971\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-11.5)\"},{\"market_id\":\"7303975\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-8.5)\"},{\"market_id\":\"7303983\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.56\\\", \\\"0.44\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-7.5)\"},{\"market_id\":\"7303999\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.625\\\", \\\"0.375\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-5.5)\"},{\"market_id\":\"7304027\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Spread: Suns (-1.5)\"},{\"market_id\":\"7304031\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.17\\\", \\\"0.83\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-22.5)\"},{\"market_id\":\"7304051\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.105\\\", \\\"0.895\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Spread: Suns (-7.5)\"},{\"market_id\":\"7304055\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.075\\\", \\\"0.925\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-28.5)\"},{\"market_id\":\"7304063\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.06\\\", \\\"0.94\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Rockets (-30.5)\"},{\"market_id\":\"7303965\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 223.5\"},{\"market_id\":\"7303969\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 221.5\"},{\"market_id\":\"7303973\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 225.5\"},{\"market_id\":\"7303977\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 219.5\"},{\"market_id\":\"7303985\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.655\\\", \\\"0.345\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 217.5\"},{\"market_id\":\"7303989\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.38\\\", \\\"0.62\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 229.5\"},{\"market_id\":\"7303993\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 215.5\"},{\"market_id\":\"7303997\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.35\\\", \\\"0.65\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 231.5\"},{\"market_id\":\"7304029\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.185\\\", \\\"0.815\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Suns vs. Rockets: O/U 239.5\"}]"
     }
   ],
-  "last_updated": "2026-11-25T05:32:38.970126+00:00"
+  "last_updated": "2026-11-25T06:42:26.295732+00:00"
 }
