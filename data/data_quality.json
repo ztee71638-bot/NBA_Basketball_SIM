@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25T18:45:50.277278+00:00",
+  "generated_at": "2026-11-25T19:51:40.739740+00:00",
   "status": "warning",
   "team_history": {
     "last_updated": "2026-11-25T10:50:07.245326+00:00",
-    "age_hours": 7.93,
+    "age_hours": 9.03,
     "team_count": 30,
     "seasons": {
       "2023": {
@@ -86,7 +86,7 @@
       2023
     ],
     "last_updated": "2026-11-25T10:30:08.596230+00:00",
-    "age_hours": 8.26,
+    "age_hours": 9.36,
     "players_without_any_logs": 8,
     "players_without_logs_sample": [
       {
@@ -196,14 +196,14 @@
   },
   "availability_history": {
     "status": "collecting",
-    "game_files": 33,
-    "games_with_snapshots": 33,
-    "snapshot_count": 81,
-    "injury_player_observations": 603,
+    "game_files": 35,
+    "games_with_snapshots": 35,
+    "snapshot_count": 83,
+    "injury_player_observations": 620,
     "confirmed_lineup_snapshots": 0,
     "confirmed_lineup_snapshot_rate_pct": 0.0,
     "first_captured_at": "2026-11-21T15:02:11.487839+00:00",
-    "last_captured_at": "2026-11-25T18:45:49.670128+00:00",
+    "last_captured_at": "2026-11-25T19:51:40.004407+00:00",
     "latest_snapshot_age_hours": 0.0,
     "unreadable_snapshot_records": 0
   },
