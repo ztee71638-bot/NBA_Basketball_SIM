@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24T10:46:14.428013+00:00",
-  "prediction_count": 5786,
+  "generated_at": "2026-11-25T10:50:51.080325+00:00",
+  "prediction_count": 5789,
   "method": "chronological walk-forward; pregame inputs only",
   "predictions": [
     {
@@ -196724,6 +196724,108 @@
       "actual": {
         "home_score": 107.0,
         "away_score": 123.0,
+        "home_win": false
+      }
+    },
+    {
+      "game_id": "401909314",
+      "date": "2026-11-25T00:00Z",
+      "season": "2027",
+      "home_team": "ORL",
+      "away_team": "DET",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.021,
+        "league_points_sd": 12.692,
+        "home_prior_games": 385,
+        "away_prior_games": 385,
+        "home_recent10_points_for": 109.4,
+        "home_recent10_points_against": 110.6,
+        "away_recent10_points_for": 115.5,
+        "away_recent10_points_against": 112.6
+      },
+      "production_baseline": {
+        "home_score": 112.5,
+        "away_score": 111.55,
+        "home_win_probability": 0.523663
+      },
+      "experimental_model": {
+        "home_score": 111.53,
+        "away_score": 112.37,
+        "home_win_probability": 0.481005
+      },
+      "actual": {
+        "home_score": 86.0,
+        "away_score": 104.0,
+        "home_win": false
+      }
+    },
+    {
+      "game_id": "401909315",
+      "date": "2026-11-25T01:00Z",
+      "season": "2027",
+      "home_team": "WAS",
+      "away_team": "BOS",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.021,
+        "league_points_sd": 12.692,
+        "home_prior_games": 364,
+        "away_prior_games": 424,
+        "home_recent10_points_for": 111.5,
+        "home_recent10_points_against": 120.5,
+        "away_recent10_points_for": 108.6,
+        "away_recent10_points_against": 97.2
+      },
+      "production_baseline": {
+        "home_score": 105.85,
+        "away_score": 113.05,
+        "home_win_probability": 0.345157
+      },
+      "experimental_model": {
+        "home_score": 108.83,
+        "away_score": 113.31,
+        "home_win_probability": 0.412504
+      },
+      "actual": {
+        "home_score": 116.0,
+        "away_score": 131.0,
+        "home_win": false
+      }
+    },
+    {
+      "game_id": "401909316",
+      "date": "2026-11-25T03:00Z",
+      "season": "2027",
+      "home_team": "DEN",
+      "away_team": "DAL",
+      "model_version": "opponent-weighted-score-v1",
+      "baseline_version": "last10-ui-v1",
+      "pregame_inputs": {
+        "league_points_average": 114.021,
+        "league_points_sd": 12.692,
+        "home_prior_games": 420,
+        "away_prior_games": 387,
+        "home_recent10_points_for": 118.5,
+        "home_recent10_points_against": 115.2,
+        "away_recent10_points_for": 112.5,
+        "away_recent10_points_against": 112.6
+      },
+      "production_baseline": {
+        "home_score": 117.05,
+        "away_score": 112.35,
+        "home_win_probability": 0.604879
+      },
+      "experimental_model": {
+        "home_score": 118.87,
+        "away_score": 114.44,
+        "home_win_probability": 0.589017
+      },
+      "actual": {
+        "home_score": 101.0,
+        "away_score": 120.0,
         "home_win": false
       }
     }
