@@ -272,7 +272,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008992\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.25\\\", \\\"0.75\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Raptors\\\"]\",\"question\":\"Nets vs. Raptors\"}]"
+    },
+    {
+      "captured_at": "2026-11-25T10:42:07.085752+00:00",
+      "markets": [
+        {
+          "market_id": "7008992",
+          "market_type": "moneyline",
+          "question": "Nets vs. Raptors",
+          "slug": "nba-bkn-tor-2026-11-27",
+          "outcomes": "[\"Nets\", \"Raptors\"]",
+          "outcome_prices": "[\"0.225\", \"0.775\"]",
+          "volume_24h": 1455.286691,
+          "liquidity": "26329.2081",
+          "end_date": "2026-11-28T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-tor-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008992\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Raptors\\\"]\",\"question\":\"Nets vs. Raptors\"}]"
     }
   ],
-  "last_updated": "2026-11-25T09:38:00.301535+00:00"
+  "last_updated": "2026-11-25T10:42:07.085752+00:00"
 }
