@@ -572,7 +572,61 @@
         }
       ],
       "signature": "[{\"market_id\":\"6956405\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Bucks\\\"]\",\"question\":\"Nets vs. Bucks\"},{\"market_id\":\"7325566\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.19\\\", \\\"0.81\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Nets\\\"]\",\"question\":\"Spread: Bucks (-5.5)\"}]"
+    },
+    {
+      "captured_at": "2026-11-25T00:37:03.098009+00:00",
+      "markets": [
+        {
+          "market_id": "6956405",
+          "market_type": "moneyline",
+          "question": "Nets vs. Bucks",
+          "slug": "nba-bkn-mil-2026-11-25",
+          "outcomes": "[\"Nets\", \"Bucks\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 619.546513,
+          "liquidity": "34069.15",
+          "end_date": "2026-11-26T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-mil-2026-11-25"
+        },
+        {
+          "market_id": "7325566",
+          "market_type": "spread",
+          "question": "Spread: Bucks (-5.5)",
+          "slug": "nba-bkn-mil-2026-11-25-spread-home-5pt5",
+          "outcomes": "[\"Bucks\", \"Nets\"]",
+          "outcome_prices": "[\"0.18\", \"0.82\"]",
+          "volume_24h": 16.216217,
+          "liquidity": "4575.7671",
+          "end_date": "2026-11-26T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-mil-2026-11-25"
+        },
+        {
+          "market_id": "7329160",
+          "market_type": "total",
+          "question": "Nets vs. Bucks: O/U 232.5",
+          "slug": "nba-bkn-mil-2026-11-25-total-232pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.395\", \"0.605\"]",
+          "volume_24h": 1042.74,
+          "liquidity": "1285.6932",
+          "end_date": "2026-11-26T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-mil-2026-11-25"
+        },
+        {
+          "market_id": "7330264",
+          "market_type": "total",
+          "question": "Nets vs. Bucks: O/U 228.5",
+          "slug": "nba-bkn-mil-2026-11-25-total-228pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.385\", \"0.615\"]",
+          "volume_24h": 10.909091,
+          "liquidity": "1652.6255",
+          "end_date": "2026-11-26T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-mil-2026-11-25"
+        }
+      ],
+      "signature": "[{\"market_id\":\"6956405\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Bucks\\\"]\",\"question\":\"Nets vs. Bucks\"},{\"market_id\":\"7325566\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.18\\\", \\\"0.82\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Nets\\\"]\",\"question\":\"Spread: Bucks (-5.5)\"},{\"market_id\":\"7329160\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.395\\\", \\\"0.605\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Bucks: O/U 232.5\"},{\"market_id\":\"7330264\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Bucks: O/U 228.5\"}]"
     }
   ],
-  "last_updated": "2026-11-24T23:44:46.177095+00:00"
+  "last_updated": "2026-11-25T00:37:03.098009+00:00"
 }

@@ -1,36 +1,5 @@
 {
-  "last_updated": "2026-11-24T23:44:46.177006+00:00",
+  "last_updated": "2026-11-25T00:37:03.097955+00:00",
   "source": "ESPN game summaries",
-  "games": [
-    {
-      "game_id": "401909314",
-      "date": "2026-11-25T00:00Z",
-      "home_team": "ORL",
-      "away_team": "DET",
-      "home_starters": [],
-      "away_starters": [],
-      "status": "not_available",
-      "source": "ESPN game summary; starters explicitly flagged"
-    },
-    {
-      "game_id": "401909315",
-      "date": "2026-11-25T01:00Z",
-      "home_team": "WAS",
-      "away_team": "BOS",
-      "home_starters": [],
-      "away_starters": [],
-      "status": "not_available",
-      "source": "ESPN game summary; starters explicitly flagged"
-    },
-    {
-      "game_id": "401909316",
-      "date": "2026-11-25T03:00Z",
-      "home_team": "DEN",
-      "away_team": "DAL",
-      "home_starters": [],
-      "away_starters": [],
-      "status": "not_available",
-      "source": "ESPN game summary; starters explicitly flagged"
-    }
-  ]
+  "games": []
 }
