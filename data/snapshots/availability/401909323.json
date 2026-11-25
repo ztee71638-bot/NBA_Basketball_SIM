@@ -1,0 +1,70 @@
+{
+  "game_id": "401909323",
+  "game_date": "2026-11-26T01:30Z",
+  "home_team": "HOU",
+  "away_team": "PHX",
+  "source": "ESPN public injury report and game summaries",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-25T17:45:37.000100+00:00",
+      "minutes_to_tipoff": 464.4,
+      "injuries": [
+        {
+          "athlete_id": "4701232",
+          "name": "Mark Williams",
+          "team": "PHX",
+          "team_name": "Phoenix Suns",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-09-11T16:03Z",
+          "return_date": "2027-02-03",
+          "short_comment": "Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+          "long_comment": "This is a tough blow for the center with training camp right around the corner. With his status for Opening Night in jeopardy, this will put a lot of eyes on Oso Ighodaro and Khaman Maluach, with the latter already drawing buzz during the Summer League. More clarity on Williams' timeline should be known in the coming weeks.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909323",
+        "date": "2026-11-26T01:30Z",
+        "home_team": "HOU",
+        "away_team": "PHX",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "4701232",
+            "name": "Mark Williams",
+            "team": "PHX",
+            "team_name": "Phoenix Suns",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-09-11T16:03Z",
+            "return_date": "2027-02-03",
+            "short_comment": "Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+            "long_comment": "This is a tough blow for the center with training camp right around the corner. With his status for Opening Night in jeopardy, this will put a lot of eyes on Oso Ighodaro and Khaman Maluach, with the latter already drawing buzz during the Summer League. More clarity on Williams' timeline should be known in the coming weeks.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909323",
+          "date": "2026-11-26T01:30Z",
+          "home_team": "HOU",
+          "away_team": "PHX",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
+    }
+  ],
+  "last_updated": "2026-11-25T17:45:37.000100+00:00"
+}
