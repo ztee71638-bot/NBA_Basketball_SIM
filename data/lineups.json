@@ -1,5 +1,16 @@
 {
-  "last_updated": "2026-11-25T12:51:01.914043+00:00",
+  "last_updated": "2026-11-25T14:18:46.691162+00:00",
   "source": "ESPN game summaries",
-  "games": []
+  "games": [
+    {
+      "game_id": "401909317",
+      "date": "2026-11-25T22:00Z",
+      "home_team": "PHI",
+      "away_team": "MIA",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    }
+  ]
 }
