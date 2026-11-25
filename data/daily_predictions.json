@@ -480,12 +480,12 @@
     "combined_score_mae_per_team": 6.756,
     "brier_score": 0.196
   },
-  "updated_at": "2026-11-24T06:07:55.617090+00:00",
+  "updated_at": "2026-11-25T01:21:52.131777+00:00",
   "rolling": {
     "7d": {
-      "predictions_saved": 9,
+      "predictions_saved": 11,
       "games_evaluated": 9,
-      "pending_results": 0,
+      "pending_results": 2,
       "winner_accuracy": 0.5556,
       "home_score_mae": 6.402,
       "away_score_mae": 7.11,
@@ -493,9 +493,9 @@
       "brier_score": 0.196
     },
     "30d": {
-      "predictions_saved": 9,
+      "predictions_saved": 11,
       "games_evaluated": 9,
-      "pending_results": 0,
+      "pending_results": 2,
       "winner_accuracy": 0.5556,
       "home_score_mae": 6.402,
       "away_score_mae": 7.11,
@@ -504,12 +504,12 @@
     }
   },
   "last_run": {
-    "at": "2026-11-24T06:07:55.617090+00:00",
+    "at": "2026-11-25T01:21:52.131777+00:00",
     "scoreboard_dates_checked": [
-      "20261123",
       "20261124",
-      "20261125"
+      "20261125",
+      "20261126"
     ],
-    "events_seen": 22
+    "events_seen": 12
   }
 }
