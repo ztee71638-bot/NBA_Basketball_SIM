@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T20:50:02.021141+00:00",
+  "last_updated": "2026-11-25T21:52:36.928615+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -678,21 +678,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "3032977",
-      "name": "Giannis Antetokounmpo",
-      "team": "MIA",
-      "team_name": "Miami Heat",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-25T20:20Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Antetokounmpo (groin) has been upgraded to probable for Wednesday's game against the 76ers.",
-      "long_comment": "Antetokounmpo is trending toward returning from a one-game absence due to a right groin injury. The superstar's return would likely force Bobby Portis back to the bench. Over his last five appearances, Antetokounmpo has averaged 29.6 points, 12.2 rebounds, 5.8 assists and 2.2 combined steals-plus-blocks in 30.8 minutes per tilt.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "3934673",
       "name": "Donte DiVincenzo",
       "team": "MIN",
@@ -798,6 +783,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3934672",
+      "name": "Jalen Brunson",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-25T21:35Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Brunson (illness) is probable for Wednesday's game against Cleveland.",
+      "long_comment": "Brunson is under the weather but is expected to play through the ailment. The superstar floor general is looking to extend his streak of 20-point, five-assist performances to eight Wednesday.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3062679",
       "name": "Josh Hart",
       "team": "NY",
@@ -840,21 +840,6 @@
       "return_date": "2026-11-25",
       "short_comment": "Towns (knee) is probable for Wednesday's game against Cleveland.",
       "long_comment": "Towns appears on track to play despite dealing with right knee inflammation. His expected availability would provide a significant boost to New York's frontcourt, though fantasy managers should monitor his status ahead of the 7:30 p.m. ET tipoff.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3934672",
-      "name": "Jalen Brunson",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-25T17:53Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Brunson (illness) has been downgraded to questionable for Wednesday's game against the Cavaliers.",
-      "long_comment": "Brunson is under the weather and was a late addition to the injury report. If the star floor general joins Miles McBride (adductor) on the inactive list, Jose Alvarado and Tyler Kolek would be candidates for a significant uptick in minutes. Brunson has scored at least 21 points in 10 straight games, averaging 27.9 points, 6.4 assists, 3.4 rebounds and 0.7 steals in 33.9 minutes per contest during that span.",
       "source": "ESPN"
     },
     {
@@ -1158,21 +1143,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "3064440",
-      "name": "Zach LaVine",
-      "team": "SAC",
-      "team_name": "Sacramento Kings",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-25T20:48Z",
-      "return_date": "2026-11-25",
-      "short_comment": "LaVine posted 18 points (8-17 FG, 2-6 3Pt), six rebounds, two assists and one block over 30 minutes during Monday's 123-107 loss to San Antonio.",
-      "long_comment": "LaVine bounced back from a 13-point performance against Boston on Saturday, and the veteran has scored at least 18 points in three of his last four games. While that's a downgrade compared to his regular numbers, it's decent production given his No. 2 role on offense behind rookie Darius Acuff. Sacramento's offense features capable facilitators in Domantas Sabonis and Acuff, allowing LaVine to concentrate primarily on scoring. He's averaging 20.3 points per game this season.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4898371",
       "name": "Maxime Raynaud",
       "team": "SAC",
@@ -1181,10 +1151,25 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-25T16:25Z",
+      "date": "2026-11-25T21:38Z",
       "return_date": "2026-12-02",
-      "short_comment": "Raynaud (knee) was assigned to the G League's Stockton Kings on Wednesday, James Ham of ESPN 1320 Sacramento reports.",
-      "long_comment": "Raynaud is presumably joining the G League Kings for practice, which is an encouraging sign in his recovery from a right patellar subluxation. Until the big man is cleared to return, Dylan Cardwell and Precious Achiuwa are candidates for more minutes.",
+      "short_comment": "Raynaud (knee) was recalled from the G League's Stockton Kings on Wednesday, Marc J. Spears of ESPN.com reports.",
+      "long_comment": "Raynaud presumably joined the G League Kings for practice Wednesday. He's recovering from a right patellar subluxation and remains without a timetable to return, and while it's encouraging that he's getting reps with Stockton, the big man can be considered week-to-week until the Kings offer another update on his status.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3064440",
+      "name": "Zach LaVine",
+      "team": "SAC",
+      "team_name": "Sacramento Kings",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-25T20:49Z",
+      "return_date": "2026-11-25",
+      "short_comment": "LaVine (knee) has been downgraded to questionable for Wednesday's game against Golden State.",
+      "long_comment": "LaVine was a late addition to the injury report due to right knee soreness. If the veteran swingman is unable to suit up, Emanuel Sharp, Malik Monk and Gabe Vincent would all be candidates for increased playing time.",
       "source": "ESPN"
     },
     {
