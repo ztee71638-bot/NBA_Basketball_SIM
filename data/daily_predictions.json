@@ -267,9 +267,21 @@
       "confidence": 0.559848,
       "model_version": "opponent-weighted-score-v1",
       "created_at": "2026-11-23T22:56:43.991149+00:00",
-      "prediction_status": "pregame",
-      "actual": null,
-      "evaluation": null
+      "prediction_status": "final",
+      "actual": {
+        "home_score": 86,
+        "away_score": 104,
+        "winner": "DET",
+        "finalized_at": "2026-11-25T03:02:01.527897+00:00",
+        "source": "ESPN scoreboard"
+      },
+      "evaluation": {
+        "winner_correct": true,
+        "home_score_absolute_error": 25.53,
+        "away_score_absolute_error": 8.37,
+        "combined_score_absolute_error": 33.9,
+        "brier_score": 0.193734
+      }
     },
     {
       "game_id": "401909315",
@@ -461,8 +473,13 @@
     },
     "2026-11-25": {
       "predictions_saved": 4,
-      "games_evaluated": 0,
-      "pending_results": 4
+      "games_evaluated": 1,
+      "pending_results": 3,
+      "winner_accuracy": 1.0,
+      "home_score_mae": 25.53,
+      "away_score_mae": 8.37,
+      "combined_score_mae_per_team": 16.95,
+      "brier_score": 0.1937
     },
     "2026-11-26": {
       "predictions_saved": 8,
@@ -472,39 +489,39 @@
   },
   "overall": {
     "predictions_saved": 21,
-    "games_evaluated": 9,
-    "pending_results": 12,
-    "winner_accuracy": 0.5556,
-    "home_score_mae": 6.402,
-    "away_score_mae": 7.11,
-    "combined_score_mae_per_team": 6.756,
-    "brier_score": 0.196
+    "games_evaluated": 10,
+    "pending_results": 11,
+    "winner_accuracy": 0.6,
+    "home_score_mae": 8.315,
+    "away_score_mae": 7.236,
+    "combined_score_mae_per_team": 7.776,
+    "brier_score": 0.1958
   },
-  "updated_at": "2026-11-25T01:21:52.131777+00:00",
+  "updated_at": "2026-11-25T03:02:01.341121+00:00",
   "rolling": {
     "7d": {
-      "predictions_saved": 11,
-      "games_evaluated": 9,
+      "predictions_saved": 12,
+      "games_evaluated": 10,
       "pending_results": 2,
-      "winner_accuracy": 0.5556,
-      "home_score_mae": 6.402,
-      "away_score_mae": 7.11,
-      "combined_score_mae_per_team": 6.756,
-      "brier_score": 0.196
+      "winner_accuracy": 0.6,
+      "home_score_mae": 8.315,
+      "away_score_mae": 7.236,
+      "combined_score_mae_per_team": 7.776,
+      "brier_score": 0.1958
     },
     "30d": {
-      "predictions_saved": 11,
-      "games_evaluated": 9,
+      "predictions_saved": 12,
+      "games_evaluated": 10,
       "pending_results": 2,
-      "winner_accuracy": 0.5556,
-      "home_score_mae": 6.402,
-      "away_score_mae": 7.11,
-      "combined_score_mae_per_team": 6.756,
-      "brier_score": 0.196
+      "winner_accuracy": 0.6,
+      "home_score_mae": 8.315,
+      "away_score_mae": 7.236,
+      "combined_score_mae_per_team": 7.776,
+      "brier_score": 0.1958
     }
   },
   "last_run": {
-    "at": "2026-11-25T01:21:52.131777+00:00",
+    "at": "2026-11-25T03:02:01.341121+00:00",
     "scoreboard_dates_checked": [
       "20261124",
       "20261125",
