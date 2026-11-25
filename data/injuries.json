@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T04:23:17.998729+00:00",
+  "last_updated": "2026-11-25T05:32:38.968833+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1136,10 +1136,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-18T05:54Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Raynaud (knee) will remain on the inactive list for Wednesday's game against the Suns.",
-      "long_comment": "Raynaud continues to get ruled out a full day in advance of tipoff, suggesting he's still not close. He should be considered week-to-week moving forward.",
+      "date": "2026-11-25T04:21Z",
+      "return_date": "2026-12-02",
+      "short_comment": "Raynaud (knee) is out for Wednesday's game against the Warriors.",
+      "long_comment": "The Kings have not provided any updates on Raynaud, and he continues to get ruled out 24 hours in advance of tipoff, suggesting he's still not close. Raynaud should be considered week-to-week.",
       "source": "ESPN"
     },
     {
