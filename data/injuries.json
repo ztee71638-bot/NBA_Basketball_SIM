@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T17:45:36.998750+00:00",
+  "last_updated": "2026-11-25T18:45:49.669058+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -798,18 +798,63 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4431823",
-      "name": "Miles McBride",
+      "athlete_id": "3062679",
+      "name": "Josh Hart",
       "team": "NY",
       "team_name": "New York Knicks",
       "position": "G",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-24T21:56Z",
+      "side": "Right",
+      "date": "2026-11-25T17:57Z",
       "return_date": "2026-11-25",
-      "short_comment": "McBride (adductor) is listed as questionable for Wednesday's game versus Cleveland.",
-      "long_comment": "McBride could miss a second straight game due to left adductor tightness, though he was able to participate in Tuesday's practice. If the 26-year-old guard remains sidelined, Tyler Kolek, Jose Alvarado and Pacome Dadiet would be candidates for increased playing time.",
+      "short_comment": "Hart (shoulder) has been upgraded to probable for Wednesday's game against the Cavaliers.",
+      "long_comment": "Hart is dealing with a right shoulder sprain, though he's also trending toward suiting up for an eighth straight game. He posted a triple-double in his last time out and has averaged 5.2 points, 6.8 rebounds, 4.4 assists and 1.2 steals while shooting 29.7 percent from the field in 31.8 minutes per game over his last five outings.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4431823",
+      "name": "Miles McBride",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-25T17:57Z",
+      "return_date": "2026-11-27",
+      "short_comment": "McBride (adductor) has been ruled out for Wednesday's game against the Cavaliers.",
+      "long_comment": "McBride will miss his second consecutive contest despite participating in Tuesday's practice. With Jordan Clarkson (foot) also sidelined, Tyler Kolek and other reserve guards could see additional opportunities in New York's backcourt.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3136195",
+      "name": "Karl-Anthony Towns",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-25T17:54Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Towns (knee) is probable for Wednesday's game against Cleveland.",
+      "long_comment": "Towns appears on track to play despite dealing with right knee inflammation. His expected availability would provide a significant boost to New York's frontcourt, though fantasy managers should monitor his status ahead of the 7:30 p.m. ET tipoff.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3934672",
+      "name": "Jalen Brunson",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-25T17:53Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Brunson (illness) has been downgraded to questionable for Wednesday's game against the Cavaliers.",
+      "long_comment": "Brunson is under the weather and was a late addition to the injury report. If the star floor general joins Miles McBride (adductor) on the inactive list, Jose Alvarado and Tyler Kolek would be candidates for a significant uptick in minutes. Brunson has scored at least 21 points in 10 straight games, averaging 27.9 points, 6.4 assists, 3.4 rebounds and 0.7 steals in 33.9 minutes per contest during that span.",
       "source": "ESPN"
     },
     {
@@ -828,21 +873,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "3062679",
-      "name": "Josh Hart",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-24T21:54Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Hart (shoulder) is listed as questionable for Wednesday's game against Cleveland.",
-      "long_comment": "Hart is dealing with a right shoulder sprain after dropping a triple-double in Sunday's win over Indiana. If the veteran wing joins OG Anunoby (calf) on the inactive list Wednesday, Mohamed Diawara and Pacome Dadiet would be candidates for an uptick in minutes.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "3934719",
       "name": "OG Anunoby",
       "team": "NY",
@@ -855,21 +885,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Anunoby (calf) is out for Wednesday's game against Cleveland.",
       "long_comment": "Wednesday marks a third consecutive absence for Anunoby, who was unable to practice Tuesday because of a sore left calf. His continued void in the lineup should keep Landry Shamet in the streaming conversation in most fantasy leagues Wednesday.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3136195",
-      "name": "Karl-Anthony Towns",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-24T21:50Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Towns (knee) is questionable for Wednesday's game against Cleveland.",
-      "long_comment": "Towns is at risk of sitting out for the second time in New York's last three contests. Andre Drummond would be a plug-and-play fantasy option at center in most settings if Towns is ultimately unable to play Wednesday.",
       "source": "ESPN"
     },
     {
