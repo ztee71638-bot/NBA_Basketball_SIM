@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T02:04:13.884079+00:00",
+  "last_updated": "2026-11-25T03:11:09.347453+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -270,21 +270,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Lawal (groin) is out for Tuesday's game against Denver.",
       "long_comment": "Lawal is slated for a fourth consecutive absence due to a right groin strain. His next opportunity to return will arrive Friday in Phoenix.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4278078",
-      "name": "P.J. Washington",
-      "team": "DAL",
-      "team_name": "Dallas Mavericks",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-23T23:21Z",
-      "return_date": "2026-11-24",
-      "short_comment": "Washington (illness) is questionable for Tuesday's game against the Nuggets.",
-      "long_comment": "Washington is trying to end a two-game absence Tuesday with an illness. Following consecutive starts, Zaccharie Risacher figures to have the most to gain from another potential absence for Washington from a fantasy perspective.",
       "source": "ESPN"
     },
     {
