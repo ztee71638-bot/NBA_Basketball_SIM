@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T00:37:03.097151+00:00",
+  "last_updated": "2026-11-25T02:04:13.884079+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1173,21 +1173,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "5104157",
-      "name": "Victor Wembanyama",
-      "team": "SA",
-      "team_name": "San Antonio Spurs",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-24T06:06Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Wembanyama (back) won't play Monday against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
-      "long_comment": "Wembanyama is dealing with some back pain and will sit out Monday's game against the 1-14 Kings, but he's expected to return for Wednesday's NBA Cup game in Portland. Luka Kornet will likely get the start with Wembanyama unavailable, and Stephon Castle should see a sizeable uptick in usage.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4066259",
       "name": "De'Aaron Fox",
       "team": "SA",
@@ -1196,10 +1181,25 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-24T06:06Z",
+      "date": "2026-11-25T01:27Z",
       "return_date": "2026-11-25",
-      "short_comment": "Fox (shin) has been ruled out for Monday's game against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
-      "long_comment": "Fox will miss his second outing of the regular season due to a right shin contusion. Stephon Castle will operate as the primary ballhandler with Dylan Harper (hip) also sidelined, while Jordan McLaughlin should see increased burn off the Spurs' bench.",
+      "short_comment": "Fox (shin) is questionable to play Wednesday's game against the Trail Blazers.",
+      "long_comment": "Fox sat out Monday's 123-107 win over Sacramento due to a right shin contusion, and he's now in danger of missing a second consecutive regular-season outing with the ailment. Stephon Castle will continue to see increased usage if Fox remains sidelined.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "5104157",
+      "name": "Victor Wembanyama",
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-25T01:23Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Wembanyama (back) is questionable for Wednesday's game in Portland.",
+      "long_comment": "Wembanyama sat out Monday's 123-107 win over the Kings due to a back issue, but it looks like he could be back in action Wednesday night. If he's cleared to return, Luke Kornet would head back to the second unit and Tarris Reed could drop from the rotation entirely.",
       "source": "ESPN"
     },
     {
@@ -1350,21 +1350,6 @@
       "return_date": "2026-12-14",
       "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
       "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4432819",
-      "name": "Tre Mann",
-      "team": "WSH",
-      "team_name": "Washington Wizards",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-24T16:47Z",
-      "return_date": "2026-11-24",
-      "short_comment": "Mann (illness) has been downgraded to questionable for Tuesday's game against Boston.",
-      "long_comment": "Mann is under the weather and was a late addition to the injury report. However, his potential absence wouldn't cause any significant waves in Washington's rotation.",
       "source": "ESPN"
     },
     {
