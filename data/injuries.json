@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T05:32:48.317138+00:00",
+  "last_updated": "2026-11-26T06:42:25.394989+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -732,7 +732,7 @@
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
       "date": "2026-11-25T16:11Z",
-      "return_date": "2026-11-25",
+      "return_date": "2026-12-01",
       "short_comment": "The Pelicans transferred Reese from the G League's Laketown Squadron, and he will be available for New Orleans' game against the Warriors on Monday.",
       "long_comment": "Reese dropped a 15-point, 15-rebound double-double in the Squadron's win over the Mexico City Capitanes on Saturday and will return to the parent club ahead of its game Monday. Through five regular-season appearances at the NBA level this season, the big man is averaging 1.2 points and 1.0 rebounds in 5.4 minutes per tilt.",
       "source": "ESPN"
@@ -1133,10 +1133,10 @@
       "team": "SAC",
       "team_name": "Sacramento Kings",
       "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-25T22:40Z",
+      "date": "2026-11-26T05:33Z",
       "return_date": "2026-11-29",
       "short_comment": "LaVine (knee) is listed as out for Wednesday's game versus the Warriors.",
       "long_comment": "LaVine will miss his second game of the 2026-27 campaign. His next opportunity to play will come Sunday against the Timberwolves. In the meantime, Leaky Black, Emanuel Sharp and Malik Monk are candidates for more minutes, with one of those players expected to move into the starting lineup.",
@@ -1178,10 +1178,10 @@
       "team": "SA",
       "team_name": "San Antonio Spurs",
       "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-26T02:20Z",
+      "date": "2026-11-26T06:01Z",
       "return_date": "2026-11-27",
       "short_comment": "Fox (shin) has been ruled out for Wednesday's game against Portland, Jeff McDonald of the San Antonio Express-News reports.",
       "long_comment": "Fox will miss consecutive games for the first time in 2026-27. He's dealing with a right shin contusion, and his next chance to suit up will come Friday against the Lakers. Stephon Castle will continue running the Spurs' offense while Jordan McLaughlin gets additional run in the second unit.",
