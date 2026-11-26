@@ -650,7 +650,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7031354\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.815\\\", \\\"0.185\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Bucks\\\"]\",\"question\":\"Thunder vs. Bucks\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T12:48:09.250531+00:00",
+      "markets": [
+        {
+          "market_id": "7031354",
+          "market_type": "moneyline",
+          "question": "Thunder vs. Bucks",
+          "slug": "nba-okc-mil-2026-11-28",
+          "outcomes": "[\"Thunder\", \"Bucks\"]",
+          "outcome_prices": "[\"0.805\", \"0.195\"]",
+          "volume_24h": 62.23500099999999,
+          "liquidity": "30235.1835",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-okc-mil-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031354\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.805\\\", \\\"0.195\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Bucks\\\"]\",\"question\":\"Thunder vs. Bucks\"}]"
     }
   ],
-  "last_updated": "2026-11-26T11:39:23.594156+00:00"
+  "last_updated": "2026-11-26T12:48:09.250531+00:00"
 }
