@@ -920,7 +920,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008996\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Lakers vs. Spurs\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T02:02:52.465419+00:00",
+      "markets": [
+        {
+          "market_id": "7008996",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Spurs",
+          "slug": "nba-lal-sas-2026-11-27",
+          "outcomes": "[\"Lakers\", \"Spurs\"]",
+          "outcome_prices": "[\"0.375\", \"0.625\"]",
+          "volume_24h": 20249.026289,
+          "liquidity": "30025.2064",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008996\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Lakers vs. Spurs\"}]"
     }
   ],
-  "last_updated": "2026-11-26T00:37:39.613752+00:00"
+  "last_updated": "2026-11-26T02:02:52.465419+00:00"
 }

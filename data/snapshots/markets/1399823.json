@@ -128,7 +128,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7086124\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.72\\\", \\\"0.28\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Nets\\\"]\",\"question\":\"Thunder vs. Nets\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T02:02:52.465419+00:00",
+      "markets": [
+        {
+          "market_id": "7086124",
+          "market_type": "moneyline",
+          "question": "Thunder vs. Nets",
+          "slug": "nba-okc-bkn-2026-11-30",
+          "outcomes": "[\"Thunder\", \"Nets\"]",
+          "outcome_prices": "[\"0.765\", \"0.235\"]",
+          "volume_24h": null,
+          "liquidity": "16390.0175",
+          "end_date": "2026-12-01T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-okc-bkn-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086124\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Nets\\\"]\",\"question\":\"Thunder vs. Nets\"}]"
     }
   ],
-  "last_updated": "2026-11-25T03:11:09.348937+00:00"
+  "last_updated": "2026-11-26T02:02:52.465419+00:00"
 }

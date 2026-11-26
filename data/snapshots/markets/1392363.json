@@ -164,7 +164,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058801\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.52\\\", \\\"0.48\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Grizzlies\\\"]\",\"question\":\"Lakers vs. Grizzlies\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T02:02:52.465419+00:00",
+      "markets": [
+        {
+          "market_id": "7058801",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Grizzlies",
+          "slug": "nba-lal-mem-2026-11-29",
+          "outcomes": "[\"Lakers\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.555\", \"0.445\"]",
+          "volume_24h": null,
+          "liquidity": "22483.5406",
+          "end_date": "2026-11-29T21:00:00Z",
+          "url": "https://polymarket.com/event/nba-lal-mem-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058801\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.555\\\", \\\"0.445\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Grizzlies\\\"]\",\"question\":\"Lakers vs. Grizzlies\"}]"
     }
   ],
-  "last_updated": "2026-11-24T07:15:25.982660+00:00"
+  "last_updated": "2026-11-26T02:02:52.465419+00:00"
 }

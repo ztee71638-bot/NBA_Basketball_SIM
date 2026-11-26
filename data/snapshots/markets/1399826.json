@@ -92,7 +92,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7086135\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Mavericks\\\"]\",\"question\":\"Celtics vs. Mavericks\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T02:02:52.465419+00:00",
+      "markets": [
+        {
+          "market_id": "7086135",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Mavericks",
+          "slug": "nba-bos-dal-2026-11-30",
+          "outcomes": "[\"Celtics\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.635\", \"0.365\"]",
+          "volume_24h": null,
+          "liquidity": "21576.548",
+          "end_date": "2026-12-01T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-dal-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086135\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.635\\\", \\\"0.365\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Mavericks\\\"]\",\"question\":\"Celtics vs. Mavericks\"}]"
     }
   ],
-  "last_updated": "2026-11-24T01:59:22.927257+00:00"
+  "last_updated": "2026-11-26T02:02:52.465419+00:00"
 }

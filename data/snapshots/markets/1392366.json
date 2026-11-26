@@ -218,7 +218,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058811\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.67\\\", \\\"0.33\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Jazz\\\"]\",\"question\":\"Suns vs. Jazz\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T02:02:52.465419+00:00",
+      "markets": [
+        {
+          "market_id": "7058811",
+          "market_type": "moneyline",
+          "question": "Suns vs. Jazz",
+          "slug": "nba-phx-uta-2026-11-29",
+          "outcomes": "[\"Suns\", \"Jazz\"]",
+          "outcome_prices": "[\"0.68\", \"0.32\"]",
+          "volume_24h": 10.648228,
+          "liquidity": "21994.8522",
+          "end_date": "2026-11-29T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-phx-uta-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058811\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.68\\\", \\\"0.32\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Jazz\\\"]\",\"question\":\"Suns vs. Jazz\"}]"
     }
   ],
-  "last_updated": "2026-11-25T21:52:36.929757+00:00"
+  "last_updated": "2026-11-26T02:02:52.465419+00:00"
 }

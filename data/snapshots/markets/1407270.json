@@ -200,7 +200,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7110977\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.72\\\", \\\"0.28\\\"]\",\"outcomes\":\"[\\\"Knicks\\\", \\\"Bulls\\\"]\",\"question\":\"Knicks vs. Bulls\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T02:02:52.465419+00:00",
+      "markets": [
+        {
+          "market_id": "7110977",
+          "market_type": "moneyline",
+          "question": "Knicks vs. Bulls",
+          "slug": "nba-nyk-chi-2026-12-01",
+          "outcomes": "[\"Knicks\", \"Bulls\"]",
+          "outcome_prices": "[\"0.715\", \"0.285\"]",
+          "volume_24h": null,
+          "liquidity": "14923.3557",
+          "end_date": "2026-12-02T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-nyk-chi-2026-12-01"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7110977\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.715\\\", \\\"0.285\\\"]\",\"outcomes\":\"[\\\"Knicks\\\", \\\"Bulls\\\"]\",\"question\":\"Knicks vs. Bulls\"}]"
     }
   ],
-  "last_updated": "2026-11-24T09:49:35.588094+00:00"
+  "last_updated": "2026-11-26T02:02:52.465419+00:00"
 }
