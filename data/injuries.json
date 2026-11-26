@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T15:30:09.408434+00:00",
+  "last_updated": "2026-11-26T16:38:45.826023+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -318,6 +318,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4433621",
+      "name": "Jalen Duren",
+      "team": "DET",
+      "team_name": "Detroit Pistons",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-26T15:31Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Detroit recalled Duren (hamstring) from the G League's Motor City Cruise on Wednesday.",
+      "long_comment": "Duren has been dealing with a hamstring strain since October, and his return is not yet expected in immediate contests. The fact that he has practiced with the G League club is still a good sign as he makes progress in his recovery. Duren would be a reliable source of production once he's healthy, but until then, John Collins and Paul Reed may continue to absorb his responsibilities at center.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4432166",
       "name": "Cade Cunningham",
       "team": "DET",
@@ -375,21 +390,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Robinson (quadriceps) is considered day-to-day as he progresses in his rehab, Eric Vincent of ClutchPoints.com reports.",
       "long_comment": "Robinson will miss a fifth consecutive contest Tuesday due to a left quadriceps strain, though he can be considered questionable for Friday's game against Milwaukee until the Pistons provide an update on his status. Kevin Huerter will likely continue seeing increased playing time for as long as Robinson is sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4433621",
-      "name": "Jalen Duren",
-      "team": "DET",
-      "team_name": "Detroit Pistons",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-24T18:27Z",
-      "return_date": "2026-11-30",
-      "short_comment": "Duren (hamstring) is being assigned to the Motor City Cruise on Wednesday for practice as he ramps up for a return, Eric Vincent of ClutchPoints.com reports.",
-      "long_comment": "With Duren still out for Detroit and now progressing to a G League practice assignment, this marks a tangible step forward in his recovery from the right hamstring strain that has kept him sidelined since Oct. 23. The Pistons haven't provided a return timeline, but his return appears to be drawing closer as he increases his activity.",
       "source": "ESPN"
     },
     {
@@ -945,6 +945,21 @@
       "return_date": "2027-01-02",
       "short_comment": "Holmgren underwent a biological treatment Friday to address a small patellar tendon tear and will miss at least 8-10 weeks, Nick Crain of Slam reports.",
       "long_comment": "This is another massive blow to an Oklahoma City squad that's already set to be without Jalen Williams (leg) and Cason Wallace (shoulder) for most, if not all, of the season. With Holmgren sidelined, Kenrich Williams, Jaylin Williams and Aday Mara are all candidates to see increased playing time. Two-way player Brooks Barnhizer could also see more minutes.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4397204",
+      "name": "Colin Castleton",
+      "team": "ORL",
+      "team_name": "Orlando Magic",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-26T16:10Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
+      "long_comment": "Castleton squeezed five points and four boards into his brief appearance, including a successful three-point attempt. The reserve center made productive use of his late-game opportunity, though his limited playing time leaves his regular-season role uncertain.",
       "source": "ESPN"
     },
     {
