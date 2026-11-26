@@ -668,7 +668,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008990\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.17\\\", \\\"0.83\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Pistons\\\"]\",\"question\":\"Bucks vs. Pistons\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T14:17:10.379461+00:00",
+      "markets": [
+        {
+          "market_id": "7008990",
+          "market_type": "moneyline",
+          "question": "Bucks vs. Pistons",
+          "slug": "nba-mil-det-2026-11-27",
+          "outcomes": "[\"Bucks\", \"Pistons\"]",
+          "outcome_prices": "[\"0.165\", \"0.835\"]",
+          "volume_24h": 4504.207812,
+          "liquidity": "33501.9092",
+          "end_date": "2026-11-28T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-mil-det-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008990\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.165\\\", \\\"0.835\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Pistons\\\"]\",\"question\":\"Bucks vs. Pistons\"}]"
     }
   ],
-  "last_updated": "2026-11-26T10:34:04.092864+00:00"
+  "last_updated": "2026-11-26T14:17:10.379461+00:00"
 }
