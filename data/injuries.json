@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T02:02:52.464144+00:00",
+  "last_updated": "2026-11-26T03:08:52.905842+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -90,6 +90,21 @@
       "return_date": "2026-11-27",
       "short_comment": "Robinson (illness) is out for Tuesday's game against Washington, Taylor Snow of the Celtics' official site reports.",
       "long_comment": "With Robinson set to miss a third contest due to an illness, Boston will again be without one of its primary center options. His absence should continue to leave more frontcourt minutes available for Neemias Queta and Luka Garza on Tuesday, with the former being in line to see the lion's share of the playing time.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3150844",
+      "name": "Moritz Wagner",
+      "team": "BKN",
+      "team_name": "Brooklyn Nets",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-26T02:48Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Wagner (knee) will not return to Wednesday's game against the Bucks, C.J. Holmes of the New York Daily News reports.",
+      "long_comment": "Wagner played just four minutes prior to leaving the contest due to left knee soreness. He scored two points (0-1 FG, 0-1 3Pt) after sinking both free throws. Grant Nelson will get more minutes off the Nets' bench for the remainder of the game.",
       "source": "ESPN"
     },
     {
@@ -393,21 +408,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4397040",
-      "name": "Brandon Williams",
-      "team": "GS",
-      "team_name": "Golden State Warriors",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-26T01:32Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Head coach Steve Kerr said Tuesday that Williams (hamstring) is questionable to play Wednesday against the Kings, per Dalton Johnson of NBC Sports Bay Area.",
-      "long_comment": "It sounds like Williams is closing in on ending an extended absence with a hamstring strain. Will Richard and LJ Cryer figure to have the most to lose from a fantasy standpoint once Williams is cleared to return to action.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "3102531",
       "name": "Kristaps Porzingis",
       "team": "GS",
@@ -570,6 +570,21 @@
       "return_date": "2026-11-27",
       "short_comment": "Reaves (heel) was a full participant in Wednesday's practice, Daniel Starkand of LakersNation.com reports.",
       "long_comment": "Reaves has missed the last five games with a left heel contusion but is trending in the right direction ahead of Friday's game at San Antonio. The Lakers will provide an update on his status by Thursday night, and the 28-year-old shooting guard's return would leave fewer minutes available for Quentin Grimes, Collin Sexton and Jake LaRavia.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4600663",
+      "name": "Zach Edey",
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-26T02:48Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Edey (ankle) is doubtful to return to Wednesday's game against the Clippers.",
+      "long_comment": "Edey logged just nine minutes before exiting the contest due to left ankle soreness. Assuming he is officially ruled out Wednesday, his next opportunity to suit up will come Friday in Minnesota, though the team will surely take a cautious approach before allowing him to get back on the floor. Without Edey, Taylor Hendricks and Isaiah Stewart should see more minutes in the middle.",
       "source": "ESPN"
     },
     {
@@ -750,6 +765,21 @@
       "return_date": "2026-11-27",
       "short_comment": "Murray (ankle) is out for Friday's game against Memphis.",
       "long_comment": "This was the expectation after the star guard requested a trade from the Pelicans earlier Friday. Given his standing with the club, Murray can be tentatively considered doubtful for future contests while New Orleans tries to find him another home.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "6585",
+      "name": "Andre Drummond",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-26T02:31Z",
+      "return_date": "2026-11-25",
+      "short_comment": "Drummond is questionable to return to Wednesday's game against Cleveland due to a head injury, Stefan Bondy of The New York Post reports.",
+      "long_comment": "Drummond played nine minutes prior to exiting the contest, tallying three points (1-1 FG, 1-1 3Pt) and two rebounds off the Knicks' bench. Mohamed Diawara and James Wiseman should see an uptick in minutes as long as Drummond is out.",
       "source": "ESPN"
     },
     {
@@ -1133,28 +1163,13 @@
       "team": "SA",
       "team_name": "San Antonio Spurs",
       "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-25T01:27Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Fox (shin) is questionable to play Wednesday's game against the Trail Blazers.",
-      "long_comment": "Fox sat out Monday's 123-107 win over Sacramento due to a right shin contusion, and he's now in danger of missing a second consecutive regular-season outing with the ailment. Stephon Castle will continue to see increased usage if Fox remains sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5104157",
-      "name": "Victor Wembanyama",
-      "team": "SA",
-      "team_name": "San Antonio Spurs",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-25T01:23Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Wembanyama (back) is questionable for Wednesday's game in Portland.",
-      "long_comment": "Wembanyama sat out Monday's 123-107 win over the Kings due to a back issue, but it looks like he could be back in action Wednesday night. If he's cleared to return, Luke Kornet would head back to the second unit and Tarris Reed could drop from the rotation entirely.",
+      "date": "2026-11-26T02:20Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Fox (shin) has been ruled out for Wednesday's game against Portland, Jeff McDonald of the San Antonio Express-News reports.",
+      "long_comment": "Fox will miss consecutive games for the first time in 2026-27. He's dealing with a right shin contusion, and his next chance to suit up will come Friday against the Lakers. Stephon Castle will continue running the Spurs' offense while Jordan McLaughlin gets additional run in the second unit.",
       "source": "ESPN"
     },
     {
