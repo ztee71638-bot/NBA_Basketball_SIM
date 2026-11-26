@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T18:35:57.488063+00:00",
+  "last_updated": "2026-11-26T19:49:19.141115+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -86,10 +86,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-23T21:09Z",
+      "date": "2026-11-26T19:00Z",
       "return_date": "2026-11-27",
-      "short_comment": "Robinson (illness) is out for Tuesday's game against Washington, Taylor Snow of the Celtics' official site reports.",
-      "long_comment": "With Robinson set to miss a third contest due to an illness, Boston will again be without one of its primary center options. His absence should continue to leave more frontcourt minutes available for Neemias Queta and Luka Garza on Tuesday, with the former being in line to see the lion's share of the playing time.",
+      "short_comment": "Robinson (illness) is questionable for Friday's game against the Hawks.",
+      "long_comment": "Robinson has missed Boston's previous three games due to an illness, and it appears he's in danger of missing a fourth consecutive outing Friday. Neemias Queta will continue to start in Robinson's place if he remains sidelined, while Luka Garza and Chris Cenac get more minutes off the bench.",
       "source": "ESPN"
     },
     {

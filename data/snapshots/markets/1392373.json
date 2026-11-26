@@ -326,7 +326,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058830\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Pelicans vs. Trail Blazers\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T19:49:19.142156+00:00",
+      "markets": [
+        {
+          "market_id": "7058830",
+          "market_type": "moneyline",
+          "question": "Pelicans vs. Trail Blazers",
+          "slug": "nba-nop-por-2026-11-29",
+          "outcomes": "[\"Pelicans\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.21\", \"0.79\"]",
+          "volume_24h": 28.333334,
+          "liquidity": "18468.9678",
+          "end_date": "2026-11-29T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-nop-por-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058830\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Pelicans vs. Trail Blazers\"}]"
     }
   ],
-  "last_updated": "2026-11-26T16:38:45.828027+00:00"
+  "last_updated": "2026-11-26T19:49:19.142156+00:00"
 }
