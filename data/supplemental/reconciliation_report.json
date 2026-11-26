@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-25T10:50:09.869554+00:00",
+  "generated_at": "2026-11-26T10:47:00.117686+00:00",
   "source": "BoxScore Lab (upstream attribution: NBA Stats)",
   "license": "CC BY 4.0",
   "team_games": {
-    "source_rows": 10356,
-    "matched_rows": 10356,
+    "source_rows": 10362,
+    "matched_rows": 10362,
     "unmatched_rows": 0,
     "score_or_key_mismatches": 0,
     "duplicate_source_rows": 0,
-    "advanced_rows_added": 6,
-    "advanced_fields_filled": 30,
+    "advanced_rows_added": 2,
+    "advanced_fields_filled": 10,
     "by_season": {
       "2022-23": {
         "source_rows": 2460,
@@ -44,12 +44,12 @@
         "advanced_fields_filled": 0
       },
       "2026-27": {
-        "source_rows": 516,
-        "matched_rows": 516,
+        "source_rows": 522,
+        "matched_rows": 522,
         "unmatched_rows": 0,
         "score_or_key_mismatches": 0,
-        "advanced_rows_added": 6,
-        "advanced_fields_filled": 30
+        "advanced_rows_added": 2,
+        "advanced_fields_filled": 10
       }
     },
     "unmatched_samples": [],
@@ -58,13 +58,13 @@
   },
   "player_totals": {
     "source_rows": 2743,
-    "matched_rows": 1869,
-    "unmatched_rows": 874,
+    "matched_rows": 1872,
+    "unmatched_rows": 871,
     "by_season": {
       "2022-23": {
         "source_rows": 539,
-        "matched_rows": 261,
-        "unmatched_rows": 278
+        "matched_rows": 262,
+        "unmatched_rows": 277
       },
       "2023-24": {
         "source_rows": 572,
@@ -73,13 +73,13 @@
       },
       "2024-25": {
         "source_rows": 569,
-        "matched_rows": 376,
-        "unmatched_rows": 193
+        "matched_rows": 377,
+        "unmatched_rows": 192
       },
       "2025-26": {
         "source_rows": 582,
-        "matched_rows": 442,
-        "unmatched_rows": 140
+        "matched_rows": 443,
+        "unmatched_rows": 139
       },
       "2026-27": {
         "source_rows": 481,
@@ -164,14 +164,6 @@
         "season": "2022-23",
         "player_name": "Malik Beasley",
         "team": "LAL",
-        "same_name_candidates": 0,
-        "same_season_candidates": 0,
-        "same_team_candidates": 0
-      },
-      {
-        "season": "2022-23",
-        "player_name": "Kevin Porter Jr.",
-        "team": "HOU",
         "same_name_candidates": 0,
         "same_season_candidates": 0,
         "same_team_candidates": 0
@@ -484,6 +476,14 @@
         "season": "2022-23",
         "player_name": "Terrence Ross",
         "team": "PHX",
+        "same_name_candidates": 0,
+        "same_season_candidates": 0,
+        "same_team_candidates": 0
+      },
+      {
+        "season": "2022-23",
+        "player_name": "Doug McDermott",
+        "team": "SAS",
         "same_name_candidates": 0,
         "same_season_candidates": 0,
         "same_team_candidates": 0
