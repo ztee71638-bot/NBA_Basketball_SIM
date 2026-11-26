@@ -2720,7 +2720,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T22:50:39.739581+00:00",
+      "markets": [
+        {
+          "market_id": "7008999",
+          "market_type": "moneyline",
+          "question": "Warriors vs. Trail Blazers",
+          "slug": "nba-gsw-por-2026-11-27",
+          "outcomes": "[\"Warriors\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.245\", \"0.755\"]",
+          "volume_24h": 5421.884845,
+          "liquidity": "50077.234",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375148",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-8.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-8pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 3.584906,
+          "liquidity": "10471.8806",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"},{\"market_id\":\"7375148\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-8.5)\"}]"
     }
   ],
-  "last_updated": "2026-11-26T21:49:00.239569+00:00"
+  "last_updated": "2026-11-26T22:50:39.739581+00:00"
 }
