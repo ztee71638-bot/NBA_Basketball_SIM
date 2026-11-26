@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T03:08:52.905842+00:00",
+  "last_updated": "2026-11-26T04:17:50.893885+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -581,10 +581,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-26T02:48Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Edey (ankle) is doubtful to return to Wednesday's game against the Clippers.",
-      "long_comment": "Edey logged just nine minutes before exiting the contest due to left ankle soreness. Assuming he is officially ruled out Wednesday, his next opportunity to suit up will come Friday in Minnesota, though the team will surely take a cautious approach before allowing him to get back on the floor. Without Edey, Taylor Hendricks and Isaiah Stewart should see more minutes in the middle.",
+      "date": "2026-11-26T03:43Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Edey (ankle) did not return to Wednesday's 115-97 win over the Clippers. He finished with seven points (3-4 FG, 1-1 FT), four rebounds, two assists and two blocks across nine minutes.",
+      "long_comment": "Edey didn't return after checking out in the second quarter due to ankle soreness. Considering he's had two procedures on the same ankle since June 2025, the team will likely be overly cautious before allowing him to suit up. For now, Edey should be considered at least questionable for Friday's game against Minnesota. If he is ruled out for that contest, Isaiah Stewart and Taylor Hendricks are expected to see more minutes, with one of those players in line to start.",
       "source": "ESPN"
     },
     {
@@ -660,6 +660,21 @@
       "return_date": "2026-12-01",
       "short_comment": "Saunders signed a two-way contract with the Grizzlies on Saturday, Shams Charania of ESPN reports.",
       "long_comment": "Saunders is still on the mend from a torn right ACL that he suffered during his final year at BYU. However, he has been cleared for on-court activities and will be allowed to practice with the Grizzlies now that he's officially signed with the team.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4432816",
+      "name": "LaMelo Ball",
+      "team": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-26T03:37Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Ball (ankle) did not return to Wednesday's 113-106 win over the Thunder.",
+      "long_comment": "Ball finished with 19 points (7-18 FG, 5-9 3Pt), seven rebounds, eight assists and one steal in 29 minutes. Minnesota won a third consecutive game, but we'll have to wait and see the severity of the ankle injury. If Ball misses time, Terrence Shannon Jr. and Bones Hyland would likely absorb most of the vacated minutes.",
       "source": "ESPN"
     },
     {
@@ -776,10 +791,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-26T02:31Z",
-      "return_date": "2026-11-25",
-      "short_comment": "Drummond is questionable to return to Wednesday's game against Cleveland due to a head injury, Stefan Bondy of The New York Post reports.",
-      "long_comment": "Drummond played nine minutes prior to exiting the contest, tallying three points (1-1 FG, 1-1 3Pt) and two rebounds off the Knicks' bench. Mohamed Diawara and James Wiseman should see an uptick in minutes as long as Drummond is out.",
+      "date": "2026-11-26T03:40Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Drummond (head) did not return to Wednesday's 121-102 win over the Cavaliers.",
+      "long_comment": "Drummond played nine minutes off New York's bench, finishing with three points (1-1 FG, 1-1 3Pt) and two rebounds. Pacome Dadiet, Tyler Nickel and James Wiseman could all see a boost in playing time if Drummond is forced to miss any time. His next chance to suit up will come against the Heat on Friday.",
       "source": "ESPN"
     },
     {
