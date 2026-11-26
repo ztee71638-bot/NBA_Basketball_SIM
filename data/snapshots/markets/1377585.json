@@ -362,7 +362,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T11:39:23.594156+00:00",
+      "markets": [
+        {
+          "market_id": "7008999",
+          "market_type": "moneyline",
+          "question": "Warriors vs. Trail Blazers",
+          "slug": "nba-gsw-por-2026-11-27",
+          "outcomes": "[\"Warriors\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.255\", \"0.745\"]",
+          "volume_24h": 3895.080868,
+          "liquidity": "42777.7928",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.255\\\", \\\"0.745\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"}]"
     }
   ],
-  "last_updated": "2026-11-26T10:34:04.092864+00:00"
+  "last_updated": "2026-11-26T11:39:23.594156+00:00"
 }
