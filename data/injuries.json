@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T04:17:50.893885+00:00",
+  "last_updated": "2026-11-26T05:32:48.317138+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -128,10 +128,10 @@
       "team": "CHA",
       "team_name": "Charlotte Hornets",
       "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-25T17:41Z",
+      "date": "2026-11-26T05:30Z",
       "return_date": "2026-11-28",
       "short_comment": "Kalkbrenner (hip) has been ruled out for Wednesday's matchup with Chicago.",
       "long_comment": "Kalkbrenner exited Monday's loss to Memphis early with left hip soreness and is now set to miss Wednesday's contest. His next chance to play will come Saturday against the Nets. With the big man sidelined, Hannes Steinbach could see meaningful playing time behind Moussa Diabate.",
@@ -188,10 +188,10 @@
       "team": "CHI",
       "team_name": "Chicago Bulls",
       "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-25T22:07Z",
+      "date": "2026-11-26T05:29Z",
       "return_date": "2026-11-28",
       "short_comment": "Smith (illness) is listed as out for Wednesday's game against Charlotte.",
       "long_comment": "Smith is dealing with a gastrointestinal illness, so he won't suit up Wednesday versus the Hornets. Without him, Nic Claxton will presumably enter the starting lineup. Zach Collins might also be more involved.",
@@ -783,6 +783,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4431823",
+      "name": "Miles McBride",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-26T05:31Z",
+      "return_date": "2026-11-27",
+      "short_comment": "McBride (adductor) has been ruled out for Wednesday's game against the Cavaliers.",
+      "long_comment": "McBride will miss his second consecutive contest despite participating in Tuesday's practice. With Jordan Clarkson (foot) also sidelined, Tyler Kolek and other reserve guards could see additional opportunities in New York's backcourt.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "6585",
       "name": "Andre Drummond",
       "team": "NY",
@@ -810,21 +825,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Anunoby (calf) participated in on-court work for the first time since sustaining the injury, Ian Begley of SportsNet New York reports.",
       "long_comment": "Anunoby has missed New York's last two games due to soreness in his left calf, and he's slated to miss his third consecutive regular-season outing Wednesday against Cleveland. However, this is a positive sign for the 29-year-old, and the Knicks will continue to provide updates on his status when they are available. Anunoby's next chance to take the court will come Friday versus Miami.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4431823",
-      "name": "Miles McBride",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-25T17:57Z",
-      "return_date": "2026-11-27",
-      "short_comment": "McBride (adductor) has been ruled out for Wednesday's game against the Cavaliers.",
-      "long_comment": "McBride will miss his second consecutive contest despite participating in Tuesday's practice. With Jordan Clarkson (foot) also sidelined, Tyler Kolek and other reserve guards could see additional opportunities in New York's backcourt.",
       "source": "ESPN"
     },
     {
