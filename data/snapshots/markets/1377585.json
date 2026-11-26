@@ -2750,7 +2750,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"},{\"market_id\":\"7375148\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-8.5)\"}]"
+    },
+    {
+      "captured_at": "2026-11-26T23:50:46.145019+00:00",
+      "markets": [
+        {
+          "market_id": "7008999",
+          "market_type": "moneyline",
+          "question": "Warriors vs. Trail Blazers",
+          "slug": "nba-gsw-por-2026-11-27",
+          "outcomes": "[\"Warriors\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.235\", \"0.765\"]",
+          "volume_24h": 5513.095370000001,
+          "liquidity": "52595.2992",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375148",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-8.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-8pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.525\", \"0.475\"]",
+          "volume_24h": 52.584906,
+          "liquidity": "13936.3723",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.235\\\", \\\"0.765\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"},{\"market_id\":\"7375148\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-8.5)\"}]"
     }
   ],
-  "last_updated": "2026-11-26T22:50:39.739581+00:00"
+  "last_updated": "2026-11-26T23:50:46.145019+00:00"
 }

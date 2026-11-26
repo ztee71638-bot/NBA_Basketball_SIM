@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T22:50:39.738129+00:00",
+  "last_updated": "2026-11-26T23:50:46.143591+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -11,10 +11,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-21T22:12Z",
+      "date": "2026-11-26T22:44Z",
       "return_date": "2026-11-29",
-      "short_comment": "Landale (hip) won't play Sunday against the Pistons.",
-      "long_comment": "This will be Landale's fourth consecutive game on the inactive list. His next chance to play will come Friday in Boston.",
+      "short_comment": "Landale (hip) is out for Friday's game against the Celtics.",
+      "long_comment": "Landale won't suit up Friday and this will be his fifth consecutive absence. His next chance to play will come against the Knicks on Sunday.",
       "source": "ESPN"
     },
     {
@@ -453,6 +453,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "2580365",
+      "name": "Larry Nance Jr.",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-26T22:43Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Nance (ankle) is questionable for Friday's game against the 76ers.",
+      "long_comment": "Nance didn't return to Monday's game against the Thunder due to a sore right ankle, and it remains to be seen whether the big man will be able to suit up Friday. He shouldn't cause a massive impact in most fantasy lineups with his absence, as Nance is averaging just 4.2 points and 2.2 rebounds per game in 17 appearances off the bench this season.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4396909",
       "name": "Aaron Nesmith",
       "team": "IND",
@@ -495,21 +510,6 @@
       "return_date": "2026-12-13",
       "short_comment": "Haliburton (hamstring) was recalled from the G League's Noblesville Boom on Tuesday, Tony East of Forbes.com reports.",
       "long_comment": "Haliburton joined the Pacers' G League affiliate for practice Tuesday, taking a significant step forward in his recovery from a left hamstring strain. However, Shams Charania of ESPN reported Friday that the star point guard is expected to miss at least two more weeks, so Haliburton isn't expected to return to game action in the near future.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2580365",
-      "name": "Larry Nance Jr.",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-24T02:00Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Nance exited Monday's game against the Thunder due to a sore right ankle and he will not return, Tony East of Forbes.com reports.",
-      "long_comment": "Nance will have three full days to rest his sore ankle before the Pacers' next game, although with Friday's matchup with the 76ers being the first of a back-to-back set, Nance may need to miss that one as well. Obi Toppin figures to pick up most of Nance's minutes while he's sidelined.",
       "source": "ESPN"
     },
     {
@@ -566,10 +566,25 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-25T20:33Z",
+      "date": "2026-11-26T23:21Z",
       "return_date": "2026-11-27",
-      "short_comment": "Reaves (heel) was a full participant in Wednesday's practice, Daniel Starkand of LakersNation.com reports.",
-      "long_comment": "Reaves has missed the last five games with a left heel contusion but is trending in the right direction ahead of Friday's game at San Antonio. The Lakers will provide an update on his status by Thursday night, and the 28-year-old shooting guard's return would leave fewer minutes available for Quentin Grimes, Collin Sexton and Jake LaRavia.",
+      "short_comment": "Reaves (heel) is questionable for Friday's game against the Spurs.",
+      "long_comment": "Reaves practiced Wednesday, so he's trending in the right direction to face the Spurs, and a decision on his availability will likely come closer to Friday's 9:30 p.m. ET tipoff. Reaves has missed the last five games with a left heel contusion, so the Lakers have relied more on Quentin Grimes, Collin Sexton and Jake LaRavia for backcourt contributions alongside Luka Doncic.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4432810",
+      "name": "Isaiah Stewart",
+      "team": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-26T23:27Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Stewart is questionable for Friday's game against the Timberwolves due to right hip soreness.",
+      "long_comment": "Stewart could miss Friday's game, and if so, it'd be a huge blow for the Grizzlies since Zach Edey (ankle) is also questionable. If both players are out, Taylor Hendricks would be the next in line to see heavy minutes at center. Stewart is averaging 10.6 points, 3.3 rebounds and 0.9 assists per game this season.",
       "source": "ESPN"
     },
     {
@@ -581,10 +596,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-26T03:43Z",
+      "date": "2026-11-26T23:24Z",
       "return_date": "2026-11-27",
-      "short_comment": "Edey (ankle) did not return to Wednesday's 115-97 win over the Clippers. He finished with seven points (3-4 FG, 1-1 FT), four rebounds, two assists and two blocks across nine minutes.",
-      "long_comment": "Edey didn't return after checking out in the second quarter due to ankle soreness. Considering he's had two procedures on the same ankle since June 2025, the team will likely be overly cautious before allowing him to suit up. For now, Edey should be considered at least questionable for Friday's game against Minnesota. If he is ruled out for that contest, Isaiah Stewart and Taylor Hendricks are expected to see more minutes, with one of those players in line to start.",
+      "short_comment": "Edey (ankle) is questionable for Friday's game against the Timberwolves.",
+      "long_comment": "Edey didn't return to Wednesday's 115-97 win over the Clippers, finishing with seven points (3-4 FG, 1-1 FT), four rebounds, two assists and two blocks across nine minutes. Taylor Hendricks could be in line for a bigger role in the frontcourt Friday, as Isaiah Stewart (hip) is questionable as well.",
       "source": "ESPN"
     },
     {
@@ -701,10 +716,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-26T03:37Z",
+      "date": "2026-11-26T23:14Z",
       "return_date": "2026-11-27",
-      "short_comment": "Ball (ankle) did not return to Wednesday's 113-106 win over the Thunder.",
-      "long_comment": "Ball finished with 19 points (7-18 FG, 5-9 3Pt), seven rebounds, eight assists and one steal in 29 minutes. Minnesota won a third consecutive game, but we'll have to wait and see the severity of the ankle injury. If Ball misses time, Terrence Shannon Jr. and Bones Hyland would likely absorb most of the vacated minutes.",
+      "short_comment": "Ball (ankle) is questionable for Friday's game against the Grizzlies.",
+      "long_comment": "Ball exited Wednesday's game against the Thunder and finished with 19 points (7-18 FG, 5-9 3Pt), seven rebounds, eight assists and one steal in 29 minutes. If he's unable to suit up Friday, Bones Hyland and Terrence Shannon would be in line to see more playing time in the backcourt. That would be a huge downgrade for a Minnesota team that's already missing two key backcourt pieces in Anthony Edwards (knee) and Donte DiVincenzo (Achilles).",
       "source": "ESPN"
     },
     {
@@ -1218,6 +1233,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "5037871",
+      "name": "Dylan Harper",
+      "team": "SA",
+      "team_name": "San Antonio Spurs",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-26T23:41Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Harper (hip) is questionable for Friday's game against the Lakers.",
+      "long_comment": "Harper has been upgraded to questionable ahead of Friday's contest despite reports on Nov. 19 suggesting he was set to miss two to three weeks due to a left hip external rotator strain. Julian Champagnie and Keldon Johnson are expected to retain expanded roles if Harper is ruled out.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4066259",
       "name": "De'Aaron Fox",
       "team": "SA",
@@ -1226,25 +1256,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Right",
-      "date": "2026-11-26T06:01Z",
+      "date": "2026-11-26T23:35Z",
       "return_date": "2026-11-27",
-      "short_comment": "Fox (shin) has been ruled out for Wednesday's game against Portland, Jeff McDonald of the San Antonio Express-News reports.",
-      "long_comment": "Fox will miss consecutive games for the first time in 2026-27. He's dealing with a right shin contusion, and his next chance to suit up will come Friday against the Lakers. Stephon Castle will continue running the Spurs' offense while Jordan McLaughlin gets additional run in the second unit.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5037871",
-      "name": "Dylan Harper",
-      "team": "SA",
-      "team_name": "San Antonio Spurs",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-19T20:07Z",
-      "return_date": "2026-12-13",
-      "short_comment": "Harper (hip) is expected to miss two to three weeks, Brett Siegel of ClutchPoints.com reports.",
-      "long_comment": "Harper has been diagnosed with a left hip external rotator strain, and San Antonio is now set to be without one of its regular guards for an extended stretch. His absence creates more backcourt minutes for the Spurs, likely most prominently for Justin Champagnie while the team waits for Tobias Harris (calf) to make his season debut. De'Aaron Fox and Stephon Castle should see extra ball-handling duties as well.",
+      "short_comment": "Fox (shin) is questionable for Friday's game against the Lakers.",
+      "long_comment": "Fox could miss a third straight game due to a right shin contusion. If he is unavailable, Jordan McLaughlin is expected to retain an expanded role.",
       "source": "ESPN"
     },
     {
