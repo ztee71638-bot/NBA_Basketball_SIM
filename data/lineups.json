@@ -1,5 +1,46 @@
 {
-  "last_updated": "2026-11-27T15:30:21.060671+00:00",
+  "last_updated": "2026-11-27T16:39:42.153557+00:00",
   "source": "ESPN game summaries",
-  "games": []
+  "games": [
+    {
+      "game_id": "401909326",
+      "date": "2026-11-28T00:00Z",
+      "home_team": "NYK",
+      "away_team": "MIA",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909327",
+      "date": "2026-11-28T00:30Z",
+      "home_team": "DET",
+      "away_team": "MIL",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909328",
+      "date": "2026-11-28T00:30Z",
+      "home_team": "IND",
+      "away_team": "PHI",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909329",
+      "date": "2026-11-28T00:30Z",
+      "home_team": "TOR",
+      "away_team": "BKN",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    }
+  ]
 }

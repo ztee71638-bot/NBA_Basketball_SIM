@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T15:30:21.059345+00:00",
+  "last_updated": "2026-11-27T16:39:42.152773+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -453,6 +453,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4396993",
+      "name": "Tyrese Haliburton",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-27T16:20Z",
+      "return_date": "2026-12-13",
+      "short_comment": "Haliburton (hamstring) has been ruled out per Scott Agness of FieldhouseFiles.com for Friday's game against the 76ers. The guard participated in practice activities earlier this week as he continues working toward his return.",
+      "long_comment": "Haliburton's return to practice is encouraging, but Indiana continues exercising caution with his hamstring injury. He is still expected to have his return in mid-December.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3133603",
       "name": "Kelly Oubre Jr.",
       "team": "IND",
@@ -495,21 +510,6 @@
       "return_date": "2026-11-27",
       "short_comment": "McConnell (hamstring) is questionable for Friday's game against the 76ers.",
       "long_comment": "McConnell has missed the Pacers' last two games due to left hamstring soreness, and the questionable tag suggests the veteran floor general could be an option Friday. He's not expected to have a big role in most fantasy lineups, though, as he's averaging just 7.0 points, 4.3 assists, and 2.3 rebounds per game in his seven outings off the bench this season.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4396993",
-      "name": "Tyrese Haliburton",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-24T19:41Z",
-      "return_date": "2026-12-13",
-      "short_comment": "Haliburton (hamstring) was recalled from the G League's Noblesville Boom on Tuesday, Tony East of Forbes.com reports.",
-      "long_comment": "Haliburton joined the Pacers' G League affiliate for practice Tuesday, taking a significant step forward in his recovery from a left hamstring strain. However, Shams Charania of ESPN reported Friday that the star point guard is expected to miss at least two more weeks, so Haliburton isn't expected to return to game action in the near future.",
       "source": "ESPN"
     },
     {
@@ -828,6 +828,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "6585",
+      "name": "Andre Drummond",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-27T15:36Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Drummond (concussion) has been ruled out for Friday's game against the Heat.",
+      "long_comment": "Drummond played just nine minutes prior to exiting Wednesday's 121-102 win over Cleveland due to a concussion. Mohamed Diawara and James Wiseman will likely get a boost in playing time off the Knicks' bench with Drummond sidelined. His next chance to suit up will come against the Hawks on Sunday.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4431823",
       "name": "Miles McBride",
       "team": "NY",
@@ -870,21 +885,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Anunoby (calf) is doubtful for Friday's game against the Heat.",
       "long_comment": "Anunoby started doing on-court work Wednesday, but all signs point toward this game coming a bit too soon for the veteran forward. Anunoby has missed the Knicks' past two games due to left calf soreness, and if he's out, Landry Shamet could remain in the starting unit.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "6585",
-      "name": "Andre Drummond",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-26T21:51Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Drummond (head) is questionable for Friday's game against the Heat.",
-      "long_comment": "Drummond exited Wednesday's win over the Cavaliers due to a head injury, and a decision on his availability Friday will be made closer to the 7 p.m. ET tipoff. Drummond adds depth at center behind Karl-Anthony Towns, so if he doesn't play, look for Mohamed Diawara and James Wiseman to see an uptick in playing time.",
       "source": "ESPN"
     },
     {
@@ -1350,6 +1350,21 @@
       "return_date": "2026-12-13",
       "short_comment": "Barrett has been diagnosed with a right hamstring strain and will be re-evaluated in two weeks, Brett Siegel of ClutchPoints.com reports.",
       "long_comment": "Based on his re-evaluation timeline, Barrett likely won't return to game action until mid-December at the earliest. Jamison Battle, Allen Graves and Jamal Shead are candidates for increased playing time in Barrett's absence, especially while Kawhi Leonard (knee) is also sidelined.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4277919",
+      "name": "Mo Bamba",
+      "team": "UTAH",
+      "team_name": "Utah Jazz",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-27T16:28Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Bamba will start Monday's game against the Lakers, Daniel Starkand of LakersNation.com reports.",
+      "long_comment": "Bamba will start at center Monday due to the absence of Jaxson Hayes (knee). Bamba drew three starts earlier this month and filled in admirably, averaging 15.7 points, 10.3 rebounds, 2.3 assists, 1.0 steals and 1.3 blocks in 30.0 minutes per game.",
       "source": "ESPN"
     },
     {
