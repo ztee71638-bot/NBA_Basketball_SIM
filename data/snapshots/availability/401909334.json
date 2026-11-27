@@ -184,7 +184,187 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-27T20:39:41.324619+00:00",
+      "minutes_to_tipoff": 350.3,
+      "injuries": [
+        {
+          "athlete_id": "3102530",
+          "name": "Jusuf Nurkic",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-27T00:08Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Nurkic (foot) is questionable for Friday's game against the Nuggets.",
+          "long_comment": "Nurkic could make his season debut Friday after being sidelined due to a partial plantar plate tear of the second toe on his right foot. If he is unavailable, Mo Bamba could see a large role, especially if Jaxson Hayes (knee, questionable) is also out.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4066336",
+          "name": "Lauri Markkanen",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-11T18:22Z",
+          "return_date": "2027-01-04",
+          "short_comment": "Markkanen has been diagnosed with a non-displaced fracture in his right hand and will be sidelined for at least one month, Shams Charania of ESPN reports.",
+          "long_comment": "Markkanen has missed two straight games due to what was being described as a right wrist sprain, but it appears the issue was much worse than initially thought. The talented big man now joins Jusuf Nurkic (foot) and Jaren Jackson (knee) on Utah's long-term injury list, while Keyonte George's status moving forward is unclear while dealing with an ankle sprain. Given all of the injuries, Ace Bailey and Darryn Peterson will have to lead the offense, while Isaiah Collier, Brice Sensabaugh, Svi Mykhailiuk, Josh Okogie and Josh Green are candidates for increased roles.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4277919",
+          "name": "Mo Bamba",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "C",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": null,
+          "date": "2026-11-27T16:41Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Bamba (illness) is listed as questionable for Friday's game against the Nuggets, according to the Jazz's injury report.",
+          "long_comment": "Bamba's availability adds uncertainty to Utah's frontcourt rotation, with Jusuf Nurkic (foot) and Jaxson Hayes (knee) also questionable. If Bamba sits, the Jazz could face a shortage of healthy centers against Denver.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4277961",
+          "name": "Jaren Jackson Jr.",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-10-27T19:25Z",
+          "return_date": "2026-12-14",
+          "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
+          "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4397077",
+          "name": "Jaxson Hayes",
+          "team": "UTAH",
+          "team_name": "Utah Jazz",
+          "position": "C",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Left",
+          "date": "2026-11-27T00:11Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Hayes (knee) is questionable for Friday's game against the Nuggets.",
+          "long_comment": "Hayes could miss a second straight game due to a left knee strain. If he is unavailable, Mo Bamba figures to see an expanded role.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909334",
+        "date": "2026-11-28T02:30Z",
+        "home_team": "UTA",
+        "away_team": "DEN",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "3102530",
+            "name": "Jusuf Nurkic",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-27T00:08Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Nurkic (foot) is questionable for Friday's game against the Nuggets.",
+            "long_comment": "Nurkic could make his season debut Friday after being sidelined due to a partial plantar plate tear of the second toe on his right foot. If he is unavailable, Mo Bamba could see a large role, especially if Jaxson Hayes (knee, questionable) is also out.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4066336",
+            "name": "Lauri Markkanen",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-11T18:22Z",
+            "return_date": "2027-01-04",
+            "short_comment": "Markkanen has been diagnosed with a non-displaced fracture in his right hand and will be sidelined for at least one month, Shams Charania of ESPN reports.",
+            "long_comment": "Markkanen has missed two straight games due to what was being described as a right wrist sprain, but it appears the issue was much worse than initially thought. The talented big man now joins Jusuf Nurkic (foot) and Jaren Jackson (knee) on Utah's long-term injury list, while Keyonte George's status moving forward is unclear while dealing with an ankle sprain. Given all of the injuries, Ace Bailey and Darryn Peterson will have to lead the offense, while Isaiah Collier, Brice Sensabaugh, Svi Mykhailiuk, Josh Okogie and Josh Green are candidates for increased roles.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4277919",
+            "name": "Mo Bamba",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "C",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": null,
+            "date": "2026-11-27T16:41Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Bamba (illness) is listed as questionable for Friday's game against the Nuggets, according to the Jazz's injury report.",
+            "long_comment": "Bamba's availability adds uncertainty to Utah's frontcourt rotation, with Jusuf Nurkic (foot) and Jaxson Hayes (knee) also questionable. If Bamba sits, the Jazz could face a shortage of healthy centers against Denver.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4277961",
+            "name": "Jaren Jackson Jr.",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-10-27T19:25Z",
+            "return_date": "2026-12-14",
+            "short_comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN.",
+            "long_comment": "Jackson sustained the injury early in Monday's loss to Memphis, and he's now expected to miss at least a month and a half of action. The star big man's absence creates a major void in the Utah lineup, one that is likely to be filled by a timeshare of Jaxson Hayes (shoulder), Kyle Filipowski and Mo Bamba. The Jazz could also shift Lauri Markkanen (wrist), when healthy, to the center spot at times, perhaps allowing Ace Bailey to spend more time at power forward.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4397077",
+            "name": "Jaxson Hayes",
+            "team": "UTAH",
+            "team_name": "Utah Jazz",
+            "position": "C",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Left",
+            "date": "2026-11-27T00:11Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Hayes (knee) is questionable for Friday's game against the Nuggets.",
+            "long_comment": "Hayes could miss a second straight game due to a left knee strain. If he is unavailable, Mo Bamba figures to see an expanded role.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909334",
+          "date": "2026-11-28T02:30Z",
+          "home_team": "UTA",
+          "away_team": "DEN",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-27T18:34:09.974077+00:00"
+  "last_updated": "2026-11-27T20:39:41.324619+00:00"
 }

@@ -394,7 +394,217 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-27T20:39:41.324619+00:00",
+      "minutes_to_tipoff": 320.3,
+      "injuries": [
+        {
+          "athlete_id": "4683688",
+          "name": "Dereck Lively II",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-26T23:56Z",
+          "return_date": "2026-11-30",
+          "short_comment": "Lively (foot) is out for Friday's game against the Suns.",
+          "long_comment": "Lively has yet to suit up this season after undergoing right foot surgery last December. Recent comments from head coach Dusty May indicate he is progressing in his recovery, but he will remain sidelined Friday.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5106040",
+          "name": "Tobi Lawal",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-27T00:01Z",
+          "return_date": "2026-11-30",
+          "short_comment": "Lawal (groin) is out for Friday's game against the Suns.",
+          "long_comment": "Lawal will miss a fifth straight game due to a right groin strain. His next opportunity to suit up comes Monday against the Celtics.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5148538",
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-26T23:53Z",
+          "return_date": "2026-12-04",
+          "short_comment": "Biberovic (heel) is out for Friday's game against the Suns.",
+          "long_comment": "Biberovic has yet to debut for the Mavs this season due to a right heel bursitis issue, and he doesn't have a clear return date. He should be considered week-to-week until the Mavs offer an update about his recovery.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5279129",
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-26T23:59Z",
+          "return_date": "2026-12-14",
+          "short_comment": "De Larrea (knee) is out for Friday's game against the Suns.",
+          "long_comment": "De Larrea continues to miss time with a right knee strain, and it's not clear at this time where he's at in his rehab. He can be considered week-to-week until further notice.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "6442",
+          "name": "Kyrie Irving",
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "position": "G",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Left",
+          "date": "2026-11-27T19:07Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Irving (knee) is listed as questionable for Friday's game against the Suns due to left knee injury management.",
+          "long_comment": "Dallas could be exercising caution with Irving's surgically repaired knee. If he sits, Cooper Flagg should shoulder additional playmaking responsibilities, while Max Christie and Naji Marshall could see increased offensive opportunities. Irving's status warrants monitoring before tipoff.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4701232",
+          "name": "Mark Williams",
+          "team": "PHX",
+          "team_name": "Phoenix Suns",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-09-11T16:03Z",
+          "return_date": "2027-02-03",
+          "short_comment": "Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+          "long_comment": "This is a tough blow for the center with training camp right around the corner. With his status for Opening Night in jeopardy, this will put a lot of eyes on Oso Ighodaro and Khaman Maluach, with the latter already drawing buzz during the Summer League. More clarity on Williams' timeline should be known in the coming weeks.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909332",
+        "date": "2026-11-28T02:00Z",
+        "home_team": "PHX",
+        "away_team": "DAL",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "4683688",
+            "name": "Dereck Lively II",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-26T23:56Z",
+            "return_date": "2026-11-30",
+            "short_comment": "Lively (foot) is out for Friday's game against the Suns.",
+            "long_comment": "Lively has yet to suit up this season after undergoing right foot surgery last December. Recent comments from head coach Dusty May indicate he is progressing in his recovery, but he will remain sidelined Friday.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5106040",
+            "name": "Tobi Lawal",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-27T00:01Z",
+            "return_date": "2026-11-30",
+            "short_comment": "Lawal (groin) is out for Friday's game against the Suns.",
+            "long_comment": "Lawal will miss a fifth straight game due to a right groin strain. His next opportunity to suit up comes Monday against the Celtics.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5148538",
+            "name": "Tarik Biberovic",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-26T23:53Z",
+            "return_date": "2026-12-04",
+            "short_comment": "Biberovic (heel) is out for Friday's game against the Suns.",
+            "long_comment": "Biberovic has yet to debut for the Mavs this season due to a right heel bursitis issue, and he doesn't have a clear return date. He should be considered week-to-week until the Mavs offer an update about his recovery.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5279129",
+            "name": "Sergio de Larrea",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-26T23:59Z",
+            "return_date": "2026-12-14",
+            "short_comment": "De Larrea (knee) is out for Friday's game against the Suns.",
+            "long_comment": "De Larrea continues to miss time with a right knee strain, and it's not clear at this time where he's at in his rehab. He can be considered week-to-week until further notice.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "6442",
+            "name": "Kyrie Irving",
+            "team": "DAL",
+            "team_name": "Dallas Mavericks",
+            "position": "G",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Left",
+            "date": "2026-11-27T19:07Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Irving (knee) is listed as questionable for Friday's game against the Suns due to left knee injury management.",
+            "long_comment": "Dallas could be exercising caution with Irving's surgically repaired knee. If he sits, Cooper Flagg should shoulder additional playmaking responsibilities, while Max Christie and Naji Marshall could see increased offensive opportunities. Irving's status warrants monitoring before tipoff.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4701232",
+            "name": "Mark Williams",
+            "team": "PHX",
+            "team_name": "Phoenix Suns",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-09-11T16:03Z",
+            "return_date": "2027-02-03",
+            "short_comment": "Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+            "long_comment": "This is a tough blow for the center with training camp right around the corner. With his status for Opening Night in jeopardy, this will put a lot of eyes on Oso Ighodaro and Khaman Maluach, with the latter already drawing buzz during the Summer League. More clarity on Williams' timeline should be known in the coming weeks.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909332",
+          "date": "2026-11-28T02:00Z",
+          "home_team": "PHX",
+          "away_team": "DAL",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-27T19:44:17.122527+00:00"
+  "last_updated": "2026-11-27T20:39:41.324619+00:00"
 }
