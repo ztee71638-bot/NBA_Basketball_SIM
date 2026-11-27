@@ -8444,7 +8444,193 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008994\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.395\\\", \\\"0.605\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Grizzlies vs. Timberwolves\"},{\"market_id\":\"7375145\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-3.5)\"},{\"market_id\":\"7375157\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-2.5)\"},{\"market_id\":\"7375169\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-4.5)\"},{\"market_id\":\"7375181\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-1.5)\"},{\"market_id\":\"7375193\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-5.5)\"},{\"market_id\":\"7375205\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.4\\\", \\\"0.6\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-6.5)\"},{\"market_id\":\"7375217\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-7.5)\"},{\"market_id\":\"7375229\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.38\\\", \\\"0.62\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-1.5)\"},{\"market_id\":\"7375241\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.34\\\", \\\"0.66\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-8.5)\"},{\"market_id\":\"7375253\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.34\\\", \\\"0.66\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-2.5)\"},{\"market_id\":\"7375265\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-9.5)\"},{\"market_id\":\"7375277\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.285\\\", \\\"0.715\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-4.5)\"},{\"market_id\":\"7375289\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.27\\\", \\\"0.73\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-11.5)\"},{\"market_id\":\"7375301\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-6.5)\"},{\"market_id\":\"7375313\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.22\\\", \\\"0.78\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-13.5)\"},{\"market_id\":\"7375325\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-8.5)\"},{\"market_id\":\"7375337\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.185\\\", \\\"0.815\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-15.5)\"},{\"market_id\":\"7375349\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.155\\\", \\\"0.845\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-10.5)\"},{\"market_id\":\"7375361\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.15\\\", \\\"0.85\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-17.5)\"},{\"market_id\":\"7375373\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.12\\\", \\\"0.88\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-12.5)\"},{\"market_id\":\"7375385\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-19.5)\"},{\"market_id\":\"7375397\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.085\\\", \\\"0.915\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-14.5)\"},{\"market_id\":\"7375409\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.085\\\", \\\"0.915\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-21.5)\"},{\"market_id\":\"7375421\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-16.5)\"},{\"market_id\":\"7375433\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.065\\\", \\\"0.935\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-23.5)\"},{\"market_id\":\"7375445\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.05\\\", \\\"0.95\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-18.5)\"},{\"market_id\":\"7375457\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.04\\\", \\\"0.96\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-25.5)\"},{\"market_id\":\"7375469\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.0305\\\", \\\"0.9695\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-20.5)\"},{\"market_id\":\"7375481\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.026\\\", \\\"0.974\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-27.5)\"},{\"market_id\":\"7375493\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.0255\\\", \\\"0.9745\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-22.5)\"},{\"market_id\":\"7375499\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.04\\\", \\\"0.96\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-29.5)\"},{\"market_id\":\"7375636\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.0285\\\", \\\"0.9715\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-24.5)\"},{\"market_id\":\"7375642\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.335\\\", \\\"0.665\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-31.5)\"},{\"market_id\":\"7375151\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 223.5\"},{\"market_id\":\"7375163\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 221.5\"},{\"market_id\":\"7375175\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 225.5\"},{\"market_id\":\"7375187\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 219.5\"},{\"market_id\":\"7375199\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 227.5\"},{\"market_id\":\"7375211\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 217.5\"},{\"market_id\":\"7375223\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.33\\\", \\\"0.67\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 229.5\"},{\"market_id\":\"7375235\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.635\\\", \\\"0.365\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 215.5\"},{\"market_id\":\"7375247\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.28\\\", \\\"0.72\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 231.5\"},{\"market_id\":\"7375259\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.67\\\", \\\"0.33\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 213.5\"},{\"market_id\":\"7375271\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.255\\\", \\\"0.745\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 233.5\"},{\"market_id\":\"7375283\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.705\\\", \\\"0.295\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 211.5\"},{\"market_id\":\"7375295\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 235.5\"},{\"market_id\":\"7375307\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.75\\\", \\\"0.25\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 209.5\"},{\"market_id\":\"7375319\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 237.5\"},{\"market_id\":\"7375331\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.78\\\", \\\"0.22\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 207.5\"},{\"market_id\":\"7375343\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.165\\\", \\\"0.835\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 239.5\"},{\"market_id\":\"7375355\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.82\\\", \\\"0.18\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 205.5\"},{\"market_id\":\"7375367\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.14\\\", \\\"0.86\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 241.5\"},{\"market_id\":\"7375379\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.83\\\", \\\"0.17\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 203.5\"},{\"market_id\":\"7375391\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 243.5\"},{\"market_id\":\"7375403\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.865\\\", \\\"0.135\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 201.5\"},{\"market_id\":\"7375415\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.09\\\", \\\"0.91\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 245.5\"},{\"market_id\":\"7375427\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.895\\\", \\\"0.105\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 199.5\"},{\"market_id\":\"7375439\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.065\\\", \\\"0.935\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 247.5\"},{\"market_id\":\"7375451\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.915\\\", \\\"0.085\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 197.5\"},{\"market_id\":\"7375463\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 249.5\"},{\"market_id\":\"7375475\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.93\\\", \\\"0.07\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 195.5\"},{\"market_id\":\"7375487\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.045\\\", \\\"0.955\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 251.5\"},{\"market_id\":\"7385309\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Ayo Dosunmu: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7385310\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.33\\\", \\\"0.67\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Ayo Dosunmu: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7385311\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Ayo Dosunmu: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7385312\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Ayo Dosunmu: 3-Pointers Made O/U 3.5\"},{\"market_id\":\"7385313\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.06\\\", \\\"0.94\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Ayo Dosunmu: 3-Pointers Made O/U 4.5\"},{\"market_id\":\"7385314\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Jaden McDaniels: 3-Pointers Made O/U 0.5\"},{\"market_id\":\"7385315\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.275\\\", \\\"0.725\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Jaden McDaniels: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7385316\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.155\\\", \\\"0.845\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Jaden McDaniels: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7386119\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 220.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T05:57:56.696387+00:00",
+      "markets": [
+        {
+          "market_id": "7008994",
+          "market_type": "moneyline",
+          "question": "Grizzlies vs. Timberwolves",
+          "slug": "nba-mem-min-2026-11-27",
+          "outcomes": "[\"Grizzlies\", \"Timberwolves\"]",
+          "outcome_prices": "[\"0.395\", \"0.605\"]",
+          "volume_24h": 29947.794232000004,
+          "liquidity": "77145.631",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375145",
+          "market_type": "spread",
+          "question": "Spread: Timberwolves (-3.5)",
+          "slug": "nba-mem-min-2026-11-27-spread-home-3pt5",
+          "outcomes": "[\"Timberwolves\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 1114.433963,
+          "liquidity": "43801.9322",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375157",
+          "market_type": "spread",
+          "question": "Spread: Timberwolves (-2.5)",
+          "slug": "nba-mem-min-2026-11-27-spread-home-2pt5",
+          "outcomes": "[\"Timberwolves\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.545\", \"0.455\"]",
+          "volume_24h": 207.545455,
+          "liquidity": "37236.2432",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375169",
+          "market_type": "spread",
+          "question": "Spread: Timberwolves (-4.5)",
+          "slug": "nba-mem-min-2026-11-27-spread-home-4pt5",
+          "outcomes": "[\"Timberwolves\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.465\", \"0.535\"]",
+          "volume_24h": 30,
+          "liquidity": "41864.8675",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375193",
+          "market_type": "spread",
+          "question": "Spread: Timberwolves (-5.5)",
+          "slug": "nba-mem-min-2026-11-27-spread-home-5pt5",
+          "outcomes": "[\"Timberwolves\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 134.224717,
+          "liquidity": "36170.139",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375277",
+          "market_type": "spread",
+          "question": "Spread: Grizzlies (-4.5)",
+          "slug": "nba-mem-min-2026-11-27-spread-away-4pt5",
+          "outcomes": "[\"Grizzlies\", \"Timberwolves\"]",
+          "outcome_prices": "[\"0.29\", \"0.71\"]",
+          "volume_24h": 76.129033,
+          "liquidity": "24674.1381",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375385",
+          "market_type": "spread",
+          "question": "Spread: Timberwolves (-19.5)",
+          "slug": "nba-mem-min-2026-11-27-spread-home-19pt5",
+          "outcomes": "[\"Timberwolves\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.115\", \"0.885\"]",
+          "volume_24h": 185.19912499999998,
+          "liquidity": "16179.7945",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375151",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 223.5",
+          "slug": "nba-mem-min-2026-11-27-total-223pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": 81.948572,
+          "liquidity": "37401.1632",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375163",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 221.5",
+          "slug": "nba-mem-min-2026-11-27-total-221pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": 154.778822,
+          "liquidity": "39219.7821",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375175",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 225.5",
+          "slug": "nba-mem-min-2026-11-27-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.415\", \"0.585\"]",
+          "volume_24h": 15,
+          "liquidity": "25857.8072",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375187",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 219.5",
+          "slug": "nba-mem-min-2026-11-27-total-219pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 3206.897661,
+          "liquidity": "37559.727",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375211",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 217.5",
+          "slug": "nba-mem-min-2026-11-27-total-217pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.585\", \"0.415\"]",
+          "volume_24h": 87.254236,
+          "liquidity": "36157.2048",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375307",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 209.5",
+          "slug": "nba-mem-min-2026-11-27-total-209pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.76\", \"0.24\"]",
+          "volume_24h": 12,
+          "liquidity": "23258.4247",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7375355",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 205.5",
+          "slug": "nba-mem-min-2026-11-27-total-205pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.825\", \"0.175\"]",
+          "volume_24h": 23.5,
+          "liquidity": "17918.1623",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        },
+        {
+          "market_id": "7386119",
+          "market_type": "total",
+          "question": "Grizzlies vs. Timberwolves: O/U 220.5",
+          "slug": "nba-mem-min-2026-11-27-total-220pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 210.943397,
+          "liquidity": "29243.769",
+          "end_date": "2026-11-28T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-mem-min-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008994\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.395\\\", \\\"0.605\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Grizzlies vs. Timberwolves\"},{\"market_id\":\"7375145\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-3.5)\"},{\"market_id\":\"7375157\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.545\\\", \\\"0.455\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-2.5)\"},{\"market_id\":\"7375169\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-4.5)\"},{\"market_id\":\"7375193\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-5.5)\"},{\"market_id\":\"7375277\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Timberwolves\\\"]\",\"question\":\"Spread: Grizzlies (-4.5)\"},{\"market_id\":\"7375385\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.115\\\", \\\"0.885\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Timberwolves (-19.5)\"},{\"market_id\":\"7375151\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 223.5\"},{\"market_id\":\"7375163\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 221.5\"},{\"market_id\":\"7375175\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 225.5\"},{\"market_id\":\"7375187\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 219.5\"},{\"market_id\":\"7375211\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.585\\\", \\\"0.415\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 217.5\"},{\"market_id\":\"7375307\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.76\\\", \\\"0.24\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 209.5\"},{\"market_id\":\"7375355\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.825\\\", \\\"0.175\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 205.5\"},{\"market_id\":\"7386119\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Timberwolves: O/U 220.5\"}]"
     }
   ],
-  "last_updated": "2026-11-27T04:46:26.959369+00:00"
+  "last_updated": "2026-11-27T05:57:56.696387+00:00"
 }
