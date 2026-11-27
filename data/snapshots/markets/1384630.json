@@ -716,7 +716,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"7031352\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Hornets\\\"]\",\"question\":\"Nets vs. Hornets\"},{\"market_id\":\"7401966\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Hornets: O/U 214.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T22:40:10.065049+00:00",
+      "markets": [
+        {
+          "market_id": "7031352",
+          "market_type": "moneyline",
+          "question": "Nets vs. Hornets",
+          "slug": "nba-bkn-cha-2026-11-28",
+          "outcomes": "[\"Nets\", \"Hornets\"]",
+          "outcome_prices": "[\"0.305\", \"0.695\"]",
+          "volume_24h": 240.006668,
+          "liquidity": "28243.5895",
+          "end_date": "2026-11-28T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-cha-2026-11-28"
+        },
+        {
+          "market_id": "7401966",
+          "market_type": "total",
+          "question": "Nets vs. Hornets: O/U 214.5",
+          "slug": "nba-bkn-cha-2026-11-28-total-214pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 960,
+          "liquidity": "17.95",
+          "end_date": "2026-11-28T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-cha-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031352\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Hornets\\\"]\",\"question\":\"Nets vs. Hornets\"},{\"market_id\":\"7401966\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Hornets: O/U 214.5\"}]"
     }
   ],
-  "last_updated": "2026-11-27T21:39:25.471071+00:00"
+  "last_updated": "2026-11-27T22:40:10.065049+00:00"
 }

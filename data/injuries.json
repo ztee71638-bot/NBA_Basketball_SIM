@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T21:39:25.469817+00:00",
+  "last_updated": "2026-11-27T22:40:10.063908+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -123,21 +123,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4576060",
-      "name": "Ryan Kalkbrenner",
-      "team": "CHA",
-      "team_name": "Charlotte Hornets",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-26T05:30Z",
-      "return_date": "2026-11-28",
-      "short_comment": "Kalkbrenner (hip) has been ruled out for Wednesday's matchup with Chicago.",
-      "long_comment": "Kalkbrenner exited Monday's loss to Memphis early with left hip soreness and is now set to miss Wednesday's contest. His next chance to play will come Saturday against the Nets. With the big man sidelined, Hannes Steinbach could see meaningful playing time behind Moussa Diabate.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "3135045",
       "name": "Grayson Allen",
       "team": "CHA",
@@ -146,10 +131,25 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": null,
-      "date": "2026-11-25T17:39Z",
+      "date": "2026-11-27T22:17Z",
       "return_date": "2026-11-28",
-      "short_comment": "Allen (concussion) has been ruled out for Wednesday's game against Chicago.",
-      "long_comment": "Allen will miss a fourth consecutive contest due to a concussion. With the veteran swingman sidelined, Sion James (thigh), Grant Williams and Royce O'Neale are candidates for increased playing time. Allen's next chance to play will come Saturday against Brooklyn.",
+      "short_comment": "Allen (concussion) is questionable for Saturday's game against the Nets.",
+      "long_comment": "Allen has missed the Hornets' last four games, and the questionable tag suggests a decision on the availability of the veteran guard will be made closer to Saturday's 6 p.m. ET tipoff. Having Allen would allow the Hornets to deploy a reliable floor-stretching threat, as Allen is averaging 14.9 points per game while shooting 45.8 percent from three this season in his 13 regular-season contests.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4576060",
+      "name": "Ryan Kalkbrenner",
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-27T22:04Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Kalkbrenner (hip) is probable for Saturday's matchup with Brooklyn.",
+      "long_comment": "The second-year big man is set to return from a one-game absence due to hip soreness. Kalkbrenner's presence is likely to push Hannes Steinbach from the Charlotte rotation altogether.",
       "source": "ESPN"
     },
     {
@@ -483,6 +483,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "2991235",
+      "name": "Steven Adams",
+      "team": "HOU",
+      "team_name": "Houston Rockets",
+      "position": "C",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-27T22:06Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Adams (knee) is questionable for Saturday's game against the 76ers.",
+      "long_comment": "The veteran center is in danger of sitting out for the first time since Nov. 16 in Miami. If Adams doesn't play, Clint Capela would likely have the backup center position all to himself behind Alperen Sengun on Saturday.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2580365",
       "name": "Larry Nance Jr.",
       "team": "IND",
@@ -690,21 +705,6 @@
       "return_date": "2026-12-01",
       "short_comment": "Saunders signed a two-way contract with the Grizzlies on Saturday, Shams Charania of ESPN reports.",
       "long_comment": "Saunders is still on the mend from a torn right ACL that he suffered during his final year at BYU. However, he has been cleared for on-court activities and will be allowed to practice with the Grizzlies now that he's officially signed with the team.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3032977",
-      "name": "Giannis Antetokounmpo",
-      "team": "MIA",
-      "team_name": "Miami Heat",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-26T21:15Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Antetokounmpo is probable for Friday's game against the Knicks due to right groin tendinitis.",
-      "long_comment": "The fact that Antetokounmpo is probable suggests the star forward should have a decent chance to suit up Friday. He's been playing at a high level lately, recording four consecutive double-doubles and averaging 28.6 points, 12.9 rebounds, 5.3 assists and 1.6 blocks per game since the beginning of November.",
       "source": "ESPN"
     },
     {
