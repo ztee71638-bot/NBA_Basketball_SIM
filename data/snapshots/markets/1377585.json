@@ -4616,7 +4616,253 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"},{\"market_id\":\"7375148\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-8.5)\"},{\"market_id\":\"7375160\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-7.5)\"},{\"market_id\":\"7375172\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-9.5)\"},{\"market_id\":\"7375184\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.595\\\", \\\"0.405\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-6.5)\"},{\"market_id\":\"7375196\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.465\\\", \\\"0.535\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-10.5)\"},{\"market_id\":\"7375220\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-11.5)\"},{\"market_id\":\"7375232\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.66\\\", \\\"0.34\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-4.5)\"},{\"market_id\":\"7375256\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.695\\\", \\\"0.305\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-3.5)\"},{\"market_id\":\"7375280\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.725\\\", \\\"0.275\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-2.5)\"},{\"market_id\":\"7375292\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.345\\\", \\\"0.655\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-14.5)\"},{\"market_id\":\"7375304\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.285\\\", \\\"0.715\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-16.5)\"},{\"market_id\":\"7375328\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-18.5)\"},{\"market_id\":\"7375154\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 221.5\"},{\"market_id\":\"7375178\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 223.5\"},{\"market_id\":\"7375190\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 217.5\"},{\"market_id\":\"7375202\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.4\\\", \\\"0.6\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 225.5\"},{\"market_id\":\"7386710\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Deni Avdija: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7386711\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Deni Avdija: 3-Pointers Made O/U 2.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T15:30:21.060899+00:00",
+      "markets": [
+        {
+          "market_id": "7008999",
+          "market_type": "moneyline",
+          "question": "Warriors vs. Trail Blazers",
+          "slug": "nba-gsw-por-2026-11-27",
+          "outcomes": "[\"Warriors\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.225\", \"0.775\"]",
+          "volume_24h": 19350.107486999997,
+          "liquidity": "81771.7834",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375148",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-8.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-8pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 3032.379839,
+          "liquidity": "18773.6595",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375160",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-7.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-7pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.575\", \"0.425\"]",
+          "volume_24h": 2123.440305,
+          "liquidity": "15054.4036",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375172",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-9.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-9pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 8670.731710999999,
+          "liquidity": "79181.3098",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375184",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-6.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-6pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.595\", \"0.405\"]",
+          "volume_24h": 1044.6840699999998,
+          "liquidity": "14106.0363",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375196",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-10.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-10pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.47\", \"0.53\"]",
+          "volume_24h": 308.627392,
+          "liquidity": "23888.0744",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375220",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-11.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-11pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 20,
+          "liquidity": "15200.4198",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375232",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-4.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-4pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.665\", \"0.335\"]",
+          "volume_24h": 133.111721,
+          "liquidity": "13467.9733",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375256",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-3.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-3pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.695\", \"0.305\"]",
+          "volume_24h": 70.422534,
+          "liquidity": "10903.7512",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375280",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-2.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-2pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.725\", \"0.275\"]",
+          "volume_24h": 271.640131,
+          "liquidity": "10983.4291",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375292",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-14.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-14pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.35\", \"0.65\"]",
+          "volume_24h": 2.857143,
+          "liquidity": "11859.905",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375304",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-16.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-16pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.29\", \"0.71\"]",
+          "volume_24h": 530.041096,
+          "liquidity": "12691.5588",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375328",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-18.5)",
+          "slug": "nba-gsw-por-2026-11-27-spread-home-18pt5",
+          "outcomes": "[\"Trail Blazers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.24\", \"0.76\"]",
+          "volume_24h": 12,
+          "liquidity": "10340.1589",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375154",
+          "market_type": "total",
+          "question": "Warriors vs. Trail Blazers: O/U 221.5",
+          "slug": "nba-gsw-por-2026-11-27-total-221pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": 381.396228,
+          "liquidity": "83431.7186",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375178",
+          "market_type": "total",
+          "question": "Warriors vs. Trail Blazers: O/U 223.5",
+          "slug": "nba-gsw-por-2026-11-27-total-223pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": 2093.783061,
+          "liquidity": "15080.4489",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375190",
+          "market_type": "total",
+          "question": "Warriors vs. Trail Blazers: O/U 217.5",
+          "slug": "nba-gsw-por-2026-11-27-total-217pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.575\", \"0.425\"]",
+          "volume_24h": 23.33,
+          "liquidity": "14115.5242",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7375202",
+          "market_type": "total",
+          "question": "Warriors vs. Trail Blazers: O/U 225.5",
+          "slug": "nba-gsw-por-2026-11-27-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.375\", \"0.625\"]",
+          "volume_24h": 106.101482,
+          "liquidity": "13936.5124",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7386705",
+          "market_type": "total",
+          "question": "Damian Lillard: 3-Pointers Made O/U 2.5",
+          "slug": "nba-gsw-por-2026-11-27-threes-damian-lillard-2pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.34\", \"0.66\"]",
+          "volume_24h": 12.867646,
+          "liquidity": "927.0416",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7386710",
+          "market_type": "total",
+          "question": "Deni Avdija: 3-Pointers Made O/U 1.5",
+          "slug": "nba-gsw-por-2026-11-27-threes-deni-avdija-1pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.315\", \"0.685\"]",
+          "volume_24h": 39.069696,
+          "liquidity": "968.3492",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        },
+        {
+          "market_id": "7386711",
+          "market_type": "total",
+          "question": "Deni Avdija: 3-Pointers Made O/U 2.5",
+          "slug": "nba-gsw-por-2026-11-27-threes-deni-avdija-2pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.205\", \"0.795\"]",
+          "volume_24h": 13.52814,
+          "liquidity": "2259.66",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-por-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008999\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.225\\\", \\\"0.775\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Warriors vs. Trail Blazers\"},{\"market_id\":\"7375148\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-8.5)\"},{\"market_id\":\"7375160\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-7.5)\"},{\"market_id\":\"7375172\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-9.5)\"},{\"market_id\":\"7375184\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.595\\\", \\\"0.405\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-6.5)\"},{\"market_id\":\"7375196\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.47\\\", \\\"0.53\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-10.5)\"},{\"market_id\":\"7375220\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-11.5)\"},{\"market_id\":\"7375232\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.665\\\", \\\"0.335\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-4.5)\"},{\"market_id\":\"7375256\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.695\\\", \\\"0.305\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-3.5)\"},{\"market_id\":\"7375280\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.725\\\", \\\"0.275\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-2.5)\"},{\"market_id\":\"7375292\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.35\\\", \\\"0.65\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-14.5)\"},{\"market_id\":\"7375304\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-16.5)\"},{\"market_id\":\"7375328\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Warriors\\\"]\",\"question\":\"Spread: Trail Blazers (-18.5)\"},{\"market_id\":\"7375154\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 221.5\"},{\"market_id\":\"7375178\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 223.5\"},{\"market_id\":\"7375190\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 217.5\"},{\"market_id\":\"7375202\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Warriors vs. Trail Blazers: O/U 225.5\"},{\"market_id\":\"7386705\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.34\\\", \\\"0.66\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Damian Lillard: 3-Pointers Made O/U 2.5\"},{\"market_id\":\"7386710\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Deni Avdija: 3-Pointers Made O/U 1.5\"},{\"market_id\":\"7386711\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.205\\\", \\\"0.795\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Deni Avdija: 3-Pointers Made O/U 2.5\"}]"
     }
   ],
-  "last_updated": "2026-11-27T14:27:30.125798+00:00"
+  "last_updated": "2026-11-27T15:30:21.060899+00:00"
 }
