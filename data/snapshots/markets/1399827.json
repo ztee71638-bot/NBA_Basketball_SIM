@@ -434,7 +434,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7086138\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.88\\\", \\\"0.12\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Bucks\\\"]\",\"question\":\"Spurs vs. Bucks\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T03:33:54.131257+00:00",
+      "markets": [
+        {
+          "market_id": "7086138",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Bucks",
+          "slug": "nba-sas-mil-2026-11-30",
+          "outcomes": "[\"Spurs\", \"Bucks\"]",
+          "outcome_prices": "[\"0.855\", \"0.145\"]",
+          "volume_24h": 64.613996,
+          "liquidity": "20778.9042",
+          "end_date": "2026-12-01T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-sas-mil-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086138\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.855\\\", \\\"0.145\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Bucks\\\"]\",\"question\":\"Spurs vs. Bucks\"}]"
     }
   ],
-  "last_updated": "2026-11-27T02:26:30.838827+00:00"
+  "last_updated": "2026-11-27T03:33:54.131257+00:00"
 }
