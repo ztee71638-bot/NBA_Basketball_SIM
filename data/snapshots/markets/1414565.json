@@ -272,7 +272,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7136794\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Hornets\\\", \\\"Celtics\\\"]\",\"question\":\"Hornets vs. Celtics\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T10:51:14.101801+00:00",
+      "markets": [
+        {
+          "market_id": "7136794",
+          "market_type": "moneyline",
+          "question": "Hornets vs. Celtics",
+          "slug": "nba-cha-bos-2026-12-02",
+          "outcomes": "[\"Hornets\", \"Celtics\"]",
+          "outcome_prices": "[\"0.195\", \"0.805\"]",
+          "volume_24h": 167.8,
+          "liquidity": "2350.3086",
+          "end_date": "2026-12-03T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-cha-bos-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136794\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.195\\\", \\\"0.805\\\"]\",\"outcomes\":\"[\\\"Hornets\\\", \\\"Celtics\\\"]\",\"question\":\"Hornets vs. Celtics\"}]"
     }
   ],
-  "last_updated": "2026-11-27T09:48:38.148956+00:00"
+  "last_updated": "2026-11-27T10:51:14.101801+00:00"
 }
