@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T23:50:46.143591+00:00",
+  "last_updated": "2026-11-27T01:02:49.044748+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -266,25 +266,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-23T23:25Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Lawal (groin) is out for Tuesday's game against Denver.",
-      "long_comment": "Lawal is slated for a fourth consecutive absence due to a right groin strain. His next opportunity to return will arrive Friday in Phoenix.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4683688",
-      "name": "Dereck Lively II",
-      "team": "DAL",
-      "team_name": "Dallas Mavericks",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-20T19:31Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
-      "long_comment": "Lively hasn't seen game action since Nov. 21, 2025, and he remains without a firm timetable to return after undergoing right foot surgery last December. However, this update suggests that the big man is trending in the right direction.",
+      "date": "2026-11-27T00:01Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Lawal (groin) is out for Friday's game against the Suns.",
+      "long_comment": "Lawal will miss a fifth straight game due to a right groin strain. His next opportunity to suit up comes Monday against the Celtics.",
       "source": "ESPN"
     },
     {
@@ -296,10 +281,25 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-17T22:53Z",
-      "return_date": "2026-11-27",
-      "short_comment": "De Larrea (knee) is listed as out for Wednesday's game against the Warriors.",
-      "long_comment": "De Larrea has only played four games during the 2026-27 campaign. There hasn't been any indication of when he will be cleared to return, so he should be considered week-to-week for now.",
+      "date": "2026-11-26T23:59Z",
+      "return_date": "2026-12-14",
+      "short_comment": "De Larrea (knee) is out for Friday's game against the Suns.",
+      "long_comment": "De Larrea continues to miss time with a right knee strain, and it's not clear at this time where he's at in his rehab. He can be considered week-to-week until further notice.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4683688",
+      "name": "Dereck Lively II",
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-26T23:56Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Lively (foot) is out for Friday's game against the Suns.",
+      "long_comment": "Lively has yet to suit up this season after undergoing right foot surgery last December. Recent comments from head coach Dusty May indicate he is progressing in his recovery, but he will remain sidelined Friday.",
       "source": "ESPN"
     },
     {
@@ -311,10 +311,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-17T22:42Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Biberovic (heel) is out for Wednesday's game against the Warriors.",
-      "long_comment": "Biberovic has yet to debut for the Mavs this season due to a right heel bursitis issue, and the fact that he continues to get ruled out a full day in advance of tipoff suggests he's still not close. Biberovic should be considered week-to-week moving forward.",
+      "date": "2026-11-26T23:53Z",
+      "return_date": "2026-12-04",
+      "short_comment": "Biberovic (heel) is out for Friday's game against the Suns.",
+      "long_comment": "Biberovic has yet to debut for the Mavs this season due to a right heel bursitis issue, and he doesn't have a clear return date. He should be considered week-to-week until the Mavs offer an update about his recovery.",
       "source": "ESPN"
     },
     {
@@ -453,6 +453,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3133603",
+      "name": "Kelly Oubre Jr.",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-27T00:42Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Oubre is questionable for Friday's game against the 76ers due to a right hand laceration.",
+      "long_comment": "Oubre has been performing at a high level of late, scoring at least 15 points in six straight contests, but he could be forced to miss time due to a right hand injury. If he is out, Quenton Jackson could see extra minutes.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "2580365",
       "name": "Larry Nance Jr.",
       "team": "IND",
@@ -465,21 +480,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Nance (ankle) is questionable for Friday's game against the 76ers.",
       "long_comment": "Nance didn't return to Monday's game against the Thunder due to a sore right ankle, and it remains to be seen whether the big man will be able to suit up Friday. He shouldn't cause a massive impact in most fantasy lineups with his absence, as Nance is averaging just 4.2 points and 2.2 rebounds per game in 17 appearances off the bench this season.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4396909",
-      "name": "Aaron Nesmith",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-26T22:31Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Nesmith (foot) is questionable for Friday's game against the 76ers.",
-      "long_comment": "Nesmith didn't play Monday against the Thunder, but the questionable tag means he could be back in the rotation Friday. Nesmith has been the team's regular starter at the three when healthy, averaging 9.8 points, 3.8 rebounds and 2.7 assists per game across 10 appearances since the beginning of November.",
       "source": "ESPN"
     },
     {
@@ -1137,7 +1137,7 @@
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
       "date": "2026-11-20T22:18Z",
-      "return_date": "2026-11-27",
+      "return_date": "2026-11-29",
       "short_comment": "Youngblood (heel) has been ruled out for Saturday's game against the Knicks.",
       "long_comment": "Youngblood has been on the shelf since Nov. 10 due to a right heel bone bruise. Until Portland signals otherwise, Youngblood can be considered out indefinitely moving forward.",
       "source": "ESPN"
@@ -1361,10 +1361,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-24T06:07Z",
+      "date": "2026-11-27T00:11Z",
       "return_date": "2026-11-27",
-      "short_comment": "Hayes (knee) has been ruled out for Monday's game against the Lakers.",
-      "long_comment": "Hayes left Sunday's tilt against the Mavericks with what's now being described as a left knee strain, and it's not yet known how much time he may miss beyond Monday. Mo Bamba should start at center for the Jazz and is worthy of streaming consideration in all fantasy leagues.",
+      "short_comment": "Hayes (knee) is questionable for Friday's game against the Nuggets.",
+      "long_comment": "Hayes could miss a second straight game due to a left knee strain. If he is unavailable, Mo Bamba figures to see an expanded role.",
       "source": "ESPN"
     },
     {
@@ -1376,10 +1376,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-20T22:40Z",
-      "return_date": "2026-11-29",
-      "short_comment": "Nurkic (foot) has been cleared for on-court work and will be re-evaluated in one week.",
-      "long_comment": "Nurkic continues to make progress in his recovery from a partial plantar plate tear of the second toe on his right foot, and getting cleared for on-court work is a big step in his rehab. There are still a few steps he'll need to clear before he makes his return to the floor, but once he's able to get through full-contact, 5-on-5 work, we'll know he's close.",
+      "date": "2026-11-27T00:08Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Nurkic (foot) is questionable for Friday's game against the Nuggets.",
+      "long_comment": "Nurkic could make his season debut Friday after being sidelined due to a partial plantar plate tear of the second toe on his right foot. If he is unavailable, Mo Bamba could see a large role, especially if Jaxson Hayes (knee, questionable) is also out.",
       "source": "ESPN"
     },
     {

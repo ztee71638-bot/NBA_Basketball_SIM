@@ -4058,7 +4058,61 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008998\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Clippers\\\"]\",\"question\":\"Pelicans vs. Clippers\"},{\"market_id\":\"7375189\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.64\\\", \\\"0.36\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pelicans vs. Clippers: O/U 225.5\"},{\"market_id\":\"7375213\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.675\\\", \\\"0.325\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pelicans vs. Clippers: O/U 223.5\"},{\"market_id\":\"7375757\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pelicans vs. Clippers: O/U 230.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T01:02:49.045841+00:00",
+      "markets": [
+        {
+          "market_id": "7008998",
+          "market_type": "moneyline",
+          "question": "Pelicans vs. Clippers",
+          "slug": "nba-nop-lac-2026-11-27",
+          "outcomes": "[\"Pelicans\", \"Clippers\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": 10682.571972999998,
+          "liquidity": "44929.4126",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-nop-lac-2026-11-27"
+        },
+        {
+          "market_id": "7375189",
+          "market_type": "total",
+          "question": "Pelicans vs. Clippers: O/U 225.5",
+          "slug": "nba-nop-lac-2026-11-27-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.615\", \"0.385\"]",
+          "volume_24h": 5,
+          "liquidity": "10541.8074",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-nop-lac-2026-11-27"
+        },
+        {
+          "market_id": "7375213",
+          "market_type": "total",
+          "question": "Pelicans vs. Clippers: O/U 223.5",
+          "slug": "nba-nop-lac-2026-11-27-total-223pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.67\", \"0.33\"]",
+          "volume_24h": 13.888889,
+          "liquidity": "10228.2829",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-nop-lac-2026-11-27"
+        },
+        {
+          "market_id": "7375757",
+          "market_type": "total",
+          "question": "Pelicans vs. Clippers: O/U 230.5",
+          "slug": "nba-nop-lac-2026-11-27-total-230pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.51\", \"0.49\"]",
+          "volume_24h": 15.08,
+          "liquidity": "10547.0834",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-nop-lac-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008998\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Clippers\\\"]\",\"question\":\"Pelicans vs. Clippers\"},{\"market_id\":\"7375189\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.615\\\", \\\"0.385\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pelicans vs. Clippers: O/U 225.5\"},{\"market_id\":\"7375213\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.67\\\", \\\"0.33\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pelicans vs. Clippers: O/U 223.5\"},{\"market_id\":\"7375757\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.51\\\", \\\"0.49\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pelicans vs. Clippers: O/U 230.5\"}]"
     }
   ],
-  "last_updated": "2026-11-26T23:50:46.145019+00:00"
+  "last_updated": "2026-11-27T01:02:49.045841+00:00"
 }

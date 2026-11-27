@@ -434,7 +434,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7086128\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Rockets\\\"]\",\"question\":\"Lakers vs. Rockets\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T01:02:49.045841+00:00",
+      "markets": [
+        {
+          "market_id": "7086128",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Rockets",
+          "slug": "nba-lal-hou-2026-11-30",
+          "outcomes": "[\"Lakers\", \"Rockets\"]",
+          "outcome_prices": "[\"0.375\", \"0.625\"]",
+          "volume_24h": 34.671241,
+          "liquidity": "23508.9837",
+          "end_date": "2026-12-01T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-hou-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086128\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Rockets\\\"]\",\"question\":\"Lakers vs. Rockets\"}]"
     }
   ],
-  "last_updated": "2026-11-26T23:50:46.145019+00:00"
+  "last_updated": "2026-11-27T01:02:49.045841+00:00"
 }
