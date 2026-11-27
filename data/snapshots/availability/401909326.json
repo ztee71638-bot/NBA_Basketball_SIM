@@ -814,7 +814,157 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-27T23:36:15.698236+00:00",
+      "minutes_to_tipoff": 23.7,
+      "injuries": [
+        {
+          "athlete_id": "2528426",
+          "name": "Jordan Clarkson",
+          "team": "NY",
+          "team_name": "New York Knicks",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-27T18:19Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Clarkson (foot) is out for Friday's game against the Heat.",
+          "long_comment": "Plantar fasciitis is costing Clarkson a fifth consecutive contest Friday. His next chance to suit up arrives Sunday against the Hawks.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3934719",
+          "name": "OG Anunoby",
+          "team": "NY",
+          "team_name": "New York Knicks",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-27T18:20Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Anunoby (calf) has been ruled out for Friday's game against the Heat. The forward was previously listed as doubtful and will miss his third consecutive contest due to a left calf strain.",
+          "long_comment": "Landry Shamet could remain in the starting lineup, while Josh Hart may absorb additional responsibilities on the wing. Anunoby's return to on-court activities is encouraging, but his next opportunity to play comes Sunday against Atlanta.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4431823",
+          "name": "Miles McBride",
+          "team": "NY",
+          "team_name": "New York Knicks",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-27T18:21Z",
+          "return_date": "2026-11-29",
+          "short_comment": "McBride (groin) is out for Friday's game against the Heat.",
+          "long_comment": "Friday marks a third straight absence for McBride. With the Knicks' backcourt a bit dinged up, Jose Alvarado could see enough playing time to warrant streaming attention in deeper fantasy setups.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "6585",
+          "name": "Andre Drummond",
+          "team": "NY",
+          "team_name": "New York Knicks",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": null,
+          "date": "2026-11-27T15:36Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Drummond (concussion) has been ruled out for Friday's game against the Heat.",
+          "long_comment": "Drummond played just nine minutes prior to exiting Wednesday's 121-102 win over Cleveland due to a concussion. Mohamed Diawara and James Wiseman will likely get a boost in playing time off the Knicks' bench with Drummond sidelined. His next chance to suit up will come against the Hawks on Sunday.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909326",
+        "date": "2026-11-28T00:00Z",
+        "home_team": "NYK",
+        "away_team": "MIA",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "2528426",
+            "name": "Jordan Clarkson",
+            "team": "NY",
+            "team_name": "New York Knicks",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-27T18:19Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Clarkson (foot) is out for Friday's game against the Heat.",
+            "long_comment": "Plantar fasciitis is costing Clarkson a fifth consecutive contest Friday. His next chance to suit up arrives Sunday against the Hawks.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3934719",
+            "name": "OG Anunoby",
+            "team": "NY",
+            "team_name": "New York Knicks",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-27T18:20Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Anunoby (calf) has been ruled out for Friday's game against the Heat. The forward was previously listed as doubtful and will miss his third consecutive contest due to a left calf strain.",
+            "long_comment": "Landry Shamet could remain in the starting lineup, while Josh Hart may absorb additional responsibilities on the wing. Anunoby's return to on-court activities is encouraging, but his next opportunity to play comes Sunday against Atlanta.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4431823",
+            "name": "Miles McBride",
+            "team": "NY",
+            "team_name": "New York Knicks",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-27T18:21Z",
+            "return_date": "2026-11-29",
+            "short_comment": "McBride (groin) is out for Friday's game against the Heat.",
+            "long_comment": "Friday marks a third straight absence for McBride. With the Knicks' backcourt a bit dinged up, Jose Alvarado could see enough playing time to warrant streaming attention in deeper fantasy setups.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "6585",
+            "name": "Andre Drummond",
+            "team": "NY",
+            "team_name": "New York Knicks",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": null,
+            "date": "2026-11-27T15:36Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Drummond (concussion) has been ruled out for Friday's game against the Heat.",
+            "long_comment": "Drummond played just nine minutes prior to exiting Wednesday's 121-102 win over Cleveland due to a concussion. Mohamed Diawara and James Wiseman will likely get a boost in playing time off the Knicks' bench with Drummond sidelined. His next chance to suit up will come against the Hawks on Sunday.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909326",
+          "date": "2026-11-28T00:00Z",
+          "home_team": "NYK",
+          "away_team": "MIA",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-27T22:40:10.065049+00:00"
+  "last_updated": "2026-11-27T23:36:15.698236+00:00"
 }

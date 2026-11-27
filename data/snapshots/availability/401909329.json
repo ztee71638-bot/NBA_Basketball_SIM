@@ -214,7 +214,187 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-27T23:36:15.698236+00:00",
+      "minutes_to_tipoff": 53.7,
+      "injuries": [
+        {
+          "athlete_id": "3150844",
+          "name": "Moritz Wagner",
+          "team": "BKN",
+          "team_name": "Brooklyn Nets",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-26T21:33Z",
+          "return_date": "2026-11-28",
+          "short_comment": "Wagner (knee) won't be available for Friday's game against Toronto.",
+          "long_comment": "Wagner suffered an injury Wednesday against the Bucks and won't be an option Friday. His status for the second leg of the back-to-back set Saturday at Charlotte is uncertain.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5279130",
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "team_name": "Brooklyn Nets",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-23T15:22Z",
+          "return_date": "2027-01-27",
+          "short_comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports.",
+          "long_comment": "Traore had a productive start to his second year in the NBA, though he's now set to miss an extended period after sustaining a hamstring injury in Friday's loss to Orlando. With the 20-year-old point guard sidelined, Egor Demin, Mikel Brown and Keon Ellis are candidates for increased playing time.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4395625",
+          "name": "RJ Barrett",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-19T21:13Z",
+          "return_date": "2026-12-13",
+          "short_comment": "Barrett has been diagnosed with a right hamstring strain and will be re-evaluated in two weeks, Brett Siegel of ClutchPoints.com reports.",
+          "long_comment": "Based on his re-evaluation timeline, Barrett likely won't return to game action until mid-December at the earliest. Jamison Battle, Allen Graves and Jamal Shead are candidates for increased playing time in Barrett's absence, especially while Kawhi Leonard (knee) is also sidelined.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4432586",
+          "name": "Nate Bittle",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-22T21:13Z",
+          "return_date": "2026-11-27",
+          "short_comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
+          "long_comment": "Bittle continues to work his way back from a fractured right foot, as he's yet to make his 2026-27 season debut. He remains week-to-week until Toronto provides a definitive update.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "6450",
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-24T21:15Z",
+          "return_date": "2026-12-03",
+          "short_comment": "Leonard has begun individual on-court workouts following treatment to address swelling in his left knee, and he will be re-evaluated in one week, Marc J. Spears of ESPN.com reports.",
+          "long_comment": "Leonard continues to progress in his recovery, and the Raptors are expected to provide another update in a week. Collin Murray-Boyles and Allen Graves will likely continue seeing increased burn for as long as Leonard is sidelined.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909329",
+        "date": "2026-11-28T00:30Z",
+        "home_team": "TOR",
+        "away_team": "BKN",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "3150844",
+            "name": "Moritz Wagner",
+            "team": "BKN",
+            "team_name": "Brooklyn Nets",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-26T21:33Z",
+            "return_date": "2026-11-28",
+            "short_comment": "Wagner (knee) won't be available for Friday's game against Toronto.",
+            "long_comment": "Wagner suffered an injury Wednesday against the Bucks and won't be an option Friday. His status for the second leg of the back-to-back set Saturday at Charlotte is uncertain.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5279130",
+            "name": "Nolan Traore",
+            "team": "BKN",
+            "team_name": "Brooklyn Nets",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-23T15:22Z",
+            "return_date": "2027-01-27",
+            "short_comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports.",
+            "long_comment": "Traore had a productive start to his second year in the NBA, though he's now set to miss an extended period after sustaining a hamstring injury in Friday's loss to Orlando. With the 20-year-old point guard sidelined, Egor Demin, Mikel Brown and Keon Ellis are candidates for increased playing time.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4395625",
+            "name": "RJ Barrett",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-19T21:13Z",
+            "return_date": "2026-12-13",
+            "short_comment": "Barrett has been diagnosed with a right hamstring strain and will be re-evaluated in two weeks, Brett Siegel of ClutchPoints.com reports.",
+            "long_comment": "Based on his re-evaluation timeline, Barrett likely won't return to game action until mid-December at the earliest. Jamison Battle, Allen Graves and Jamal Shead are candidates for increased playing time in Barrett's absence, especially while Kawhi Leonard (knee) is also sidelined.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4432586",
+            "name": "Nate Bittle",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-22T21:13Z",
+            "return_date": "2026-11-27",
+            "short_comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
+            "long_comment": "Bittle continues to work his way back from a fractured right foot, as he's yet to make his 2026-27 season debut. He remains week-to-week until Toronto provides a definitive update.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "6450",
+            "name": "Kawhi Leonard",
+            "team": "TOR",
+            "team_name": "Toronto Raptors",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-24T21:15Z",
+            "return_date": "2026-12-03",
+            "short_comment": "Leonard has begun individual on-court workouts following treatment to address swelling in his left knee, and he will be re-evaluated in one week, Marc J. Spears of ESPN.com reports.",
+            "long_comment": "Leonard continues to progress in his recovery, and the Raptors are expected to provide another update in a week. Collin Murray-Boyles and Allen Graves will likely continue seeing increased burn for as long as Leonard is sidelined.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909329",
+          "date": "2026-11-28T00:30Z",
+          "home_team": "TOR",
+          "away_team": "BKN",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-27T16:39:42.153624+00:00"
+  "last_updated": "2026-11-27T23:36:15.698236+00:00"
 }

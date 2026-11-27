@@ -560,7 +560,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058825\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"Knicks\\\"]\",\"question\":\"Hawks vs. Knicks\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T23:36:15.698236+00:00",
+      "markets": [
+        {
+          "market_id": "7058825",
+          "market_type": "moneyline",
+          "question": "Hawks vs. Knicks",
+          "slug": "nba-atl-nyk-2026-11-29",
+          "outcomes": "[\"Hawks\", \"Knicks\"]",
+          "outcome_prices": "[\"0.315\", \"0.685\"]",
+          "volume_24h": 317.586713,
+          "liquidity": "23894.055",
+          "end_date": "2026-11-29T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-atl-nyk-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058825\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"Knicks\\\"]\",\"question\":\"Hawks vs. Knicks\"}]"
     }
   ],
-  "last_updated": "2026-11-27T21:39:25.471071+00:00"
+  "last_updated": "2026-11-27T23:36:15.698236+00:00"
 }
