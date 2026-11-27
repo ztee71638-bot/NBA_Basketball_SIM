@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T01:02:49.044748+00:00",
+  "last_updated": "2026-11-27T02:26:30.837504+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1136,10 +1136,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-20T22:18Z",
+      "date": "2026-11-27T00:56Z",
       "return_date": "2026-11-29",
-      "short_comment": "Youngblood (heel) has been ruled out for Saturday's game against the Knicks.",
-      "long_comment": "Youngblood has been on the shelf since Nov. 10 due to a right heel bone bruise. Until Portland signals otherwise, Youngblood can be considered out indefinitely moving forward.",
+      "short_comment": "Youngblood (heel) is out for Friday's game against the Warriors.",
+      "long_comment": "Youngblood is in line for a ninth straight absence due to a bone bruise in his right foot. His next opportunity to run the floor will arrive Sunday against the Pelicans.",
       "source": "ESPN"
     },
     {

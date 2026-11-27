@@ -11810,7 +11810,109 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008997\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.795\\\", \\\"0.205\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Nuggets vs. Jazz\"},{\"market_id\":\"7364961\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Nuggets (-9.5)\"},{\"market_id\":\"7364973\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.62\\\", \\\"0.38\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Nuggets (-6.5)\"},{\"market_id\":\"7365007\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.08\\\", \\\"0.92\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Jazz (-8.5)\"},{\"market_id\":\"7365011\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Jazz (-10.5)\"},{\"market_id\":\"7364962\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Jazz: O/U 228.5\"},{\"market_id\":\"7364976\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Jazz: O/U 220.5\"},{\"market_id\":\"7365008\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.905\\\", \\\"0.095\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Jazz: O/U 204.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T02:26:30.838827+00:00",
+      "markets": [
+        {
+          "market_id": "7008997",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Jazz",
+          "slug": "nba-den-uta-2026-11-27",
+          "outcomes": "[\"Nuggets\", \"Jazz\"]",
+          "outcome_prices": "[\"0.795\", \"0.205\"]",
+          "volume_24h": 5671.150974,
+          "liquidity": "41235.3761",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        },
+        {
+          "market_id": "7364961",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-9.5)",
+          "slug": "nba-den-uta-2026-11-27-spread-away-9pt5",
+          "outcomes": "[\"Nuggets\", \"Jazz\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": 326.019232,
+          "liquidity": "30686.1973",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        },
+        {
+          "market_id": "7364973",
+          "market_type": "spread",
+          "question": "Spread: Nuggets (-6.5)",
+          "slug": "nba-den-uta-2026-11-27-spread-away-6pt5",
+          "outcomes": "[\"Nuggets\", \"Jazz\"]",
+          "outcome_prices": "[\"0.63\", \"0.37\"]",
+          "volume_24h": 143.460768,
+          "liquidity": "22185.1559",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        },
+        {
+          "market_id": "7365007",
+          "market_type": "spread",
+          "question": "Spread: Jazz (-8.5)",
+          "slug": "nba-den-uta-2026-11-27-spread-home-8pt5",
+          "outcomes": "[\"Jazz\", \"Nuggets\"]",
+          "outcome_prices": "[\"0.08\", \"0.92\"]",
+          "volume_24h": 21.505371,
+          "liquidity": "17535.3638",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        },
+        {
+          "market_id": "7365011",
+          "market_type": "spread",
+          "question": "Spread: Jazz (-10.5)",
+          "slug": "nba-den-uta-2026-11-27-spread-home-10pt5",
+          "outcomes": "[\"Jazz\", \"Nuggets\"]",
+          "outcome_prices": "[\"0.055\", \"0.945\"]",
+          "volume_24h": 21.05262,
+          "liquidity": "17362.4874",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        },
+        {
+          "market_id": "7364962",
+          "market_type": "total",
+          "question": "Nuggets vs. Jazz: O/U 228.5",
+          "slug": "nba-den-uta-2026-11-27-total-228pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.525\", \"0.475\"]",
+          "volume_24h": 164.518519,
+          "liquidity": "22998.8173",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        },
+        {
+          "market_id": "7364976",
+          "market_type": "total",
+          "question": "Nuggets vs. Jazz: O/U 220.5",
+          "slug": "nba-den-uta-2026-11-27-total-220pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.69\", \"0.31\"]",
+          "volume_24h": 8.970589,
+          "liquidity": "20940.1774",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        },
+        {
+          "market_id": "7365008",
+          "market_type": "total",
+          "question": "Nuggets vs. Jazz: O/U 204.5",
+          "slug": "nba-den-uta-2026-11-27-total-204pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.91\", \"0.09\"]",
+          "volume_24h": 15.769231,
+          "liquidity": "16299.902",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008997\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.795\\\", \\\"0.205\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Nuggets vs. Jazz\"},{\"market_id\":\"7364961\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Nuggets (-9.5)\"},{\"market_id\":\"7364973\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.63\\\", \\\"0.37\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Spread: Nuggets (-6.5)\"},{\"market_id\":\"7365007\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.08\\\", \\\"0.92\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Jazz (-8.5)\"},{\"market_id\":\"7365011\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.055\\\", \\\"0.945\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Nuggets\\\"]\",\"question\":\"Spread: Jazz (-10.5)\"},{\"market_id\":\"7364962\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Jazz: O/U 228.5\"},{\"market_id\":\"7364976\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.69\\\", \\\"0.31\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Jazz: O/U 220.5\"},{\"market_id\":\"7365008\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.91\\\", \\\"0.09\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nuggets vs. Jazz: O/U 204.5\"}]"
     }
   ],
-  "last_updated": "2026-11-27T01:02:49.045841+00:00"
+  "last_updated": "2026-11-27T02:26:30.838827+00:00"
 }
