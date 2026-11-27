@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T16:39:42.153557+00:00",
+  "last_updated": "2026-11-27T17:37:34.324517+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -37,6 +37,26 @@
       "date": "2026-11-28T00:30Z",
       "home_team": "TOR",
       "away_team": "BKN",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909330",
+      "date": "2026-11-28T01:00Z",
+      "home_team": "BOS",
+      "away_team": "ATL",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909331",
+      "date": "2026-11-28T01:30Z",
+      "home_team": "MIN",
+      "away_team": "MEM",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",
