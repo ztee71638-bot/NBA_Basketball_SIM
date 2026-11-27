@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T18:34:09.972395+00:00",
+  "last_updated": "2026-11-27T19:44:17.120751+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -183,6 +183,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "5242496",
+      "name": "Noa Essengue",
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-27T19:06Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Essengue (thumb) is probable to play Saturday against the Pacers.",
+      "long_comment": "Essengue should be able to play through a thumb sprain Saturday. He hasn't logged more than 15 minutes in any of his last 12 appearances, leaving Essengue with limited fantasy appeal.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4397189",
       "name": "Jalen Smith",
       "team": "CHI",
@@ -191,10 +206,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": null,
-      "date": "2026-11-26T05:29Z",
+      "date": "2026-11-27T18:36Z",
       "return_date": "2026-11-28",
-      "short_comment": "Smith (illness) is listed as out for Wednesday's game against Charlotte.",
-      "long_comment": "Smith is dealing with a gastrointestinal illness, so he won't suit up Wednesday versus the Hornets. Without him, Nic Claxton will presumably enter the starting lineup. Zach Collins might also be more involved.",
+      "short_comment": "Smith (illness) is listed as probable for Saturday's game against Indiana.",
+      "long_comment": "Smith was spotted at practice Friday, per K.C. Johnson of Chicago Sports Network. With the big man expected to play, fewer minutes will be on the table for Nic Claxton at center Saturday.",
       "source": "ESPN"
     },
     {
@@ -255,6 +270,21 @@
       "return_date": "2026-11-29",
       "short_comment": "Mobley will receive treatment and participate in rehab after the team confirmed a diagnosis of a right great toe sprain, and he'll be re-evaluated in the next 7-to-10 days.",
       "long_comment": "Mobley is set to miss his third straight game Monday since suffering the injury, and he's slated to miss at least the next week while on the mend. The Cavs should have a better idea on when he'll return to the court as he begins to progress through the treatment and rehab phase.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "6442",
+      "name": "Kyrie Irving",
+      "team": "DAL",
+      "team_name": "Dallas Mavericks",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-27T19:07Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Irving (knee) is listed as questionable for Friday's game against the Suns due to left knee injury management.",
+      "long_comment": "Dallas could be exercising caution with Irving's surgically repaired knee. If he sits, Cooper Flagg should shoulder additional playmaking responsibilities, while Max Christie and Naji Marshall could see increased offensive opportunities. Irving's status warrants monitoring before tipoff.",
       "source": "ESPN"
     },
     {
@@ -558,21 +588,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4066457",
-      "name": "Austin Reaves",
-      "team": "LAL",
-      "team_name": "Los Angeles Lakers",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-26T23:21Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Reaves (heel) is questionable for Friday's game against the Spurs.",
-      "long_comment": "Reaves practiced Wednesday, so he's trending in the right direction to face the Spurs, and a decision on his availability will likely come closer to Friday's 9:30 p.m. ET tipoff. Reaves has missed the last five games with a left heel contusion, so the Lakers have relied more on Quentin Grimes, Collin Sexton and Jake LaRavia for backcourt contributions alongside Luka Doncic.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4432810",
       "name": "Isaiah Stewart",
       "team": "MEM",
@@ -713,13 +728,13 @@
       "team": "MIN",
       "team_name": "Minnesota Timberwolves",
       "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-27T17:49Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Ball (ankle) wasn't present at shootaround Friday, Jon Krawczynski of The Athletic reports.",
-      "long_comment": "Ball exited Wednesday's game against the Thunder with a left ankle injury, and while he's carrying a questionable tag for Friday's game, his absence from shootaround casts doubt on his availability to face Memphis. A decision on Ball's status should be made closer to the 8:30 p.m. ET tipoff, but Ball's absence from shootaround is far from ideal. If he's out, Bones Hyland and Terrence Shannon would be in line to see more playing time in the backcourt alongside Ayo Dosunmu.",
+      "date": "2026-11-27T18:52Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Ball (ankle) has been ruled out for Friday's game against the Grizzlies. The guard was previously questionable after spraining his left ankle during Wednesday's win over Oklahoma City.",
+      "long_comment": "With Ball and Anthony Edwards (knee) sidelined, Ayo Dosunmu and Bones Hyland should handle increased ball-handling responsibilities. Minnesota's depleted backcourt could also create additional scoring opportunities for Jaden McDaniels. Ball's next opportunity to return comes Monday against Sacramento.",
       "source": "ESPN"
     },
     {
@@ -1143,6 +1158,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "6606",
+      "name": "Damian Lillard",
+      "team": "POR",
+      "team_name": "Portland Trail Blazers",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-27T18:38Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Lillard (calf) has been ruled out for Friday's game against the Warriors. The veteran guard is dealing with right calf tightness and soreness.",
+      "long_comment": "Lillard's absence creates additional ball-handling and scoring opportunities for Jrue Holiday and Deni Avdija, while Scoot Henderson could see increased playing time. Lillard's next opportunity to return comes Sunday against New Orleans.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4706557",
       "name": "Chris Youngblood",
       "team": "POR",
@@ -1256,10 +1286,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-26T23:41Z",
+      "date": "2026-11-27T18:51Z",
       "return_date": "2026-11-27",
-      "short_comment": "Harper (hip) is questionable for Friday's game against the Lakers.",
-      "long_comment": "Harper has been upgraded to questionable ahead of Friday's contest despite reports on Nov. 19 suggesting he was set to miss two to three weeks due to a left hip external rotator strain. Julian Champagnie and Keldon Johnson are expected to retain expanded roles if Harper is ruled out.",
+      "short_comment": "Harper (hip) participated in Friday's morning shootaround, per Matt Guzman of SI.com.",
+      "long_comment": "Harper appears to be making swift progress in his recovery from a hip strain, which has cost him just around one week after initially being expected to hold him out for multiple weeks. The star guard can be tentatively placed on the right side of his questionable tag for Friday's showdown against the Lakers.",
       "source": "ESPN"
     },
     {
