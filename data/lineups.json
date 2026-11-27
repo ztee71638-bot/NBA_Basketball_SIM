@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T17:37:34.324517+00:00",
+  "last_updated": "2026-11-27T18:34:09.973878+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -57,6 +57,56 @@
       "date": "2026-11-28T01:30Z",
       "home_team": "MIN",
       "away_team": "MEM",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909332",
+      "date": "2026-11-28T02:00Z",
+      "home_team": "PHX",
+      "away_team": "DAL",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909333",
+      "date": "2026-11-28T02:30Z",
+      "home_team": "SAS",
+      "away_team": "LAL",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909334",
+      "date": "2026-11-28T02:30Z",
+      "home_team": "UTA",
+      "away_team": "DEN",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909335",
+      "date": "2026-11-28T02:30Z",
+      "home_team": "LAC",
+      "away_team": "NOP",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401909336",
+      "date": "2026-11-28T02:30Z",
+      "home_team": "POR",
+      "away_team": "GSW",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",

@@ -398,7 +398,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058826\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.575\\\", \\\"0.425\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Raptors\\\"]\",\"question\":\"Nuggets vs. Raptors\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T18:34:09.974077+00:00",
+      "markets": [
+        {
+          "market_id": "7058826",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Raptors",
+          "slug": "nba-den-tor-2026-11-29",
+          "outcomes": "[\"Nuggets\", \"Raptors\"]",
+          "outcome_prices": "[\"0.57\", \"0.43\"]",
+          "volume_24h": 405.17765,
+          "liquidity": "34217.2738",
+          "end_date": "2026-11-29T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-den-tor-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058826\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.57\\\", \\\"0.43\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Raptors\\\"]\",\"question\":\"Nuggets vs. Raptors\"}]"
     }
   ],
-  "last_updated": "2026-11-26T23:50:46.145019+00:00"
+  "last_updated": "2026-11-27T18:34:09.974077+00:00"
 }

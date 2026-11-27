@@ -35618,7 +35618,229 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008996\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.345\\\", \\\"0.655\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Lakers vs. Spurs\"},{\"market_id\":\"7363140\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-6.5)\"},{\"market_id\":\"7363151\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-5.5)\"},{\"market_id\":\"7363163\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-7.5)\"},{\"market_id\":\"7363175\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-4.5)\"},{\"market_id\":\"7363187\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-8.5)\"},{\"market_id\":\"7363199\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.595\\\", \\\"0.405\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-3.5)\"},{\"market_id\":\"7363223\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.61\\\", \\\"0.39\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-2.5)\"},{\"market_id\":\"7363231\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-10.5)\"},{\"market_id\":\"7363249\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Lakers (-1.5)\"},{\"market_id\":\"7363257\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.25\\\", \\\"0.75\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Lakers (-3.5)\"},{\"market_id\":\"7363415\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.15\\\", \\\"0.85\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-20.5)\"},{\"market_id\":\"7363141\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 226.5\"},{\"market_id\":\"7363157\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 224.5\"},{\"market_id\":\"7363193\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.4\\\", \\\"0.6\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 230.5\"},{\"market_id\":\"7363205\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.625\\\", \\\"0.375\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 220.5\"},{\"market_id\":\"7381192\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 225.5\"},{\"market_id\":\"7387925\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Matisse Thybulle: 3-Pointers Made O/U 1.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T18:34:09.974077+00:00",
+      "markets": [
+        {
+          "market_id": "7008996",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Spurs",
+          "slug": "nba-lal-sas-2026-11-27",
+          "outcomes": "[\"Lakers\", \"Spurs\"]",
+          "outcome_prices": "[\"0.335\", \"0.665\"]",
+          "volume_24h": 147182.782005,
+          "liquidity": "130009.8842",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363140",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-6.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-6pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 16640.01899,
+          "liquidity": "77095.0838",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363151",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-5.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-5pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 3590.768921,
+          "liquidity": "63727.4583",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363163",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-7.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-7pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": 4491.187248,
+          "liquidity": "49522.0935",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363175",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-4.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-4pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.565\", \"0.435\"]",
+          "volume_24h": 268.863963,
+          "liquidity": "48819.0875",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363187",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-8.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-8pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": 1197.388649,
+          "liquidity": "43376.9787",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363199",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-3.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-3pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.595\", \"0.405\"]",
+          "volume_24h": 62.78,
+          "liquidity": "43230.5941",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363223",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-2.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-2pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.62\", \"0.38\"]",
+          "volume_24h": 20,
+          "liquidity": "15117.2818",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363231",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-10.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-10pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.37\", \"0.63\"]",
+          "volume_24h": 14,
+          "liquidity": "13119.6551",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363249",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-1.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-away-1pt5",
+          "outcomes": "[\"Lakers\", \"Spurs\"]",
+          "outcome_prices": "[\"0.3\", \"0.7\"]",
+          "volume_24h": 283,
+          "liquidity": "14120.0266",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363257",
+          "market_type": "spread",
+          "question": "Spread: Lakers (-3.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-away-3pt5",
+          "outcomes": "[\"Lakers\", \"Spurs\"]",
+          "outcome_prices": "[\"0.25\", \"0.75\"]",
+          "volume_24h": 11.538462,
+          "liquidity": "15748.9125",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363415",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-20.5)",
+          "slug": "nba-lal-sas-2026-11-27-spread-home-20pt5",
+          "outcomes": "[\"Spurs\", \"Lakers\"]",
+          "outcome_prices": "[\"0.15\", \"0.85\"]",
+          "volume_24h": 44.44222,
+          "liquidity": "18424.4553",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363141",
+          "market_type": "total",
+          "question": "Lakers vs. Spurs: O/U 226.5",
+          "slug": "nba-lal-sas-2026-11-27-total-226pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": 5323.21094,
+          "liquidity": "55247.8331",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363157",
+          "market_type": "total",
+          "question": "Lakers vs. Spurs: O/U 224.5",
+          "slug": "nba-lal-sas-2026-11-27-total-224pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": 593.225178,
+          "liquidity": "50888.8196",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363193",
+          "market_type": "total",
+          "question": "Lakers vs. Spurs: O/U 230.5",
+          "slug": "nba-lal-sas-2026-11-27-total-230pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.405\", \"0.595\"]",
+          "volume_24h": 7.936508,
+          "liquidity": "16392.9573",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7363205",
+          "market_type": "total",
+          "question": "Lakers vs. Spurs: O/U 220.5",
+          "slug": "nba-lal-sas-2026-11-27-total-220pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.625\", \"0.375\"]",
+          "volume_24h": 12.698413,
+          "liquidity": "16207.1923",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7381192",
+          "market_type": "total",
+          "question": "Lakers vs. Spurs: O/U 225.5",
+          "slug": "nba-lal-sas-2026-11-27-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 2975.853665,
+          "liquidity": "38767.3342",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        },
+        {
+          "market_id": "7387925",
+          "market_type": "total",
+          "question": "Matisse Thybulle: 3-Pointers Made O/U 1.5",
+          "slug": "nba-lal-sas-2026-11-27-threes-matisse-thybulle-1pt5",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcome_prices": "[\"0.24\", \"0.76\"]",
+          "volume_24h": 20.510205,
+          "liquidity": "2627.4612",
+          "end_date": "2026-11-28T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-lal-sas-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008996\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.335\\\", \\\"0.665\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Lakers vs. Spurs\"},{\"market_id\":\"7363140\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-6.5)\"},{\"market_id\":\"7363151\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-5.5)\"},{\"market_id\":\"7363163\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-7.5)\"},{\"market_id\":\"7363175\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.565\\\", \\\"0.435\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-4.5)\"},{\"market_id\":\"7363187\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-8.5)\"},{\"market_id\":\"7363199\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.595\\\", \\\"0.405\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-3.5)\"},{\"market_id\":\"7363223\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.62\\\", \\\"0.38\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-2.5)\"},{\"market_id\":\"7363231\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-10.5)\"},{\"market_id\":\"7363249\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.3\\\", \\\"0.7\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Lakers (-1.5)\"},{\"market_id\":\"7363257\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.25\\\", \\\"0.75\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Spurs\\\"]\",\"question\":\"Spread: Lakers (-3.5)\"},{\"market_id\":\"7363415\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.15\\\", \\\"0.85\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Lakers\\\"]\",\"question\":\"Spread: Spurs (-20.5)\"},{\"market_id\":\"7363141\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 226.5\"},{\"market_id\":\"7363157\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 224.5\"},{\"market_id\":\"7363193\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 230.5\"},{\"market_id\":\"7363205\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.625\\\", \\\"0.375\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 220.5\"},{\"market_id\":\"7381192\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Lakers vs. Spurs: O/U 225.5\"},{\"market_id\":\"7387925\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Yes\\\", \\\"No\\\"]\",\"question\":\"Matisse Thybulle: 3-Pointers Made O/U 1.5\"}]"
     }
   ],
-  "last_updated": "2026-11-27T17:37:34.324620+00:00"
+  "last_updated": "2026-11-27T18:34:09.974077+00:00"
 }

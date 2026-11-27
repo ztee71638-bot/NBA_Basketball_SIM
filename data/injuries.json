@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T17:37:34.323475+00:00",
+  "last_updated": "2026-11-27T18:34:09.972395+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -453,6 +453,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "2580365",
+      "name": "Larry Nance Jr.",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "F",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-27T18:07Z",
+      "return_date": "2026-11-27",
+      "short_comment": "Nance (ankle) is probable for Friday's game against the 76ers.",
+      "long_comment": "The veteran center is now likely to be available Friday after first being deemed questionable to play. Nance offers the Pacers frontcourt depth along with Jay Huff and Kobe Brown.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4396993",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -480,21 +495,6 @@
       "return_date": "2026-11-27",
       "short_comment": "Oubre is questionable for Friday's game against the 76ers due to a right hand laceration.",
       "long_comment": "Oubre has been performing at a high level of late, scoring at least 15 points in six straight contests, but he could be forced to miss time due to a right hand injury. If he is out, Quenton Jackson could see extra minutes.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2580365",
-      "name": "Larry Nance Jr.",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-26T22:43Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Nance (ankle) is questionable for Friday's game against the 76ers.",
-      "long_comment": "Nance didn't return to Monday's game against the Thunder due to a sore right ankle, and it remains to be seen whether the big man will be able to suit up Friday. He shouldn't cause a massive impact in most fantasy lineups with his absence, as Nance is averaging just 4.2 points and 2.2 rebounds per game in 17 appearances off the bench this season.",
       "source": "ESPN"
     },
     {
@@ -693,6 +693,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "5214640",
+      "name": "Kasparas Jakucionis",
+      "team": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-27T17:58Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Jakucionis (ankle) won't play Friday's game against the Pistons.",
+      "long_comment": "Jakucionis will miss his second game of the season due to left ankle tenosynovitis. In his absence, Ryan Rollins, Caris LeVert and AJ Green could see expanded roles, while rookie Brayden Burries should also get a slight bump in minutes.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4432816",
       "name": "LaMelo Ball",
       "team": "MIN",
@@ -701,10 +716,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-26T23:14Z",
+      "date": "2026-11-27T17:49Z",
       "return_date": "2026-11-27",
-      "short_comment": "Ball (ankle) is questionable for Friday's game against the Grizzlies.",
-      "long_comment": "Ball exited Wednesday's game against the Thunder and finished with 19 points (7-18 FG, 5-9 3Pt), seven rebounds, eight assists and one steal in 29 minutes. If he's unable to suit up Friday, Bones Hyland and Terrence Shannon would be in line to see more playing time in the backcourt. That would be a huge downgrade for a Minnesota team that's already missing two key backcourt pieces in Anthony Edwards (knee) and Donte DiVincenzo (Achilles).",
+      "short_comment": "Ball (ankle) wasn't present at shootaround Friday, Jon Krawczynski of The Athletic reports.",
+      "long_comment": "Ball exited Wednesday's game against the Thunder with a left ankle injury, and while he's carrying a questionable tag for Friday's game, his absence from shootaround casts doubt on his availability to face Memphis. A decision on Ball's status should be made closer to the 8:30 p.m. ET tipoff, but Ball's absence from shootaround is far from ideal. If he's out, Bones Hyland and Terrence Shannon would be in line to see more playing time in the backcourt alongside Ayo Dosunmu.",
       "source": "ESPN"
     },
     {
@@ -813,6 +828,51 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4431823",
+      "name": "Miles McBride",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-27T18:21Z",
+      "return_date": "2026-11-29",
+      "short_comment": "McBride (groin) is out for Friday's game against the Heat.",
+      "long_comment": "Friday marks a third straight absence for McBride. With the Knicks' backcourt a bit dinged up, Jose Alvarado could see enough playing time to warrant streaming attention in deeper fantasy setups.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "3934719",
+      "name": "OG Anunoby",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-27T18:20Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Anunoby (calf) has been ruled out for Friday's game against the Heat. The forward was previously listed as doubtful and will miss his third consecutive contest due to a left calf strain.",
+      "long_comment": "Landry Shamet could remain in the starting lineup, while Josh Hart may absorb additional responsibilities on the wing. Anunoby's return to on-court activities is encouraging, but his next opportunity to play comes Sunday against Atlanta.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "2528426",
+      "name": "Jordan Clarkson",
+      "team": "NY",
+      "team_name": "New York Knicks",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-27T18:19Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Clarkson (foot) is out for Friday's game against the Heat.",
+      "long_comment": "Plantar fasciitis is costing Clarkson a fifth consecutive contest Friday. His next chance to suit up arrives Sunday against the Hawks.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3136195",
       "name": "Karl-Anthony Towns",
       "team": "NY",
@@ -840,51 +900,6 @@
       "return_date": "2026-11-29",
       "short_comment": "Drummond (concussion) has been ruled out for Friday's game against the Heat.",
       "long_comment": "Drummond played just nine minutes prior to exiting Wednesday's 121-102 win over Cleveland due to a concussion. Mohamed Diawara and James Wiseman will likely get a boost in playing time off the Knicks' bench with Drummond sidelined. His next chance to suit up will come against the Hawks on Sunday.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4431823",
-      "name": "Miles McBride",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-26T22:11Z",
-      "return_date": "2026-11-27",
-      "short_comment": "McBride (groin) is questionable for Friday's game against the Heat.",
-      "long_comment": "McBride has missed the Knicks' previous two games. Even if he's cleared to return Friday, he wouldn't carry a ton of fantasy appeal. He's averaging just 6.8 points per game this season.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "2528426",
-      "name": "Jordan Clarkson",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-26T22:03Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Clarkson (foot) is questionable for Friday's game against the Heat.",
-      "long_comment": "Seeing Clarkson as questionable instead of being out one day in advance of the game is a step in the right direction. However, don't expect the veteran guard to play a big role off the bench if he's cleared to suit up. He's averaging just 9.8 minutes per game in 12 outings off the bench this season.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3934719",
-      "name": "OG Anunoby",
-      "team": "NY",
-      "team_name": "New York Knicks",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-26T21:57Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Anunoby (calf) is doubtful for Friday's game against the Heat.",
-      "long_comment": "Anunoby started doing on-court work Wednesday, but all signs point toward this game coming a bit too soon for the veteran forward. Anunoby has missed the Knicks' past two games due to left calf soreness, and if he's out, Landry Shamet could remain in the starting unit.",
       "source": "ESPN"
     },
     {

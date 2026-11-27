@@ -184,7 +184,217 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-27T18:34:09.974077+00:00",
+      "minutes_to_tipoff": 355.8,
+      "injuries": [
+        {
+          "athlete_id": "2990962",
+          "name": "Taurean Prince",
+          "team": "DET",
+          "team_name": "Detroit Pistons",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-24T18:33Z",
+          "return_date": "2026-12-26",
+          "short_comment": "Prince underwent arthroscopic right knee surgery Nov. 18 and will be re-evaluated in four weeks, Eric Vincent of ClutchPoints.com reports.",
+          "long_comment": "Prince last appeared in a game for Detroit on Nov. 14 and is now set to miss an extended period as he recovers from knee surgery. However, the veteran forward's absence shouldn't significantly impact Detroit's rotation.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3157465",
+          "name": "Duncan Robinson",
+          "team": "DET",
+          "team_name": "Detroit Pistons",
+          "position": "F",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-26T22:26Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Robinson (quadriceps) is out for Friday's game against the Bucks.",
+          "long_comment": "Robinson is carrying a day-to-day tag due to a left quadriceps strain, but the veteran sharpshooter is not ready to play yet and will miss a sixth consecutive game Friday. This means Kevin Huerter will likely continue seeing increased playing time for as long as Robinson is sidelined.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4432166",
+          "name": "Cade Cunningham",
+          "team": "DET",
+          "team_name": "Detroit Pistons",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": null,
+          "date": "2026-11-26T22:25Z",
+          "return_date": "2026-11-29",
+          "short_comment": "Cunningham (knee) is out for Friday's game against the Bucks.",
+          "long_comment": "Cunningham won't suit up Friday and will miss a second straight game, and the third of his last five, while dealing with right knee tendinopathy. This means Daniss Jenkins should run the point for Detroit on Friday, while Isaiah Joe could be in line for another start at shooting guard. Cunningham's next chance to return will come Sunday against the Magic.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "4433621",
+          "name": "Jalen Duren",
+          "team": "DET",
+          "team_name": "Detroit Pistons",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-26T15:31Z",
+          "return_date": "2026-11-30",
+          "short_comment": "Detroit recalled Duren (hamstring) from the G League's Motor City Cruise on Wednesday.",
+          "long_comment": "Duren has been dealing with a hamstring strain since October, and his return is not yet expected in immediate contests. The fact that he has practiced with the G League club is still a good sign as he makes progress in his recovery. Duren would be a reliable source of production once he's healthy, but until then, John Collins and Paul Reed may continue to absorb his responsibilities at center.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5258459",
+          "name": "Ebuka Okorie",
+          "team": "DET",
+          "team_name": "Detroit Pistons",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-24T18:37Z",
+          "return_date": "2026-12-13",
+          "short_comment": "The Pistons announced Tuesday that Okorie (oblique) will miss at least two weeks, per Eric Vincent of ClutchPoints.com.",
+          "long_comment": "Okorie has been diagnosed with an oblique strain, which he sustained in a G League game. The rookie first-rounder has logged a grand total of 20 minutes across five brief appearances, so his absence doesn't have major fantasy ramifications.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5214640",
+          "name": "Kasparas Jakucionis",
+          "team": "MIL",
+          "team_name": "Milwaukee Bucks",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-27T17:58Z",
+          "return_date": "2026-11-28",
+          "short_comment": "Jakucionis (ankle) won't play Friday's game against the Pistons.",
+          "long_comment": "Jakucionis will miss his second game of the season due to left ankle tenosynovitis. In his absence, Ryan Rollins, Caris LeVert and AJ Green could see expanded roles, while rookie Brayden Burries should also get a slight bump in minutes.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401909327",
+        "date": "2026-11-28T00:30Z",
+        "home_team": "DET",
+        "away_team": "MIL",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "2990962",
+            "name": "Taurean Prince",
+            "team": "DET",
+            "team_name": "Detroit Pistons",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-24T18:33Z",
+            "return_date": "2026-12-26",
+            "short_comment": "Prince underwent arthroscopic right knee surgery Nov. 18 and will be re-evaluated in four weeks, Eric Vincent of ClutchPoints.com reports.",
+            "long_comment": "Prince last appeared in a game for Detroit on Nov. 14 and is now set to miss an extended period as he recovers from knee surgery. However, the veteran forward's absence shouldn't significantly impact Detroit's rotation.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3157465",
+            "name": "Duncan Robinson",
+            "team": "DET",
+            "team_name": "Detroit Pistons",
+            "position": "F",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-26T22:26Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Robinson (quadriceps) is out for Friday's game against the Bucks.",
+            "long_comment": "Robinson is carrying a day-to-day tag due to a left quadriceps strain, but the veteran sharpshooter is not ready to play yet and will miss a sixth consecutive game Friday. This means Kevin Huerter will likely continue seeing increased playing time for as long as Robinson is sidelined.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4432166",
+            "name": "Cade Cunningham",
+            "team": "DET",
+            "team_name": "Detroit Pistons",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": null,
+            "date": "2026-11-26T22:25Z",
+            "return_date": "2026-11-29",
+            "short_comment": "Cunningham (knee) is out for Friday's game against the Bucks.",
+            "long_comment": "Cunningham won't suit up Friday and will miss a second straight game, and the third of his last five, while dealing with right knee tendinopathy. This means Daniss Jenkins should run the point for Detroit on Friday, while Isaiah Joe could be in line for another start at shooting guard. Cunningham's next chance to return will come Sunday against the Magic.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "4433621",
+            "name": "Jalen Duren",
+            "team": "DET",
+            "team_name": "Detroit Pistons",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-26T15:31Z",
+            "return_date": "2026-11-30",
+            "short_comment": "Detroit recalled Duren (hamstring) from the G League's Motor City Cruise on Wednesday.",
+            "long_comment": "Duren has been dealing with a hamstring strain since October, and his return is not yet expected in immediate contests. The fact that he has practiced with the G League club is still a good sign as he makes progress in his recovery. Duren would be a reliable source of production once he's healthy, but until then, John Collins and Paul Reed may continue to absorb his responsibilities at center.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5258459",
+            "name": "Ebuka Okorie",
+            "team": "DET",
+            "team_name": "Detroit Pistons",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-24T18:37Z",
+            "return_date": "2026-12-13",
+            "short_comment": "The Pistons announced Tuesday that Okorie (oblique) will miss at least two weeks, per Eric Vincent of ClutchPoints.com.",
+            "long_comment": "Okorie has been diagnosed with an oblique strain, which he sustained in a G League game. The rookie first-rounder has logged a grand total of 20 minutes across five brief appearances, so his absence doesn't have major fantasy ramifications.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5214640",
+            "name": "Kasparas Jakucionis",
+            "team": "MIL",
+            "team_name": "Milwaukee Bucks",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-27T17:58Z",
+            "return_date": "2026-11-28",
+            "short_comment": "Jakucionis (ankle) won't play Friday's game against the Pistons.",
+            "long_comment": "Jakucionis will miss his second game of the season due to left ankle tenosynovitis. In his absence, Ryan Rollins, Caris LeVert and AJ Green could see expanded roles, while rookie Brayden Burries should also get a slight bump in minutes.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401909327",
+          "date": "2026-11-28T00:30Z",
+          "home_team": "DET",
+          "away_team": "MIL",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-27T16:39:42.153624+00:00"
+  "last_updated": "2026-11-27T18:34:09.974077+00:00"
 }
