@@ -7886,7 +7886,193 @@
         }
       ],
       "signature": "[{\"market_id\":\"7008995\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Mavericks vs. Suns\"},{\"market_id\":\"7375146\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-2.5)\"},{\"market_id\":\"7375158\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-1.5)\"},{\"market_id\":\"7375170\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-3.5)\"},{\"market_id\":\"7375182\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-4.5)\"},{\"market_id\":\"7375194\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-5.5)\"},{\"market_id\":\"7375206\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Mavericks (-1.5)\"},{\"market_id\":\"7375230\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Mavericks (-2.5)\"},{\"market_id\":\"7375242\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.32\\\", \\\"0.68\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-7.5)\"},{\"market_id\":\"7375362\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-16.5)\"},{\"market_id\":\"7375152\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.47\\\", \\\"0.53\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 228.5\"},{\"market_id\":\"7375176\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 230.5\"},{\"market_id\":\"7375200\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.385\\\", \\\"0.615\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 232.5\"},{\"market_id\":\"7375308\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 214.5\"},{\"market_id\":\"7386452\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 227.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T14:27:30.125798+00:00",
+      "markets": [
+        {
+          "market_id": "7008995",
+          "market_type": "moneyline",
+          "question": "Mavericks vs. Suns",
+          "slug": "nba-dal-phx-2026-11-27",
+          "outcomes": "[\"Mavericks\", \"Suns\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": 17448.0481,
+          "liquidity": "131884.2802",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375146",
+          "market_type": "spread",
+          "question": "Spread: Suns (-2.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-home-2pt5",
+          "outcomes": "[\"Suns\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.485\", \"0.515\"]",
+          "volume_24h": 757.078225,
+          "liquidity": "51357.9002",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375158",
+          "market_type": "spread",
+          "question": "Spread: Suns (-1.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-home-1pt5",
+          "outcomes": "[\"Suns\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.525\", \"0.475\"]",
+          "volume_24h": 4705.044182,
+          "liquidity": "71283.7575",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375170",
+          "market_type": "spread",
+          "question": "Spread: Suns (-3.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-home-3pt5",
+          "outcomes": "[\"Suns\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.44\", \"0.56\"]",
+          "volume_24h": 1293.7702610000001,
+          "liquidity": "39072.8884",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375182",
+          "market_type": "spread",
+          "question": "Spread: Suns (-4.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-home-4pt5",
+          "outcomes": "[\"Suns\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.405\", \"0.595\"]",
+          "volume_24h": 681.455221,
+          "liquidity": "39045.3592",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375194",
+          "market_type": "spread",
+          "question": "Spread: Suns (-5.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-home-5pt5",
+          "outcomes": "[\"Suns\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.39\", \"0.61\"]",
+          "volume_24h": 6.349205,
+          "liquidity": "16256.8558",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375206",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-1.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-away-1pt5",
+          "outcomes": "[\"Mavericks\", \"Suns\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 14.52381,
+          "liquidity": "34395.0983",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375230",
+          "market_type": "spread",
+          "question": "Spread: Mavericks (-2.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-away-2pt5",
+          "outcomes": "[\"Mavericks\", \"Suns\"]",
+          "outcome_prices": "[\"0.405\", \"0.595\"]",
+          "volume_24h": 67.458332,
+          "liquidity": "32292.4908",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375242",
+          "market_type": "spread",
+          "question": "Spread: Suns (-7.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-home-7pt5",
+          "outcomes": "[\"Suns\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.33\", \"0.67\"]",
+          "volume_24h": 4.130435,
+          "liquidity": "16758.4701",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375362",
+          "market_type": "spread",
+          "question": "Spread: Suns (-16.5)",
+          "slug": "nba-dal-phx-2026-11-27-spread-home-16pt5",
+          "outcomes": "[\"Suns\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.135\", \"0.865\"]",
+          "volume_24h": 22.083955,
+          "liquidity": "17473.7527",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375152",
+          "market_type": "total",
+          "question": "Mavericks vs. Suns: O/U 228.5",
+          "slug": "nba-dal-phx-2026-11-27-total-228pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 197.753318,
+          "liquidity": "36156.8616",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375176",
+          "market_type": "total",
+          "question": "Mavericks vs. Suns: O/U 230.5",
+          "slug": "nba-dal-phx-2026-11-27-total-230pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": 10.344828,
+          "liquidity": "33984.9437",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375200",
+          "market_type": "total",
+          "question": "Mavericks vs. Suns: O/U 232.5",
+          "slug": "nba-dal-phx-2026-11-27-total-232pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.395\", \"0.605\"]",
+          "volume_24h": 7.936508,
+          "liquidity": "19546.7042",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7375308",
+          "market_type": "total",
+          "question": "Mavericks vs. Suns: O/U 214.5",
+          "slug": "nba-dal-phx-2026-11-27-total-214pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.765\", \"0.235\"]",
+          "volume_24h": 10.3,
+          "liquidity": "18459.8211",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        },
+        {
+          "market_id": "7386452",
+          "market_type": "total",
+          "question": "Mavericks vs. Suns: O/U 227.5",
+          "slug": "nba-dal-phx-2026-11-27-total-227pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": 141.12353000000002,
+          "liquidity": "115180.0356",
+          "end_date": "2026-11-28T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-dal-phx-2026-11-27"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7008995\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Mavericks vs. Suns\"},{\"market_id\":\"7375146\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.485\\\", \\\"0.515\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-2.5)\"},{\"market_id\":\"7375158\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.525\\\", \\\"0.475\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-1.5)\"},{\"market_id\":\"7375170\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.44\\\", \\\"0.56\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-3.5)\"},{\"market_id\":\"7375182\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-4.5)\"},{\"market_id\":\"7375194\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.39\\\", \\\"0.61\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-5.5)\"},{\"market_id\":\"7375206\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Mavericks (-1.5)\"},{\"market_id\":\"7375230\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Mavericks\\\", \\\"Suns\\\"]\",\"question\":\"Spread: Mavericks (-2.5)\"},{\"market_id\":\"7375242\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.33\\\", \\\"0.67\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-7.5)\"},{\"market_id\":\"7375362\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.135\\\", \\\"0.865\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Suns (-16.5)\"},{\"market_id\":\"7375152\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 228.5\"},{\"market_id\":\"7375176\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 230.5\"},{\"market_id\":\"7375200\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.395\\\", \\\"0.605\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 232.5\"},{\"market_id\":\"7375308\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.765\\\", \\\"0.235\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 214.5\"},{\"market_id\":\"7386452\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Mavericks vs. Suns: O/U 227.5\"}]"
     }
   ],
-  "last_updated": "2026-11-27T11:51:55.336873+00:00"
+  "last_updated": "2026-11-27T14:27:30.125798+00:00"
 }
