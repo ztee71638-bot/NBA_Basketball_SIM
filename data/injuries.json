@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T20:39:41.323142+00:00",
+  "last_updated": "2026-11-27T21:39:25.469817+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -1020,6 +1020,36 @@
       "return_date": "2027-01-02",
       "short_comment": "Holmgren underwent a biological treatment Friday to address a small patellar tendon tear and will miss at least 8-10 weeks, Nick Crain of Slam reports.",
       "long_comment": "This is another massive blow to an Oklahoma City squad that's already set to be without Jalen Williams (leg) and Cason Wallace (shoulder) for most, if not all, of the season. With Holmgren sidelined, Kenrich Williams, Jaylin Williams and Aday Mara are all candidates to see increased playing time. Two-way player Brooks Barnhizer could also see more minutes.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4397140",
+      "name": "Kevin Porter Jr.",
+      "team": "ORL",
+      "team_name": "Orlando Magic",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-27T21:08Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Porter won't play Saturday against the Wizards as he's still in the process of getting up to speed on his conditioning.",
+      "long_comment": "Porter signed with the Magic on Nov. 25, so it's understandable that he'll need some time to get into playing shape. His next chance to play will come Sunday at Detroit on the second leg of a back-to-back set.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4712849",
+      "name": "Anthony Black",
+      "team": "ORL",
+      "team_name": "Orlando Magic",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": null,
+      "date": "2026-11-27T21:05Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Black (back) is questionable for Saturday's game against the Wizards.",
+      "long_comment": "Black is a candidate to miss the first half of this back-to-back set. Tristan da Silva would likely enter the starting lineup for the Magic on Saturday if Black sits out.",
       "source": "ESPN"
     },
     {

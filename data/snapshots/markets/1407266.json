@@ -290,7 +290,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7110966\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.27\\\", \\\"0.73\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Cavaliers\\\"]\",\"question\":\"Pacers vs. Cavaliers\"}]"
+    },
+    {
+      "captured_at": "2026-11-27T21:39:25.471071+00:00",
+      "markets": [
+        {
+          "market_id": "7110966",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Cavaliers",
+          "slug": "nba-ind-cle-2026-12-01",
+          "outcomes": "[\"Pacers\", \"Cavaliers\"]",
+          "outcome_prices": "[\"0.275\", \"0.725\"]",
+          "volume_24h": 71.246752,
+          "liquidity": "9570.655",
+          "end_date": "2026-12-02T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-cle-2026-12-01"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7110966\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.275\\\", \\\"0.725\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Cavaliers\\\"]\",\"question\":\"Pacers vs. Cavaliers\"}]"
     }
   ],
-  "last_updated": "2026-11-27T20:39:41.324619+00:00"
+  "last_updated": "2026-11-27T21:39:25.471071+00:00"
 }
