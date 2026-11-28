@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28T16:25:15.249082+00:00",
+  "last_updated": "2026-11-28T17:18:51.028109+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -743,10 +743,10 @@
       "team": "MIN",
       "team_name": "Minnesota Timberwolves",
       "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-27T18:52Z",
+      "date": "2026-11-28T16:15Z",
       "return_date": "2026-11-29",
       "short_comment": "Ball (ankle) has been ruled out for Friday's game against the Grizzlies. The guard was previously questionable after spraining his left ankle during Wednesday's win over Oklahoma City.",
       "long_comment": "With Ball and Anthony Edwards (knee) sidelined, Ayo Dosunmu and Bones Hyland should handle increased ball-handling responsibilities. Minnesota's depleted backcourt could also create additional scoring opportunities for Jaden McDaniels. Ball's next opportunity to return comes Monday against Sacramento.",
@@ -1380,21 +1380,6 @@
       "return_date": "2026-12-03",
       "short_comment": "Leonard has begun individual on-court workouts following treatment to address swelling in his left knee, and he will be re-evaluated in one week, Marc J. Spears of ESPN.com reports.",
       "long_comment": "Leonard continues to progress in his recovery, and the Raptors are expected to provide another update in a week. Collin Murray-Boyles and Allen Graves will likely continue seeing increased burn for as long as Leonard is sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4432586",
-      "name": "Nate Bittle",
-      "team": "TOR",
-      "team_name": "Toronto Raptors",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-22T21:13Z",
-      "return_date": null,
-      "short_comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
-      "long_comment": "Bittle continues to work his way back from a fractured right foot, as he's yet to make his 2026-27 season debut. He remains week-to-week until Toronto provides a definitive update.",
       "source": "ESPN"
     },
     {
