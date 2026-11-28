@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28T14:42:46.018259+00:00",
+  "last_updated": "2026-11-28T15:29:47.949979+00:00",
   "source": "ESPN game summaries",
   "games": [
     {
@@ -7,6 +7,16 @@
       "date": "2026-11-28T22:00Z",
       "home_team": "WAS",
       "away_team": "ORL",
+      "home_starters": [],
+      "away_starters": [],
+      "status": "not_available",
+      "source": "ESPN game summary; starters explicitly flagged"
+    },
+    {
+      "game_id": "401910047",
+      "date": "2026-11-28T23:00Z",
+      "home_team": "CHA",
+      "away_team": "BKN",
       "home_starters": [],
       "away_starters": [],
       "status": "not_available",
