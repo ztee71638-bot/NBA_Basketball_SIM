@@ -1,0 +1,26 @@
+{
+  "event_id": "1472333",
+  "event_title": "Suns vs. Rockets",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415540",
+          "market_type": "moneyline",
+          "question": "Suns vs. Rockets",
+          "slug": "nba-phx-hou-2026-12-06",
+          "outcomes": "[\"Suns\", \"Rockets\"]",
+          "outcome_prices": "[\"0.25\", \"0.75\"]",
+          "volume_24h": null,
+          "liquidity": "123.21",
+          "end_date": "2026-12-06T20:30:00Z",
+          "url": "https://polymarket.com/event/nba-phx-hou-2026-12-06"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415540\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.25\\\", \\\"0.75\\\"]\",\"outcomes\":\"[\\\"Suns\\\", \\\"Rockets\\\"]\",\"question\":\"Suns vs. Rockets\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

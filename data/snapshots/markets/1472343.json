@@ -1,0 +1,26 @@
+{
+  "event_id": "1472343",
+  "event_title": "Warriors vs. Pelicans",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415551",
+          "market_type": "moneyline",
+          "question": "Warriors vs. Pelicans",
+          "slug": "nba-gsw-nop-2026-12-07",
+          "outcomes": "[\"Warriors\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.515\", \"0.485\"]",
+          "volume_24h": null,
+          "liquidity": "121.38",
+          "end_date": "2026-12-08T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-nop-2026-12-07"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415551\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.515\\\", \\\"0.485\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Pelicans\\\"]\",\"question\":\"Warriors vs. Pelicans\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

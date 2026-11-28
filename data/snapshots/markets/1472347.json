@@ -1,0 +1,26 @@
+{
+  "event_id": "1472347",
+  "event_title": "Pelicans vs. Nets",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415556",
+          "market_type": "moneyline",
+          "question": "Pelicans vs. Nets",
+          "slug": "nba-nop-bkn-2026-12-10",
+          "outcomes": "[\"Pelicans\", \"Nets\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "100.49",
+          "end_date": "2026-12-11T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-nop-bkn-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415556\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Nets\\\"]\",\"question\":\"Pelicans vs. Nets\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

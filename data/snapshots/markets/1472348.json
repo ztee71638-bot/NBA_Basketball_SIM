@@ -1,0 +1,26 @@
+{
+  "event_id": "1472348",
+  "event_title": "Cavaliers vs. Heat",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415557",
+          "market_type": "moneyline",
+          "question": "Cavaliers vs. Heat",
+          "slug": "nba-cle-mia-2026-12-10",
+          "outcomes": "[\"Cavaliers\", \"Heat\"]",
+          "outcome_prices": "[\"0.335\", \"0.665\"]",
+          "volume_24h": null,
+          "liquidity": "78.34",
+          "end_date": "2026-12-11T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-cle-mia-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415557\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.335\\\", \\\"0.665\\\"]\",\"outcomes\":\"[\\\"Cavaliers\\\", \\\"Heat\\\"]\",\"question\":\"Cavaliers vs. Heat\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

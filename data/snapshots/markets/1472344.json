@@ -1,0 +1,26 @@
+{
+  "event_id": "1472344",
+  "event_title": "Knicks vs. Hornets",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415553",
+          "market_type": "moneyline",
+          "question": "Knicks vs. Hornets",
+          "slug": "nba-nyk-cha-2026-12-10",
+          "outcomes": "[\"Knicks\", \"Hornets\"]",
+          "outcome_prices": "[\"0.665\", \"0.335\"]",
+          "volume_24h": null,
+          "liquidity": "124.85",
+          "end_date": "2026-12-11T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-nyk-cha-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415553\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.665\\\", \\\"0.335\\\"]\",\"outcomes\":\"[\\\"Knicks\\\", \\\"Hornets\\\"]\",\"question\":\"Knicks vs. Hornets\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

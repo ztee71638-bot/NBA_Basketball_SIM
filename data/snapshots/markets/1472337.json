@@ -1,0 +1,26 @@
+{
+  "event_id": "1472337",
+  "event_title": "Clippers vs. Timberwolves",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415544",
+          "market_type": "moneyline",
+          "question": "Clippers vs. Timberwolves",
+          "slug": "nba-lac-min-2026-12-06",
+          "outcomes": "[\"Clippers\", \"Timberwolves\"]",
+          "outcome_prices": "[\"0.24\", \"0.76\"]",
+          "volume_24h": null,
+          "liquidity": "125.11",
+          "end_date": "2026-12-07T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-lac-min-2026-12-06"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415544\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.24\\\", \\\"0.76\\\"]\",\"outcomes\":\"[\\\"Clippers\\\", \\\"Timberwolves\\\"]\",\"question\":\"Clippers vs. Timberwolves\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

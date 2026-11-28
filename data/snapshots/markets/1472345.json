@@ -1,0 +1,26 @@
+{
+  "event_id": "1472345",
+  "event_title": "Bulls vs. Magic",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415554",
+          "market_type": "moneyline",
+          "question": "Bulls vs. Magic",
+          "slug": "nba-chi-orl-2026-12-10",
+          "outcomes": "[\"Bulls\", \"Magic\"]",
+          "outcome_prices": "[\"0.245\", \"0.755\"]",
+          "volume_24h": null,
+          "liquidity": "124.16",
+          "end_date": "2026-12-11T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-chi-orl-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415554\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.245\\\", \\\"0.755\\\"]\",\"outcomes\":\"[\\\"Bulls\\\", \\\"Magic\\\"]\",\"question\":\"Bulls vs. Magic\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

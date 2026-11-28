@@ -1,0 +1,26 @@
+{
+  "event_id": "1472354",
+  "event_title": "Rockets vs. Clippers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415563",
+          "market_type": "moneyline",
+          "question": "Rockets vs. Clippers",
+          "slug": "nba-hou-lac-2026-12-10",
+          "outcomes": "[\"Rockets\", \"Clippers\"]",
+          "outcome_prices": "[\"0.755\", \"0.245\"]",
+          "volume_24h": null,
+          "liquidity": "82.76",
+          "end_date": "2026-12-11T03:30:00Z",
+          "url": "https://polymarket.com/event/nba-hou-lac-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415563\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.755\\\", \\\"0.245\\\"]\",\"outcomes\":\"[\\\"Rockets\\\", \\\"Clippers\\\"]\",\"question\":\"Rockets vs. Clippers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

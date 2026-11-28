@@ -1,0 +1,26 @@
+{
+  "event_id": "1472341",
+  "event_title": "Hornets vs. Raptors",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415548",
+          "market_type": "moneyline",
+          "question": "Hornets vs. Raptors",
+          "slug": "nba-cha-tor-2026-12-07",
+          "outcomes": "[\"Hornets\", \"Raptors\"]",
+          "outcome_prices": "[\"0.305\", \"0.695\"]",
+          "volume_24h": null,
+          "liquidity": "116.5",
+          "end_date": "2026-12-08T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-cha-tor-2026-12-07"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415548\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.305\\\", \\\"0.695\\\"]\",\"outcomes\":\"[\\\"Hornets\\\", \\\"Raptors\\\"]\",\"question\":\"Hornets vs. Raptors\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

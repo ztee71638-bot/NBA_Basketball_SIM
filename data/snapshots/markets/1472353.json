@@ -1,0 +1,26 @@
+{
+  "event_id": "1472353",
+  "event_title": "Timberwolves vs. Kings",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415562",
+          "market_type": "moneyline",
+          "question": "Timberwolves vs. Kings",
+          "slug": "nba-min-sac-2026-12-10",
+          "outcomes": "[\"Timberwolves\", \"Kings\"]",
+          "outcome_prices": "[\"0.725\", \"0.275\"]",
+          "volume_24h": null,
+          "liquidity": "82.36",
+          "end_date": "2026-12-11T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-min-sac-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415562\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.725\\\", \\\"0.275\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Kings\\\"]\",\"question\":\"Timberwolves vs. Kings\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

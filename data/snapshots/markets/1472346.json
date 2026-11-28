@@ -1,0 +1,26 @@
+{
+  "event_id": "1472346",
+  "event_title": "Pacers vs. Wizards",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415555",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Wizards",
+          "slug": "nba-ind-was-2026-12-10",
+          "outcomes": "[\"Pacers\", \"Wizards\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": null,
+          "liquidity": "115.51",
+          "end_date": "2026-12-11T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-was-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415555\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Wizards\\\"]\",\"question\":\"Pacers vs. Wizards\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

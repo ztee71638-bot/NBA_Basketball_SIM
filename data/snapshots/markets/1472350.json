@@ -1,0 +1,26 @@
+{
+  "event_id": "1472350",
+  "event_title": "Thunder vs. Suns",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415559",
+          "market_type": "moneyline",
+          "question": "Thunder vs. Suns",
+          "slug": "nba-okc-phx-2026-12-10",
+          "outcomes": "[\"Thunder\", \"Suns\"]",
+          "outcome_prices": "[\"0.505\", \"0.495\"]",
+          "volume_24h": null,
+          "liquidity": "79.34",
+          "end_date": "2026-12-11T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-okc-phx-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415559\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.505\\\", \\\"0.495\\\"]\",\"outcomes\":\"[\\\"Thunder\\\", \\\"Suns\\\"]\",\"question\":\"Thunder vs. Suns\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

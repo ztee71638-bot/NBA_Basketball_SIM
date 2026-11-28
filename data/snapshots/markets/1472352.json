@@ -1,0 +1,26 @@
+{
+  "event_id": "1472352",
+  "event_title": "Jazz vs. Lakers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415561",
+          "market_type": "moneyline",
+          "question": "Jazz vs. Lakers",
+          "slug": "nba-uta-lal-2026-12-10",
+          "outcomes": "[\"Jazz\", \"Lakers\"]",
+          "outcome_prices": "[\"0.21\", \"0.79\"]",
+          "volume_24h": null,
+          "liquidity": "80.76",
+          "end_date": "2026-12-11T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-uta-lal-2026-12-10"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415561\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.21\\\", \\\"0.79\\\"]\",\"outcomes\":\"[\\\"Jazz\\\", \\\"Lakers\\\"]\",\"question\":\"Jazz vs. Lakers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

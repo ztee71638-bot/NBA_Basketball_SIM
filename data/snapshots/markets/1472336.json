@@ -1,0 +1,26 @@
+{
+  "event_id": "1472336",
+  "event_title": "Wizards vs. Knicks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415543",
+          "market_type": "moneyline",
+          "question": "Wizards vs. Knicks",
+          "slug": "nba-was-nyk-2026-12-06",
+          "outcomes": "[\"Wizards\", \"Knicks\"]",
+          "outcome_prices": "[\"0.235\", \"0.765\"]",
+          "volume_24h": null,
+          "liquidity": "126.06",
+          "end_date": "2026-12-06T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-was-nyk-2026-12-06"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415543\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.235\\\", \\\"0.765\\\"]\",\"outcomes\":\"[\\\"Wizards\\\", \\\"Knicks\\\"]\",\"question\":\"Wizards vs. Knicks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}

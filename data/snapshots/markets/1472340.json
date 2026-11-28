@@ -1,0 +1,26 @@
+{
+  "event_id": "1472340",
+  "event_title": "Heat vs. Pacers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T09:47:06.423813+00:00",
+      "markets": [
+        {
+          "market_id": "7415547",
+          "market_type": "moneyline",
+          "question": "Heat vs. Pacers",
+          "slug": "nba-mia-ind-2026-12-07",
+          "outcomes": "[\"Heat\", \"Pacers\"]",
+          "outcome_prices": "[\"0.665\", \"0.335\"]",
+          "volume_24h": null,
+          "liquidity": "124.85",
+          "end_date": "2026-12-08T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-ind-2026-12-07"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415547\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.665\\\", \\\"0.335\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"Pacers\\\"]\",\"question\":\"Heat vs. Pacers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+}
