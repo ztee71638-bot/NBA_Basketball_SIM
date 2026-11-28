@@ -2048,7 +2048,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7413115\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spurs vs. Mavericks\"},{\"market_id\":\"7413356\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.645\\\", \\\"0.355\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-8.5)\"},{\"market_id\":\"7413363\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-9.5)\"},{\"market_id\":\"7413370\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-7.5)\"},{\"market_id\":\"7413376\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-10.5)\"},{\"market_id\":\"7413382\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-6.5)\"},{\"market_id\":\"7413388\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-11.5)\"},{\"market_id\":\"7413394\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-5.5)\"},{\"market_id\":\"7413400\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-12.5)\"},{\"market_id\":\"7413358\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 223.5\"},{\"market_id\":\"7413367\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 221.5\"},{\"market_id\":\"7413373\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 225.5\"},{\"market_id\":\"7413379\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 219.5\"},{\"market_id\":\"7413385\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 227.5\"},{\"market_id\":\"7413391\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 217.5\"},{\"market_id\":\"7413397\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 229.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T18:14:31.725438+00:00",
+      "markets": [
+        {
+          "market_id": "7413115",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Mavericks",
+          "slug": "nba-sas-dal-2026-12-04",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.745\", \"0.255\"]",
+          "volume_24h": 3.448276,
+          "liquidity": "18809.6073",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7413115\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spurs vs. Mavericks\"}]"
     }
   ],
-  "last_updated": "2026-11-28T10:47:22.854873+00:00"
+  "last_updated": "2026-11-28T18:14:31.725438+00:00"
 }

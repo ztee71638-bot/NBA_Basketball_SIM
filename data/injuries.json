@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28T17:18:51.028109+00:00",
+  "last_updated": "2026-11-28T18:14:31.723777+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -98,11 +98,11 @@
       "team": "BKN",
       "team_name": "Brooklyn Nets",
       "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-28T13:58Z",
-      "return_date": "2026-11-28",
+      "date": "2026-11-28T18:00Z",
+      "return_date": "2026-11-30",
       "short_comment": "Wagner (knee) won't be available for Friday's game against Toronto.",
       "long_comment": "Wagner suffered an injury Wednesday against the Bucks and won't be an option Friday. His status for the second leg of the back-to-back set Saturday at Charlotte is uncertain.",
       "source": "ESPN"
@@ -160,9 +160,9 @@
       "position": "C",
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
+      "side": null,
       "date": "2026-11-27T22:04Z",
-      "return_date": "2026-11-28",
+      "return_date": null,
       "short_comment": "Kalkbrenner (hip) is probable for Saturday's matchup with Brooklyn.",
       "long_comment": "The second-year big man is set to return from a one-game absence due to hip soreness. Kalkbrenner's presence is likely to push Hannes Steinbach from the Charlotte rotation altogether.",
       "source": "ESPN"
@@ -533,13 +533,13 @@
       "team": "HOU",
       "team_name": "Houston Rockets",
       "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-27T22:06Z",
-      "return_date": "2026-11-28",
-      "short_comment": "Adams (knee) is questionable for Saturday's game against the 76ers.",
-      "long_comment": "The veteran center is in danger of sitting out for the first time since Nov. 16 in Miami. If Adams doesn't play, Clint Capela would likely have the backup center position all to himself behind Alperen Sengun on Saturday.",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-28T17:41Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Adams (knee) has been ruled out for Saturday's game against the 76ers.",
+      "long_comment": "Adams appeared on the injury report Friday due to pain in his right knee and will now officially sit out Saturday's contest. Clint Capela will presumably serve as Houston's backup center against the Sixers; meanwhile, Adams' next chance to play will come Monday against the Lakers.",
       "source": "ESPN"
     },
     {
@@ -1008,21 +1008,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4397204",
-      "name": "Colin Castleton",
-      "team": "ORL",
-      "team_name": "Orlando Magic",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-28T01:53Z",
-      "return_date": "2026-11-29",
-      "short_comment": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
-      "long_comment": "Castleton squeezed five points and four boards into his brief appearance, including a successful three-point attempt. The reserve center made productive use of his late-game opportunity, though his limited playing time leaves his regular-season role uncertain.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4397140",
       "name": "Kevin Porter Jr.",
       "team": "ORL",
@@ -1113,6 +1098,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3059318",
+      "name": "Joel Embiid",
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Right",
+      "date": "2026-11-28T17:33Z",
+      "return_date": "2026-12-01",
+      "short_comment": "Embiid (foot) chipped in 14 points (5-14 FG, 1-3 3Pt, 3-4 FT), 11 rebounds, three assists and three steals in 28 minutes during Friday's 111-87 victory over the Pacers.",
+      "long_comment": "Embiid returned after missing two games due to illness, showing some offensive rust while contributing defensively. The comfortable victory limited his workload, but his return to the starting lineup is encouraging for fantasy managers.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3912848",
       "name": "Dean Wade",
       "team": "PHI",
@@ -1125,21 +1125,6 @@
       "return_date": "2026-11-28",
       "short_comment": "Wade (hamstring) is out for Friday's game against the Pacers, Austin Krell of Vertical 76 reports.",
       "long_comment": "Wade was added to the injury report earlier Friday due to injury management of a hamstring problem, and in the end, the forward has been ruled out. This poses a problem for the 76ers, as Jaylen Brown (hamstring) is out as well. Kentavious Caldwell-Pope could be in line for a bigger role because of the absences. Wade's next chance to play will come Saturday against the Rockets on the second leg of a back-to-back set.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3059318",
-      "name": "Joel Embiid",
-      "team": "PHI",
-      "team_name": "Philadelphia 76ers",
-      "position": "C",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-28T05:48Z",
-      "return_date": "2026-12-01",
-      "short_comment": "Embiid has been ruled out for Saturday's game against the Rockets due to right foot plantar fasciitis management, Kris Rhim of ESPN.com reports.",
-      "long_comment": "Embiid missed two games due to an illness before returning to the floor Friday to face the Pacers, but he is now in line for yet another absence to close out this back-to-back set. Jaylen Brown (hamstring) and LeBron James (back) have also been ruled out for Saturday's contest, leaving Tyrese Maxey and VJ Edgecombe as the team's top remaining scoring options.",
       "source": "ESPN"
     },
     {

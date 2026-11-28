@@ -1616,7 +1616,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7412595\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Celtics vs. Pistons\"},{\"market_id\":\"7413149\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-5.5)\"},{\"market_id\":\"7413155\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-6.5)\"},{\"market_id\":\"7413161\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-4.5)\"},{\"market_id\":\"7413167\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-7.5)\"},{\"market_id\":\"7413150\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 204.5\"},{\"market_id\":\"7413158\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 202.5\"},{\"market_id\":\"7413164\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 206.5\"},{\"market_id\":\"7413170\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 200.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T18:14:31.725438+00:00",
+      "markets": [
+        {
+          "market_id": "7412595",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Pistons",
+          "slug": "nba-bos-det-2026-12-05",
+          "outcomes": "[\"Celtics\", \"Pistons\"]",
+          "outcome_prices": "[\"0.63\", \"0.37\"]",
+          "volume_24h": 2.439025,
+          "liquidity": "9093.6519",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412595\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.63\\\", \\\"0.37\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Celtics vs. Pistons\"}]"
     }
   ],
-  "last_updated": "2026-11-28T08:46:20.597459+00:00"
+  "last_updated": "2026-11-28T18:14:31.725438+00:00"
 }

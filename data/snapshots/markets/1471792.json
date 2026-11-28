@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7413324\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.2\\\", \\\"0.8\\\"]\",\"outcomes\":\"[\\\"Raptors\\\", \\\"Spurs\\\"]\",\"question\":\"Raptors vs. Spurs\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T18:14:31.725438+00:00",
+      "markets": [
+        {
+          "market_id": "7413324",
+          "market_type": "moneyline",
+          "question": "Raptors vs. Spurs",
+          "slug": "nba-tor-sas-2026-12-02",
+          "outcomes": "[\"Raptors\", \"Spurs\"]",
+          "outcome_prices": "[\"0.175\", \"0.825\"]",
+          "volume_24h": 2.702703,
+          "liquidity": "7678.1005",
+          "end_date": "2026-12-03T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-tor-sas-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7413324\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.175\\\", \\\"0.825\\\"]\",\"outcomes\":\"[\\\"Raptors\\\", \\\"Spurs\\\"]\",\"question\":\"Raptors vs. Spurs\"}]"
     }
   ],
-  "last_updated": "2026-11-28T08:46:20.597459+00:00"
+  "last_updated": "2026-11-28T18:14:31.725438+00:00"
 }
