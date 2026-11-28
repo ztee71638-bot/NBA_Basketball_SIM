@@ -290,7 +290,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7166207\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.295\\\", \\\"0.705\\\"]\",\"outcomes\":\"[\\\"Wizards\\\", \\\"Heat\\\"]\",\"question\":\"Wizards vs. Heat\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T03:04:42.750302+00:00",
+      "markets": [
+        {
+          "market_id": "7166207",
+          "market_type": "moneyline",
+          "question": "Wizards vs. Heat",
+          "slug": "nba-was-mia-2026-12-03",
+          "outcomes": "[\"Wizards\", \"Heat\"]",
+          "outcome_prices": "[\"0.26\", \"0.74\"]",
+          "volume_24h": null,
+          "liquidity": "16142.3835",
+          "end_date": "2026-12-04T00:30:00Z",
+          "url": "https://polymarket.com/event/nba-was-mia-2026-12-03"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7166207\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.26\\\", \\\"0.74\\\"]\",\"outcomes\":\"[\\\"Wizards\\\", \\\"Heat\\\"]\",\"question\":\"Wizards vs. Heat\"}]"
     }
   ],
-  "last_updated": "2026-11-26T19:49:19.142156+00:00"
+  "last_updated": "2026-11-28T03:04:42.750302+00:00"
 }

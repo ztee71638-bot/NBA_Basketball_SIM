@@ -380,7 +380,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058837\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Clippers\\\", \\\"Warriors\\\"]\",\"question\":\"Clippers vs. Warriors\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T03:04:42.750302+00:00",
+      "markets": [
+        {
+          "market_id": "7058837",
+          "market_type": "moneyline",
+          "question": "Clippers vs. Warriors",
+          "slug": "nba-lac-gsw-2026-11-29",
+          "outcomes": "[\"Clippers\", \"Warriors\"]",
+          "outcome_prices": "[\"0.37\", \"0.63\"]",
+          "volume_24h": null,
+          "liquidity": "29994.343",
+          "end_date": "2026-11-30T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-lac-gsw-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058837\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.37\\\", \\\"0.63\\\"]\",\"outcomes\":\"[\\\"Clippers\\\", \\\"Warriors\\\"]\",\"question\":\"Clippers vs. Warriors\"}]"
     }
   ],
-  "last_updated": "2026-11-27T05:57:56.696387+00:00"
+  "last_updated": "2026-11-28T03:04:42.750302+00:00"
 }
