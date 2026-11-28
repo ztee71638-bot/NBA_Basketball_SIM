@@ -20,7 +20,49 @@
         }
       ],
       "signature": "[{\"market_id\":\"7413116\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Grizzlies vs. Trail Blazers\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T07:47:04.107769+00:00",
+      "markets": [
+        {
+          "market_id": "7413116",
+          "market_type": "moneyline",
+          "question": "Grizzlies vs. Trail Blazers",
+          "slug": "nba-mem-por-2026-12-05",
+          "outcomes": "[\"Grizzlies\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "278.7",
+          "end_date": "2026-12-06T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-mem-por-2026-12-05"
+        },
+        {
+          "market_id": "7413974",
+          "market_type": "spread",
+          "question": "Spread: Trail Blazers (-6.5)",
+          "slug": "nba-mem-por-2026-12-05-spread-home-6pt5",
+          "outcomes": "[\"Trail Blazers\", \"Grizzlies\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-06T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-mem-por-2026-12-05"
+        },
+        {
+          "market_id": "7413975",
+          "market_type": "total",
+          "question": "Grizzlies vs. Trail Blazers: O/U 226.5",
+          "slug": "nba-mem-por-2026-12-05-total-226pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-06T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-mem-por-2026-12-05"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7413116\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Grizzlies\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Grizzlies vs. Trail Blazers\"},{\"market_id\":\"7413974\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Trail Blazers\\\", \\\"Grizzlies\\\"]\",\"question\":\"Spread: Trail Blazers (-6.5)\"},{\"market_id\":\"7413975\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Grizzlies vs. Trail Blazers: O/U 226.5\"}]"
     }
   ],
-  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+  "last_updated": "2026-11-28T07:47:04.107769+00:00"
 }

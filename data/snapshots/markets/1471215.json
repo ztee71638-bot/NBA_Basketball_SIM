@@ -20,7 +20,253 @@
         }
       ],
       "signature": "[{\"market_id\":\"7411302\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"76ers vs. Hawks\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T07:47:04.107769+00:00",
+      "markets": [
+        {
+          "market_id": "7411302",
+          "market_type": "moneyline",
+          "question": "76ers vs. Hawks",
+          "slug": "nba-phi-atl-2026-12-04",
+          "outcomes": "[\"76ers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "192.36",
+          "end_date": "2026-12-04T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413355",
+          "market_type": "spread",
+          "question": "Spread: Hawks (-1.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-home-1pt5",
+          "outcomes": "[\"Hawks\", \"76ers\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413361",
+          "market_type": "spread",
+          "question": "Spread: Hawks (-2.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-home-2pt5",
+          "outcomes": "[\"Hawks\", \"76ers\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413369",
+          "market_type": "spread",
+          "question": "Spread: Hawks (-3.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-home-3pt5",
+          "outcomes": "[\"Hawks\", \"76ers\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413375",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-1.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-away-1pt5",
+          "outcomes": "[\"76ers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.2",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413381",
+          "market_type": "spread",
+          "question": "Spread: Hawks (-4.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-home-4pt5",
+          "outcomes": "[\"Hawks\", \"76ers\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413387",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-2.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-away-2pt5",
+          "outcomes": "[\"76ers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413393",
+          "market_type": "spread",
+          "question": "Spread: Hawks (-5.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-home-5pt5",
+          "outcomes": "[\"Hawks\", \"76ers\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413399",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-3.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-away-3pt5",
+          "outcomes": "[\"76ers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413405",
+          "market_type": "spread",
+          "question": "Spread: Hawks (-6.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-home-6pt5",
+          "outcomes": "[\"Hawks\", \"76ers\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413411",
+          "market_type": "spread",
+          "question": "Spread: 76ers (-4.5)",
+          "slug": "nba-phi-atl-2026-12-04-spread-away-4pt5",
+          "outcomes": "[\"76ers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.2",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413357",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 230.5",
+          "slug": "nba-phi-atl-2026-12-04-total-230pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413365",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 228.5",
+          "slug": "nba-phi-atl-2026-12-04-total-228pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413372",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 232.5",
+          "slug": "nba-phi-atl-2026-12-04-total-232pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413378",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 226.5",
+          "slug": "nba-phi-atl-2026-12-04-total-226pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413384",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 234.5",
+          "slug": "nba-phi-atl-2026-12-04-total-234pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413390",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 224.5",
+          "slug": "nba-phi-atl-2026-12-04-total-224pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413396",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 236.5",
+          "slug": "nba-phi-atl-2026-12-04-total-236pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413402",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 222.5",
+          "slug": "nba-phi-atl-2026-12-04-total-222pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        },
+        {
+          "market_id": "7413408",
+          "market_type": "total",
+          "question": "76ers vs. Hawks: O/U 238.5",
+          "slug": "nba-phi-atl-2026-12-04-total-238pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7411302\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"76ers vs. Hawks\"},{\"market_id\":\"7413355\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Hawks (-1.5)\"},{\"market_id\":\"7413361\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Hawks (-2.5)\"},{\"market_id\":\"7413369\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Hawks (-3.5)\"},{\"market_id\":\"7413375\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"Spread: 76ers (-1.5)\"},{\"market_id\":\"7413381\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Hawks (-4.5)\"},{\"market_id\":\"7413387\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"Spread: 76ers (-2.5)\"},{\"market_id\":\"7413393\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Hawks (-5.5)\"},{\"market_id\":\"7413399\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"Spread: 76ers (-3.5)\"},{\"market_id\":\"7413405\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"76ers\\\"]\",\"question\":\"Spread: Hawks (-6.5)\"},{\"market_id\":\"7413411\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"Spread: 76ers (-4.5)\"},{\"market_id\":\"7413357\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 230.5\"},{\"market_id\":\"7413365\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 228.5\"},{\"market_id\":\"7413372\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 232.5\"},{\"market_id\":\"7413378\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 226.5\"},{\"market_id\":\"7413384\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 234.5\"},{\"market_id\":\"7413390\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 224.5\"},{\"market_id\":\"7413396\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 236.5\"},{\"market_id\":\"7413402\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 222.5\"},{\"market_id\":\"7413408\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"76ers vs. Hawks: O/U 238.5\"}]"
     }
   ],
-  "last_updated": "2026-11-28T04:10:14.153384+00:00"
+  "last_updated": "2026-11-28T07:47:04.107769+00:00"
 }
