@@ -1850,7 +1850,205 @@
         }
       ],
       "signature": "[{\"market_id\":\"7413115\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spurs vs. Mavericks\"},{\"market_id\":\"7413356\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.705\\\", \\\"0.295\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-8.5)\"},{\"market_id\":\"7413363\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.72\\\", \\\"0.28\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-9.5)\"},{\"market_id\":\"7413370\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.75\\\", \\\"0.25\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-7.5)\"},{\"market_id\":\"7413376\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-10.5)\"},{\"market_id\":\"7413382\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-6.5)\"},{\"market_id\":\"7413388\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-11.5)\"},{\"market_id\":\"7413394\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-5.5)\"},{\"market_id\":\"7413400\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-12.5)\"},{\"market_id\":\"7413406\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-4.5)\"},{\"market_id\":\"7413412\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-13.5)\"},{\"market_id\":\"7413418\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-3.5)\"},{\"market_id\":\"7413358\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 223.5\"},{\"market_id\":\"7413367\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 221.5\"},{\"market_id\":\"7413373\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 225.5\"},{\"market_id\":\"7413379\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 219.5\"},{\"market_id\":\"7413385\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 227.5\"},{\"market_id\":\"7413391\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 217.5\"},{\"market_id\":\"7413397\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 229.5\"},{\"market_id\":\"7413403\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 215.5\"},{\"market_id\":\"7413409\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 231.5\"},{\"market_id\":\"7413415\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 213.5\"},{\"market_id\":\"7413421\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 233.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T10:47:22.854873+00:00",
+      "markets": [
+        {
+          "market_id": "7413115",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Mavericks",
+          "slug": "nba-sas-dal-2026-12-04",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.745\", \"0.255\"]",
+          "volume_24h": null,
+          "liquidity": "3609.0296",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413356",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-8.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-8pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.645\", \"0.355\"]",
+          "volume_24h": null,
+          "liquidity": "2187.2996",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413363",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-9.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-9pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": null,
+          "liquidity": "7.8",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413370",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-7.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-7pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.455\", \"0.545\"]",
+          "volume_24h": null,
+          "liquidity": "7.8",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413376",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-10.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-10pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": null,
+          "liquidity": "7.6",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413382",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-6.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-6pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.45\", \"0.55\"]",
+          "volume_24h": null,
+          "liquidity": "7.7",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413388",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-11.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-11pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": null,
+          "liquidity": "7.6",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413394",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-5.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-5pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.45\", \"0.55\"]",
+          "volume_24h": null,
+          "liquidity": "7.7",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413400",
+          "market_type": "spread",
+          "question": "Spread: Spurs (-12.5)",
+          "slug": "nba-sas-dal-2026-12-04-spread-away-12pt5",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": null,
+          "liquidity": "7.6",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413358",
+          "market_type": "total",
+          "question": "Spurs vs. Mavericks: O/U 223.5",
+          "slug": "nba-sas-dal-2026-12-04-total-223pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "206.65",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413367",
+          "market_type": "total",
+          "question": "Spurs vs. Mavericks: O/U 221.5",
+          "slug": "nba-sas-dal-2026-12-04-total-221pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "2.65",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413373",
+          "market_type": "total",
+          "question": "Spurs vs. Mavericks: O/U 225.5",
+          "slug": "nba-sas-dal-2026-12-04-total-225pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413379",
+          "market_type": "total",
+          "question": "Spurs vs. Mavericks: O/U 219.5",
+          "slug": "nba-sas-dal-2026-12-04-total-219pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "1.15",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413385",
+          "market_type": "total",
+          "question": "Spurs vs. Mavericks: O/U 227.5",
+          "slug": "nba-sas-dal-2026-12-04-total-227pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413391",
+          "market_type": "total",
+          "question": "Spurs vs. Mavericks: O/U 217.5",
+          "slug": "nba-sas-dal-2026-12-04-total-217pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        },
+        {
+          "market_id": "7413397",
+          "market_type": "total",
+          "question": "Spurs vs. Mavericks: O/U 229.5",
+          "slug": "nba-sas-dal-2026-12-04-total-229pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7413115\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spurs vs. Mavericks\"},{\"market_id\":\"7413356\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.645\\\", \\\"0.355\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-8.5)\"},{\"market_id\":\"7413363\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-9.5)\"},{\"market_id\":\"7413370\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.455\\\", \\\"0.545\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-7.5)\"},{\"market_id\":\"7413376\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-10.5)\"},{\"market_id\":\"7413382\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-6.5)\"},{\"market_id\":\"7413388\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-11.5)\"},{\"market_id\":\"7413394\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-5.5)\"},{\"market_id\":\"7413400\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spread: Spurs (-12.5)\"},{\"market_id\":\"7413358\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 223.5\"},{\"market_id\":\"7413367\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 221.5\"},{\"market_id\":\"7413373\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 225.5\"},{\"market_id\":\"7413379\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 219.5\"},{\"market_id\":\"7413385\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 227.5\"},{\"market_id\":\"7413391\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 217.5\"},{\"market_id\":\"7413397\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Spurs vs. Mavericks: O/U 229.5\"}]"
     }
   ],
-  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+  "last_updated": "2026-11-28T10:47:22.854873+00:00"
 }

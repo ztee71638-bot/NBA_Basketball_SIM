@@ -20,7 +20,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7415541\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.42\\\", \\\"0.58\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Jazz\\\"]\",\"question\":\"Bucks vs. Jazz\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T10:47:22.854873+00:00",
+      "markets": [
+        {
+          "market_id": "7415541",
+          "market_type": "moneyline",
+          "question": "Bucks vs. Jazz",
+          "slug": "nba-mil-uta-2026-12-06",
+          "outcomes": "[\"Bucks\", \"Jazz\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": null,
+          "liquidity": "138.45",
+          "end_date": "2026-12-06T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-mil-uta-2026-12-06"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415541\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Bucks\\\", \\\"Jazz\\\"]\",\"question\":\"Bucks vs. Jazz\"}]"
     }
   ],
-  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+  "last_updated": "2026-11-28T10:47:22.854873+00:00"
 }
