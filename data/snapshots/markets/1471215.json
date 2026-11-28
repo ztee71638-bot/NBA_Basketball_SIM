@@ -1,0 +1,26 @@
+{
+  "event_id": "1471215",
+  "event_title": "76ers vs. Hawks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T04:10:14.153384+00:00",
+      "markets": [
+        {
+          "market_id": "7411302",
+          "market_type": "moneyline",
+          "question": "76ers vs. Hawks",
+          "slug": "nba-phi-atl-2026-12-04",
+          "outcomes": "[\"76ers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "69.36",
+          "end_date": "2026-12-04T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7411302\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"76ers vs. Hawks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T04:10:14.153384+00:00"
+}
