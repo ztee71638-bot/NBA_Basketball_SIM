@@ -200,7 +200,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7136806\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.72\\\", \\\"0.28\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Pelicans\\\"]\",\"question\":\"Lakers vs. Pelicans\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T00:35:34.221580+00:00",
+      "markets": [
+        {
+          "market_id": "7136806",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Pelicans",
+          "slug": "nba-lal-nop-2026-12-02",
+          "outcomes": "[\"Lakers\", \"Pelicans\"]",
+          "outcome_prices": "[\"0.725\", \"0.275\"]",
+          "volume_24h": 120.134518,
+          "liquidity": "7717.9237",
+          "end_date": "2026-12-03T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-lal-nop-2026-12-02"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7136806\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.725\\\", \\\"0.275\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Pelicans\\\"]\",\"question\":\"Lakers vs. Pelicans\"}]"
     }
   ],
-  "last_updated": "2026-11-27T16:39:42.153624+00:00"
+  "last_updated": "2026-11-28T00:35:34.221580+00:00"
 }

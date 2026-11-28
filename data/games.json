@@ -1,282 +1,7 @@
 {
-  "last_updated": "2026-11-27T23:36:15.680588+00:00",
+  "last_updated": "2026-11-28T00:35:34.198977+00:00",
   "source": "ESPN public scoreboard",
   "games": [
-    {
-      "id": "401909326",
-      "date": "2026-11-28T00:00Z",
-      "name": "Miami Heat at New York Knicks",
-      "short_name": "MIA @ NY",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 7:00 PM EST",
-      "completed": false,
-      "home": {
-        "id": "18",
-        "name": "New York Knicks",
-        "abbreviation": "NY",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "14",
-        "name": "Miami Heat",
-        "abbreviation": "MIA",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Madison Square Garden",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909327",
-      "date": "2026-11-28T00:30Z",
-      "name": "Milwaukee Bucks at Detroit Pistons",
-      "short_name": "MIL @ DET",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 7:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "8",
-        "name": "Detroit Pistons",
-        "abbreviation": "DET",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "15",
-        "name": "Milwaukee Bucks",
-        "abbreviation": "MIL",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Little Caesars Arena",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909328",
-      "date": "2026-11-28T00:30Z",
-      "name": "Philadelphia 76ers at Indiana Pacers",
-      "short_name": "PHI @ IND",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 7:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "11",
-        "name": "Indiana Pacers",
-        "abbreviation": "IND",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "20",
-        "name": "Philadelphia 76ers",
-        "abbreviation": "PHI",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Gainbridge Fieldhouse",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909329",
-      "date": "2026-11-28T00:30Z",
-      "name": "Brooklyn Nets at Toronto Raptors",
-      "short_name": "BKN @ TOR",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 7:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "28",
-        "name": "Toronto Raptors",
-        "abbreviation": "TOR",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "17",
-        "name": "Brooklyn Nets",
-        "abbreviation": "BKN",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Scotiabank Arena",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909330",
-      "date": "2026-11-28T01:00Z",
-      "name": "Atlanta Hawks at Boston Celtics",
-      "short_name": "ATL @ BOS",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 8:00 PM EST",
-      "completed": false,
-      "home": {
-        "id": "2",
-        "name": "Boston Celtics",
-        "abbreviation": "BOS",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "1",
-        "name": "Atlanta Hawks",
-        "abbreviation": "ATL",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "TD Garden",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909331",
-      "date": "2026-11-28T01:30Z",
-      "name": "Memphis Grizzlies at Minnesota Timberwolves",
-      "short_name": "MEM @ MIN",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 8:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "16",
-        "name": "Minnesota Timberwolves",
-        "abbreviation": "MIN",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "29",
-        "name": "Memphis Grizzlies",
-        "abbreviation": "MEM",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Target Center",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909332",
-      "date": "2026-11-28T02:00Z",
-      "name": "Dallas Mavericks at Phoenix Suns",
-      "short_name": "DAL @ PHX",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 9:00 PM EST",
-      "completed": false,
-      "home": {
-        "id": "21",
-        "name": "Phoenix Suns",
-        "abbreviation": "PHX",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "6",
-        "name": "Dallas Mavericks",
-        "abbreviation": "DAL",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Mortgage Matchup Center",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909333",
-      "date": "2026-11-28T02:30Z",
-      "name": "Los Angeles Lakers at San Antonio Spurs",
-      "short_name": "LAL @ SA",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 9:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "24",
-        "name": "San Antonio Spurs",
-        "abbreviation": "SA",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "13",
-        "name": "Los Angeles Lakers",
-        "abbreviation": "LAL",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Frost Bank Center",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909334",
-      "date": "2026-11-28T02:30Z",
-      "name": "Denver Nuggets at Utah Jazz",
-      "short_name": "DEN @ UTAH",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 9:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "26",
-        "name": "Utah Jazz",
-        "abbreviation": "UTAH",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "7",
-        "name": "Denver Nuggets",
-        "abbreviation": "DEN",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Delta Center",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909335",
-      "date": "2026-11-28T02:30Z",
-      "name": "New Orleans Pelicans at LA Clippers",
-      "short_name": "NO @ LAC",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 9:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "12",
-        "name": "LA Clippers",
-        "abbreviation": "LAC",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "3",
-        "name": "New Orleans Pelicans",
-        "abbreviation": "NO",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Intuit Dome",
-      "source": "ESPN"
-    },
-    {
-      "id": "401909336",
-      "date": "2026-11-28T02:30Z",
-      "name": "Golden State Warriors at Portland Trail Blazers",
-      "short_name": "GS @ POR",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "11/27 - 9:30 PM EST",
-      "completed": false,
-      "home": {
-        "id": "22",
-        "name": "Portland Trail Blazers",
-        "abbreviation": "POR",
-        "score": "0",
-        "winner": null
-      },
-      "away": {
-        "id": "9",
-        "name": "Golden State Warriors",
-        "abbreviation": "GS",
-        "score": "0",
-        "winner": null
-      },
-      "venue": "Moda Center",
-      "source": "ESPN"
-    },
     {
       "id": "401910046",
       "date": "2026-11-28T22:00Z",
@@ -646,6 +371,181 @@
         "id": "16",
         "name": "Minnesota Timberwolves",
         "abbreviation": "MIN",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Golden 1 Center",
+      "source": "ESPN"
+    },
+    {
+      "id": "401910061",
+      "date": "2026-12-01T00:00Z",
+      "name": "Washington Wizards at Charlotte Hornets",
+      "short_name": "WSH @ CHA",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/30 - 7:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "30",
+        "name": "Charlotte Hornets",
+        "abbreviation": "CHA",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "27",
+        "name": "Washington Wizards",
+        "abbreviation": "WSH",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Spectrum Center",
+      "source": "ESPN"
+    },
+    {
+      "id": "401910062",
+      "date": "2026-12-01T00:00Z",
+      "name": "Denver Nuggets at Detroit Pistons",
+      "short_name": "DEN @ DET",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/30 - 7:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "8",
+        "name": "Detroit Pistons",
+        "abbreviation": "DET",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "7",
+        "name": "Denver Nuggets",
+        "abbreviation": "DEN",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Little Caesars Arena",
+      "source": "ESPN"
+    },
+    {
+      "id": "401910063",
+      "date": "2026-12-01T00:30Z",
+      "name": "Oklahoma City Thunder at Brooklyn Nets",
+      "short_name": "OKC @ BKN",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/30 - 7:30 PM EST",
+      "completed": false,
+      "home": {
+        "id": "17",
+        "name": "Brooklyn Nets",
+        "abbreviation": "BKN",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "25",
+        "name": "Oklahoma City Thunder",
+        "abbreviation": "OKC",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Barclays Center",
+      "source": "ESPN"
+    },
+    {
+      "id": "401910064",
+      "date": "2026-12-01T00:30Z",
+      "name": "Los Angeles Lakers at Houston Rockets",
+      "short_name": "LAL @ HOU",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/30 - 7:30 PM EST",
+      "completed": false,
+      "home": {
+        "id": "10",
+        "name": "Houston Rockets",
+        "abbreviation": "HOU",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "13",
+        "name": "Los Angeles Lakers",
+        "abbreviation": "LAL",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Toyota Center (Houston)",
+      "source": "ESPN"
+    },
+    {
+      "id": "401910065",
+      "date": "2026-12-01T01:00Z",
+      "name": "Boston Celtics at Dallas Mavericks",
+      "short_name": "BOS @ DAL",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/30 - 8:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "6",
+        "name": "Dallas Mavericks",
+        "abbreviation": "DAL",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "2",
+        "name": "Boston Celtics",
+        "abbreviation": "BOS",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "American Airlines Center",
+      "source": "ESPN"
+    },
+    {
+      "id": "401910066",
+      "date": "2026-12-01T01:00Z",
+      "name": "San Antonio Spurs at Milwaukee Bucks",
+      "short_name": "SA @ MIL",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/30 - 8:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "15",
+        "name": "Milwaukee Bucks",
+        "abbreviation": "MIL",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "24",
+        "name": "San Antonio Spurs",
+        "abbreviation": "SA",
+        "score": "0",
+        "winner": null
+      },
+      "venue": "Fiserv Forum",
+      "source": "ESPN"
+    },
+    {
+      "id": "401910067",
+      "date": "2026-12-01T03:00Z",
+      "name": "New Orleans Pelicans at Sacramento Kings",
+      "short_name": "NO @ SAC",
+      "status": "STATUS_SCHEDULED",
+      "status_detail": "11/30 - 10:00 PM EST",
+      "completed": false,
+      "home": {
+        "id": "23",
+        "name": "Sacramento Kings",
+        "abbreviation": "SAC",
+        "score": "0",
+        "winner": null
+      },
+      "away": {
+        "id": "3",
+        "name": "New Orleans Pelicans",
+        "abbreviation": "NO",
         "score": "0",
         "winner": null
       },

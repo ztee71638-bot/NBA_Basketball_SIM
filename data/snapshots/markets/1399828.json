@@ -704,7 +704,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7086139\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.56\\\", \\\"0.44\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Kings\\\"]\",\"question\":\"Pelicans vs. Kings\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T00:35:34.221580+00:00",
+      "markets": [
+        {
+          "market_id": "7086139",
+          "market_type": "moneyline",
+          "question": "Pelicans vs. Kings",
+          "slug": "nba-nop-sac-2026-11-30",
+          "outcomes": "[\"Pelicans\", \"Kings\"]",
+          "outcome_prices": "[\"0.555\", \"0.445\"]",
+          "volume_24h": 15.96,
+          "liquidity": "17679.7615",
+          "end_date": "2026-12-01T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-nop-sac-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086139\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.555\\\", \\\"0.445\\\"]\",\"outcomes\":\"[\\\"Pelicans\\\", \\\"Kings\\\"]\",\"question\":\"Pelicans vs. Kings\"}]"
     }
   ],
-  "last_updated": "2026-11-27T23:36:15.698236+00:00"
+  "last_updated": "2026-11-28T00:35:34.221580+00:00"
 }

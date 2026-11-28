@@ -434,7 +434,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"7031353\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Bulls\\\"]\",\"question\":\"Pacers vs. Bulls\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T00:35:34.221580+00:00",
+      "markets": [
+        {
+          "market_id": "7031353",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Bulls",
+          "slug": "nba-ind-chi-2026-11-28",
+          "outcomes": "[\"Pacers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": 1066.360794,
+          "liquidity": "39384.021",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-chi-2026-11-28"
+        },
+        {
+          "market_id": "7401945",
+          "market_type": "total",
+          "question": "Pacers vs. Bulls: O/U 234.5",
+          "slug": "nba-ind-chi-2026-11-28-total-234pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 10.139882,
+          "liquidity": "6484.8079",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-chi-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031353\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Bulls\\\"]\",\"question\":\"Pacers vs. Bulls\"},{\"market_id\":\"7401945\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pacers vs. Bulls: O/U 234.5\"}]"
     }
   ],
-  "last_updated": "2026-11-27T07:15:10.815207+00:00"
+  "last_updated": "2026-11-28T00:35:34.221580+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T23:36:15.696969+00:00",
+  "last_updated": "2026-11-28T00:35:34.219985+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -513,21 +513,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "2580365",
-      "name": "Larry Nance Jr.",
-      "team": "IND",
-      "team_name": "Indiana Pacers",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-27T18:07Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Nance (ankle) is probable for Friday's game against the 76ers.",
-      "long_comment": "The veteran center is now likely to be available Friday after first being deemed questionable to play. Nance offers the Pacers frontcourt depth along with Jay Huff and Kobe Brown.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4396993",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -593,13 +578,13 @@
       "team": "MEM",
       "team_name": "Memphis Grizzlies",
       "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-26T23:27Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Stewart is questionable for Friday's game against the Timberwolves due to right hip soreness.",
-      "long_comment": "Stewart could miss Friday's game, and if so, it'd be a huge blow for the Grizzlies since Zach Edey (ankle) is also questionable. If both players are out, Taylor Hendricks would be the next in line to see heavy minutes at center. Stewart is averaging 10.6 points, 3.3 rebounds and 0.9 assists per game this season.",
+      "date": "2026-11-28T00:26Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Stewart (hip) is out for Friday's game against the Timberwolves, Jon Krawczynski of The Athletic reports.",
+      "long_comment": "Stewart was added to the injury report Friday, and the big man won't be suiting up.  This creates a problem for the Grizzlies, as they're also at risk of being without Zach Edey (ankle), which would give Taylor Hendricks a bigger role on offense.",
       "source": "ESPN"
     },
     {
@@ -611,10 +596,10 @@
       "status": "Day-To-Day",
       "type": "INJURY_STATUS_DAYTODAY",
       "side": "Left",
-      "date": "2026-11-26T23:24Z",
+      "date": "2026-11-28T00:23Z",
       "return_date": "2026-11-27",
-      "short_comment": "Edey (ankle) is questionable for Friday's game against the Timberwolves.",
-      "long_comment": "Edey didn't return to Wednesday's 115-97 win over the Clippers, finishing with seven points (3-4 FG, 1-1 FT), four rebounds, two assists and two blocks across nine minutes. Taylor Hendricks could be in line for a bigger role in the frontcourt Friday, as Isaiah Stewart (hip) is questionable as well.",
+      "short_comment": "Edey (ankle) is a game-time decision for Friday's game versus Minnesota, Jon Krawczynski of The Athletic reports.",
+      "long_comment": "Edey wasn't able to return to Wednesday's game against the Clippers after suffering an ankle injury, and it still remains to be seen whether he'll suit up for Friday's contest. Isaiah Stewart (hip) has already been ruled out, so Quinten Post and Taylor Hendricks could be asked to take on larger roles if Edey doesn't play.",
       "source": "ESPN"
     },
     {
@@ -888,6 +873,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "5159925",
+      "name": "Nikola Topic",
+      "team": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": "Left",
+      "date": "2026-11-27T23:49Z",
+      "return_date": "2026-12-13",
+      "short_comment": "Topic (hip) is out for Saturday's game against the Bucks, Brandon Rahbar of DailyThunder.com reports.",
+      "long_comment": "With Topic set to miss a fifth consecutive game, Oklahoma City remains without the guard indefinitely because of a hip issue. Given his limited role and just three appearances this season, his ongoing absence is unlikely to have a major fantasy impact.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5174983",
       "name": "Aday Mara",
       "team": "OKC",
@@ -900,21 +900,6 @@
       "return_date": "2026-11-30",
       "short_comment": "Mara (leg) is out for Saturday's game versus the Bucks, per Clemente Almanza of USA Today.",
       "long_comment": "The Thunder remain pretty quiet regarding the recovery of Mara, who's facing a fourth straight absence with a shin contusion. Alex Caruso stands out as a strong streaming option in most fantasy formats while Mara is sidelined.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "5159925",
-      "name": "Nikola Topic",
-      "team": "OKC",
-      "team_name": "Oklahoma City Thunder",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-24T23:29Z",
-      "return_date": "2026-12-13",
-      "short_comment": "Topic (hip) is listed as out for Wednesday's game versus Minnesota.",
-      "long_comment": "Topic has appeared in only three games for the Thunder this season. He's missed the last three contests because of a hip strain, with his next opportunity to suit up coming Saturday in Milwaukee. Without Topic, Bennett Stirtz and Josh Dix could continue to receive more playing time.",
       "source": "ESPN"
     },
     {
@@ -1098,6 +1083,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3912848",
+      "name": "Dean Wade",
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-27T23:33Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Wade (hamstring) is out for Friday's game against the Pacers, Austin Krell of Vertical 76 reports.",
+      "long_comment": "Wade was added to the injury report earlier Friday due to injury management of a hamstring problem, and in the end, the forward has been ruled out. This poses a problem for the 76ers, as Jaylen Brown (hamstring) is out as well. Kentavious Caldwell-Pope could be in line for a bigger role because of the absences. Wade's next chance to play will come Saturday against the Rockets on the second leg of a back-to-back set.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3917376",
       "name": "Jaylen Brown",
       "team": "PHI",
@@ -1110,21 +1110,6 @@
       "return_date": "2026-12-01",
       "short_comment": "Brown (hamstring) underwent an MRI that showed no signs of a new injury or re-aggravation, but he didn't travel with the team for the road trip, so he will miss the team's next two games, Kris Rhim of ESPN reports.",
       "long_comment": "Brown's absence from the road trip means he won't play against the Pacers on Friday or against the Rockets on Saturday. However, the star forward might be able to return for Tuesday's matchup against the Grizzlies. With Brown out, Dean Wade (hamstring), Jabari Walker and Kentavious Caldwell-Pope are all options to see more playing time at small forward.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3059318",
-      "name": "Joel Embiid",
-      "team": "PHI",
-      "team_name": "Philadelphia 76ers",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-27T16:32Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Embiid (illness) was at shootaround for the 76ers on Friday, Chris Hine of The Philly Inquirer reports.",
-      "long_comment": "Embiid has missed Philadelphia's last two games due to an illness, but his presence at shootaround in Indianapolis is a good sign of a potential return to the court. The 76ers will provide another update on his status as tipoff approaches.",
       "source": "ESPN"
     },
     {
