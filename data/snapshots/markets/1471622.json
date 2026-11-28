@@ -1,0 +1,26 @@
+{
+  "event_id": "1471622",
+  "event_title": "Hawks vs. Trail Blazers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T06:17:13.360864+00:00",
+      "markets": [
+        {
+          "market_id": "7412651",
+          "market_type": "moneyline",
+          "question": "Hawks vs. Trail Blazers",
+          "slug": "nba-atl-por-2026-12-12",
+          "outcomes": "[\"Hawks\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.345\", \"0.655\"]",
+          "volume_24h": null,
+          "liquidity": "125.3",
+          "end_date": "2026-12-13T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-atl-por-2026-12-12"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412651\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.345\\\", \\\"0.655\\\"]\",\"outcomes\":\"[\\\"Hawks\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Hawks vs. Trail Blazers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+}

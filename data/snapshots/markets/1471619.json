@@ -1,0 +1,26 @@
+{
+  "event_id": "1471619",
+  "event_title": "Timberwolves vs. Suns",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T06:17:13.360864+00:00",
+      "markets": [
+        {
+          "market_id": "7412637",
+          "market_type": "moneyline",
+          "question": "Timberwolves vs. Suns",
+          "slug": "nba-min-phx-2026-12-12",
+          "outcomes": "[\"Timberwolves\", \"Suns\"]",
+          "outcome_prices": "[\"0.535\", \"0.465\"]",
+          "volume_24h": null,
+          "liquidity": "119.19",
+          "end_date": "2026-12-13T02:00:00Z",
+          "url": "https://polymarket.com/event/nba-min-phx-2026-12-12"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412637\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Suns\\\"]\",\"question\":\"Timberwolves vs. Suns\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+}

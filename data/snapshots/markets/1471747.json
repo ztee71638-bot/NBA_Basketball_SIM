@@ -1,0 +1,26 @@
+{
+  "event_id": "1471747",
+  "event_title": "Spurs vs. Mavericks",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T06:17:13.360864+00:00",
+      "markets": [
+        {
+          "market_id": "7413115",
+          "market_type": "moneyline",
+          "question": "Spurs vs. Mavericks",
+          "slug": "nba-sas-dal-2026-12-04",
+          "outcomes": "[\"Spurs\", \"Mavericks\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "269.34",
+          "end_date": "2026-12-05T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-sas-dal-2026-12-04"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7413115\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Spurs\\\", \\\"Mavericks\\\"]\",\"question\":\"Spurs vs. Mavericks\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+}

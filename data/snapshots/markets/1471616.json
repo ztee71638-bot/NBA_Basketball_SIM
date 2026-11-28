@@ -1,0 +1,26 @@
+{
+  "event_id": "1471616",
+  "event_title": "Warriors vs. Cavaliers",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T06:17:13.360864+00:00",
+      "markets": [
+        {
+          "market_id": "7412618",
+          "market_type": "moneyline",
+          "question": "Warriors vs. Cavaliers",
+          "slug": "nba-gsw-cle-2026-12-12",
+          "outcomes": "[\"Warriors\", \"Cavaliers\"]",
+          "outcome_prices": "[\"0.365\", \"0.635\"]",
+          "volume_24h": null,
+          "liquidity": "122.18",
+          "end_date": "2026-12-13T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-gsw-cle-2026-12-12"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412618\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.365\\\", \\\"0.635\\\"]\",\"outcomes\":\"[\\\"Warriors\\\", \\\"Cavaliers\\\"]\",\"question\":\"Warriors vs. Cavaliers\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+}

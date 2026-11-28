@@ -1,0 +1,26 @@
+{
+  "event_id": "1471621",
+  "event_title": "Nuggets vs. Jazz",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T06:17:13.360864+00:00",
+      "markets": [
+        {
+          "market_id": "7412643",
+          "market_type": "moneyline",
+          "question": "Nuggets vs. Jazz",
+          "slug": "nba-den-uta-2026-12-12",
+          "outcomes": "[\"Nuggets\", \"Jazz\"]",
+          "outcome_prices": "[\"0.745\", \"0.255\"]",
+          "volume_24h": null,
+          "liquidity": "132.24",
+          "end_date": "2026-12-13T02:30:00Z",
+          "url": "https://polymarket.com/event/nba-den-uta-2026-12-12"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412643\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.745\\\", \\\"0.255\\\"]\",\"outcomes\":\"[\\\"Nuggets\\\", \\\"Jazz\\\"]\",\"question\":\"Nuggets vs. Jazz\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "event_id": "1471618",
+  "event_title": "Knicks vs. Heat",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T06:17:13.360864+00:00",
+      "markets": [
+        {
+          "market_id": "7412628",
+          "market_type": "moneyline",
+          "question": "Knicks vs. Heat",
+          "slug": "nba-nyk-mia-2026-12-12",
+          "outcomes": "[\"Knicks\", \"Heat\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": null,
+          "liquidity": "122.11",
+          "end_date": "2026-12-13T01:30:00Z",
+          "url": "https://polymarket.com/event/nba-nyk-mia-2026-12-12"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412628\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Knicks\\\", \\\"Heat\\\"]\",\"question\":\"Knicks vs. Heat\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "event_id": "1471613",
+  "event_title": "Hornets vs. Wizards",
+  "source": "Polymarket public Gamma API",
+  "snapshots": [
+    {
+      "captured_at": "2026-11-28T06:17:13.360864+00:00",
+      "markets": [
+        {
+          "market_id": "7412605",
+          "market_type": "moneyline",
+          "question": "Hornets vs. Wizards",
+          "slug": "nba-cha-was-2026-12-12",
+          "outcomes": "[\"Hornets\", \"Wizards\"]",
+          "outcome_prices": "[\"0.435\", \"0.565\"]",
+          "volume_24h": null,
+          "liquidity": "122.11",
+          "end_date": "2026-12-13T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-cha-was-2026-12-12"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412605\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.435\\\", \\\"0.565\\\"]\",\"outcomes\":\"[\\\"Hornets\\\", \\\"Wizards\\\"]\",\"question\":\"Hornets vs. Wizards\"}]"
+    }
+  ],
+  "last_updated": "2026-11-28T06:17:13.360864+00:00"
+}
