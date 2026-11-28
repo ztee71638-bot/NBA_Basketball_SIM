@@ -722,7 +722,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058806\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.39\\\", \\\"0.61\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Spurs\\\"]\",\"question\":\"Celtics vs. Spurs\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T11:44:17.045265+00:00",
+      "markets": [
+        {
+          "market_id": "7058806",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Spurs",
+          "slug": "nba-bos-sas-2026-11-29",
+          "outcomes": "[\"Celtics\", \"Spurs\"]",
+          "outcome_prices": "[\"0.375\", \"0.625\"]",
+          "volume_24h": 4759.838809,
+          "liquidity": "37169.658",
+          "end_date": "2026-11-29T21:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-sas-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058806\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.375\\\", \\\"0.625\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Spurs\\\"]\",\"question\":\"Celtics vs. Spurs\"}]"
     }
   ],
-  "last_updated": "2026-11-28T10:47:22.854873+00:00"
+  "last_updated": "2026-11-28T11:44:17.045265+00:00"
 }

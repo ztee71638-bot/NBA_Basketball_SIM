@@ -20,7 +20,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7415549\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.41\\\", \\\"0.59\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Bulls\\\"]\",\"question\":\"Nets vs. Bulls\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T11:44:17.045265+00:00",
+      "markets": [
+        {
+          "market_id": "7415549",
+          "market_type": "moneyline",
+          "question": "Nets vs. Bulls",
+          "slug": "nba-bkn-chi-2026-12-07",
+          "outcomes": "[\"Nets\", \"Bulls\"]",
+          "outcome_prices": "[\"0.425\", \"0.575\"]",
+          "volume_24h": null,
+          "liquidity": "139.3",
+          "end_date": "2026-12-08T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-chi-2026-12-07"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415549\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.425\\\", \\\"0.575\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Bulls\\\"]\",\"question\":\"Nets vs. Bulls\"}]"
     }
   ],
-  "last_updated": "2026-11-28T09:47:06.423813+00:00"
+  "last_updated": "2026-11-28T11:44:17.045265+00:00"
 }

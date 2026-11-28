@@ -38,7 +38,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7415545\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Thunder\\\"]\",\"question\":\"Lakers vs. Thunder\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T11:44:17.045265+00:00",
+      "markets": [
+        {
+          "market_id": "7415545",
+          "market_type": "moneyline",
+          "question": "Lakers vs. Thunder",
+          "slug": "nba-lal-okc-2026-12-06",
+          "outcomes": "[\"Lakers\", \"Thunder\"]",
+          "outcome_prices": "[\"0.46\", \"0.54\"]",
+          "volume_24h": null,
+          "liquidity": "166.9",
+          "end_date": "2026-12-07T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-lal-okc-2026-12-06"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7415545\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.46\\\", \\\"0.54\\\"]\",\"outcomes\":\"[\\\"Lakers\\\", \\\"Thunder\\\"]\",\"question\":\"Lakers vs. Thunder\"}]"
     }
   ],
-  "last_updated": "2026-11-28T10:47:22.854873+00:00"
+  "last_updated": "2026-11-28T11:44:17.045265+00:00"
 }

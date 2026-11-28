@@ -506,7 +506,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7086116\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.405\\\", \\\"0.595\\\"]\",\"outcomes\":\"[\\\"Wizards\\\", \\\"Hornets\\\"]\",\"question\":\"Wizards vs. Hornets\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T11:44:17.045265+00:00",
+      "markets": [
+        {
+          "market_id": "7086116",
+          "market_type": "moneyline",
+          "question": "Wizards vs. Hornets",
+          "slug": "nba-was-cha-2026-11-30",
+          "outcomes": "[\"Wizards\", \"Hornets\"]",
+          "outcome_prices": "[\"0.41\", \"0.59\"]",
+          "volume_24h": 152.832536,
+          "liquidity": "32980.2106",
+          "end_date": "2026-12-01T00:00:00Z",
+          "url": "https://polymarket.com/event/nba-was-cha-2026-11-30"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7086116\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.41\\\", \\\"0.59\\\"]\",\"outcomes\":\"[\\\"Wizards\\\", \\\"Hornets\\\"]\",\"question\":\"Wizards vs. Hornets\"}]"
     }
   ],
-  "last_updated": "2026-11-28T08:46:20.597459+00:00"
+  "last_updated": "2026-11-28T11:44:17.045265+00:00"
 }
