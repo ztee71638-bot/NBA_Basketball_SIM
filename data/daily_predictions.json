@@ -830,6 +830,150 @@
       "prediction_status": "pregame",
       "actual": null,
       "evaluation": null
+    },
+    {
+      "game_id": "401910054",
+      "game_date": "2026-11-29T20:30Z",
+      "home_team": "CLE",
+      "away_team": "MIA",
+      "predicted_home_score": 118.88,
+      "predicted_away_score": 119.8,
+      "predicted_winner": "MIA",
+      "home_win_probability": 0.434245,
+      "confidence": 0.565755,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910051",
+      "game_date": "2026-11-29T21:00Z",
+      "home_team": "MEM",
+      "away_team": "LAL",
+      "predicted_home_score": 116.87,
+      "predicted_away_score": 114.04,
+      "predicted_winner": "MEM",
+      "home_win_probability": 0.60033,
+      "confidence": 0.60033,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910052",
+      "game_date": "2026-11-29T21:00Z",
+      "home_team": "SAS",
+      "away_team": "BOS",
+      "predicted_home_score": 111.97,
+      "predicted_away_score": 109.13,
+      "predicted_winner": "SAS",
+      "home_win_probability": 0.602645,
+      "confidence": 0.602645,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910055",
+      "game_date": "2026-11-29T23:00Z",
+      "home_team": "DET",
+      "away_team": "ORL",
+      "predicted_home_score": 113.49,
+      "predicted_away_score": 107.81,
+      "predicted_winner": "DET",
+      "home_win_probability": 0.713507,
+      "confidence": 0.713507,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910056",
+      "game_date": "2026-11-29T23:00Z",
+      "home_team": "NYK",
+      "away_team": "ATL",
+      "predicted_home_score": 113.35,
+      "predicted_away_score": 110.57,
+      "predicted_winner": "NYK",
+      "home_win_probability": 0.624471,
+      "confidence": 0.624471,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910057",
+      "game_date": "2026-11-29T23:00Z",
+      "home_team": "TOR",
+      "away_team": "DEN",
+      "predicted_home_score": 115.33,
+      "predicted_away_score": 114.89,
+      "predicted_winner": "DEN",
+      "home_win_probability": 0.495096,
+      "confidence": 0.504904,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910058",
+      "game_date": "2026-11-29T23:00Z",
+      "home_team": "POR",
+      "away_team": "NOP",
+      "predicted_home_score": 119.52,
+      "predicted_away_score": 111.51,
+      "predicted_winner": "POR",
+      "home_win_probability": 0.804884,
+      "confidence": 0.804884,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910059",
+      "game_date": "2026-11-30T01:30Z",
+      "home_team": "GSW",
+      "away_team": "LAC",
+      "predicted_home_score": 114.93,
+      "predicted_away_score": 110.74,
+      "predicted_winner": "GSW",
+      "home_win_probability": 0.646072,
+      "confidence": 0.646072,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
+    },
+    {
+      "game_id": "401910060",
+      "game_date": "2026-11-30T02:00Z",
+      "home_team": "SAC",
+      "away_team": "MIN",
+      "predicted_home_score": 109.17,
+      "predicted_away_score": 116.56,
+      "predicted_winner": "MIN",
+      "home_win_probability": 0.13954,
+      "confidence": 0.86046,
+      "model_version": "opponent-weighted-score-v1",
+      "created_at": "2026-11-28T01:21:01.757133+00:00",
+      "prediction_status": "pregame",
+      "actual": null,
+      "evaluation": null
     }
   ],
   "daily": {
@@ -869,27 +1013,32 @@
       "pending_results": 12
     },
     "2026-11-29": {
-      "predictions_saved": 3,
+      "predictions_saved": 10,
       "games_evaluated": 0,
-      "pending_results": 3
+      "pending_results": 10
+    },
+    "2026-11-30": {
+      "predictions_saved": 2,
+      "games_evaluated": 0,
+      "pending_results": 2
     }
   },
   "overall": {
-    "predictions_saved": 36,
+    "predictions_saved": 45,
     "games_evaluated": 21,
-    "pending_results": 15,
+    "pending_results": 24,
     "winner_accuracy": 0.619,
     "home_score_mae": 8.713,
     "away_score_mae": 8.081,
     "combined_score_mae_per_team": 8.397,
     "brier_score": 0.2006
   },
-  "updated_at": "2026-11-27T00:02:02.131032+00:00",
+  "updated_at": "2026-11-28T01:21:01.757133+00:00",
   "rolling": {
     "7d": {
-      "predictions_saved": 21,
+      "predictions_saved": 26,
       "games_evaluated": 21,
-      "pending_results": 0,
+      "pending_results": 5,
       "winner_accuracy": 0.619,
       "home_score_mae": 8.713,
       "away_score_mae": 8.081,
@@ -897,9 +1046,9 @@
       "brier_score": 0.2006
     },
     "30d": {
-      "predictions_saved": 21,
+      "predictions_saved": 26,
       "games_evaluated": 21,
-      "pending_results": 0,
+      "pending_results": 5,
       "winner_accuracy": 0.619,
       "home_score_mae": 8.713,
       "away_score_mae": 8.081,
@@ -908,12 +1057,12 @@
     }
   },
   "last_run": {
-    "at": "2026-11-27T00:02:02.131032+00:00",
+    "at": "2026-11-28T01:21:01.757133+00:00",
     "scoreboard_dates_checked": [
-      "20261126",
       "20261127",
-      "20261128"
+      "20261128",
+      "20261129"
     ],
-    "events_seen": 16
+    "events_seen": 26
   }
 }
