@@ -956,7 +956,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058812\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"Cavaliers\\\"]\",\"question\":\"Heat vs. Cavaliers\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T08:46:20.597459+00:00",
+      "markets": [
+        {
+          "market_id": "7058812",
+          "market_type": "moneyline",
+          "question": "Heat vs. Cavaliers",
+          "slug": "nba-mia-cle-2026-11-29",
+          "outcomes": "[\"Heat\", \"Cavaliers\"]",
+          "outcome_prices": "[\"0.47\", \"0.53\"]",
+          "volume_24h": 1544.70623,
+          "liquidity": "29790.7048",
+          "end_date": "2026-11-29T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-mia-cle-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058812\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.47\\\", \\\"0.53\\\"]\",\"outcomes\":\"[\\\"Heat\\\", \\\"Cavaliers\\\"]\",\"question\":\"Heat vs. Cavaliers\"}]"
     }
   ],
-  "last_updated": "2026-11-28T07:47:04.107769+00:00"
+  "last_updated": "2026-11-28T08:46:20.597459+00:00"
 }

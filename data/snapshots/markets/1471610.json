@@ -1502,7 +1502,121 @@
         }
       ],
       "signature": "[{\"market_id\":\"7412595\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Celtics vs. Pistons\"},{\"market_id\":\"7413149\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-5.5)\"},{\"market_id\":\"7413155\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-6.5)\"},{\"market_id\":\"7413161\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-4.5)\"},{\"market_id\":\"7413167\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-7.5)\"},{\"market_id\":\"7413173\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-3.5)\"},{\"market_id\":\"7413178\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-8.5)\"},{\"market_id\":\"7413182\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-2.5)\"},{\"market_id\":\"7413186\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-9.5)\"},{\"market_id\":\"7413190\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-1.5)\"},{\"market_id\":\"7413194\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-10.5)\"},{\"market_id\":\"7413198\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-11.5)\"},{\"market_id\":\"7413202\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-13.5)\"},{\"market_id\":\"7413206\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-2.5)\"},{\"market_id\":\"7413210\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-15.5)\"},{\"market_id\":\"7413214\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-4.5)\"},{\"market_id\":\"7413218\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-17.5)\"},{\"market_id\":\"7413222\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-6.5)\"},{\"market_id\":\"7413226\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-19.5)\"},{\"market_id\":\"7413230\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-8.5)\"},{\"market_id\":\"7413234\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-21.5)\"},{\"market_id\":\"7413238\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-10.5)\"},{\"market_id\":\"7413242\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-23.5)\"},{\"market_id\":\"7413246\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-12.5)\"},{\"market_id\":\"7413250\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-25.5)\"},{\"market_id\":\"7413254\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-14.5)\"},{\"market_id\":\"7413258\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-27.5)\"},{\"market_id\":\"7413262\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-16.5)\"},{\"market_id\":\"7413266\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-29.5)\"},{\"market_id\":\"7413270\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-18.5)\"},{\"market_id\":\"7413274\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-31.5)\"},{\"market_id\":\"7413276\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-20.5)\"},{\"market_id\":\"7413362\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-33.5)\"},{\"market_id\":\"7413366\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Pistons\\\", \\\"Celtics\\\"]\",\"question\":\"Spread: Pistons (-22.5)\"},{\"market_id\":\"7413150\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 204.5\"},{\"market_id\":\"7413158\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 202.5\"},{\"market_id\":\"7413164\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 206.5\"},{\"market_id\":\"7413170\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 200.5\"},{\"market_id\":\"7413176\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 208.5\"},{\"market_id\":\"7413180\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 198.5\"},{\"market_id\":\"7413184\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 210.5\"},{\"market_id\":\"7413188\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 196.5\"},{\"market_id\":\"7413192\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 212.5\"},{\"market_id\":\"7413196\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 194.5\"},{\"market_id\":\"7413200\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 214.5\"},{\"market_id\":\"7413204\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 192.5\"},{\"market_id\":\"7413208\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 216.5\"},{\"market_id\":\"7413212\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 190.5\"},{\"market_id\":\"7413216\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 218.5\"},{\"market_id\":\"7413220\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 188.5\"},{\"market_id\":\"7413224\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 220.5\"},{\"market_id\":\"7413228\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 186.5\"},{\"market_id\":\"7413232\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 222.5\"},{\"market_id\":\"7413236\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 184.5\"},{\"market_id\":\"7413240\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 224.5\"},{\"market_id\":\"7413244\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 182.5\"},{\"market_id\":\"7413248\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 226.5\"},{\"market_id\":\"7413252\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 180.5\"},{\"market_id\":\"7413256\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 228.5\"},{\"market_id\":\"7413260\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 178.5\"},{\"market_id\":\"7413264\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 230.5\"},{\"market_id\":\"7413268\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 176.5\"},{\"market_id\":\"7413272\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 232.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T08:46:20.597459+00:00",
+      "markets": [
+        {
+          "market_id": "7412595",
+          "market_type": "moneyline",
+          "question": "Celtics vs. Pistons",
+          "slug": "nba-bos-det-2026-12-05",
+          "outcomes": "[\"Celtics\", \"Pistons\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "198.3602",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413149",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-5.5)",
+          "slug": "nba-bos-det-2026-12-05-spread-away-5pt5",
+          "outcomes": "[\"Celtics\", \"Pistons\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413155",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-6.5)",
+          "slug": "nba-bos-det-2026-12-05-spread-away-6pt5",
+          "outcomes": "[\"Celtics\", \"Pistons\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413161",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-4.5)",
+          "slug": "nba-bos-det-2026-12-05-spread-away-4pt5",
+          "outcomes": "[\"Celtics\", \"Pistons\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413167",
+          "market_type": "spread",
+          "question": "Spread: Celtics (-7.5)",
+          "slug": "nba-bos-det-2026-12-05-spread-away-7pt5",
+          "outcomes": "[\"Celtics\", \"Pistons\"]",
+          "outcome_prices": "[\"0.495\", \"0.505\"]",
+          "volume_24h": null,
+          "liquidity": "0.3",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413150",
+          "market_type": "total",
+          "question": "Celtics vs. Pistons: O/U 204.5",
+          "slug": "nba-bos-det-2026-12-05-total-204pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413158",
+          "market_type": "total",
+          "question": "Celtics vs. Pistons: O/U 202.5",
+          "slug": "nba-bos-det-2026-12-05-total-202pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413164",
+          "market_type": "total",
+          "question": "Celtics vs. Pistons: O/U 206.5",
+          "slug": "nba-bos-det-2026-12-05-total-206pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        },
+        {
+          "market_id": "7413170",
+          "market_type": "total",
+          "question": "Celtics vs. Pistons: O/U 200.5",
+          "slug": "nba-bos-det-2026-12-05-total-200pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.5\", \"0.5\"]",
+          "volume_24h": null,
+          "liquidity": "0.15",
+          "end_date": "2026-12-05T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-bos-det-2026-12-05"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7412595\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Celtics vs. Pistons\"},{\"market_id\":\"7413149\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-5.5)\"},{\"market_id\":\"7413155\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-6.5)\"},{\"market_id\":\"7413161\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-4.5)\"},{\"market_id\":\"7413167\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.495\\\", \\\"0.505\\\"]\",\"outcomes\":\"[\\\"Celtics\\\", \\\"Pistons\\\"]\",\"question\":\"Spread: Celtics (-7.5)\"},{\"market_id\":\"7413150\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 204.5\"},{\"market_id\":\"7413158\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 202.5\"},{\"market_id\":\"7413164\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 206.5\"},{\"market_id\":\"7413170\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.5\\\", \\\"0.5\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Celtics vs. Pistons: O/U 200.5\"}]"
     }
   ],
-  "last_updated": "2026-11-28T07:47:04.107769+00:00"
+  "last_updated": "2026-11-28T08:46:20.597459+00:00"
 }
