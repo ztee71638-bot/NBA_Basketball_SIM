@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28T18:14:31.723777+00:00",
+  "last_updated": "2026-11-28T19:16:51.973265+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -101,10 +101,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-28T18:00Z",
+      "date": "2026-11-28T18:05Z",
       "return_date": "2026-11-30",
-      "short_comment": "Wagner (knee) won't be available for Friday's game against Toronto.",
-      "long_comment": "Wagner suffered an injury Wednesday against the Bucks and won't be an option Friday. His status for the second leg of the back-to-back set Saturday at Charlotte is uncertain.",
+      "short_comment": "Wagner (knee) won't play against the Hornets on Saturday, Erik Slater of ClutchPoints.com reports.",
+      "long_comment": "Wagner injured his left knee during Wednesday's win over Milwaukee and will now sit out a second consecutive game as a result. Grant Nelson should continue to get more minutes in Wagner's absence.",
       "source": "ESPN"
     },
     {
@@ -123,6 +123,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3135045",
+      "name": "Grayson Allen",
+      "team": "CHA",
+      "team_name": "Charlotte Hornets",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-28T18:08Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Allen (concussion) has been upgraded to probable for Saturday's game against the Nets.",
+      "long_comment": "Allen has missed four straight games due to a concussion, but it seems likely that his streak of absences will reach its end Saturday.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "5176517",
       "name": "Michael Ajayi",
       "team": "CHA",
@@ -135,36 +150,6 @@
       "return_date": "2026-11-28",
       "short_comment": "Charlotte transferred Ajayi to the G League on Tuesday.",
       "long_comment": "Ajayi is still waiting to make his NBA debut. The undrafted rookie should see steady playing time as long as he's with the Greensboro Swarm.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3135045",
-      "name": "Grayson Allen",
-      "team": "CHA",
-      "team_name": "Charlotte Hornets",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": null,
-      "date": "2026-11-27T22:17Z",
-      "return_date": "2026-11-28",
-      "short_comment": "Allen (concussion) is questionable for Saturday's game against the Nets.",
-      "long_comment": "Allen has missed the Hornets' last four games, and the questionable tag suggests a decision on the availability of the veteran guard will be made closer to Saturday's 6 p.m. ET tipoff. Having Allen would allow the Hornets to deploy a reliable floor-stretching threat, as Allen is averaging 14.9 points per game while shooting 45.8 percent from three this season in his 13 regular-season contests.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4576060",
-      "name": "Ryan Kalkbrenner",
-      "team": "CHA",
-      "team_name": "Charlotte Hornets",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-27T22:04Z",
-      "return_date": null,
-      "short_comment": "Kalkbrenner (hip) is probable for Saturday's matchup with Brooklyn.",
-      "long_comment": "The second-year big man is set to return from a one-game absence due to hip soreness. Kalkbrenner's presence is likely to push Hannes Steinbach from the Charlotte rotation altogether.",
       "source": "ESPN"
     },
     {
@@ -195,6 +180,21 @@
       "return_date": "2026-12-12",
       "short_comment": "Knueppel (hamstring) was diagnosed with a left hamstring strain Sunday and will be re-evaluated in four weeks.",
       "long_comment": "Knueppel missed the first eight games of the 2026-27 campaign. He returned for the 114-104 loss to Brooklyn on Wednesday, though he exited the contest after just six minutes of work and didn't return. With Knueppel out of commission for at least a month, Grayson Allen and Sion James are candidates to replace him in the starting lineup, especially with Dennis Schroder (hamstring) sidelined for a minimum of two weeks.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4871145",
+      "name": "Josh Giddey",
+      "team": "CHI",
+      "team_name": "Chicago Bulls",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Right",
+      "date": "2026-11-28T18:23Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Giddey is listed as questionable for Saturday's game against the Pacers due to right ankle soreness, Joel Lorenzi of The Athletic reports.",
+      "long_comment": "It's unclear when Giddey tweaked his ankle, given that the Bulls' last game took place Wednesday in what was a 107-105 win over the Hornets. His late addition to the injury report isn't a great sign, but Giddey's official status may not be known until closer to Saturday's 8:00 p.m. ET tipoff. Tre Jones would be the top candidate to enter Chicago's starting five if Giddey doesn't play against Indiana.",
       "source": "ESPN"
     },
     {
@@ -540,6 +540,21 @@
       "return_date": "2026-11-30",
       "short_comment": "Adams (knee) has been ruled out for Saturday's game against the 76ers.",
       "long_comment": "Adams appeared on the injury report Friday due to pain in his right knee and will now officially sit out Saturday's contest. Clint Capela will presumably serve as Houston's backup center against the Sixers; meanwhile, Adams' next chance to play will come Monday against the Lakers.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4592829",
+      "name": "Quenton Jackson",
+      "team": "IND",
+      "team_name": "Indiana Pacers",
+      "position": "G",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-28T19:02Z",
+      "return_date": "2026-12-01",
+      "short_comment": "Jackson amassed nine points (4-9 FG, 1-4 3Pt) and three rebounds across 20 minutes during Monday's 125-120 victory over the Thunder.",
+      "long_comment": "Jackson has averaged 7.3 points, 2.0 rebounds, 2.0 assists and 1.8 steals in 19.3 minutes over his last four appearances. His defensive activity provides some appeal in deeper category leagues, but inconsistent offensive production limits his upside.",
       "source": "ESPN"
     },
     {
@@ -1098,6 +1113,51 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "3912848",
+      "name": "Dean Wade",
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-28T19:05Z",
+      "return_date": "2026-12-01",
+      "short_comment": "Wade (hamstring) is out for Friday's game against the Pacers, Austin Krell of Vertical 76 reports.",
+      "long_comment": "Wade was added to the injury report earlier Friday due to injury management of a hamstring problem, and in the end, the forward has been ruled out. This poses a problem for the 76ers, as Jaylen Brown (hamstring) is out as well. Kentavious Caldwell-Pope could be in line for a bigger role because of the absences. Wade's next chance to play will come Saturday against the Rockets on the second leg of a back-to-back set.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "2581018",
+      "name": "Kentavious Caldwell-Pope",
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "position": "G",
+      "status": "Day-To-Day",
+      "type": "INJURY_STATUS_DAYTODAY",
+      "side": "Left",
+      "date": "2026-11-28T19:05Z",
+      "return_date": "2026-11-28",
+      "short_comment": "Caldwell-Pope will come off the bench in Monday's matchup with the Trail Blazers, Ky Carlin of USA Today reports.",
+      "long_comment": "Jaylen Brown (hamstring) is back and starting, so Caldwell-Pope will shift back to a reserve role. As a member of the second unit this season, Caldwell-Pope is averaging 5.4 points, 2.6 rebounds, 1.6 assists and 1.4 triples per contest.",
+      "source": "ESPN"
+    },
+    {
+      "athlete_id": "4870562",
+      "name": "Dominick Barlow",
+      "team": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "position": "F",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-28T19:05Z",
+      "return_date": "2026-12-01",
+      "short_comment": "Barlow finished with 12 points (6-7 FG), eight rebounds, one assist, two blocks and two steals in 18 minutes during Friday's 111-87 victory over the Pacers.",
+      "long_comment": "Barlow made his first start of the season with Jaylen Brown (hamstring) sidelined, contributing across multiple categories despite limited minutes. His defensive production offers fantasy intrigue, though his starting role could be temporary once Brown returns.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "3059318",
       "name": "Joel Embiid",
       "team": "PHI",
@@ -1110,21 +1170,6 @@
       "return_date": "2026-12-01",
       "short_comment": "Embiid (foot) chipped in 14 points (5-14 FG, 1-3 3Pt, 3-4 FT), 11 rebounds, three assists and three steals in 28 minutes during Friday's 111-87 victory over the Pacers.",
       "long_comment": "Embiid returned after missing two games due to illness, showing some offensive rust while contributing defensively. The comfortable victory limited his workload, but his return to the starting lineup is encouraging for fantasy managers.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3912848",
-      "name": "Dean Wade",
-      "team": "PHI",
-      "team_name": "Philadelphia 76ers",
-      "position": "F",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-28T13:58Z",
-      "return_date": "2026-11-28",
-      "short_comment": "Wade (hamstring) is out for Friday's game against the Pacers, Austin Krell of Vertical 76 reports.",
-      "long_comment": "Wade was added to the injury report earlier Friday due to injury management of a hamstring problem, and in the end, the forward has been ruled out. This poses a problem for the 76ers, as Jaylen Brown (hamstring) is out as well. Kentavious Caldwell-Pope could be in line for a bigger role because of the absences. Wade's next chance to play will come Saturday against the Rockets on the second leg of a back-to-back set.",
       "source": "ESPN"
     },
     {

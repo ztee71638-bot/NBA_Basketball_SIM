@@ -694,7 +694,217 @@
           "source": "ESPN game summary; starters explicitly flagged"
         }
       }
+    },
+    {
+      "captured_at": "2026-11-28T19:16:51.974420+00:00",
+      "minutes_to_tipoff": 223.1,
+      "injuries": [
+        {
+          "athlete_id": "3150844",
+          "name": "Moritz Wagner",
+          "team": "BKN",
+          "team_name": "Brooklyn Nets",
+          "position": "C",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-28T18:05Z",
+          "return_date": "2026-11-30",
+          "short_comment": "Wagner (knee) won't play against the Hornets on Saturday, Erik Slater of ClutchPoints.com reports.",
+          "long_comment": "Wagner injured his left knee during Wednesday's win over Milwaukee and will now sit out a second consecutive game as a result. Grant Nelson should continue to get more minutes in Wagner's absence.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5279130",
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "team_name": "Brooklyn Nets",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Right",
+          "date": "2026-11-23T15:22Z",
+          "return_date": "2027-01-27",
+          "short_comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports.",
+          "long_comment": "Traore had a productive start to his second year in the NBA, though he's now set to miss an extended period after sustaining a hamstring injury in Friday's loss to Orlando. With the 20-year-old point guard sidelined, Egor Demin, Mikel Brown and Keon Ellis are candidates for increased playing time.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3032979",
+          "name": "Dennis Schroder",
+          "team": "CHA",
+          "team_name": "Charlotte Hornets",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-24T22:32Z",
+          "return_date": "2026-12-12",
+          "short_comment": "Schroder (hamstring) is out for Wednesday's game the Bulls.",
+          "long_comment": "Schroder remains out indefinitely with a hamstring strain. With Charlotte already eliminated from knockout-round contention in the NBA Cup, it's possible the veteran's point guard's absence extends into mid-December.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "3135045",
+          "name": "Grayson Allen",
+          "team": "CHA",
+          "team_name": "Charlotte Hornets",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": null,
+          "date": "2026-11-28T18:08Z",
+          "return_date": "2026-11-28",
+          "short_comment": "Allen (concussion) has been upgraded to probable for Saturday's game against the Nets.",
+          "long_comment": "Allen has missed four straight games due to a concussion, but it seems likely that his streak of absences will reach its end Saturday.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5061575",
+          "name": "Kon Knueppel",
+          "team": "CHA",
+          "team_name": "Charlotte Hornets",
+          "position": "G",
+          "status": "Out",
+          "type": "INJURY_STATUS_OUT",
+          "side": "Left",
+          "date": "2026-11-08T22:31Z",
+          "return_date": "2026-12-12",
+          "short_comment": "Knueppel (hamstring) was diagnosed with a left hamstring strain Sunday and will be re-evaluated in four weeks.",
+          "long_comment": "Knueppel missed the first eight games of the 2026-27 campaign. He returned for the 114-104 loss to Brooklyn on Wednesday, though he exited the contest after just six minutes of work and didn't return. With Knueppel out of commission for at least a month, Grayson Allen and Sion James are candidates to replace him in the starting lineup, especially with Dennis Schroder (hamstring) sidelined for a minimum of two weeks.",
+          "source": "ESPN"
+        },
+        {
+          "athlete_id": "5176517",
+          "name": "Michael Ajayi",
+          "team": "CHA",
+          "team_name": "Charlotte Hornets",
+          "position": "F",
+          "status": "Day-To-Day",
+          "type": "INJURY_STATUS_DAYTODAY",
+          "side": "Left",
+          "date": "2026-11-28T15:46Z",
+          "return_date": "2026-11-28",
+          "short_comment": "Charlotte transferred Ajayi to the G League on Tuesday.",
+          "long_comment": "Ajayi is still waiting to make his NBA debut. The undrafted rookie should see steady playing time as long as he's with the Greensboro Swarm.",
+          "source": "ESPN"
+        }
+      ],
+      "lineup": {
+        "game_id": "401910047",
+        "date": "2026-11-28T23:00Z",
+        "home_team": "CHA",
+        "away_team": "BKN",
+        "home_starters": [],
+        "away_starters": [],
+        "status": "not_available",
+        "source": "ESPN game summary; starters explicitly flagged"
+      },
+      "signature": {
+        "injuries": [
+          {
+            "athlete_id": "3150844",
+            "name": "Moritz Wagner",
+            "team": "BKN",
+            "team_name": "Brooklyn Nets",
+            "position": "C",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-28T18:05Z",
+            "return_date": "2026-11-30",
+            "short_comment": "Wagner (knee) won't play against the Hornets on Saturday, Erik Slater of ClutchPoints.com reports.",
+            "long_comment": "Wagner injured his left knee during Wednesday's win over Milwaukee and will now sit out a second consecutive game as a result. Grant Nelson should continue to get more minutes in Wagner's absence.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5279130",
+            "name": "Nolan Traore",
+            "team": "BKN",
+            "team_name": "Brooklyn Nets",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Right",
+            "date": "2026-11-23T15:22Z",
+            "return_date": "2027-01-27",
+            "short_comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports.",
+            "long_comment": "Traore had a productive start to his second year in the NBA, though he's now set to miss an extended period after sustaining a hamstring injury in Friday's loss to Orlando. With the 20-year-old point guard sidelined, Egor Demin, Mikel Brown and Keon Ellis are candidates for increased playing time.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3032979",
+            "name": "Dennis Schroder",
+            "team": "CHA",
+            "team_name": "Charlotte Hornets",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-24T22:32Z",
+            "return_date": "2026-12-12",
+            "short_comment": "Schroder (hamstring) is out for Wednesday's game the Bulls.",
+            "long_comment": "Schroder remains out indefinitely with a hamstring strain. With Charlotte already eliminated from knockout-round contention in the NBA Cup, it's possible the veteran's point guard's absence extends into mid-December.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "3135045",
+            "name": "Grayson Allen",
+            "team": "CHA",
+            "team_name": "Charlotte Hornets",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": null,
+            "date": "2026-11-28T18:08Z",
+            "return_date": "2026-11-28",
+            "short_comment": "Allen (concussion) has been upgraded to probable for Saturday's game against the Nets.",
+            "long_comment": "Allen has missed four straight games due to a concussion, but it seems likely that his streak of absences will reach its end Saturday.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5061575",
+            "name": "Kon Knueppel",
+            "team": "CHA",
+            "team_name": "Charlotte Hornets",
+            "position": "G",
+            "status": "Out",
+            "type": "INJURY_STATUS_OUT",
+            "side": "Left",
+            "date": "2026-11-08T22:31Z",
+            "return_date": "2026-12-12",
+            "short_comment": "Knueppel (hamstring) was diagnosed with a left hamstring strain Sunday and will be re-evaluated in four weeks.",
+            "long_comment": "Knueppel missed the first eight games of the 2026-27 campaign. He returned for the 114-104 loss to Brooklyn on Wednesday, though he exited the contest after just six minutes of work and didn't return. With Knueppel out of commission for at least a month, Grayson Allen and Sion James are candidates to replace him in the starting lineup, especially with Dennis Schroder (hamstring) sidelined for a minimum of two weeks.",
+            "source": "ESPN"
+          },
+          {
+            "athlete_id": "5176517",
+            "name": "Michael Ajayi",
+            "team": "CHA",
+            "team_name": "Charlotte Hornets",
+            "position": "F",
+            "status": "Day-To-Day",
+            "type": "INJURY_STATUS_DAYTODAY",
+            "side": "Left",
+            "date": "2026-11-28T15:46Z",
+            "return_date": "2026-11-28",
+            "short_comment": "Charlotte transferred Ajayi to the G League on Tuesday.",
+            "long_comment": "Ajayi is still waiting to make his NBA debut. The undrafted rookie should see steady playing time as long as he's with the Greensboro Swarm.",
+            "source": "ESPN"
+          }
+        ],
+        "lineup": {
+          "game_id": "401910047",
+          "date": "2026-11-28T23:00Z",
+          "home_team": "CHA",
+          "away_team": "BKN",
+          "home_starters": [],
+          "away_starters": [],
+          "status": "not_available",
+          "source": "ESPN game summary; starters explicitly flagged"
+        }
+      }
     }
   ],
-  "last_updated": "2026-11-28T18:14:31.725438+00:00"
+  "last_updated": "2026-11-28T19:16:51.974420+00:00"
 }

@@ -536,7 +536,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7411302\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.535\\\", \\\"0.465\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"76ers vs. Hawks\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T19:16:51.974420+00:00",
+      "markets": [
+        {
+          "market_id": "7411302",
+          "market_type": "moneyline",
+          "question": "76ers vs. Hawks",
+          "slug": "nba-phi-atl-2026-12-04",
+          "outcomes": "[\"76ers\", \"Hawks\"]",
+          "outcome_prices": "[\"0.54\", \"0.46\"]",
+          "volume_24h": 153.304546,
+          "liquidity": "19068.5247",
+          "end_date": "2026-12-04T05:00:00Z",
+          "url": "https://polymarket.com/event/nba-phi-atl-2026-12-04"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7411302\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.54\\\", \\\"0.46\\\"]\",\"outcomes\":\"[\\\"76ers\\\", \\\"Hawks\\\"]\",\"question\":\"76ers vs. Hawks\"}]"
     }
   ],
-  "last_updated": "2026-11-28T18:14:31.725438+00:00"
+  "last_updated": "2026-11-28T19:16:51.974420+00:00"
 }

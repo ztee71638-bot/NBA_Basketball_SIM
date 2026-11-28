@@ -596,7 +596,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7058818\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.29\\\", \\\"0.71\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Pistons\\\"]\",\"question\":\"Magic vs. Pistons\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T19:16:51.974420+00:00",
+      "markets": [
+        {
+          "market_id": "7058818",
+          "market_type": "moneyline",
+          "question": "Magic vs. Pistons",
+          "slug": "nba-orl-det-2026-11-29",
+          "outcomes": "[\"Magic\", \"Pistons\"]",
+          "outcome_prices": "[\"0.285\", \"0.715\"]",
+          "volume_24h": 1455.016038,
+          "liquidity": "31465.6784",
+          "end_date": "2026-11-29T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-orl-det-2026-11-29"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7058818\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.285\\\", \\\"0.715\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Pistons\\\"]\",\"question\":\"Magic vs. Pistons\"}]"
     }
   ],
-  "last_updated": "2026-11-28T18:14:31.725438+00:00"
+  "last_updated": "2026-11-28T19:16:51.974420+00:00"
 }
