@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28T00:35:34.219985+00:00",
+  "last_updated": "2026-11-28T02:01:09.362056+00:00",
   "source": "ESPN public injury report",
   "injuries": [
     {
@@ -278,13 +278,13 @@
       "team": "DAL",
       "team_name": "Dallas Mavericks",
       "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-27T19:07Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Irving (knee) is listed as questionable for Friday's game against the Suns due to left knee injury management.",
-      "long_comment": "Dallas could be exercising caution with Irving's surgically repaired knee. If he sits, Cooper Flagg should shoulder additional playmaking responsibilities, while Max Christie and Naji Marshall could see increased offensive opportunities. Irving's status warrants monitoring before tipoff.",
+      "date": "2026-11-28T00:30Z",
+      "return_date": "2026-11-30",
+      "short_comment": "Irving (knee) has been ruled out for Friday's game against the Suns, Noah Weber of TheSmokingCuban.com reports.",
+      "long_comment": "The Mavericks will give Irving a breather to manage his surgically repaired left knee. His absence will likely open up more playmaking opportunities for Cooper Flagg; meanwhile, Max Christie and Naji Marshall are likely to receive a bump in playing time.",
       "source": "ESPN"
     },
     {
@@ -431,10 +431,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Right",
-      "date": "2026-11-26T01:36Z",
+      "date": "2026-11-28T00:47Z",
       "return_date": "2026-12-12",
-      "short_comment": "Curry (abdomen) will be re-evaluated Friday after Thanksgiving, Anthony Slater of ESPN.com reports.",
-      "long_comment": "Curry has missed six consecutive games, including Wednesday's tilt versus Sacramento, due to an oblique abdominal tear he sustained against the Rockets on Nov. 11. The Warriors will provide further updates following the holiday. Golden State has gone 1-4 with Curry sidelined, so hopefully Friday will bear some positive news for the 38-year-old.",
+      "short_comment": "Curry (abdomen/oblique) has been ruled out for each of the Warriors' next three games, Anthony Slater of ESPN.com reports",
+      "long_comment": "Curry has already missed each of Golden State's last six contests after suffering an oblique abdominal tear Nov. 11, and he won't be given the green light to return anytime in the immediate future. De'Anthony Melton is expected to continue working as the Warriors' starting point guard in the meantime, with LJ Cryer and Brandon Williams also getting more minutes.",
       "source": "ESPN"
     },
     {
@@ -588,21 +588,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4600663",
-      "name": "Zach Edey",
-      "team": "MEM",
-      "team_name": "Memphis Grizzlies",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-28T00:23Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Edey (ankle) is a game-time decision for Friday's game versus Minnesota, Jon Krawczynski of The Athletic reports.",
-      "long_comment": "Edey wasn't able to return to Wednesday's game against the Clippers after suffering an ankle injury, and it still remains to be seen whether he'll suit up for Friday's contest. Isaiah Stewart (hip) has already been ruled out, so Quinten Post and Taylor Hendricks could be asked to take on larger roles if Edey doesn't play.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4431785",
       "name": "Scotty Pippen Jr.",
       "team": "MEM",
@@ -753,21 +738,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "4431675",
-      "name": "Trendon Watford",
-      "team": "NO",
-      "team_name": "New Orleans Pelicans",
-      "position": "F",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-26T21:22Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Watford (ankle) is probable for Friday's game against the Clippers.",
-      "long_comment": "Watford could be on the verge of making his return to the hardwood Friday after missing each of New Orleans' last nine games. However, he should be a depth option in the frontcourt and not much else when given the green light to return.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "4683634",
       "name": "Bennedict Mathurin",
       "team": "NO",
@@ -776,10 +746,10 @@
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
       "side": "Left",
-      "date": "2026-11-26T21:21Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Mathurin (foot) is doubtful for Friday's game against the Clippers.",
-      "long_comment": "Mathurin has been dealing with plantar fasciitis for quite some time and hasn't suited up in any of the Pelicans' last six games. The doubtful tag leaves the door open for a potential return, but it wouldn't be surprising if he remains sidelined. Mathurin is averaging just 5.5 points, 1.8 rebounds and 1.2 assists per game this season.",
+      "date": "2026-11-28T01:22Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Mathurin (foot) is out for Friday's game against the Clippers.",
+      "long_comment": "Mathurin has been downgraded to out, which shouldn't surprise anyone since he's been dealing with plantar fasciitis for quite some time. This will be his seventh consecutive absence.",
       "source": "ESPN"
     },
     {
@@ -978,6 +948,21 @@
       "source": "ESPN"
     },
     {
+      "athlete_id": "4397204",
+      "name": "Colin Castleton",
+      "team": "ORL",
+      "team_name": "Orlando Magic",
+      "position": "C",
+      "status": "Out",
+      "type": "INJURY_STATUS_OUT",
+      "side": null,
+      "date": "2026-11-28T01:53Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
+      "long_comment": "Castleton squeezed five points and four boards into his brief appearance, including a successful three-point attempt. The reserve center made productive use of his late-game opportunity, though his limited playing time leaves his regular-season role uncertain.",
+      "source": "ESPN"
+    },
+    {
       "athlete_id": "4397140",
       "name": "Kevin Porter Jr.",
       "team": "ORL",
@@ -1005,21 +990,6 @@
       "return_date": "2026-11-28",
       "short_comment": "Black (back) is questionable for Saturday's game against the Wizards.",
       "long_comment": "Black is a candidate to miss the first half of this back-to-back set. Tristan da Silva would likely enter the starting lineup for the Magic on Saturday if Black sits out.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4397204",
-      "name": "Colin Castleton",
-      "team": "ORL",
-      "team_name": "Orlando Magic",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-26T16:10Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
-      "long_comment": "Castleton squeezed five points and four boards into his brief appearance, including a successful three-point attempt. The reserve center made productive use of his late-game opportunity, though his limited playing time leaves his regular-season role uncertain.",
       "source": "ESPN"
     },
     {
@@ -1263,36 +1233,6 @@
       "source": "ESPN"
     },
     {
-      "athlete_id": "5037871",
-      "name": "Dylan Harper",
-      "team": "SA",
-      "team_name": "San Antonio Spurs",
-      "position": "G",
-      "status": "Out",
-      "type": "INJURY_STATUS_OUT",
-      "side": "Left",
-      "date": "2026-11-27T18:51Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Harper (hip) participated in Friday's morning shootaround, per Matt Guzman of SI.com.",
-      "long_comment": "Harper appears to be making swift progress in his recovery from a hip strain, which has cost him just around one week after initially being expected to hold him out for multiple weeks. The star guard can be tentatively placed on the right side of his questionable tag for Friday's showdown against the Lakers.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4066259",
-      "name": "De'Aaron Fox",
-      "team": "SA",
-      "team_name": "San Antonio Spurs",
-      "position": "G",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Right",
-      "date": "2026-11-26T23:35Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Fox (shin) is questionable for Friday's game against the Lakers.",
-      "long_comment": "Fox could miss a third straight game due to a right shin contusion. If he is unavailable, Jordan McLaughlin is expected to retain an expanded role.",
-      "source": "ESPN"
-    },
-    {
       "athlete_id": "6440",
       "name": "Tobias Harris",
       "team": "SA",
@@ -1373,43 +1313,13 @@
       "team": "UTAH",
       "team_name": "Utah Jazz",
       "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": null,
-      "date": "2026-11-27T16:41Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Bamba (illness) is listed as questionable for Friday's game against the Nuggets, according to the Jazz's injury report.",
-      "long_comment": "Bamba's availability adds uncertainty to Utah's frontcourt rotation, with Jusuf Nurkic (foot) and Jaxson Hayes (knee) also questionable. If Bamba sits, the Jazz could face a shortage of healthy centers against Denver.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "4397077",
-      "name": "Jaxson Hayes",
-      "team": "UTAH",
-      "team_name": "Utah Jazz",
-      "position": "C",
-      "status": "Day-To-Day",
-      "type": "INJURY_STATUS_DAYTODAY",
-      "side": "Left",
-      "date": "2026-11-27T00:11Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Hayes (knee) is questionable for Friday's game against the Nuggets.",
-      "long_comment": "Hayes could miss a second straight game due to a left knee strain. If he is unavailable, Mo Bamba figures to see an expanded role.",
-      "source": "ESPN"
-    },
-    {
-      "athlete_id": "3102530",
-      "name": "Jusuf Nurkic",
-      "team": "UTAH",
-      "team_name": "Utah Jazz",
-      "position": "C",
       "status": "Out",
       "type": "INJURY_STATUS_OUT",
-      "side": "Right",
-      "date": "2026-11-27T00:08Z",
-      "return_date": "2026-11-27",
-      "short_comment": "Nurkic (foot) is questionable for Friday's game against the Nuggets.",
-      "long_comment": "Nurkic could make his season debut Friday after being sidelined due to a partial plantar plate tear of the second toe on his right foot. If he is unavailable, Mo Bamba could see a large role, especially if Jaxson Hayes (knee, questionable) is also out.",
+      "side": null,
+      "date": "2026-11-28T01:37Z",
+      "return_date": "2026-11-29",
+      "short_comment": "Bamba (illness) has been ruled out for Friday's game against the Nuggets.",
+      "long_comment": "Bamba will officially sit out Friday's contest after waking up feeling under the weather. Jaxson Hayes (knee) and Jusuf Nurkic (foot) are both available to face Denver and figure to absorb Bamba's playing time.",
       "source": "ESPN"
     },
     {

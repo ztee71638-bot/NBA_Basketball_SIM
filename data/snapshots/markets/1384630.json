@@ -830,7 +830,49 @@
         }
       ],
       "signature": "[{\"market_id\":\"7031352\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Hornets\\\"]\",\"question\":\"Nets vs. Hornets\"},{\"market_id\":\"7401957\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.635\\\", \\\"0.365\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Hornets: O/U 210.5\"},{\"market_id\":\"7401966\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.415\\\", \\\"0.585\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Hornets: O/U 214.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T02:01:09.363358+00:00",
+      "markets": [
+        {
+          "market_id": "7031352",
+          "market_type": "moneyline",
+          "question": "Nets vs. Hornets",
+          "slug": "nba-bkn-cha-2026-11-28",
+          "outcomes": "[\"Nets\", \"Hornets\"]",
+          "outcome_prices": "[\"0.315\", \"0.685\"]",
+          "volume_24h": 435.00666800000005,
+          "liquidity": "46674.5481",
+          "end_date": "2026-11-28T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-cha-2026-11-28"
+        },
+        {
+          "market_id": "7401957",
+          "market_type": "total",
+          "question": "Nets vs. Hornets: O/U 210.5",
+          "slug": "nba-bkn-cha-2026-11-28-total-210pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.64\", \"0.36\"]",
+          "volume_24h": 2371.307693,
+          "liquidity": "2526.0452",
+          "end_date": "2026-11-28T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-cha-2026-11-28"
+        },
+        {
+          "market_id": "7401966",
+          "market_type": "total",
+          "question": "Nets vs. Hornets: O/U 214.5",
+          "slug": "nba-bkn-cha-2026-11-28-total-214pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.48\", \"0.52\"]",
+          "volume_24h": 960,
+          "liquidity": "1344.213",
+          "end_date": "2026-11-28T23:00:00Z",
+          "url": "https://polymarket.com/event/nba-bkn-cha-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031352\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.315\\\", \\\"0.685\\\"]\",\"outcomes\":\"[\\\"Nets\\\", \\\"Hornets\\\"]\",\"question\":\"Nets vs. Hornets\"},{\"market_id\":\"7401957\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.64\\\", \\\"0.36\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Hornets: O/U 210.5\"},{\"market_id\":\"7401966\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.48\\\", \\\"0.52\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Nets vs. Hornets: O/U 214.5\"}]"
     }
   ],
-  "last_updated": "2026-11-28T00:35:34.221580+00:00"
+  "last_updated": "2026-11-28T02:01:09.363358+00:00"
 }

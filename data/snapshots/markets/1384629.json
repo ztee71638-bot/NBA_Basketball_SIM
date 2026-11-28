@@ -1172,7 +1172,37 @@
         }
       ],
       "signature": "[{\"market_id\":\"7031347\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Wizards\\\"]\",\"question\":\"Magic vs. Wizards\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T02:01:09.363358+00:00",
+      "markets": [
+        {
+          "market_id": "7031347",
+          "market_type": "moneyline",
+          "question": "Magic vs. Wizards",
+          "slug": "nba-orl-was-2026-11-28",
+          "outcomes": "[\"Magic\", \"Wizards\"]",
+          "outcome_prices": "[\"0.605\", \"0.395\"]",
+          "volume_24h": 1494.155814,
+          "liquidity": "41087.6924",
+          "end_date": "2026-11-28T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-orl-was-2026-11-28"
+        },
+        {
+          "market_id": "7401960",
+          "market_type": "spread",
+          "question": "Spread: Magic (-3.5)",
+          "slug": "nba-orl-was-2026-11-28-spread-away-3pt5",
+          "outcomes": "[\"Magic\", \"Wizards\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 611.576667,
+          "liquidity": "7790.0176",
+          "end_date": "2026-11-28T22:00:00Z",
+          "url": "https://polymarket.com/event/nba-orl-was-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031347\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.605\\\", \\\"0.395\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Wizards\\\"]\",\"question\":\"Magic vs. Wizards\"},{\"market_id\":\"7401960\",\"market_type\":\"spread\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Magic\\\", \\\"Wizards\\\"]\",\"question\":\"Spread: Magic (-3.5)\"}]"
     }
   ],
-  "last_updated": "2026-11-27T22:40:10.065049+00:00"
+  "last_updated": "2026-11-28T02:01:09.363358+00:00"
 }

@@ -464,7 +464,49 @@
         }
       ],
       "signature": "[{\"market_id\":\"7031353\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Bulls\\\"]\",\"question\":\"Pacers vs. Bulls\"},{\"market_id\":\"7401945\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pacers vs. Bulls: O/U 234.5\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T02:01:09.363358+00:00",
+      "markets": [
+        {
+          "market_id": "7031353",
+          "market_type": "moneyline",
+          "question": "Pacers vs. Bulls",
+          "slug": "nba-ind-chi-2026-11-28",
+          "outcomes": "[\"Pacers\", \"Bulls\"]",
+          "outcome_prices": "[\"0.445\", \"0.555\"]",
+          "volume_24h": 1216.749845,
+          "liquidity": "42021.2823",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-chi-2026-11-28"
+        },
+        {
+          "market_id": "7401945",
+          "market_type": "total",
+          "question": "Pacers vs. Bulls: O/U 234.5",
+          "slug": "nba-ind-chi-2026-11-28-total-234pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.51\", \"0.49\"]",
+          "volume_24h": 499.84154600000005,
+          "liquidity": "10092.0704",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-chi-2026-11-28"
+        },
+        {
+          "market_id": "7401968",
+          "market_type": "total",
+          "question": "Pacers vs. Bulls: O/U 236.5",
+          "slug": "nba-ind-chi-2026-11-28-total-236pt5",
+          "outcomes": "[\"Over\", \"Under\"]",
+          "outcome_prices": "[\"0.475\", \"0.525\"]",
+          "volume_24h": 3244.23654,
+          "liquidity": "5500.6554",
+          "end_date": "2026-11-29T01:00:00Z",
+          "url": "https://polymarket.com/event/nba-ind-chi-2026-11-28"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7031353\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.445\\\", \\\"0.555\\\"]\",\"outcomes\":\"[\\\"Pacers\\\", \\\"Bulls\\\"]\",\"question\":\"Pacers vs. Bulls\"},{\"market_id\":\"7401945\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.51\\\", \\\"0.49\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pacers vs. Bulls: O/U 234.5\"},{\"market_id\":\"7401968\",\"market_type\":\"total\",\"outcome_prices\":\"[\\\"0.475\\\", \\\"0.525\\\"]\",\"outcomes\":\"[\\\"Over\\\", \\\"Under\\\"]\",\"question\":\"Pacers vs. Bulls: O/U 236.5\"}]"
     }
   ],
-  "last_updated": "2026-11-28T00:35:34.221580+00:00"
+  "last_updated": "2026-11-28T02:01:09.363358+00:00"
 }
