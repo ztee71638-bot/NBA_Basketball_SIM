@@ -380,7 +380,25 @@
         }
       ],
       "signature": "[{\"market_id\":\"7110987\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.45\\\", \\\"0.55\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Timberwolves vs. Trail Blazers\"}]"
+    },
+    {
+      "captured_at": "2026-11-28T05:14:19.850591+00:00",
+      "markets": [
+        {
+          "market_id": "7110987",
+          "market_type": "moneyline",
+          "question": "Timberwolves vs. Trail Blazers",
+          "slug": "nba-min-por-2026-12-01",
+          "outcomes": "[\"Timberwolves\", \"Trail Blazers\"]",
+          "outcome_prices": "[\"0.46\", \"0.54\"]",
+          "volume_24h": 55.09434,
+          "liquidity": "20245.8074",
+          "end_date": "2026-12-02T03:00:00Z",
+          "url": "https://polymarket.com/event/nba-min-por-2026-12-01"
+        }
+      ],
+      "signature": "[{\"market_id\":\"7110987\",\"market_type\":\"moneyline\",\"outcome_prices\":\"[\\\"0.46\\\", \\\"0.54\\\"]\",\"outcomes\":\"[\\\"Timberwolves\\\", \\\"Trail Blazers\\\"]\",\"question\":\"Timberwolves vs. Trail Blazers\"}]"
     }
   ],
-  "last_updated": "2026-11-28T03:04:42.750302+00:00"
+  "last_updated": "2026-11-28T05:14:19.850591+00:00"
 }
